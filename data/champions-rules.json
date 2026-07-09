@@ -1,0 +1,16 @@
+{
+  "level": 50,
+  "statPoint": {
+    "min": 0,
+    "maxPerStat": 32,
+    "totalDefault": 66,
+    "mode": "preNatureStatPoint",
+    "description": "チャンピオンズのステータスポイントは0-32の33段階、合計66として扱う。非HPは性格補正前、HPは最終加算として扱う。"
+  },
+  "nature": {
+    "boost": 1.1,
+    "neutral": 1
+  },
+  "damageRandomMax": 1,
+  "doubleSpreadModifier": 0.75
+}
