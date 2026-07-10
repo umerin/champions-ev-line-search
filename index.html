@@ -40,7 +40,7 @@
             <label>
               対象範囲
               <select id="availabilityMode">
-                <option value="champions">チャンピオンズのみ</option>
+                <option value="champions">確認済みポケモンのみ（技は全データ）</option>
                 <option value="all">全データ</option>
               </select>
             </label>
@@ -115,7 +115,7 @@
           </fieldset>
 
           <p class="note">
-            この試作はPokéAPIから生成したJSONを使う想定です。チャンピオンズの使用可否は data/champions-availability.json で管理します。ステータスポイントは0〜32の33段階、合計66として扱います。
+            この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。
           </p>
         </form>
 

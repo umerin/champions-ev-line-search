@@ -140,6 +140,11 @@ function runSearch() {
     return;
   }
   const input = readInput();
+  const inputError = validatePointAllocation(input);
+  if (inputError) {
+    renderInputError(inputError);
+    return;
+  }
   const current = {
     hp: input.currentHp,
     def: input.currentDef,
@@ -221,6 +226,28 @@ function readInput() {
   };
 }
 
+function validatePointAllocation(input) {
+  const { min, maxPerStat, totalDefault } = state.rules.statPoint;
+  const currentPoints = [
+    input.currentHpPoints,
+    input.currentDefPoints,
+    input.currentSpdPoints,
+  ];
+
+  if (currentPoints.some((value) => value < min || value > maxPerStat)) {
+    return `現在のH/B/Dポイントは${min}〜${maxPerStat}で入力してください。`;
+  }
+  if (input.remainingPoints < min || input.remainingPoints > totalDefault) {
+    return `残りポイントは${min}〜${totalDefault}で入力してください。`;
+  }
+
+  const total = currentPoints.reduce((sum, value) => sum + value, input.remainingPoints);
+  if (total > totalDefault) {
+    return `現在のH/B/Dポイントと残りポイントの合計は${totalDefault}以下にしてください（現在: ${total}）。`;
+  }
+  return null;
+}
+
 function defaultAvailability() {
   return {
     restrictPokemon: false,
@@ -247,9 +274,10 @@ function isMoveAllowed(moveId) {
 
 function updateDataStatus() {
   const pokemonPool = getPokemonPool();
-  const mode = useChampionsFilter() ? "Champions" : "All";
-  const availabilityNote = state.availability?.restrictPokemon ? "" : " / 未絞込";
-  els.dataStatus.textContent = `${mode}: ${pokemonPool.length}匹 / ${state.moves.length}技${availabilityNote}`;
+  const mode = useChampionsFilter() ? "確認済みポケモン" : "全データ";
+  const pokemonNote = useChampionsFilter() && !state.availability?.restrictPokemon ? " / ポケモン未絞込" : "";
+  const moveNote = useChampionsFilter() && !state.availability?.restrictMoves ? " / 技は全データ（未検証）" : "";
+  els.dataStatus.textContent = `${mode}: ${pokemonPool.length}匹 / ${state.moves.length}技${pokemonNote}${moveNote}`;
 }
 
 function buildDefensiveCandidates(input) {
@@ -396,6 +424,11 @@ function renderResults(rows, candidateCount) {
       `;
     })
     .join("");
+}
+
+function renderInputError(message) {
+  els.summary.innerHTML = `<span class="empty">${escapeHtml(message)}</span>`;
+  els.resultsBody.innerHTML = `<tr><td colspan="10" class="empty">${escapeHtml(message)}</td></tr>`;
 }
 
 function formatCandidate(candidate) {

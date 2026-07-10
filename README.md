@@ -36,7 +36,7 @@ NOTICE.md
 ## 注意
 
 - `data/*.json` は動作確認用の少量サンプルです。
-- ステータスポイントは0-32の33段階、合計66として扱います。
+- ステータスポイントは0-32の33段階、合計66として扱います。現在のH/B/Dポイントと残りポイントの合計が66を超える入力は検索できません。
 - 非HPは性格補正前にステータスポイントを加算し、HPは最終値に加算します。公式の詳細式が確認できたら `app.js` の計算関数だけ差し替えます。
 - PokéAPIからの本格データ取得は `scripts/fetch-pokeapi-data.mjs` を拡張して対応します。
 
@@ -83,7 +83,7 @@ node scripts/fetch-pokeapi-data.mjs --all
 }
 ```
 
-`restrictPokemon` を `true` にすると、画面の「チャンピオンズのみ」で `pokemon` に入れたPokéAPI IDだけを表示・検索します。公式リストが増えたらこのJSONだけ更新します。
+`restrictPokemon` を `true` にすると、画面の「確認済みポケモンのみ」で `pokemon` に入れたPokéAPI IDだけを表示・検索します。公式リストが増えたらこのJSONだけ更新します。`restrictMoves` が `false` の間は、技のチャンピオンズでの使用可否を検証せず、全技を検索します。公式の技リストを反映する場合は、`restrictMoves` を `true` にして `moves` を更新してください。
 
 ## ライセンスと注意
 
