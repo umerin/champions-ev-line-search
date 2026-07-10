@@ -410,16 +410,16 @@ function renderResults(rows, candidateCount) {
       const lineClass = row.line === "最大乱数低下" ? "" : "line-good";
       return `
         <tr>
-          <td>${formatCandidate(row.candidate)}</td>
-          <td>${row.attacker.name.ja}</td>
-          <td>${row.move.name.ja}</td>
-          <td>${jpCategory[row.move.category]}</td>
-          <td>${row.attackStat}</td>
-          <td>${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
-          <td>${row.currentDamage}</td>
-          <td>${row.afterDamage}</td>
-          <td>${row.diff}</td>
-          <td class="${lineClass}">${row.line}</td>
+          <td class="result-line ${lineClass}">${row.line}</td>
+          <td class="result-allocation">${formatCandidate(row.candidate)}</td>
+          <td class="result-attacker">${row.attacker.name.ja}</td>
+          <td class="result-move">${row.move.name.ja}</td>
+          <td class="result-after">${row.afterDamage}</td>
+          <td class="result-diff">${row.diff}</td>
+          <td class="result-current">${row.currentDamage}</td>
+          <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
+          <td class="result-attack">${row.attackStat}</td>
+          <td class="result-category">${jpCategory[row.move.category]}</td>
         </tr>
       `;
     })

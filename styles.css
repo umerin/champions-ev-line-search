@@ -1,13 +1,16 @@
 :root {
   color-scheme: light;
-  --ink: #16212f;
-  --muted: #64748b;
-  --line: #d7dde7;
+  --ink: #142033;
+  --muted: #66758a;
+  --line: #d8e0e9;
   --panel: #ffffff;
-  --bg: #eef3f7;
-  --accent: #0f766e;
-  --accent-strong: #115e59;
+  --bg: #f2f6fa;
+  --accent: #167a72;
+  --accent-strong: #0b5a56;
+  --accent-soft: #e4f4f1;
   --warn: #9a3412;
+  --control-height: 44px;
+  --radius: 12px;
 }
 
 * {
@@ -16,7 +19,7 @@
 
 body {
   margin: 0;
-  font-family: "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
 }
@@ -30,23 +33,23 @@ select {
 .app-shell {
   width: min(1280px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 28px 0;
+  padding: 36px 0;
 }
 
 .app-header {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .eyebrow {
   margin: 0 0 4px;
   color: var(--accent-strong);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -57,7 +60,9 @@ h2 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 h2 {
@@ -65,11 +70,11 @@ h2 {
 }
 
 .status-pill {
-  min-width: 128px;
-  padding: 8px 12px;
+  max-width: 380px;
+  padding: 9px 14px;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #f8fafc;
+  border-radius: 999px;
+  background: #f9fbfd;
   color: var(--muted);
   text-align: center;
   font-size: 13px;
@@ -78,19 +83,19 @@ h2 {
 .workspace {
   display: grid;
   grid-template-columns: 370px minmax(0, 1fr);
-  gap: 16px;
+  gap: 20px;
   align-items: start;
 }
 
 .panel {
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--panel);
-  box-shadow: 0 10px 30px rgba(21, 31, 45, 0.06);
+  box-shadow: 0 14px 34px rgba(21, 31, 45, 0.07);
 }
 
 .controls {
-  padding: 16px;
+  padding: 20px;
 }
 
 .panel-heading {
@@ -102,10 +107,10 @@ h2 {
 }
 
 button {
-  min-height: 38px;
+  min-height: var(--control-height);
   padding: 0 18px;
   border: 0;
-  border-radius: 7px;
+  border-radius: 10px;
   background: var(--accent);
   color: white;
   cursor: pointer;
@@ -137,18 +142,26 @@ label {
 input,
 select {
   width: 100%;
-  min-height: 38px;
+  height: var(--control-height);
   border: 1px solid #cbd5e1;
-  border-radius: 7px;
+  border-radius: 10px;
   background: white;
   color: var(--ink);
-  padding: 7px 9px;
+  padding: 0 11px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid rgba(22, 122, 114, 0.16);
+  border-color: var(--accent);
 }
 
 fieldset {
   margin: 16px 0 0;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 12px;
 }
 
@@ -174,9 +187,9 @@ legend {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
-  padding: 14px;
+  padding: 16px 18px;
   border-bottom: 1px solid var(--line);
-  background: #f8fafc;
+  background: linear-gradient(135deg, #f9fbfd, #f1f8f7);
 }
 
 .summary span,
@@ -192,6 +205,8 @@ legend {
 .summary strong {
   margin-top: 2px;
   font-size: 18px;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  letter-spacing: -0.05em;
 }
 
 .table-wrap {
@@ -218,7 +233,7 @@ th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #26384d;
+  background: #21364b;
   color: white;
   font-size: 12px;
 }
@@ -227,9 +242,21 @@ tbody tr:nth-child(even) {
   background: #f8fafc;
 }
 
+tbody tr:hover {
+  background: #f0f8f7;
+}
+
 .line-good {
   color: var(--accent-strong);
   font-weight: 800;
+}
+
+.result-after,
+.result-current,
+.result-diff,
+.result-attack {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-weight: 600;
 }
 
 .empty {
@@ -275,12 +302,117 @@ tbody tr:nth-child(even) {
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 27px;
+  }
+
+  .status-pill {
+    max-width: none;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
   }
 
   .field-grid,
-  .field-grid.compact,
   .summary {
     grid-template-columns: 1fr;
+  }
+
+  .field-grid.compact {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .results-panel {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .summary {
+    margin-bottom: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 22px rgba(21, 31, 45, 0.05);
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  table,
+  tbody {
+    display: block;
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: grid;
+    gap: 10px;
+  }
+
+  tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "line allocation"
+      "attacker move"
+      "after diff";
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: 0 8px 22px rgba(21, 31, 45, 0.05);
+  }
+
+  tbody tr:nth-child(even),
+  tbody tr:hover {
+    background: var(--panel);
+  }
+
+  td {
+    min-width: 0;
+    padding: 11px 12px;
+    border: 0;
+    white-space: normal;
+  }
+
+  td::before {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .result-line { grid-area: line; background: var(--accent-soft); }
+  .result-line::before { content: "ライン"; }
+  .result-allocation { grid-area: allocation; text-align: right; background: var(--accent-soft); }
+  .result-allocation::before { content: "配分"; }
+  .result-attacker { grid-area: attacker; border-top: 1px solid var(--line); }
+  .result-attacker::before { content: "相手"; }
+  .result-move { grid-area: move; border-top: 1px solid var(--line); }
+  .result-move::before { content: "技"; }
+  .result-after { grid-area: after; border-top: 1px solid var(--line); }
+  .result-after::before { content: "後最大"; }
+  .result-diff { grid-area: diff; border-top: 1px solid var(--line); }
+  .result-diff::before { content: "変化"; }
+
+  .result-category,
+  .result-attack,
+  .result-effectiveness,
+  .result-current {
+    display: none;
+  }
+
+  .empty {
+    display: table-cell;
+    grid-column: 1 / -1;
   }
 }

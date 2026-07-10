@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>チャンピオンズ努力値サポート 試作</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -128,16 +131,16 @@
             <table>
               <thead>
                 <tr>
-                  <th>配分</th>
-                  <th>相手</th>
-                  <th>技</th>
-                  <th>分類</th>
-                  <th>攻撃実数値</th>
-                  <th>相性</th>
-                  <th>現在最大</th>
-                  <th>後最大</th>
-                  <th>変化</th>
-                  <th>ライン</th>
+                  <th class="result-line">ライン</th>
+                  <th class="result-allocation">配分</th>
+                  <th class="result-attacker">相手</th>
+                  <th class="result-move">技</th>
+                  <th class="result-after">後最大</th>
+                  <th class="result-diff">変化</th>
+                  <th class="result-current">現在最大</th>
+                  <th class="result-effectiveness">相性</th>
+                  <th class="result-attack">攻撃実数値</th>
+                  <th class="result-category">分類</th>
                 </tr>
               </thead>
               <tbody id="resultsBody"></tbody>
