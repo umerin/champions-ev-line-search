@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260710-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260711-1" />
   </head>
   <body>
     <main class="app-shell">
@@ -23,7 +23,7 @@
         <form class="panel controls" id="searchForm">
           <div class="panel-heading">
             <h2>検索条件</h2>
-            <button type="submit">検索</button>
+            <button class="search-button search-button-top" type="submit">検索</button>
           </div>
 
           <div class="field-grid">
@@ -49,33 +49,44 @@
             </label>
 
             <label>
-              現在HP
-              <input id="currentHp" type="number" min="1" value="175" />
-            </label>
-
-            <label>
-              現在防御
-              <input id="currentDef" type="number" min="1" value="115" />
-            </label>
-
-            <label>
-              現在特防
-              <input id="currentSpd" type="number" min="1" value="105" />
-            </label>
-
-            <label>
-              残りポイント
+              検索で配分するポイント
               <input id="remainingPoints" type="number" min="0" max="66" value="4" />
             </label>
           </div>
 
-          <fieldset>
-            <legend>現在の努力値段階</legend>
-            <div class="field-grid compact">
-              <label>H <input id="currentHpPoints" type="number" min="0" max="32" value="0" /></label>
-              <label>B <input id="currentDefPoints" type="number" min="0" max="32" value="0" /></label>
-              <label>D <input id="currentSpdPoints" type="number" min="0" max="32" value="0" /></label>
+          <fieldset class="stat-allocation">
+            <legend>現在の耐久配分</legend>
+            <div class="stat-table-head" aria-hidden="true">
+              <span>能力</span><span>ポイント</span><span>実数値</span>
             </div>
+            <div class="stat-row">
+              <strong>H</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentHpPoints" data-delta="-1" aria-label="Hを1減らす">−</button>
+                <input id="currentHpPoints" type="number" min="0" max="32" value="0" aria-label="Hポイント" />
+                <button type="button" class="point-button" data-target="currentHpPoints" data-delta="1" aria-label="Hを1増やす">＋</button>
+              </div>
+              <input id="currentHp" class="stat-value" type="number" min="1" value="175" readonly aria-label="現在HP実数値" />
+            </div>
+            <div class="stat-row">
+              <strong>B</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentDefPoints" data-delta="-1" aria-label="Bを1減らす">−</button>
+                <input id="currentDefPoints" type="number" min="0" max="32" value="0" aria-label="Bポイント" />
+                <button type="button" class="point-button" data-target="currentDefPoints" data-delta="1" aria-label="Bを1増やす">＋</button>
+              </div>
+              <input id="currentDef" class="stat-value" type="number" min="1" value="115" readonly aria-label="現在防御実数値" />
+            </div>
+            <div class="stat-row">
+              <strong>D</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentSpdPoints" data-delta="-1" aria-label="Dを1減らす">−</button>
+                <input id="currentSpdPoints" type="number" min="0" max="32" value="0" aria-label="Dポイント" />
+                <button type="button" class="point-button" data-target="currentSpdPoints" data-delta="1" aria-label="Dを1増やす">＋</button>
+              </div>
+              <input id="currentSpd" class="stat-value" type="number" min="1" value="105" readonly aria-label="現在特防実数値" />
+            </div>
+            <div class="point-balance">未配分 <strong id="unallocatedPoints">66</strong> / 66</div>
           </fieldset>
 
           <fieldset>
@@ -120,6 +131,7 @@
           <p class="note">
             この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。
           </p>
+          <button class="search-button search-button-bottom" type="submit">この条件で検索</button>
         </form>
 
         <section class="panel results-panel">
@@ -162,6 +174,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260710-3"></script>
+    <script type="module" src="./app.js?v=20260711-1"></script>
   </body>
 </html>

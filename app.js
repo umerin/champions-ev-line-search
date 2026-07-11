@@ -27,6 +27,7 @@ const els = {
   currentDefPoints: document.querySelector("#currentDefPoints"),
   currentSpdPoints: document.querySelector("#currentSpdPoints"),
   remainingPoints: document.querySelector("#remainingPoints"),
+  unallocatedPoints: document.querySelector("#unallocatedPoints"),
   attackKind: document.querySelector("#attackKind"),
   attackerPoints: document.querySelector("#attackerPoints"),
   attackerNature: document.querySelector("#attackerNature"),
@@ -76,6 +77,9 @@ async function init() {
     updateCurrentStatsDefault();
     updateDataStatus();
     els.form.addEventListener("submit", onSubmit);
+    document.querySelectorAll(".point-button").forEach((button) => {
+      button.addEventListener("click", () => adjustPointInput(button));
+    });
     els.defenderSelect.addEventListener("change", () => {
       updateCurrentStatsDefault();
       runSearch();
@@ -88,15 +92,12 @@ async function init() {
     });
     els.currentHpPoints.addEventListener("input", () => {
       updateCurrentStatsDefault();
-      runSearch();
     });
     els.currentDefPoints.addEventListener("input", () => {
       updateCurrentStatsDefault();
-      runSearch();
     });
     els.currentSpdPoints.addEventListener("input", () => {
       updateCurrentStatsDefault();
-      runSearch();
     });
     runSearch();
   } catch (error) {
@@ -125,6 +126,21 @@ function updateCurrentStatsDefault() {
   els.currentHp.value = calcHpStat(defender.baseStats.hp, hpPoints);
   els.currentDef.value = calcNonHpStat(defender.baseStats.def, defPoints, "neutral");
   els.currentSpd.value = calcNonHpStat(defender.baseStats.spd, spdPoints, "neutral");
+  const usedPoints = hpPoints + defPoints + spdPoints;
+  const unallocated = state.rules.statPoint.totalDefault - usedPoints;
+  els.unallocatedPoints.textContent = Math.max(0, unallocated);
+  els.unallocatedPoints.parentElement.classList.toggle("is-over", unallocated < 0);
+}
+
+function adjustPointInput(button) {
+  const input = document.querySelector(`#${button.dataset.target}`);
+  if (!input) return;
+  input.value = clamp(
+    toInt(input.value) + toInt(button.dataset.delta),
+    state.rules.statPoint.min,
+    state.rules.statPoint.maxPerStat,
+  );
+  input.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
 function onSubmit(event) {

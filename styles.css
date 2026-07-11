@@ -165,6 +165,102 @@ fieldset {
   padding: 12px;
 }
 
+.stat-allocation {
+  padding: 0;
+  overflow: hidden;
+}
+
+.stat-allocation legend {
+  margin-left: 12px;
+}
+
+.stat-table-head,
+.stat-row {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 76px;
+  gap: 10px;
+  align-items: center;
+}
+
+.stat-table-head {
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.stat-row {
+  min-height: 58px;
+  padding: 7px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.stat-row:nth-of-type(even) {
+  background: #f8fbfd;
+}
+
+.stat-row strong {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 14px;
+}
+
+.point-stepper {
+  display: grid;
+  grid-template-columns: 36px minmax(48px, 1fr) 36px;
+  gap: 5px;
+}
+
+.point-stepper input,
+.stat-value {
+  height: 38px;
+  padding: 0 8px;
+  text-align: center;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+}
+
+.point-button {
+  min-height: 38px;
+  padding: 0;
+  border: 1px solid #b8c7d6;
+  border-radius: 8px;
+  background: white;
+  color: var(--accent-strong);
+  font-size: 18px;
+}
+
+.point-button:hover {
+  background: var(--accent-soft);
+}
+
+.stat-value[readonly] {
+  background: #f2f7fa;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.point-balance {
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: right;
+  font-size: 12px;
+}
+
+.point-balance strong {
+  color: var(--ink);
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 20px;
+}
+
+.point-balance.is-over,
+.point-balance.is-over strong {
+  color: var(--warn);
+}
+
+.search-button-bottom {
+  display: none;
+}
+
 legend {
   padding: 0 6px;
   color: var(--muted);
@@ -320,6 +416,28 @@ tbody tr:hover {
   .field-grid.compact {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+  }
+
+  .search-button-top {
+    display: none;
+  }
+
+  .search-button-bottom {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 16px;
+    font-size: 15px;
+  }
+
+  .stat-table-head,
+  .stat-row {
+    grid-template-columns: 28px minmax(0, 1fr) 70px;
+    gap: 7px;
+  }
+
+  .point-stepper {
+    grid-template-columns: 34px minmax(42px, 1fr) 34px;
   }
 }
 
