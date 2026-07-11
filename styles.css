@@ -10,6 +10,7 @@
   --accent-soft: #e4f4f1;
   --warn: #9a3412;
   --control-height: 44px;
+  --control-radius: 16px;
   --radius: 12px;
 }
 
@@ -63,6 +64,7 @@ h1 {
   font-size: 32px;
   font-weight: 800;
   letter-spacing: -0.04em;
+  white-space: nowrap;
 }
 
 h2 {
@@ -150,6 +152,22 @@ select {
   padding: 0 11px;
   font-size: 14px;
   font-weight: 500;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: var(--control-radius);
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2366758a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+#remainingPoints,
+#attackerPoints {
+  border-radius: var(--control-radius);
 }
 
 input:focus,
@@ -398,7 +416,7 @@ tbody tr:hover {
   }
 
   h1 {
-    font-size: 27px;
+    font-size: clamp(22px, 7.2vw, 27px);
   }
 
   .status-pill {
