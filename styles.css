@@ -204,6 +204,35 @@ fieldset {
   position: relative;
 }
 
+.pokemon-selector-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+}
+
+.mega-toggle {
+  min-width: 54px;
+  height: var(--control-height);
+  padding: 0 10px;
+  border: 1px solid #8b5cf6;
+  border-radius: 10px;
+  background: #f3efff;
+  color: #6d28d9;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mega-toggle:hover:not(:disabled) {
+  background: #e9e1ff;
+}
+
+.mega-toggle:disabled {
+  border-color: #d8dee6;
+  background: #f3f5f7;
+  color: #9aa5b1;
+  cursor: not-allowed;
+}
+
 .pokemon-combobox input[type="search"] {
   width: 100%;
 }

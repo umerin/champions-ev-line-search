@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-10" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-11" />
   </head>
   <body>
     <main class="app-shell">
@@ -29,10 +29,13 @@
           <div class="field-grid">
             <div class="form-field">
               <span>自分のポケモン</span>
-              <div class="pokemon-combobox" id="pokemonCombobox">
-                <input id="defenderSearch" type="search" autocomplete="off" placeholder="名前を入力（例：が）" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="defenderOptions" />
-                <input id="defenderSelect" type="hidden" />
-                <div class="pokemon-options" id="defenderOptions" role="listbox" hidden></div>
+              <div class="pokemon-selector-row">
+                <div class="pokemon-combobox" id="pokemonCombobox">
+                  <input id="defenderSearch" type="search" autocomplete="off" placeholder="名前を入力（例：が）" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="defenderOptions" />
+                  <input id="defenderSelect" type="hidden" />
+                  <div class="pokemon-options" id="defenderOptions" role="listbox" hidden></div>
+                </div>
+                <button id="megaToggle" class="mega-toggle" type="button">メガ</button>
               </div>
             </div>
 
@@ -246,6 +249,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-13"></script>
+    <script type="module" src="./app.js?v=20260712-14"></script>
   </body>
 </html>

@@ -20,6 +20,7 @@ const els = {
   defenderSelect: document.querySelector("#defenderSelect"),
   defenderSearch: document.querySelector("#defenderSearch"),
   defenderOptions: document.querySelector("#defenderOptions"),
+  megaToggle: document.querySelector("#megaToggle"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -115,6 +116,7 @@ async function init() {
     els.defenderSearch.addEventListener("input", () => renderPokemonOptions(els.defenderSearch.value));
     els.defenderSearch.addEventListener("focus", () => renderPokemonOptions(els.defenderSearch.value));
     els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
+    els.megaToggle.addEventListener("click", cycleMegaForm);
     document.addEventListener("click", (event) => {
       if (!event.target.closest("#pokemonCombobox")) closePokemonOptions();
     });
@@ -151,6 +153,7 @@ function populatePokemonSelect() {
   if (!pokemon) return;
   els.defenderSelect.value = pokemon.id;
   els.defenderSearch.value = getPokemonDisplayName(pokemon);
+  updateMegaToggle(pokemon);
   closePokemonOptions();
 }
 
@@ -213,8 +216,46 @@ function selectPokemon(pokemonId) {
   if (!pokemon) return;
   els.defenderSelect.value = pokemon.id;
   els.defenderSearch.value = getPokemonDisplayName(pokemon);
+  updateMegaToggle(pokemon);
   closePokemonOptions();
   els.defenderSelect.dispatchEvent(new Event("change", { bubbles: true }));
+}
+
+function getMegaFamily(pokemon) {
+  const rootId = pokemon.id.replace(/-mega(?:-[xyz])?$/, "");
+  const pokemonPool = getPokemonPool();
+  const base = pokemonPool.find((item) => item.id === rootId);
+  if (!base) return [pokemon];
+  const variantOrder = new Map([
+    ["y", 0],
+    ["x", 1],
+    ["z", 2],
+    ["", 3],
+  ]);
+  const megaForms = pokemonPool
+    .filter((item) => item.id === `${rootId}-mega` || item.id.startsWith(`${rootId}-mega-`))
+    .sort((a, b) => {
+      const aVariant = a.id.match(/-mega(?:-([xyz]))?$/)?.[1] ?? "";
+      const bVariant = b.id.match(/-mega(?:-([xyz]))?$/)?.[1] ?? "";
+      return (variantOrder.get(aVariant) ?? 99) - (variantOrder.get(bVariant) ?? 99);
+    });
+  return [base, ...megaForms];
+}
+
+function updateMegaToggle(pokemon) {
+  const family = getMegaFamily(pokemon);
+  els.megaToggle.disabled = family.length < 2;
+  els.megaToggle.title = family.length < 2 ? "メガシンカ形態はありません" : "メガシンカ形態を切り替え";
+}
+
+function cycleMegaForm() {
+  const current = getPokemonPool().find((pokemon) => pokemon.id === els.defenderSelect.value);
+  if (!current) return;
+  const family = getMegaFamily(current);
+  if (family.length < 2) return;
+  const currentIndex = family.findIndex((pokemon) => pokemon.id === current.id);
+  const next = family[(currentIndex + 1) % family.length];
+  selectPokemon(next.id);
 }
 
 function closePokemonOptions() {
