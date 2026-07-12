@@ -34,10 +34,7 @@ const els = {
   currentSpePoints: document.querySelector("#currentSpePoints"),
   remainingPoints: document.querySelector("#remainingPoints"),
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
-  attackKind: document.querySelector("#attackKind"),
   attackerPoints: document.querySelector("#attackerPoints"),
-  attackerNature: document.querySelector("#attackerNature"),
-  effectiveness: document.querySelector("#effectiveness"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
 };
@@ -103,6 +100,10 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach((checkbox) => {
+      checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
+    });
+    els.attackerPoints.addEventListener("input", runSearch);
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -175,6 +176,33 @@ function toggleNatureButton(button) {
   runSearch();
 }
 
+function handleOpponentFilterChange(checkbox) {
+  const group = checkbox.closest("[data-filter-group]")?.dataset.filterGroup;
+  if (!group) return;
+  const checkboxes = [...document.querySelectorAll(`input[name="${group}"]`)];
+
+  if (group === "effectiveness") {
+    if (checkbox.value === "all" && checkbox.checked) {
+      checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false;
+      });
+    } else if (checkbox.checked) {
+      const all = checkboxes.find((item) => item.value === "all");
+      if (all) all.checked = false;
+    }
+    if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
+  } else {
+    if (checkbox.checked) {
+      checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false;
+      });
+    } else if (!checkboxes.some((item) => item.checked)) {
+      checkbox.checked = true;
+    }
+  }
+  runSearch();
+}
+
 function onSubmit(event) {
   event.preventDefault();
   runSearch();
@@ -213,42 +241,48 @@ function runSearch() {
         if (!matchesEffectiveness(effectiveness, input.effectiveness)) continue;
         if (effectiveness === 0) continue;
 
-        const attackStat = calcAttackStat(attacker, move.category, input.attackerPoints, input.attackerNature);
-        const currentDamage = calcMaxDamage({
-          level: state.rules.level,
-          power: move.power,
-          attack: attackStat,
-          defense: move.category === "physical" ? current.def : current.spd,
-          stab: attacker.types.includes(move.type) ? 1.5 : 1,
-          effectiveness,
-          rule: input.battleRule,
-          isSpreadMove: move.isSpreadMove,
-        });
-        const afterDamage = calcMaxDamage({
-          level: state.rules.level,
-          power: move.power,
-          attack: attackStat,
-          defense: move.category === "physical" ? after.def : after.spd,
-          stab: attacker.types.includes(move.type) ? 1.5 : 1,
-          effectiveness,
-          rule: input.battleRule,
-          isSpreadMove: move.isSpreadMove,
-        });
+        const attackerNatureModes = input.attackerNatures.includes("both")
+          ? ["boost", "neutral"]
+          : input.attackerNatures;
+        for (const attackerNature of attackerNatureModes) {
+          const attackStat = calcAttackStat(attacker, move.category, input.attackerPoints, attackerNature);
+          const currentDamage = calcMaxDamage({
+            level: state.rules.level,
+            power: move.power,
+            attack: attackStat,
+            defense: move.category === "physical" ? current.def : current.spd,
+            stab: attacker.types.includes(move.type) ? 1.5 : 1,
+            effectiveness,
+            rule: input.battleRule,
+            isSpreadMove: move.isSpreadMove,
+          });
+          const afterDamage = calcMaxDamage({
+            level: state.rules.level,
+            power: move.power,
+            attack: attackStat,
+            defense: move.category === "physical" ? after.def : after.spd,
+            stab: attacker.types.includes(move.type) ? 1.5 : 1,
+            effectiveness,
+            rule: input.battleRule,
+            isSpreadMove: move.isSpreadMove,
+          });
 
-        const line = damageLine(current.hp, after.hp, currentDamage, afterDamage);
-        if (afterDamage >= after.hp) continue;
-        if (afterDamage === currentDamage && line === "変化なし") continue;
-        rows.push({
-          candidate,
-          attacker,
-          move,
-          attackStat,
-          effectiveness,
-          currentDamage,
-          afterDamage,
-          diff: afterDamage - currentDamage,
-          line,
-        });
+          const line = damageLine(current.hp, after.hp, currentDamage, afterDamage);
+          if (afterDamage >= after.hp) continue;
+          if (afterDamage === currentDamage && line === "変化なし") continue;
+          rows.push({
+            candidate,
+            attacker,
+            move,
+            attackStat,
+            attackerNature,
+            effectiveness,
+            currentDamage,
+            afterDamage,
+            diff: afterDamage - currentDamage,
+            line,
+          });
+        }
       }
     }
   }
@@ -272,10 +306,10 @@ function readInput() {
     defenderNatureBoost: getSelectedNatureStat("boost"),
     defenderNatureDrop: getSelectedNatureStat("drop"),
     remainingPoints: toInt(els.remainingPoints.value),
-    attackKind: els.attackKind.value,
+    attackKind: getCheckedValues("attackKind")[0] ?? "both",
     attackerPoints: clamp(toInt(els.attackerPoints.value), 0, state.rules.statPoint.maxPerStat),
-    attackerNature: els.attackerNature.value,
-    effectiveness: els.effectiveness.value,
+    attackerNatures: getCheckedValues("attackerNature"),
+    effectiveness: getCheckedValues("effectiveness"),
   };
 }
 
@@ -367,6 +401,10 @@ function applyCandidateStats(defender, input, candidate) {
   };
 }
 
+function getCheckedValues(name) {
+  return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+}
+
 function getDefenderNatureMode(statKey) {
   if (getSelectedNatureStat("boost") === statKey) return "boost";
   if (getSelectedNatureStat("drop") === statKey) return "drop";
@@ -447,7 +485,7 @@ function matchesAttackKind(category, filter) {
 }
 
 function matchesEffectiveness(value, filter) {
-  return filter === "all" || Number(filter) === value;
+  return filter.includes("all") || filter.some((item) => Number(item) === value);
 }
 
 function damageLine(currentHp, afterHp, before, after) {
@@ -498,7 +536,7 @@ function renderResults(rows, candidateCount) {
           <td class="result-diff">${row.diff}</td>
           <td class="result-current">${row.currentDamage}</td>
           <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
-          <td class="result-attack">${row.attackStat}</td>
+          <td class="result-attack">${row.attackStat}${row.attackerNature === "boost" ? "（補正有）" : "（補正無）"}</td>
           <td class="result-category">${jpCategory[row.move.category]}</td>
         </tr>
       `;

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-4" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-5" />
   </head>
   <body>
     <main class="app-shell">
@@ -137,45 +137,6 @@
             <div class="point-balance">未配分 <strong id="unallocatedPoints">66</strong> / 66</div>
           </fieldset>
 
-          <fieldset>
-            <legend>相手条件</legend>
-            <div class="field-grid">
-              <label>
-                攻撃種別
-                <select id="attackKind">
-                  <option value="both">物理・特殊</option>
-                  <option value="physical">物理のみ</option>
-                  <option value="special">特殊のみ</option>
-                </select>
-              </label>
-
-              <label>
-                攻撃側努力値段階
-                <input id="attackerPoints" type="number" min="0" max="32" value="32" />
-              </label>
-
-              <label>
-                性格補正
-                <select id="attackerNature">
-                  <option value="boost">あり</option>
-                  <option value="neutral">なし</option>
-                </select>
-              </label>
-
-              <label>
-                相性
-                <select id="effectiveness">
-                  <option value="all">すべて</option>
-                  <option value="4">4倍</option>
-                  <option value="2">2倍</option>
-                  <option value="1">等倍</option>
-                  <option value="0.5">半減</option>
-                  <option value="0.25">1/4</option>
-                </select>
-              </label>
-            </div>
-          </fieldset>
-
           <p class="note">
             この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。
           </p>
@@ -183,6 +144,39 @@
         </form>
 
         <section class="panel results-panel">
+          <div class="opponent-filters">
+            <div class="opponent-filters-heading">
+              <strong>相手条件</strong>
+              <label class="attacker-points-field">
+                攻撃側ポイント
+                <input id="attackerPoints" type="number" min="0" max="32" value="32" />
+              </label>
+            </div>
+
+            <fieldset class="checkbox-group" data-filter-group="attackKind">
+              <legend>攻撃種別</legend>
+              <label><input type="checkbox" name="attackKind" value="special" /> 特殊</label>
+              <label><input type="checkbox" name="attackKind" value="physical" /> 物理</label>
+              <label><input type="checkbox" name="attackKind" value="both" checked /> どちらとも</label>
+            </fieldset>
+
+            <fieldset class="checkbox-group" data-filter-group="attackerNature">
+              <legend>性格補正</legend>
+              <label><input type="checkbox" name="attackerNature" value="boost" /> 有</label>
+              <label><input type="checkbox" name="attackerNature" value="neutral" /> 無</label>
+              <label><input type="checkbox" name="attackerNature" value="both" checked /> どちらとも</label>
+            </fieldset>
+
+            <fieldset class="checkbox-group effectiveness-group" data-filter-group="effectiveness">
+              <legend>相性</legend>
+              <label><input type="checkbox" name="effectiveness" value="all" /> 全て</label>
+              <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
+              <label><input type="checkbox" name="effectiveness" value="2" /> 2倍</label>
+              <label><input type="checkbox" name="effectiveness" value="0.5" checked /> 1/2</label>
+              <label><input type="checkbox" name="effectiveness" value="0.25" checked /> 1/4</label>
+            </fieldset>
+          </div>
+
           <div class="summary" id="summary">
             <span>検索すると結果がここに出ます。</span>
           </div>
@@ -222,6 +216,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-4"></script>
+    <script type="module" src="./app.js?v=20260712-5"></script>
   </body>
 </html>
