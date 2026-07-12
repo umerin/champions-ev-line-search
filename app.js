@@ -193,13 +193,12 @@ function getPokemonDisplayName(pokemon) {
 
 function renderPokemonOptions(query) {
   const normalizedQuery = normalizePokemonSearch(query.trim());
+  const asciiQuery = /^[a-z0-9\s-]+$/i.test(query.trim());
   const matches = getSortedPokemonPool()
-    .filter((pokemon) => {
-      if (!normalizedQuery) return true;
-      return [getPokemonDisplayName(pokemon), pokemon.name.ja, pokemon.name.jaHrkt, pokemon.name.en, pokemon.id]
-        .filter(Boolean)
-        .some((name) => normalizePokemonSearch(name).includes(normalizedQuery));
-    })
+    .map((pokemon) => ({ pokemon, score: getPokemonSearchScore(pokemon, normalizedQuery, asciiQuery) }))
+    .filter(({ score }) => Number.isFinite(score))
+    .sort((a, b) => a.score - b.score)
+    .map(({ pokemon }) => pokemon)
     .slice(0, 30);
 
   els.defenderOptions.innerHTML = matches.length
@@ -214,6 +213,24 @@ function renderPokemonOptions(query) {
   });
   els.defenderOptions.hidden = false;
   els.defenderSearch.setAttribute("aria-expanded", "true");
+}
+
+function getPokemonSearchScore(pokemon, query, asciiQuery) {
+  if (!query) return 0;
+  const japaneseTerms = [getPokemonDisplayName(pokemon), pokemon.name.ja, pokemon.name.jaHrkt]
+    .filter(Boolean)
+    .map(normalizePokemonSearch);
+  const alphabetTerms = [pokemon.name.en, pokemon.id]
+    .filter(Boolean)
+    .map(normalizePokemonSearch);
+  const primaryTerms = asciiQuery ? alphabetTerms : japaneseTerms;
+  const secondaryTerms = asciiQuery ? japaneseTerms : alphabetTerms;
+
+  if (primaryTerms.some((term) => term.startsWith(query))) return 0;
+  if (primaryTerms.some((term) => term.includes(query))) return 1;
+  if (secondaryTerms.some((term) => term.startsWith(query))) return 2;
+  if (secondaryTerms.some((term) => term.includes(query))) return 3;
+  return Number.POSITIVE_INFINITY;
 }
 
 function selectPokemon(pokemonId) {
