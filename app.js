@@ -37,6 +37,7 @@ const els = {
   remainingPoints: document.querySelector("#remainingPoints"),
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
   attackerPoints: document.querySelector("#attackerPoints"),
+  movePower: document.querySelector("#movePower"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
 };
@@ -79,6 +80,7 @@ async function init() {
     ]);
     Object.assign(state, { pokemon, moves, typeChart, rules, availability });
     populatePokemonSelect();
+    populateMovePowerOptions();
     updateCurrentStatsDefault();
     updateDataStatus();
     els.form.addEventListener("submit", onSubmit);
@@ -112,6 +114,7 @@ async function init() {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.attackerPoints.addEventListener("input", runSearch);
+    els.movePower.addEventListener("input", runSearch);
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -127,6 +130,14 @@ function populatePokemonSelect() {
   els.defenderSelect.value = pokemon.id;
   els.defenderSearch.value = pokemon.name.ja;
   closePokemonOptions();
+}
+
+function populateMovePowerOptions() {
+  const options = [];
+  for (let power = 5; power <= 250; power += 5) {
+    options.push(`<option value="${power}"></option>`);
+  }
+  document.querySelector("#movePowerOptions").innerHTML = options.join("");
 }
 
 function getSortedPokemonPool() {
@@ -266,6 +277,8 @@ function handleOpponentFilterChange(checkbox) {
       if (all) all.checked = false;
     }
     if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
+  } else if (group === "attackerPointsPreset") {
+    if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
   } else {
     if (checkbox.checked) {
       checkboxes.forEach((item) => {
@@ -277,7 +290,7 @@ function handleOpponentFilterChange(checkbox) {
   }
   if (group === "attackerPointsPreset") {
     const details = document.querySelector("#attackerPointsDetails");
-    if (details) details.open = getCheckedValues(group)[0] === "custom";
+    if (details) details.open = getCheckedValues(group).includes("custom");
   }
   runSearch();
 }
@@ -313,6 +326,7 @@ function runSearch() {
     for (const attacker of pokemonPool) {
       for (const move of state.moves) {
         if (!isMoveAllowed(move.id)) continue;
+        if (!matchesMovePower(move.power, input.movePower, input.powerComparison)) continue;
         if (!move.users.includes(attacker.id)) continue;
         if (!matchesAttackKind(move.category, input.attackKind)) continue;
 
@@ -323,44 +337,47 @@ function runSearch() {
         const attackerNatureModes = input.attackerNatures.includes("both")
           ? ["boost", "neutral"]
           : input.attackerNatures;
-        for (const attackerNature of attackerNatureModes) {
-          const attackStat = calcAttackStat(attacker, move.category, input.attackerPoints, attackerNature);
-          const currentDamage = calcMaxDamage({
-            level: state.rules.level,
-            power: move.power,
-            attack: attackStat,
-            defense: move.category === "physical" ? current.def : current.spd,
-            stab: attacker.types.includes(move.type) ? 1.5 : 1,
-            effectiveness,
-            rule: input.battleRule,
-            isSpreadMove: move.isSpreadMove,
-          });
-          const afterDamage = calcMaxDamage({
-            level: state.rules.level,
-            power: move.power,
-            attack: attackStat,
-            defense: move.category === "physical" ? after.def : after.spd,
-            stab: attacker.types.includes(move.type) ? 1.5 : 1,
-            effectiveness,
-            rule: input.battleRule,
-            isSpreadMove: move.isSpreadMove,
-          });
+        for (const attackerPoints of input.attackerPoints) {
+          for (const attackerNature of attackerNatureModes) {
+            const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
+            const currentDamage = calcMaxDamage({
+              level: state.rules.level,
+              power: move.power,
+              attack: attackStat,
+              defense: move.category === "physical" ? current.def : current.spd,
+              stab: attacker.types.includes(move.type) ? 1.5 : 1,
+              effectiveness,
+              rule: input.battleRule,
+              isSpreadMove: move.isSpreadMove,
+            });
+            const afterDamage = calcMaxDamage({
+              level: state.rules.level,
+              power: move.power,
+              attack: attackStat,
+              defense: move.category === "physical" ? after.def : after.spd,
+              stab: attacker.types.includes(move.type) ? 1.5 : 1,
+              effectiveness,
+              rule: input.battleRule,
+              isSpreadMove: move.isSpreadMove,
+            });
 
-          const line = damageLine(current.hp, after.hp, currentDamage, afterDamage);
-          if (afterDamage >= after.hp) continue;
-          if (afterDamage === currentDamage && line === "変化なし") continue;
-          rows.push({
-            candidate,
-            attacker,
-            move,
-            attackStat,
-            attackerNature,
-            effectiveness,
-            currentDamage,
-            afterDamage,
-            diff: afterDamage - currentDamage,
-            line,
-          });
+            const line = damageLine(current.hp, after.hp, currentDamage, afterDamage);
+            if (afterDamage >= after.hp) continue;
+            if (afterDamage === currentDamage && line === "変化なし") continue;
+            rows.push({
+              candidate,
+              attacker,
+              move,
+              attackStat,
+              attackerPoints,
+              attackerNature,
+              effectiveness,
+              currentDamage,
+              afterDamage,
+              diff: afterDamage - currentDamage,
+              line,
+            });
+          }
         }
       }
     }
@@ -389,6 +406,8 @@ function readInput() {
     attackerPoints: readAttackerPoints(),
     attackerNatures: getCheckedValues("attackerNature"),
     effectiveness: getCheckedValues("effectiveness"),
+    movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
+    powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
   };
 }
 
@@ -485,9 +504,12 @@ function getCheckedValues(name) {
 }
 
 function readAttackerPoints() {
-  const preset = getCheckedValues("attackerPointsPreset")[0] ?? "32";
-  const value = preset === "custom" ? toInt(els.attackerPoints.value) : toInt(preset);
-  return clamp(value, 0, state.rules.statPoint.maxPerStat);
+  const presets = getCheckedValues("attackerPointsPreset");
+  const values = presets.map((preset) => {
+    const value = preset === "custom" ? toInt(els.attackerPoints.value) : toInt(preset);
+    return clamp(value, 0, state.rules.statPoint.maxPerStat);
+  });
+  return [...new Set(values.length ? values : [32])];
 }
 
 function getDefenderNatureMode(statKey) {
@@ -573,6 +595,11 @@ function matchesEffectiveness(value, filter) {
   return filter.includes("all") || filter.some((item) => Number(item) === value);
 }
 
+function matchesMovePower(power, threshold, comparison) {
+  if (threshold === null) return true;
+  return comparison === "lte" ? power <= threshold : power >= threshold;
+}
+
 function damageLine(currentHp, afterHp, before, after) {
   const beforeHits = hitsToKo(currentHp, before);
   const afterHits = hitsToKo(afterHp, after);
@@ -621,7 +648,7 @@ function renderResults(rows, candidateCount) {
           <td class="result-diff">${row.diff}</td>
           <td class="result-current">${row.currentDamage}</td>
           <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
-          <td class="result-attack">${row.attackStat}${row.attackerNature === "boost" ? "（補正有）" : "（補正無）"}</td>
+          <td class="result-attack">${row.attackStat}（${row.attackerPoints}pt・${row.attackerNature === "boost" ? "補正有" : "補正無"}）</td>
           <td class="result-category">${jpCategory[row.move.category]}</td>
         </tr>
       `;

@@ -466,6 +466,28 @@ legend {
   accent-color: var(--accent);
 }
 
+.move-power-filter {
+  display: grid;
+  grid-template-columns: minmax(88px, 1fr) auto;
+  align-items: end;
+}
+
+.move-power-filter legend {
+  grid-column: 1 / -1;
+}
+
+.move-power-input input {
+  min-height: 34px;
+  padding: 4px 8px;
+}
+
+.power-comparison {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 34px;
+}
+
 .summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

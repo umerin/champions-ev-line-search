@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-7" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-8" />
   </head>
   <body>
     <main class="app-shell">
@@ -189,6 +189,18 @@
               <label><input type="checkbox" name="effectiveness" value="0.5" checked /> 1/2</label>
               <label><input type="checkbox" name="effectiveness" value="0.25" checked /> 1/4</label>
             </fieldset>
+
+            <fieldset class="checkbox-group move-power-filter">
+              <legend>技威力</legend>
+              <label class="move-power-input">
+                <input id="movePower" type="number" min="1" max="250" step="1" list="movePowerOptions" placeholder="直接入力" />
+                <datalist id="movePowerOptions"></datalist>
+              </label>
+              <span class="power-comparison" data-filter-group="powerComparison">
+                <label><input type="checkbox" name="powerComparison" value="gte" checked /> 以上</label>
+                <label><input type="checkbox" name="powerComparison" value="lte" /> 以下</label>
+              </span>
+            </fieldset>
           </div>
 
           <div class="summary" id="summary">
@@ -230,6 +242,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-7"></script>
+    <script type="module" src="./app.js?v=20260712-9"></script>
   </body>
 </html>
