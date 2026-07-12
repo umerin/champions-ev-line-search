@@ -43,6 +43,7 @@ const els = {
   movePower: document.querySelector("#movePower"),
   includePriorityMoves: document.querySelector("#includePriorityMoves"),
   higherOffenseOnly: document.querySelector("#higherOffenseOnly"),
+  prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
 };
@@ -139,10 +140,11 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly)').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#prioritizeMega)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.higherOffenseOnly.addEventListener("change", runSearch);
+    els.prioritizeMega.addEventListener("change", runSearch);
     els.attackerPoints.addEventListener("input", scheduleSearch);
     els.movePower.addEventListener("input", scheduleSearch);
     els.includePriorityMoves.addEventListener("change", runSearch);
@@ -459,7 +461,12 @@ function runSearch() {
     }
   }
 
-  rows.sort((a, b) => lineScore(b.line) - lineScore(a.line) || a.diff - b.diff);
+  rows.sort((a, b) => {
+    const megaPriority = input.prioritizeMega
+      ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
+      : 0;
+    return megaPriority || lineScore(b.line) - lineScore(a.line) || a.diff - b.diff;
+  });
   renderResults(rows.slice(0, 80), candidates.length);
 }
 
@@ -538,6 +545,7 @@ function readInput() {
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
     higherOffenseOnly: els.higherOffenseOnly.checked,
+    prioritizeMega: els.prioritizeMega.checked,
   };
 }
 
@@ -744,6 +752,7 @@ function matchesHigherOffense(pokemon, category) {
 function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
   if (includePriorityMoves && (move.priority > 0 || priorityMoveIds.has(move.id))) return true;
   if (threshold === null) return true;
+  if (comparison === "gt") return move.power > threshold;
   return comparison === "lte" ? move.power <= threshold : move.power >= threshold;
 }
 

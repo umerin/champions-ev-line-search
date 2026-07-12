@@ -552,6 +552,8 @@ legend {
 
 .power-comparison {
   display: inline-flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   min-height: 34px;

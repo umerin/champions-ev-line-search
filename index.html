@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-14" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-15" />
   </head>
   <body>
     <main class="app-shell">
@@ -178,6 +178,7 @@
               <label><input type="checkbox" name="attackKind" value="physical" checked /> 物理</label>
               <label><input type="checkbox" name="attackKind" value="both" checked /> 両方</label>
               <label class="higher-offense-option"><input id="higherOffenseOnly" type="checkbox" /> 攻撃・特攻の高い方のみ対象</label>
+              <label class="higher-offense-option"><input id="prioritizeMega" type="checkbox" /> メガシンカを優先表示</label>
             </fieldset>
 
             <fieldset class="checkbox-group" data-filter-group="attackerNature">
@@ -206,6 +207,7 @@
               <span class="power-comparison" data-filter-group="powerComparison">
                 <label><input type="checkbox" name="powerComparison" value="gte" checked /> 以上</label>
                 <label><input type="checkbox" name="powerComparison" value="lte" /> 以下</label>
+                <label><input type="checkbox" name="powerComparison" value="gt" /> 以下を除外</label>
               </span>
               <label class="priority-move-option">
                 <input id="includePriorityMoves" type="checkbox" /> 先制技を全て含める
@@ -252,6 +254,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-22"></script>
+    <script type="module" src="./app.js?v=20260712-24"></script>
   </body>
 </html>
