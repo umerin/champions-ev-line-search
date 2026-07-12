@@ -192,6 +192,11 @@ fieldset {
   margin-left: 12px;
 }
 
+.defender-nature-field {
+  padding: 10px 12px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
 .stat-table-head,
 .stat-row {
   display: grid;

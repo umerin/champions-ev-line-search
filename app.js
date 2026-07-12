@@ -26,6 +26,7 @@ const els = {
   currentHpPoints: document.querySelector("#currentHpPoints"),
   currentDefPoints: document.querySelector("#currentDefPoints"),
   currentSpdPoints: document.querySelector("#currentSpdPoints"),
+  defenderNature: document.querySelector("#defenderNature"),
   remainingPoints: document.querySelector("#remainingPoints"),
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
   attackKind: document.querySelector("#attackKind"),
@@ -99,6 +100,10 @@ async function init() {
     els.currentSpdPoints.addEventListener("input", () => {
       updateCurrentStatsDefault();
     });
+    els.defenderNature.addEventListener("change", () => {
+      updateCurrentStatsDefault();
+      runSearch();
+    });
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -124,8 +129,8 @@ function updateCurrentStatsDefault() {
   const defPoints = clamp(toInt(els.currentDefPoints.value), 0, state.rules.statPoint.maxPerStat);
   const spdPoints = clamp(toInt(els.currentSpdPoints.value), 0, state.rules.statPoint.maxPerStat);
   els.currentHp.value = calcHpStat(defender.baseStats.hp, hpPoints);
-  els.currentDef.value = calcNonHpStat(defender.baseStats.def, defPoints, "neutral");
-  els.currentSpd.value = calcNonHpStat(defender.baseStats.spd, spdPoints, "neutral");
+  els.currentDef.value = calcNonHpStat(defender.baseStats.def, defPoints, getDefenderNatureMode("def"));
+  els.currentSpd.value = calcNonHpStat(defender.baseStats.spd, spdPoints, getDefenderNatureMode("spd"));
   const usedPoints = hpPoints + defPoints + spdPoints;
   const unallocated = state.rules.statPoint.totalDefault - usedPoints;
   els.unallocatedPoints.textContent = Math.max(0, unallocated);
@@ -170,7 +175,7 @@ function runSearch() {
   const rows = [];
 
   for (const candidate of candidates) {
-    const after = applyCandidateStats(current, candidate);
+    const after = applyCandidateStats(defender, input, candidate);
     for (const attacker of pokemonPool) {
       for (const move of state.moves) {
         if (!isMoveAllowed(move.id)) continue;
@@ -234,6 +239,7 @@ function readInput() {
     currentHpPoints: toInt(els.currentHpPoints.value),
     currentDefPoints: toInt(els.currentDefPoints.value),
     currentSpdPoints: toInt(els.currentSpdPoints.value),
+    defenderNature: els.defenderNature.value,
     remainingPoints: toInt(els.remainingPoints.value),
     attackKind: els.attackKind.value,
     attackerPoints: clamp(toInt(els.attackerPoints.value), 0, state.rules.statPoint.maxPerStat),
@@ -311,12 +317,24 @@ function buildDefensiveCandidates(input) {
   return candidates;
 }
 
-function applyCandidateStats(current, candidate) {
+function applyCandidateStats(defender, input, candidate) {
   return {
-    hp: current.hp + statPointToBonus(candidate.hpAdd),
-    def: current.def + statPointToBonus(candidate.defAdd),
-    spd: current.spd + statPointToBonus(candidate.spdAdd),
+    hp: calcHpStat(defender.baseStats.hp, input.currentHpPoints + candidate.hpAdd),
+    def: calcNonHpStat(
+      defender.baseStats.def,
+      input.currentDefPoints + candidate.defAdd,
+      input.defenderNature === "def" ? "boost" : "neutral",
+    ),
+    spd: calcNonHpStat(
+      defender.baseStats.spd,
+      input.currentSpdPoints + candidate.spdAdd,
+      input.defenderNature === "spd" ? "boost" : "neutral",
+    ),
   };
+}
+
+function getDefenderNatureMode(statKey) {
+  return els.defenderNature.value === statKey ? "boost" : "neutral";
 }
 
 function statPointToBonus(points) {

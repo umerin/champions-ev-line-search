@@ -56,6 +56,14 @@
 
           <fieldset class="stat-allocation">
             <legend>現在の耐久配分</legend>
+            <label class="defender-nature-field">
+              自分の性格補正
+              <select id="defenderNature">
+                <option value="neutral">補正なし</option>
+                <option value="def">B上昇</option>
+                <option value="spd">D上昇</option>
+              </select>
+            </label>
             <div class="stat-table-head" aria-hidden="true">
               <span>能力</span><span>ポイント</span><span>実数値</span>
             </div>
@@ -174,6 +182,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260711-1"></script>
+    <script type="module" src="./app.js?v=20260712-2"></script>
   </body>
 </html>
