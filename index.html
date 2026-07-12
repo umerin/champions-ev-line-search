@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-11" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-13" />
   </head>
   <body>
     <main class="app-shell">
@@ -27,7 +27,7 @@
           </div>
 
           <div class="field-grid">
-            <div class="form-field">
+            <div class="form-field pokemon-field">
               <span>自分のポケモン</span>
               <div class="pokemon-selector-row">
                 <div class="pokemon-combobox" id="pokemonCombobox">
@@ -39,13 +39,14 @@
               </div>
             </div>
 
-            <label>
-              ルール
-              <select id="battleRule">
-                <option value="single">シングル</option>
-                <option value="double">ダブル</option>
-              </select>
-            </label>
+            <div class="form-field">
+              <span>ルール</span>
+              <div class="rule-toggle" role="group" aria-label="ルール選択">
+                <button type="button" class="rule-toggle-button is-selected" data-rule="single" aria-pressed="true">シングル</button>
+                <button type="button" class="rule-toggle-button" data-rule="double" aria-pressed="false">ダブル</button>
+                <input id="battleRule" type="hidden" value="single" />
+              </div>
+            </div>
 
             <label>
               対象範囲
@@ -249,6 +250,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-14"></script>
+    <script type="module" src="./app.js?v=20260712-15"></script>
   </body>
 </html>

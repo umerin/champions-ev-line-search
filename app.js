@@ -117,6 +117,9 @@ async function init() {
     els.defenderSearch.addEventListener("focus", () => renderPokemonOptions(els.defenderSearch.value));
     els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
     els.megaToggle.addEventListener("click", cycleMegaForm);
+    document.querySelectorAll(".rule-toggle-button").forEach((button) => {
+      button.addEventListener("click", () => selectBattleRule(button));
+    });
     document.addEventListener("click", (event) => {
       if (!event.target.closest("#pokemonCombobox")) closePokemonOptions();
     });
@@ -256,6 +259,16 @@ function cycleMegaForm() {
   const currentIndex = family.findIndex((pokemon) => pokemon.id === current.id);
   const next = family[(currentIndex + 1) % family.length];
   selectPokemon(next.id);
+}
+
+function selectBattleRule(selectedButton) {
+  document.querySelectorAll(".rule-toggle-button").forEach((button) => {
+    const selected = button === selectedButton;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  els.battleRule.value = selectedButton.dataset.rule;
+  runSearch();
 }
 
 function closePokemonOptions() {

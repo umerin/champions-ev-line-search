@@ -200,6 +200,10 @@ fieldset {
   font-weight: 700;
 }
 
+.pokemon-field {
+  grid-column: 1 / -1;
+}
+
 .pokemon-combobox {
   position: relative;
 }
@@ -233,8 +237,36 @@ fieldset {
   cursor: not-allowed;
 }
 
+.rule-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 3px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #eef2f6;
+}
+
+.rule-toggle-button {
+  min-height: calc(var(--control-height) - 8px);
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rule-toggle-button.is-selected {
+  background: white;
+  color: var(--accent-strong);
+  box-shadow: 0 1px 5px rgba(21, 31, 45, 0.13);
+}
+
 .pokemon-combobox input[type="search"] {
   width: 100%;
+  padding-right: 8px;
+  font-size: 13px;
 }
 
 .pokemon-options {
