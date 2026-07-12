@@ -7,6 +7,7 @@ const outDir = resolve(__dirname, "../data");
 const api = "https://pokeapi.co/api/v2";
 const allMode = process.argv.includes("--all");
 const concurrency = Number(process.env.POKEAPI_CONCURRENCY ?? 8);
+const evolutionChainPromises = new Map();
 
 const samplePokemonIds = [
   "pikachu",
@@ -80,9 +81,23 @@ function localizedName(resource, fallback) {
   };
 }
 
+function collectFinalSpecies(node, result = new Set()) {
+  if (!node.evolves_to.length) result.add(node.species.name);
+  node.evolves_to.forEach((child) => collectFinalSpecies(child, result));
+  return result;
+}
+
+function getFinalSpecies(chainUrl) {
+  if (!evolutionChainPromises.has(chainUrl)) {
+    evolutionChainPromises.set(chainUrl, getJson(chainUrl).then((chain) => collectFinalSpecies(chain.chain)));
+  }
+  return evolutionChainPromises.get(chainUrl);
+}
+
 async function fetchPokemon(id) {
   const pokemon = await getJson(`${api}/pokemon/${id}`);
   const species = await getJson(pokemon.species.url);
+  const finalSpecies = await getFinalSpecies(species.evolution_chain.url);
   const stats = Object.fromEntries(pokemon.stats.map((entry) => [entry.stat.name, entry.base_stat]));
   return {
     id: pokemon.name,
@@ -90,6 +105,7 @@ async function fetchPokemon(id) {
     types: pokemon.types
       .sort((a, b) => a.slot - b.slot)
       .map((entry) => entry.type.name),
+    isFinalEvolution: finalSpecies.has(species.name),
     baseStats: {
       hp: stats.hp,
       atk: stats.attack,

@@ -14,6 +14,8 @@ const state = {
   availability: null,
 };
 
+let searchTimer = null;
+
 const els = {
   dataStatus: document.querySelector("#dataStatus"),
   form: document.querySelector("#searchForm"),
@@ -78,6 +80,8 @@ const priorityMoveIds = new Set([
   "water-shuriken",
 ]);
 
+const finalEvolutionExceptions = new Set(["floette-eternal", "pikachu"]);
+
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`${path} の読込に失敗しました`);
@@ -139,8 +143,8 @@ async function init() {
     document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
-    els.attackerPoints.addEventListener("input", runSearch);
-    els.movePower.addEventListener("input", runSearch);
+    els.attackerPoints.addEventListener("input", scheduleSearch);
+    els.movePower.addEventListener("input", scheduleSearch);
     els.includePriorityMoves.addEventListener("change", runSearch);
     runSearch();
   } catch (error) {
@@ -402,71 +406,89 @@ function runSearch() {
   };
   const candidates = buildDefensiveCandidates(input);
   const rows = [];
+  const attackScenarios = buildAttackScenarios(defender, pokemonPool, input, current);
 
   for (const candidate of candidates) {
     const after = applyCandidateStats(defender, input, candidate);
-    for (const attacker of pokemonPool) {
-      for (const move of state.moves) {
-        if (!isMoveAllowed(move.id)) continue;
-        if (!matchesMovePower(move, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
-        if (!move.users.includes(attacker.id)) continue;
-        if (!matchesAttackKind(move.category, input.attackKind)) continue;
-
-        const effectiveness = calcEffectiveness(move.type, defender.types);
-        if (!matchesEffectiveness(effectiveness, input.effectiveness)) continue;
-        if (effectiveness === 0) continue;
-
-        const attackerNatureModes = input.attackerNatures.includes("both")
-          ? ["boost", "neutral"]
-          : input.attackerNatures;
-        for (const attackerPoints of input.attackerPoints) {
-          for (const attackerNature of attackerNatureModes) {
-            const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
-            const currentDamage = calcMaxDamage({
-              level: state.rules.level,
-              power: move.power,
-              attack: attackStat,
-              defense: move.category === "physical" ? current.def : current.spd,
-              stab: attacker.types.includes(move.type) ? 1.5 : 1,
-              effectiveness,
-              rule: input.battleRule,
-              isSpreadMove: move.isSpreadMove,
-            });
-            const afterDamage = calcMaxDamage({
-              level: state.rules.level,
-              power: move.power,
-              attack: attackStat,
-              defense: move.category === "physical" ? after.def : after.spd,
-              stab: attacker.types.includes(move.type) ? 1.5 : 1,
-              effectiveness,
-              rule: input.battleRule,
-              isSpreadMove: move.isSpreadMove,
-            });
-
-            const line = damageLine(current.hp, after.hp, currentDamage, afterDamage);
-            if (afterDamage >= after.hp) continue;
-            if (afterDamage === currentDamage && line === "変化なし") continue;
-            rows.push({
-              candidate,
-              attacker,
-              move,
-              attackStat,
-              attackerPoints,
-              attackerNature,
-              effectiveness,
-              currentDamage,
-              afterDamage,
-              diff: afterDamage - currentDamage,
-              line,
-            });
-          }
-        }
-      }
+    for (const scenario of attackScenarios) {
+      const afterDamage = calcMaxDamage({
+        level: state.rules.level,
+        power: scenario.move.power,
+        attack: scenario.attackStat,
+        defense: scenario.move.category === "physical" ? after.def : after.spd,
+        stab: scenario.stab,
+        effectiveness: scenario.effectiveness,
+        rule: input.battleRule,
+        isSpreadMove: scenario.move.isSpreadMove,
+      });
+      const line = damageLine(current.hp, after.hp, scenario.currentDamage, afterDamage);
+      if (afterDamage >= after.hp) continue;
+      if (afterDamage === scenario.currentDamage && line === "変化なし") continue;
+      rows.push({
+        candidate,
+        ...scenario,
+        afterDamage,
+        diff: afterDamage - scenario.currentDamage,
+        line,
+      });
     }
   }
 
   rows.sort((a, b) => lineScore(b.line) - lineScore(a.line) || a.diff - b.diff);
   renderResults(rows.slice(0, 80), candidates.length);
+}
+
+function scheduleSearch() {
+  window.clearTimeout(searchTimer);
+  searchTimer = window.setTimeout(runSearch, 180);
+}
+
+function buildAttackScenarios(defender, pokemonPool, input, current) {
+  const attackerById = new Map(pokemonPool.map((pokemon) => [pokemon.id, pokemon]));
+  const attackerNatureModes = input.attackerNatures.includes("both")
+    ? ["boost", "neutral"]
+    : input.attackerNatures;
+  const scenarios = [];
+
+  for (const move of state.moves) {
+    if (!isMoveAllowed(move.id)) continue;
+    if (!matchesMovePower(move, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
+    if (!matchesAttackKind(move.category, input.attackKind)) continue;
+    const effectiveness = calcEffectiveness(move.type, defender.types);
+    if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
+
+    for (const attackerId of move.users) {
+      const attacker = attackerById.get(attackerId);
+      if (!attacker) continue;
+      const stab = attacker.types.includes(move.type) ? 1.5 : 1;
+      for (const attackerPoints of input.attackerPoints) {
+        for (const attackerNature of attackerNatureModes) {
+          const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
+          const currentDamage = calcMaxDamage({
+            level: state.rules.level,
+            power: move.power,
+            attack: attackStat,
+            defense: move.category === "physical" ? current.def : current.spd,
+            stab,
+            effectiveness,
+            rule: input.battleRule,
+            isSpreadMove: move.isSpreadMove,
+          });
+          scenarios.push({
+            attacker,
+            move,
+            attackStat,
+            attackerPoints,
+            attackerNature,
+            effectiveness,
+            stab,
+            currentDamage,
+          });
+        }
+      }
+    }
+  }
+  return scenarios;
 }
 
 function readInput() {
@@ -533,6 +555,9 @@ function useChampionsFilter() {
 }
 
 function getPokemonPool() {
+  if (els.availabilityMode.value === "final") {
+    return state.pokemon.filter((pokemon) => pokemon.isFinalEvolution || finalEvolutionExceptions.has(pokemon.id));
+  }
   if (!useChampionsFilter() || !state.availability?.restrictPokemon) return state.pokemon;
   const allowed = new Set(state.availability.pokemon ?? []);
   const allowedNames = new Set(
@@ -553,7 +578,9 @@ function isMoveAllowed(moveId) {
 
 function updateDataStatus() {
   const pokemonPool = getPokemonPool();
-  const mode = useChampionsFilter() ? "確認済みポケモン" : "全データ";
+  const mode = els.availabilityMode.value === "final"
+    ? "チャンピオンズ（仮）"
+    : useChampionsFilter() ? "確認済みポケモン" : "全データ";
   const pokemonNote = useChampionsFilter() && !state.availability?.restrictPokemon ? " / ポケモン未絞込" : "";
   const moveNote = useChampionsFilter() && !state.availability?.restrictMoves ? " / 技は全データ（未検証）" : "";
   els.dataStatus.textContent = `${mode}: ${pokemonPool.length}匹 / ${state.moves.length}技${pokemonNote}${moveNote}`;
