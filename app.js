@@ -21,12 +21,17 @@ const els = {
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
+  currentAtk: document.querySelector("#currentAtk"),
   currentDef: document.querySelector("#currentDef"),
+  currentSpa: document.querySelector("#currentSpa"),
   currentSpd: document.querySelector("#currentSpd"),
+  currentSpe: document.querySelector("#currentSpe"),
   currentHpPoints: document.querySelector("#currentHpPoints"),
+  currentAtkPoints: document.querySelector("#currentAtkPoints"),
   currentDefPoints: document.querySelector("#currentDefPoints"),
+  currentSpaPoints: document.querySelector("#currentSpaPoints"),
   currentSpdPoints: document.querySelector("#currentSpdPoints"),
-  defenderNature: document.querySelector("#defenderNature"),
+  currentSpePoints: document.querySelector("#currentSpePoints"),
   remainingPoints: document.querySelector("#remainingPoints"),
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
   attackKind: document.querySelector("#attackKind"),
@@ -91,18 +96,12 @@ async function init() {
       updateDataStatus();
       runSearch();
     });
-    els.currentHpPoints.addEventListener("input", () => {
-      updateCurrentStatsDefault();
+    ["currentHpPoints", "currentAtkPoints", "currentDefPoints", "currentSpaPoints", "currentSpdPoints", "currentSpePoints"].forEach((key) => {
+      els[key].addEventListener("input", updateCurrentStatsDefault);
     });
-    els.currentDefPoints.addEventListener("input", () => {
-      updateCurrentStatsDefault();
-    });
-    els.currentSpdPoints.addEventListener("input", () => {
-      updateCurrentStatsDefault();
-    });
-    els.defenderNature.addEventListener("change", () => {
-      updateCurrentStatsDefault();
-      runSearch();
+    document.querySelectorAll(".nature-button").forEach((button) => {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => toggleNatureButton(button));
     });
     runSearch();
   } catch (error) {
@@ -126,12 +125,18 @@ function updateCurrentStatsDefault() {
   const defender = state.pokemon.find((item) => item.id === els.defenderSelect.value);
   if (!defender) return;
   const hpPoints = clamp(toInt(els.currentHpPoints.value), 0, state.rules.statPoint.maxPerStat);
+  const atkPoints = clamp(toInt(els.currentAtkPoints.value), 0, state.rules.statPoint.maxPerStat);
   const defPoints = clamp(toInt(els.currentDefPoints.value), 0, state.rules.statPoint.maxPerStat);
+  const spaPoints = clamp(toInt(els.currentSpaPoints.value), 0, state.rules.statPoint.maxPerStat);
   const spdPoints = clamp(toInt(els.currentSpdPoints.value), 0, state.rules.statPoint.maxPerStat);
+  const spePoints = clamp(toInt(els.currentSpePoints.value), 0, state.rules.statPoint.maxPerStat);
   els.currentHp.value = calcHpStat(defender.baseStats.hp, hpPoints);
+  els.currentAtk.value = calcNonHpStat(defender.baseStats.atk, atkPoints, getDefenderNatureMode("atk"));
   els.currentDef.value = calcNonHpStat(defender.baseStats.def, defPoints, getDefenderNatureMode("def"));
+  els.currentSpa.value = calcNonHpStat(defender.baseStats.spa, spaPoints, getDefenderNatureMode("spa"));
   els.currentSpd.value = calcNonHpStat(defender.baseStats.spd, spdPoints, getDefenderNatureMode("spd"));
-  const usedPoints = hpPoints + defPoints + spdPoints;
+  els.currentSpe.value = calcNonHpStat(defender.baseStats.spe, spePoints, getDefenderNatureMode("spe"));
+  const usedPoints = hpPoints + atkPoints + defPoints + spaPoints + spdPoints + spePoints;
   const unallocated = state.rules.statPoint.totalDefault - usedPoints;
   els.unallocatedPoints.textContent = Math.max(0, unallocated);
   els.unallocatedPoints.parentElement.classList.toggle("is-over", unallocated < 0);
@@ -146,6 +151,28 @@ function adjustPointInput(button) {
     state.rules.statPoint.maxPerStat,
   );
   input.dispatchEvent(new Event("input", { bubbles: true }));
+}
+
+function toggleNatureButton(button) {
+  const wasSelected = button.classList.contains("is-selected");
+  const { natureMode, natureStat } = button.dataset;
+
+  document.querySelectorAll(`.nature-button[data-nature-mode="${natureMode}"]`).forEach((item) => {
+    item.classList.remove("is-selected");
+    item.setAttribute("aria-pressed", "false");
+  });
+  if (!wasSelected) {
+    const opposite = natureMode === "boost" ? "drop" : "boost";
+    const oppositeButton = document.querySelector(
+      `.nature-button[data-nature-stat="${natureStat}"][data-nature-mode="${opposite}"]`,
+    );
+    oppositeButton?.classList.remove("is-selected");
+    oppositeButton?.setAttribute("aria-pressed", "false");
+    button.classList.add("is-selected");
+    button.setAttribute("aria-pressed", "true");
+  }
+  updateCurrentStatsDefault();
+  runSearch();
 }
 
 function onSubmit(event) {
@@ -237,9 +264,13 @@ function readInput() {
     currentDef: toInt(els.currentDef.value),
     currentSpd: toInt(els.currentSpd.value),
     currentHpPoints: toInt(els.currentHpPoints.value),
+    currentAtkPoints: toInt(els.currentAtkPoints.value),
     currentDefPoints: toInt(els.currentDefPoints.value),
+    currentSpaPoints: toInt(els.currentSpaPoints.value),
     currentSpdPoints: toInt(els.currentSpdPoints.value),
-    defenderNature: els.defenderNature.value,
+    currentSpePoints: toInt(els.currentSpePoints.value),
+    defenderNatureBoost: getSelectedNatureStat("boost"),
+    defenderNatureDrop: getSelectedNatureStat("drop"),
     remainingPoints: toInt(els.remainingPoints.value),
     attackKind: els.attackKind.value,
     attackerPoints: clamp(toInt(els.attackerPoints.value), 0, state.rules.statPoint.maxPerStat),
@@ -252,12 +283,15 @@ function validatePointAllocation(input) {
   const { min, maxPerStat, totalDefault } = state.rules.statPoint;
   const currentPoints = [
     input.currentHpPoints,
+    input.currentAtkPoints,
     input.currentDefPoints,
+    input.currentSpaPoints,
     input.currentSpdPoints,
+    input.currentSpePoints,
   ];
 
   if (currentPoints.some((value) => value < min || value > maxPerStat)) {
-    return `現在のH/B/Dポイントは${min}〜${maxPerStat}で入力してください。`;
+    return `現在のH/A/B/C/D/Sポイントは${min}〜${maxPerStat}で入力してください。`;
   }
   if (input.remainingPoints < min || input.remainingPoints > totalDefault) {
     return `残りポイントは${min}〜${totalDefault}で入力してください。`;
@@ -265,7 +299,7 @@ function validatePointAllocation(input) {
 
   const total = currentPoints.reduce((sum, value) => sum + value, input.remainingPoints);
   if (total > totalDefault) {
-    return `現在のH/B/Dポイントと残りポイントの合計は${totalDefault}以下にしてください（現在: ${total}）。`;
+    return `現在のH/A/B/C/D/Sポイントと残りポイントの合計は${totalDefault}以下にしてください（現在: ${total}）。`;
   }
   return null;
 }
@@ -323,18 +357,30 @@ function applyCandidateStats(defender, input, candidate) {
     def: calcNonHpStat(
       defender.baseStats.def,
       input.currentDefPoints + candidate.defAdd,
-      input.defenderNature === "def" ? "boost" : "neutral",
+      getInputNatureMode(input, "def"),
     ),
     spd: calcNonHpStat(
       defender.baseStats.spd,
       input.currentSpdPoints + candidate.spdAdd,
-      input.defenderNature === "spd" ? "boost" : "neutral",
+      getInputNatureMode(input, "spd"),
     ),
   };
 }
 
 function getDefenderNatureMode(statKey) {
-  return els.defenderNature.value === statKey ? "boost" : "neutral";
+  if (getSelectedNatureStat("boost") === statKey) return "boost";
+  if (getSelectedNatureStat("drop") === statKey) return "drop";
+  return "neutral";
+}
+
+function getSelectedNatureStat(mode) {
+  return document.querySelector(`.nature-button.is-selected[data-nature-mode="${mode}"]`)?.dataset.natureStat ?? null;
+}
+
+function getInputNatureMode(input, statKey) {
+  if (input.defenderNatureBoost === statKey) return "boost";
+  if (input.defenderNatureDrop === statKey) return "drop";
+  return "neutral";
 }
 
 function statPointToBonus(points) {
@@ -348,7 +394,7 @@ function calcAttackStat(pokemon, category, statPoints, natureMode) {
 
 function calcNonHpStat(baseStat, statPoints, natureMode) {
   const baseValue = Math.floor(((2 * baseStat + 31) * state.rules.level) / 100 + 5);
-  const nature = natureMode === "boost" ? state.rules.nature.boost : state.rules.nature.neutral;
+  const nature = state.rules.nature[natureMode] ?? state.rules.nature.neutral;
   return Math.floor((baseValue + statPointToBonus(statPoints)) * nature);
 }
 

@@ -192,15 +192,10 @@ fieldset {
   margin-left: 12px;
 }
 
-.defender-nature-field {
-  padding: 10px 12px 12px;
-  border-bottom: 1px solid var(--line);
-}
-
 .stat-table-head,
 .stat-row {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) 76px;
+  grid-template-columns: 34px minmax(0, 1fr) 76px 76px;
   gap: 10px;
   align-items: center;
 }
@@ -253,6 +248,35 @@ fieldset {
 
 .point-button:hover {
   background: var(--accent-soft);
+}
+
+.nature-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.nature-button {
+  min-height: 34px;
+  padding: 0;
+  border: 1px solid #b8c7d6;
+  border-radius: 8px;
+  background: white;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.nature-button[data-nature-mode="boost"].is-selected {
+  border-color: #2b8a5a;
+  background: #e7f7ef;
+  color: #176b42;
+}
+
+.nature-button[data-nature-mode="drop"].is-selected {
+  border-color: #d05a5a;
+  background: #fff0f0;
+  color: #a73535;
 }
 
 .stat-value[readonly] {
@@ -455,7 +479,7 @@ tbody tr:hover {
 
   .stat-table-head,
   .stat-row {
-    grid-template-columns: 28px minmax(0, 1fr) 70px;
+    grid-template-columns: 28px minmax(0, 1fr) 70px 66px;
     gap: 7px;
   }
 

@@ -9,6 +9,7 @@
   },
   "nature": {
     "boost": 1.1,
+    "drop": 0.9,
     "neutral": 1
   },
   "damageRandomMax": 1,

@@ -55,17 +55,9 @@
           </div>
 
           <fieldset class="stat-allocation">
-            <legend>現在の耐久配分</legend>
-            <label class="defender-nature-field">
-              自分の性格補正
-              <select id="defenderNature">
-                <option value="neutral">補正なし</option>
-                <option value="def">B上昇</option>
-                <option value="spd">D上昇</option>
-              </select>
-            </label>
+            <legend>現在のステータス配分</legend>
             <div class="stat-table-head" aria-hidden="true">
-              <span>能力</span><span>ポイント</span><span>実数値</span>
+              <span>能力</span><span>ポイント</span><span>実数値</span><span>性格</span>
             </div>
             <div class="stat-row">
               <strong>H</strong>
@@ -75,6 +67,20 @@
                 <button type="button" class="point-button" data-target="currentHpPoints" data-delta="1" aria-label="Hを1増やす">＋</button>
               </div>
               <input id="currentHp" class="stat-value" type="number" min="1" value="175" readonly aria-label="現在HP実数値" />
+              <span></span>
+            </div>
+            <div class="stat-row">
+              <strong>A</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentAtkPoints" data-delta="-1" aria-label="Aを1減らす">−</button>
+                <input id="currentAtkPoints" type="number" min="0" max="32" value="0" aria-label="Aポイント" />
+                <button type="button" class="point-button" data-target="currentAtkPoints" data-delta="1" aria-label="Aを1増やす">＋</button>
+              </div>
+              <input id="currentAtk" class="stat-value" type="number" min="1" readonly aria-label="現在攻撃実数値" />
+              <div class="nature-buttons" aria-label="攻撃の性格補正">
+                <button type="button" class="nature-button" data-nature-stat="atk" data-nature-mode="boost" aria-label="攻撃を上昇補正">＋</button>
+                <button type="button" class="nature-button" data-nature-stat="atk" data-nature-mode="drop" aria-label="攻撃を下降補正">−</button>
+              </div>
             </div>
             <div class="stat-row">
               <strong>B</strong>
@@ -84,6 +90,23 @@
                 <button type="button" class="point-button" data-target="currentDefPoints" data-delta="1" aria-label="Bを1増やす">＋</button>
               </div>
               <input id="currentDef" class="stat-value" type="number" min="1" value="115" readonly aria-label="現在防御実数値" />
+              <div class="nature-buttons" aria-label="防御の性格補正">
+                <button type="button" class="nature-button" data-nature-stat="def" data-nature-mode="boost" aria-label="防御を上昇補正">＋</button>
+                <button type="button" class="nature-button" data-nature-stat="def" data-nature-mode="drop" aria-label="防御を下降補正">−</button>
+              </div>
+            </div>
+            <div class="stat-row">
+              <strong>C</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentSpaPoints" data-delta="-1" aria-label="Cを1減らす">−</button>
+                <input id="currentSpaPoints" type="number" min="0" max="32" value="0" aria-label="Cポイント" />
+                <button type="button" class="point-button" data-target="currentSpaPoints" data-delta="1" aria-label="Cを1増やす">＋</button>
+              </div>
+              <input id="currentSpa" class="stat-value" type="number" min="1" readonly aria-label="現在特攻実数値" />
+              <div class="nature-buttons" aria-label="特攻の性格補正">
+                <button type="button" class="nature-button" data-nature-stat="spa" data-nature-mode="boost" aria-label="特攻を上昇補正">＋</button>
+                <button type="button" class="nature-button" data-nature-stat="spa" data-nature-mode="drop" aria-label="特攻を下降補正">−</button>
+              </div>
             </div>
             <div class="stat-row">
               <strong>D</strong>
@@ -93,6 +116,23 @@
                 <button type="button" class="point-button" data-target="currentSpdPoints" data-delta="1" aria-label="Dを1増やす">＋</button>
               </div>
               <input id="currentSpd" class="stat-value" type="number" min="1" value="105" readonly aria-label="現在特防実数値" />
+              <div class="nature-buttons" aria-label="特防の性格補正">
+                <button type="button" class="nature-button" data-nature-stat="spd" data-nature-mode="boost" aria-label="特防を上昇補正">＋</button>
+                <button type="button" class="nature-button" data-nature-stat="spd" data-nature-mode="drop" aria-label="特防を下降補正">−</button>
+              </div>
+            </div>
+            <div class="stat-row">
+              <strong>S</strong>
+              <div class="point-stepper">
+                <button type="button" class="point-button" data-target="currentSpePoints" data-delta="-1" aria-label="Sを1減らす">−</button>
+                <input id="currentSpePoints" type="number" min="0" max="32" value="0" aria-label="Sポイント" />
+                <button type="button" class="point-button" data-target="currentSpePoints" data-delta="1" aria-label="Sを1増やす">＋</button>
+              </div>
+              <input id="currentSpe" class="stat-value" type="number" min="1" readonly aria-label="現在素早さ実数値" />
+              <div class="nature-buttons" aria-label="素早さの性格補正">
+                <button type="button" class="nature-button" data-nature-stat="spe" data-nature-mode="boost" aria-label="素早さを上昇補正">＋</button>
+                <button type="button" class="nature-button" data-nature-stat="spe" data-nature-mode="drop" aria-label="素早さを下降補正">−</button>
+              </div>
             </div>
             <div class="point-balance">未配分 <strong id="unallocatedPoints">66</strong> / 66</div>
           </fieldset>
@@ -182,6 +222,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-2"></script>
+    <script type="module" src="./app.js?v=20260712-4"></script>
   </body>
 </html>
