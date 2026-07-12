@@ -18,6 +18,8 @@ const els = {
   dataStatus: document.querySelector("#dataStatus"),
   form: document.querySelector("#searchForm"),
   defenderSelect: document.querySelector("#defenderSelect"),
+  defenderSearch: document.querySelector("#defenderSearch"),
+  defenderOptions: document.querySelector("#defenderOptions"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -87,6 +89,12 @@ async function init() {
       updateCurrentStatsDefault();
       runSearch();
     });
+    els.defenderSearch.addEventListener("input", () => renderPokemonOptions(els.defenderSearch.value));
+    els.defenderSearch.addEventListener("focus", () => renderPokemonOptions(els.defenderSearch.value));
+    els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest("#pokemonCombobox")) closePokemonOptions();
+    });
     els.availabilityMode.addEventListener("change", () => {
       populatePokemonSelect();
       updateCurrentStatsDefault();
@@ -113,12 +121,79 @@ async function init() {
 
 function populatePokemonSelect() {
   const selected = els.defenderSelect.value;
-  const pokemonPool = getPokemonPool();
-  els.defenderSelect.innerHTML = pokemonPool
-    .map((pokemon) => `<option value="${pokemon.id}">${pokemon.name.ja}</option>`)
-    .join("");
-  if (pokemonPool.some((pokemon) => pokemon.id === selected)) {
-    els.defenderSelect.value = selected;
+  const pokemonPool = getSortedPokemonPool();
+  const pokemon = pokemonPool.find((item) => item.id === selected) ?? pokemonPool[0];
+  if (!pokemon) return;
+  els.defenderSelect.value = pokemon.id;
+  els.defenderSearch.value = pokemon.name.ja;
+  closePokemonOptions();
+}
+
+function getSortedPokemonPool() {
+  return [...getPokemonPool()].sort((a, b) => {
+    const aName = a.name.jaHrkt ?? a.name.ja;
+    const bName = b.name.jaHrkt ?? b.name.ja;
+    return aName.localeCompare(bName, "ja");
+  });
+}
+
+function normalizePokemonSearch(value) {
+  return value
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[ァ-ヶ]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0x60));
+}
+
+function renderPokemonOptions(query) {
+  const normalizedQuery = normalizePokemonSearch(query.trim());
+  const matches = getSortedPokemonPool()
+    .filter((pokemon) => {
+      if (!normalizedQuery) return true;
+      return [pokemon.name.ja, pokemon.name.jaHrkt, pokemon.name.en, pokemon.id]
+        .filter(Boolean)
+        .some((name) => normalizePokemonSearch(name).includes(normalizedQuery));
+    })
+    .slice(0, 30);
+
+  els.defenderOptions.innerHTML = matches.length
+    ? matches.map((pokemon) => `
+        <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
+          ${escapeHtml(pokemon.name.ja)}
+        </button>
+      `).join("")
+    : '<span class="pokemon-option-empty">該当するポケモンがいません</span>';
+  els.defenderOptions.querySelectorAll(".pokemon-option").forEach((button) => {
+    button.addEventListener("click", () => selectPokemon(button.dataset.pokemonId));
+  });
+  els.defenderOptions.hidden = false;
+  els.defenderSearch.setAttribute("aria-expanded", "true");
+}
+
+function selectPokemon(pokemonId) {
+  const pokemon = getPokemonPool().find((item) => item.id === pokemonId);
+  if (!pokemon) return;
+  els.defenderSelect.value = pokemon.id;
+  els.defenderSearch.value = pokemon.name.ja;
+  closePokemonOptions();
+  els.defenderSelect.dispatchEvent(new Event("change", { bubbles: true }));
+}
+
+function closePokemonOptions() {
+  els.defenderOptions.hidden = true;
+  els.defenderSearch.setAttribute("aria-expanded", "false");
+}
+
+function handlePokemonSearchKeydown(event) {
+  if (event.key === "Escape") {
+    closePokemonOptions();
+    return;
+  }
+  if (event.key === "Enter") {
+    const firstOption = els.defenderOptions.querySelector(".pokemon-option");
+    if (firstOption && !els.defenderOptions.hidden) {
+      event.preventDefault();
+      selectPokemon(firstOption.dataset.pokemonId);
+    }
   }
 }
 
@@ -199,6 +274,10 @@ function handleOpponentFilterChange(checkbox) {
     } else if (!checkboxes.some((item) => item.checked)) {
       checkbox.checked = true;
     }
+  }
+  if (group === "attackerPointsPreset") {
+    const details = document.querySelector("#attackerPointsDetails");
+    if (details) details.open = getCheckedValues(group)[0] === "custom";
   }
   runSearch();
 }
@@ -307,7 +386,7 @@ function readInput() {
     defenderNatureDrop: getSelectedNatureStat("drop"),
     remainingPoints: toInt(els.remainingPoints.value),
     attackKind: getCheckedValues("attackKind")[0] ?? "both",
-    attackerPoints: clamp(toInt(els.attackerPoints.value), 0, state.rules.statPoint.maxPerStat),
+    attackerPoints: readAttackerPoints(),
     attackerNatures: getCheckedValues("attackerNature"),
     effectiveness: getCheckedValues("effectiveness"),
   };
@@ -403,6 +482,12 @@ function applyCandidateStats(defender, input, candidate) {
 
 function getCheckedValues(name) {
   return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+}
+
+function readAttackerPoints() {
+  const preset = getCheckedValues("attackerPointsPreset")[0] ?? "32";
+  const value = preset === "custom" ? toInt(els.attackerPoints.value) : toInt(preset);
+  return clamp(value, 0, state.rules.statPoint.maxPerStat);
 }
 
 function getDefenderNatureMode(statKey) {

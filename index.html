@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-5" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-7" />
   </head>
   <body>
     <main class="app-shell">
@@ -27,10 +27,14 @@
           </div>
 
           <div class="field-grid">
-            <label>
-              自分のポケモン
-              <select id="defenderSelect"></select>
-            </label>
+            <div class="form-field">
+              <span>自分のポケモン</span>
+              <div class="pokemon-combobox" id="pokemonCombobox">
+                <input id="defenderSearch" type="search" autocomplete="off" placeholder="名前を入力（例：が）" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="defenderOptions" />
+                <input id="defenderSelect" type="hidden" />
+                <div class="pokemon-options" id="defenderOptions" role="listbox" hidden></div>
+              </div>
+            </div>
 
             <label>
               ルール
@@ -147,10 +151,20 @@
           <div class="opponent-filters">
             <div class="opponent-filters-heading">
               <strong>相手条件</strong>
-              <label class="attacker-points-field">
-                攻撃側ポイント
-                <input id="attackerPoints" type="number" min="0" max="32" value="32" />
-              </label>
+              <fieldset class="checkbox-group attacker-points-presets" data-filter-group="attackerPointsPreset">
+                <legend>攻撃側ポイント</legend>
+                <label><input type="checkbox" name="attackerPointsPreset" value="1" /> 1</label>
+                <label><input type="checkbox" name="attackerPointsPreset" value="2" /> 2</label>
+                <label><input type="checkbox" name="attackerPointsPreset" value="32" checked /> 32</label>
+                <label><input type="checkbox" name="attackerPointsPreset" value="custom" /> その他</label>
+              </fieldset>
+              <details class="attacker-points-details" id="attackerPointsDetails">
+                <summary>詳細設定</summary>
+                <label class="attacker-points-field">
+                  任意のポイント
+                  <input id="attackerPoints" type="number" min="0" max="32" value="0" />
+                </label>
+              </details>
             </div>
 
             <fieldset class="checkbox-group" data-filter-group="attackKind">
@@ -216,6 +230,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-5"></script>
+    <script type="module" src="./app.js?v=20260712-7"></script>
   </body>
 </html>
