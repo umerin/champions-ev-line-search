@@ -177,10 +177,6 @@ function normalizePokemonSearch(value) {
     .replace(/[ァ-ヶ]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0x60));
 }
 
-function getPokemonBaseStatTotal(pokemon) {
-  return Object.values(pokemon.baseStats).reduce((total, stat) => total + stat, 0);
-}
-
 function getPokemonDisplayName(pokemon) {
   if (!pokemon.id.includes("-mega")) return pokemon.name.ja;
   const variant = pokemon.id.match(/-mega-([xyz])$/)?.[1]?.toUpperCase() ?? "";
@@ -202,7 +198,6 @@ function renderPokemonOptions(query) {
     ? matches.map((pokemon) => `
         <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
           <span>${escapeHtml(getPokemonDisplayName(pokemon))}</span>
-          <small>種族値合計 ${getPokemonBaseStatTotal(pokemon)}</small>
         </button>
       `).join("")
     : '<span class="pokemon-option-empty">該当するポケモンがいません</span>';
@@ -486,7 +481,15 @@ function useChampionsFilter() {
 function getPokemonPool() {
   if (!useChampionsFilter() || !state.availability?.restrictPokemon) return state.pokemon;
   const allowed = new Set(state.availability.pokemon ?? []);
-  return state.pokemon.filter((pokemon) => allowed.has(pokemon.id));
+  const allowedNames = new Set(
+    state.pokemon
+      .filter((pokemon) => allowed.has(pokemon.id))
+      .map((pokemon) => pokemon.name.ja),
+  );
+  return state.pokemon.filter((pokemon) => {
+    if (allowed.has(pokemon.id)) return true;
+    return pokemon.id.includes("-mega") && allowedNames.has(pokemon.name.ja);
+  });
 }
 
 function isMoveAllowed(moveId) {

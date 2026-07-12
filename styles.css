@@ -239,13 +239,6 @@ fieldset {
   font-size: 13px;
 }
 
-.pokemon-option small {
-  flex: 0 0 auto;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 500;
-}
-
 .pokemon-option:hover,
 .pokemon-option:focus-visible {
   background: var(--accent-soft);
