@@ -224,7 +224,10 @@ fieldset {
 }
 
 .pokemon-option {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
   width: 100%;
   min-height: 36px;
   padding: 7px 9px;
@@ -234,6 +237,13 @@ fieldset {
   color: var(--ink);
   text-align: left;
   font-size: 13px;
+}
+
+.pokemon-option small {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .pokemon-option:hover,

@@ -150,7 +150,7 @@ function populatePokemonSelect() {
   const pokemon = pokemonPool.find((item) => item.id === selected) ?? pokemonPool[0];
   if (!pokemon) return;
   els.defenderSelect.value = pokemon.id;
-  els.defenderSearch.value = pokemon.name.ja;
+  els.defenderSearch.value = getPokemonDisplayName(pokemon);
   closePokemonOptions();
 }
 
@@ -177,12 +177,22 @@ function normalizePokemonSearch(value) {
     .replace(/[ァ-ヶ]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0x60));
 }
 
+function getPokemonBaseStatTotal(pokemon) {
+  return Object.values(pokemon.baseStats).reduce((total, stat) => total + stat, 0);
+}
+
+function getPokemonDisplayName(pokemon) {
+  if (!pokemon.id.includes("-mega")) return pokemon.name.ja;
+  const variant = pokemon.id.match(/-mega-([xyz])$/)?.[1]?.toUpperCase() ?? "";
+  return `メガ${pokemon.name.ja}${variant}`;
+}
+
 function renderPokemonOptions(query) {
   const normalizedQuery = normalizePokemonSearch(query.trim());
   const matches = getSortedPokemonPool()
     .filter((pokemon) => {
       if (!normalizedQuery) return true;
-      return [pokemon.name.ja, pokemon.name.jaHrkt, pokemon.name.en, pokemon.id]
+      return [getPokemonDisplayName(pokemon), pokemon.name.ja, pokemon.name.jaHrkt, pokemon.name.en, pokemon.id]
         .filter(Boolean)
         .some((name) => normalizePokemonSearch(name).includes(normalizedQuery));
     })
@@ -191,7 +201,8 @@ function renderPokemonOptions(query) {
   els.defenderOptions.innerHTML = matches.length
     ? matches.map((pokemon) => `
         <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
-          ${escapeHtml(pokemon.name.ja)}
+          <span>${escapeHtml(getPokemonDisplayName(pokemon))}</span>
+          <small>種族値合計 ${getPokemonBaseStatTotal(pokemon)}</small>
         </button>
       `).join("")
     : '<span class="pokemon-option-empty">該当するポケモンがいません</span>';
@@ -206,7 +217,7 @@ function selectPokemon(pokemonId) {
   const pokemon = getPokemonPool().find((item) => item.id === pokemonId);
   if (!pokemon) return;
   els.defenderSelect.value = pokemon.id;
-  els.defenderSearch.value = pokemon.name.ja;
+  els.defenderSearch.value = getPokemonDisplayName(pokemon);
   closePokemonOptions();
   els.defenderSelect.dispatchEvent(new Event("change", { bubbles: true }));
 }
@@ -666,7 +677,7 @@ function renderResults(rows, candidateCount) {
         <tr>
           <td class="result-line ${lineClass}">${row.line}</td>
           <td class="result-allocation">${formatCandidate(row.candidate)}</td>
-          <td class="result-attacker">${row.attacker.name.ja}</td>
+          <td class="result-attacker">${getPokemonDisplayName(row.attacker)}</td>
           <td class="result-move">${row.move.name.ja}</td>
           <td class="result-after">${row.afterDamage}</td>
           <td class="result-diff">${row.diff}</td>
