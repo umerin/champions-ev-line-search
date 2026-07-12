@@ -3,7 +3,7 @@ const paths = {
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json",
-  availability: "./data/champions-availability.json",
+  availability: "./data/champions-availability.json?v=20260712-2",
 };
 
 const state = {
@@ -79,8 +79,6 @@ const priorityMoveIds = new Set([
   "vacuum-wave",
   "water-shuriken",
 ]);
-
-const finalEvolutionExceptions = new Set(["floette-eternal", "pikachu"]);
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -551,13 +549,10 @@ function defaultAvailability() {
 }
 
 function useChampionsFilter() {
-  return els.availabilityMode.value === "champions";
+  return els.availabilityMode.value === "final" || els.availabilityMode.value === "champions";
 }
 
 function getPokemonPool() {
-  if (els.availabilityMode.value === "final") {
-    return state.pokemon.filter((pokemon) => pokemon.isFinalEvolution || finalEvolutionExceptions.has(pokemon.id));
-  }
   if (!useChampionsFilter() || !state.availability?.restrictPokemon) return state.pokemon;
   const allowed = new Set(state.availability.pokemon ?? []);
   const allowedNames = new Set(
