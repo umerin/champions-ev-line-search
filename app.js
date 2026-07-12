@@ -38,6 +38,7 @@ const els = {
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
   attackerPoints: document.querySelector("#attackerPoints"),
   movePower: document.querySelector("#movePower"),
+  includePriorityMoves: document.querySelector("#includePriorityMoves"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
 };
@@ -54,6 +55,26 @@ const effectivenessLabel = new Map([
   [0.5, "半減"],
   [0.25, "1/4"],
   [0, "無効"],
+]);
+
+const priorityMoveIds = new Set([
+  "accelerock",
+  "aqua-jet",
+  "bullet-punch",
+  "extreme-speed",
+  "fake-out",
+  "feint",
+  "first-impression",
+  "ice-shard",
+  "jet-punch",
+  "mach-punch",
+  "quick-attack",
+  "shadow-sneak",
+  "sucker-punch",
+  "thunderclap",
+  "upper-hand",
+  "vacuum-wave",
+  "water-shuriken",
 ]);
 
 async function loadJson(path) {
@@ -115,6 +136,7 @@ async function init() {
     });
     els.attackerPoints.addEventListener("input", runSearch);
     els.movePower.addEventListener("input", runSearch);
+    els.includePriorityMoves.addEventListener("change", runSearch);
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -326,7 +348,7 @@ function runSearch() {
     for (const attacker of pokemonPool) {
       for (const move of state.moves) {
         if (!isMoveAllowed(move.id)) continue;
-        if (!matchesMovePower(move.power, input.movePower, input.powerComparison)) continue;
+        if (!matchesMovePower(move, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
         if (!move.users.includes(attacker.id)) continue;
         if (!matchesAttackKind(move.category, input.attackKind)) continue;
 
@@ -408,6 +430,7 @@ function readInput() {
     effectiveness: getCheckedValues("effectiveness"),
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
+    includePriorityMoves: els.includePriorityMoves.checked,
   };
 }
 
@@ -595,9 +618,10 @@ function matchesEffectiveness(value, filter) {
   return filter.includes("all") || filter.some((item) => Number(item) === value);
 }
 
-function matchesMovePower(power, threshold, comparison) {
+function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
+  if (includePriorityMoves && (move.priority > 0 || priorityMoveIds.has(move.id))) return true;
   if (threshold === null) return true;
-  return comparison === "lte" ? power <= threshold : power >= threshold;
+  return comparison === "lte" ? move.power <= threshold : move.power >= threshold;
 }
 
 function damageLine(currentHp, afterHp, before, after) {

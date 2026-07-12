@@ -488,6 +488,11 @@ legend {
   min-height: 34px;
 }
 
+.move-power-filter .priority-move-option {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
 .summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

@@ -113,6 +113,7 @@ async function fetchMove(id, usersByMove) {
     type: move.type.name,
     category: move.damage_class.name,
     power: move.power,
+    priority: move.priority,
     isSpreadMove: spreadTargets.has(move.target.name),
     users: usersByMove.get(move.name) ?? [],
   };

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-8" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-9" />
   </head>
   <body>
     <main class="app-shell">
@@ -185,9 +185,10 @@
               <legend>相性</legend>
               <label><input type="checkbox" name="effectiveness" value="all" /> 全て</label>
               <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
-              <label><input type="checkbox" name="effectiveness" value="2" /> 2倍</label>
-              <label><input type="checkbox" name="effectiveness" value="0.5" checked /> 1/2</label>
-              <label><input type="checkbox" name="effectiveness" value="0.25" checked /> 1/4</label>
+              <label><input type="checkbox" name="effectiveness" value="2" checked /> 2倍</label>
+              <label><input type="checkbox" name="effectiveness" value="4" checked /> 4倍</label>
+              <label><input type="checkbox" name="effectiveness" value="0.5" /> 1/2</label>
+              <label><input type="checkbox" name="effectiveness" value="0.25" /> 1/4</label>
             </fieldset>
 
             <fieldset class="checkbox-group move-power-filter">
@@ -200,6 +201,9 @@
                 <label><input type="checkbox" name="powerComparison" value="gte" checked /> 以上</label>
                 <label><input type="checkbox" name="powerComparison" value="lte" /> 以下</label>
               </span>
+              <label class="priority-move-option">
+                <input id="includePriorityMoves" type="checkbox" /> 先制技を全て含める
+              </label>
             </fieldset>
           </div>
 
@@ -242,6 +246,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-9"></script>
+    <script type="module" src="./app.js?v=20260712-10"></script>
   </body>
 </html>
