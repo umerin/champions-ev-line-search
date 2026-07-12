@@ -530,6 +530,11 @@ legend {
   accent-color: var(--accent);
 }
 
+.checkbox-group .higher-offense-option {
+  flex-basis: 100%;
+  margin-top: 2px;
+}
+
 .move-power-filter {
   display: grid;
   grid-template-columns: minmax(88px, 1fr) auto;

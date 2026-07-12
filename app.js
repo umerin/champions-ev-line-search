@@ -42,6 +42,7 @@ const els = {
   attackerPoints: document.querySelector("#attackerPoints"),
   movePower: document.querySelector("#movePower"),
   includePriorityMoves: document.querySelector("#includePriorityMoves"),
+  higherOffenseOnly: document.querySelector("#higherOffenseOnly"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
 };
@@ -138,9 +139,10 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
+    els.higherOffenseOnly.addEventListener("change", runSearch);
     els.attackerPoints.addEventListener("input", scheduleSearch);
     els.movePower.addEventListener("input", scheduleSearch);
     els.includePriorityMoves.addEventListener("change", runSearch);
@@ -368,7 +370,15 @@ function handleOpponentFilterChange(checkbox) {
   if (!group) return;
   const checkboxes = [...document.querySelectorAll(`input[name="${group}"]`)];
 
-  if (group === "effectiveness") {
+  if (group === "attackKind" || group === "attackerNature") {
+    const both = checkboxes.find((item) => item.value === "both");
+    const individual = checkboxes.filter((item) => item.value !== "both");
+    if (checkbox.value === "both") {
+      individual.forEach((item) => { item.checked = checkbox.checked; });
+    } else if (both) {
+      both.checked = individual.every((item) => item.checked);
+    }
+  } else if (group === "effectiveness") {
     if (checkbox.value === "all" && checkbox.checked) {
       checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false;
@@ -460,21 +470,20 @@ function scheduleSearch() {
 
 function buildAttackScenarios(defender, pokemonPool, input, current) {
   const attackerById = new Map(pokemonPool.map((pokemon) => [pokemon.id, pokemon]));
-  const attackerNatureModes = input.attackerNatures.includes("both")
-    ? ["boost", "neutral"]
-    : input.attackerNatures;
+  const attackerNatureModes = input.attackerNatures;
   const scenarios = [];
 
   for (const move of state.moves) {
     if (!isMoveAllowed(move.id)) continue;
     if (!matchesMovePower(move, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
-    if (!matchesAttackKind(move.category, input.attackKind)) continue;
+    if (!matchesAttackKind(move.category, input.attackKinds)) continue;
     const effectiveness = calcEffectiveness(move.type, defender.types);
     if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
 
     for (const attackerId of move.users) {
       const attacker = attackerById.get(attackerId);
       if (!attacker) continue;
+      if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
       const stab = attacker.types.includes(move.type) ? 1.5 : 1;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
@@ -521,13 +530,14 @@ function readInput() {
     defenderNatureBoost: getSelectedNatureStat("boost"),
     defenderNatureDrop: getSelectedNatureStat("drop"),
     remainingPoints: toInt(els.remainingPoints.value),
-    attackKind: getCheckedValues("attackKind")[0] ?? "both",
+    attackKinds: getCheckedValues("attackKind").filter((value) => value !== "both"),
     attackerPoints: readAttackerPoints(),
-    attackerNatures: getCheckedValues("attackerNature"),
+    attackerNatures: getCheckedValues("attackerNature").filter((value) => value !== "both"),
     effectiveness: getCheckedValues("effectiveness"),
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
+    higherOffenseOnly: els.higherOffenseOnly.checked,
   };
 }
 
@@ -716,13 +726,19 @@ function calcEffectiveness(moveType, defenderTypes) {
   }, 1);
 }
 
-function matchesAttackKind(category, filter) {
+function matchesAttackKind(category, filters) {
   if (!["physical", "special"].includes(category)) return false;
-  return filter === "both" || category === filter;
+  return filters.includes(category);
 }
 
 function matchesEffectiveness(value, filter) {
   return filter.includes("all") || filter.some((item) => Number(item) === value);
+}
+
+function matchesHigherOffense(pokemon, category) {
+  if (category === "physical") return pokemon.baseStats.atk >= pokemon.baseStats.spa;
+  if (category === "special") return pokemon.baseStats.spa >= pokemon.baseStats.atk;
+  return false;
 }
 
 function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
