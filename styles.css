@@ -773,7 +773,8 @@ tbody tr:hover {
     grid-template-areas:
       "line allocation"
       "attacker move"
-      "after diff";
+      "current after"
+      "diff diff";
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -803,22 +804,23 @@ tbody tr:hover {
   }
 
   .result-line { grid-area: line; background: var(--accent-soft); }
-  .result-line::before { content: "ライン"; }
+  .result-line::before { content: "1発KO率"; }
   .result-allocation { grid-area: allocation; text-align: right; background: var(--accent-soft); }
   .result-allocation::before { content: "配分"; }
   .result-attacker { grid-area: attacker; border-top: 1px solid var(--line); }
   .result-attacker::before { content: "相手"; }
   .result-move { grid-area: move; border-top: 1px solid var(--line); }
   .result-move::before { content: "技"; }
+  .result-current { grid-area: current; border-top: 1px solid var(--line); }
+  .result-current::before { content: "現在ダメージ"; }
   .result-after { grid-area: after; border-top: 1px solid var(--line); }
-  .result-after::before { content: "後最大"; }
+  .result-after::before { content: "配分後ダメージ"; }
   .result-diff { grid-area: diff; border-top: 1px solid var(--line); }
-  .result-diff::before { content: "変化"; }
+  .result-diff::before { content: "最大変化"; }
 
   .result-category,
   .result-attack,
-  .result-effectiveness,
-  .result-current {
+  .result-effectiveness {
     display: none;
   }
 

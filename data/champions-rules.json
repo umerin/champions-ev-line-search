@@ -13,5 +13,6 @@
     "neutral": 1
   },
   "damageRandomMax": 1,
+  "damageRandomMin": 0.85,
   "doubleSpreadModifier": 0.75
 }

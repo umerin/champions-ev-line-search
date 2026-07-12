@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json",
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
-  rules: "./data/champions-rules.json",
+  rules: "./data/champions-rules.json?v=20260712-2",
   availability: "./data/champions-availability.json?v=20260712-2",
 };
 
@@ -43,6 +43,7 @@ const els = {
   movePower: document.querySelector("#movePower"),
   includePriorityMoves: document.querySelector("#includePriorityMoves"),
   higherOffenseOnly: document.querySelector("#higherOffenseOnly"),
+  stabOnly: document.querySelector("#stabOnly"),
   prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
@@ -140,10 +141,11 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#prioritizeMega)').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#stabOnly):not(#prioritizeMega)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.higherOffenseOnly.addEventListener("change", runSearch);
+    els.stabOnly.addEventListener("change", runSearch);
     els.prioritizeMega.addEventListener("change", runSearch);
     els.attackerPoints.addEventListener("input", scheduleSearch);
     els.movePower.addEventListener("input", scheduleSearch);
@@ -438,7 +440,7 @@ function runSearch() {
   for (const candidate of candidates) {
     const after = applyCandidateStats(defender, input, candidate);
     for (const scenario of attackScenarios) {
-      const afterDamage = calcMaxDamage({
+      const afterDamage = calcDamage({
         level: state.rules.level,
         power: scenario.move.power,
         attack: scenario.attackStat,
@@ -448,15 +450,36 @@ function runSearch() {
         rule: input.battleRule,
         isSpreadMove: scenario.move.isSpreadMove,
       });
-      const line = damageLine(current.hp, after.hp, scenario.currentDamage, afterDamage);
-      if (afterDamage >= after.hp) continue;
-      if (afterDamage === scenario.currentDamage && line === "変化なし") continue;
+      const afterMinDamage = calcDamage({
+        level: state.rules.level,
+        power: scenario.move.power,
+        attack: scenario.attackStat,
+        defense: scenario.move.category === "physical" ? after.def : after.spd,
+        stab: scenario.stab,
+        effectiveness: scenario.effectiveness,
+        rule: input.battleRule,
+        isSpreadMove: scenario.move.isSpreadMove,
+        randomModifier: state.rules.damageRandomMin ?? 0.85,
+      });
+      const afterKoRate = calcOneHitKoRate({
+        level: state.rules.level,
+        power: scenario.move.power,
+        attack: scenario.attackStat,
+        defense: scenario.move.category === "physical" ? after.def : after.spd,
+        stab: scenario.stab,
+        effectiveness: scenario.effectiveness,
+        rule: input.battleRule,
+        isSpreadMove: scenario.move.isSpreadMove,
+      }, after.hp, afterDamage, afterMinDamage);
+      if (afterDamage === scenario.currentDamage && afterKoRate === scenario.currentKoRate) continue;
       rows.push({
         candidate,
         ...scenario,
         afterDamage,
+        afterMinDamage,
+        afterKoRate,
         diff: afterDamage - scenario.currentDamage,
-        line,
+        line: `${formatProbability(scenario.currentKoRate)}→${formatProbability(afterKoRate)}`,
       });
     }
   }
@@ -465,7 +488,8 @@ function runSearch() {
     const megaPriority = input.prioritizeMega
       ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
       : 0;
-    return megaPriority || lineScore(b.line) - lineScore(a.line) || a.diff - b.diff;
+    const probabilityImprovement = (b.currentKoRate - b.afterKoRate) - (a.currentKoRate - a.afterKoRate);
+    return megaPriority || probabilityImprovement || a.diff - b.diff;
   });
   renderResults(rows.slice(0, 80), candidates.length);
 }
@@ -492,10 +516,11 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       if (!attacker) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
       const stab = attacker.types.includes(move.type) ? 1.5 : 1;
+      if (input.stabOnly && stab === 1) continue;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
-          const currentDamage = calcMaxDamage({
+          const currentDamage = calcDamage({
             level: state.rules.level,
             power: move.power,
             attack: attackStat,
@@ -505,6 +530,27 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             rule: input.battleRule,
             isSpreadMove: move.isSpreadMove,
           });
+          const currentMinDamage = calcDamage({
+            level: state.rules.level,
+            power: move.power,
+            attack: attackStat,
+            defense: move.category === "physical" ? current.def : current.spd,
+            stab,
+            effectiveness,
+            rule: input.battleRule,
+            isSpreadMove: move.isSpreadMove,
+            randomModifier: state.rules.damageRandomMin ?? 0.85,
+          });
+          const currentKoRate = calcOneHitKoRate({
+            level: state.rules.level,
+            power: move.power,
+            attack: attackStat,
+            defense: move.category === "physical" ? current.def : current.spd,
+            stab,
+            effectiveness,
+            rule: input.battleRule,
+            isSpreadMove: move.isSpreadMove,
+          }, current.hp, currentDamage, currentMinDamage);
           scenarios.push({
             attacker,
             move,
@@ -514,6 +560,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             effectiveness,
             stab,
             currentDamage,
+            currentMinDamage,
+            currentKoRate,
           });
         }
       }
@@ -545,6 +593,7 @@ function readInput() {
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
     higherOffenseOnly: els.higherOffenseOnly.checked,
+    stabOnly: els.stabOnly.checked,
     prioritizeMega: els.prioritizeMega.checked,
   };
 }
@@ -695,7 +744,7 @@ function calcHpStat(baseStat, statPoints) {
   return Math.floor(((2 * baseStat + 31) * state.rules.level) / 100 + state.rules.level + 10) + statPointToBonus(statPoints);
 }
 
-function calcMaxDamage({ level, power, attack, defense, stab, effectiveness, rule, isSpreadMove }) {
+function calcDamage({ level, power, attack, defense, stab, effectiveness, rule, isSpreadMove, randomModifier = state.rules.damageRandomMax }) {
   const levelFactor = Math.floor((2 * level) / 5 + 2);
   const basePowerDamage = Math.floor((levelFactor * power * attack) / defense);
   const baseDamage = Math.floor(basePowerDamage / 50) + 2;
@@ -703,7 +752,7 @@ function calcMaxDamage({ level, power, attack, defense, stab, effectiveness, rul
 
   let damage = baseDamage;
   damage = applyDamageModifier(damage, doubleModifier);
-  damage = applyDamageModifier(damage, state.rules.damageRandomMax);
+  damage = applyDamageModifier(damage, randomModifier);
   damage = applyDamageModifier(damage, stab);
   damage = applyTypeEffectiveness(damage, effectiveness);
   return damage;
@@ -739,6 +788,22 @@ function matchesAttackKind(category, filters) {
   return filters.includes(category);
 }
 
+function calcOneHitKoRate(damageInput, hp, maxDamage, minDamage) {
+  if (maxDamage < hp) return 0;
+  if (minDamage >= hp) return 100;
+  let koRolls = 1;
+  for (let randomPercent = 86; randomPercent < 100; randomPercent++) {
+    const damage = calcDamage({ ...damageInput, randomModifier: randomPercent / 100 });
+    if (damage >= hp) koRolls += 1;
+  }
+  return (koRolls / 16) * 100;
+}
+
+function formatProbability(value) {
+  if (value === 0 || value === 100) return `${value}％`;
+  return `${value.toFixed(1)}％`;
+}
+
 function matchesEffectiveness(value, filter) {
   return filter.includes("all") || filter.some((item) => Number(item) === value);
 }
@@ -756,33 +821,13 @@ function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
   return comparison === "lte" ? move.power <= threshold : move.power >= threshold;
 }
 
-function damageLine(currentHp, afterHp, before, after) {
-  const beforeHits = hitsToKo(currentHp, before);
-  const afterHits = hitsToKo(afterHp, after);
-  if (before >= currentHp && after < afterHp) return "確1→耐え";
-  if (beforeHits !== afterHits) return `${beforeHits}発→${afterHits}発`;
-  if (after < before) return "最大乱数低下";
-  return "変化なし";
-}
-
-function hitsToKo(hp, damage) {
-  if (damage <= 0) return 99;
-  return Math.ceil(hp / damage);
-}
-
-function lineScore(line) {
-  if (line.includes("確1")) return 4;
-  if (line.includes("発→")) return 3;
-  return 1;
-}
-
 function renderResults(rows, candidateCount) {
-  const lineChanges = rows.filter((row) => row.line !== "最大乱数低下").length;
+  const lineChanges = rows.filter((row) => row.afterKoRate < row.currentKoRate).length;
   const best = rows[0];
   els.summary.innerHTML = `
     <span>配分候補<strong>${candidateCount}</strong></span>
     <span>表示件数<strong>${rows.length}</strong></span>
-    <span>ライン変化<strong>${lineChanges}</strong></span>
+    <span>KO率低下<strong>${lineChanges}</strong></span>
     <span>おすすめ<strong>${best ? formatCandidate(best.candidate) : "-"}</strong></span>
   `;
 
@@ -793,16 +838,16 @@ function renderResults(rows, candidateCount) {
 
   els.resultsBody.innerHTML = rows
     .map((row) => {
-      const lineClass = row.line === "最大乱数低下" ? "" : "line-good";
+      const lineClass = row.afterKoRate < row.currentKoRate ? "line-good" : "";
       return `
         <tr>
           <td class="result-line ${lineClass}">${row.line}</td>
           <td class="result-allocation">${formatCandidate(row.candidate)}</td>
           <td class="result-attacker">${getPokemonDisplayName(row.attacker)}</td>
           <td class="result-move">${row.move.name.ja}</td>
-          <td class="result-after">${row.afterDamage}</td>
+          <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
+          <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
           <td class="result-diff">${row.diff}</td>
-          <td class="result-current">${row.currentDamage}</td>
           <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
           <td class="result-attack">${row.attackStat}（${row.attackerPoints}pt・${row.attackerNature === "boost" ? "補正有" : "補正無"}）</td>
           <td class="result-category">${jpCategory[row.move.category]}</td>
