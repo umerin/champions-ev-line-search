@@ -681,9 +681,36 @@ legend {
 }
 
 .move-setting-type {
-  color: var(--accent-strong);
+  display: inline-flex;
+  min-width: 56px;
+  justify-content: center;
+  padding: 3px 6px;
+  border: 1px solid #c9d5df;
+  border-radius: 999px;
+  background: #f2f5f7;
+  color: #51606d;
+  font-size: 10px;
   font-weight: 700;
 }
+
+.move-setting-type.move-type-normal { color: #5c6265; background: #f0f2f3; border-color: #cbd0d2; }
+.move-setting-type.move-type-fire { color: #b7472f; background: #fff0eb; border-color: #f1b9aa; }
+.move-setting-type.move-type-water { color: #2e6ea6; background: #edf6ff; border-color: #b6d4ef; }
+.move-setting-type.move-type-electric { color: #806500; background: #fff9dc; border-color: #eadb8b; }
+.move-setting-type.move-type-grass { color: #397248; background: #edf8ef; border-color: #b8dcbf; }
+.move-setting-type.move-type-ice { color: #3d7c93; background: #edfaff; border-color: #b5dce8; }
+.move-setting-type.move-type-fighting { color: #943f37; background: #fff0ee; border-color: #e8b2ac; }
+.move-setting-type.move-type-poison { color: #74418e; background: #f8effb; border-color: #d7b9e2; }
+.move-setting-type.move-type-ground { color: #855a36; background: #fff5eb; border-color: #e6c7a8; }
+.move-setting-type.move-type-flying { color: #506ba2; background: #f0f3ff; border-color: #bec9e7; }
+.move-setting-type.move-type-psychic { color: #a34683; background: #fff0f8; border-color: #e8b5d3; }
+.move-setting-type.move-type-bug { color: #5d7d2f; background: #f3f9e8; border-color: #c9dda8; }
+.move-setting-type.move-type-rock { color: #746447; background: #f7f3eb; border-color: #d9ccb4; }
+.move-setting-type.move-type-ghost { color: #5f4d91; background: #f3f0ff; border-color: #c8bde8; }
+.move-setting-type.move-type-dragon { color: #4f5aab; background: #f0f1ff; border-color: #c2c7eb; }
+.move-setting-type.move-type-dark { color: #5f514a; background: #f3f0ee; border-color: #d4c9c3; }
+.move-setting-type.move-type-steel { color: #536b7b; background: #eef4f7; border-color: #becfd8; }
+.move-setting-type.move-type-fairy { color: #a04f7d; background: #fff0f7; border-color: #e7b8d0; }
 
 .move-setting-power {
   text-align: right;

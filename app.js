@@ -377,12 +377,13 @@ function renderMoveSettingsMoveList() {
       const checked = !excluded.has(move.id);
       const category = jpCategory[move.category] ?? "";
       const type = jpType[move.type] ?? move.type ?? "—";
+      const typeClass = moveTypeRank.has(move.type) ? ` move-type-${move.type}` : "";
       const power = move.power ? move.power : "—";
       return `
         <label class="move-setting-row">
           <input class="move-setting-checkbox" type="checkbox" data-pokemon-id="${escapeHtml(pokemon.id)}" data-move-id="${escapeHtml(move.id)}"${checked ? " checked" : ""} />
           <span class="move-setting-name">${escapeHtml(move.name?.ja ?? move.name?.en ?? move.id)}</span>
-          <span class="move-setting-type">${escapeHtml(type)}</span>
+          <span class="move-setting-type${typeClass}">${escapeHtml(type)}</span>
           <span class="move-setting-category">${escapeHtml(category || "変化")}</span>
           <span class="move-setting-power">${escapeHtml(String(power))}</span>
         </label>
