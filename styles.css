@@ -89,6 +89,45 @@ h2 {
   align-items: start;
 }
 
+.page-nav {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-nav-button {
+  min-height: 42px;
+  margin-bottom: -1px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.page-nav-button:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.page-nav-button.is-selected {
+  border-color: var(--line);
+  border-bottom-color: var(--panel);
+  background: var(--panel);
+  box-shadow: 0 -2px 8px rgba(21, 31, 45, 0.04);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.page-view[hidden] {
+  display: none;
+}
+
 .panel {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -474,6 +513,160 @@ legend {
 
 .results-panel {
   overflow: hidden;
+}
+
+.move-settings-page {
+  padding: 20px;
+}
+
+.move-settings-heading {
+  margin-bottom: 18px;
+}
+
+.move-settings-heading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.move-settings-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.move-settings-pokemon-panel,
+.move-settings-detail {
+  min-width: 0;
+}
+
+.move-settings-pokemon-panel > label,
+.move-settings-detail > label {
+  margin-bottom: 6px;
+}
+
+.move-settings-pokemon-list,
+.move-settings-move-list {
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdfe;
+}
+
+.move-settings-pokemon-list {
+  max-height: 520px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.move-settings-pokemon-option {
+  display: block;
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.move-settings-pokemon-option:hover,
+.move-settings-pokemon-option.is-selected {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.move-settings-detail-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.move-settings-detail-heading h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.move-settings-detail-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.move-settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.secondary-button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #b8c7d6;
+  border-radius: 8px;
+  background: white;
+  color: var(--accent-strong);
+  font-size: 11px;
+}
+
+.secondary-button:hover {
+  background: var(--accent-soft);
+}
+
+.move-settings-move-list {
+  max-height: 520px;
+  margin-top: 10px;
+}
+
+.move-setting-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--line);
+  background: white;
+  font-size: 12px;
+}
+
+.move-setting-row:last-child {
+  border-bottom: 0;
+}
+
+.move-setting-row input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.move-setting-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.move-setting-meta {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.move-settings-empty {
+  margin: 0;
+  padding: 14px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .opponent-filters {
@@ -862,6 +1055,27 @@ tbody tr:hover {
 }
 
 @media (max-width: 640px) {
+  .move-settings-page {
+    padding: 14px;
+  }
+
+  .move-settings-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .move-settings-pokemon-list {
+    max-height: 220px;
+  }
+
+  .move-settings-detail-heading {
+    flex-direction: column;
+  }
+
+  .move-settings-actions {
+    justify-content: flex-start;
+  }
+
   .results-panel {
     background: transparent;
     border: 0;

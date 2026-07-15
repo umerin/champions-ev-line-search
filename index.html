@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260715-31" />
+    <link rel="stylesheet" href="./styles.css?v=20260715-34" />
   </head>
   <body>
     <main class="app-shell">
@@ -19,7 +19,12 @@
         <div class="status-pill" id="dataStatus">データ読込中</div>
       </header>
 
-      <section class="workspace">
+      <nav class="page-nav" role="tablist" aria-label="画面切替">
+        <button type="button" class="page-nav-button is-selected" data-page="search" role="tab" aria-selected="true" aria-controls="searchPage">検索</button>
+        <button type="button" class="page-nav-button" data-page="move-settings" role="tab" aria-selected="false" aria-controls="moveSettingsPage">技設定</button>
+      </nav>
+
+      <section class="workspace page-view" id="searchPage">
         <form class="panel controls" id="searchForm">
           <div class="panel-heading">
             <h2>検索条件</h2>
@@ -256,6 +261,39 @@
         </section>
       </section>
 
+      <section class="panel move-settings-page page-view" id="moveSettingsPage" hidden>
+        <div class="panel-heading move-settings-heading">
+          <div>
+            <h2>ポケモンごとの技設定</h2>
+            <p>検索結果に含める技をポケモンごとに選択できます。初期状態ではすべての技が対象です。</p>
+          </div>
+        </div>
+
+        <div class="move-settings-layout">
+          <aside class="move-settings-pokemon-panel">
+            <label for="moveSettingsPokemonSearch">ポケモンを選択</label>
+            <input id="moveSettingsPokemonSearch" type="search" autocomplete="off" placeholder="名前で絞り込み" />
+            <div id="moveSettingsPokemonList" class="move-settings-pokemon-list" role="listbox" aria-label="技設定するポケモン"></div>
+          </aside>
+
+          <section class="move-settings-detail" aria-live="polite">
+            <div class="move-settings-detail-heading">
+              <div>
+                <h3 id="moveSettingsPokemonName">ポケモンを選択してください</h3>
+                <p id="moveSettingsSummary">技の設定状況</p>
+              </div>
+              <div class="move-settings-actions">
+                <button id="moveSettingsAllOn" type="button" class="secondary-button">すべて必要</button>
+                <button id="moveSettingsAllOff" type="button" class="secondary-button">すべて不要</button>
+              </div>
+            </div>
+            <label for="moveSettingsMoveSearch">技を検索</label>
+            <input id="moveSettingsMoveSearch" type="search" autocomplete="off" placeholder="技名で絞り込み" />
+            <div id="moveSettingsMoveList" class="move-settings-move-list" role="list" aria-label="技の要不要設定"></div>
+          </section>
+        </div>
+      </section>
+
       <footer class="site-footer">
         <p>
           非公式ファンメイドツールです。Nintendo、Creatures、GAME FREAK、株式会社ポケモンとは関係ありません。
@@ -269,6 +307,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260715-7"></script>
+    <script type="module" src="./app.js?v=20260715-9"></script>
   </body>
 </html>

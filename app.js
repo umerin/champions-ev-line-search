@@ -12,12 +12,16 @@ const state = {
   typeChart: {},
   rules: null,
   availability: null,
+  moveExclusions: new Map(),
+  moveSettingsPokemonId: null,
 };
 
 let searchTimer = null;
 const RECENT_POKEMON_STORAGE_KEY = "champions-ev-line-search:recent-pokemon";
+const MOVE_SETTINGS_STORAGE_KEY = "champions-ev-line-search:move-settings";
 const RECENT_POKEMON_LIMIT = 10;
 const RESULT_LIMIT = 80;
+const pokemonFormMeta = new Map();
 
 const els = {
   dataStatus: document.querySelector("#dataStatus"),
@@ -53,6 +57,16 @@ const els = {
   prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
+  searchPage: document.querySelector("#searchPage"),
+  moveSettingsPage: document.querySelector("#moveSettingsPage"),
+  moveSettingsPokemonSearch: document.querySelector("#moveSettingsPokemonSearch"),
+  moveSettingsPokemonList: document.querySelector("#moveSettingsPokemonList"),
+  moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
+  moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
+  moveSettingsAllOn: document.querySelector("#moveSettingsAllOn"),
+  moveSettingsAllOff: document.querySelector("#moveSettingsAllOff"),
+  moveSettingsMoveSearch: document.querySelector("#moveSettingsMoveSearch"),
+  moveSettingsMoveList: document.querySelector("#moveSettingsMoveList"),
 };
 
 const jpCategory = {
@@ -112,11 +126,14 @@ async function init() {
       loadOptionalJson(paths.availability, defaultAvailability()),
     ]);
     Object.assign(state, { pokemon, moves, typeChart, rules, availability });
+    buildPokemonFormMetadata();
+    state.moveExclusions = loadMoveExclusions();
     populatePokemonSelect();
     populateMovePowerOptions();
     populateAttackerPointDetails();
     updateCurrentStatsDefault();
     updateDataStatus();
+    setupMoveSettingsPage();
     els.form.addEventListener("submit", onSubmit);
     els.remainingPoints.addEventListener("input", scheduleSearch);
     document.querySelectorAll(".point-button, .point-preset").forEach((button) => {
@@ -147,6 +164,7 @@ async function init() {
       populatePokemonSelect();
       updateCurrentStatsDefault();
       updateDataStatus();
+      refreshMoveSettingsPage();
       runSearch();
     });
     ["currentHpPoints", "currentAtkPoints", "currentDefPoints", "currentSpaPoints", "currentSpdPoints", "currentSpePoints"].forEach((key) => {
@@ -216,6 +234,179 @@ function populateAttackerPointDetails() {
   }).join("");
 }
 
+function setupMoveSettingsPage() {
+  document.querySelectorAll(".page-nav-button").forEach((button) => {
+    button.addEventListener("click", () => switchPage(button.dataset.page));
+  });
+  els.moveSettingsPokemonSearch.addEventListener("input", renderMoveSettingsPokemonList);
+  els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
+  els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
+  els.moveSettingsAllOff.addEventListener("click", () => setAllMovesForSelected(false));
+  refreshMoveSettingsPage();
+}
+
+function switchPage(page) {
+  const showMoveSettings = page === "move-settings";
+  els.searchPage.hidden = showMoveSettings;
+  els.moveSettingsPage.hidden = !showMoveSettings;
+  document.querySelectorAll(".page-nav-button").forEach((button) => {
+    const selected = button.dataset.page === page;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-selected", String(selected));
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  if (showMoveSettings) refreshMoveSettingsPage();
+}
+
+function refreshMoveSettingsPage() {
+  const pokemonPool = getSortedPokemonPool();
+  if (!pokemonPool.length) {
+    state.moveSettingsPokemonId = null;
+    renderMoveSettingsPokemonList();
+    renderMoveSettingsMoveList();
+    return;
+  }
+  if (!pokemonPool.some((pokemon) => pokemon.id === state.moveSettingsPokemonId)) {
+    state.moveSettingsPokemonId = pokemonPool[0].id;
+  }
+  renderMoveSettingsPokemonList();
+  renderMoveSettingsMoveList();
+}
+
+function renderMoveSettingsPokemonList() {
+  const query = normalizePokemonSearch(els.moveSettingsPokemonSearch.value);
+  const pokemonPool = getSortedPokemonPool().filter((pokemon) => {
+    const name = normalizePokemonSearch(getPokemonDisplayName(pokemon));
+    return !query || name.includes(query);
+  });
+  if (!pokemonPool.length) {
+    els.moveSettingsPokemonList.innerHTML = `<p class="move-settings-empty">該当するポケモンがありません。</p>`;
+    return;
+  }
+  els.moveSettingsPokemonList.innerHTML = pokemonPool.map((pokemon) => {
+    const selected = pokemon.id === state.moveSettingsPokemonId;
+    return `
+      <button type="button" class="move-settings-pokemon-option${selected ? " is-selected" : ""}" role="option" aria-selected="${selected}" data-pokemon-id="${escapeHtml(pokemon.id)}">
+        ${escapeHtml(getPokemonDisplayName(pokemon))}
+      </button>
+    `;
+  }).join("");
+  els.moveSettingsPokemonList.querySelectorAll(".move-settings-pokemon-option").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.moveSettingsPokemonId = button.dataset.pokemonId;
+      renderMoveSettingsPokemonList();
+      renderMoveSettingsMoveList();
+    });
+  });
+}
+
+function renderMoveSettingsMoveList() {
+  const pokemon = getPokemonPool().find((item) => item.id === state.moveSettingsPokemonId);
+  if (!pokemon) {
+    els.moveSettingsPokemonName.textContent = "ポケモンを選択してください";
+    els.moveSettingsSummary.textContent = "技の設定状況";
+    els.moveSettingsMoveList.innerHTML = `<p class="move-settings-empty">ポケモンを選択してください。</p>`;
+    return;
+  }
+  const moves = getMovesForPokemon(pokemon);
+  const excluded = getMoveExclusions(pokemon.id);
+  const query = normalizePokemonSearch(els.moveSettingsMoveSearch.value);
+  const visibleMoves = moves.filter((move) => {
+    const name = normalizePokemonSearch(move.name?.ja ?? move.name?.en ?? move.id);
+    return !query || name.includes(query);
+  });
+  const includedCount = moves.filter((move) => !excluded.has(move.id)).length;
+  els.moveSettingsPokemonName.textContent = getPokemonDisplayName(pokemon);
+  els.moveSettingsSummary.textContent = `${includedCount}/${moves.length}技を検索対象`;
+  if (!visibleMoves.length) {
+    els.moveSettingsMoveList.innerHTML = `<p class="move-settings-empty">該当する技がありません。</p>`;
+    return;
+  }
+  els.moveSettingsMoveList.innerHTML = visibleMoves.map((move) => {
+    const checked = !excluded.has(move.id);
+    const category = jpCategory[move.category] ?? "";
+    const power = move.power ? `威力 ${move.power}` : "変化技";
+    return `
+      <label class="move-setting-row">
+        <input class="move-setting-checkbox" type="checkbox" data-pokemon-id="${escapeHtml(pokemon.id)}" data-move-id="${escapeHtml(move.id)}"${checked ? " checked" : ""} />
+        <span class="move-setting-name">${escapeHtml(move.name?.ja ?? move.name?.en ?? move.id)}</span>
+        <span class="move-setting-meta">${category}・${power}</span>
+      </label>
+    `;
+  }).join("");
+  els.moveSettingsMoveList.querySelectorAll(".move-setting-checkbox").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      setMoveIncluded(checkbox.dataset.pokemonId, checkbox.dataset.moveId, checkbox.checked);
+    });
+  });
+}
+
+function getMovesForPokemon(pokemon) {
+  return state.moves
+    .filter((move) => Array.isArray(move.users) && move.users.includes(pokemon.id))
+    .sort((a, b) => (a.name?.ja ?? a.name?.en ?? a.id).localeCompare(b.name?.ja ?? b.name?.en ?? b.id, "ja"));
+}
+
+function getMoveExclusions(pokemonId, create = false) {
+  let exclusions = state.moveExclusions.get(pokemonId);
+  if (!exclusions && create) {
+    exclusions = new Set();
+    state.moveExclusions.set(pokemonId, exclusions);
+  }
+  return exclusions ?? new Set();
+}
+
+function setMoveIncluded(pokemonId, moveId, included) {
+  const exclusions = getMoveExclusions(pokemonId, true);
+  if (included) exclusions.delete(moveId);
+  else exclusions.add(moveId);
+  if (!exclusions.size) state.moveExclusions.delete(pokemonId);
+  saveMoveExclusions();
+  renderMoveSettingsMoveList();
+  runSearch();
+}
+
+function setAllMovesForSelected(included) {
+  const pokemon = getPokemonPool().find((item) => item.id === state.moveSettingsPokemonId);
+  if (!pokemon) return;
+  const moves = getMovesForPokemon(pokemon);
+  if (included) {
+    state.moveExclusions.delete(pokemon.id);
+  } else {
+    state.moveExclusions.set(pokemon.id, new Set(moves.map((move) => move.id)));
+  }
+  saveMoveExclusions();
+  renderMoveSettingsMoveList();
+  runSearch();
+}
+
+function loadMoveExclusions() {
+  const exclusions = new Map();
+  try {
+    const stored = JSON.parse(localStorage.getItem(MOVE_SETTINGS_STORAGE_KEY) ?? "{}");
+    if (!stored || typeof stored !== "object") return exclusions;
+    Object.entries(stored).forEach(([pokemonId, moveIds]) => {
+      if (Array.isArray(moveIds) && moveIds.length) exclusions.set(pokemonId, new Set(moveIds));
+    });
+  } catch {
+    // Ignore unavailable or malformed local settings and use the default (all included).
+  }
+  return exclusions;
+}
+
+function saveMoveExclusions() {
+  try {
+    const stored = Object.fromEntries(
+      [...state.moveExclusions.entries()]
+        .filter(([, moveIds]) => moveIds.size)
+        .map(([pokemonId, moveIds]) => [pokemonId, [...moveIds]]),
+    );
+    localStorage.setItem(MOVE_SETTINGS_STORAGE_KEY, JSON.stringify(stored));
+  } catch {
+    // Ignore unavailable storage; the current session still uses the in-memory settings.
+  }
+}
+
 function getSortedPokemonPool() {
   return [...getPokemonPool()].sort((a, b) => {
     const aName = a.name.jaHrkt ?? a.name.ja;
@@ -231,10 +422,205 @@ function normalizePokemonSearch(value) {
     .replace(/[ァ-ヶ]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0x60));
 }
 
+const FORM_LABEL_BY_ID = new Map([
+  ["calyrex-ice", "はくばじょうのすがた"],
+  ["calyrex-shadow", "こくばじょうのすがた"],
+  ["cramorant-gorging", "まるのみのすがた"],
+  ["cramorant-gulping", "うのみのすがた"],
+  ["eiscue-ice", "アイスフェイス"],
+  ["eiscue-noice", "ナイスフェイス"],
+  ["gimmighoul-roaming", "とほフォルム"],
+  ["greninja-ash", "サトシゲッコウガ"],
+  ["greninja-battle-bond", "きずなへんげ"],
+  ["keldeo-ordinary", "いつものすがた"],
+  ["keldeo-resolute", "かくごのすがた"],
+  ["kyurem-black", "ブラックキュレム"],
+  ["kyurem-white", "ホワイトキュレム"],
+  ["maushold-family-of-four", "4ひきかぞく"],
+  ["maushold-family-of-three", "3ひきかぞく"],
+  ["meloetta-aria", "ボイスフォルム"],
+  ["meloetta-pirouette", "ステップフォルム"],
+  ["mimikyu-busted", "ばれたすがた"],
+  ["mimikyu-disguised", "ばけたすがた"],
+  ["mimikyu-totem-busted", "ぬし・ばれたすがた"],
+  ["mimikyu-totem-disguised", "ぬし・ばけたすがた"],
+  ["morpeko-full-belly", "まんぷくもよう"],
+  ["morpeko-hangry", "はらぺこもよう"],
+  ["necrozma-dawn", "たそがれのたてがみ"],
+  ["necrozma-dusk", "あかつきのつばさ"],
+  ["necrozma-ultra", "ウルトラネクロズマ"],
+  ["ogerpon-cornerstone-mask", "いしずえのめん"],
+  ["ogerpon-hearthflame-mask", "かまどのめん"],
+  ["ogerpon-wellspring-mask", "いどのめん"],
+  ["oricorio-baile", "めらめらスタイル"],
+  ["oricorio-pau", "ふらふらスタイル"],
+  ["oricorio-pom-pom", "ぱちぱちスタイル"],
+  ["oricorio-sensu", "まいまいスタイル"],
+  ["palafin-hero", "ヒーローフォルム"],
+  ["palafin-zero", "ゼロフォルム"],
+  ["pikachu-alola-cap", "アローラキャップ"],
+  ["pikachu-hoenn-cap", "ホウエンキャップ"],
+  ["pikachu-kalos-cap", "カロスキャップ"],
+  ["pikachu-original-cap", "オリジナルキャップ"],
+  ["pikachu-partner-cap", "パートナーキャップ"],
+  ["pikachu-sinnoh-cap", "シンオウキャップ"],
+  ["pikachu-unova-cap", "イッシュキャップ"],
+  ["pikachu-world-cap", "ワールドキャップ"],
+  ["pikachu-belle", "おやすみリボン"],
+  ["pikachu-cosplay", "マスクド・ピカチュウ"],
+  ["pikachu-libre", "ルチャブルポーズ"],
+  ["pikachu-phd", "はかせのすがた"],
+  ["pikachu-pop-star", "アイドルポーズ"],
+  ["pikachu-rock-star", "ロックスターポーズ"],
+  ["pikachu-starter", "パートナー"],
+  ["pumpkaboo-average", "ふつうのサイズ"],
+  ["pumpkaboo-large", "おおきいサイズ"],
+  ["pumpkaboo-small", "ちいさいサイズ"],
+  ["pumpkaboo-super", "とくだいサイズ"],
+  ["gourgeist-average", "ふつうのサイズ"],
+  ["gourgeist-large", "おおきいサイズ"],
+  ["gourgeist-small", "ちいさいサイズ"],
+  ["gourgeist-super", "とくだいサイズ"],
+  ["shaymin-land", "ランドフォルム"],
+  ["shaymin-sky", "スカイフォルム"],
+  ["tatsugiri-curly", "そったすがた"],
+  ["tatsugiri-droopy", "たれたすがた"],
+  ["tatsugiri-stretchy", "のびたすがた"],
+  ["terapagos-stellar", "ステラフォルム"],
+  ["terapagos-terastal", "テラスタルフォルム"],
+  ["toxtricity-amped", "ハイなすがた"],
+  ["toxtricity-low-key", "ローなすがた"],
+  ["ursaluna-bloodmoon", "アカツキ"],
+  ["urshifu-rapid-strike", "れんげきのかた"],
+  ["urshifu-single-strike", "いちげきのかた"],
+  ["wishiwashi-school", "むれたすがた"],
+  ["wishiwashi-solo", "たんどくのすがた"],
+  ["zygarde-10", "10%フォルム"],
+  ["zygarde-10-power-construct", "10%・パーフェクトフォルム"],
+  ["zygarde-50", "50%フォルム"],
+  ["zygarde-50-power-construct", "50%・パーフェクトフォルム"],
+  ["zygarde-complete", "パーフェクトフォルム"],
+  ["zacian-crowned", "くちたけん"],
+  ["zamazenta-crowned", "くちたたて"],
+]);
+
+const FORM_LABEL_BY_SUFFIX = new Map([
+  ["alola", "アローラ"],
+  ["galar", "ガラル"],
+  ["hisui", "ヒスイ"],
+  ["paldea", "パルデア"],
+  ["gmax", "キョダイマックス"],
+  ["totem", "ぬしのすがた"],
+  ["wash", "ウォッシュ"],
+  ["heat", "ヒート"],
+  ["frost", "フロスト"],
+  ["fan", "スピン"],
+  ["mow", "カット"],
+  ["blade", "ブレード"],
+  ["shield", "シールド"],
+  ["origin", "オリジンフォルム"],
+  ["altered", "アナザーフォルム"],
+  ["incarnate", "けしんフォルム"],
+  ["therian", "れいじゅうフォルム"],
+  ["attack", "アタックフォルム"],
+  ["defense", "ディフェンスフォルム"],
+  ["speed", "スピードフォルム"],
+  ["normal", "ノーマルフォルム"],
+  ["eternamax", "ムゲンダイマックス"],
+  ["ice", "こおりのすがた"],
+  ["shadow", "シャドーフォルム"],
+  ["eternal", "えいえんのはな"],
+  ["rainy", "あまみずのすがた"],
+  ["snowy", "ゆきぐものすがた"],
+  ["sunny", "たいようのすがた"],
+  ["amped", "ハイなすがた"],
+  ["low-key", "ローなすがた"],
+  ["rapid-strike", "れんげきのかた"],
+  ["single-strike", "いちげきのかた"],
+  ["standard", "ふつうのすがた"],
+  ["zen", "ダルマモード"],
+  ["two-segment", "2だんフォルム"],
+  ["three-segment", "3だんフォルム"],
+  ["red-striped", "あかすじ"],
+  ["blue-striped", "あおすじ"],
+  ["white-striped", "しろすじ"],
+  ["blue", "あおいろ"],
+  ["green", "みどりいろ"],
+  ["indigo", "あいいろ"],
+  ["orange", "オレンジいろ"],
+  ["red", "あかいろ"],
+  ["violet", "むらさきいろ"],
+  ["yellow", "きいろ"],
+  ["meteor", "メテオフォルム"],
+  ["curly", "そったすがた"],
+  ["droopy", "たれたすがた"],
+  ["stretchy", "のびたすがた"],
+  ["male", "♂"],
+  ["female", "♀"],
+  ["dusk", "たそがれ"],
+  ["midday", "まひる"],
+  ["midnight", "まよなか"],
+  ["own-tempo", "マイペース"],
+  ["crowned", "くちたけん"],
+  ["dada", "とうちゃん"],
+  ["roaming", "とほフォルム"],
+  ["complete", "パーフェクトフォルム"],
+  ["primal", "ゲンシカイキ"],
+  ["gliding", "かっくうビルド"],
+  ["limited", "せんせいビルド"],
+  ["sprinting", "ライドビルド"],
+  ["swimming", "ウォーター ビルド"],
+  ["aquatic", "ウォーター モード"],
+  ["drive", "ドライブモード"],
+  ["glide", "グライドモード"],
+  ["low-power", "低出力モード"],
+]);
+
+function buildPokemonFormMetadata() {
+  pokemonFormMeta.clear();
+  const groups = new Map();
+  state.pokemon.forEach((pokemon) => {
+    const group = groups.get(pokemon.name.ja) ?? [];
+    group.push(pokemon);
+    groups.set(pokemon.name.ja, group);
+  });
+  groups.forEach((variants) => {
+    if (variants.length < 2) return;
+    const tokenLists = variants.map((pokemon) => pokemon.id.split("-"));
+    const first = tokenLists[0];
+    let commonTokenCount = 0;
+    while (commonTokenCount < first.length
+      && tokenLists.every((tokens) => tokens[commonTokenCount] === first[commonTokenCount])) {
+      commonTokenCount += 1;
+    }
+    variants.forEach((pokemon, index) => {
+      pokemonFormMeta.set(pokemon.id, tokenLists[index].slice(commonTokenCount).join("-"));
+    });
+  });
+}
+
+function getPokemonFormLabel(pokemon) {
+  const rawSuffix = pokemonFormMeta.get(pokemon.id);
+  if (!rawSuffix) return "";
+  const suffix = rawSuffix.replace(/(?:^|-)mega(?:-[xyz])?$/, "");
+  if (!suffix) return "";
+  if (FORM_LABEL_BY_ID.has(pokemon.id)) return FORM_LABEL_BY_ID.get(pokemon.id);
+  if (FORM_LABEL_BY_SUFFIX.has(suffix)) return FORM_LABEL_BY_SUFFIX.get(suffix);
+  return suffix
+    .split("-")
+    .map((token) => FORM_LABEL_BY_SUFFIX.get(token) ?? token)
+    .join("・");
+}
+
 function getPokemonDisplayName(pokemon) {
-  if (!pokemon.id.includes("-mega")) return pokemon.name.ja;
-  const variant = pokemon.id.match(/-mega-([xyz])$/)?.[1]?.toUpperCase() ?? "";
-  return `メガ${pokemon.name.ja}${variant}`;
+  const megaMatch = pokemon.id.match(/-mega(?:-([xyz]))?$/);
+  if (megaMatch) {
+    const variant = megaMatch[1]?.toUpperCase() ?? "";
+    const formLabel = getPokemonFormLabel(pokemon);
+    return `メガ${pokemon.name.ja}${formLabel ? `（${formLabel}）` : ""}${variant}`;
+  }
+  const formLabel = getPokemonFormLabel(pokemon);
+  return formLabel ? `${pokemon.name.ja}（${formLabel}）` : pokemon.name.ja;
 }
 
 function readRecentPokemonIds() {
@@ -709,6 +1095,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
     for (const attackerId of move.users) {
       const attacker = attackerById.get(attackerId);
       if (!attacker) continue;
+      if (!isMoveAllowedForPokemon(attackerId, move.id)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
       const stab = attacker.types.includes(move.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
@@ -849,6 +1236,10 @@ function getPokemonPool() {
 function isMoveAllowed(moveId) {
   if (!useChampionsFilter() || !state.availability?.restrictMoves) return true;
   return new Set(state.availability.moves ?? []).has(moveId);
+}
+
+function isMoveAllowedForPokemon(pokemonId, moveId) {
+  return !state.moveExclusions.get(pokemonId)?.has(moveId);
 }
 
 function updateDataStatus() {
