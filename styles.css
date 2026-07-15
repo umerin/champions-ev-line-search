@@ -625,11 +625,27 @@ legend {
   margin-top: 10px;
 }
 
+.move-settings-move-header,
 .move-setting-row {
   display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) auto;
-  gap: 8px;
+  grid-template-columns: 18px minmax(120px, 200px) 70px 48px 48px;
+  justify-content: start;
+  gap: 5px;
   align-items: center;
+}
+
+.move-settings-move-header {
+  min-height: 32px;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #f5f9fb;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.move-setting-row {
   min-height: 42px;
   padding: 7px 10px;
   border-bottom: 1px solid var(--line);
@@ -656,10 +672,22 @@ legend {
   font-weight: 700;
 }
 
-.move-setting-meta {
+.move-setting-type,
+.move-setting-category,
+.move-setting-power {
   color: var(--muted);
   font-size: 11px;
   white-space: nowrap;
+}
+
+.move-setting-type {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.move-setting-power {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 .move-settings-empty {
@@ -1074,6 +1102,28 @@ tbody tr:hover {
 
   .move-settings-actions {
     justify-content: flex-start;
+  }
+
+  .move-settings-move-header,
+  .move-setting-row {
+    grid-template-columns: 18px minmax(0, 1fr) 54px 42px 42px;
+    gap: 6px;
+  }
+
+  .move-settings-move-header {
+    padding-inline: 8px;
+    font-size: 9px;
+  }
+
+  .move-setting-row {
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+
+  .move-setting-type,
+  .move-setting-category,
+  .move-setting-power {
+    font-size: 10px;
   }
 
   .results-panel {

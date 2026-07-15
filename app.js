@@ -74,6 +74,49 @@ const jpCategory = {
   special: "特殊",
 };
 
+const jpType = {
+  normal: "ノーマル",
+  fire: "ほのお",
+  water: "みず",
+  electric: "でんき",
+  grass: "くさ",
+  ice: "こおり",
+  fighting: "かくとう",
+  poison: "どく",
+  ground: "じめん",
+  flying: "ひこう",
+  psychic: "エスパー",
+  bug: "むし",
+  rock: "いわ",
+  ghost: "ゴースト",
+  dragon: "ドラゴン",
+  dark: "あく",
+  steel: "はがね",
+  fairy: "フェアリー",
+};
+
+const moveTypeOrder = [
+  "normal",
+  "fire",
+  "water",
+  "electric",
+  "grass",
+  "ice",
+  "fighting",
+  "poison",
+  "ground",
+  "flying",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dragon",
+  "dark",
+  "steel",
+  "fairy",
+];
+const moveTypeRank = new Map(moveTypeOrder.map((type, index) => [type, index]));
+
 const effectivenessLabel = new Map([
   [4, "4倍"],
   [2, "2倍"],
@@ -322,18 +365,30 @@ function renderMoveSettingsMoveList() {
     els.moveSettingsMoveList.innerHTML = `<p class="move-settings-empty">該当する技がありません。</p>`;
     return;
   }
-  els.moveSettingsMoveList.innerHTML = visibleMoves.map((move) => {
-    const checked = !excluded.has(move.id);
-    const category = jpCategory[move.category] ?? "";
-    const power = move.power ? `威力 ${move.power}` : "変化技";
-    return `
-      <label class="move-setting-row">
-        <input class="move-setting-checkbox" type="checkbox" data-pokemon-id="${escapeHtml(pokemon.id)}" data-move-id="${escapeHtml(move.id)}"${checked ? " checked" : ""} />
-        <span class="move-setting-name">${escapeHtml(move.name?.ja ?? move.name?.en ?? move.id)}</span>
-        <span class="move-setting-meta">${category}・${power}</span>
-      </label>
-    `;
-  }).join("");
+  els.moveSettingsMoveList.innerHTML = `
+    <div class="move-settings-move-header" aria-hidden="true">
+      <span></span>
+      <span>技名</span>
+      <span>タイプ</span>
+      <span>分類</span>
+      <span>技威力</span>
+    </div>
+    ${visibleMoves.map((move) => {
+      const checked = !excluded.has(move.id);
+      const category = jpCategory[move.category] ?? "";
+      const type = jpType[move.type] ?? move.type ?? "—";
+      const power = move.power ? move.power : "—";
+      return `
+        <label class="move-setting-row">
+          <input class="move-setting-checkbox" type="checkbox" data-pokemon-id="${escapeHtml(pokemon.id)}" data-move-id="${escapeHtml(move.id)}"${checked ? " checked" : ""} />
+          <span class="move-setting-name">${escapeHtml(move.name?.ja ?? move.name?.en ?? move.id)}</span>
+          <span class="move-setting-type">${escapeHtml(type)}</span>
+          <span class="move-setting-category">${escapeHtml(category || "変化")}</span>
+          <span class="move-setting-power">${escapeHtml(String(power))}</span>
+        </label>
+      `;
+    }).join("")}
+  `;
   els.moveSettingsMoveList.querySelectorAll(".move-setting-checkbox").forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
       setMoveIncluded(checkbox.dataset.pokemonId, checkbox.dataset.moveId, checkbox.checked);
@@ -344,7 +399,11 @@ function renderMoveSettingsMoveList() {
 function getMovesForPokemon(pokemon) {
   return state.moves
     .filter((move) => Array.isArray(move.users) && move.users.includes(pokemon.id))
-    .sort((a, b) => (a.name?.ja ?? a.name?.en ?? a.id).localeCompare(b.name?.ja ?? b.name?.en ?? b.id, "ja"));
+    .sort((a, b) => {
+      const typeRank = (moveTypeRank.get(a.type) ?? moveTypeOrder.length) - (moveTypeRank.get(b.type) ?? moveTypeOrder.length);
+      if (typeRank !== 0) return typeRank;
+      return (a.name?.ja ?? a.name?.en ?? a.id).localeCompare(b.name?.ja ?? b.name?.en ?? b.id, "ja");
+    });
 }
 
 function getMoveExclusions(pokemonId, create = false) {
