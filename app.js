@@ -15,6 +15,9 @@ const state = {
 };
 
 let searchTimer = null;
+const RECENT_POKEMON_STORAGE_KEY = "champions-ev-line-search:recent-pokemon";
+const RECENT_POKEMON_LIMIT = 10;
+const RESULT_LIMIT = 80;
 
 const els = {
   dataStatus: document.querySelector("#dataStatus"),
@@ -39,11 +42,14 @@ const els = {
   currentSpePoints: document.querySelector("#currentSpePoints"),
   remainingPoints: document.querySelector("#remainingPoints"),
   unallocatedPoints: document.querySelector("#unallocatedPoints"),
-  attackerPoints: document.querySelector("#attackerPoints"),
+  attackerPointsDetailOptions: document.querySelector("#attackerPointsDetailOptions"),
   movePower: document.querySelector("#movePower"),
   includePriorityMoves: document.querySelector("#includePriorityMoves"),
   higherOffenseOnly: document.querySelector("#higherOffenseOnly"),
+  attackStatMultipleOf11: document.querySelector("#attackStatMultipleOf11"),
   stabOnly: document.querySelector("#stabOnly"),
+  randomToGuaranteedSurvival: document.querySelector("#randomToGuaranteedSurvival"),
+  excludeUnsurvivableAttacks: document.querySelector("#excludeUnsurvivableAttacks"),
   prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
   resultsBody: document.querySelector("#resultsBody"),
@@ -108,18 +114,27 @@ async function init() {
     Object.assign(state, { pokemon, moves, typeChart, rules, availability });
     populatePokemonSelect();
     populateMovePowerOptions();
+    populateAttackerPointDetails();
     updateCurrentStatsDefault();
     updateDataStatus();
     els.form.addEventListener("submit", onSubmit);
-    document.querySelectorAll(".point-button").forEach((button) => {
+    els.remainingPoints.addEventListener("input", scheduleSearch);
+    document.querySelectorAll(".point-button, .point-preset").forEach((button) => {
       button.addEventListener("click", () => adjustPointInput(button));
     });
     els.defenderSelect.addEventListener("change", () => {
       updateCurrentStatsDefault();
       runSearch();
     });
-    els.defenderSearch.addEventListener("input", () => renderPokemonOptions(els.defenderSearch.value));
-    els.defenderSearch.addEventListener("focus", () => renderPokemonOptions(els.defenderSearch.value));
+    els.defenderSearch.addEventListener("input", () => {
+      if (els.defenderSearch.value.trim()) {
+        renderPokemonOptions(els.defenderSearch.value);
+      } else {
+        renderRecentPokemonOptions();
+      }
+    });
+    els.defenderSearch.addEventListener("focus", renderPokemonOptionsOnActivate);
+    els.defenderSearch.addEventListener("click", renderPokemonOptionsOnActivate);
     els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
     els.megaToggle.addEventListener("click", cycleMegaForm);
     document.querySelectorAll(".rule-toggle-button").forEach((button) => {
@@ -135,19 +150,37 @@ async function init() {
       runSearch();
     });
     ["currentHpPoints", "currentAtkPoints", "currentDefPoints", "currentSpaPoints", "currentSpdPoints", "currentSpePoints"].forEach((key) => {
-      els[key].addEventListener("input", updateCurrentStatsDefault);
+      els[key].addEventListener("focus", () => {
+        if (els[key].value === "0") els[key].select();
+      });
+      els[key].addEventListener("input", () => {
+        updateCurrentStatsDefault({ syncRemainingPoints: true });
+        scheduleSearch();
+      });
+    });
+    [
+      ["currentHp", "hp"],
+      ["currentAtk", "atk"],
+      ["currentDef", "def"],
+      ["currentSpa", "spa"],
+      ["currentSpd", "spd"],
+      ["currentSpe", "spe"],
+    ].forEach(([statId, statKey]) => {
+      els[statId].addEventListener("change", () => syncPointsFromStatInput(statKey));
     });
     document.querySelectorAll(".nature-button").forEach((button) => {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#stabOnly):not(#prioritizeMega)').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#attackStatMultipleOf11):not(#stabOnly):not(#randomToGuaranteedSurvival):not(#excludeUnsurvivableAttacks):not(#prioritizeMega)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.higherOffenseOnly.addEventListener("change", runSearch);
+    els.attackStatMultipleOf11.addEventListener("change", runSearch);
     els.stabOnly.addEventListener("change", runSearch);
+    els.randomToGuaranteedSurvival.addEventListener("change", runSearch);
+    els.excludeUnsurvivableAttacks.addEventListener("change", runSearch);
     els.prioritizeMega.addEventListener("change", runSearch);
-    els.attackerPoints.addEventListener("input", scheduleSearch);
     els.movePower.addEventListener("input", scheduleSearch);
     els.includePriorityMoves.addEventListener("change", runSearch);
     runSearch();
@@ -176,6 +209,13 @@ function populateMovePowerOptions() {
   document.querySelector("#movePowerOptions").innerHTML = options.join("");
 }
 
+function populateAttackerPointDetails() {
+  els.attackerPointsDetailOptions.innerHTML = Array.from({ length: 29 }, (_, index) => {
+    const points = index + 3;
+    return `<label><input type="checkbox" name="attackerPointsDetail" value="${points}" /> ${points}</label>`;
+  }).join("");
+}
+
 function getSortedPokemonPool() {
   return [...getPokemonPool()].sort((a, b) => {
     const aName = a.name.jaHrkt ?? a.name.ja;
@@ -195,6 +235,76 @@ function getPokemonDisplayName(pokemon) {
   if (!pokemon.id.includes("-mega")) return pokemon.name.ja;
   const variant = pokemon.id.match(/-mega-([xyz])$/)?.[1]?.toUpperCase() ?? "";
   return `メガ${pokemon.name.ja}${variant}`;
+}
+
+function readRecentPokemonIds() {
+  try {
+    const stored = globalThis.localStorage?.getItem(RECENT_POKEMON_STORAGE_KEY);
+    const ids = stored ? JSON.parse(stored) : [];
+    return Array.isArray(ids)
+      ? ids.filter((id) => typeof id === "string").slice(0, RECENT_POKEMON_LIMIT)
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function rememberRecentPokemon(pokemonId) {
+  const ids = [pokemonId, ...readRecentPokemonIds().filter((id) => id !== pokemonId)]
+    .slice(0, RECENT_POKEMON_LIMIT);
+  try {
+    globalThis.localStorage?.setItem(RECENT_POKEMON_STORAGE_KEY, JSON.stringify(ids));
+  } catch {
+    // 履歴保存が利用できない環境でも、ポケモン選択自体は継続する。
+  }
+}
+
+function getRecentPokemon() {
+  const pokemonById = new Map(getPokemonPool().map((pokemon) => [pokemon.id, pokemon]));
+  return readRecentPokemonIds()
+    .map((pokemonId) => pokemonById.get(pokemonId))
+    .filter(Boolean);
+}
+
+function isCompletePokemonName(query) {
+  const normalizedQuery = normalizePokemonSearch(query.trim());
+  if (!normalizedQuery) return false;
+  return getSortedPokemonPool().some((pokemon) => [
+    getPokemonDisplayName(pokemon),
+    pokemon.name.ja,
+    pokemon.name.jaHrkt,
+    pokemon.name.en,
+    pokemon.id,
+  ].filter(Boolean).some((name) => normalizePokemonSearch(name) === normalizedQuery));
+}
+
+function renderPokemonOptionsOnActivate() {
+  const query = els.defenderSearch.value;
+  if (!query.trim() || isCompletePokemonName(query)) {
+    renderRecentPokemonOptions();
+    return;
+  }
+  renderPokemonOptions(query);
+}
+
+function renderRecentPokemonOptions() {
+  const recentPokemon = getRecentPokemon();
+  const currentPokemon = getPokemonPool().find((pokemon) => pokemon.id === els.defenderSelect.value);
+  const options = recentPokemon.length ? recentPokemon : currentPokemon ? [currentPokemon] : [];
+  const optionMarkup = options.map((pokemon) => `
+    <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
+      <span>${escapeHtml(getPokemonDisplayName(pokemon))}</span>
+    </button>
+  `).join("");
+
+  els.defenderOptions.innerHTML = options.length
+    ? `<div class="pokemon-options-heading">最近使ったポケモン</div>${optionMarkup}`
+    : '<span class="pokemon-option-empty">最近使ったポケモンはありません</span>';
+  els.defenderOptions.querySelectorAll(".pokemon-option").forEach((button) => {
+    button.addEventListener("click", () => selectPokemon(button.dataset.pokemonId));
+  });
+  els.defenderOptions.hidden = false;
+  els.defenderSearch.setAttribute("aria-expanded", "true");
 }
 
 function renderPokemonOptions(query) {
@@ -242,6 +352,7 @@ function getPokemonSearchScore(pokemon, query, asciiQuery) {
 function selectPokemon(pokemonId) {
   const pokemon = getPokemonPool().find((item) => item.id === pokemonId);
   if (!pokemon) return;
+  rememberRecentPokemon(pokemon.id);
   els.defenderSelect.value = pokemon.id;
   els.defenderSearch.value = getPokemonDisplayName(pokemon);
   updateMegaToggle(pokemon);
@@ -315,7 +426,7 @@ function handlePokemonSearchKeydown(event) {
   }
 }
 
-function updateCurrentStatsDefault() {
+function updateCurrentStatsDefault({ syncRemainingPoints = false } = {}) {
   const defender = state.pokemon.find((item) => item.id === els.defenderSelect.value);
   if (!defender) return;
   const hpPoints = clamp(toInt(els.currentHpPoints.value), 0, state.rules.statPoint.maxPerStat);
@@ -332,15 +443,55 @@ function updateCurrentStatsDefault() {
   els.currentSpe.value = calcNonHpStat(defender.baseStats.spe, spePoints, getDefenderNatureMode("spe"));
   const usedPoints = hpPoints + atkPoints + defPoints + spaPoints + spdPoints + spePoints;
   const unallocated = state.rules.statPoint.totalDefault - usedPoints;
-  els.unallocatedPoints.textContent = Math.max(0, unallocated);
+  const remainingPoints = Math.max(0, unallocated);
+  if (syncRemainingPoints) els.remainingPoints.value = remainingPoints;
+  els.unallocatedPoints.textContent = remainingPoints;
   els.unallocatedPoints.parentElement.classList.toggle("is-over", unallocated < 0);
+}
+
+function syncPointsFromStatInput(statKey) {
+  const fieldMap = {
+    hp: { statId: "currentHp", pointsId: "currentHpPoints" },
+    atk: { statId: "currentAtk", pointsId: "currentAtkPoints" },
+    def: { statId: "currentDef", pointsId: "currentDefPoints" },
+    spa: { statId: "currentSpa", pointsId: "currentSpaPoints" },
+    spd: { statId: "currentSpd", pointsId: "currentSpdPoints" },
+    spe: { statId: "currentSpe", pointsId: "currentSpePoints" },
+  };
+  const fields = fieldMap[statKey];
+  const defender = state.pokemon.find((item) => item.id === els.defenderSelect.value);
+  if (!fields || !defender) return;
+
+  const target = Number.parseInt(els[fields.statId].value, 10);
+  if (!Number.isFinite(target) || target < 1) return;
+
+  let closestPoints = 0;
+  let closestDifference = Number.POSITIVE_INFINITY;
+  const maxPoints = state.rules.statPoint.maxPerStat;
+  for (let points = 0; points <= maxPoints; points += 1) {
+    const calculated = statKey === "hp"
+      ? calcHpStat(defender.baseStats.hp, points)
+      : calcNonHpStat(defender.baseStats[statKey], points, getDefenderNatureMode(statKey));
+    const difference = Math.abs(calculated - target);
+    if (difference < closestDifference) {
+      closestDifference = difference;
+      closestPoints = points;
+    }
+  }
+
+  els[fields.pointsId].value = closestPoints;
+  updateCurrentStatsDefault({ syncRemainingPoints: true });
+  scheduleSearch();
 }
 
 function adjustPointInput(button) {
   const input = document.querySelector(`#${button.dataset.target}`);
   if (!input) return;
+  const nextValue = button.dataset.value == null
+    ? toInt(input.value) + toInt(button.dataset.delta)
+    : toInt(button.dataset.value);
   input.value = clamp(
-    toInt(input.value) + toInt(button.dataset.delta),
+    nextValue,
     state.rules.statPoint.min,
     state.rules.statPoint.maxPerStat,
   );
@@ -392,7 +543,7 @@ function handleOpponentFilterChange(checkbox) {
       if (all) all.checked = false;
     }
     if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
-  } else if (group === "attackerPointsPreset") {
+  } else if (group === "attackerPointsPreset" || group === "attackerPointsDetail") {
     if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
   } else {
     if (checkbox.checked) {
@@ -402,10 +553,6 @@ function handleOpponentFilterChange(checkbox) {
     } else if (!checkboxes.some((item) => item.checked)) {
       checkbox.checked = true;
     }
-  }
-  if (group === "attackerPointsPreset") {
-    const details = document.querySelector("#attackerPointsDetails");
-    if (details) details.open = getCheckedValues(group).includes("custom");
   }
   runSearch();
 }
@@ -434,64 +581,111 @@ function runSearch() {
     spd: input.currentSpd,
   };
   const candidates = buildDefensiveCandidates(input);
-  const rows = [];
   const attackScenarios = buildAttackScenarios(defender, pokemonPool, input, current);
+  const scenarioCount = attackScenarios.length;
+  const candidateStats = candidates.map((candidate) => ({
+    candidate,
+    after: applyCandidateStats(defender, input, candidate),
+  }));
+  const rows = [];
 
-  for (const candidate of candidates) {
-    const after = applyCandidateStats(defender, input, candidate);
-    for (const scenario of attackScenarios) {
-      const afterDamage = calcDamage({
+  for (const profile of groupAttackScenarios(attackScenarios)) {
+    const profileRows = [];
+    const representative = profile.scenarios[0];
+    const rankedScenarios = getRankedProfileScenarios(profile.scenarios, input.prioritizeMega);
+    let isSurvivable = false;
+
+    for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
+      const { candidate, after } = candidateStats[candidateIndex];
+      const damageInput = {
         level: state.rules.level,
-        power: scenario.move.power,
-        attack: scenario.attackStat,
-        defense: scenario.move.category === "physical" ? after.def : after.spd,
-        stab: scenario.stab,
-        effectiveness: scenario.effectiveness,
+        power: representative.move.power,
+        attack: representative.attackStat,
+        defense: representative.move.category === "physical" ? after.def : after.spd,
+        stab: representative.stab,
+        effectiveness: representative.effectiveness,
         rule: input.battleRule,
-        isSpreadMove: scenario.move.isSpreadMove,
-      });
-      const afterMinDamage = calcDamage({
-        level: state.rules.level,
-        power: scenario.move.power,
-        attack: scenario.attackStat,
-        defense: scenario.move.category === "physical" ? after.def : after.spd,
-        stab: scenario.stab,
-        effectiveness: scenario.effectiveness,
-        rule: input.battleRule,
-        isSpreadMove: scenario.move.isSpreadMove,
-        randomModifier: state.rules.damageRandomMin ?? 0.85,
-      });
-      const afterKoRate = calcOneHitKoRate({
-        level: state.rules.level,
-        power: scenario.move.power,
-        attack: scenario.attackStat,
-        defense: scenario.move.category === "physical" ? after.def : after.spd,
-        stab: scenario.stab,
-        effectiveness: scenario.effectiveness,
-        rule: input.battleRule,
-        isSpreadMove: scenario.move.isSpreadMove,
-      }, after.hp, afterDamage, afterMinDamage);
-      if (afterDamage === scenario.currentDamage && afterKoRate === scenario.currentKoRate) continue;
-      rows.push({
-        candidate,
-        ...scenario,
-        afterDamage,
-        afterMinDamage,
-        afterKoRate,
-        diff: afterDamage - scenario.currentDamage,
-        line: `${formatProbability(scenario.currentKoRate)}→${formatProbability(afterKoRate)}`,
-      });
+        isSpreadMove: representative.move.isSpreadMove,
+      };
+      const {
+        maxDamage: afterDamage,
+        minDamage: afterMinDamage,
+        koRate: afterKoRate,
+      } = calcDamageResult(damageInput, after.hp);
+      if (afterKoRate < 100) isSurvivable = true;
+      if (input.randomToGuaranteedSurvival) {
+        const isRandomKo = representative.currentKoRate > 0 && representative.currentKoRate < 100;
+        if (!isRandomKo || afterKoRate !== 0) continue;
+      }
+      if (afterDamage === representative.currentDamage && afterKoRate === representative.currentKoRate) continue;
+
+      for (const scenario of rankedScenarios) {
+        insertRankedRow(profileRows, {
+          candidate,
+          ...scenario,
+          afterDamage,
+          afterMinDamage,
+          afterKoRate,
+          diff: afterDamage - scenario.currentDamage,
+          sortOrder: candidateIndex * scenarioCount + scenario.scenarioIndex,
+        }, input.prioritizeMega);
+      }
     }
+
+    if (input.excludeUnsurvivableAttacks && !isSurvivable) continue;
+    for (const row of profileRows) insertRankedRow(rows, row, input.prioritizeMega);
   }
 
-  rows.sort((a, b) => {
-    const megaPriority = input.prioritizeMega
-      ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
-      : 0;
-    const probabilityImprovement = (b.currentKoRate - b.afterKoRate) - (a.currentKoRate - a.afterKoRate);
-    return megaPriority || probabilityImprovement || a.diff - b.diff;
-  });
-  renderResults(rows.slice(0, 80), candidates.length);
+  renderResults(rows, candidates.length);
+}
+
+function groupAttackScenarios(scenarios) {
+  const profiles = new Map();
+  for (const scenario of scenarios) {
+    let profile = profiles.get(scenario.damageProfileKey);
+    if (!profile) {
+      profile = { scenarios: [] };
+      profiles.set(scenario.damageProfileKey, profile);
+    }
+    profile.scenarios.push(scenario);
+  }
+  return profiles.values();
+}
+
+function getRankedProfileScenarios(scenarios, prioritizeMega) {
+  if (!prioritizeMega) return scenarios.slice(0, RESULT_LIMIT);
+  const mega = [];
+  const regular = [];
+  for (const scenario of scenarios) {
+    const bucket = scenario.attacker.id.includes("-mega") ? mega : regular;
+    if (bucket.length < RESULT_LIMIT) bucket.push(scenario);
+  }
+  return [...mega, ...regular];
+}
+
+function compareResultRows(a, b, prioritizeMega) {
+  const megaPriority = prioritizeMega
+    ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
+    : 0;
+  const probabilityImprovement = (b.currentKoRate - b.afterKoRate) - (a.currentKoRate - a.afterKoRate);
+  return megaPriority || probabilityImprovement || a.diff - b.diff || a.sortOrder - b.sortOrder;
+}
+
+function insertRankedRow(rows, row, prioritizeMega) {
+  if (
+    rows.length === RESULT_LIMIT
+    && compareResultRows(row, rows[rows.length - 1], prioritizeMega) >= 0
+  ) return;
+
+  let start = 0;
+  let end = rows.length;
+  while (start < end) {
+    const middle = Math.floor((start + end) / 2);
+    if (compareResultRows(row, rows[middle], prioritizeMega) < 0) end = middle;
+    else start = middle + 1;
+  }
+  rows.splice(start, 0, row);
+  if (rows.length > RESULT_LIMIT) rows.pop();
 }
 
 function scheduleSearch() {
@@ -503,6 +697,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
   const attackerById = new Map(pokemonPool.map((pokemon) => [pokemon.id, pokemon]));
   const attackerNatureModes = input.attackerNatures;
   const scenarios = [];
+  const currentDamageCache = new Map();
 
   for (const move of state.moves) {
     if (!isMoveAllowed(move.id)) continue;
@@ -520,37 +715,35 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
-          const currentDamage = calcDamage({
-            level: state.rules.level,
-            power: move.power,
-            attack: attackStat,
-            defense: move.category === "physical" ? current.def : current.spd,
+          if (input.attackStatMultipleOf11 && attackStat % 11 !== 0) continue;
+          const damageProfileKey = [
+            move.category,
+            move.power,
+            attackStat,
             stab,
             effectiveness,
-            rule: input.battleRule,
-            isSpreadMove: move.isSpreadMove,
-          });
-          const currentMinDamage = calcDamage({
-            level: state.rules.level,
-            power: move.power,
-            attack: attackStat,
-            defense: move.category === "physical" ? current.def : current.spd,
-            stab,
-            effectiveness,
-            rule: input.battleRule,
-            isSpreadMove: move.isSpreadMove,
-            randomModifier: state.rules.damageRandomMin ?? 0.85,
-          });
-          const currentKoRate = calcOneHitKoRate({
-            level: state.rules.level,
-            power: move.power,
-            attack: attackStat,
-            defense: move.category === "physical" ? current.def : current.spd,
-            stab,
-            effectiveness,
-            rule: input.battleRule,
-            isSpreadMove: move.isSpreadMove,
-          }, current.hp, currentDamage, currentMinDamage);
+            Number(move.isSpreadMove),
+          ].join("|");
+          let currentDamageResult = currentDamageCache.get(damageProfileKey);
+          if (!currentDamageResult) {
+            const damageInput = {
+              level: state.rules.level,
+              power: move.power,
+              attack: attackStat,
+              defense: move.category === "physical" ? current.def : current.spd,
+              stab,
+              effectiveness,
+              rule: input.battleRule,
+              isSpreadMove: move.isSpreadMove,
+            };
+            const {
+              maxDamage: currentDamage,
+              minDamage: currentMinDamage,
+              koRate: currentKoRate,
+            } = calcDamageResult(damageInput, current.hp);
+            currentDamageResult = { currentDamage, currentMinDamage, currentKoRate };
+            currentDamageCache.set(damageProfileKey, currentDamageResult);
+          }
           scenarios.push({
             attacker,
             move,
@@ -559,9 +752,9 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             attackerNature,
             effectiveness,
             stab,
-            currentDamage,
-            currentMinDamage,
-            currentKoRate,
+            damageProfileKey,
+            scenarioIndex: scenarios.length,
+            ...currentDamageResult,
           });
         }
       }
@@ -593,7 +786,10 @@ function readInput() {
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
     higherOffenseOnly: els.higherOffenseOnly.checked,
+    attackStatMultipleOf11: els.attackStatMultipleOf11.checked,
     stabOnly: els.stabOnly.checked,
+    randomToGuaranteedSurvival: els.randomToGuaranteedSurvival.checked,
+    excludeUnsurvivableAttacks: els.excludeUnsurvivableAttacks.checked,
     prioritizeMega: els.prioritizeMega.checked,
   };
 }
@@ -702,11 +898,11 @@ function getCheckedValues(name) {
 
 function readAttackerPoints() {
   const presets = getCheckedValues("attackerPointsPreset");
-  const values = presets.map((preset) => {
-    const value = preset === "custom" ? toInt(els.attackerPoints.value) : toInt(preset);
-    return clamp(value, 0, state.rules.statPoint.maxPerStat);
-  });
-  return [...new Set(values.length ? values : [32])];
+  const presetValues = presets.map((preset) => toInt(preset));
+  const detailValues = getCheckedValues("attackerPointsDetail").map((value) => toInt(value));
+  const values = [...presetValues, ...detailValues];
+  return [...new Set(values.length ? values : [32])]
+    .map((value) => clamp(value, 0, state.rules.statPoint.maxPerStat));
 }
 
 function getDefenderNatureMode(statKey) {
@@ -744,14 +940,41 @@ function calcHpStat(baseStat, statPoints) {
   return Math.floor(((2 * baseStat + 31) * state.rules.level) / 100 + state.rules.level + 10) + statPointToBonus(statPoints);
 }
 
-function calcDamage({ level, power, attack, defense, stab, effectiveness, rule, isSpreadMove, randomModifier = state.rules.damageRandomMax }) {
+function calcDamageResult(damageInput, hp) {
+  const preRandomDamage = calcPreRandomDamage(damageInput);
+  const maxDamage = calcDamageFromPreRandom(
+    preRandomDamage,
+    state.rules.damageRandomMax,
+    damageInput.stab,
+    damageInput.effectiveness,
+  );
+  const minDamage = calcDamageFromPreRandom(
+    preRandomDamage,
+    state.rules.damageRandomMin ?? 0.85,
+    damageInput.stab,
+    damageInput.effectiveness,
+  );
+  const koRate = calcOneHitKoRate(
+    preRandomDamage,
+    damageInput.stab,
+    damageInput.effectiveness,
+    hp,
+    maxDamage,
+    minDamage,
+  );
+  return { maxDamage, minDamage, koRate };
+}
+
+function calcPreRandomDamage({ level, power, attack, defense, rule, isSpreadMove }) {
   const levelFactor = Math.floor((2 * level) / 5 + 2);
   const basePowerDamage = Math.floor((levelFactor * power * attack) / defense);
   const baseDamage = Math.floor(basePowerDamage / 50) + 2;
   const doubleModifier = rule === "double" && isSpreadMove ? state.rules.doubleSpreadModifier : 1;
+  return applyDamageModifier(baseDamage, doubleModifier);
+}
 
-  let damage = baseDamage;
-  damage = applyDamageModifier(damage, doubleModifier);
+function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness) {
+  let damage = preRandomDamage;
   damage = applyDamageModifier(damage, randomModifier);
   damage = applyDamageModifier(damage, stab);
   damage = applyTypeEffectiveness(damage, effectiveness);
@@ -788,15 +1011,23 @@ function matchesAttackKind(category, filters) {
   return filters.includes(category);
 }
 
-function calcOneHitKoRate(damageInput, hp, maxDamage, minDamage) {
+function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage) {
   if (maxDamage < hp) return 0;
   if (minDamage >= hp) return 100;
-  let koRolls = 1;
-  for (let randomPercent = 86; randomPercent < 100; randomPercent++) {
-    const damage = calcDamage({ ...damageInput, randomModifier: randomPercent / 100 });
-    if (damage >= hp) koRolls += 1;
+  let lowestKoRoll = 86;
+  let highestKoRoll = 100;
+  while (lowestKoRoll < highestKoRoll) {
+    const randomPercent = Math.floor((lowestKoRoll + highestKoRoll) / 2);
+    const damage = calcDamageFromPreRandom(
+      preRandomDamage,
+      randomPercent / 100,
+      stab,
+      effectiveness,
+    );
+    if (damage >= hp) highestKoRoll = randomPercent;
+    else lowestKoRoll = randomPercent + 1;
   }
-  return (koRolls / 16) * 100;
+  return ((101 - lowestKoRoll) / 16) * 100;
 }
 
 function formatProbability(value) {
@@ -823,33 +1054,35 @@ function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
 
 function renderResults(rows, candidateCount) {
   const lineChanges = rows.filter((row) => row.afterKoRate < row.currentKoRate).length;
-  const best = rows[0];
   els.summary.innerHTML = `
     <span>配分候補<strong>${candidateCount}</strong></span>
     <span>表示件数<strong>${rows.length}</strong></span>
     <span>KO率低下<strong>${lineChanges}</strong></span>
-    <span>おすすめ<strong>${best ? formatCandidate(best.candidate) : "-"}</strong></span>
   `;
 
   if (!rows.length) {
-    els.resultsBody.innerHTML = `<tr><td colspan="10" class="empty">条件に合う変化はありませんでした。</td></tr>`;
+    els.resultsBody.innerHTML = `<tr><td colspan="12" class="empty">条件に合う変化はありませんでした。</td></tr>`;
     return;
   }
 
   els.resultsBody.innerHTML = rows
     .map((row) => {
       const lineClass = row.afterKoRate < row.currentKoRate ? "line-good" : "";
+      const diffClass = row.diff < 0 ? "diff-good" : row.diff > 0 ? "diff-bad" : "diff-neutral";
+      const diffLabel = row.diff > 0 ? `+${row.diff}` : row.diff;
       return `
         <tr>
-          <td class="result-line ${lineClass}">${row.line}</td>
+          <td class="result-line ${lineClass}">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</td>
           <td class="result-allocation">${formatCandidate(row.candidate)}</td>
           <td class="result-attacker">${getPokemonDisplayName(row.attacker)}</td>
+          <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
+          <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
           <td class="result-move">${row.move.name.ja}</td>
+          <td class="result-power">${row.move.power}</td>
           <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
           <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
-          <td class="result-diff">${row.diff}</td>
+          <td class="result-diff ${diffClass}">${diffLabel}</td>
           <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
-          <td class="result-attack">${row.attackStat}（${row.attackerPoints}pt・${row.attackerNature === "boost" ? "補正有" : "補正無"}）</td>
           <td class="result-category">${jpCategory[row.move.category]}</td>
         </tr>
       `;
@@ -859,7 +1092,7 @@ function renderResults(rows, candidateCount) {
 
 function renderInputError(message) {
   els.summary.innerHTML = `<span class="empty">${escapeHtml(message)}</span>`;
-  els.resultsBody.innerHTML = `<tr><td colspan="10" class="empty">${escapeHtml(message)}</td></tr>`;
+  els.resultsBody.innerHTML = `<tr><td colspan="12" class="empty">${escapeHtml(message)}</td></tr>`;
 }
 
 function formatCandidate(candidate) {

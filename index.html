@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-16" />
+    <link rel="stylesheet" href="./styles.css?v=20260715-31" />
   </head>
   <body>
     <main class="app-shell">
@@ -23,7 +23,6 @@
         <form class="panel controls" id="searchForm">
           <div class="panel-heading">
             <h2>検索条件</h2>
-            <button class="search-button search-button-top" type="submit">検索</button>
           </div>
 
           <div class="field-grid">
@@ -58,14 +57,14 @@
 
             <label>
               検索で配分するポイント
-              <input id="remainingPoints" type="number" min="0" max="66" value="4" />
+              <input id="remainingPoints" type="number" min="0" max="66" value="66" />
             </label>
           </div>
 
           <fieldset class="stat-allocation">
             <legend>現在のステータス配分</legend>
             <div class="stat-table-head" aria-hidden="true">
-              <span>能力</span><span>ポイント</span><span>実数値</span><span>補正</span>
+              <span class="stat-point-heading">能力ポイント</span><span>実数値</span><span>補正</span>
             </div>
             <div class="stat-row">
               <strong>H</strong>
@@ -73,8 +72,10 @@
                 <button type="button" class="point-button" data-target="currentHpPoints" data-delta="-1" aria-label="Hを1減らす">−</button>
                 <input id="currentHpPoints" type="number" min="0" max="32" value="0" aria-label="Hポイント" />
                 <button type="button" class="point-button" data-target="currentHpPoints" data-delta="1" aria-label="Hを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentHpPoints" data-value="0" aria-label="HをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentHpPoints" data-value="32" aria-label="HをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentHp" class="stat-value" type="number" min="1" value="175" readonly aria-label="現在HP実数値" />
+              <input id="currentHp" class="stat-value" type="number" min="1" value="175" aria-label="現在HP実数値" />
               <span></span>
             </div>
             <div class="stat-row">
@@ -83,11 +84,13 @@
                 <button type="button" class="point-button" data-target="currentAtkPoints" data-delta="-1" aria-label="Aを1減らす">−</button>
                 <input id="currentAtkPoints" type="number" min="0" max="32" value="0" aria-label="Aポイント" />
                 <button type="button" class="point-button" data-target="currentAtkPoints" data-delta="1" aria-label="Aを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentAtkPoints" data-value="0" aria-label="AをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentAtkPoints" data-value="32" aria-label="AをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentAtk" class="stat-value" type="number" min="1" readonly aria-label="現在攻撃実数値" />
+              <input id="currentAtk" class="stat-value" type="number" min="1" aria-label="現在攻撃実数値" />
               <div class="nature-buttons" aria-label="攻撃の性格補正">
-                <button type="button" class="nature-button" data-nature-stat="atk" data-nature-mode="boost" aria-label="攻撃を上昇補正">＋</button>
                 <button type="button" class="nature-button" data-nature-stat="atk" data-nature-mode="drop" aria-label="攻撃を下降補正">−</button>
+                <button type="button" class="nature-button" data-nature-stat="atk" data-nature-mode="boost" aria-label="攻撃を上昇補正">＋</button>
               </div>
             </div>
             <div class="stat-row">
@@ -96,11 +99,13 @@
                 <button type="button" class="point-button" data-target="currentDefPoints" data-delta="-1" aria-label="Bを1減らす">−</button>
                 <input id="currentDefPoints" type="number" min="0" max="32" value="0" aria-label="Bポイント" />
                 <button type="button" class="point-button" data-target="currentDefPoints" data-delta="1" aria-label="Bを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentDefPoints" data-value="0" aria-label="BをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentDefPoints" data-value="32" aria-label="BをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentDef" class="stat-value" type="number" min="1" value="115" readonly aria-label="現在防御実数値" />
+              <input id="currentDef" class="stat-value" type="number" min="1" value="115" aria-label="現在防御実数値" />
               <div class="nature-buttons" aria-label="防御の性格補正">
-                <button type="button" class="nature-button" data-nature-stat="def" data-nature-mode="boost" aria-label="防御を上昇補正">＋</button>
                 <button type="button" class="nature-button" data-nature-stat="def" data-nature-mode="drop" aria-label="防御を下降補正">−</button>
+                <button type="button" class="nature-button" data-nature-stat="def" data-nature-mode="boost" aria-label="防御を上昇補正">＋</button>
               </div>
             </div>
             <div class="stat-row">
@@ -109,11 +114,13 @@
                 <button type="button" class="point-button" data-target="currentSpaPoints" data-delta="-1" aria-label="Cを1減らす">−</button>
                 <input id="currentSpaPoints" type="number" min="0" max="32" value="0" aria-label="Cポイント" />
                 <button type="button" class="point-button" data-target="currentSpaPoints" data-delta="1" aria-label="Cを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentSpaPoints" data-value="0" aria-label="CをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentSpaPoints" data-value="32" aria-label="CをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentSpa" class="stat-value" type="number" min="1" readonly aria-label="現在特攻実数値" />
+              <input id="currentSpa" class="stat-value" type="number" min="1" aria-label="現在特攻実数値" />
               <div class="nature-buttons" aria-label="特攻の性格補正">
-                <button type="button" class="nature-button" data-nature-stat="spa" data-nature-mode="boost" aria-label="特攻を上昇補正">＋</button>
                 <button type="button" class="nature-button" data-nature-stat="spa" data-nature-mode="drop" aria-label="特攻を下降補正">−</button>
+                <button type="button" class="nature-button" data-nature-stat="spa" data-nature-mode="boost" aria-label="特攻を上昇補正">＋</button>
               </div>
             </div>
             <div class="stat-row">
@@ -122,11 +129,13 @@
                 <button type="button" class="point-button" data-target="currentSpdPoints" data-delta="-1" aria-label="Dを1減らす">−</button>
                 <input id="currentSpdPoints" type="number" min="0" max="32" value="0" aria-label="Dポイント" />
                 <button type="button" class="point-button" data-target="currentSpdPoints" data-delta="1" aria-label="Dを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentSpdPoints" data-value="0" aria-label="DをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentSpdPoints" data-value="32" aria-label="DをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentSpd" class="stat-value" type="number" min="1" value="105" readonly aria-label="現在特防実数値" />
+              <input id="currentSpd" class="stat-value" type="number" min="1" value="105" aria-label="現在特防実数値" />
               <div class="nature-buttons" aria-label="特防の性格補正">
-                <button type="button" class="nature-button" data-nature-stat="spd" data-nature-mode="boost" aria-label="特防を上昇補正">＋</button>
                 <button type="button" class="nature-button" data-nature-stat="spd" data-nature-mode="drop" aria-label="特防を下降補正">−</button>
+                <button type="button" class="nature-button" data-nature-stat="spd" data-nature-mode="boost" aria-label="特防を上昇補正">＋</button>
               </div>
             </div>
             <div class="stat-row">
@@ -135,20 +144,21 @@
                 <button type="button" class="point-button" data-target="currentSpePoints" data-delta="-1" aria-label="Sを1減らす">−</button>
                 <input id="currentSpePoints" type="number" min="0" max="32" value="0" aria-label="Sポイント" />
                 <button type="button" class="point-button" data-target="currentSpePoints" data-delta="1" aria-label="Sを1増やす">＋</button>
+                <button type="button" class="point-preset" data-target="currentSpePoints" data-value="0" aria-label="SをMIN（0）にする">MIN</button>
+                <button type="button" class="point-preset" data-target="currentSpePoints" data-value="32" aria-label="SをMAX（32）にする">MAX</button>
               </div>
-              <input id="currentSpe" class="stat-value" type="number" min="1" readonly aria-label="現在素早さ実数値" />
+              <input id="currentSpe" class="stat-value" type="number" min="1" aria-label="現在素早さ実数値" />
               <div class="nature-buttons" aria-label="素早さの性格補正">
-                <button type="button" class="nature-button" data-nature-stat="spe" data-nature-mode="boost" aria-label="素早さを上昇補正">＋</button>
                 <button type="button" class="nature-button" data-nature-stat="spe" data-nature-mode="drop" aria-label="素早さを下降補正">−</button>
+                <button type="button" class="nature-button" data-nature-stat="spe" data-nature-mode="boost" aria-label="素早さを上昇補正">＋</button>
               </div>
             </div>
             <div class="point-balance">未配分 <strong id="unallocatedPoints">66</strong> / 66</div>
           </fieldset>
 
           <p class="note">
-            この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。
+            この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。実数値を直接入力すると、性格補正を考慮して最も近いポイントへ逆算します。
           </p>
-          <button class="search-button search-button-bottom" type="submit">この条件で検索</button>
         </form>
 
         <section class="panel results-panel">
@@ -161,24 +171,26 @@
                 <label><input type="checkbox" name="attackerPointsPreset" value="1" /> 1</label>
                 <label><input type="checkbox" name="attackerPointsPreset" value="2" /> 2</label>
                 <label><input type="checkbox" name="attackerPointsPreset" value="32" checked /> 32</label>
-                <label><input type="checkbox" name="attackerPointsPreset" value="custom" /> その他</label>
               </fieldset>
               <details class="attacker-points-details" id="attackerPointsDetails">
                 <summary>詳細設定</summary>
-                <label class="attacker-points-field">
-                  任意のポイント
-                  <input id="attackerPoints" type="number" min="0" max="32" value="0" />
-                </label>
+                <fieldset class="checkbox-group attacker-points-detail-group" data-filter-group="attackerPointsDetail">
+                  <legend>3〜31ポイント</legend>
+                  <div id="attackerPointsDetailOptions" class="attacker-points-detail-options"></div>
+                </fieldset>
               </details>
             </div>
 
             <fieldset class="checkbox-group" data-filter-group="attackKind">
-              <legend>攻撃種別</legend>
+              <legend>絞り込み</legend>
               <label><input type="checkbox" name="attackKind" value="special" checked /> 特殊</label>
               <label><input type="checkbox" name="attackKind" value="physical" checked /> 物理</label>
               <label><input type="checkbox" name="attackKind" value="both" checked /> 両方</label>
               <label class="higher-offense-option"><input id="higherOffenseOnly" type="checkbox" /> 攻撃・特攻の高い方のみ対象</label>
+              <label class="higher-offense-option"><input id="attackStatMultipleOf11" type="checkbox" /> 実数値11nのみ</label>
               <label class="higher-offense-option"><input id="stabOnly" type="checkbox" /> タイプ一致のみ</label>
+              <label class="higher-offense-option"><input id="randomToGuaranteedSurvival" type="checkbox" /> 乱数→確定耐え</label>
+              <label class="higher-offense-option"><input id="excludeUnsurvivableAttacks" type="checkbox" checked /> 耐えない攻撃を除外</label>
               <label class="higher-offense-option"><input id="prioritizeMega" type="checkbox" /> メガシンカを優先表示</label>
             </fieldset>
 
@@ -191,12 +203,12 @@
 
             <fieldset class="checkbox-group effectiveness-group" data-filter-group="effectiveness">
               <legend>相性</legend>
-              <label><input type="checkbox" name="effectiveness" value="all" /> 全て</label>
-              <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
-              <label><input type="checkbox" name="effectiveness" value="2" checked /> 2倍</label>
               <label><input type="checkbox" name="effectiveness" value="4" checked /> 4倍</label>
+              <label><input type="checkbox" name="effectiveness" value="2" checked /> 2倍</label>
+              <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
               <label><input type="checkbox" name="effectiveness" value="0.5" /> 1/2</label>
               <label><input type="checkbox" name="effectiveness" value="0.25" /> 1/4</label>
+              <label><input type="checkbox" name="effectiveness" value="all" /> すべて</label>
             </fieldset>
 
             <fieldset class="checkbox-group move-power-filter">
@@ -227,12 +239,14 @@
                   <th class="result-line">1発KO率</th>
                   <th class="result-allocation">配分</th>
                   <th class="result-attacker">相手</th>
+                  <th class="result-attack">実数値</th>
+                  <th class="result-nature">補正</th>
                   <th class="result-move">技</th>
+                  <th class="result-power">技威力</th>
                   <th class="result-current">現在ダメージ</th>
                   <th class="result-after">配分後ダメージ</th>
                   <th class="result-diff">最大変化</th>
                   <th class="result-effectiveness">相性</th>
-                  <th class="result-attack">攻撃実数値</th>
                   <th class="result-category">分類</th>
                 </tr>
               </thead>
@@ -255,6 +269,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260712-27"></script>
+    <script type="module" src="./app.js?v=20260715-7"></script>
   </body>
 </html>

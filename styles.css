@@ -300,6 +300,13 @@ fieldset {
   font-size: 13px;
 }
 
+.pokemon-options-heading {
+  padding: 5px 9px 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .pokemon-option:hover,
 .pokemon-option:focus-visible {
   background: var(--accent-soft);
@@ -316,8 +323,8 @@ fieldset {
 .stat-table-head,
 .stat-row {
   display: grid;
-  grid-template-columns: 1.5em minmax(0, 1fr) 72px 59px;
-  gap: 7px;
+  grid-template-columns: 1.1em minmax(0, 1fr) 58px 50px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -326,6 +333,11 @@ fieldset {
   color: var(--muted);
   font-size: 10px;
   font-weight: 700;
+}
+
+.stat-point-heading {
+  grid-column: 1 / span 2;
+  white-space: nowrap;
 }
 
 .stat-row {
@@ -345,40 +357,56 @@ fieldset {
 
 .point-stepper {
   display: grid;
-  grid-template-columns: 36px minmax(48px, 1fr) 36px;
-  gap: 5px;
+  grid-template-columns: 27px minmax(38px, 1fr) 27px 27px 27px;
+  gap: 3px;
 }
 
 .point-stepper input,
 .stat-value {
-  height: 38px;
-  padding: 0 8px;
+  height: 32px;
+  padding: 0 4px;
   text-align: center;
   font-family: "Roboto Mono", ui-monospace, monospace;
 }
 
-.point-button {
-  min-height: 38px;
+.point-button,
+.point-preset {
+  width: 27px;
+  min-height: 32px;
   padding: 0;
   border: 1px solid #b8c7d6;
   border-radius: 8px;
   background: white;
   color: var(--accent-strong);
-  font-size: 18px;
 }
 
-.point-button:hover {
+.point-button {
+  font-size: 16px;
+}
+
+.point-preset {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.point-button:hover,
+.point-preset:hover {
   background: var(--accent-soft);
+}
+
+.stat-value {
+  font-weight: 700;
 }
 
 .nature-buttons {
   display: grid;
-  grid-template-columns: repeat(2, 27px);
+  grid-template-columns: repeat(2, 23px);
   gap: 4px;
 }
 
 .nature-button {
-  width: 27px;
+  width: 23px;
   min-height: 30px;
   padding: 0;
   border: 1px solid #b8c7d6;
@@ -495,6 +523,21 @@ legend {
   margin-top: 7px;
 }
 
+.attacker-points-detail-group {
+  margin-top: 8px;
+  padding: 8px 0 0;
+}
+
+.attacker-points-detail-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.attacker-points-detail-options label {
+  min-width: 25px;
+}
+
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
@@ -579,6 +622,10 @@ legend {
 }
 
 .summary span {
+  padding: 9px 11px;
+  border: 1px solid rgba(216, 224, 233, 0.9);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
   color: var(--muted);
   font-size: 12px;
 }
@@ -592,11 +639,12 @@ legend {
 
 .table-wrap {
   overflow: auto;
+  border-top: 1px solid var(--line);
 }
 
 table {
   width: 100%;
-  min-width: 860px;
+  min-width: 1100px;
   border-collapse: collapse;
 }
 
@@ -607,6 +655,7 @@ td {
   text-align: left;
   vertical-align: top;
   font-size: 13px;
+  line-height: 1.45;
   white-space: nowrap;
 }
 
@@ -617,6 +666,82 @@ th {
   background: #21364b;
   color: white;
   font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 0 rgba(20, 32, 51, 0.12);
+}
+
+.result-line { width: 126px; text-align: center; }
+.result-allocation { width: 118px; }
+.result-attacker { width: 155px; }
+.result-move { width: 132px; }
+.result-power { width: 72px; text-align: center; }
+.result-nature { width: 58px; text-align: center; }
+.result-current,
+.result-after { width: 132px; text-align: center; }
+.result-diff { width: 82px; text-align: center; }
+.result-effectiveness,
+.result-category { width: 74px; text-align: center; }
+.result-attack { width: 96px; }
+
+tbody td {
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+tbody td.result-line,
+tbody td.result-allocation {
+  background: #f2faf8;
+}
+
+tbody td.result-line {
+  color: var(--accent-strong);
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-weight: 800;
+}
+
+tbody td.result-allocation {
+  color: var(--ink);
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-weight: 700;
+}
+
+tbody td.result-attacker,
+tbody td.result-move {
+  font-weight: 700;
+}
+
+tbody td.result-power {
+  text-align: center;
+}
+
+tbody td.result-nature {
+  text-align: center;
+}
+
+tbody td.result-after {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+tbody td.result-attack {
+  white-space: normal;
+  font-size: 12px;
+}
+
+.diff-good {
+  color: var(--accent-strong);
+  background: #edf9f5;
+  font-weight: 800;
+}
+
+.diff-bad {
+  color: #b42318;
+  background: #fff4f2;
+  font-weight: 800;
+}
+
+.diff-neutral {
+  color: var(--muted);
 }
 
 tbody tr:nth-child(even) {
@@ -635,7 +760,8 @@ tbody tr:hover {
 .result-after,
 .result-current,
 .result-diff,
-.result-attack {
+.result-attack,
+.result-power {
   font-family: "Roboto Mono", ui-monospace, monospace;
   font-weight: 600;
 }
@@ -725,12 +851,13 @@ tbody tr:hover {
 
   .stat-table-head,
   .stat-row {
-    grid-template-columns: 1.25em minmax(0, 1fr) 66px 57px;
+    grid-template-columns: 1.05em minmax(0, 1fr) 58px 50px;
     gap: 5px;
   }
 
   .point-stepper {
-    grid-template-columns: 34px minmax(42px, 1fr) 34px;
+    grid-template-columns: 27px minmax(38px, 1fr) 27px 27px 27px;
+    gap: 3px;
   }
 }
 
@@ -773,6 +900,8 @@ tbody tr:hover {
     grid-template-areas:
       "line allocation"
       "attacker move"
+      "attack nature"
+      "power power"
       "current after"
       "diff diff";
     overflow: hidden;
@@ -811,6 +940,12 @@ tbody tr:hover {
   .result-attacker::before { content: "相手"; }
   .result-move { grid-area: move; border-top: 1px solid var(--line); }
   .result-move::before { content: "技"; }
+  .result-attack { grid-area: attack; border-top: 1px solid var(--line); }
+  .result-attack::before { content: "実数値"; }
+  .result-nature { grid-area: nature; border-top: 1px solid var(--line); text-align: right; }
+  .result-nature::before { content: "補正"; text-align: left; }
+  .result-power { grid-area: power; border-top: 1px solid var(--line); text-align: right; }
+  .result-power::before { content: "技威力"; text-align: left; }
   .result-current { grid-area: current; border-top: 1px solid var(--line); }
   .result-current::before { content: "現在ダメージ"; }
   .result-after { grid-area: after; border-top: 1px solid var(--line); }
@@ -819,7 +954,6 @@ tbody tr:hover {
   .result-diff::before { content: "最大変化"; }
 
   .result-category,
-  .result-attack,
   .result-effectiveness {
     display: none;
   }
