@@ -445,6 +445,9 @@ function getMovesForPokemon(pokemon) {
     .sort((a, b) => {
       const typeRank = (moveTypeRank.get(a.type) ?? moveTypeOrder.length) - (moveTypeRank.get(b.type) ?? moveTypeOrder.length);
       if (typeRank !== 0) return typeRank;
+      const powerA = Number.isFinite(Number(a.power)) ? Number(a.power) : -1;
+      const powerB = Number.isFinite(Number(b.power)) ? Number(b.power) : -1;
+      if (powerA !== powerB) return powerB - powerA;
       return (a.name?.ja ?? a.name?.en ?? a.id).localeCompare(b.name?.ja ?? b.name?.en ?? b.id, "ja");
     });
 }
