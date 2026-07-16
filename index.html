@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260715-37" />
+    <link rel="stylesheet" href="./styles.css?v=20260716-1" />
   </head>
   <body>
     <main class="app-shell">
@@ -266,6 +266,10 @@
           <div>
             <h2>ポケモンごとの技設定</h2>
             <p>検索結果に含める技をポケモンごとに選択できます。初期状態ではすべての技が対象です。</p>
+            <div class="move-settings-rule-tabs" role="tablist" aria-label="技設定のルール">
+              <button type="button" class="move-settings-rule-tab is-selected" data-move-rule="single" role="tab" aria-selected="true" aria-controls="moveSettingsPage">シングル</button>
+              <button type="button" class="move-settings-rule-tab" data-move-rule="double" role="tab" aria-selected="false" aria-controls="moveSettingsPage">ダブル</button>
+            </div>
           </div>
         </div>
 
@@ -307,6 +311,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260715-11"></script>
+    <script type="module" src="./app.js?v=20260716-1"></script>
   </body>
 </html>

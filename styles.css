@@ -530,6 +530,34 @@ legend {
   line-height: 1.6;
 }
 
+.move-settings-rule-tabs {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(96px, 1fr));
+  gap: 3px;
+  margin-top: 12px;
+  padding: 3px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #eef2f6;
+}
+
+.move-settings-rule-tab {
+  min-height: calc(var(--control-height) - 8px);
+  padding: 0 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.move-settings-rule-tab.is-selected {
+  background: white;
+  color: var(--accent-strong);
+  box-shadow: 0 1px 5px rgba(21, 31, 45, 0.13);
+}
+
 .move-settings-layout {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
@@ -1112,6 +1140,12 @@ tbody tr:hover {
 @media (max-width: 640px) {
   .move-settings-page {
     padding: 14px;
+  }
+
+  .move-settings-rule-tabs {
+    display: grid;
+    width: 100%;
+    max-width: 260px;
   }
 
   .move-settings-layout {

@@ -6,14 +6,17 @@ const paths = {
   availability: "./data/champions-availability.json?v=20260712-2",
 };
 
+const MOVE_SETTING_RULES = ["single", "double"];
+
 const state = {
   pokemon: [],
   moves: [],
   typeChart: {},
   rules: null,
   availability: null,
-  moveExclusions: new Map(),
+  moveExclusions: createMoveExclusionState(),
   moveSettingsPokemonId: null,
+  moveSettingsRule: "single",
 };
 
 let searchTimer = null;
@@ -281,11 +284,25 @@ function setupMoveSettingsPage() {
   document.querySelectorAll(".page-nav-button").forEach((button) => {
     button.addEventListener("click", () => switchPage(button.dataset.page));
   });
+  document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
+    button.addEventListener("click", () => selectMoveSettingsRule(button));
+  });
   els.moveSettingsPokemonSearch.addEventListener("input", renderMoveSettingsPokemonList);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
   els.moveSettingsAllOff.addEventListener("click", () => setAllMovesForSelected(false));
   refreshMoveSettingsPage();
+}
+
+function selectMoveSettingsRule(selectedButton) {
+  const rule = normalizeMoveRule(selectedButton.dataset.moveRule);
+  state.moveSettingsRule = rule;
+  document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
+    const selected = button.dataset.moveRule === rule;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-selected", String(selected));
+  });
+  renderMoveSettingsMoveList();
 }
 
 function switchPage(page) {
@@ -302,6 +319,7 @@ function switchPage(page) {
 }
 
 function refreshMoveSettingsPage() {
+  updateMoveSettingsRuleTabs();
   const pokemonPool = getSortedPokemonPool();
   if (!pokemonPool.length) {
     state.moveSettingsPokemonId = null;
@@ -314,6 +332,14 @@ function refreshMoveSettingsPage() {
   }
   renderMoveSettingsPokemonList();
   renderMoveSettingsMoveList();
+}
+
+function updateMoveSettingsRuleTabs() {
+  document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
+    const selected = button.dataset.moveRule === state.moveSettingsRule;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-selected", String(selected));
+  });
 }
 
 function renderMoveSettingsPokemonList() {
@@ -407,11 +433,25 @@ function getMovesForPokemon(pokemon) {
     });
 }
 
-function getMoveExclusions(pokemonId, create = false) {
-  let exclusions = state.moveExclusions.get(pokemonId);
+function normalizeMoveRule(rule) {
+  return MOVE_SETTING_RULES.includes(rule) ? rule : "single";
+}
+
+function createMoveExclusionState() {
+  return new Map(MOVE_SETTING_RULES.map((rule) => [rule, new Map()]));
+}
+
+function getMoveExclusions(pokemonId, create = false, rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  let ruleExclusions = state.moveExclusions.get(normalizedRule);
+  if (!ruleExclusions && create) {
+    ruleExclusions = new Map();
+    state.moveExclusions.set(normalizedRule, ruleExclusions);
+  }
+  let exclusions = ruleExclusions?.get(pokemonId);
   if (!exclusions && create) {
     exclusions = new Set();
-    state.moveExclusions.set(pokemonId, exclusions);
+    ruleExclusions.set(pokemonId, exclusions);
   }
   return exclusions ?? new Set();
 }
@@ -420,7 +460,8 @@ function setMoveIncluded(pokemonId, moveId, included) {
   const exclusions = getMoveExclusions(pokemonId, true);
   if (included) exclusions.delete(moveId);
   else exclusions.add(moveId);
-  if (!exclusions.size) state.moveExclusions.delete(pokemonId);
+  const ruleExclusions = state.moveExclusions.get(state.moveSettingsRule);
+  if (!exclusions.size) ruleExclusions?.delete(pokemonId);
   saveMoveExclusions();
   renderMoveSettingsMoveList();
   runSearch();
@@ -430,10 +471,12 @@ function setAllMovesForSelected(included) {
   const pokemon = getPokemonPool().find((item) => item.id === state.moveSettingsPokemonId);
   if (!pokemon) return;
   const moves = getMovesForPokemon(pokemon);
+  const ruleExclusions = state.moveExclusions.get(state.moveSettingsRule) ?? new Map();
   if (included) {
-    state.moveExclusions.delete(pokemon.id);
+    ruleExclusions.delete(pokemon.id);
   } else {
-    state.moveExclusions.set(pokemon.id, new Set(moves.map((move) => move.id)));
+    ruleExclusions.set(pokemon.id, new Set(moves.map((move) => move.id)));
+    state.moveExclusions.set(state.moveSettingsRule, ruleExclusions);
   }
   saveMoveExclusions();
   renderMoveSettingsMoveList();
@@ -441,13 +484,20 @@ function setAllMovesForSelected(included) {
 }
 
 function loadMoveExclusions() {
-  const exclusions = new Map();
+  const exclusions = createMoveExclusionState();
   try {
     const stored = JSON.parse(localStorage.getItem(MOVE_SETTINGS_STORAGE_KEY) ?? "{}");
     if (!stored || typeof stored !== "object") return exclusions;
-    Object.entries(stored).forEach(([pokemonId, moveIds]) => {
-      if (Array.isArray(moveIds) && moveIds.length) exclusions.set(pokemonId, new Set(moveIds));
-    });
+    const applyStoredRule = (rule, ruleData) => {
+      if (!ruleData || typeof ruleData !== "object" || Array.isArray(ruleData)) return;
+      const ruleExclusions = exclusions.get(rule);
+      Object.entries(ruleData).forEach(([pokemonId, moveIds]) => {
+        if (Array.isArray(moveIds) && moveIds.length) ruleExclusions.set(pokemonId, new Set(moveIds));
+      });
+    };
+    const isLegacy = Object.values(stored).some((moveIds) => Array.isArray(moveIds));
+    if (isLegacy) applyStoredRule("single", stored);
+    else MOVE_SETTING_RULES.forEach((rule) => applyStoredRule(rule, stored[rule]));
   } catch {
     // Ignore unavailable or malformed local settings and use the default (all included).
   }
@@ -456,11 +506,16 @@ function loadMoveExclusions() {
 
 function saveMoveExclusions() {
   try {
-    const stored = Object.fromEntries(
-      [...state.moveExclusions.entries()]
-        .filter(([, moveIds]) => moveIds.size)
-        .map(([pokemonId, moveIds]) => [pokemonId, [...moveIds]]),
-    );
+    const stored = {};
+    MOVE_SETTING_RULES.forEach((rule) => {
+      const ruleExclusions = state.moveExclusions.get(rule);
+      const ruleStored = Object.fromEntries(
+        [...(ruleExclusions?.entries() ?? [])]
+          .filter(([, moveIds]) => moveIds.size)
+          .map(([pokemonId, moveIds]) => [pokemonId, [...moveIds]]),
+      );
+      if (Object.keys(ruleStored).length) stored[rule] = ruleStored;
+    });
     localStorage.setItem(MOVE_SETTINGS_STORAGE_KEY, JSON.stringify(stored));
   } catch {
     // Ignore unavailable storage; the current session still uses the in-memory settings.
@@ -1155,7 +1210,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
     for (const attackerId of move.users) {
       const attacker = attackerById.get(attackerId);
       if (!attacker) continue;
-      if (!isMoveAllowedForPokemon(attackerId, move.id)) continue;
+      if (!isMoveAllowedForPokemon(attackerId, move.id, input.battleRule)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
       const stab = attacker.types.includes(move.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
@@ -1298,8 +1353,8 @@ function isMoveAllowed(moveId) {
   return new Set(state.availability.moves ?? []).has(moveId);
 }
 
-function isMoveAllowedForPokemon(pokemonId, moveId) {
-  return !state.moveExclusions.get(pokemonId)?.has(moveId);
+function isMoveAllowedForPokemon(pokemonId, moveId, rule = els.battleRule.value) {
+  return !getMoveExclusions(pokemonId, false, rule).has(moveId);
 }
 
 function updateDataStatus() {
