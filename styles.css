@@ -588,6 +588,13 @@ legend {
   padding: 5px;
 }
 
+.move-settings-pokemon-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  gap: 4px;
+  align-items: center;
+}
+
 .move-settings-pokemon-option {
   display: block;
   width: 100%;
@@ -606,6 +613,59 @@ legend {
 .move-settings-pokemon-option.is-selected {
   background: var(--accent-soft);
   color: var(--accent-strong);
+}
+
+.move-settings-pokemon-entry.is-disabled .move-settings-pokemon-option {
+  color: var(--muted);
+  opacity: 0.65;
+}
+
+.move-settings-pokemon-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  cursor: pointer;
+}
+
+.move-settings-pokemon-toggle-input {
+  appearance: none;
+  width: 30px;
+  height: 18px;
+  margin: 0;
+  border: 1px solid #b8c7d6;
+  border-radius: 999px;
+  background: #d9e1e8;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.move-settings-pokemon-toggle-input::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 2px rgba(21, 31, 45, 0.18);
+  transition: transform 0.15s ease;
+}
+
+.move-settings-pokemon-toggle-input:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.move-settings-pokemon-toggle-input:checked::after {
+  transform: translateX(12px);
+}
+
+.move-settings-pokemon-toggle-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .move-settings-detail-heading {
