@@ -1139,13 +1139,15 @@ tbody tr:hover {
 
 @media (max-width: 560px) {
   .app-shell {
-    width: min(100vw - 20px, 1280px);
-    padding: 16px 0;
+    width: min(100vw - 16px, 1280px);
+    padding: 12px 0 20px;
   }
 
   .app-header {
     align-items: start;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
   }
 
   h1 {
@@ -1157,6 +1159,36 @@ tbody tr:hover {
     width: 100%;
     border-radius: 10px;
     text-align: left;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .page-nav {
+    padding-inline: 4px;
+  }
+
+  .page-nav-button {
+    min-height: 40px;
+    padding-inline: 14px;
+  }
+
+  .controls {
+    padding: 14px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  fieldset {
+    margin-top: 12px;
+    padding: 10px;
+  }
+
+  .note {
+    margin-top: 10px;
+    font-size: 11px;
   }
 
   .field-grid,
