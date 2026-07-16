@@ -1191,13 +1191,61 @@ tbody tr:hover {
     font-size: 11px;
   }
 
-  .field-grid,
-  .summary {
+  .field-grid {
     grid-template-columns: 1fr;
+  }
+
+  .summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .summary span {
+    min-width: 0;
+    padding: 8px 6px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .summary strong {
+    font-size: 16px;
   }
 
   .opponent-filters {
     grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .checkbox-group {
+    gap: 6px;
+    padding-top: 4px;
+  }
+
+  .checkbox-group label:not(.move-power-input),
+  .power-comparison label,
+  .priority-move-option {
+    display: inline-flex;
+    min-height: 32px;
+    padding: 5px 7px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    align-items: center;
+  }
+
+  .checkbox-group label:not(.move-power-input):has(input:checked),
+  .power-comparison label:has(input:checked),
+  .priority-move-option:has(input:checked) {
+    border-color: #9acbc5;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
   }
 
   .field-grid.compact {
@@ -1219,13 +1267,48 @@ tbody tr:hover {
 
   .stat-table-head,
   .stat-row {
-    grid-template-columns: 1.05em minmax(0, 1fr) 58px 50px;
-    gap: 5px;
+    grid-template-columns: 22px minmax(0, 1fr) 58px 50px;
+    gap: 6px;
+  }
+
+  .stat-table-head {
+    padding-inline: 8px;
+  }
+
+  .stat-row {
+    grid-template-areas:
+      "stat points points points"
+      ". . value nature";
+    min-height: 78px;
+    padding: 8px;
+  }
+
+  .stat-row strong {
+    grid-area: stat;
+    align-self: center;
+  }
+
+  .stat-row .point-stepper {
+    grid-area: points;
+  }
+
+  .stat-row .stat-value {
+    grid-area: value;
+  }
+
+  .stat-row .nature-buttons {
+    grid-area: nature;
   }
 
   .point-stepper {
-    grid-template-columns: 27px minmax(38px, 1fr) 27px 27px 27px;
-    gap: 3px;
+    grid-template-columns: 32px minmax(46px, 1fr) 32px 40px 40px;
+    gap: 4px;
+  }
+
+  .point-button,
+  .point-preset {
+    width: 100%;
+    min-height: 34px;
   }
 }
 
@@ -1237,7 +1320,7 @@ tbody tr:hover {
   .move-settings-rule-tabs {
     display: grid;
     width: 100%;
-    max-width: 260px;
+    max-width: none;
   }
 
   .move-settings-layout {
@@ -1254,7 +1337,13 @@ tbody tr:hover {
   }
 
   .move-settings-actions {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .move-settings-actions .secondary-button {
+    width: 100%;
   }
 
   .move-settings-move-header,
