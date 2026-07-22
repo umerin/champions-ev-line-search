@@ -266,14 +266,17 @@
           <div>
             <h2>ポケモンごとの技設定</h2>
             <p>検索結果に含める技をポケモンごとに選択できます。初期状態ではすべての技が対象です。</p>
-            <div class="move-settings-rule-tabs" role="tablist" aria-label="技設定のルール">
-              <button type="button" class="move-settings-rule-tab is-selected" data-move-rule="single" role="tab" aria-selected="true" aria-controls="moveSettingsPage">シングル</button>
-              <button type="button" class="move-settings-rule-tab" data-move-rule="double" role="tab" aria-selected="false" aria-controls="moveSettingsPage">ダブル</button>
+            <div class="move-settings-navigation">
+              <div class="move-settings-rule-tabs" role="tablist" aria-label="個別設定のルール">
+                <button type="button" class="move-settings-rule-tab is-selected" data-move-settings-view="individual" data-move-rule="single" role="tab" aria-selected="true" aria-controls="moveSettingsIndividualPanel">シングル</button>
+                <button type="button" class="move-settings-rule-tab" data-move-settings-view="individual" data-move-rule="double" role="tab" aria-selected="false" aria-controls="moveSettingsIndividualPanel">ダブル</button>
+              </div>
+              <button type="button" class="move-settings-mode-tab" data-move-settings-view="bulk" role="tab" aria-selected="false" aria-controls="moveSettingsBulkPanel">一括設定</button>
             </div>
           </div>
         </div>
 
-        <div class="move-settings-layout">
+        <div class="move-settings-layout" id="moveSettingsIndividualPanel">
           <aside class="move-settings-pokemon-panel">
             <label for="moveSettingsPokemonSearch">ポケモンを選択</label>
             <input id="moveSettingsPokemonSearch" type="search" autocomplete="off" placeholder="名前で絞り込み" />
@@ -300,6 +303,37 @@
             <div id="moveSettingsMoveList" class="move-settings-move-list" role="list" aria-label="技の要不要設定"></div>
           </section>
         </div>
+
+        <section class="move-settings-bulk-panel" id="moveSettingsBulkPanel" hidden>
+          <div class="move-settings-bulk-heading">
+            <div>
+              <h3>一括設定</h3>
+              <p><span id="moveSettingsBulkRuleName">シングル</span>のポケモンごとの技チェックをまとめて変更します。</p>
+            </div>
+          </div>
+          <div class="move-settings-bulk-rule-tabs" role="tablist" aria-label="一括設定のルール">
+            <button type="button" class="move-settings-bulk-rule-tab is-selected" data-bulk-rule="single" role="tab" aria-selected="true" aria-controls="moveSettingsBulkPanel">シングル</button>
+            <button type="button" class="move-settings-bulk-rule-tab" data-bulk-rule="double" role="tab" aria-selected="false" aria-controls="moveSettingsBulkPanel">ダブル</button>
+          </div>
+          <div class="move-settings-bulk-list">
+            <div class="move-settings-bulk-card">
+              <div class="move-settings-bulk-option">
+                <span>
+                  <strong>各技タイプ　威力上位のみ対象設定</strong>
+                  <small>タイプごとに、威力の高い技だけを検索対象にします。</small>
+                </span>
+              </div>
+              <div class="move-settings-bulk-controls">
+                <label class="move-settings-bulk-count">
+                  <span>上位</span>
+                  <input id="moveSettingsTopPowerCount" type="number" min="1" max="20" step="1" value="3" inputmode="numeric" aria-label="各技タイプの上位個数" />
+                  <span>個</span>
+                </label>
+                <button id="moveSettingsApplyBulk" type="button" class="secondary-button">一括適用</button>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       <footer class="site-footer">

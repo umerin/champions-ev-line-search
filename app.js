@@ -16,14 +16,18 @@ const state = {
   availability: null,
   moveExclusions: createMoveExclusionState(),
   pokemonExclusions: createPokemonExclusionState(),
+  bulkSettings: createBulkSettingsState(),
   moveSettingsPokemonId: null,
   moveSettingsRule: "single",
+  bulkSettingsRule: "single",
+  moveSettingsView: "individual",
 };
 
 let searchTimer = null;
 const RECENT_POKEMON_STORAGE_KEY = "champions-ev-line-search:recent-pokemon";
 const MOVE_SETTINGS_STORAGE_KEY = "champions-ev-line-search:move-settings";
 const POKEMON_SETTINGS_STORAGE_KEY = "champions-ev-line-search:pokemon-settings";
+const BULK_SETTINGS_STORAGE_KEY = "champions-ev-line-search:bulk-settings";
 const RECENT_POKEMON_LIMIT = 10;
 const RESULT_LIMIT = 80;
 const pokemonFormMeta = new Map();
@@ -68,6 +72,11 @@ const els = {
   moveSettingsPokemonList: document.querySelector("#moveSettingsPokemonList"),
   moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
   moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
+  moveSettingsIndividualPanel: document.querySelector("#moveSettingsIndividualPanel"),
+  moveSettingsBulkPanel: document.querySelector("#moveSettingsBulkPanel"),
+  moveSettingsBulkRuleName: document.querySelector("#moveSettingsBulkRuleName"),
+  moveSettingsTopPowerCount: document.querySelector("#moveSettingsTopPowerCount"),
+  moveSettingsApplyBulk: document.querySelector("#moveSettingsApplyBulk"),
   moveSettingsAllOn: document.querySelector("#moveSettingsAllOn"),
   moveSettingsAllOff: document.querySelector("#moveSettingsAllOff"),
   moveSettingsMoveSearch: document.querySelector("#moveSettingsMoveSearch"),
@@ -177,6 +186,7 @@ async function init() {
     buildPokemonFormMetadata();
     state.moveExclusions = loadMoveExclusions();
     state.pokemonExclusions = loadPokemonExclusions();
+    state.bulkSettings = loadBulkSettings();
     populatePokemonSelect();
     populateMovePowerOptions();
     populateAttackerPointDetails();
@@ -287,24 +297,47 @@ function setupMoveSettingsPage() {
   document.querySelectorAll(".page-nav-button").forEach((button) => {
     button.addEventListener("click", () => switchPage(button.dataset.page));
   });
-  document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
-    button.addEventListener("click", () => selectMoveSettingsRule(button));
+  document.querySelectorAll(".move-settings-rule-tab, .move-settings-mode-tab").forEach((button) => {
+    button.addEventListener("click", () => selectMoveSettingsView(button));
+  });
+  document.querySelectorAll(".move-settings-bulk-rule-tab").forEach((button) => {
+    button.addEventListener("click", () => selectBulkSettingsRule(button));
   });
   els.moveSettingsPokemonSearch.addEventListener("input", renderMoveSettingsPokemonList);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
+  els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
+  els.moveSettingsApplyBulk.addEventListener("click", applyBulkMoveSettings);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
   els.moveSettingsAllOff.addEventListener("click", () => setAllMovesForSelected(false));
   refreshMoveSettingsPage();
 }
 
+function selectMoveSettingsView(selectedButton) {
+  if (selectedButton.dataset.moveSettingsView === "bulk") {
+    state.moveSettingsView = "bulk";
+    updateMoveSettingsView();
+    renderMoveSettingsBulkSettings();
+    return;
+  }
+  selectMoveSettingsRule(selectedButton);
+}
+
+function selectBulkSettingsRule(selectedButton) {
+  state.bulkSettingsRule = normalizeMoveRule(selectedButton.dataset.bulkRule);
+  updateBulkSettingsRuleTabs();
+  renderMoveSettingsBulkSettings();
+}
+
 function selectMoveSettingsRule(selectedButton) {
   const rule = normalizeMoveRule(selectedButton.dataset.moveRule);
   state.moveSettingsRule = rule;
+  state.moveSettingsView = "individual";
   document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
-    const selected = button.dataset.moveRule === rule;
+    const selected = button.dataset.moveSettingsView === "individual" && button.dataset.moveRule === rule;
     button.classList.toggle("is-selected", selected);
     button.setAttribute("aria-selected", String(selected));
   });
+  updateMoveSettingsView();
   renderMoveSettingsPokemonList();
   renderMoveSettingsMoveList();
 }
@@ -324,6 +357,8 @@ function switchPage(page) {
 
 function refreshMoveSettingsPage() {
   updateMoveSettingsRuleTabs();
+  updateMoveSettingsView();
+  renderMoveSettingsBulkSettings();
   const pokemonPool = getSortedPokemonPool();
   if (!pokemonPool.length) {
     state.moveSettingsPokemonId = null;
@@ -339,8 +374,65 @@ function refreshMoveSettingsPage() {
 }
 
 function updateMoveSettingsRuleTabs() {
-  document.querySelectorAll(".move-settings-rule-tab").forEach((button) => {
-    const selected = button.dataset.moveRule === state.moveSettingsRule;
+  document.querySelectorAll(".move-settings-rule-tab, .move-settings-mode-tab").forEach((button) => {
+    const selected = state.moveSettingsView === "bulk"
+      ? button.dataset.moveSettingsView === "bulk"
+      : button.dataset.moveSettingsView === "individual" && button.dataset.moveRule === state.moveSettingsRule;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-selected", String(selected));
+  });
+}
+
+function updateMoveSettingsView() {
+  const isBulk = state.moveSettingsView === "bulk";
+  els.moveSettingsIndividualPanel.hidden = isBulk;
+  els.moveSettingsBulkPanel.hidden = !isBulk;
+  updateMoveSettingsRuleTabs();
+}
+
+function renderMoveSettingsBulkSettings() {
+  const settings = getBulkSettings(state.bulkSettingsRule);
+  els.moveSettingsBulkRuleName.textContent = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
+  els.moveSettingsTopPowerCount.value = String(settings.topPowerByType.count);
+  updateBulkSettingsRuleTabs();
+}
+
+function saveBulkSettingsDraft() {
+  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
+  settings.count = normalizeBulkMoveCount(els.moveSettingsTopPowerCount.value);
+  saveBulkSettings();
+}
+
+function applyBulkMoveSettings() {
+  saveBulkSettingsDraft();
+  const rule = state.bulkSettingsRule;
+  const settings = getBulkSettings(rule).topPowerByType;
+  const ruleExclusions = state.moveExclusions.get(rule) ?? new Map();
+
+  const allowedMoveIdsByPokemon = getBulkMoveIdsByPokemon(rule);
+  state.pokemon.forEach((pokemon) => {
+    const allowedMoveIds = allowedMoveIdsByPokemon.get(pokemon.id) ?? new Set();
+    const excludedMoveIds = new Set(
+      getMovesForPokemon(pokemon)
+        .filter((move) => !allowedMoveIds.has(move.id))
+        .map((move) => move.id),
+    );
+    if (excludedMoveIds.size) ruleExclusions.set(pokemon.id, excludedMoveIds);
+    else ruleExclusions.delete(pokemon.id);
+  });
+
+  state.moveExclusions.set(rule, ruleExclusions);
+  saveMoveExclusions();
+  if (state.moveSettingsRule === rule) {
+    renderMoveSettingsPokemonList();
+    renderMoveSettingsMoveList();
+  }
+  runSearch();
+}
+
+function updateBulkSettingsRuleTabs() {
+  document.querySelectorAll(".move-settings-bulk-rule-tab").forEach((button) => {
+    const selected = button.dataset.bulkRule === state.bulkSettingsRule;
     button.classList.toggle("is-selected", selected);
     button.setAttribute("aria-selected", String(selected));
   });
@@ -462,6 +554,99 @@ function createMoveExclusionState() {
 
 function createPokemonExclusionState() {
   return new Map(MOVE_SETTING_RULES.map((rule) => [rule, new Set()]));
+}
+
+function createBulkSettingsState() {
+  return new Map(MOVE_SETTING_RULES.map((rule) => [rule, {
+    topPowerByType: {
+      count: 3,
+    },
+  }]));
+}
+
+function normalizeBulkMoveCount(value) {
+  return clamp(toInt(value), 1, 20);
+}
+
+function getBulkSettings(rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  let settings = state.bulkSettings.get(normalizedRule);
+  if (!settings) {
+    settings = {
+      topPowerByType: {
+        count: 3,
+      },
+    };
+    state.bulkSettings.set(normalizedRule, settings);
+  }
+  return settings;
+}
+
+function loadBulkSettings() {
+  const settings = createBulkSettingsState();
+  try {
+    const stored = JSON.parse(localStorage.getItem(BULK_SETTINGS_STORAGE_KEY) ?? "{}");
+    if (!stored || typeof stored !== "object" || Array.isArray(stored)) return settings;
+    MOVE_SETTING_RULES.forEach((rule) => {
+      const ruleData = stored[rule];
+      const topPowerByType = ruleData?.topPowerByType;
+      if (!topPowerByType || typeof topPowerByType !== "object" || Array.isArray(topPowerByType)) return;
+      const current = settings.get(rule).topPowerByType;
+      current.count = normalizeBulkMoveCount(topPowerByType.count);
+    });
+  } catch {
+    // Ignore unavailable or malformed local settings and use the defaults.
+  }
+  return settings;
+}
+
+function saveBulkSettings() {
+  try {
+    const stored = {};
+    MOVE_SETTING_RULES.forEach((rule) => {
+      const settings = getBulkSettings(rule);
+      stored[rule] = {
+        topPowerByType: {
+          count: normalizeBulkMoveCount(settings.topPowerByType.count),
+        },
+      };
+    });
+    localStorage.setItem(BULK_SETTINGS_STORAGE_KEY, JSON.stringify(stored));
+  } catch {
+    // Ignore unavailable storage; the current session still uses the in-memory settings.
+  }
+}
+
+function getBulkMoveIdsByPokemon(rule = state.moveSettingsRule) {
+  const settings = getBulkSettings(rule).topPowerByType;
+
+  const movesByPokemon = new Map();
+  state.moves.forEach((move) => {
+    if (!isMoveAllowed(move.id)) return;
+    const power = Number(move.power);
+    if (!move.type || !Number.isFinite(power) || power <= 0) return;
+    if (!Array.isArray(move.users)) return;
+    move.users.forEach((pokemonId) => {
+      const movesByType = movesByPokemon.get(pokemonId) ?? new Map();
+      const moves = movesByType.get(move.type) ?? [];
+      moves.push({ move, power });
+      movesByType.set(move.type, moves);
+      movesByPokemon.set(pokemonId, movesByType);
+    });
+  });
+
+  const allowedMoveIdsByPokemon = new Map();
+  movesByPokemon.forEach((movesByType, pokemonId) => {
+    const allowedMoveIds = new Set();
+    movesByType.forEach((moves) => {
+      moves
+        .sort((a, b) => b.power - a.power || a.move.id.localeCompare(b.move.id))
+        .slice(0, settings.count)
+        .forEach(({ move }) => allowedMoveIds.add(move.id));
+    });
+    allowedMoveIdsByPokemon.set(pokemonId, allowedMoveIds);
+  });
+  return allowedMoveIdsByPokemon;
 }
 
 function isPokemonIncluded(pokemonId, rule = state.moveSettingsRule) {
