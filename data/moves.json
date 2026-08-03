@@ -30734,15 +30734,69 @@
     ]
   },
   {
-    "id": "last-respects",
+    "id": "last-respects-50",
     "name": {
-      "en": "Last Respects",
-      "ja": "おはかまいり",
-      "jaHrkt": "おはかまいり"
+      "en": "Last Respects (50)",
+      "ja": "おはかまいり（50）",
+      "jaHrkt": "おはかまいり（50）"
     },
     "type": "ghost",
     "category": "physical",
     "power": 50,
+    "isSpreadMove": false,
+    "users": [
+      "basculegion-male",
+      "houndstone",
+      "basculin-white-striped",
+      "basculegion-female"
+    ]
+  },
+  {
+    "id": "last-respects-100",
+    "name": {
+      "en": "Last Respects (100)",
+      "ja": "おはかまいり（100）",
+      "jaHrkt": "おはかまいり（100）"
+    },
+    "type": "ghost",
+    "category": "physical",
+    "power": 100,
+    "isSpreadMove": false,
+    "users": [
+      "basculegion-male",
+      "houndstone",
+      "basculin-white-striped",
+      "basculegion-female"
+    ]
+  },
+  {
+    "id": "last-respects-150",
+    "name": {
+      "en": "Last Respects (150)",
+      "ja": "おはかまいり（150）",
+      "jaHrkt": "おはかまいり（150）"
+    },
+    "type": "ghost",
+    "category": "physical",
+    "power": 150,
+    "isSpreadMove": false,
+    "users": [
+      "basculegion-male",
+      "houndstone",
+      "basculin-white-striped",
+      "basculegion-female"
+    ]
+  },
+  {
+    "id": "last-respects-200",
+    "name": {
+      "en": "Last Respects (200)",
+      "ja": "おはかまいり（200）",
+      "jaHrkt": "おはかまいり（200）"
+    },
+    "type": "ghost",
+    "category": "physical",
+    "power": 200,
     "isSpreadMove": false,
     "users": [
       "basculegion-male",
