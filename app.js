@@ -1599,6 +1599,7 @@ function runSearch() {
     const rankedScenarios = getRankedProfileScenarios(profile.scenarios, input.prioritizeMega);
     let minimumCandidateTotal = null;
     let isSurvivable = false;
+    const shownOutcomeKeys = new Set();
 
     for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
       const { candidate, after } = candidateStats[candidateIndex];
@@ -1632,6 +1633,11 @@ function runSearch() {
         if (candidateTotal !== minimumCandidateTotal) continue;
       }
       if (afterDamage === representative.currentDamage && afterKoRate === representative.currentKoRate) continue;
+      if (!input.randomToGuaranteedSurvival) {
+        const outcomeKey = `${afterDamage}|${afterKoRate}`;
+        if (shownOutcomeKeys.has(outcomeKey)) continue;
+        shownOutcomeKeys.add(outcomeKey);
+      }
 
       for (const scenario of rankedScenarios) {
         insertRankedRow(profileRows, {
@@ -1893,13 +1899,15 @@ function buildDefensiveCandidates(input) {
   if (input.randomToGuaranteedSurvival) return buildMinimumSurvivalCandidates(input, max);
 
   const candidates = [];
-  for (let hpAdd = 0; hpAdd <= input.remainingPoints; hpAdd++) {
-    for (let defAdd = 0; defAdd <= input.remainingPoints - hpAdd; defAdd++) {
-      const spdAdd = input.remainingPoints - hpAdd - defAdd;
-      if (input.currentHpPoints + hpAdd > max) continue;
-      if (input.currentDefPoints + defAdd > max) continue;
-      if (input.currentSpdPoints + spdAdd > max) continue;
-      candidates.push({ hpAdd, defAdd, spdAdd });
+  for (let total = 0; total <= input.remainingPoints; total++) {
+    for (let hpAdd = 0; hpAdd <= total; hpAdd++) {
+      for (let defAdd = 0; defAdd <= total - hpAdd; defAdd++) {
+        const spdAdd = total - hpAdd - defAdd;
+        if (input.currentHpPoints + hpAdd > max) continue;
+        if (input.currentDefPoints + defAdd > max) continue;
+        if (input.currentSpdPoints + spdAdd > max) continue;
+        candidates.push({ hpAdd, defAdd, spdAdd });
+      }
     }
   }
   return candidates;
