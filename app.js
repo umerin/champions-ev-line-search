@@ -10,6 +10,7 @@ const MOVE_SETTING_RULES = ["single", "double"];
 const MULTISCALE_POKEMON_IDS = new Set(["dragonite", "dragonite-mega"]);
 const THICK_FAT_POKEMON_IDS = new Set(["venusaur-mega", "azumarill", "snorlax", "mamoswine", "appletun"]);
 const THICK_FAT_MOVE_TYPES = new Set(["fire", "ice"]);
+const HEATPROOF_POKEMON_IDS = new Set(["sinistcha"]);
 
 const state = {
   pokemon: [],
@@ -47,6 +48,8 @@ const els = {
   multiscaleEnabled: document.querySelector("#multiscaleEnabled"),
   thickFatOption: document.querySelector("#thickFatOption"),
   thickFatEnabled: document.querySelector("#thickFatEnabled"),
+  heatproofOption: document.querySelector("#heatproofOption"),
+  heatproofEnabled: document.querySelector("#heatproofEnabled"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -216,6 +219,7 @@ async function init() {
     els.defenderSelect.addEventListener("change", () => {
       updateMultiscaleOption();
       updateThickFatOption();
+      updateHeatproofOption();
       updateCurrentStatsDefault();
       runSearch();
     });
@@ -232,6 +236,7 @@ async function init() {
     els.megaToggle.addEventListener("click", cycleMegaForm);
     els.multiscaleEnabled.addEventListener("change", runSearch);
     els.thickFatEnabled.addEventListener("change", runSearch);
+    els.heatproofEnabled.addEventListener("change", runSearch);
     document.querySelectorAll(".rule-toggle-button").forEach((button) => {
       button.addEventListener("click", () => selectBattleRule(button));
     });
@@ -296,6 +301,7 @@ function populatePokemonSelect() {
   updateMegaToggle(pokemon);
   updateMultiscaleOption(pokemon);
   updateThickFatOption(pokemon);
+  updateHeatproofOption(pokemon);
   closePokemonOptions();
 }
 
@@ -1244,6 +1250,14 @@ function updateThickFatOption(pokemon = getPokemonPool().find((item) => item.id 
   else if (!wasVisible) els.thickFatEnabled.checked = true;
 }
 
+function updateHeatproofOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
+  const isSupported = Boolean(pokemon && HEATPROOF_POKEMON_IDS.has(pokemon.id));
+  const wasVisible = !els.heatproofOption.hidden;
+  els.heatproofOption.hidden = !isSupported;
+  if (!isSupported) els.heatproofEnabled.checked = false;
+  else if (!wasVisible) els.heatproofEnabled.checked = true;
+}
+
 function cycleMegaForm() {
   const current = getPokemonPool().find((pokemon) => pokemon.id === els.defenderSelect.value);
   if (!current) return;
@@ -1654,6 +1668,7 @@ function readInput() {
     prioritizeMega: els.prioritizeMega.checked,
     multiscaleEnabled: els.multiscaleEnabled.checked,
     thickFatEnabled: els.thickFatEnabled.checked,
+    heatproofEnabled: els.heatproofEnabled.checked,
   };
 }
 
@@ -1820,6 +1835,9 @@ function getDefenderDamageModifier(defender, input, moveType) {
     && THICK_FAT_POKEMON_IDS.has(defender.id)
     && THICK_FAT_MOVE_TYPES.has(moveType)
   ) modifier *= 0.5;
+  if (input.heatproofEnabled && HEATPROOF_POKEMON_IDS.has(defender.id) && moveType === "fire") {
+    modifier *= 0.5;
+  }
   return modifier;
 }
 
