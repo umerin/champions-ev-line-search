@@ -2337,8 +2337,8 @@ function renderResultDetailRow(row, groupIndex) {
       <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
       <td class="result-move">${escapeHtml(row.move.name.ja)}</td>
       <td class="result-power">${row.move.power}</td>
-      <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
-      <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
+      <td class="result-current">${row.currentDamage}</td>
+      <td class="result-after">${row.afterDamage}</td>
       <td class="result-diff ${diffClass}">${formatResultDiff(row.diff)}</td>
       <td class="result-category">${jpCategory[row.move.category]}</td>
     </tr>

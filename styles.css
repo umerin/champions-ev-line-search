@@ -1293,14 +1293,15 @@ legend {
 }
 
 table {
-  width: 100%;
-  min-width: 1100px;
+  width: 947px;
+  min-width: 947px;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 10px 9px;
+  padding: 10px 6px;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
@@ -1315,23 +1316,24 @@ th {
   z-index: 1;
   background: #21364b;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: 0 2px 0 rgba(20, 32, 51, 0.12);
 }
 
-.result-line { width: 126px; text-align: center; }
-.result-allocation { width: 118px; }
-.result-attacker { width: 155px; }
-.result-move { width: 132px; }
-.result-power { width: 72px; text-align: center; }
-.result-nature { width: 58px; text-align: center; }
+.result-line { width: 92px; text-align: center; }
+.result-allocation { width: 145px; }
+.result-attacker { width: 132px; }
+.result-move { width: 118px; }
+.result-power { width: 50px; text-align: center; }
+.result-nature { width: 48px; text-align: center; }
 .result-current,
-.result-after { width: 132px; text-align: center; }
-.result-diff { width: 82px; text-align: center; }
-.result-category { width: 74px; text-align: center; }
-.result-attack { width: 96px; }
+.result-after { width: 58px; text-align: center; }
+.result-current { width: 94px; text-align: center; }
+.result-diff { width: 72px; text-align: center; }
+.result-category { width: 54px; text-align: center; }
+.result-attack { width: 84px; }
 
 tbody td {
   transition: background-color 120ms ease, color 120ms ease;
@@ -1807,7 +1809,12 @@ tbody tr:hover {
   table,
   tbody {
     display: block;
+    width: 100%;
     min-width: 0;
+  }
+
+  table {
+    table-layout: auto;
   }
 
   thead {
@@ -1917,7 +1924,7 @@ tbody tr:hover {
   .result-current { grid-area: current; border-top: 1px solid var(--line); }
   .result-current::before { content: "現在ダメージ"; }
   .result-after { grid-area: after; border-top: 1px solid var(--line); }
-  .result-after::before { content: "配分後ダメージ"; }
+  .result-after::before { content: "配分後"; }
   .result-diff { grid-area: diff; border-top: 1px solid var(--line); }
   .result-diff::before { content: "最大変化"; }
 
