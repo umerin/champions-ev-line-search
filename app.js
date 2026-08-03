@@ -3,7 +3,7 @@ const paths = {
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  availability: "./data/champions-availability.json?v=20260803-1",
+  availability: "./data/champions-availability.json?v=20260803-2",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -1320,7 +1320,8 @@ function getPokemonSearchScore(pokemon, query, asciiQuery) {
 }
 
 function selectPokemon(pokemonId) {
-  const pokemon = getPokemonPool().find((item) => item.id === pokemonId);
+  const pokemon = getPokemonPool().find((item) => item.id === pokemonId)
+    ?? state.pokemon.find((item) => item.id === pokemonId);
   if (!pokemon) return;
   rememberRecentPokemon(pokemon.id);
   els.defenderSelect.value = pokemon.id;
@@ -1332,14 +1333,14 @@ function selectPokemon(pokemonId) {
 
 function getMegaFamily(pokemon) {
   const rootId = pokemon.id.replace(/-mega(?:-[xyz])?$/, "");
-  const pokemonPool = getPokemonPool();
+  const pokemonPool = state.pokemon;
   const base = pokemonPool.find((item) => item.id === rootId);
   if (!base) return [pokemon];
   const variantOrder = new Map([
-    ["y", 0],
-    ["x", 1],
-    ["z", 2],
-    ["", 3],
+    ["", 0],
+    ["y", 1],
+    ["x", 2],
+    ["z", 3],
   ]);
   const megaForms = pokemonPool
     .filter((item) => item.id === `${rootId}-mega` || item.id.startsWith(`${rootId}-mega-`))
@@ -1390,7 +1391,7 @@ function updateDrySkinOption(pokemon = getPokemonPool().find((item) => item.id =
 }
 
 function cycleMegaForm() {
-  const current = getPokemonPool().find((pokemon) => pokemon.id === els.defenderSelect.value);
+  const current = state.pokemon.find((pokemon) => pokemon.id === els.defenderSelect.value);
   if (!current) return;
   const family = getMegaFamily(current);
   if (family.length < 2) return;
@@ -1847,14 +1848,9 @@ function useChampionsFilter() {
 function getPokemonPool() {
   if (!useChampionsFilter() || !state.availability?.restrictPokemon) return state.pokemon;
   const allowed = new Set(state.availability.pokemon ?? []);
-  const allowedNames = new Set(
-    state.pokemon
-      .filter((pokemon) => allowed.has(pokemon.id))
-      .map((pokemon) => pokemon.name.ja),
-  );
+  const selectedId = els.defenderSelect?.value;
   return state.pokemon.filter((pokemon) => {
-    if (allowed.has(pokemon.id)) return true;
-    return pokemon.id.includes("-mega") && allowedNames.has(pokemon.name.ja);
+    return allowed.has(pokemon.id) || pokemon.id === selectedId;
   });
 }
 

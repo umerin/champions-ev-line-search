@@ -32076,7 +32076,7 @@
     "type": "grass",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false,
+    "isSpreadMove": true,
     "users": [
       "sinistcha"
     ]

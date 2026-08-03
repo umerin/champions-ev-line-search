@@ -1,0 +1,3 @@
+# Spreadsheet inspection output is generated locally and is not source data.
+outputs/**/*.inspect.mdjson
+outputs/**/*.inspect.ndjson
