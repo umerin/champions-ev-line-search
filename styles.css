@@ -1330,7 +1330,6 @@ th {
 .result-current,
 .result-after { width: 132px; text-align: center; }
 .result-diff { width: 82px; text-align: center; }
-.result-effectiveness,
 .result-category { width: 74px; text-align: center; }
 .result-attack { width: 96px; }
 
@@ -1922,8 +1921,7 @@ tbody tr:hover {
   .result-diff { grid-area: diff; border-top: 1px solid var(--line); }
   .result-diff::before { content: "最大変化"; }
 
-  .result-category,
-  .result-effectiveness {
+  .result-category {
     display: none;
   }
 

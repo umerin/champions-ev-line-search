@@ -2266,7 +2266,7 @@ function renderResults(rows, candidateCount) {
   `;
 
   if (!rows.length) {
-    els.resultsBody.innerHTML = `<tr><td colspan="12" class="empty">条件に合う変化はありませんでした。</td></tr>`;
+    els.resultsBody.innerHTML = `<tr><td colspan="11" class="empty">条件に合う変化はありませんでした。</td></tr>`;
     return;
   }
 
@@ -2309,7 +2309,7 @@ function renderResultGroup(group, groupIndex) {
   const detailsLabel = `詳細${group.rows.length}件`;
   return `
     <tr class="result-group-summary">
-      <td colspan="12" class="result-group-cell">
+      <td colspan="11" class="result-group-cell">
         <button type="button" class="result-group-toggle" data-result-group="${groupIndex}" aria-expanded="false">
           <span class="result-group-chevron" aria-hidden="true">＋</span>
           <span class="result-group-attacker">${escapeHtml(getPokemonDisplayName(representative.attacker))}</span>
@@ -2340,7 +2340,6 @@ function renderResultDetailRow(row, groupIndex) {
       <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
       <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
       <td class="result-diff ${diffClass}">${formatResultDiff(row.diff)}</td>
-      <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
       <td class="result-category">${jpCategory[row.move.category]}</td>
     </tr>
   `;
@@ -2356,7 +2355,7 @@ function formatResultDiff(diff) {
 
 function renderInputError(message) {
   els.summary.innerHTML = `<span class="empty">${escapeHtml(message)}</span>`;
-  els.resultsBody.innerHTML = `<tr><td colspan="12" class="empty">${escapeHtml(message)}</td></tr>`;
+  els.resultsBody.innerHTML = `<tr><td colspan="11" class="empty">${escapeHtml(message)}</td></tr>`;
 }
 
 function formatCandidate(candidate) {
