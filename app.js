@@ -2360,7 +2360,8 @@ function renderInputError(message) {
 }
 
 function formatCandidate(candidate) {
-  return `H+${candidate.hpAdd} B+${candidate.defAdd} D+${candidate.spdAdd}`;
+  const totalPoints = candidate.hpAdd + candidate.defAdd + candidate.spdAdd;
+  return `H+${candidate.hpAdd} B+${candidate.defAdd} D+${candidate.spdAdd} (${totalPoints})`;
 }
 
 function toInt(value) {
