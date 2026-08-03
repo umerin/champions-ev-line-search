@@ -93,8 +93,10 @@ const els = {
   moveSettingsBulkRuleName: document.querySelector("#moveSettingsBulkRuleName"),
   moveSettingsTopPowerCount: document.querySelector("#moveSettingsTopPowerCount"),
   moveSettingsBaseStatMax: document.querySelector("#moveSettingsBaseStatMax"),
+  moveSettingsBaseStatMin: document.querySelector("#moveSettingsBaseStatMin"),
   moveSettingsApplyBulk: document.querySelector("#moveSettingsApplyBulk"),
   moveSettingsApplyBaseStatExclusion: document.querySelector("#moveSettingsApplyBaseStatExclusion"),
+  moveSettingsApplyBaseStatInclusion: document.querySelector("#moveSettingsApplyBaseStatInclusion"),
   moveSettingsBulkConfirmModal: document.querySelector("#moveSettingsBulkConfirmModal"),
   moveSettingsBulkConfirmMessage: document.querySelector("#moveSettingsBulkConfirmMessage"),
   moveSettingsBulkConfirmSkip: document.querySelector("#moveSettingsBulkConfirmSkip"),
@@ -346,8 +348,10 @@ function setupMoveSettingsPage() {
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsBaseStatMax.addEventListener("input", saveBulkSettingsDraft);
+  els.moveSettingsBaseStatMin.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsApplyBulk.addEventListener("click", () => requestBulkSettingsApply("topPowerByType"));
   els.moveSettingsApplyBaseStatExclusion.addEventListener("click", () => requestBulkSettingsApply("baseStatExclusion"));
+  els.moveSettingsApplyBaseStatInclusion.addEventListener("click", () => requestBulkSettingsApply("baseStatInclusion"));
   els.moveSettingsBulkConfirmCancel.addEventListener("click", closeBulkMoveSettingsConfirmation);
   els.moveSettingsBulkConfirmApply.addEventListener("click", confirmBulkMoveSettingsApply);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
@@ -438,6 +442,7 @@ function renderMoveSettingsBulkSettings() {
   els.moveSettingsBulkRuleName.textContent = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
   els.moveSettingsTopPowerCount.value = String(settings.topPowerByType.count);
   els.moveSettingsBaseStatMax.value = String(settings.baseStatExclusion.max);
+  els.moveSettingsBaseStatMin.value = String(settings.baseStatInclusion.min);
   updateBulkSettingsRuleTabs();
 }
 
@@ -445,11 +450,14 @@ function saveBulkSettingsDraft() {
   const settings = getBulkSettings(state.bulkSettingsRule);
   settings.topPowerByType.count = normalizeBulkMoveCount(els.moveSettingsTopPowerCount.value);
   settings.baseStatExclusion.max = normalizeBulkBaseStatMax(els.moveSettingsBaseStatMax.value);
+  settings.baseStatInclusion.min = normalizeBulkBaseStatMin(els.moveSettingsBaseStatMin.value);
   saveBulkSettings();
 }
 
 function requestBulkSettingsApply(action) {
-  const normalizedAction = action === "baseStatExclusion" ? "baseStatExclusion" : "topPowerByType";
+  const normalizedAction = ["baseStatExclusion", "baseStatInclusion"].includes(action)
+    ? action
+    : "topPowerByType";
   const settings = getBulkSettings(state.bulkSettingsRule)[normalizedAction];
   if (settings.skipConfirmation) {
     applyBulkSettings(normalizedAction);
@@ -459,6 +467,8 @@ function requestBulkSettingsApply(action) {
   const ruleName = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
   if (normalizedAction === "baseStatExclusion") {
     els.moveSettingsBulkConfirmMessage.innerHTML = `${ruleName}の合計種族値${settings.max}以下のポケモンを検索対象から除外します。<br />ポケモンごとの検索対象チェックが変更されます。`;
+  } else if (normalizedAction === "baseStatInclusion") {
+    els.moveSettingsBulkConfirmMessage.innerHTML = `${ruleName}の合計種族値${settings.min}以上のポケモンを検索対象にします。<br />ポケモンごとの検索対象チェックが変更されます。`;
   } else {
     els.moveSettingsBulkConfirmMessage.innerHTML = `${ruleName}の各ポケモンに、各技タイプの威力上位${settings.count}個を適用します。<br />個別の技チェックが変更されます。`;
   }
@@ -486,6 +496,10 @@ function applyBulkSettings(action = "topPowerByType") {
   saveBulkSettingsDraft();
   if (action === "baseStatExclusion") {
     applyBulkPokemonExclusion();
+    return;
+  }
+  if (action === "baseStatInclusion") {
+    applyBulkPokemonInclusion();
     return;
   }
   const rule = state.bulkSettingsRule;
@@ -519,6 +533,22 @@ function applyBulkPokemonExclusion() {
   const excluded = state.pokemonExclusions.get(rule) ?? new Set();
   getPokemonPool().forEach((pokemon) => {
     if (getPokemonBaseStatTotal(pokemon) <= maxBaseStat) excluded.add(pokemon.id);
+  });
+  state.pokemonExclusions.set(rule, excluded);
+  savePokemonExclusions();
+  if (state.moveSettingsRule === rule) {
+    renderMoveSettingsPokemonList();
+    renderMoveSettingsMoveList();
+  }
+  runSearch();
+}
+
+function applyBulkPokemonInclusion() {
+  const rule = state.bulkSettingsRule;
+  const minBaseStat = getBulkSettings(rule).baseStatInclusion.min;
+  const excluded = state.pokemonExclusions.get(rule) ?? new Set();
+  getPokemonPool().forEach((pokemon) => {
+    if (getPokemonBaseStatTotal(pokemon) >= minBaseStat) excluded.delete(pokemon.id);
   });
   state.pokemonExclusions.set(rule, excluded);
   savePokemonExclusions();
@@ -666,6 +696,10 @@ function createBulkSettingsState() {
       max: 0,
       skipConfirmation: false,
     },
+    baseStatInclusion: {
+      min: 0,
+      skipConfirmation: false,
+    },
   }]));
 }
 
@@ -674,6 +708,10 @@ function normalizeBulkMoveCount(value) {
 }
 
 function normalizeBulkBaseStatMax(value) {
+  return clamp(toInt(value), 0, 1200);
+}
+
+function normalizeBulkBaseStatMin(value) {
   return clamp(toInt(value), 0, 1200);
 }
 
@@ -688,6 +726,10 @@ function getBulkSettings(rule = state.moveSettingsRule) {
       },
       baseStatExclusion: {
         max: 0,
+        skipConfirmation: false,
+      },
+      baseStatInclusion: {
+        min: 0,
         skipConfirmation: false,
       },
     };
@@ -715,6 +757,12 @@ function loadBulkSettings() {
         baseStatSettings.max = normalizeBulkBaseStatMax(baseStatExclusion.max);
         baseStatSettings.skipConfirmation = baseStatExclusion.skipConfirmation === true;
       }
+      const baseStatInclusion = ruleData?.baseStatInclusion;
+      if (baseStatInclusion && typeof baseStatInclusion === "object" && !Array.isArray(baseStatInclusion)) {
+        const baseStatSettings = settings.get(rule).baseStatInclusion;
+        baseStatSettings.min = normalizeBulkBaseStatMin(baseStatInclusion.min);
+        baseStatSettings.skipConfirmation = baseStatInclusion.skipConfirmation === true;
+      }
     });
   } catch {
     // Ignore unavailable or malformed local settings and use the defaults.
@@ -735,6 +783,10 @@ function saveBulkSettings() {
         baseStatExclusion: {
           max: normalizeBulkBaseStatMax(settings.baseStatExclusion.max),
           skipConfirmation: settings.baseStatExclusion.skipConfirmation === true,
+        },
+        baseStatInclusion: {
+          min: normalizeBulkBaseStatMin(settings.baseStatInclusion.min),
+          skipConfirmation: settings.baseStatInclusion.skipConfirmation === true,
         },
       };
     });

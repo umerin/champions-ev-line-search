@@ -372,6 +372,22 @@
                 <button id="moveSettingsApplyBaseStatExclusion" type="button" class="secondary-button">一括適用</button>
               </div>
             </div>
+            <div class="move-settings-bulk-card">
+              <div class="move-settings-bulk-option">
+                <span>
+                  <strong>合計種族値 n 以上をチェック</strong>
+                  <small>合計種族値が指定値以上のポケモンを検索対象にします。</small>
+                </span>
+              </div>
+              <div class="move-settings-bulk-controls">
+                <label class="move-settings-bulk-count">
+                  <span>合計種族値</span>
+                  <input id="moveSettingsBaseStatMin" type="number" min="0" max="1200" step="1" value="0" inputmode="numeric" aria-label="対象にする合計種族値の下限" />
+                  <span>以上</span>
+                </label>
+                <button id="moveSettingsApplyBaseStatInclusion" type="button" class="secondary-button">一括適用</button>
+              </div>
+            </div>
           </div>
         </section>
       </section>
