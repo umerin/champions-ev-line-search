@@ -77,6 +77,12 @@ const els = {
   moveSettingsBulkRuleName: document.querySelector("#moveSettingsBulkRuleName"),
   moveSettingsTopPowerCount: document.querySelector("#moveSettingsTopPowerCount"),
   moveSettingsApplyBulk: document.querySelector("#moveSettingsApplyBulk"),
+  moveSettingsBulkConfirmModal: document.querySelector("#moveSettingsBulkConfirmModal"),
+  moveSettingsBulkConfirmRuleName: document.querySelector("#moveSettingsBulkConfirmRuleName"),
+  moveSettingsBulkConfirmCount: document.querySelector("#moveSettingsBulkConfirmCount"),
+  moveSettingsBulkConfirmSkip: document.querySelector("#moveSettingsBulkConfirmSkip"),
+  moveSettingsBulkConfirmCancel: document.querySelector("#moveSettingsBulkConfirmCancel"),
+  moveSettingsBulkConfirmApply: document.querySelector("#moveSettingsBulkConfirmApply"),
   moveSettingsAllOn: document.querySelector("#moveSettingsAllOn"),
   moveSettingsAllOff: document.querySelector("#moveSettingsAllOff"),
   moveSettingsMoveSearch: document.querySelector("#moveSettingsMoveSearch"),
@@ -306,7 +312,9 @@ function setupMoveSettingsPage() {
   els.moveSettingsPokemonSearch.addEventListener("input", renderMoveSettingsPokemonList);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
-  els.moveSettingsApplyBulk.addEventListener("click", applyBulkMoveSettings);
+  els.moveSettingsApplyBulk.addEventListener("click", requestBulkMoveSettingsApply);
+  els.moveSettingsBulkConfirmCancel.addEventListener("click", closeBulkMoveSettingsConfirmation);
+  els.moveSettingsBulkConfirmApply.addEventListener("click", confirmBulkMoveSettingsApply);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
   els.moveSettingsAllOff.addEventListener("click", () => setAllMovesForSelected(false));
   refreshMoveSettingsPage();
@@ -401,6 +409,32 @@ function saveBulkSettingsDraft() {
   const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
   settings.count = normalizeBulkMoveCount(els.moveSettingsTopPowerCount.value);
   saveBulkSettings();
+}
+
+function requestBulkMoveSettingsApply() {
+  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
+  if (settings.skipConfirmation) {
+    applyBulkMoveSettings();
+    return;
+  }
+
+  els.moveSettingsBulkConfirmRuleName.textContent = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
+  els.moveSettingsBulkConfirmCount.textContent = String(settings.count);
+  els.moveSettingsBulkConfirmSkip.checked = false;
+  els.moveSettingsBulkConfirmModal.hidden = false;
+  els.moveSettingsBulkConfirmApply.focus();
+}
+
+function closeBulkMoveSettingsConfirmation() {
+  els.moveSettingsBulkConfirmModal.hidden = true;
+}
+
+function confirmBulkMoveSettingsApply() {
+  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
+  settings.skipConfirmation = els.moveSettingsBulkConfirmSkip.checked;
+  saveBulkSettings();
+  closeBulkMoveSettingsConfirmation();
+  applyBulkMoveSettings();
 }
 
 function applyBulkMoveSettings() {
@@ -560,6 +594,7 @@ function createBulkSettingsState() {
   return new Map(MOVE_SETTING_RULES.map((rule) => [rule, {
     topPowerByType: {
       count: 3,
+      skipConfirmation: false,
     },
   }]));
 }
@@ -575,6 +610,7 @@ function getBulkSettings(rule = state.moveSettingsRule) {
     settings = {
       topPowerByType: {
         count: 3,
+        skipConfirmation: false,
       },
     };
     state.bulkSettings.set(normalizedRule, settings);
@@ -593,6 +629,7 @@ function loadBulkSettings() {
       if (!topPowerByType || typeof topPowerByType !== "object" || Array.isArray(topPowerByType)) return;
       const current = settings.get(rule).topPowerByType;
       current.count = normalizeBulkMoveCount(topPowerByType.count);
+      current.skipConfirmation = topPowerByType.skipConfirmation === true;
     });
   } catch {
     // Ignore unavailable or malformed local settings and use the defaults.
@@ -608,6 +645,7 @@ function saveBulkSettings() {
       stored[rule] = {
         topPowerByType: {
           count: normalizeBulkMoveCount(settings.topPowerByType.count),
+          skipConfirmation: settings.topPowerByType.skipConfirmation === true,
         },
       };
     });

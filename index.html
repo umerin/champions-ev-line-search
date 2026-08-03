@@ -336,6 +336,27 @@
         </section>
       </section>
 
+      <div id="moveSettingsBulkConfirmModal" class="bulk-confirm-modal" hidden>
+        <section class="bulk-confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="moveSettingsBulkConfirmTitle">
+          <div class="bulk-confirm-heading">
+            <p class="eyebrow">技チェックの一括変更</p>
+            <h2 id="moveSettingsBulkConfirmTitle">一括適用の確認</h2>
+          </div>
+          <p class="bulk-confirm-message">
+            <span id="moveSettingsBulkConfirmRuleName">シングル</span>の各ポケモンに、各技タイプの威力上位<span id="moveSettingsBulkConfirmCount">3</span>個を適用します。<br />
+            個別の技チェックが変更されます。
+          </p>
+          <label class="bulk-confirm-skip">
+            <input id="moveSettingsBulkConfirmSkip" type="checkbox" />
+            <span>この項目では次回以降確認しない</span>
+          </label>
+          <div class="bulk-confirm-actions">
+            <button id="moveSettingsBulkConfirmCancel" type="button" class="secondary-button">キャンセル</button>
+            <button id="moveSettingsBulkConfirmApply" type="button" class="secondary-button bulk-confirm-apply">適用する</button>
+          </div>
+        </section>
+      </div>
+
       <footer class="site-footer">
         <p>
           非公式ファンメイドツールです。Nintendo、Creatures、GAME FREAK、株式会社ポケモンとは関係ありません。
