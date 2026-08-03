@@ -1354,7 +1354,8 @@ tbody tr[hidden] {
 }
 
 .result-group-toggle {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 150px 120px 80px 200px 90px 90px;
   width: 100%;
   min-height: 48px;
   align-items: center;
@@ -1382,11 +1383,14 @@ tbody tr[hidden] {
 
 .result-group-attacker,
 .result-group-move {
+  min-width: 0;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .result-group-power,
 .result-group-count {
+  min-width: 0;
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
@@ -1394,13 +1398,14 @@ tbody tr[hidden] {
 
 .result-group-representative,
 .result-group-diff {
+  min-width: 0;
   font-family: "Roboto Mono", ui-monospace, monospace;
   font-size: 12px;
   font-weight: 800;
 }
 
 .result-group-count {
-  margin-left: auto;
+  margin-left: 0;
   white-space: nowrap;
 }
 
@@ -1869,6 +1874,7 @@ tbody tr:hover {
   }
 
   .result-group-toggle {
+    display: flex;
     min-height: 56px;
     flex-wrap: wrap;
     gap: 6px 10px;
