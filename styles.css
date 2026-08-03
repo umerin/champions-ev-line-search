@@ -1195,13 +1195,17 @@ legend {
   justify-self: start;
 }
 
+.results-toolbar {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, #f9fbfd, #f1f8f7);
+}
+
 .summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   padding: 16px 18px;
-  border-bottom: 1px solid var(--line);
-  background: linear-gradient(135deg, #f9fbfd, #f1f8f7);
+  background: transparent;
 }
 
 .summary span,
@@ -1223,6 +1227,19 @@ legend {
   font-size: 18px;
   font-family: "Roboto Mono", ui-monospace, monospace;
   letter-spacing: -0.05em;
+}
+
+.result-limit-control {
+  width: min(180px, calc(100% - 36px));
+  margin-left: auto;
+  padding: 0 18px 14px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.result-limit-control select {
+  width: 100%;
 }
 
 .table-wrap {
@@ -1279,6 +1296,70 @@ tbody td {
 tbody td.result-line,
 tbody td.result-allocation {
   background: #f2faf8;
+}
+
+tbody tr[hidden] {
+  display: none;
+}
+
+.result-group-cell {
+  padding: 0;
+  background: #edf7f5;
+}
+
+.result-group-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  white-space: normal;
+}
+
+.result-group-toggle:hover {
+  background: #e3f1ee;
+}
+
+.result-group-chevron {
+  flex: 0 0 auto;
+  color: var(--accent-strong);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.result-group-attacker,
+.result-group-move {
+  font-weight: 800;
+}
+
+.result-group-power,
+.result-group-count {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.result-group-representative,
+.result-group-diff {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.result-group-count {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.result-detail-row td {
+  background: #fff;
 }
 
 tbody td.result-line {
@@ -1451,6 +1532,15 @@ tbody tr:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     padding: 8px;
+  }
+
+  .result-limit-control {
+    width: min(180px, calc(100% - 16px));
+    padding: 0 8px 8px;
+  }
+
+  .result-limit-control select {
+    max-width: none;
   }
 
   .summary span {
@@ -1696,6 +1786,49 @@ tbody tr:hover {
   tbody tr:nth-child(even),
   tbody tr:hover {
     background: var(--panel);
+  }
+
+  tbody tr.result-group-summary {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: 0 8px 22px rgba(21, 31, 45, 0.05);
+  }
+
+  tbody tr.result-group-summary > td.result-group-cell {
+    display: block;
+    grid-column: 1 / -1;
+    padding: 0;
+    border: 0;
+  }
+
+  tbody tr.result-group-summary > td.result-group-cell::before {
+    display: none;
+  }
+
+  .result-group-toggle {
+    min-height: 56px;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    padding: 12px;
+  }
+
+  .result-group-attacker,
+  .result-group-move {
+    font-size: 12px;
+  }
+
+  .result-group-power,
+  .result-group-representative,
+  .result-group-diff,
+  .result-group-count {
+    font-size: 11px;
+  }
+
+  .result-group-count {
+    margin-left: 0;
   }
 
   td {

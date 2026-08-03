@@ -249,8 +249,19 @@
             </fieldset>
           </div>
 
-          <div class="summary" id="summary">
-            <span>検索すると結果がここに出ます。</span>
+          <div class="results-toolbar">
+            <div class="summary" id="summary">
+              <span>検索すると結果がここに出ます。</span>
+            </div>
+            <label class="result-limit-control">
+              表示上限
+              <select id="resultLimit" aria-label="検索結果の表示上限">
+                <option value="80">80件</option>
+                <option value="120">120件</option>
+                <option value="160">160件</option>
+                <option value="200">200件</option>
+              </select>
+            </label>
           </div>
 
           <div class="table-wrap">

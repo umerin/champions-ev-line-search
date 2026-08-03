@@ -12,6 +12,8 @@ const THICK_FAT_POKEMON_IDS = new Set(["venusaur-mega", "azumarill", "snorlax", 
 const THICK_FAT_MOVE_TYPES = new Set(["fire", "ice"]);
 const HEATPROOF_POKEMON_IDS = new Set(["sinistcha"]);
 const DRY_SKIN_POKEMON_IDS = new Set(["toxicroak", "heliolisk"]);
+const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
+const DEFAULT_RESULT_LIMIT = 80;
 
 const state = {
   pokemon: [],
@@ -28,6 +30,7 @@ const state = {
   bulkConfirmationAction: null,
   moveSettingsView: "individual",
   moveSettingsPokemonSort: "name",
+  resultLimit: DEFAULT_RESULT_LIMIT,
 };
 
 let searchTimer = null;
@@ -36,7 +39,6 @@ const MOVE_SETTINGS_STORAGE_KEY = "champions-ev-line-search:move-settings";
 const POKEMON_SETTINGS_STORAGE_KEY = "champions-ev-line-search:pokemon-settings";
 const BULK_SETTINGS_STORAGE_KEY = "champions-ev-line-search:bulk-settings";
 const RECENT_POKEMON_LIMIT = 10;
-const RESULT_LIMIT = 80;
 const pokemonFormMeta = new Map();
 
 const els = {
@@ -80,6 +82,7 @@ const els = {
   excludeUnsurvivableAttacks: document.querySelector("#excludeUnsurvivableAttacks"),
   prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
+  resultLimit: document.querySelector("#resultLimit"),
   resultsBody: document.querySelector("#resultsBody"),
   searchPage: document.querySelector("#searchPage"),
   moveSettingsPage: document.querySelector("#moveSettingsPage"),
@@ -293,6 +296,11 @@ async function init() {
     els.prioritizeMega.addEventListener("change", runSearch);
     els.movePower.addEventListener("input", scheduleSearch);
     els.includePriorityMoves.addEventListener("change", runSearch);
+    els.resultLimit.addEventListener("change", () => {
+      state.resultLimit = normalizeResultLimit(els.resultLimit.value);
+      els.resultLimit.value = String(state.resultLimit);
+      runSearch();
+    });
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -1648,12 +1656,13 @@ function groupAttackScenarios(scenarios) {
 }
 
 function getRankedProfileScenarios(scenarios, prioritizeMega) {
-  if (!prioritizeMega) return scenarios.slice(0, RESULT_LIMIT);
+  const resultLimit = state.resultLimit;
+  if (!prioritizeMega) return scenarios.slice(0, resultLimit);
   const mega = [];
   const regular = [];
   for (const scenario of scenarios) {
     const bucket = scenario.attacker.id.includes("-mega") ? mega : regular;
-    if (bucket.length < RESULT_LIMIT) bucket.push(scenario);
+    if (bucket.length < resultLimit) bucket.push(scenario);
   }
   return [...mega, ...regular];
 }
@@ -1667,8 +1676,9 @@ function compareResultRows(a, b, prioritizeMega) {
 }
 
 function insertRankedRow(rows, row, prioritizeMega) {
+  const resultLimit = state.resultLimit;
   if (
-    rows.length === RESULT_LIMIT
+    rows.length === resultLimit
     && compareResultRows(row, rows[rows.length - 1], prioritizeMega) >= 0
   ) return;
 
@@ -1680,7 +1690,7 @@ function insertRankedRow(rows, row, prioritizeMega) {
     else start = middle + 1;
   }
   rows.splice(start, 0, row);
-  if (rows.length > RESULT_LIMIT) rows.pop();
+  if (rows.length > resultLimit) rows.pop();
 }
 
 function scheduleSearch() {
@@ -2086,10 +2096,12 @@ function matchesMovePower(move, threshold, comparison, includePriorityMoves) {
 }
 
 function renderResults(rows, candidateCount) {
+  const groups = groupResultRows(rows);
   const lineChanges = rows.filter((row) => row.afterKoRate < row.currentKoRate).length;
   els.summary.innerHTML = `
     <span>配分候補<strong>${candidateCount}</strong></span>
-    <span>表示件数<strong>${rows.length}</strong></span>
+    <span>表示グループ<strong>${groups.length}</strong></span>
+    <span>詳細結果<strong>${rows.length}</strong></span>
     <span>KO率低下<strong>${lineChanges}</strong></span>
   `;
 
@@ -2098,29 +2110,88 @@ function renderResults(rows, candidateCount) {
     return;
   }
 
-  els.resultsBody.innerHTML = rows
-    .map((row) => {
-      const lineClass = row.afterKoRate < row.currentKoRate ? "line-good" : "";
-      const diffClass = row.diff < 0 ? "diff-good" : row.diff > 0 ? "diff-bad" : "diff-neutral";
-      const diffLabel = row.diff > 0 ? `+${row.diff}` : row.diff;
-      return `
-        <tr>
-          <td class="result-line ${lineClass}">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</td>
-          <td class="result-allocation">${formatCandidate(row.candidate)}</td>
-          <td class="result-attacker">${getPokemonDisplayName(row.attacker)}</td>
-          <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
-          <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
-          <td class="result-move">${row.move.name.ja}</td>
-          <td class="result-power">${row.move.power}</td>
-          <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
-          <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
-          <td class="result-diff ${diffClass}">${diffLabel}</td>
-          <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
-          <td class="result-category">${jpCategory[row.move.category]}</td>
-        </tr>
-      `;
-    })
-    .join("");
+  els.resultsBody.innerHTML = groups.map((group, groupIndex) => renderResultGroup(group, groupIndex)).join("");
+  els.resultsBody.querySelectorAll(".result-group-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const groupIndex = button.dataset.resultGroup;
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      const icon = button.querySelector(".result-group-chevron");
+      if (icon) icon.textContent = isExpanded ? "＋" : "−";
+      els.resultsBody.querySelectorAll(`[data-result-group="${groupIndex}"]`).forEach((detailRow) => {
+        detailRow.hidden = isExpanded;
+      });
+    });
+  });
+}
+
+function groupResultRows(rows) {
+  const groups = [];
+  const groupsByKey = new Map();
+  rows.forEach((row) => {
+    const key = `${row.attacker.id}|${row.move.id}`;
+    let group = groupsByKey.get(key);
+    if (!group) {
+      group = { rows: [] };
+      groupsByKey.set(key, group);
+      groups.push(group);
+    }
+    group.rows.push(row);
+  });
+  return groups;
+}
+
+function renderResultGroup(group, groupIndex) {
+  const representative = group.rows[0];
+  const lineClass = representative.afterKoRate < representative.currentKoRate ? "line-good" : "";
+  const diffClass = getResultDiffClass(representative.diff);
+  const diffLabel = formatResultDiff(representative.diff);
+  const detailsLabel = `詳細${group.rows.length}件`;
+  return `
+    <tr class="result-group-summary">
+      <td colspan="12" class="result-group-cell">
+        <button type="button" class="result-group-toggle" data-result-group="${groupIndex}" aria-expanded="false">
+          <span class="result-group-chevron" aria-hidden="true">＋</span>
+          <span class="result-group-attacker">${escapeHtml(getPokemonDisplayName(representative.attacker))}</span>
+          <span class="result-group-move">${escapeHtml(representative.move.name.ja)}</span>
+          <span class="result-group-power">威力 ${escapeHtml(String(representative.move.power))}</span>
+          <span class="result-group-representative ${lineClass}">代表 ${formatProbability(representative.currentKoRate)}→${formatProbability(representative.afterKoRate)}</span>
+          <span class="result-group-diff ${diffClass}">変化 ${diffLabel}</span>
+          <span class="result-group-count">${detailsLabel}</span>
+        </button>
+      </td>
+    </tr>
+    ${group.rows.map((row) => renderResultDetailRow(row, groupIndex)).join("")}
+  `;
+}
+
+function renderResultDetailRow(row, groupIndex) {
+  const lineClass = row.afterKoRate < row.currentKoRate ? "line-good" : "";
+  const diffClass = getResultDiffClass(row.diff);
+  return `
+    <tr class="result-detail-row" data-result-group="${groupIndex}" hidden>
+      <td class="result-line ${lineClass}">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</td>
+      <td class="result-allocation">${formatCandidate(row.candidate)}</td>
+      <td class="result-attacker">${escapeHtml(getPokemonDisplayName(row.attacker))}</td>
+      <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
+      <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
+      <td class="result-move">${escapeHtml(row.move.name.ja)}</td>
+      <td class="result-power">${row.move.power}</td>
+      <td class="result-current">${row.currentDamage}～${row.currentMinDamage}</td>
+      <td class="result-after">${row.afterDamage}～${row.afterMinDamage}</td>
+      <td class="result-diff ${diffClass}">${formatResultDiff(row.diff)}</td>
+      <td class="result-effectiveness">${effectivenessLabel.get(row.effectiveness) ?? row.effectiveness}</td>
+      <td class="result-category">${jpCategory[row.move.category]}</td>
+    </tr>
+  `;
+}
+
+function getResultDiffClass(diff) {
+  return diff < 0 ? "diff-good" : diff > 0 ? "diff-bad" : "diff-neutral";
+}
+
+function formatResultDiff(diff) {
+  return diff > 0 ? `+${diff}` : diff;
 }
 
 function renderInputError(message) {
@@ -2134,6 +2205,11 @@ function formatCandidate(candidate) {
 
 function toInt(value) {
   return Number.parseInt(value, 10) || 0;
+}
+
+function normalizeResultLimit(value) {
+  const limit = toInt(value);
+  return RESULT_LIMIT_OPTIONS.includes(limit) ? limit : DEFAULT_RESULT_LIMIT;
 }
 
 function clamp(value, min, max) {
