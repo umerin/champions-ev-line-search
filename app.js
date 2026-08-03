@@ -44,6 +44,10 @@ const RESULT_SORT_DIRECTION_OPTIONS = {
     { value: "desc", label: "高い順" },
     { value: "asc", label: "低い順" },
   ],
+  "change-amount": [
+    { value: "desc", label: "高い順" },
+    { value: "asc", label: "低い順" },
+  ],
   "attacker-name": [
     { value: "asc", label: "昇順" },
     { value: "desc", label: "降順" },
@@ -1739,7 +1743,7 @@ function groupAttackScenarios(scenarios) {
 
 function getRankedProfileScenarios(scenarios, prioritizeMega) {
   const resultLimit = state.resultLimit;
-  if (state.resultSort.some(({ key }) => key !== "unset")) {
+  if (state.resultSort.some(({ key }) => ["attack-stat", "attacker-name", "move-name"].includes(key))) {
     return [...scenarios]
       .sort((a, b) => {
         return compareResultSortRules(a, b) || a.scenarioIndex - b.scenarioIndex;
@@ -1766,6 +1770,8 @@ function compareResultSortRules(a, b) {
     let comparison = 0;
     if (sortRule.key === "attack-stat") {
       comparison = a.attackStat - b.attackStat;
+    } else if (sortRule.key === "change-amount") {
+      comparison = a.diff - b.diff;
     } else if (sortRule.key === "attacker-name") {
       comparison = compareJapaneseSortText(getPokemonDisplayName(a.attacker), getPokemonDisplayName(b.attacker));
     } else if (sortRule.key === "move-name") {
