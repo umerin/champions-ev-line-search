@@ -21,6 +21,7 @@ const state = {
   moveSettingsRule: "single",
   bulkSettingsRule: "single",
   moveSettingsView: "individual",
+  moveSettingsPokemonSort: "name",
 };
 
 let searchTimer = null;
@@ -69,6 +70,7 @@ const els = {
   searchPage: document.querySelector("#searchPage"),
   moveSettingsPage: document.querySelector("#moveSettingsPage"),
   moveSettingsPokemonSearch: document.querySelector("#moveSettingsPokemonSearch"),
+  moveSettingsPokemonSort: document.querySelector("#moveSettingsPokemonSort"),
   moveSettingsPokemonList: document.querySelector("#moveSettingsPokemonList"),
   moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
   moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
@@ -310,6 +312,10 @@ function setupMoveSettingsPage() {
     button.addEventListener("click", () => selectBulkSettingsRule(button));
   });
   els.moveSettingsPokemonSearch.addEventListener("input", renderMoveSettingsPokemonList);
+  els.moveSettingsPokemonSort.addEventListener("change", () => {
+    state.moveSettingsPokemonSort = normalizePokemonSort(els.moveSettingsPokemonSort.value);
+    renderMoveSettingsPokemonList();
+  });
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsApplyBulk.addEventListener("click", requestBulkMoveSettingsApply);
@@ -474,10 +480,11 @@ function updateBulkSettingsRuleTabs() {
 
 function renderMoveSettingsPokemonList() {
   const query = normalizePokemonSearch(els.moveSettingsPokemonSearch.value);
-  const pokemonPool = getSortedPokemonPool().filter((pokemon) => {
+  const sort = normalizePokemonSort(state.moveSettingsPokemonSort);
+  const pokemonPool = getPokemonPool().filter((pokemon) => {
     const name = normalizePokemonSearch(getPokemonDisplayName(pokemon));
     return !query || name.includes(query);
-  });
+  }).sort((a, b) => comparePokemonBySort(a, b, sort));
   if (!pokemonPool.length) {
     els.moveSettingsPokemonList.innerHTML = `<p class="move-settings-empty">該当するポケモンがありません。</p>`;
     return;
@@ -485,7 +492,7 @@ function renderMoveSettingsPokemonList() {
   els.moveSettingsPokemonList.innerHTML = pokemonPool.map((pokemon) => {
     const selected = pokemon.id === state.moveSettingsPokemonId;
     const enabled = isPokemonIncluded(pokemon.id);
-    const displayName = getPokemonDisplayName(pokemon);
+    const displayName = getPokemonListDisplayName(pokemon);
     return `
       <div class="move-settings-pokemon-entry${enabled ? "" : " is-disabled"}">
         <button type="button" class="move-settings-pokemon-option${selected ? " is-selected" : ""}" role="option" aria-selected="${selected}" data-pokemon-id="${escapeHtml(pokemon.id)}">
@@ -816,11 +823,38 @@ function savePokemonExclusions() {
 }
 
 function getSortedPokemonPool() {
-  return [...getPokemonPool()].sort((a, b) => {
-    const aName = a.name.jaHrkt ?? a.name.ja;
-    const bName = b.name.jaHrkt ?? b.name.ja;
-    return aName.localeCompare(bName, "ja");
-  });
+  return [...getPokemonPool()].sort(comparePokemonByName);
+}
+
+function normalizePokemonSort(value) {
+  return ["name", "base-stat-desc", "base-stat-asc"].includes(value) ? value : "name";
+}
+
+function getPokemonBaseStatTotal(pokemon) {
+  return Object.values(pokemon.baseStats ?? {}).reduce((total, value) => {
+    const stat = Number(value);
+    return total + (Number.isFinite(stat) ? stat : 0);
+  }, 0);
+}
+
+function getPokemonListDisplayName(pokemon) {
+  return `${getPokemonDisplayName(pokemon)}（${getPokemonBaseStatTotal(pokemon)}）`;
+}
+
+function comparePokemonByName(a, b) {
+  const aName = a.name.jaHrkt ?? a.name.ja;
+  const bName = b.name.jaHrkt ?? b.name.ja;
+  return aName.localeCompare(bName, "ja");
+}
+
+function comparePokemonBySort(a, b, sort) {
+  if (sort === "base-stat-desc") {
+    return getPokemonBaseStatTotal(b) - getPokemonBaseStatTotal(a) || comparePokemonByName(a, b);
+  }
+  if (sort === "base-stat-asc") {
+    return getPokemonBaseStatTotal(a) - getPokemonBaseStatTotal(b) || comparePokemonByName(a, b);
+  }
+  return comparePokemonByName(a, b);
 }
 
 function normalizePokemonSearch(value) {
@@ -1087,7 +1121,7 @@ function renderRecentPokemonOptions() {
   const options = recentPokemon.length ? recentPokemon : currentPokemon ? [currentPokemon] : [];
   const optionMarkup = options.map((pokemon) => `
     <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
-      <span>${escapeHtml(getPokemonDisplayName(pokemon))}</span>
+      <span>${escapeHtml(getPokemonListDisplayName(pokemon))}</span>
     </button>
   `).join("");
 
@@ -1114,7 +1148,7 @@ function renderPokemonOptions(query) {
   els.defenderOptions.innerHTML = matches.length
     ? matches.map((pokemon) => `
         <button type="button" class="pokemon-option" role="option" data-pokemon-id="${escapeHtml(pokemon.id)}">
-          <span>${escapeHtml(getPokemonDisplayName(pokemon))}</span>
+          <span>${escapeHtml(getPokemonListDisplayName(pokemon))}</span>
         </button>
       `).join("")
     : '<span class="pokemon-option-empty">該当するポケモンがいません</span>';

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260722-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260803-1" />
   </head>
   <body>
     <main class="app-shell">
@@ -280,6 +280,14 @@
           <aside class="move-settings-pokemon-panel">
             <label for="moveSettingsPokemonSearch">ポケモンを選択</label>
             <input id="moveSettingsPokemonSearch" type="search" autocomplete="off" placeholder="名前で絞り込み" />
+            <label class="move-settings-pokemon-sort" for="moveSettingsPokemonSort">
+              ポケモンの並び順
+              <select id="moveSettingsPokemonSort">
+                <option value="name">名前順</option>
+                <option value="base-stat-desc">合計種族値が高い順</option>
+                <option value="base-stat-asc">合計種族値が低い順</option>
+              </select>
+            </label>
             <div class="move-settings-pokemon-list-heading" aria-hidden="true">
               <span></span>
               <span>検索<br />対象</span>

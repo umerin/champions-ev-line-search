@@ -781,6 +781,10 @@ legend {
   margin-bottom: 6px;
 }
 
+.move-settings-pokemon-sort {
+  margin-top: 10px;
+}
+
 .move-settings-pokemon-list,
 .move-settings-move-list {
   overflow-y: auto;
