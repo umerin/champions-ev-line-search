@@ -7,6 +7,9 @@ const paths = {
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
+const MULTISCALE_POKEMON_IDS = new Set(["dragonite", "dragonite-mega"]);
+const THICK_FAT_POKEMON_IDS = new Set(["venusaur-mega", "azumarill", "snorlax", "mamoswine", "appletun"]);
+const THICK_FAT_MOVE_TYPES = new Set(["fire", "ice"]);
 
 const state = {
   pokemon: [],
@@ -40,6 +43,10 @@ const els = {
   defenderSearch: document.querySelector("#defenderSearch"),
   defenderOptions: document.querySelector("#defenderOptions"),
   megaToggle: document.querySelector("#megaToggle"),
+  multiscaleOption: document.querySelector("#multiscaleOption"),
+  multiscaleEnabled: document.querySelector("#multiscaleEnabled"),
+  thickFatOption: document.querySelector("#thickFatOption"),
+  thickFatEnabled: document.querySelector("#thickFatEnabled"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -207,6 +214,8 @@ async function init() {
       button.addEventListener("click", () => adjustPointInput(button));
     });
     els.defenderSelect.addEventListener("change", () => {
+      updateMultiscaleOption();
+      updateThickFatOption();
       updateCurrentStatsDefault();
       runSearch();
     });
@@ -221,6 +230,8 @@ async function init() {
     els.defenderSearch.addEventListener("click", renderPokemonOptionsOnActivate);
     els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
     els.megaToggle.addEventListener("click", cycleMegaForm);
+    els.multiscaleEnabled.addEventListener("change", runSearch);
+    els.thickFatEnabled.addEventListener("change", runSearch);
     document.querySelectorAll(".rule-toggle-button").forEach((button) => {
       button.addEventListener("click", () => selectBattleRule(button));
     });
@@ -283,6 +294,8 @@ function populatePokemonSelect() {
   els.defenderSelect.value = pokemon.id;
   els.defenderSearch.value = getPokemonDisplayName(pokemon);
   updateMegaToggle(pokemon);
+  updateMultiscaleOption(pokemon);
+  updateThickFatOption(pokemon);
   closePokemonOptions();
 }
 
@@ -1215,6 +1228,22 @@ function updateMegaToggle(pokemon) {
   els.megaToggle.title = family.length < 2 ? "メガシンカ形態はありません" : "メガシンカ形態を切り替え";
 }
 
+function updateMultiscaleOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
+  const isSupported = Boolean(pokemon && MULTISCALE_POKEMON_IDS.has(pokemon.id));
+  const wasVisible = !els.multiscaleOption.hidden;
+  els.multiscaleOption.hidden = !isSupported;
+  if (!isSupported) els.multiscaleEnabled.checked = false;
+  else if (!wasVisible) els.multiscaleEnabled.checked = true;
+}
+
+function updateThickFatOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
+  const isSupported = Boolean(pokemon && THICK_FAT_POKEMON_IDS.has(pokemon.id));
+  const wasVisible = !els.thickFatOption.hidden;
+  els.thickFatOption.hidden = !isSupported;
+  if (!isSupported) els.thickFatEnabled.checked = false;
+  else if (!wasVisible) els.thickFatEnabled.checked = true;
+}
+
 function cycleMegaForm() {
   const current = getPokemonPool().find((pokemon) => pokemon.id === els.defenderSelect.value);
   if (!current) return;
@@ -1434,6 +1463,7 @@ function runSearch() {
         effectiveness: representative.effectiveness,
         rule: input.battleRule,
         isSpreadMove: representative.move.isSpreadMove,
+        defenderDamageModifier: getDefenderDamageModifier(defender, input, representative.move.type),
       };
       const {
         maxDamage: afterDamage,
@@ -1545,14 +1575,15 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
           if (input.attackStatMultipleOf11 && attackStat % 11 !== 0) continue;
-          const damageProfileKey = [
-            move.category,
-            move.power,
-            attackStat,
-            stab,
-            effectiveness,
-            Number(move.isSpreadMove),
-          ].join("|");
+    const damageProfileKey = [
+      move.category,
+      move.power,
+      attackStat,
+      stab,
+      effectiveness,
+      Number(move.isSpreadMove),
+      getDefenderDamageModifier(defender, input, move.type),
+    ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
             const damageInput = {
@@ -1564,6 +1595,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               effectiveness,
               rule: input.battleRule,
               isSpreadMove: move.isSpreadMove,
+              defenderDamageModifier: getDefenderDamageModifier(defender, input, move.type),
             };
             const {
               maxDamage: currentDamage,
@@ -1620,6 +1652,8 @@ function readInput() {
     randomToGuaranteedSurvival: els.randomToGuaranteedSurvival.checked,
     excludeUnsurvivableAttacks: els.excludeUnsurvivableAttacks.checked,
     prioritizeMega: els.prioritizeMega.checked,
+    multiscaleEnabled: els.multiscaleEnabled.checked,
+    thickFatEnabled: els.thickFatEnabled.checked,
   };
 }
 
@@ -1778,6 +1812,17 @@ function calcHpStat(baseStat, statPoints) {
   return Math.floor(((2 * baseStat + 31) * state.rules.level) / 100 + state.rules.level + 10) + statPointToBonus(statPoints);
 }
 
+function getDefenderDamageModifier(defender, input, moveType) {
+  let modifier = 1;
+  if (input.multiscaleEnabled && MULTISCALE_POKEMON_IDS.has(defender.id)) modifier *= 0.5;
+  if (
+    input.thickFatEnabled
+    && THICK_FAT_POKEMON_IDS.has(defender.id)
+    && THICK_FAT_MOVE_TYPES.has(moveType)
+  ) modifier *= 0.5;
+  return modifier;
+}
+
 function calcDamageResult(damageInput, hp) {
   const preRandomDamage = calcPreRandomDamage(damageInput);
   const maxDamage = calcDamageFromPreRandom(
@@ -1785,12 +1830,14 @@ function calcDamageResult(damageInput, hp) {
     state.rules.damageRandomMax,
     damageInput.stab,
     damageInput.effectiveness,
+    damageInput.defenderDamageModifier,
   );
   const minDamage = calcDamageFromPreRandom(
     preRandomDamage,
     state.rules.damageRandomMin ?? 0.85,
     damageInput.stab,
     damageInput.effectiveness,
+    damageInput.defenderDamageModifier,
   );
   const koRate = calcOneHitKoRate(
     preRandomDamage,
@@ -1799,6 +1846,7 @@ function calcDamageResult(damageInput, hp) {
     hp,
     maxDamage,
     minDamage,
+    damageInput.defenderDamageModifier,
   );
   return { maxDamage, minDamage, koRate };
 }
@@ -1811,11 +1859,12 @@ function calcPreRandomDamage({ level, power, attack, defense, rule, isSpreadMove
   return applyDamageModifier(baseDamage, doubleModifier);
 }
 
-function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness) {
+function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness, defenderDamageModifier = 1) {
   let damage = preRandomDamage;
   damage = applyDamageModifier(damage, randomModifier);
   damage = applyDamageModifier(damage, stab);
   damage = applyTypeEffectiveness(damage, effectiveness);
+  damage = applyDamageModifier(damage, defenderDamageModifier);
   return damage;
 }
 
@@ -1849,7 +1898,7 @@ function matchesAttackKind(category, filters) {
   return filters.includes(category);
 }
 
-function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage) {
+function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage, defenderDamageModifier = 1) {
   if (maxDamage < hp) return 0;
   if (minDamage >= hp) return 100;
   let lowestKoRoll = 86;
@@ -1861,6 +1910,7 @@ function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, m
       randomPercent / 100,
       stab,
       effectiveness,
+      defenderDamageModifier,
     );
     if (damage >= hp) highestKoRoll = randomPercent;
     else lowestKoRoll = randomPercent + 1;

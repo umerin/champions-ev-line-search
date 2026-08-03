@@ -253,6 +253,28 @@ fieldset {
   gap: 7px;
 }
 
+.ability-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ability-toggle[hidden] {
+  display: none;
+}
+
+.ability-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
 .mega-toggle {
   min-width: 54px;
   height: var(--control-height);
