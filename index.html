@@ -162,7 +162,7 @@
           </fieldset>
 
           <p class="note">
-            この試作はPokéAPIから生成したJSONを使う想定です。確認済みポケモンは data/champions-availability.json で管理します。技は公式の使用可否リストを未反映のため、全データを対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。実数値を直接入力すると、性格補正を考慮して最も近いポイントへ逆算します。
+            この試作はPokéAPIから生成したJSONを使う想定です。チャンピオンズ対象のポケモンと技は data/champions-availability.json で管理します。通常はチャンピオンズで使える技のみを対象にし、「全データ」を選ぶと全技を対象にします。ステータスポイントは0〜32の33段階、合計66として扱います。実数値を直接入力すると、性格補正を考慮して最も近いポイントへ逆算します。
           </p>
         </form>
 
@@ -265,7 +265,7 @@
         <div class="panel-heading move-settings-heading">
           <div>
             <h2>ポケモンごとの技設定</h2>
-            <p>検索結果に含める技をポケモンごとに選択できます。初期状態ではすべての技が対象です。</p>
+            <p>検索結果に含める技をポケモンごとに選択できます。通常はチャンピオンズ対象の技だけを表示し、「全データ」では全技を表示します。</p>
             <div class="move-settings-navigation">
               <div class="move-settings-rule-tabs" role="tablist" aria-label="個別設定のルール">
                 <button type="button" class="move-settings-rule-tab is-selected" data-move-settings-view="individual" data-move-rule="single" role="tab" aria-selected="true" aria-controls="moveSettingsIndividualPanel">シングル</button>

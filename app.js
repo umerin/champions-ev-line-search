@@ -3,7 +3,7 @@ const paths = {
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  availability: "./data/champions-availability.json?v=20260712-2",
+  availability: "./data/champions-availability.json?v=20260803-1",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -567,7 +567,7 @@ function renderMoveSettingsMoveList() {
 
 function getMovesForPokemon(pokemon) {
   return state.moves
-    .filter((move) => Array.isArray(move.users) && move.users.includes(pokemon.id))
+    .filter((move) => isMoveAllowed(move.id) && Array.isArray(move.users) && move.users.includes(pokemon.id))
     .sort((a, b) => {
       const typeRank = (moveTypeRank.get(a.type) ?? moveTypeOrder.length) - (moveTypeRank.get(b.type) ?? moveTypeOrder.length);
       if (typeRank !== 0) return typeRank;
@@ -1652,12 +1652,17 @@ function isMoveAllowedForPokemon(pokemonId, moveId, rule = els.battleRule.value)
 
 function updateDataStatus() {
   const pokemonPool = getPokemonPool();
+  const movePool = useChampionsFilter() && state.availability?.restrictMoves
+    ? state.moves.filter((move) => isMoveAllowed(move.id))
+    : state.moves;
   const mode = els.availabilityMode.value === "final"
     ? "チャンピオンズ（仮）"
     : useChampionsFilter() ? "確認済みポケモン" : "全データ";
   const pokemonNote = useChampionsFilter() && !state.availability?.restrictPokemon ? " / ポケモン未絞込" : "";
-  const moveNote = useChampionsFilter() && !state.availability?.restrictMoves ? " / 技は全データ（未検証）" : "";
-  els.dataStatus.textContent = `${mode}: ${pokemonPool.length}匹 / ${state.moves.length}技${pokemonNote}${moveNote}`;
+  const moveNote = useChampionsFilter() && state.availability?.restrictMoves
+    ? " / 技は対象リスト"
+    : useChampionsFilter() ? " / 技は全データ（未検証）" : "";
+  els.dataStatus.textContent = `${mode}: ${pokemonPool.length}匹 / ${movePool.length}技${pokemonNote}${moveNote}`;
 }
 
 function buildDefensiveCandidates(input) {
