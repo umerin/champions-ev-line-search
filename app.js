@@ -33,9 +33,28 @@ const state = {
   moveSettingsPokemonSort: "name",
   resultLimit: DEFAULT_RESULT_LIMIT,
   resultSort: [
-    { key: "attack-stat", direction: "desc" },
-    { key: "unset", direction: "desc" },
-    { key: "unset", direction: "desc" },
+    { key: "attacker-name", direction: "asc" },
+    { key: "move-name", direction: "asc" },
+    { key: "unset", direction: "asc" },
+  ],
+};
+
+const RESULT_SORT_DIRECTION_OPTIONS = {
+  "attack-stat": [
+    { value: "desc", label: "高い順" },
+    { value: "asc", label: "低い順" },
+  ],
+  "attacker-name": [
+    { value: "asc", label: "昇順" },
+    { value: "desc", label: "降順" },
+  ],
+  "move-name": [
+    { value: "asc", label: "昇順" },
+    { value: "desc", label: "降順" },
+  ],
+  unset: [
+    { value: "asc", label: "昇順" },
+    { value: "desc", label: "降順" },
   ],
 };
 
@@ -1577,6 +1596,19 @@ function onSubmit(event) {
 
 function setupResultSortControls() {
   const rows = [...document.querySelectorAll(".result-sort-row")];
+  const updateDirectionOptions = (row, resetDirection = false) => {
+    const key = row.querySelector(".result-sort-key").value;
+    const direction = row.querySelector(".result-sort-direction");
+    const options = RESULT_SORT_DIRECTION_OPTIONS[key] ?? RESULT_SORT_DIRECTION_OPTIONS.unset;
+    const previousValue = resetDirection ? null : direction.value;
+    direction.innerHTML = options
+      .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+      .join("");
+    direction.value = options.some(({ value }) => value === previousValue)
+      ? previousValue
+      : options[0].value;
+    direction.disabled = key === "unset";
+  };
   const updateSortState = () => {
     state.resultSort = rows.map((row) => ({
       key: row.querySelector(".result-sort-key").value,
@@ -1590,12 +1622,13 @@ function setupResultSortControls() {
   };
 
   rows.forEach((row) => {
-    row.querySelector(".result-sort-key").addEventListener("change", updateSortState);
+    row.querySelector(".result-sort-key").addEventListener("change", () => {
+      updateDirectionOptions(row, true);
+      updateSortState();
+    });
     row.querySelector(".result-sort-direction").addEventListener("change", updateSortState);
   });
-  rows.forEach((row) => {
-    row.querySelector(".result-sort-direction").disabled = row.querySelector(".result-sort-key").value === "unset";
-  });
+  rows.forEach((row) => updateDirectionOptions(row));
 }
 
 function runSearch() {
@@ -1706,14 +1739,10 @@ function groupAttackScenarios(scenarios) {
 
 function getRankedProfileScenarios(scenarios, prioritizeMega) {
   const resultLimit = state.resultLimit;
-  const attackStatSort = state.resultSort.find(({ key }) => key === "attack-stat");
-  if (attackStatSort) {
+  if (state.resultSort.some(({ key }) => key !== "unset")) {
     return [...scenarios]
       .sort((a, b) => {
-        const comparison = attackStatSort.direction === "asc"
-          ? a.attackStat - b.attackStat
-          : b.attackStat - a.attackStat;
-        return comparison || a.scenarioIndex - b.scenarioIndex;
+        return compareResultSortRules(a, b) || a.scenarioIndex - b.scenarioIndex;
       })
       .slice(0, resultLimit);
   }
@@ -1728,17 +1757,31 @@ function getRankedProfileScenarios(scenarios, prioritizeMega) {
 }
 
 function compareResultRows(a, b, prioritizeMega) {
+  return compareResultSortRules(a, b) || compareRecommendedResultRows(a, b, prioritizeMega);
+}
+
+function compareResultSortRules(a, b) {
   for (const sortRule of state.resultSort) {
     if (sortRule.key === "unset") continue;
+    let comparison = 0;
     if (sortRule.key === "attack-stat") {
-      const comparison = sortRule.direction === "asc"
-        ? a.attackStat - b.attackStat
-        : b.attackStat - a.attackStat;
-      if (comparison !== 0) return comparison;
+      comparison = a.attackStat - b.attackStat;
+    } else if (sortRule.key === "attacker-name") {
+      comparison = compareJapaneseSortText(getPokemonDisplayName(a.attacker), getPokemonDisplayName(b.attacker));
+    } else if (sortRule.key === "move-name") {
+      comparison = compareJapaneseSortText(getMoveSortName(a.move), getMoveSortName(b.move));
     }
+    if (comparison !== 0) return sortRule.direction === "asc" ? comparison : -comparison;
   }
+  return 0;
+}
 
-  return compareRecommendedResultRows(a, b, prioritizeMega);
+function getMoveSortName(move) {
+  return move.name?.jaHrkt ?? move.name?.ja ?? move.name?.en ?? move.id;
+}
+
+function compareJapaneseSortText(a, b) {
+  return a.localeCompare(b, "ja", { sensitivity: "base" }) || a.localeCompare(b);
 }
 
 function compareRecommendedResultRows(a, b, prioritizeMega) {
