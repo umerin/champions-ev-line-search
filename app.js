@@ -32,6 +32,11 @@ const state = {
   moveSettingsView: "individual",
   moveSettingsPokemonSort: "name",
   resultLimit: DEFAULT_RESULT_LIMIT,
+  resultSort: [
+    { key: "attack-stat", direction: "desc" },
+    { key: "unset", direction: "desc" },
+    { key: "unset", direction: "desc" },
+  ],
 };
 
 let searchTimer = null;
@@ -304,6 +309,7 @@ async function init() {
         : String(state.resultLimit);
       runSearch();
     });
+    setupResultSortControls();
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -1569,6 +1575,29 @@ function onSubmit(event) {
   runSearch();
 }
 
+function setupResultSortControls() {
+  const rows = [...document.querySelectorAll(".result-sort-row")];
+  const updateSortState = () => {
+    state.resultSort = rows.map((row) => ({
+      key: row.querySelector(".result-sort-key").value,
+      direction: row.querySelector(".result-sort-direction").value,
+    }));
+    rows.forEach((row) => {
+      const key = row.querySelector(".result-sort-key").value;
+      row.querySelector(".result-sort-direction").disabled = key === "unset";
+    });
+    runSearch();
+  };
+
+  rows.forEach((row) => {
+    row.querySelector(".result-sort-key").addEventListener("change", updateSortState);
+    row.querySelector(".result-sort-direction").addEventListener("change", updateSortState);
+  });
+  rows.forEach((row) => {
+    row.querySelector(".result-sort-direction").disabled = row.querySelector(".result-sort-key").value === "unset";
+  });
+}
+
 function runSearch() {
   const pokemonPool = getPokemonPool();
   const defender = pokemonPool.find((item) => item.id === els.defenderSelect.value);
@@ -1677,6 +1706,17 @@ function groupAttackScenarios(scenarios) {
 
 function getRankedProfileScenarios(scenarios, prioritizeMega) {
   const resultLimit = state.resultLimit;
+  const attackStatSort = state.resultSort.find(({ key }) => key === "attack-stat");
+  if (attackStatSort) {
+    return [...scenarios]
+      .sort((a, b) => {
+        const comparison = attackStatSort.direction === "asc"
+          ? a.attackStat - b.attackStat
+          : b.attackStat - a.attackStat;
+        return comparison || a.scenarioIndex - b.scenarioIndex;
+      })
+      .slice(0, resultLimit);
+  }
   if (!prioritizeMega) return scenarios.slice(0, resultLimit);
   const mega = [];
   const regular = [];
@@ -1688,6 +1728,20 @@ function getRankedProfileScenarios(scenarios, prioritizeMega) {
 }
 
 function compareResultRows(a, b, prioritizeMega) {
+  for (const sortRule of state.resultSort) {
+    if (sortRule.key === "unset") continue;
+    if (sortRule.key === "attack-stat") {
+      const comparison = sortRule.direction === "asc"
+        ? a.attackStat - b.attackStat
+        : b.attackStat - a.attackStat;
+      if (comparison !== 0) return comparison;
+    }
+  }
+
+  return compareRecommendedResultRows(a, b, prioritizeMega);
+}
+
+function compareRecommendedResultRows(a, b, prioritizeMega) {
   const megaPriority = prioritizeMega
     ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
     : 0;
