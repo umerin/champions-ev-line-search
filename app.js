@@ -13,6 +13,7 @@ const THICK_FAT_MOVE_TYPES = new Set(["fire", "ice"]);
 const HEATPROOF_POKEMON_IDS = new Set(["sinistcha"]);
 const DRY_SKIN_POKEMON_IDS = new Set(["toxicroak", "heliolisk"]);
 const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
+const UNLIMITED_RESULT_LIMIT = Infinity;
 const DEFAULT_RESULT_LIMIT = 80;
 
 const state = {
@@ -298,7 +299,9 @@ async function init() {
     els.includePriorityMoves.addEventListener("change", runSearch);
     els.resultLimit.addEventListener("change", () => {
       state.resultLimit = normalizeResultLimit(els.resultLimit.value);
-      els.resultLimit.value = String(state.resultLimit);
+      els.resultLimit.value = state.resultLimit === UNLIMITED_RESULT_LIMIT
+        ? "unlimited"
+        : String(state.resultLimit);
       runSearch();
     });
     runSearch();
@@ -2262,6 +2265,7 @@ function toInt(value) {
 }
 
 function normalizeResultLimit(value) {
+  if (String(value) === "unlimited") return UNLIMITED_RESULT_LIMIT;
   const limit = toInt(value);
   return RESULT_LIMIT_OPTIONS.includes(limit) ? limit : DEFAULT_RESULT_LIMIT;
 }
