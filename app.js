@@ -3,7 +3,7 @@ const paths = {
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  availability: "./data/champions-availability.json?v=20260803-3",
+  availability: "./data/champions-availability.json?v=20260803-4",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -1601,6 +1601,7 @@ function runSearch() {
 
     for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
       const { candidate, after } = candidateStats[candidateIndex];
+      if (!matchesRelevantDefensiveInvestment(representative.move.category, candidate)) continue;
       const damageInput = {
         level: state.rules.level,
         power: representative.move.power,
@@ -1641,7 +1642,7 @@ function runSearch() {
     for (const row of profileRows) insertRankedRow(rows, row, input.prioritizeMega);
   }
 
-  renderResults(rows, candidates.length);
+  renderResults(rows, getRelevantCandidateCount(candidates, input.attackKinds));
 }
 
 function groupAttackScenarios(scenarios) {
@@ -1892,6 +1893,21 @@ function buildDefensiveCandidates(input) {
     }
   }
   return candidates;
+}
+
+function matchesRelevantDefensiveInvestment(moveCategory, candidate) {
+  // 物理技の検索ではD振り、特殊技の検索ではB振りを候補から除外する。
+  if (moveCategory === "physical") return candidate.spdAdd === 0;
+  if (moveCategory === "special") return candidate.defAdd === 0;
+  return true;
+}
+
+function getRelevantCandidateCount(candidates, attackKinds) {
+  const hasPhysical = attackKinds.includes("physical");
+  const hasSpecial = attackKinds.includes("special");
+  if (hasSpecial && !hasPhysical) return candidates.filter((candidate) => candidate.defAdd === 0).length;
+  if (hasPhysical && !hasSpecial) return candidates.filter((candidate) => candidate.spdAdd === 0).length;
+  return candidates.length;
 }
 
 function applyCandidateStats(defender, input, candidate) {
