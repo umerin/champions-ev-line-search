@@ -1597,11 +1597,14 @@ function runSearch() {
     const profileRows = [];
     const representative = profile.scenarios[0];
     const rankedScenarios = getRankedProfileScenarios(profile.scenarios, input.prioritizeMega);
+    let minimumCandidateTotal = null;
     let isSurvivable = false;
 
     for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
       const { candidate, after } = candidateStats[candidateIndex];
       if (!matchesRelevantDefensiveInvestment(representative.move.category, candidate)) continue;
+      const candidateTotal = candidate.hpAdd + candidate.defAdd + candidate.spdAdd;
+      if (minimumCandidateTotal !== null && candidateTotal > minimumCandidateTotal) break;
       const damageInput = {
         level: state.rules.level,
         power: representative.move.power,
@@ -1620,8 +1623,13 @@ function runSearch() {
       } = calcDamageResult(damageInput, after.hp);
       if (afterKoRate < 100) isSurvivable = true;
       if (input.randomToGuaranteedSurvival) {
-        const isRandomKo = representative.currentKoRate > 0 && representative.currentKoRate < 100;
-        if (!isRandomKo || afterKoRate !== 0) continue;
+        const isOneHitKoOrRandom = representative.currentKoRate > 0;
+        if (!isOneHitKoOrRandom || afterKoRate !== 0) continue;
+        if (minimumCandidateTotal === null) {
+          minimumCandidateTotal = candidateTotal;
+          profileRows.length = 0;
+        }
+        if (candidateTotal !== minimumCandidateTotal) continue;
       }
       if (afterDamage === representative.currentDamage && afterKoRate === representative.currentKoRate) continue;
 
@@ -1882,6 +1890,8 @@ function updateDataStatus() {
 
 function buildDefensiveCandidates(input) {
   const max = state.rules.statPoint.maxPerStat;
+  if (input.randomToGuaranteedSurvival) return buildMinimumSurvivalCandidates(input, max);
+
   const candidates = [];
   for (let hpAdd = 0; hpAdd <= input.remainingPoints; hpAdd++) {
     for (let defAdd = 0; defAdd <= input.remainingPoints - hpAdd; defAdd++) {
@@ -1890,6 +1900,29 @@ function buildDefensiveCandidates(input) {
       if (input.currentDefPoints + defAdd > max) continue;
       if (input.currentSpdPoints + spdAdd > max) continue;
       candidates.push({ hpAdd, defAdd, spdAdd });
+    }
+  }
+  return candidates;
+}
+
+function buildMinimumSurvivalCandidates(input, max) {
+  const candidates = [];
+  const candidateKeys = new Set();
+  const addCandidate = (hpAdd, defAdd, spdAdd) => {
+    if (input.currentHpPoints + hpAdd > max) return;
+    if (input.currentDefPoints + defAdd > max) return;
+    if (input.currentSpdPoints + spdAdd > max) return;
+    const key = `${hpAdd}|${defAdd}|${spdAdd}`;
+    if (candidateKeys.has(key)) return;
+    candidateKeys.add(key);
+    candidates.push({ hpAdd, defAdd, spdAdd });
+  };
+
+  for (let total = 0; total <= input.remainingPoints; total++) {
+    for (let hpAdd = 0; hpAdd <= total; hpAdd++) {
+      const defensiveAdd = total - hpAdd;
+      if (input.attackKinds.includes("special")) addCandidate(hpAdd, 0, defensiveAdd);
+      if (input.attackKinds.includes("physical")) addCandidate(hpAdd, defensiveAdd, 0);
     }
   }
   return candidates;
