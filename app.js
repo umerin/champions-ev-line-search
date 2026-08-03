@@ -25,6 +25,7 @@ const state = {
   moveSettingsPokemonId: null,
   moveSettingsRule: "single",
   bulkSettingsRule: "single",
+  bulkConfirmationAction: null,
   moveSettingsView: "individual",
   moveSettingsPokemonSort: "name",
 };
@@ -91,10 +92,11 @@ const els = {
   moveSettingsBulkPanel: document.querySelector("#moveSettingsBulkPanel"),
   moveSettingsBulkRuleName: document.querySelector("#moveSettingsBulkRuleName"),
   moveSettingsTopPowerCount: document.querySelector("#moveSettingsTopPowerCount"),
+  moveSettingsBaseStatMax: document.querySelector("#moveSettingsBaseStatMax"),
   moveSettingsApplyBulk: document.querySelector("#moveSettingsApplyBulk"),
+  moveSettingsApplyBaseStatExclusion: document.querySelector("#moveSettingsApplyBaseStatExclusion"),
   moveSettingsBulkConfirmModal: document.querySelector("#moveSettingsBulkConfirmModal"),
-  moveSettingsBulkConfirmRuleName: document.querySelector("#moveSettingsBulkConfirmRuleName"),
-  moveSettingsBulkConfirmCount: document.querySelector("#moveSettingsBulkConfirmCount"),
+  moveSettingsBulkConfirmMessage: document.querySelector("#moveSettingsBulkConfirmMessage"),
   moveSettingsBulkConfirmSkip: document.querySelector("#moveSettingsBulkConfirmSkip"),
   moveSettingsBulkConfirmCancel: document.querySelector("#moveSettingsBulkConfirmCancel"),
   moveSettingsBulkConfirmApply: document.querySelector("#moveSettingsBulkConfirmApply"),
@@ -343,7 +345,9 @@ function setupMoveSettingsPage() {
   });
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
-  els.moveSettingsApplyBulk.addEventListener("click", requestBulkMoveSettingsApply);
+  els.moveSettingsBaseStatMax.addEventListener("input", saveBulkSettingsDraft);
+  els.moveSettingsApplyBulk.addEventListener("click", () => requestBulkSettingsApply("topPowerByType"));
+  els.moveSettingsApplyBaseStatExclusion.addEventListener("click", () => requestBulkSettingsApply("baseStatExclusion"));
   els.moveSettingsBulkConfirmCancel.addEventListener("click", closeBulkMoveSettingsConfirmation);
   els.moveSettingsBulkConfirmApply.addEventListener("click", confirmBulkMoveSettingsApply);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
@@ -433,24 +437,32 @@ function renderMoveSettingsBulkSettings() {
   const settings = getBulkSettings(state.bulkSettingsRule);
   els.moveSettingsBulkRuleName.textContent = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
   els.moveSettingsTopPowerCount.value = String(settings.topPowerByType.count);
+  els.moveSettingsBaseStatMax.value = String(settings.baseStatExclusion.max);
   updateBulkSettingsRuleTabs();
 }
 
 function saveBulkSettingsDraft() {
-  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
-  settings.count = normalizeBulkMoveCount(els.moveSettingsTopPowerCount.value);
+  const settings = getBulkSettings(state.bulkSettingsRule);
+  settings.topPowerByType.count = normalizeBulkMoveCount(els.moveSettingsTopPowerCount.value);
+  settings.baseStatExclusion.max = normalizeBulkBaseStatMax(els.moveSettingsBaseStatMax.value);
   saveBulkSettings();
 }
 
-function requestBulkMoveSettingsApply() {
-  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
+function requestBulkSettingsApply(action) {
+  const normalizedAction = action === "baseStatExclusion" ? "baseStatExclusion" : "topPowerByType";
+  const settings = getBulkSettings(state.bulkSettingsRule)[normalizedAction];
   if (settings.skipConfirmation) {
-    applyBulkMoveSettings();
+    applyBulkSettings(normalizedAction);
     return;
   }
 
-  els.moveSettingsBulkConfirmRuleName.textContent = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
-  els.moveSettingsBulkConfirmCount.textContent = String(settings.count);
+  const ruleName = state.bulkSettingsRule === "double" ? "ダブル" : "シングル";
+  if (normalizedAction === "baseStatExclusion") {
+    els.moveSettingsBulkConfirmMessage.innerHTML = `${ruleName}の合計種族値${settings.max}以下のポケモンを検索対象から除外します。<br />ポケモンごとの検索対象チェックが変更されます。`;
+  } else {
+    els.moveSettingsBulkConfirmMessage.innerHTML = `${ruleName}の各ポケモンに、各技タイプの威力上位${settings.count}個を適用します。<br />個別の技チェックが変更されます。`;
+  }
+  state.bulkConfirmationAction = normalizedAction;
   els.moveSettingsBulkConfirmSkip.checked = false;
   els.moveSettingsBulkConfirmModal.hidden = false;
   els.moveSettingsBulkConfirmApply.focus();
@@ -458,18 +470,24 @@ function requestBulkMoveSettingsApply() {
 
 function closeBulkMoveSettingsConfirmation() {
   els.moveSettingsBulkConfirmModal.hidden = true;
+  state.bulkConfirmationAction = null;
 }
 
 function confirmBulkMoveSettingsApply() {
-  const settings = getBulkSettings(state.bulkSettingsRule).topPowerByType;
+  const action = state.bulkConfirmationAction ?? "topPowerByType";
+  const settings = getBulkSettings(state.bulkSettingsRule)[action];
   settings.skipConfirmation = els.moveSettingsBulkConfirmSkip.checked;
   saveBulkSettings();
   closeBulkMoveSettingsConfirmation();
-  applyBulkMoveSettings();
+  applyBulkSettings(action);
 }
 
-function applyBulkMoveSettings() {
+function applyBulkSettings(action = "topPowerByType") {
   saveBulkSettingsDraft();
+  if (action === "baseStatExclusion") {
+    applyBulkPokemonExclusion();
+    return;
+  }
   const rule = state.bulkSettingsRule;
   const settings = getBulkSettings(rule).topPowerByType;
   const ruleExclusions = state.moveExclusions.get(rule) ?? new Map();
@@ -488,6 +506,22 @@ function applyBulkMoveSettings() {
 
   state.moveExclusions.set(rule, ruleExclusions);
   saveMoveExclusions();
+  if (state.moveSettingsRule === rule) {
+    renderMoveSettingsPokemonList();
+    renderMoveSettingsMoveList();
+  }
+  runSearch();
+}
+
+function applyBulkPokemonExclusion() {
+  const rule = state.bulkSettingsRule;
+  const maxBaseStat = getBulkSettings(rule).baseStatExclusion.max;
+  const excluded = state.pokemonExclusions.get(rule) ?? new Set();
+  getPokemonPool().forEach((pokemon) => {
+    if (getPokemonBaseStatTotal(pokemon) <= maxBaseStat) excluded.add(pokemon.id);
+  });
+  state.pokemonExclusions.set(rule, excluded);
+  savePokemonExclusions();
   if (state.moveSettingsRule === rule) {
     renderMoveSettingsPokemonList();
     renderMoveSettingsMoveList();
@@ -628,11 +662,19 @@ function createBulkSettingsState() {
       count: 3,
       skipConfirmation: false,
     },
+    baseStatExclusion: {
+      max: 0,
+      skipConfirmation: false,
+    },
   }]));
 }
 
 function normalizeBulkMoveCount(value) {
   return clamp(toInt(value), 1, 20);
+}
+
+function normalizeBulkBaseStatMax(value) {
+  return clamp(toInt(value), 0, 1200);
 }
 
 function getBulkSettings(rule = state.moveSettingsRule) {
@@ -642,6 +684,10 @@ function getBulkSettings(rule = state.moveSettingsRule) {
     settings = {
       topPowerByType: {
         count: 3,
+        skipConfirmation: false,
+      },
+      baseStatExclusion: {
+        max: 0,
         skipConfirmation: false,
       },
     };
@@ -657,11 +703,18 @@ function loadBulkSettings() {
     if (!stored || typeof stored !== "object" || Array.isArray(stored)) return settings;
     MOVE_SETTING_RULES.forEach((rule) => {
       const ruleData = stored[rule];
-      const topPowerByType = ruleData?.topPowerByType;
-      if (!topPowerByType || typeof topPowerByType !== "object" || Array.isArray(topPowerByType)) return;
       const current = settings.get(rule).topPowerByType;
-      current.count = normalizeBulkMoveCount(topPowerByType.count);
-      current.skipConfirmation = topPowerByType.skipConfirmation === true;
+      const topPowerByType = ruleData?.topPowerByType;
+      if (topPowerByType && typeof topPowerByType === "object" && !Array.isArray(topPowerByType)) {
+        current.count = normalizeBulkMoveCount(topPowerByType.count);
+        current.skipConfirmation = topPowerByType.skipConfirmation === true;
+      }
+      const baseStatExclusion = ruleData?.baseStatExclusion;
+      if (baseStatExclusion && typeof baseStatExclusion === "object" && !Array.isArray(baseStatExclusion)) {
+        const baseStatSettings = settings.get(rule).baseStatExclusion;
+        baseStatSettings.max = normalizeBulkBaseStatMax(baseStatExclusion.max);
+        baseStatSettings.skipConfirmation = baseStatExclusion.skipConfirmation === true;
+      }
     });
   } catch {
     // Ignore unavailable or malformed local settings and use the defaults.
@@ -678,6 +731,10 @@ function saveBulkSettings() {
         topPowerByType: {
           count: normalizeBulkMoveCount(settings.topPowerByType.count),
           skipConfirmation: settings.topPowerByType.skipConfirmation === true,
+        },
+        baseStatExclusion: {
+          max: normalizeBulkBaseStatMax(settings.baseStatExclusion.max),
+          skipConfirmation: settings.baseStatExclusion.skipConfirmation === true,
         },
       };
     });
