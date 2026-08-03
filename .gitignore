@@ -1,3 +1,10 @@
 # Spreadsheet inspection output is generated locally and is not source data.
 outputs/**/*.inspect.mdjson
 outputs/**/*.inspect.ndjson
+
+# Local workbook tooling and generated previews/dependencies are not app source.
+outputs/**/node_modules/
+outputs/**/previews/
+outputs/**/build.mjs
+outputs/**/inspect-*.mjs
+outputs/**/pokemon-data-editor.xlsx

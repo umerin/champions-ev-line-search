@@ -3,7 +3,7 @@ const paths = {
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  availability: "./data/champions-availability.json?v=20260803-2",
+  availability: "./data/champions-availability.json?v=20260803-3",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -1197,6 +1197,7 @@ function getPokemonFormLabel(pokemon) {
 }
 
 function getPokemonDisplayName(pokemon) {
+  if (pokemon.displayName) return pokemon.displayName;
   const megaMatch = pokemon.id.match(/-mega(?:-([xyz]))?$/);
   if (megaMatch) {
     const variant = megaMatch[1]?.toUpperCase() ?? "";

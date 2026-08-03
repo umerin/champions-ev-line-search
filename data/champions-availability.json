@@ -1,10 +1,10 @@
 {
-  "description": "pokemon-data-editor2.xlsmの対象列を正本として、チャンピオンズ対象のポケモンと技を絞り込むためのデータ。",
+  "description": "pokemon-data-editor2.xlsmを正本として、ポケモン・技・習得技のデータとチャンピオンズ対象を取り込んだデータ。",
   "source": {
     "name": "pokemon-data-editor2.xlsm",
     "file": "outputs/pokemon-data-editor-20260803/pokemon-data-editor2.xlsm",
     "importedAt": "2026-08-03",
-    "note": "「ポケモン一覧」「技一覧」のチャンピオンズ対象列が1/TRUEの行を反映。メガ形態もシートの対象列をそのまま参照する。"
+    "note": "ポケモン一覧・技一覧・覚える技_現在・覚える技_追加を参照。メガ形態もシートの対象列をそのまま使用する。"
   },
   "restrictPokemon": true,
   "pokemon": [
