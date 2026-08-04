@@ -351,6 +351,24 @@
               </div>
               <button type="button" class="move-settings-mode-tab" data-move-settings-view="bulk" role="tab" aria-selected="false" aria-controls="moveSettingsBulkPanel">一括設定</button>
             </div>
+            <div class="move-settings-preset-bar" aria-label="個別設定プリセット">
+              <label class="move-settings-preset-field">
+                <span>プリセット <small id="moveSettingsPresetCount">0/5</small></span>
+                <select id="moveSettingsPresetSelect">
+                  <option value="">プリセットを選択</option>
+                </select>
+              </label>
+              <label class="move-settings-preset-field">
+                <span>保存名</span>
+                <input id="moveSettingsPresetName" type="text" maxlength="40" placeholder="例：ダブル用" />
+              </label>
+              <div class="move-settings-preset-actions">
+                <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
+                <button id="moveSettingsPresetLoad" type="button" class="secondary-button" disabled>呼び出す</button>
+                <button id="moveSettingsPresetDelete" type="button" class="secondary-button" disabled>削除</button>
+              </div>
+              <p id="moveSettingsPresetStatus" class="move-settings-preset-status" role="status" aria-live="polite"></p>
+            </div>
           </div>
         </div>
 
@@ -468,6 +486,20 @@
           <div class="bulk-confirm-actions">
             <button id="moveSettingsBulkConfirmCancel" type="button" class="secondary-button">キャンセル</button>
             <button id="moveSettingsBulkConfirmApply" type="button" class="secondary-button bulk-confirm-apply">適用する</button>
+          </div>
+        </section>
+      </div>
+
+      <div id="moveSettingsPresetConfirmModal" class="bulk-confirm-modal" hidden>
+        <section class="bulk-confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="moveSettingsPresetConfirmTitle">
+          <div class="bulk-confirm-heading">
+            <p class="eyebrow">個別設定プリセット</p>
+            <h2 id="moveSettingsPresetConfirmTitle">プリセット呼び出しの確認</h2>
+          </div>
+          <p id="moveSettingsPresetConfirmMessage" class="bulk-confirm-message"></p>
+          <div class="bulk-confirm-actions">
+            <button id="moveSettingsPresetConfirmCancel" type="button" class="secondary-button">キャンセル</button>
+            <button id="moveSettingsPresetConfirmApply" type="button" class="secondary-button bulk-confirm-apply">呼び出す</button>
           </div>
         </section>
       </div>

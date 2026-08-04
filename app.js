@@ -29,6 +29,8 @@ const state = {
   moveSettingsRule: "single",
   bulkSettingsRule: "single",
   bulkConfirmationAction: null,
+  moveSettingsPresets: [],
+  moveSettingsPresetPending: null,
   moveSettingsView: "individual",
   moveSettingsPokemonSort: "name",
   resultLimit: DEFAULT_RESULT_LIMIT,
@@ -67,6 +69,8 @@ const RECENT_POKEMON_STORAGE_KEY = "champions-ev-line-search:recent-pokemon";
 const MOVE_SETTINGS_STORAGE_KEY = "champions-ev-line-search:move-settings";
 const POKEMON_SETTINGS_STORAGE_KEY = "champions-ev-line-search:pokemon-settings";
 const BULK_SETTINGS_STORAGE_KEY = "champions-ev-line-search:bulk-settings";
+const MOVE_SETTINGS_PRESETS_STORAGE_KEY = "champions-ev-line-search:move-settings-presets";
+const MOVE_SETTINGS_PRESET_LIMIT = 5;
 const RECENT_POKEMON_LIMIT = 10;
 const pokemonFormMeta = new Map();
 
@@ -119,6 +123,18 @@ const els = {
   moveSettingsPokemonSearch: document.querySelector("#moveSettingsPokemonSearch"),
   moveSettingsPokemonSort: document.querySelector("#moveSettingsPokemonSort"),
   moveSettingsPokemonList: document.querySelector("#moveSettingsPokemonList"),
+  moveSettingsPresetSelect: document.querySelector("#moveSettingsPresetSelect"),
+  moveSettingsPresetName: document.querySelector("#moveSettingsPresetName"),
+  moveSettingsPresetCount: document.querySelector("#moveSettingsPresetCount"),
+  moveSettingsPresetSave: document.querySelector("#moveSettingsPresetSave"),
+  moveSettingsPresetLoad: document.querySelector("#moveSettingsPresetLoad"),
+  moveSettingsPresetDelete: document.querySelector("#moveSettingsPresetDelete"),
+  moveSettingsPresetStatus: document.querySelector("#moveSettingsPresetStatus"),
+  moveSettingsPresetConfirmModal: document.querySelector("#moveSettingsPresetConfirmModal"),
+  moveSettingsPresetConfirmTitle: document.querySelector("#moveSettingsPresetConfirmTitle"),
+  moveSettingsPresetConfirmMessage: document.querySelector("#moveSettingsPresetConfirmMessage"),
+  moveSettingsPresetConfirmCancel: document.querySelector("#moveSettingsPresetConfirmCancel"),
+  moveSettingsPresetConfirmApply: document.querySelector("#moveSettingsPresetConfirmApply"),
   moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
   moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
   moveSettingsIndividualPanel: document.querySelector("#moveSettingsIndividualPanel"),
@@ -245,6 +261,7 @@ async function init() {
     state.moveExclusions = loadMoveExclusions();
     state.pokemonExclusions = loadPokemonExclusions();
     state.bulkSettings = loadBulkSettings();
+    state.moveSettingsPresets = loadMoveSettingsPresets();
     populatePokemonSelect();
     populateMovePowerOptions();
     populateAttackerPointDetails();
@@ -387,6 +404,13 @@ function setupMoveSettingsPage() {
     state.moveSettingsPokemonSort = normalizePokemonSort(els.moveSettingsPokemonSort.value);
     renderMoveSettingsPokemonList();
   });
+  els.moveSettingsPresetSelect.addEventListener("change", updateMoveSettingsPresetActions);
+  els.moveSettingsPresetName.addEventListener("input", updateMoveSettingsPresetActions);
+  els.moveSettingsPresetSave.addEventListener("click", saveCurrentMoveSettingsPreset);
+  els.moveSettingsPresetLoad.addEventListener("click", () => requestMoveSettingsPresetConfirmation("load"));
+  els.moveSettingsPresetDelete.addEventListener("click", () => requestMoveSettingsPresetConfirmation("delete"));
+  els.moveSettingsPresetConfirmCancel.addEventListener("click", closeMoveSettingsPresetConfirmation);
+  els.moveSettingsPresetConfirmApply.addEventListener("click", confirmMoveSettingsPresetAction);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsBaseStatMax.addEventListener("input", saveBulkSettingsDraft);
@@ -398,7 +422,156 @@ function setupMoveSettingsPage() {
   els.moveSettingsBulkConfirmApply.addEventListener("click", confirmBulkMoveSettingsApply);
   els.moveSettingsAllOn.addEventListener("click", () => setAllMovesForSelected(true));
   els.moveSettingsAllOff.addEventListener("click", () => setAllMovesForSelected(false));
+  renderMoveSettingsPresets();
   refreshMoveSettingsPage();
+}
+
+function renderMoveSettingsPresets() {
+  const selectedId = els.moveSettingsPresetSelect.value;
+  els.moveSettingsPresetSelect.innerHTML = [
+    `<option value="">プリセットを選択</option>`,
+    ...state.moveSettingsPresets.map((preset) => (
+      `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.name)}</option>`
+    )),
+  ].join("");
+  if (state.moveSettingsPresets.some((preset) => preset.id === selectedId)) {
+    els.moveSettingsPresetSelect.value = selectedId;
+  }
+  els.moveSettingsPresetCount.textContent = `${state.moveSettingsPresets.length}/${MOVE_SETTINGS_PRESET_LIMIT}`;
+  updateMoveSettingsPresetActions();
+}
+
+function updateMoveSettingsPresetActions() {
+  const selected = Boolean(els.moveSettingsPresetSelect.value);
+  const name = els.moveSettingsPresetName.value.trim();
+  const hasSameName = state.moveSettingsPresets.some((preset) => preset.name === name);
+  els.moveSettingsPresetSave.disabled = !name || (!hasSameName && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT);
+  els.moveSettingsPresetLoad.disabled = !selected;
+  els.moveSettingsPresetDelete.disabled = !selected;
+}
+
+function setMoveSettingsPresetStatus(message, isError = false) {
+  els.moveSettingsPresetStatus.textContent = message;
+  els.moveSettingsPresetStatus.classList.toggle("is-error", isError);
+}
+
+function createMoveSettingsPresetId() {
+  return `preset-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
+function getSelectedMoveSettingsPreset() {
+  return state.moveSettingsPresets.find((preset) => preset.id === els.moveSettingsPresetSelect.value) ?? null;
+}
+
+function saveCurrentMoveSettingsPreset() {
+  const name = els.moveSettingsPresetName.value.trim();
+  if (!name) {
+    setMoveSettingsPresetStatus("保存名を入力してください。", true);
+    els.moveSettingsPresetName.focus();
+    return;
+  }
+  const existingIndex = state.moveSettingsPresets.findIndex((preset) => preset.name === name);
+  if (existingIndex < 0 && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT) {
+    setMoveSettingsPresetStatus(`プリセットは最大${MOVE_SETTINGS_PRESET_LIMIT}件です。既存のプリセットを削除してください。`, true);
+    return;
+  }
+  const existing = existingIndex >= 0 ? state.moveSettingsPresets[existingIndex] : null;
+  const preset = {
+    id: existing?.id ?? createMoveSettingsPresetId(),
+    name,
+    savedAt: new Date().toISOString(),
+    moveExclusions: serializeMoveExclusions(),
+    pokemonExclusions: serializePokemonExclusions(),
+  };
+  if (existingIndex >= 0) state.moveSettingsPresets[existingIndex] = preset;
+  else state.moveSettingsPresets.unshift(preset);
+  saveMoveSettingsPresets();
+  renderMoveSettingsPresets();
+  els.moveSettingsPresetSelect.value = preset.id;
+  els.moveSettingsPresetName.value = "";
+  updateMoveSettingsPresetActions();
+  setMoveSettingsPresetStatus(`「${name}」を${existing ? "上書き" : "保存"}しました。`);
+}
+
+function requestMoveSettingsPresetConfirmation(action) {
+  const preset = getSelectedMoveSettingsPreset();
+  if (!preset) return;
+  const isDelete = action === "delete";
+  state.moveSettingsPresetPending = { action: isDelete ? "delete" : "load", presetId: preset.id };
+  els.moveSettingsPresetConfirmTitle.textContent = isDelete ? "プリセット削除の確認" : "プリセット呼び出しの確認";
+  els.moveSettingsPresetConfirmMessage.textContent = isDelete
+    ? `「${preset.name}」を削除します。`
+    : `「${preset.name}」を呼び出して、現在のポケモンと技の設定を上書きします。`;
+  els.moveSettingsPresetConfirmApply.textContent = isDelete ? "削除する" : "呼び出す";
+  els.moveSettingsPresetConfirmApply.classList.toggle("is-danger", isDelete);
+  els.moveSettingsPresetConfirmModal.hidden = false;
+  els.moveSettingsPresetConfirmApply.focus();
+}
+
+function closeMoveSettingsPresetConfirmation() {
+  els.moveSettingsPresetConfirmModal.hidden = true;
+  state.moveSettingsPresetPending = null;
+  els.moveSettingsPresetConfirmApply.classList.remove("is-danger");
+}
+
+function confirmMoveSettingsPresetAction() {
+  const pending = state.moveSettingsPresetPending;
+  const preset = getSelectedMoveSettingsPreset();
+  if (!pending || !preset || pending.presetId !== preset.id) {
+    closeMoveSettingsPresetConfirmation();
+    return;
+  }
+  if (pending.action === "delete") {
+    state.moveSettingsPresets = state.moveSettingsPresets.filter((item) => item.id !== preset.id);
+    saveMoveSettingsPresets();
+    closeMoveSettingsPresetConfirmation();
+    renderMoveSettingsPresets();
+    setMoveSettingsPresetStatus(`「${preset.name}」を削除しました。`);
+    return;
+  }
+  state.moveExclusions = deserializeMoveExclusions(preset.moveExclusions);
+  state.pokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions);
+  saveMoveExclusions();
+  savePokemonExclusions();
+  closeMoveSettingsPresetConfirmation();
+  refreshMoveSettingsPage();
+  setMoveSettingsPresetStatus(`「${preset.name}」を呼び出しました。`);
+  runSearch();
+}
+
+function loadMoveSettingsPresets() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(MOVE_SETTINGS_PRESETS_STORAGE_KEY) ?? "[]");
+    if (!Array.isArray(stored)) return [];
+    return stored
+      .map((preset) => {
+        if (!preset || typeof preset !== "object" || Array.isArray(preset)) return null;
+        const name = typeof preset.name === "string" ? preset.name.trim() : "";
+        if (!name) return null;
+        return {
+          id: typeof preset.id === "string" && preset.id ? preset.id : createMoveSettingsPresetId(),
+          name,
+          savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
+          moveExclusions: preset.moveExclusions,
+          pokemonExclusions: preset.pokemonExclusions,
+        };
+      })
+      .filter(Boolean)
+      .slice(0, MOVE_SETTINGS_PRESET_LIMIT);
+  } catch {
+    return [];
+  }
+}
+
+function saveMoveSettingsPresets() {
+  try {
+    localStorage.setItem(
+      MOVE_SETTINGS_PRESETS_STORAGE_KEY,
+      JSON.stringify(state.moveSettingsPresets.slice(0, MOVE_SETTINGS_PRESET_LIMIT)),
+    );
+  } catch {
+    // Ignore unavailable storage; the current session still uses the in-memory presets.
+  }
 }
 
 function selectMoveSettingsView(selectedButton) {
@@ -927,72 +1100,88 @@ function setAllMovesForSelected(included) {
   runSearch();
 }
 
-function loadMoveExclusions() {
+function serializeMoveExclusions(exclusions = state.moveExclusions) {
+  const stored = {};
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const ruleExclusions = exclusions?.get(rule);
+    const ruleStored = Object.fromEntries(
+      [...(ruleExclusions?.entries() ?? [])]
+        .filter(([, moveIds]) => moveIds instanceof Set && moveIds.size)
+        .map(([pokemonId, moveIds]) => [pokemonId, [...moveIds]]),
+    );
+    if (Object.keys(ruleStored).length) stored[rule] = ruleStored;
+  });
+  return stored;
+}
+
+function deserializeMoveExclusions(stored) {
   const exclusions = createMoveExclusionState();
+  if (!stored || typeof stored !== "object" || Array.isArray(stored)) return exclusions;
+  const applyStoredRule = (rule, ruleData) => {
+    if (!ruleData || typeof ruleData !== "object" || Array.isArray(ruleData)) return;
+    const ruleExclusions = exclusions.get(rule);
+    Object.entries(ruleData).forEach(([pokemonId, moveIds]) => {
+      if (Array.isArray(moveIds) && moveIds.length) ruleExclusions.set(pokemonId, new Set(moveIds));
+    });
+  };
+  const isLegacy = Object.values(stored).some((moveIds) => Array.isArray(moveIds));
+  if (isLegacy) applyStoredRule("single", stored);
+  else MOVE_SETTING_RULES.forEach((rule) => applyStoredRule(rule, stored[rule]));
+  return exclusions;
+}
+
+function loadMoveExclusions() {
   try {
-    const stored = JSON.parse(localStorage.getItem(MOVE_SETTINGS_STORAGE_KEY) ?? "{}");
-    if (!stored || typeof stored !== "object") return exclusions;
-    const applyStoredRule = (rule, ruleData) => {
-      if (!ruleData || typeof ruleData !== "object" || Array.isArray(ruleData)) return;
-      const ruleExclusions = exclusions.get(rule);
-      Object.entries(ruleData).forEach(([pokemonId, moveIds]) => {
-        if (Array.isArray(moveIds) && moveIds.length) ruleExclusions.set(pokemonId, new Set(moveIds));
-      });
-    };
-    const isLegacy = Object.values(stored).some((moveIds) => Array.isArray(moveIds));
-    if (isLegacy) applyStoredRule("single", stored);
-    else MOVE_SETTING_RULES.forEach((rule) => applyStoredRule(rule, stored[rule]));
+    return deserializeMoveExclusions(JSON.parse(localStorage.getItem(MOVE_SETTINGS_STORAGE_KEY) ?? "{}"));
   } catch {
     // Ignore unavailable or malformed local settings and use the default (all included).
+    return createMoveExclusionState();
   }
-  return exclusions;
 }
 
 function saveMoveExclusions() {
   try {
-    const stored = {};
-    MOVE_SETTING_RULES.forEach((rule) => {
-      const ruleExclusions = state.moveExclusions.get(rule);
-      const ruleStored = Object.fromEntries(
-        [...(ruleExclusions?.entries() ?? [])]
-          .filter(([, moveIds]) => moveIds.size)
-          .map(([pokemonId, moveIds]) => [pokemonId, [...moveIds]]),
-      );
-      if (Object.keys(ruleStored).length) stored[rule] = ruleStored;
-    });
-    localStorage.setItem(MOVE_SETTINGS_STORAGE_KEY, JSON.stringify(stored));
+    localStorage.setItem(MOVE_SETTINGS_STORAGE_KEY, JSON.stringify(serializeMoveExclusions()));
   } catch {
     // Ignore unavailable storage; the current session still uses the in-memory settings.
   }
 }
 
-function loadPokemonExclusions() {
+function serializePokemonExclusions(exclusions = state.pokemonExclusions) {
+  const stored = {};
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const excluded = exclusions?.get(rule);
+    if (excluded instanceof Set && excluded.size) stored[rule] = [...excluded];
+  });
+  return stored;
+}
+
+function deserializePokemonExclusions(stored) {
   const exclusions = createPokemonExclusionState();
-  try {
-    const stored = JSON.parse(localStorage.getItem(POKEMON_SETTINGS_STORAGE_KEY) ?? "{}");
-    if (!stored || typeof stored !== "object" || Array.isArray(stored)) return exclusions;
-    MOVE_SETTING_RULES.forEach((rule) => {
-      const ruleExclusions = exclusions.get(rule);
-      const moveRuleData = stored[rule];
-      if (!Array.isArray(moveRuleData)) return;
-      moveRuleData.forEach((pokemonId) => {
-        if (typeof pokemonId === "string") ruleExclusions.add(pokemonId);
-      });
+  if (!stored || typeof stored !== "object" || Array.isArray(stored)) return exclusions;
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const ruleExclusions = exclusions.get(rule);
+    const moveRuleData = stored[rule];
+    if (!Array.isArray(moveRuleData)) return;
+    moveRuleData.forEach((pokemonId) => {
+      if (typeof pokemonId === "string") ruleExclusions.add(pokemonId);
     });
+  });
+  return exclusions;
+}
+
+function loadPokemonExclusions() {
+  try {
+    return deserializePokemonExclusions(JSON.parse(localStorage.getItem(POKEMON_SETTINGS_STORAGE_KEY) ?? "{}"));
   } catch {
     // Ignore unavailable or malformed local settings and use the default (all enabled).
+    return createPokemonExclusionState();
   }
-  return exclusions;
 }
 
 function savePokemonExclusions() {
   try {
-    const stored = {};
-    MOVE_SETTING_RULES.forEach((rule) => {
-      const excluded = state.pokemonExclusions.get(rule);
-      if (excluded?.size) stored[rule] = [...excluded];
-    });
-    localStorage.setItem(POKEMON_SETTINGS_STORAGE_KEY, JSON.stringify(stored));
+    localStorage.setItem(POKEMON_SETTINGS_STORAGE_KEY, JSON.stringify(serializePokemonExclusions()));
   } catch {
     // Ignore unavailable storage; the current session still uses the in-memory settings.
   }
