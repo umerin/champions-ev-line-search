@@ -239,6 +239,16 @@ fieldset {
   font-weight: 700;
 }
 
+.remaining-points-note {
+  align-self: end;
+  margin: 0 0 2px;
+  color: #c98282;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
 .pokemon-field {
   grid-column: 1 / -1;
 }

@@ -80,6 +80,8 @@
               検索で配分するポイント
               <input id="remainingPoints" type="number" min="0" max="66" value="66" />
             </label>
+
+            <p class="remaining-points-note">検索結果が多くなりすぎるため、<br />配分が決まっている<br />能力ポイントはすべて<br />入力してください</p>
           </div>
 
           <fieldset class="stat-allocation">
@@ -213,6 +215,7 @@
               <label class="higher-offense-option"><input id="randomToGuaranteedSurvival" type="checkbox" /> 乱数・確定1発→確定耐えのみ</label>
               <label class="higher-offense-option"><input id="excludeUnsurvivableAttacks" type="checkbox" checked /> 耐えない攻撃を除外</label>
               <label class="higher-offense-option"><input id="prioritizeMega" type="checkbox" /> メガシンカを優先表示</label>
+              <label class="higher-offense-option"><input id="showNonGuaranteedWhenGuaranteed" type="checkbox" /> 確定耐えする振り方がある場合の確定耐え以外も表示（非推奨）</label>
             </fieldset>
 
             <fieldset class="checkbox-group" data-filter-group="attackerNature">

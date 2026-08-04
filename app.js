@@ -108,6 +108,7 @@ const els = {
   attackStatMultipleOf11: document.querySelector("#attackStatMultipleOf11"),
   stabOnly: document.querySelector("#stabOnly"),
   randomToGuaranteedSurvival: document.querySelector("#randomToGuaranteedSurvival"),
+  showNonGuaranteedWhenGuaranteed: document.querySelector("#showNonGuaranteedWhenGuaranteed"),
   excludeUnsurvivableAttacks: document.querySelector("#excludeUnsurvivableAttacks"),
   prioritizeMega: document.querySelector("#prioritizeMega"),
   summary: document.querySelector("#summary"),
@@ -314,13 +315,14 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#attackStatMultipleOf11):not(#stabOnly):not(#randomToGuaranteedSurvival):not(#excludeUnsurvivableAttacks):not(#prioritizeMega)').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#attackStatMultipleOf11):not(#stabOnly):not(#randomToGuaranteedSurvival):not(#showNonGuaranteedWhenGuaranteed):not(#excludeUnsurvivableAttacks):not(#prioritizeMega)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.higherOffenseOnly.addEventListener("change", runSearch);
     els.attackStatMultipleOf11.addEventListener("change", runSearch);
     els.stabOnly.addEventListener("change", runSearch);
     els.randomToGuaranteedSurvival.addEventListener("change", runSearch);
+    els.showNonGuaranteedWhenGuaranteed.addEventListener("change", runSearch);
     els.excludeUnsurvivableAttacks.addEventListener("change", runSearch);
     els.prioritizeMega.addEventListener("change", runSearch);
     els.movePower.addEventListener("input", scheduleSearch);
@@ -1669,12 +1671,12 @@ function runSearch() {
     let minimumCandidateTotal = null;
     let isSurvivable = false;
     const shownOutcomeKeys = new Set();
+    const candidateResults = [];
 
     for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
       const { candidate, after } = candidateStats[candidateIndex];
       if (!matchesRelevantDefensiveInvestment(representative.move.category, candidate)) continue;
       const candidateTotal = candidate.hpAdd + candidate.defAdd + candidate.spdAdd;
-      if (minimumCandidateTotal !== null && candidateTotal > minimumCandidateTotal) break;
       const damageInput = {
         level: state.rules.level,
         power: representative.move.power,
@@ -1691,7 +1693,35 @@ function runSearch() {
         minDamage: afterMinDamage,
         koRate: afterKoRate,
       } = calcDamageResult(damageInput, after.hp);
+      candidateResults.push({
+        candidate,
+        candidateIndex,
+        candidateTotal,
+        afterDamage,
+        afterMinDamage,
+        afterKoRate,
+      });
+    }
+
+    const hasGuaranteedSurvivalCandidate = candidateResults.some(({ afterKoRate }) => afterKoRate === 0);
+
+    for (const candidateResult of candidateResults) {
+      const {
+        candidate,
+        candidateIndex,
+        candidateTotal,
+        afterDamage,
+        afterMinDamage,
+        afterKoRate,
+      } = candidateResult;
+      if (minimumCandidateTotal !== null && candidateTotal > minimumCandidateTotal) break;
       if (afterKoRate < 100) isSurvivable = true;
+      if (
+        !input.randomToGuaranteedSurvival
+        && !input.showNonGuaranteedWhenGuaranteed
+        && hasGuaranteedSurvivalCandidate
+        && afterKoRate !== 0
+      ) continue;
       if (input.randomToGuaranteedSurvival) {
         const isOneHitKoOrRandom = representative.currentKoRate > 0;
         if (!isOneHitKoOrRandom || afterKoRate !== 0) continue;
@@ -1725,7 +1755,24 @@ function runSearch() {
     for (const row of profileRows) insertRankedRow(rows, row, input.prioritizeMega);
   }
 
-  renderResults(rows, getRelevantCandidateCount(candidates, input.attackKinds));
+  const visibleRows = input.showNonGuaranteedWhenGuaranteed && !input.randomToGuaranteedSurvival
+    ? rows
+    : filterRowsWithGuaranteedSurvival(rows);
+  renderResults(visibleRows, getRelevantCandidateCount(candidates, input.attackKinds));
+}
+
+function filterRowsWithGuaranteedSurvival(rows) {
+  const guaranteedGroupKeys = new Set(
+    rows
+      .filter((row) => row.afterKoRate === 0)
+      .map((row) => `${row.attacker.id}|${row.move.id}`),
+  );
+  if (!guaranteedGroupKeys.size) return rows;
+
+  return rows.filter((row) => {
+    const groupKey = `${row.attacker.id}|${row.move.id}`;
+    return !guaranteedGroupKeys.has(groupKey) || row.afterKoRate === 0;
+  });
 }
 
 function groupAttackScenarios(scenarios) {
@@ -1920,6 +1967,7 @@ function readInput() {
     attackStatMultipleOf11: els.attackStatMultipleOf11.checked,
     stabOnly: els.stabOnly.checked,
     randomToGuaranteedSurvival: els.randomToGuaranteedSurvival.checked,
+    showNonGuaranteedWhenGuaranteed: els.showNonGuaranteedWhenGuaranteed.checked,
     excludeUnsurvivableAttacks: els.excludeUnsurvivableAttacks.checked,
     prioritizeMega: els.prioritizeMega.checked,
     multiscaleEnabled: els.multiscaleEnabled.checked,
