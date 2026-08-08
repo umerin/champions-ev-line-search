@@ -3,7 +3,7 @@
   "source": {
     "name": "pokemon-data-editor2.xlsm",
     "file": "outputs/pokemon-data-editor-20260803/pokemon-data-editor2.xlsm",
-    "importedAt": "2026-08-03",
+    "importedAt": "2026-08-08",
     "note": "ポケモン一覧・技一覧・覚える技_現在・覚える技_追加を参照。メガ形態もシートの対象列をそのまま使用する。"
   },
   "restrictPokemon": true,

@@ -12,6 +12,7 @@ const availabilityPath = path.join(dataDir, "champions-availability.json");
 
 const compact = (value) => String(value ?? "").trim();
 const normalize = (value) => compact(value).toLowerCase();
+const normalizeDisplayName = (value) => compact(value).replaceAll("のすがた", "");
 const isEnabled = (value) => {
   if (typeof value === "boolean") return value;
   if (typeof value === "number") return value === 1;
@@ -43,7 +44,7 @@ function getRowsByHeaders(sheetName, requiredHeaders) {
 }
 
 const pokemonRows = getRowsByHeaders("ポケモン一覧", [
-  "ポケモンID", "表示名", "チャンピオンズ対象", "英名", "タイプ1_ID", "タイプ2_ID",
+  "ポケモンID", "表示名", "チャンピオンズ対象", "全国図鑑番号", "英名", "タイプ1_ID", "タイプ2_ID",
   "HP", "攻撃", "防御", "特攻", "特防", "素早さ", "最終進化",
 ]);
 const moveRows = getRowsByHeaders("技一覧", [
@@ -56,9 +57,15 @@ const pokemon = pokemonRows
   .filter(({ values }) => compact(values["ポケモンID"]))
   .map(({ values, rowNumber }) => {
     const id = compact(values["ポケモンID"]);
-    const displayName = compact(values["表示名"]) || id;
+    const rawDisplayName = compact(values["表示名"]) || id;
+    const displayName = normalizeDisplayName(rawDisplayName);
+    const dexNumber = toNumber(values["全国図鑑番号"]);
+    if (!Number.isInteger(dexNumber) || dexNumber < 1) {
+      throw new Error(`ポケモン一覧 ${rowNumber}行目: ${displayName} の全国図鑑番号が不正です。`);
+    }
     return {
       id,
+      dexNumber,
       displayName,
       name: {
         en: compact(values["英名"]) || id,
