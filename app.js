@@ -702,10 +702,7 @@ function requestMoveSettingsPresetConfirmation(action) {
   if (!selection || !preset) return;
   const isDelete = action === "delete";
   const presetRule = normalizeMoveRule(preset.rule);
-  if (!isDelete && presetRule !== state.moveSettingsRule) {
-    setMoveSettingsPresetStatus(`「${preset.name}」は${getMoveRuleName(presetRule)}用です。${getMoveRuleName(presetRule)}を選択してから呼び出してください。`, true);
-    return;
-  }
+  const changesRule = !isDelete && presetRule !== state.moveSettingsRule;
   state.moveSettingsPresetPending = {
     action: isDelete ? "delete" : "load",
     presetId: preset.id,
@@ -714,7 +711,9 @@ function requestMoveSettingsPresetConfirmation(action) {
   els.moveSettingsPresetConfirmTitle.textContent = isDelete ? "プリセット削除の確認" : "プリセット呼び出しの確認";
   els.moveSettingsPresetConfirmMessage.textContent = isDelete
     ? `「${preset.name}」を削除します。`
-    : `「${preset.name}」を呼び出して、現在のポケモンと技の設定を上書きします。`;
+    : changesRule
+      ? `${getMoveRuleName(state.moveSettingsRule)}から${getMoveRuleName(presetRule)}へ切り替えて「${preset.name}」を呼び出し、${getMoveRuleName(presetRule)}のポケモンと技の設定を上書きします。`
+      : `「${preset.name}」を呼び出して、現在のポケモンと技の設定を上書きします。`;
   els.moveSettingsPresetConfirmApply.textContent = isDelete ? "削除する" : "呼び出す";
   els.moveSettingsPresetConfirmApply.classList.toggle("is-danger", isDelete);
   els.moveSettingsPresetConfirmModal.hidden = false;
@@ -758,20 +757,18 @@ function confirmMoveSettingsPresetAction() {
     return;
   }
   const rule = normalizeMoveRule(preset.rule);
-  if (rule !== state.moveSettingsRule) {
-    closeMoveSettingsPresetConfirmation();
-    setMoveSettingsPresetStatus(`「${preset.name}」は${getMoveRuleName(rule)}用です。${getMoveRuleName(rule)}を選択してから呼び出してください。`, true);
-    return;
-  }
+  const changedRule = rule !== state.moveSettingsRule;
   const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(rule) ?? new Map();
   const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(rule) ?? new Set();
   state.moveExclusions.set(rule, restoredMoveExclusions);
   state.pokemonExclusions.set(rule, restoredPokemonExclusions);
+  state.moveSettingsRule = rule;
+  state.moveSettingsView = "individual";
   saveMoveExclusions();
   savePokemonExclusions();
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
-  setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${preset.name}」を呼び出しました。`);
+  setMoveSettingsPresetStatus(`${changedRule ? `${getMoveRuleName(rule)}へ切り替えて、` : ""}${selection.source === "recommended" ? "おすすめプリセット" : "プリセット"}「${preset.name}」を呼び出しました。`);
   refreshSearchAfterMoveSettingsChange();
 }
 
