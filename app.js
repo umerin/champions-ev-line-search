@@ -4,6 +4,7 @@ const paths = {
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   availability: "./data/champions-availability.json?v=20260803-4",
+  recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -30,6 +31,7 @@ const state = {
   bulkSettingsRule: "single",
   bulkConfirmationAction: null,
   moveSettingsPresets: [],
+  builtInRecommendedMoveSettingsPresets: [],
   recommendedMoveSettingsPresets: [],
   moveSettingsPresetPending: null,
   moveSettingsPresetEditing: false,
@@ -263,14 +265,16 @@ async function loadOptionalJson(path, fallback) {
 
 async function init() {
   try {
-    const [pokemon, moves, typeChart, rules, availability] = await Promise.all([
+    const [pokemon, moves, typeChart, rules, availability, recommendedPresets] = await Promise.all([
       loadJson(paths.pokemon),
       loadJson(paths.moves),
       loadJson(paths.typeChart),
       loadJson(paths.rules),
       loadOptionalJson(paths.availability, defaultAvailability()),
+      loadOptionalJson(paths.recommendedPresets, { presets: [] }),
     ]);
     Object.assign(state, { pokemon, moves, typeChart, rules, availability });
+    state.builtInRecommendedMoveSettingsPresets = normalizeBuiltInRecommendedMoveSettingsPresets(recommendedPresets);
     buildPokemonFormMetadata();
     state.moveExclusions = loadMoveExclusions();
     state.pokemonExclusions = loadPokemonExclusions();
@@ -450,7 +454,10 @@ function setupMoveSettingsPage() {
 
 function renderMoveSettingsPresets() {
   const selectedValue = els.moveSettingsPresetSelect.value;
-  const recommendedOptions = state.recommendedMoveSettingsPresets.map((preset) => (
+  const builtInRecommendedOptions = state.builtInRecommendedMoveSettingsPresets.map((preset) => (
+    `<option value="${escapeHtml(getMoveSettingsPresetOptionValue("built-in", preset.id))}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
+  ));
+  const recommendedDraftOptions = state.recommendedMoveSettingsPresets.map((preset) => (
     `<option value="${escapeHtml(getMoveSettingsPresetOptionValue("recommended", preset.id))}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
   ));
   const userOptions = state.moveSettingsPresets.map((preset) => (
@@ -458,19 +465,21 @@ function renderMoveSettingsPresets() {
   ));
   els.moveSettingsPresetSelect.innerHTML = [
     `<option value="">プリセットを選択</option>`,
-    recommendedOptions.length ? `<optgroup label="おすすめ作成用">${recommendedOptions.join("")}</optgroup>` : "",
+    builtInRecommendedOptions.length ? `<optgroup label="おすすめプリセット">${builtInRecommendedOptions.join("")}</optgroup>` : "",
+    recommendedDraftOptions.length ? `<optgroup label="おすすめ作成用">${recommendedDraftOptions.join("")}</optgroup>` : "",
     userOptions.length ? `<optgroup label="自分のプリセット">${userOptions.join("")}</optgroup>` : "",
   ].join("");
   if (getMoveSettingsPresetSelection(selectedValue)) {
     els.moveSettingsPresetSelect.value = selectedValue;
   }
-  els.moveSettingsPresetCount.textContent = `自分 ${state.moveSettingsPresets.length}/${MOVE_SETTINGS_PRESET_LIMIT}・おすすめ ${state.recommendedMoveSettingsPresets.length}件`;
+  els.moveSettingsPresetCount.textContent = `おすすめ ${state.builtInRecommendedMoveSettingsPresets.length}件・自分 ${state.moveSettingsPresets.length}/${MOVE_SETTINGS_PRESET_LIMIT}・作成中 ${state.recommendedMoveSettingsPresets.length}件`;
   updateMoveSettingsPresetActions();
 }
 
 function updateMoveSettingsPresetActions() {
   const selection = getSelectedMoveSettingsPresetSelection();
   const selected = Boolean(selection);
+  const builtIn = selection?.source === "built-in";
   const name = els.moveSettingsPresetName.value.trim();
   const editing = state.moveSettingsPresetEditing;
   const hasSameName = state.moveSettingsPresets.some((preset) => (
@@ -482,8 +491,8 @@ function updateMoveSettingsPresetActions() {
   els.moveSettingsRecommendedPresetCreate.disabled = editing || !name;
   els.moveSettingsRecommendedPresetExport.disabled = !state.recommendedMoveSettingsPresets.length;
   els.moveSettingsPresetLoad.disabled = editing || !selected;
-  els.moveSettingsPresetDelete.disabled = editing || !selected;
-  els.moveSettingsPresetEdit.disabled = editing || !selected;
+  els.moveSettingsPresetDelete.disabled = editing || !selected || builtIn;
+  els.moveSettingsPresetEdit.disabled = editing || !selected || builtIn;
   els.moveSettingsPresetEditDone.hidden = !editing;
   els.moveSettingsPresetEdit.hidden = editing;
   updateMoveSettingsPresetEditingUI();
@@ -534,10 +543,12 @@ function getMoveSettingsPresetOptionValue(source, id) {
 }
 
 function getMoveSettingsPresetSelectionByReference(source, id) {
-  if (!id || (source !== "user" && source !== "recommended")) return null;
-  const presets = source === "recommended"
-    ? state.recommendedMoveSettingsPresets
-    : state.moveSettingsPresets;
+  if (!id || !["user", "recommended", "built-in"].includes(source)) return null;
+  const presets = source === "built-in"
+    ? state.builtInRecommendedMoveSettingsPresets
+    : source === "recommended"
+      ? state.recommendedMoveSettingsPresets
+      : state.moveSettingsPresets;
   const preset = presets.find((item) => item.id === id);
   return preset ? { source, preset } : null;
 }
@@ -628,6 +639,10 @@ function enterMoveSettingsPresetEdit() {
   const selection = getSelectedMoveSettingsPresetSelection();
   const preset = selection?.preset;
   if (!selection || !preset) return;
+  if (selection.source === "built-in") {
+    setMoveSettingsPresetStatus("最初から用意されているおすすめプリセットは編集できません。おすすめ作成用に新しく作成してください。", true);
+    return;
+  }
   const rule = normalizeMoveRule(preset.rule);
   if (rule !== state.moveSettingsRule) {
     setMoveSettingsPresetStatus(`「${preset.name}」は${getMoveRuleName(rule)}用です。${getMoveRuleName(rule)}を選択してから編集してください。`, true);
@@ -701,6 +716,10 @@ function requestMoveSettingsPresetConfirmation(action) {
   const preset = selection?.preset;
   if (!selection || !preset) return;
   const isDelete = action === "delete";
+  if (isDelete && selection.source === "built-in") {
+    setMoveSettingsPresetStatus("最初から用意されているおすすめプリセットは削除できません。", true);
+    return;
+  }
   const presetRule = normalizeMoveRule(preset.rule);
   const appliesToDifferentRule = !isDelete && presetRule !== state.moveSettingsRule;
   state.moveSettingsPresetPending = {
@@ -747,9 +766,12 @@ function confirmMoveSettingsPresetAction() {
     if (selection.source === "recommended") {
       state.recommendedMoveSettingsPresets = state.recommendedMoveSettingsPresets.filter((item) => item.id !== preset.id);
       saveRecommendedMoveSettingsPresetDrafts();
-    } else {
+    } else if (selection.source === "user") {
       state.moveSettingsPresets = state.moveSettingsPresets.filter((item) => item.id !== preset.id);
       saveMoveSettingsPresets();
+    } else {
+      closeMoveSettingsPresetConfirmation();
+      return;
     }
     closeMoveSettingsPresetConfirmation();
     renderMoveSettingsPresets();
@@ -767,7 +789,7 @@ function confirmMoveSettingsPresetAction() {
   savePokemonExclusions();
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
-  setMoveSettingsPresetStatus(`${selection.source === "recommended" ? "おすすめプリセット" : "プリセット"}「${preset.name}」を${copiedAcrossRules ? `${getMoveRuleName(presetRule)}から現在の${getMoveRuleName(targetRule)}へ反映` : "呼び出し"}しました。`);
+  setMoveSettingsPresetStatus(`${selection.source === "user" ? "プリセット" : "おすすめプリセット"}「${preset.name}」を${copiedAcrossRules ? `${getMoveRuleName(presetRule)}から現在の${getMoveRuleName(targetRule)}へ反映しました。` : "呼び出しました。"}`);
   refreshSearchAfterMoveSettingsChange();
 }
 
@@ -794,6 +816,31 @@ function loadMoveSettingsPresets() {
   } catch {
     return [];
   }
+}
+
+function normalizeBuiltInRecommendedMoveSettingsPresets(payload) {
+  const stored = Array.isArray(payload) ? payload : payload?.presets;
+  if (!Array.isArray(stored)) return [];
+  const usedIds = new Set();
+  return stored
+    .map((preset, index) => {
+      if (!preset || typeof preset !== "object" || Array.isArray(preset)) return null;
+      const name = typeof preset.name === "string" ? preset.name.trim() : "";
+      if (!name) return null;
+      const fallbackId = `built-in-recommended-${index + 1}`;
+      const id = typeof preset.id === "string" && preset.id.trim() ? preset.id.trim() : fallbackId;
+      if (usedIds.has(id)) return null;
+      usedIds.add(id);
+      return {
+        id,
+        name,
+        rule: normalizeMoveRule(preset.rule),
+        savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
+        moveExclusions: preset.moveExclusions,
+        pokemonExclusions: preset.pokemonExclusions,
+      };
+    })
+    .filter(Boolean);
 }
 
 function saveMoveSettingsPresets() {
