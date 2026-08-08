@@ -34,6 +34,15 @@ body.is-preset-editing .move-settings-page {
   box-shadow: 0 14px 34px rgba(165, 119, 22, 0.14);
 }
 
+body.is-recommended-preset-editing {
+  background: #eaf8f3;
+}
+
+body.is-recommended-preset-editing .move-settings-page {
+  border-color: #2f9b79;
+  box-shadow: 0 14px 34px rgba(31, 126, 96, 0.16);
+}
+
 button,
 input,
 select {
@@ -629,6 +638,18 @@ legend {
   white-space: nowrap;
 }
 
+.move-settings-preset-actions .recommended-preset-button,
+.move-settings-preset-actions .recommended-preset-export {
+  border-color: #76b9a3;
+  background: #effaf6;
+  color: #17664e;
+}
+
+.move-settings-preset-actions .recommended-preset-button:hover,
+.move-settings-preset-actions .recommended-preset-export:hover {
+  background: #dff4ec;
+}
+
 .move-settings-preset-editing-notice {
   display: flex;
   grid-column: 1 / -1;
@@ -655,6 +676,25 @@ legend {
 
 .move-settings-preset-editing-notice[hidden] {
   display: none;
+}
+
+body.is-recommended-preset-editing .move-settings-preset-editing-notice {
+  border-color: #63b69a;
+  background: #dff5ed;
+  color: #21684f;
+}
+
+body.is-recommended-preset-editing .move-settings-preset-editing-notice strong,
+body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
+  color: #155a43;
+}
+
+.move-settings-recommended-help {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #4c7668;
+  font-size: 10px;
+  line-height: 1.5;
 }
 
 .move-settings-preset-status {
