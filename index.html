@@ -365,7 +365,14 @@
               <div class="move-settings-preset-actions">
                 <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
                 <button id="moveSettingsPresetLoad" type="button" class="secondary-button" disabled>呼び出す</button>
+                <button id="moveSettingsPresetEdit" type="button" class="secondary-button" disabled>編集モード</button>
+                <button id="moveSettingsPresetEditDone" type="button" class="secondary-button" hidden>編集終了</button>
                 <button id="moveSettingsPresetDelete" type="button" class="secondary-button" disabled>削除</button>
+              </div>
+              <div id="moveSettingsPresetEditingNotice" class="move-settings-preset-editing-notice" hidden>
+                <strong>プリセット編集中</strong>
+                <span id="moveSettingsPresetEditingName"></span>
+                <small>変更は自動保存されます</small>
               </div>
               <p id="moveSettingsPresetStatus" class="move-settings-preset-status" role="status" aria-live="polite"></p>
             </div>
@@ -517,6 +524,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260808-4"></script>
+    <script type="module" src="./app.js?v=20260808-5"></script>
   </body>
 </html>
