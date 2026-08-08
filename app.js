@@ -1,5 +1,5 @@
 const paths = {
-  pokemon: "./data/pokemon.json",
+  pokemon: "./data/pokemon.json?v=20260808-1",
   moves: "./data/moves.json",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
@@ -1601,7 +1601,7 @@ function getSortedPokemonPool() {
 }
 
 function normalizePokemonSort(value) {
-  return ["name", "base-stat-desc", "base-stat-asc"].includes(value) ? value : "name";
+  return ["name", "dex-number", "base-stat-desc", "base-stat-asc"].includes(value) ? value : "name";
 }
 
 function getPokemonBaseStatTotal(pokemon) {
@@ -1622,6 +1622,15 @@ function comparePokemonByName(a, b) {
 }
 
 function comparePokemonBySort(a, b, sort) {
+  if (sort === "dex-number") {
+    const aDexNumber = Number(a.dexNumber);
+    const bDexNumber = Number(b.dexNumber);
+    const safeADexNumber = Number.isInteger(aDexNumber) ? aDexNumber : Number.MAX_SAFE_INTEGER;
+    const safeBDexNumber = Number.isInteger(bDexNumber) ? bDexNumber : Number.MAX_SAFE_INTEGER;
+    const aFormRank = a.id.split("-").length;
+    const bFormRank = b.id.split("-").length;
+    return safeADexNumber - safeBDexNumber || aFormRank - bFormRank || comparePokemonByName(a, b);
+  }
   if (sort === "base-stat-desc") {
     return getPokemonBaseStatTotal(b) - getPokemonBaseStatTotal(a) || comparePokemonByName(a, b);
   }
