@@ -123,6 +123,7 @@ const els = {
   moveSettingsPokemonSearch: document.querySelector("#moveSettingsPokemonSearch"),
   moveSettingsPokemonSort: document.querySelector("#moveSettingsPokemonSort"),
   moveSettingsPokemonList: document.querySelector("#moveSettingsPokemonList"),
+  moveSettingsPresetBar: document.querySelector(".move-settings-preset-bar"),
   moveSettingsPresetSelect: document.querySelector("#moveSettingsPresetSelect"),
   moveSettingsPresetName: document.querySelector("#moveSettingsPresetName"),
   moveSettingsPresetCount: document.querySelector("#moveSettingsPresetCount"),
@@ -670,6 +671,7 @@ function updateMoveSettingsView() {
   const isBulk = state.moveSettingsView === "bulk";
   els.moveSettingsIndividualPanel.hidden = isBulk;
   els.moveSettingsBulkPanel.hidden = !isBulk;
+  els.moveSettingsPresetBar.hidden = isBulk;
   updateMoveSettingsRuleTabs();
 }
 

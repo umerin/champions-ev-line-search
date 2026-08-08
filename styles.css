@@ -581,6 +581,10 @@ legend {
   background: #f8fbfd;
 }
 
+.move-settings-preset-bar[hidden] {
+  display: none;
+}
+
 .move-settings-preset-field {
   display: grid;
   gap: 6px;
