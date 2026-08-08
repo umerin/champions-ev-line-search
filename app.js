@@ -431,7 +431,7 @@ function renderMoveSettingsPresets() {
   els.moveSettingsPresetSelect.innerHTML = [
     `<option value="">プリセットを選択</option>`,
     ...state.moveSettingsPresets.map((preset) => (
-      `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.name)}</option>`
+      `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
     )),
   ].join("");
   if (state.moveSettingsPresets.some((preset) => preset.id === selectedId)) {
@@ -444,7 +444,9 @@ function renderMoveSettingsPresets() {
 function updateMoveSettingsPresetActions() {
   const selected = Boolean(els.moveSettingsPresetSelect.value);
   const name = els.moveSettingsPresetName.value.trim();
-  const hasSameName = state.moveSettingsPresets.some((preset) => preset.name === name);
+  const hasSameName = state.moveSettingsPresets.some((preset) => (
+    preset.name === name && normalizeMoveRule(preset.rule) === state.moveSettingsRule
+  ));
   els.moveSettingsPresetSave.disabled = !name || (!hasSameName && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT);
   els.moveSettingsPresetLoad.disabled = !selected;
   els.moveSettingsPresetDelete.disabled = !selected;
@@ -470,7 +472,10 @@ function saveCurrentMoveSettingsPreset() {
     els.moveSettingsPresetName.focus();
     return;
   }
-  const existingIndex = state.moveSettingsPresets.findIndex((preset) => preset.name === name);
+  const rule = normalizeMoveRule(state.moveSettingsRule);
+  const existingIndex = state.moveSettingsPresets.findIndex((preset) => (
+    preset.name === name && normalizeMoveRule(preset.rule) === rule
+  ));
   if (existingIndex < 0 && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT) {
     setMoveSettingsPresetStatus(`プリセットは最大${MOVE_SETTINGS_PRESET_LIMIT}件です。既存のプリセットを削除してください。`, true);
     return;
@@ -479,9 +484,10 @@ function saveCurrentMoveSettingsPreset() {
   const preset = {
     id: existing?.id ?? createMoveSettingsPresetId(),
     name,
+    rule,
     savedAt: new Date().toISOString(),
-    moveExclusions: serializeMoveExclusions(),
-    pokemonExclusions: serializePokemonExclusions(),
+    moveExclusions: serializeMoveExclusions(state.moveExclusions, rule),
+    pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, rule),
   };
   if (existingIndex >= 0) state.moveSettingsPresets[existingIndex] = preset;
   else state.moveSettingsPresets.unshift(preset);
@@ -490,13 +496,18 @@ function saveCurrentMoveSettingsPreset() {
   els.moveSettingsPresetSelect.value = preset.id;
   els.moveSettingsPresetName.value = "";
   updateMoveSettingsPresetActions();
-  setMoveSettingsPresetStatus(`「${name}」を${existing ? "上書き" : "保存"}しました。`);
+  setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${name}」を${existing ? "上書き" : "保存"}しました。`);
 }
 
 function requestMoveSettingsPresetConfirmation(action) {
   const preset = getSelectedMoveSettingsPreset();
   if (!preset) return;
   const isDelete = action === "delete";
+  const presetRule = normalizeMoveRule(preset.rule);
+  if (!isDelete && presetRule !== state.moveSettingsRule) {
+    setMoveSettingsPresetStatus(`「${preset.name}」は${getMoveRuleName(presetRule)}用です。${getMoveRuleName(presetRule)}を選択してから呼び出してください。`, true);
+    return;
+  }
   state.moveSettingsPresetPending = { action: isDelete ? "delete" : "load", presetId: preset.id };
   els.moveSettingsPresetConfirmTitle.textContent = isDelete ? "プリセット削除の確認" : "プリセット呼び出しの確認";
   els.moveSettingsPresetConfirmMessage.textContent = isDelete
@@ -526,16 +537,24 @@ function confirmMoveSettingsPresetAction() {
     saveMoveSettingsPresets();
     closeMoveSettingsPresetConfirmation();
     renderMoveSettingsPresets();
-    setMoveSettingsPresetStatus(`「${preset.name}」を削除しました。`);
+    setMoveSettingsPresetStatus(`${getMoveRuleName(preset.rule)}の「${preset.name}」を削除しました。`);
     return;
   }
-  state.moveExclusions = deserializeMoveExclusions(preset.moveExclusions);
-  state.pokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions);
+  const rule = normalizeMoveRule(preset.rule);
+  if (rule !== state.moveSettingsRule) {
+    closeMoveSettingsPresetConfirmation();
+    setMoveSettingsPresetStatus(`「${preset.name}」は${getMoveRuleName(rule)}用です。${getMoveRuleName(rule)}を選択してから呼び出してください。`, true);
+    return;
+  }
+  const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(rule) ?? new Map();
+  const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(rule) ?? new Set();
+  state.moveExclusions.set(rule, restoredMoveExclusions);
+  state.pokemonExclusions.set(rule, restoredPokemonExclusions);
   saveMoveExclusions();
   savePokemonExclusions();
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
-  setMoveSettingsPresetStatus(`「${preset.name}」を呼び出しました。`);
+  setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${preset.name}」を呼び出しました。`);
   runSearch();
 }
 
@@ -551,6 +570,7 @@ function loadMoveSettingsPresets() {
         return {
           id: typeof preset.id === "string" && preset.id ? preset.id : createMoveSettingsPresetId(),
           name,
+          rule: normalizeMoveRule(preset.rule),
           savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
           moveExclusions: preset.moveExclusions,
           pokemonExclusions: preset.pokemonExclusions,
@@ -602,6 +622,7 @@ function selectMoveSettingsRule(selectedButton) {
   updateMoveSettingsView();
   renderMoveSettingsPokemonList();
   renderMoveSettingsMoveList();
+  renderMoveSettingsPresets();
 }
 
 function switchPage(page) {
@@ -893,6 +914,10 @@ function normalizeMoveRule(rule) {
   return MOVE_SETTING_RULES.includes(rule) ? rule : "single";
 }
 
+function getMoveRuleName(rule) {
+  return normalizeMoveRule(rule) === "double" ? "ダブル" : "シングル";
+}
+
 function createMoveExclusionState() {
   return new Map(MOVE_SETTING_RULES.map((rule) => [rule, new Map()]));
 }
@@ -1100,9 +1125,10 @@ function setAllMovesForSelected(included) {
   runSearch();
 }
 
-function serializeMoveExclusions(exclusions = state.moveExclusions) {
+function serializeMoveExclusions(exclusions = state.moveExclusions, targetRule = null) {
   const stored = {};
-  MOVE_SETTING_RULES.forEach((rule) => {
+  const rules = targetRule ? [normalizeMoveRule(targetRule)] : MOVE_SETTING_RULES;
+  rules.forEach((rule) => {
     const ruleExclusions = exclusions?.get(rule);
     const ruleStored = Object.fromEntries(
       [...(ruleExclusions?.entries() ?? [])]
@@ -1147,9 +1173,10 @@ function saveMoveExclusions() {
   }
 }
 
-function serializePokemonExclusions(exclusions = state.pokemonExclusions) {
+function serializePokemonExclusions(exclusions = state.pokemonExclusions, targetRule = null) {
   const stored = {};
-  MOVE_SETTING_RULES.forEach((rule) => {
+  const rules = targetRule ? [normalizeMoveRule(targetRule)] : MOVE_SETTING_RULES;
+  rules.forEach((rule) => {
     const excluded = exclusions?.get(rule);
     if (excluded instanceof Set && excluded.size) stored[rule] = [...excluded];
   });
