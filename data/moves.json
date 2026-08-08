@@ -173,7 +173,9 @@
       "accelgor",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -286,7 +288,10 @@
       "flapple",
       "accelgor",
       "arbok",
-      "ekans"
+      "ekans",
+      "scrafty-mega",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -530,7 +535,10 @@
       "azelf",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega",
+      "eelektross-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -972,7 +980,10 @@
       "corviknight",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega",
+      "malamar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -1141,7 +1152,8 @@
       "beautifly",
       "corvisquire",
       "corviknight",
-      "naganadel"
+      "naganadel",
+      "staraptor-mega"
     ]
   },
   {
@@ -1332,7 +1344,8 @@
       "corvisquire",
       "corviknight",
       "naganadel",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -1422,7 +1435,9 @@
       "espeon",
       "eevee",
       "ribombee",
-      "primarina"
+      "primarina",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -1652,7 +1667,8 @@
       "anorith",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "barbaracle-mega"
     ]
   },
   {
@@ -1978,7 +1994,10 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -2258,7 +2277,11 @@
       "corviknight",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "scrafty-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -3013,7 +3036,9 @@
       "inteleon",
       "onix",
       "arbok",
-      "ekans"
+      "ekans",
+      "eelektross-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -3760,7 +3785,8 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega"
     ]
   },
   {
@@ -4001,7 +4027,9 @@
       "cetoddle",
       "brute-bonnet",
       "guzzlord",
-      "corviknight"
+      "corviknight",
+      "eelektross-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -4730,7 +4758,13 @@
       "armaldo",
       "corviknight",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -5009,7 +5043,10 @@
       "torchic",
       "seaking",
       "archen",
-      "archeops"
+      "archeops",
+      "eelektross-mega",
+      "pyroar-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -5136,7 +5173,8 @@
       "squawkabilly-blue-plumage",
       "squawkabilly-white-plumage",
       "corvisquire",
-      "corviknight"
+      "corviknight",
+      "staraptor-mega"
     ]
   },
   {
@@ -5719,7 +5757,13 @@
       "anorith",
       "meditite",
       "guzzlord",
-      "armaldo"
+      "armaldo",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -6061,7 +6105,11 @@
       "guzzlord",
       "armaldo",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "malamar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -6140,7 +6188,8 @@
       "empoleon",
       "clauncher",
       "masquerain",
-      "surskit"
+      "surskit",
+      "dragalge-mega"
     ]
   },
   {
@@ -6390,7 +6439,8 @@
       "beautifly",
       "accelgor",
       "durant",
-      "armaldo"
+      "armaldo",
+      "scolipede-mega"
     ]
   },
   {
@@ -6954,7 +7004,11 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -7285,7 +7339,8 @@
       "trevenant",
       "salazzle",
       "cinderace",
-      "chi-yu"
+      "chi-yu",
+      "pyroar-mega"
     ]
   },
   {
@@ -7603,7 +7658,10 @@
       "amaura",
       "absol",
       "grubbin",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega"
     ]
   },
   {
@@ -7882,7 +7940,8 @@
       "surskit",
       "aurorus",
       "primarina",
-      "popplio"
+      "popplio",
+      "dragalge-mega"
     ]
   },
   {
@@ -7940,7 +7999,8 @@
       "cubone",
       "snorlax",
       "feraligatr",
-      "croconaw"
+      "croconaw",
+      "scrafty-mega"
     ]
   },
   {
@@ -8008,7 +8068,8 @@
       "clamperl",
       "shellder",
       "barbaracle",
-      "binacle"
+      "binacle",
+      "barbaracle-mega"
     ]
   },
   {
@@ -8262,7 +8323,11 @@
       "okidogi",
       "brute-bonnet",
       "absol",
-      "meditite"
+      "meditite",
+      "staraptor-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -8500,7 +8565,8 @@
       "octillery",
       "nihilego",
       "spinarak",
-      "ariados"
+      "ariados",
+      "malamar-mega"
     ]
   },
   {
@@ -8786,7 +8852,9 @@
       "ribombee",
       "cutiefly",
       "primarina",
-      "popplio"
+      "popplio",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -8852,7 +8920,8 @@
       "primeape",
       "electabuzz",
       "electivire",
-      "elekid"
+      "elekid",
+      "barbaracle-mega"
     ]
   },
   {
@@ -8905,7 +8974,8 @@
       "ariados",
       "anorith",
       "armaldo",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega"
     ]
   },
   {
@@ -9218,7 +9288,10 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -9264,7 +9337,8 @@
       "rockruff",
       "anorith",
       "torchic",
-      "armaldo"
+      "armaldo",
+      "eelektross-mega"
     ]
   },
   {
@@ -9570,7 +9644,11 @@
       "durant",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "eelektross-mega",
+      "malamar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -9830,7 +9908,10 @@
       "guzzlord",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "scrafty-mega",
+      "pyroar-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -10097,7 +10178,9 @@
       "ribombee",
       "cutiefly",
       "primarina",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -10630,7 +10713,13 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega",
+      "scrafty-mega",
+      "pyroar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -10764,7 +10853,9 @@
       "indeedee-female",
       "crocalor",
       "primarina",
-      "popplio"
+      "popplio",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -10884,7 +10975,10 @@
       "geodude-alola",
       "aurorus",
       "amaura",
-      "grubbin"
+      "grubbin",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega"
     ]
   },
   {
@@ -11064,7 +11158,9 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -11833,7 +11929,13 @@
       "armaldo",
       "corviknight",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -12214,7 +12316,8 @@
       "arceus",
       "flapple",
       "guzzlord",
-      "naganadel"
+      "naganadel",
+      "dragalge-mega"
     ]
   },
   {
@@ -12463,7 +12566,10 @@
       "guzzlord",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -12699,7 +12805,10 @@
       "guzzlord",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -12926,7 +13035,10 @@
       "guzzlord",
       "arbok",
       "naganadel",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -13125,7 +13237,11 @@
       "meditite",
       "azelf",
       "guzzlord",
-      "accelgor"
+      "accelgor",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -13261,7 +13377,9 @@
       "cutiefly",
       "primarina",
       "popplio",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -13714,7 +13832,9 @@
       "elekid",
       "gallade",
       "ambipom",
-      "guzzlord"
+      "guzzlord",
+      "scrafty-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -13871,7 +13991,8 @@
       "corviknight",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -14050,7 +14171,9 @@
       "illumise",
       "geodude",
       "croconaw",
-      "meditite"
+      "meditite",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -14330,7 +14453,8 @@
       "anorith",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "barbaracle-mega"
     ]
   },
   {
@@ -14737,7 +14861,9 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -15021,7 +15147,11 @@
       "torchic",
       "primarina",
       "popplio",
-      "naganadel"
+      "naganadel",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -15227,7 +15357,10 @@
       "geodude-alola",
       "ariados",
       "grubbin",
-      "beautifly"
+      "beautifly",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega"
     ]
   },
   {
@@ -15330,7 +15463,8 @@
       "arcanine",
       "chi-yu",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -15837,7 +15971,8 @@
       "indeedee-female",
       "wyrdeer",
       "meditite",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -17369,7 +17504,18 @@
       "ekans",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -17534,7 +17680,10 @@
       "aipom",
       "indeedee-male",
       "indeedee-female",
-      "meditite"
+      "meditite",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega"
     ]
   },
   {
@@ -17717,7 +17866,9 @@
       "urshifu-single-strike",
       "absol",
       "anorith",
-      "armaldo"
+      "armaldo",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -17845,7 +17996,9 @@
       "bounsweet",
       "absol",
       "torchic",
-      "meditite"
+      "meditite",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -17967,7 +18120,9 @@
       "crustle",
       "dwebble",
       "absol",
-      "durant"
+      "durant",
+      "scrafty-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -18313,7 +18468,8 @@
       "crocalor",
       "azelf",
       "guzzlord",
-      "naganadel"
+      "naganadel",
+      "pyroar-mega"
     ]
   },
   {
@@ -18466,7 +18622,8 @@
       "okidogi",
       "crocalor",
       "arbok",
-      "ekans"
+      "ekans",
+      "pyroar-mega"
     ]
   },
   {
@@ -18762,7 +18919,9 @@
       "geodude",
       "okidogi",
       "meditite",
-      "azelf"
+      "azelf",
+      "scrafty-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -18894,7 +19053,8 @@
       "arcanine",
       "chi-yu",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -18922,7 +19082,8 @@
       "farfetchd",
       "lokix",
       "ariados",
-      "durant"
+      "durant",
+      "falinks-mega"
     ]
   },
   {
@@ -19116,7 +19277,8 @@
       "arcanine",
       "chi-yu",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -19451,7 +19613,10 @@
       "crocalor",
       "azelf",
       "guzzlord",
-      "naganadel"
+      "naganadel",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -19574,7 +19739,8 @@
       "chi-yu",
       "arceus",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -19770,7 +19936,8 @@
       "amaura",
       "durant",
       "armaldo",
-      "corviknight"
+      "corviknight",
+      "eelektross-mega"
     ]
   },
   {
@@ -19882,7 +20049,8 @@
       "croconaw",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "dragalge-mega"
     ]
   },
   {
@@ -20066,7 +20234,8 @@
       "corvisquire",
       "corviknight",
       "naganadel",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -20406,7 +20575,13 @@
       "carracosta",
       "meditite",
       "accelgor",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -20720,7 +20895,11 @@
       "geodude",
       "okidogi",
       "croconaw",
-      "meditite"
+      "meditite",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -20963,7 +21142,9 @@
       "arceus",
       "ariados",
       "masquerain",
-      "absol"
+      "absol",
+      "scrafty-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -21395,7 +21576,8 @@
       "anorith",
       "seaking",
       "durant",
-      "armaldo"
+      "armaldo",
+      "barbaracle-mega"
     ]
   },
   {
@@ -21508,7 +21690,8 @@
       "ambipom",
       "aipom",
       "spinarak",
-      "ariados"
+      "ariados",
+      "barbaracle-mega"
     ]
   },
   {
@@ -21690,7 +21873,8 @@
       "arceus",
       "wyrdeer",
       "absol",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -21983,7 +22167,8 @@
       "beautifly",
       "accelgor",
       "arbok",
-      "ekans"
+      "ekans",
+      "eelektross-mega"
     ]
   },
   {
@@ -22780,7 +22965,18 @@
       "corviknight",
       "arbok",
       "naganadel",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -23213,7 +23409,8 @@
       "arceus",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "dragalge-mega"
     ]
   },
   {
@@ -23294,7 +23491,8 @@
       "volcarona",
       "yveltal",
       "masquerain",
-      "beautifly"
+      "beautifly",
+      "staraptor-mega"
     ]
   },
   {
@@ -23448,7 +23646,8 @@
       "great-tusk",
       "basculegion-male",
       "basculegion-female",
-      "archen"
+      "archen",
+      "scrafty-mega"
     ]
   },
   {
@@ -23991,7 +24190,13 @@
       "azelf",
       "armaldo",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -24235,7 +24440,9 @@
       "guzzlord",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -24411,7 +24618,9 @@
       "absol",
       "brambleghast",
       "bramblin",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -25369,7 +25578,17 @@
       "ekans",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -25519,7 +25738,8 @@
       "okidogi",
       "cetoddle",
       "wyrdeer",
-      "guzzlord"
+      "guzzlord",
+      "falinks-mega"
     ]
   },
   {
@@ -25558,7 +25778,8 @@
       "hitmonchan",
       "cinderace",
       "tsareena",
-      "meditite"
+      "meditite",
+      "scrafty-mega"
     ]
   },
   {
@@ -25737,7 +25958,8 @@
       "arceus",
       "masquerain",
       "corvisquire",
-      "corviknight"
+      "corviknight",
+      "staraptor-mega"
     ]
   },
   {
@@ -26005,7 +26227,8 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "dragalge-mega"
     ]
   },
   {
@@ -26795,7 +27018,18 @@
       "corviknight",
       "arbok",
       "naganadel",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -27104,7 +27338,8 @@
       "amaura",
       "crocalor",
       "primarina",
-      "popplio"
+      "popplio",
+      "pyroar-mega"
     ]
   },
   {
@@ -27532,7 +27767,8 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega"
     ]
   },
   {
@@ -27958,7 +28194,8 @@
       "okidogi",
       "croconaw",
       "meditite",
-      "azelf"
+      "azelf",
+      "scrafty-mega"
     ]
   },
   {
@@ -28633,7 +28870,9 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -28865,7 +29104,9 @@
       "absol",
       "torchic",
       "crocalor",
-      "azelf"
+      "azelf",
+      "scrafty-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -29064,7 +29305,9 @@
       "accelgor",
       "durant",
       "arbok",
-      "ekans"
+      "ekans",
+      "scolipede-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -29376,7 +29619,9 @@
       "carracosta",
       "guzzlord",
       "durant",
-      "corviknight"
+      "corviknight",
+      "scrafty-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -29806,7 +30051,14 @@
       "ekans",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -30320,7 +30572,13 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega",
+      "malamar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -30539,7 +30797,9 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -31471,7 +31731,11 @@
       "surskit",
       "carracosta",
       "primarina",
-      "armaldo"
+      "armaldo",
+      "eelektross-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -31660,7 +31924,8 @@
       "okidogi",
       "steenee",
       "tsareena",
-      "meditite"
+      "meditite",
+      "scrafty-mega"
     ]
   },
   {
@@ -31780,7 +32045,10 @@
       "masquerain",
       "surskit",
       "ribombee",
-      "grubbin"
+      "grubbin",
+      "eelektross-mega",
+      "malamar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -32465,7 +32733,10 @@
       "tsareena",
       "torchic",
       "meditite",
-      "guzzlord"
+      "guzzlord",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega"
     ]
   },
   {
@@ -32710,7 +32981,10 @@
       "croconaw",
       "torchic",
       "meditite",
-      "guzzlord"
+      "guzzlord",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega"
     ]
   },
   {
@@ -32774,7 +33048,9 @@
       "ariados",
       "wyrdeer",
       "absol",
-      "seaking"
+      "seaking",
+      "scolipede-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -33053,7 +33329,8 @@
       "anorith",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "barbaracle-mega"
     ]
   },
   {
@@ -33686,7 +33963,9 @@
       "accelgor",
       "armaldo",
       "arbok",
-      "ekans"
+      "ekans",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -34219,7 +34498,13 @@
       "azelf",
       "armaldo",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "pyroar-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -34352,7 +34637,9 @@
       "basculegion-female",
       "croconaw",
       "carracosta",
-      "seaking"
+      "seaking",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -34640,7 +34927,9 @@
       "dwebble",
       "ariados",
       "absol",
-      "torchic"
+      "torchic",
+      "malamar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -34689,7 +34978,9 @@
       "toxtricity-low-key",
       "toxtricity-amped",
       "toxel",
-      "emolga"
+      "emolga",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -34844,7 +35135,8 @@
       "illumise",
       "arceus",
       "masquerain",
-      "beautifly"
+      "beautifly",
+      "staraptor-mega"
     ]
   },
   {
@@ -35112,7 +35404,10 @@
       "crocalor",
       "guzzlord",
       "naganadel",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -35274,7 +35569,8 @@
       "chi-yu",
       "arceus",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -35382,7 +35678,9 @@
       "indeedee-male",
       "indeedee-female",
       "eevee-starter",
-      "eevee"
+      "eevee",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -35756,7 +36054,13 @@
       "corvisquire",
       "corviknight",
       "arbok",
-      "ekans"
+      "ekans",
+      "scolipede-mega",
+      "scrafty-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -35858,7 +36162,8 @@
       "seaking",
       "corvisquire",
       "corviknight",
-      "naganadel"
+      "naganadel",
+      "malamar-mega"
     ]
   },
   {
@@ -36116,7 +36421,8 @@
       "omastar",
       "spinarak",
       "ariados",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega"
     ]
   },
   {
@@ -36355,7 +36661,10 @@
       "absol",
       "primarina",
       "popplio",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "dragalge-mega"
     ]
   },
   {
@@ -36454,7 +36763,9 @@
       "corvisquire",
       "corviknight",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -36746,7 +37057,11 @@
       "guzzlord",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "scrafty-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -36806,7 +37121,8 @@
       "ariados",
       "beautifly",
       "arbok",
-      "ekans"
+      "ekans",
+      "scolipede-mega"
     ]
   },
   {
@@ -36861,7 +37177,9 @@
       "wooper-paldea",
       "okidogi",
       "arbok",
-      "ekans"
+      "ekans",
+      "scolipede-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -37736,7 +38054,10 @@
       "geodude",
       "croconaw",
       "meditite",
-      "azelf"
+      "azelf",
+      "scrafty-mega",
+      "eelektross-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -37997,7 +38318,8 @@
       "surskit",
       "seaking",
       "meditite",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -38354,7 +38676,8 @@
       "primarina",
       "meditite",
       "beautifly",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -38460,7 +38783,8 @@
       "okidogi",
       "croconaw",
       "arbok",
-      "ekans"
+      "ekans",
+      "pyroar-mega"
     ]
   },
   {
@@ -38558,7 +38882,8 @@
       "indeedee-female",
       "wyrdeer",
       "ribombee",
-      "primarina"
+      "primarina",
+      "malamar-mega"
     ]
   },
   {
@@ -38662,7 +38987,8 @@
       "orbeetle",
       "absol",
       "meditite",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -38864,7 +39190,8 @@
       "arceus",
       "wyrdeer",
       "meditite",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -39012,7 +39339,8 @@
       "skarmory",
       "spinarak",
       "absol",
-      "ekans"
+      "ekans",
+      "scolipede-mega"
     ]
   },
   {
@@ -39249,7 +39577,10 @@
       "seaking",
       "accelgor",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega"
     ]
   },
   {
@@ -39445,7 +39776,9 @@
       "seaking",
       "beautifly",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -39704,7 +40037,8 @@
       "binacle",
       "kabutops",
       "drednaw",
-      "carracosta"
+      "carracosta",
+      "barbaracle-mega"
     ]
   },
   {
@@ -40043,7 +40377,12 @@
       "meditite",
       "corvisquire",
       "durant",
-      "corviknight"
+      "corviknight",
+      "staraptor-mega",
+      "scrafty-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -40200,7 +40539,9 @@
       "urshifu-rapid-strike",
       "urshifu-single-strike",
       "corvisquire",
-      "corviknight"
+      "corviknight",
+      "scrafty-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -40279,7 +40620,9 @@
       "electivire",
       "helioptile",
       "emolga",
-      "grubbin"
+      "grubbin",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -40457,7 +40800,8 @@
       "anorith",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "barbaracle-mega"
     ]
   },
   {
@@ -40587,7 +40931,9 @@
       "geodude-alola",
       "geodude",
       "arceus",
-      "durant"
+      "durant",
+      "scolipede-mega",
+      "scrafty-mega"
     ]
   },
   {
@@ -41088,7 +41434,13 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -41609,7 +41961,15 @@
       "armaldo",
       "corviknight",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -42190,7 +42550,12 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -42449,7 +42814,10 @@
       "geodude",
       "carracosta",
       "brambleghast",
-      "bramblin"
+      "bramblin",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega"
     ]
   },
   {
@@ -43560,7 +43928,18 @@
       "ekans",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -43976,7 +44355,9 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -44095,7 +44476,8 @@
       "seaking",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "dragalge-mega"
     ]
   },
   {
@@ -44362,7 +44744,8 @@
       "absol",
       "anorith",
       "torchic",
-      "armaldo"
+      "armaldo",
+      "barbaracle-mega"
     ]
   },
   {
@@ -45183,7 +45566,17 @@
       "arbok",
       "ekans",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -46025,7 +46418,8 @@
       "primarina",
       "meditite",
       "beautifly",
-      "azelf"
+      "azelf",
+      "dragalge-mega"
     ]
   },
   {
@@ -46311,7 +46705,8 @@
       "armaldo",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "barbaracle-mega"
     ]
   },
   {
@@ -46812,7 +47207,11 @@
       "grubbin",
       "azelf",
       "guzzlord",
-      "naganadel"
+      "naganadel",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -47098,7 +47497,12 @@
       "beautifly",
       "azelf",
       "accelgor",
-      "naganadel"
+      "naganadel",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega",
+      "eelektross-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -47347,7 +47751,8 @@
       "accelgor",
       "durant",
       "arbok",
-      "ekans"
+      "ekans",
+      "scolipede-mega"
     ]
   },
   {
@@ -47477,7 +47882,10 @@
       "eevee",
       "seaking",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "barbaracle-mega"
     ]
   },
   {
@@ -47565,7 +47973,8 @@
       "yveltal",
       "corviknight",
       "naganadel",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -47759,7 +48168,9 @@
       "sudowoodo",
       "onix",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -47940,7 +48351,9 @@
       "absol",
       "anorith",
       "torchic",
-      "armaldo"
+      "armaldo",
+      "malamar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -48193,7 +48606,11 @@
       "accelgor",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "scrafty-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -48325,7 +48742,9 @@
       "guzzlord",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -48531,7 +48950,9 @@
       "guzzlord",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -48615,7 +49036,9 @@
       "great-tusk",
       "ariados",
       "seaking",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -48903,7 +49326,9 @@
       "guzzlord",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "scrafty-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -50033,7 +50458,18 @@
       "ekans",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -50462,7 +50898,9 @@
       "brambleghast",
       "bramblin",
       "flapple",
-      "beautifly"
+      "beautifly",
+      "scolipede-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -50647,7 +51085,9 @@
       "elekid",
       "emolga",
       "geodude-alola",
-      "grubbin"
+      "grubbin",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -50826,7 +51266,8 @@
       "venipede",
       "golem-alola",
       "golem",
-      "guzzlord"
+      "guzzlord",
+      "scolipede-mega"
     ]
   },
   {
@@ -51009,7 +51450,8 @@
       "klink",
       "snorlax",
       "glalie",
-      "guzzlord"
+      "guzzlord",
+      "scolipede-mega"
     ]
   },
   {
@@ -51146,7 +51588,8 @@
       "yveltal",
       "corviknight",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -51571,7 +52014,9 @@
       "guzzlord",
       "durant",
       "armaldo",
-      "arbok"
+      "arbok",
+      "scolipede-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -51914,7 +52359,9 @@
       "durant",
       "armaldo",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -52111,7 +52558,8 @@
       "ribombee",
       "primarina",
       "meditite",
-      "azelf"
+      "azelf",
+      "malamar-mega"
     ]
   },
   {
@@ -52568,7 +53016,14 @@
       "durant",
       "armaldo",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -52677,7 +53132,9 @@
       "beautifly",
       "accelgor",
       "durant",
-      "armaldo"
+      "armaldo",
+      "staraptor-mega",
+      "scolipede-mega"
     ]
   },
   {
@@ -52752,7 +53209,9 @@
       "primeape",
       "electabuzz",
       "hitmonchan",
-      "geodude"
+      "geodude",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -53027,7 +53486,8 @@
       "elekid",
       "great-tusk",
       "geodude-alola",
-      "arceus"
+      "arceus",
+      "eelektross-mega"
     ]
   },
   {
@@ -53268,7 +53728,12 @@
       "absol",
       "carracosta",
       "durant",
-      "armaldo"
+      "armaldo",
+      "scolipede-mega",
+      "eelektross-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -53572,7 +54037,11 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -54203,7 +54672,13 @@
       "corviknight",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega"
     ]
   },
   {
@@ -54763,7 +55238,12 @@
       "cetoddle",
       "wyrdeer",
       "crocalor",
-      "beautifly"
+      "beautifly",
+      "staraptor-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -55667,7 +56147,16 @@
       "corvisquire",
       "corviknight",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -55779,7 +56268,8 @@
       "great-tusk",
       "chi-yu",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "pyroar-mega"
     ]
   },
   {
@@ -56651,7 +57141,16 @@
       "corvisquire",
       "corviknight",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "dragalge-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -57301,7 +57800,15 @@
       "corviknight",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scrafty-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -57491,7 +57998,8 @@
       "wyrdeer",
       "guzzlord",
       "archen",
-      "archeops"
+      "archeops",
+      "eelektross-mega"
     ]
   },
   {
@@ -57721,7 +58229,12 @@
       "absol",
       "seaking",
       "arbok",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "scrafty-mega",
+      "eelektross-mega",
+      "malamar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -58045,7 +58558,11 @@
       "wyrdeer",
       "aurorus",
       "absol",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -58198,7 +58715,9 @@
       "okidogi",
       "crocalor",
       "durant",
-      "arbok"
+      "arbok",
+      "eelektross-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -58484,7 +59003,11 @@
       "geodude",
       "okidogi",
       "meditite",
-      "azelf"
+      "azelf",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -58587,7 +59110,9 @@
       "elekid",
       "helioptile",
       "emolga",
-      "geodude-alola"
+      "geodude-alola",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -58952,7 +59477,12 @@
       "absol",
       "grubbin",
       "azelf",
-      "naganadel"
+      "naganadel",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega",
+      "malamar-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -59380,7 +59910,13 @@
       "flapple",
       "meditite",
       "arbok",
-      "ekans"
+      "ekans",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "pyroar-mega",
+      "malamar-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -59738,7 +60274,9 @@
       "arceus",
       "masquerain",
       "flapple",
-      "beautifly"
+      "beautifly",
+      "staraptor-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -60028,7 +60566,9 @@
       "corviknight",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega",
+      "eelektross-mega"
     ]
   },
   {
@@ -60112,7 +60652,11 @@
       "aipom",
       "quaquaval",
       "okidogi",
-      "meditite"
+      "meditite",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "scrafty-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -60528,7 +61072,13 @@
       "azelf",
       "naganadel",
       "archen",
-      "archeops"
+      "archeops",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "staraptor-mega",
+      "scrafty-mega",
+      "barbaracle-mega",
+      "falinks-mega"
     ]
   },
   {
@@ -60772,7 +61322,9 @@
       "accelgor",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -61004,7 +61556,10 @@
       "helioptile",
       "emolga",
       "geodude-alola",
-      "grubbin"
+      "grubbin",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega"
     ]
   },
   {
@@ -61029,7 +61584,9 @@
       "pikachu-original-cap",
       "pikachu-unova-cap",
       "pikachu-alola-cap",
-      "pikachu"
+      "pikachu",
+      "raichu-mega-x",
+      "raichu-mega-y"
     ]
   },
   {
@@ -61279,7 +61836,9 @@
       "seaking",
       "primarina",
       "popplio",
-      "armaldo"
+      "armaldo",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -61682,7 +62241,9 @@
       "primarina",
       "popplio",
       "azelf",
-      "armaldo"
+      "armaldo",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -61916,7 +62477,8 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "dragalge-mega"
     ]
   },
   {
@@ -62357,7 +62919,9 @@
       "carracosta",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "barbaracle-mega",
+      "dragalge-mega"
     ]
   },
   {
@@ -62573,7 +63137,11 @@
       "geodude-alola",
       "arceus",
       "wyrdeer",
-      "grubbin"
+      "grubbin",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega",
+      "pyroar-mega"
     ]
   },
   {
@@ -62660,7 +63228,8 @@
       "quaquaval",
       "flapple",
       "archen",
-      "archeops"
+      "archeops",
+      "staraptor-mega"
     ]
   },
   {
@@ -62762,7 +63331,8 @@
       "victreebel",
       "weepinbell",
       "arbok",
-      "ekans"
+      "ekans",
+      "malamar-mega"
     ]
   },
   {
@@ -62919,7 +63489,9 @@
       "grubbin",
       "durant",
       "armaldo",
-      "naganadel"
+      "naganadel",
+      "scolipede-mega",
+      "barbaracle-mega"
     ]
   },
   {
@@ -63038,7 +63610,10 @@
       "elekid",
       "espeon",
       "aipom",
-      "geodude-alola"
+      "geodude-alola",
+      "raichu-mega-x",
+      "raichu-mega-y",
+      "eelektross-mega"
     ]
   },
   {
@@ -63483,7 +64058,10 @@
       "meditite",
       "azelf",
       "archen",
-      "archeops"
+      "archeops",
+      "scrafty-mega",
+      "eelektross-mega",
+      "falinks-mega"
     ]
   },
   {
