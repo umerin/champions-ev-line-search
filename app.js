@@ -35,6 +35,7 @@ const state = {
   moveSettingsPresetEditingId: null,
   moveSettingsView: "individual",
   moveSettingsPokemonSort: "name",
+  searchNeedsRefresh: false,
   resultLimit: DEFAULT_RESULT_LIMIT,
   resultSort: [
     { key: "attacker-name", direction: "asc" },
@@ -411,6 +412,8 @@ function setupMoveSettingsPage() {
     state.moveSettingsPokemonSort = normalizePokemonSort(els.moveSettingsPokemonSort.value);
     renderMoveSettingsPokemonList();
   });
+  els.moveSettingsPokemonList.addEventListener("click", handleMoveSettingsPokemonListClick);
+  els.moveSettingsPokemonList.addEventListener("change", handleMoveSettingsPokemonListChange);
   els.moveSettingsPresetSelect.addEventListener("change", handleMoveSettingsPresetSelectionChange);
   els.moveSettingsPresetName.addEventListener("input", updateMoveSettingsPresetActions);
   els.moveSettingsPresetSave.addEventListener("click", saveCurrentMoveSettingsPreset);
@@ -421,6 +424,7 @@ function setupMoveSettingsPage() {
   els.moveSettingsPresetConfirmCancel.addEventListener("click", closeMoveSettingsPresetConfirmation);
   els.moveSettingsPresetConfirmApply.addEventListener("click", confirmMoveSettingsPresetAction);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
+  els.moveSettingsMoveList.addEventListener("change", handleMoveSettingsMoveListChange);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsBaseStatMax.addEventListener("input", saveBulkSettingsDraft);
   els.moveSettingsBaseStatMin.addEventListener("input", saveBulkSettingsDraft);
@@ -654,7 +658,7 @@ function confirmMoveSettingsPresetAction() {
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
   setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${preset.name}」を呼び出しました。`);
-  runSearch();
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function loadMoveSettingsPresets() {
@@ -743,6 +747,19 @@ function switchPage(page) {
     button.setAttribute("aria-pressed", String(selected));
   });
   if (showMoveSettings) refreshMoveSettingsPage();
+  else if (state.searchNeedsRefresh) {
+    state.searchNeedsRefresh = false;
+    runSearch();
+  }
+}
+
+function refreshSearchAfterMoveSettingsChange() {
+  if (els.searchPage.hidden) {
+    state.searchNeedsRefresh = true;
+    return;
+  }
+  state.searchNeedsRefresh = false;
+  runSearch();
 }
 
 function refreshMoveSettingsPage() {
@@ -869,7 +886,7 @@ function applyBulkSettings(action = "topPowerByType") {
     renderMoveSettingsPokemonList();
     renderMoveSettingsMoveList();
   }
-  runSearch();
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function applyBulkPokemonExclusion() {
@@ -886,7 +903,7 @@ function applyBulkPokemonExclusion() {
     renderMoveSettingsPokemonList();
     renderMoveSettingsMoveList();
   }
-  runSearch();
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function applyBulkPokemonInclusion() {
@@ -903,7 +920,7 @@ function applyBulkPokemonInclusion() {
     renderMoveSettingsPokemonList();
     renderMoveSettingsMoveList();
   }
-  runSearch();
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function updateBulkSettingsRuleTabs() {
@@ -940,18 +957,26 @@ function renderMoveSettingsPokemonList() {
       </div>
     `;
   }).join("");
-  els.moveSettingsPokemonList.querySelectorAll(".move-settings-pokemon-option").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.moveSettingsPokemonId = button.dataset.pokemonId;
-      renderMoveSettingsPokemonList();
-      renderMoveSettingsMoveList();
-    });
-  });
-  els.moveSettingsPokemonList.querySelectorAll(".move-settings-pokemon-toggle-input").forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      setPokemonIncluded(checkbox.dataset.pokemonId, checkbox.checked);
-    });
-  });
+}
+
+function handleMoveSettingsPokemonListClick(event) {
+  const button = event.target.closest(".move-settings-pokemon-option");
+  if (!button || !els.moveSettingsPokemonList.contains(button)) return;
+  const pokemonId = button.dataset.pokemonId;
+  if (!pokemonId || pokemonId === state.moveSettingsPokemonId) return;
+  const previous = els.moveSettingsPokemonList.querySelector(".move-settings-pokemon-option.is-selected");
+  previous?.classList.remove("is-selected");
+  previous?.setAttribute("aria-selected", "false");
+  button.classList.add("is-selected");
+  button.setAttribute("aria-selected", "true");
+  state.moveSettingsPokemonId = pokemonId;
+  renderMoveSettingsMoveList();
+}
+
+function handleMoveSettingsPokemonListChange(event) {
+  const checkbox = event.target.closest(".move-settings-pokemon-toggle-input");
+  if (!checkbox || !els.moveSettingsPokemonList.contains(checkbox)) return;
+  setPokemonIncluded(checkbox.dataset.pokemonId, checkbox.checked);
 }
 
 function renderMoveSettingsMoveList() {
@@ -1001,11 +1026,12 @@ function renderMoveSettingsMoveList() {
       `;
     }).join("")}
   `;
-  els.moveSettingsMoveList.querySelectorAll(".move-setting-checkbox").forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      setMoveIncluded(checkbox.dataset.pokemonId, checkbox.dataset.moveId, checkbox.checked);
-    });
-  });
+}
+
+function handleMoveSettingsMoveListChange(event) {
+  const checkbox = event.target.closest(".move-setting-checkbox");
+  if (!checkbox || !els.moveSettingsMoveList.contains(checkbox)) return;
+  setMoveIncluded(checkbox.dataset.pokemonId, checkbox.dataset.moveId, checkbox.checked);
 }
 
 function getMovesForPokemon(pokemon) {
@@ -1191,8 +1217,13 @@ function setPokemonIncluded(pokemonId, included) {
   state.pokemonExclusions.set(rule, excluded);
   savePokemonExclusions();
   saveEditingMoveSettingsPreset();
-  renderMoveSettingsPokemonList();
-  runSearch();
+  const checkbox = [...els.moveSettingsPokemonList.querySelectorAll(".move-settings-pokemon-toggle-input")]
+    .find((item) => item.dataset.pokemonId === pokemonId);
+  if (checkbox) {
+    checkbox.checked = included;
+    checkbox.closest(".move-settings-pokemon-entry")?.classList.toggle("is-disabled", !included);
+  }
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function getMoveExclusions(pokemonId, create = false, rule = state.moveSettingsRule) {
@@ -1218,8 +1249,17 @@ function setMoveIncluded(pokemonId, moveId, included) {
   if (!exclusions.size) ruleExclusions?.delete(pokemonId);
   saveMoveExclusions();
   saveEditingMoveSettingsPreset();
-  renderMoveSettingsMoveList();
-  runSearch();
+  updateMoveSettingsMoveSummary(pokemonId);
+  refreshSearchAfterMoveSettingsChange();
+}
+
+function updateMoveSettingsMoveSummary(pokemonId = state.moveSettingsPokemonId) {
+  const pokemon = getPokemonPool().find((item) => item.id === pokemonId);
+  if (!pokemon) return;
+  const moves = getMovesForPokemon(pokemon);
+  const excluded = getMoveExclusions(pokemon.id);
+  const includedCount = moves.filter((move) => !excluded.has(move.id)).length;
+  els.moveSettingsSummary.textContent = `${includedCount}/${moves.length}技を検索対象`;
 }
 
 function setAllMovesForSelected(included) {
@@ -1236,7 +1276,7 @@ function setAllMovesForSelected(included) {
   saveMoveExclusions();
   saveEditingMoveSettingsPreset();
   renderMoveSettingsMoveList();
-  runSearch();
+  refreshSearchAfterMoveSettingsChange();
 }
 
 function serializeMoveExclusions(exclusions = state.moveExclusions, targetRule = null) {

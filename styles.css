@@ -956,6 +956,8 @@ legend {
   grid-template-columns: minmax(0, 1fr) 44px;
   gap: 4px;
   align-items: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 34px;
 }
 
 .move-settings-pokemon-option {
