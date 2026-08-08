@@ -702,7 +702,7 @@ function requestMoveSettingsPresetConfirmation(action) {
   if (!selection || !preset) return;
   const isDelete = action === "delete";
   const presetRule = normalizeMoveRule(preset.rule);
-  const changesRule = !isDelete && presetRule !== state.moveSettingsRule;
+  const appliesToDifferentRule = !isDelete && presetRule !== state.moveSettingsRule;
   state.moveSettingsPresetPending = {
     action: isDelete ? "delete" : "load",
     presetId: preset.id,
@@ -711,8 +711,8 @@ function requestMoveSettingsPresetConfirmation(action) {
   els.moveSettingsPresetConfirmTitle.textContent = isDelete ? "プリセット削除の確認" : "プリセット呼び出しの確認";
   els.moveSettingsPresetConfirmMessage.textContent = isDelete
     ? `「${preset.name}」を削除します。`
-    : changesRule
-      ? `${getMoveRuleName(state.moveSettingsRule)}から${getMoveRuleName(presetRule)}へ切り替えて「${preset.name}」を呼び出し、${getMoveRuleName(presetRule)}のポケモンと技の設定を上書きします。`
+    : appliesToDifferentRule
+      ? `${getMoveRuleName(presetRule)}用の「${preset.name}」の内容を、現在の${getMoveRuleName(state.moveSettingsRule)}設定へ反映して上書きします。`
       : `「${preset.name}」を呼び出して、現在のポケモンと技の設定を上書きします。`;
   els.moveSettingsPresetConfirmApply.textContent = isDelete ? "削除する" : "呼び出す";
   els.moveSettingsPresetConfirmApply.classList.toggle("is-danger", isDelete);
@@ -756,19 +756,18 @@ function confirmMoveSettingsPresetAction() {
     setMoveSettingsPresetStatus(`${getMoveRuleName(preset.rule)}の「${preset.name}」を削除しました。`);
     return;
   }
-  const rule = normalizeMoveRule(preset.rule);
-  const changedRule = rule !== state.moveSettingsRule;
-  const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(rule) ?? new Map();
-  const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(rule) ?? new Set();
-  state.moveExclusions.set(rule, restoredMoveExclusions);
-  state.pokemonExclusions.set(rule, restoredPokemonExclusions);
-  state.moveSettingsRule = rule;
-  state.moveSettingsView = "individual";
+  const presetRule = normalizeMoveRule(preset.rule);
+  const targetRule = state.moveSettingsRule;
+  const copiedAcrossRules = presetRule !== targetRule;
+  const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(presetRule) ?? new Map();
+  const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(presetRule) ?? new Set();
+  state.moveExclusions.set(targetRule, restoredMoveExclusions);
+  state.pokemonExclusions.set(targetRule, restoredPokemonExclusions);
   saveMoveExclusions();
   savePokemonExclusions();
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
-  setMoveSettingsPresetStatus(`${changedRule ? `${getMoveRuleName(rule)}へ切り替えて、` : ""}${selection.source === "recommended" ? "おすすめプリセット" : "プリセット"}「${preset.name}」を呼び出しました。`);
+  setMoveSettingsPresetStatus(`${selection.source === "recommended" ? "おすすめプリセット" : "プリセット"}「${preset.name}」を${copiedAcrossRules ? `${getMoveRuleName(presetRule)}から現在の${getMoveRuleName(targetRule)}へ反映` : "呼び出し"}しました。`);
   refreshSearchAfterMoveSettingsChange();
 }
 
