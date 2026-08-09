@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-1",
   moves: "./data/moves.json?v=20260809-1",
   learnsets: "./data/learnsets.json?v=20260809-1",
-  battleEffects: "./data/battle-effects.json?v=20260809-2",
+  battleEffects: "./data/battle-effects.json?v=20260809-4",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -2050,14 +2050,29 @@ function getSelectedWeather(input) {
   return input.weather ?? "none";
 }
 
-function getEffectiveWeather(pokemon, input) {
-  const selectedWeather = getSelectedWeather(input);
-  if (!input.weatherAbilityAlways || !pokemon) return selectedWeather;
-
-  for (const [weather, pokemonIds] of Object.entries(state.battleEffects?.weatherSetters ?? {})) {
+function getWeatherFromAbility(pokemon) {
+  if (!pokemon) return null;
+  for (const [weather, setter] of Object.entries(state.battleEffects?.weatherSetters ?? {})) {
+    const pokemonIds = Array.isArray(setter) ? setter : setter.pokemonIds ?? [];
     if (pokemonIds.includes(pokemon.id)) return weather;
   }
-  return selectedWeather;
+  return null;
+}
+
+function getAttackerWeatherOverride(pokemon) {
+  if (!pokemon) return null;
+  const effect = Object.values(state.battleEffects?.attacker ?? {}).find((entry) => {
+    return entry.stage === "weather" && entry.pokemonIds?.includes(pokemon.id);
+  });
+  return effect?.weather ?? null;
+}
+
+function getBattleWeather(attacker, defender, input) {
+  const attackerWeatherOverride = getAttackerWeatherOverride(attacker);
+  if (attackerWeatherOverride) return attackerWeatherOverride;
+  const selectedWeather = getSelectedWeather(input);
+  if (selectedWeather !== "none" || !input.weatherAbilityAlways) return selectedWeather;
+  return getWeatherFromAbility(attacker) ?? getWeatherFromAbility(defender) ?? "none";
 }
 
 function getWeatherAdjustedMove(move, weather) {
@@ -2420,7 +2435,7 @@ function runSearch() {
           defender,
           representative.move.category,
           representative.move.category === "physical" ? after.def : after.spd,
-          getEffectiveWeather(defender, input),
+          representative.battleWeather,
         ),
         stab: representative.stab,
         effectiveness: representative.effectiveness,
@@ -2622,7 +2637,6 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
   const attackerNatureModes = input.attackerNatures;
   const scenarios = [];
   const currentDamageCache = new Map();
-  const defenderWeather = getEffectiveWeather(defender, input);
 
   for (const move of state.moves) {
     if (!isMoveAllowed(move.id)) continue;
@@ -2632,13 +2646,13 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const attacker = attackerById.get(attackerId);
       if (!attacker || !isPokemonIncluded(attackerId, input.battleRule)) continue;
       if (!isMoveAllowedForPokemon(attackerId, move.id, input.battleRule)) continue;
-      const attackerWeather = getEffectiveWeather(attacker, input);
-      const effectiveMove = getWeatherAdjustedMove(move, attackerWeather);
+      const battleWeather = getBattleWeather(attacker, defender, input);
+      const effectiveMove = getWeatherAdjustedMove(move, battleWeather);
       if (!matchesMovePower(effectiveMove, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
       const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
       if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
-      const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, defenderWeather);
+      const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, battleWeather);
       const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
       const defenderDamageModifier = getDefenderDamageModifier(
@@ -2648,7 +2662,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
         effectiveMove.type,
       );
       const attackerDamageModifier = getAttackerDamageModifier(attacker, effectiveMove);
-      const weatherModifier = getWeatherDamageModifier(effectiveMove.type, defenderWeather);
+      const weatherModifier = getWeatherDamageModifier(effectiveMove.type, battleWeather);
       const finalDamageModifier = defenderDamageModifier * attackerDamageModifier;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
@@ -2663,7 +2677,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             Number(effectiveMove.isSpreadMove),
             weatherModifier,
             finalDamageModifier,
-            defenderWeather,
+            battleWeather,
           ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
@@ -2675,7 +2689,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
                 defender,
                 effectiveMove.category,
                 effectiveMove.category === "physical" ? current.def : current.spd,
-                defenderWeather,
+                battleWeather,
               ),
               stab,
               effectiveness,
@@ -2703,6 +2717,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             calculationPower,
             weatherModifier,
             finalDamageModifier,
+            battleWeather,
             damageProfileKey,
             scenarioIndex: scenarios.length,
             ...currentDamageResult,

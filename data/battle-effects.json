@@ -70,25 +70,55 @@
       "modifier": 0.75
     }
   },
-  "attacker": {},
+  "attacker": {
+    "megaSolar": {
+      "abilityId": "mega-solar",
+      "abilityName": "メガソーラー",
+      "pokemonIds": [
+        "meganium-mega"
+      ],
+      "stage": "weather",
+      "weather": "sunny"
+    }
+  },
   "weatherSetters": {
-    "sunny": [
-      "charizard-mega-y",
-      "ninetales",
-      "torkoal"
-    ],
-    "rain": [
-      "pelipper"
-    ],
-    "sand": [
-      "tyranitar",
-      "tyranitar-mega",
-      "hippowdon"
-    ],
-    "snow": [
-      "abomasnow",
-      "abomasnow-mega",
-      "ninetales-alola"
-    ]
+    "sunny": {
+      "abilityId": "drought",
+      "abilityName": "ひでり",
+      "pokemonIds": [
+        "charizard-mega-y",
+        "ninetales",
+        "torkoal"
+      ]
+    },
+    "rain": {
+      "abilityId": "drizzle",
+      "abilityName": "あめふらし",
+      "pokemonIds": [
+        "politoed",
+        "pelipper"
+      ]
+    },
+    "sand": {
+      "abilityId": "sand-stream",
+      "abilityName": "すなおこし",
+      "pokemonIds": [
+        "tyranitar",
+        "tyranitar-mega",
+        "hippowdon"
+      ]
+    },
+    "snow": {
+      "abilityId": "snow-warning",
+      "abilityName": "ゆきふらし",
+      "pokemonIds": [
+        "ninetales-alola",
+        "abomasnow",
+        "abomasnow-mega",
+        "vanilluxe",
+        "aurorus",
+        "froslass-mega"
+      ]
+    }
   }
 }

@@ -57,7 +57,11 @@ for (const [pokemonId, pokemonMoves] of Object.entries(learnsets)) {
 
 for (const [scope, effects] of Object.entries(battleEffects)) {
   if (scope === "weatherSetters") {
-    for (const [weather, setterIds] of Object.entries(effects)) {
+    for (const [weather, setter] of Object.entries(effects)) {
+      assert(setter && typeof setter === "object" && !Array.isArray(setter), `battle-effects.json: ${weather} の天候特性定義が不正です。`);
+      assert(typeof setter.abilityId === "string" && setter.abilityId, `battle-effects.json: ${weather} の特性IDがありません。`);
+      assert(typeof setter.abilityName === "string" && setter.abilityName, `battle-effects.json: ${weather} の特性名がありません。`);
+      const setterIds = setter.pokemonIds;
       assert(Array.isArray(setterIds), `battle-effects.json: ${weather} の天候特性ポケモン一覧が配列ではありません。`);
       for (const pokemonId of setterIds) {
         assert(pokemonIds.has(pokemonId), `battle-effects.json: ${weather} に未知のポケモンID ${pokemonId}`);
@@ -67,8 +71,13 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
   }
   assert(["attacker", "defender"].includes(scope), `battle-effects.json: 未知の区分 ${scope}`);
   for (const [key, effect] of Object.entries(effects)) {
-    assert(["power", "damage"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
-    assert(Number.isFinite(effect.modifier) && effect.modifier > 0, `battle-effects.json: ${key} の modifier が不正です。`);
+    assert(["power", "damage", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
+    if (effect.stage === "weather") {
+      assert(scope === "attacker", `battle-effects.json: ${key} の天候上書きは攻撃側に設定してください。`);
+      assert(["sunny", "rain", "sand", "snow"].includes(effect.weather), `battle-effects.json: ${key} の weather が不正です。`);
+    } else {
+      assert(Number.isFinite(effect.modifier) && effect.modifier > 0, `battle-effects.json: ${key} の modifier が不正です。`);
+    }
     for (const pokemonId of effect.pokemonIds ?? []) {
       assert(pokemonIds.has(pokemonId), `battle-effects.json: ${key} に未知のポケモンID ${pokemonId}`);
     }
