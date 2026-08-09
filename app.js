@@ -2426,7 +2426,8 @@ function runSearch() {
         effectiveness: representative.effectiveness,
         rule: input.battleRule,
         isSpreadMove: representative.move.isSpreadMove,
-        damageModifier: representative.damageModifier,
+        weatherModifier: representative.weatherModifier,
+        finalDamageModifier: representative.finalDamageModifier,
       };
       const {
         maxDamage: afterDamage,
@@ -2645,10 +2646,10 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
         input,
         effectiveness,
         effectiveMove.type,
-        defenderWeather,
       );
       const attackerDamageModifier = getAttackerDamageModifier(attacker, effectiveMove);
-      const damageModifier = defenderDamageModifier * attackerDamageModifier;
+      const weatherModifier = getWeatherDamageModifier(effectiveMove.type, defenderWeather);
+      const finalDamageModifier = defenderDamageModifier * attackerDamageModifier;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, effectiveMove.category, attackerPoints, attackerNature);
@@ -2660,7 +2661,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             stab,
             effectiveness,
             Number(effectiveMove.isSpreadMove),
-            damageModifier,
+            weatherModifier,
+            finalDamageModifier,
             defenderWeather,
           ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
@@ -2679,7 +2681,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               effectiveness,
               rule: input.battleRule,
               isSpreadMove: effectiveMove.isSpreadMove,
-              damageModifier,
+              weatherModifier,
+              finalDamageModifier,
             };
             const {
               maxDamage: currentDamage,
@@ -2698,7 +2701,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             effectiveness,
             stab,
             calculationPower,
-            damageModifier,
+            weatherModifier,
+            finalDamageModifier,
             damageProfileKey,
             scenarioIndex: scenarios.length,
             ...currentDamageResult,
@@ -2951,61 +2955,56 @@ function getAttackerDamageModifier(attacker, move) {
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getDefenderDamageModifier(defender, input, effectiveness, moveType, defenderWeather = "none") {
+function getDefenderDamageModifier(defender, input, effectiveness, moveType) {
   return getMatchingBattleEffects("defender", defender.id, moveType, effectiveness)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]))
-    .reduce((modifier, effect) => modifier * effect.modifier, 1)
-    * getWeatherDamageModifier(moveType, defenderWeather);
+    .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
 function calcDamageResult(damageInput, hp) {
-  const preRandomDamage = calcPreRandomDamage(damageInput);
-  const maxDamage = calcDamageFromPreRandom(
-    preRandomDamage,
-    state.rules.damageRandomMax,
-    damageInput.stab,
-    damageInput.effectiveness,
-    damageInput.damageModifier,
-  );
-  const minDamage = calcDamageFromPreRandom(
-    preRandomDamage,
-    state.rules.damageRandomMin ?? 0.85,
-    damageInput.stab,
-    damageInput.effectiveness,
-    damageInput.damageModifier,
-  );
+  const baseDamage = calcBaseDamage(damageInput);
+  const maxDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMax);
+  const minDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMin ?? 0.85);
   const koRate = calcOneHitKoRate(
-    preRandomDamage,
-    damageInput.stab,
-    damageInput.effectiveness,
+    baseDamage,
+    damageInput,
     hp,
     maxDamage,
     minDamage,
-    damageInput.damageModifier,
   );
   return { maxDamage, minDamage, koRate };
 }
 
-function calcPreRandomDamage({ level, power, attack, defense, rule, isSpreadMove }) {
+function calcBaseDamage({ level, power, attack, defense }) {
   const levelFactor = Math.floor((2 * level) / 5 + 2);
   const basePowerDamage = Math.floor((levelFactor * power * attack) / defense);
-  const baseDamage = Math.floor(basePowerDamage / 50) + 2;
-  const doubleModifier = rule === "double" && isSpreadMove ? state.rules.doubleSpreadModifier : 1;
-  return applyDamageModifier(baseDamage, doubleModifier);
+  return Math.floor(basePowerDamage / 50) + 2;
 }
 
-function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness, damageModifier = 1) {
-  let damage = preRandomDamage;
-  damage = applyDamageModifier(damage, randomModifier);
-  damage = applyDamageModifier(damage, stab);
-  damage = applyTypeEffectiveness(damage, effectiveness);
-  damage = applyDamageModifier(damage, damageModifier);
+function calcDamageAtRandom(baseDamage, damageInput, randomModifier) {
+  const rangeModifier = damageInput.rule === "double" && damageInput.isSpreadMove
+    ? state.rules.doubleSpreadModifier
+    : 1;
+  let damage = baseDamage;
+  damage = applyDamageModifier(damage, rangeModifier);
+  damage = applyDamageModifier(damage, damageInput.parentalBondModifier ?? 1);
+  damage = applyDamageModifier(damage, damageInput.weatherModifier ?? 1);
+  damage = applyDamageModifier(damage, damageInput.criticalModifier ?? 1);
+  damage = applyFloorModifier(damage, randomModifier);
+  damage = applyFloorModifier(damage, damageInput.stab ?? 1);
+  damage = applyTypeEffectiveness(damage, damageInput.effectiveness ?? 1);
+  damage = applyFloorModifier(damage, damageInput.burnModifier ?? 1);
+  damage = applyDamageModifier(damage, damageInput.finalDamageModifier ?? 1);
   return damage;
 }
 
 function applyDamageModifier(damage, modifier) {
   const fixedPointModifier = Math.trunc(modifier * 4096);
   return Math.trunc((Math.trunc(damage * fixedPointModifier) + 2048 - 1) / 4096);
+}
+
+function applyFloorModifier(damage, modifier) {
+  return Math.trunc(damage * modifier);
 }
 
 function applyPowerModifier(power, modifier) {
@@ -3038,20 +3037,14 @@ function matchesAttackKind(category, filters) {
   return filters.includes(category);
 }
 
-function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage, damageModifier = 1) {
+function calcOneHitKoRate(baseDamage, damageInput, hp, maxDamage, minDamage) {
   if (maxDamage < hp) return 0;
   if (minDamage >= hp) return 100;
   let lowestKoRoll = 86;
   let highestKoRoll = 100;
   while (lowestKoRoll < highestKoRoll) {
     const randomPercent = Math.floor((lowestKoRoll + highestKoRoll) / 2);
-    const damage = calcDamageFromPreRandom(
-      preRandomDamage,
-      randomPercent / 100,
-      stab,
-      effectiveness,
-      damageModifier,
-    );
+    const damage = calcDamageAtRandom(baseDamage, damageInput, randomPercent / 100);
     if (damage >= hp) highestKoRoll = randomPercent;
     else lowestKoRoll = randomPercent + 1;
   }
