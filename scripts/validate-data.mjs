@@ -97,14 +97,23 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
   }
   assert(["attacker", "defender"].includes(scope), `battle-effects.json: 未知の区分 ${scope}`);
   for (const [key, effect] of Object.entries(effects)) {
-    assert(["power", "damage", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
+    assert(["attack", "power", "damage", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
     if (effect.stage === "weather") {
       assert(scope === "attacker", `battle-effects.json: ${key} の天候上書きは攻撃側に設定してください。`);
       assert(["sunny", "rain", "sand", "snow"].includes(effect.weather), `battle-effects.json: ${key} の weather が不正です。`);
     } else {
       assert(Number.isFinite(effect.modifier) && effect.modifier > 0, `battle-effects.json: ${key} の modifier が不正です。`);
+      if (effect.stage === "attack") {
+        assert(scope === "attacker", `battle-effects.json: ${key} の攻撃実数値補正は攻撃側に設定してください。`);
+      }
       if (effect.stage === "damage") {
         assert(finalDamageMGroups.has(effect.mGroup), `battle-effects.json: ${key} の mGroup が不正です。`);
+      }
+    }
+    if (Object.hasOwn(effect, "moveCategories")) {
+      assert(Array.isArray(effect.moveCategories), `battle-effects.json: ${key} の moveCategories が配列ではありません。`);
+      for (const category of effect.moveCategories) {
+        assert(["physical", "special"].includes(category), `battle-effects.json: ${key} の技分類 ${category} が不正です。`);
       }
     }
     for (const pokemonId of effect.pokemonIds ?? []) {

@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260809-4",
   learnsets: "./data/learnsets.json?v=20260809-1",
-  battleEffects: "./data/battle-effects.json?v=20260809-5",
+  battleEffects: "./data/battle-effects.json?v=20260809-6",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -2148,13 +2148,24 @@ function isBattleEffectPokemon(scope, key, pokemonId) {
   return getBattleEffect(scope, key)?.pokemonIds?.includes(pokemonId) ?? false;
 }
 
-function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1) {
+function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1, moveCategory = null) {
   return Object.values(state.battleEffects?.[scope] ?? {}).filter((effect) => {
     if (!effect.pokemonIds?.includes(pokemonId)) return false;
     if (effect.moveTypes?.length && !effect.moveTypes.includes(moveType)) return false;
+    if (effect.moveCategories?.length && !effect.moveCategories.includes(moveCategory)) return false;
     if (effect.superEffectiveOnly && effectiveness <= 1) return false;
     return true;
   });
+}
+
+function getAttackerStatEffects(pokemonId, category) {
+  return getMatchingBattleEffects("attacker", pokemonId, null, 1, category)
+    .filter((effect) => effect.stage === "attack");
+}
+
+function getAttackerStatModifier(pokemonId, category) {
+  return getAttackerStatEffects(pokemonId, category)
+    .reduce((combined, effect) => combined * effect.modifier, 1);
 }
 
 function updateMultiscaleOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
@@ -2632,6 +2643,16 @@ function getResultMoveName(attacker, move) {
   return `${name}${suffix}`;
 }
 
+function getResultAttackerName(attacker, move) {
+  const abilityNames = [...new Set(
+    getAttackerStatEffects(attacker.id, move.category)
+      .map((effect) => effect.abilityName)
+      .filter(Boolean),
+  )];
+  const suffix = abilityNames.map((name) => `（${name}）`).join("");
+  return `${getPokemonDisplayName(attacker)}${suffix}`;
+}
+
 function compareJapaneseSortText(a, b) {
   return a.localeCompare(b, "ja", { sensitivity: "base" }) || a.localeCompare(b);
 }
@@ -2979,7 +3000,8 @@ function statPointToBonus(points) {
 
 function calcAttackStat(pokemon, category, statPoints, natureMode) {
   const statKey = category === "physical" ? "atk" : "spa";
-  return calcNonHpStat(pokemon.baseStats[statKey], statPoints, natureMode);
+  const baseAttackStat = calcNonHpStat(pokemon.baseStats[statKey], statPoints, natureMode);
+  return Math.floor(baseAttackStat * getAttackerStatModifier(pokemon.id, category));
 }
 
 function calcNonHpStat(baseStat, statPoints, natureMode) {
@@ -3015,9 +3037,9 @@ function getWallDamageModifier(input, move) {
 function getFinalDamageMEffects(attacker, defender, input, effectiveness, move) {
   const wallModifier = getWallDamageModifier(input, move);
   const wallEffects = wallModifier === 1 ? [] : [{ mGroup: "wall", modifier: wallModifier }];
-  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness)
+  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness, move.category)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
-  const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness)
+  const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness, move.category)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
   return [...wallEffects, ...attackerEffects, ...defenderEffects].sort((a, b) => {
     return (FINAL_DAMAGE_M_GROUP_RANK.get(a.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length)
@@ -3135,8 +3157,12 @@ function matchesEffectiveness(value, filter) {
 }
 
 function matchesHigherOffense(pokemon, category) {
-  if (category === "physical") return pokemon.baseStats.atk >= pokemon.baseStats.spa;
-  if (category === "special") return pokemon.baseStats.spa >= pokemon.baseStats.atk;
+  const physicalModifier = getAttackerStatModifier(pokemon.id, "physical");
+  const specialModifier = getAttackerStatModifier(pokemon.id, "special");
+  const physicalOffense = pokemon.baseStats.atk * physicalModifier;
+  const specialOffense = pokemon.baseStats.spa * specialModifier;
+  if (category === "physical") return physicalOffense >= specialOffense;
+  if (category === "special") return specialOffense >= physicalOffense;
   return false;
 }
 
@@ -3204,7 +3230,7 @@ function renderResultGroup(group, groupIndex) {
       <td colspan="11" class="result-group-cell">
         <button type="button" class="result-group-toggle" data-result-group="${groupIndex}" aria-expanded="false">
           <span class="result-group-chevron" aria-hidden="true">＋</span>
-          <span class="result-group-attacker">${escapeHtml(getPokemonDisplayName(representative.attacker))}</span>
+          <span class="result-group-attacker">${escapeHtml(getResultAttackerName(representative.attacker, representative.move))}</span>
           <span class="result-group-move">${escapeHtml(getResultMoveName(representative.attacker, representative.move))}</span>
           <span class="result-group-power">威力 ${escapeHtml(String(representative.move.power))}</span>
           <span class="result-group-representative ${lineClass}">代表 ${formatProbability(representative.currentKoRate)}→${formatProbability(representative.afterKoRate)}</span>
@@ -3224,7 +3250,7 @@ function renderResultDetailRow(row, groupIndex) {
     <tr class="result-detail-row" data-result-group="${groupIndex}" hidden>
       <td class="result-line ${lineClass}">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</td>
       <td class="result-allocation">${formatCandidate(row.candidate)}</td>
-      <td class="result-attacker">${escapeHtml(getPokemonDisplayName(row.attacker))}</td>
+      <td class="result-attacker">${escapeHtml(getResultAttackerName(row.attacker, row.move))}</td>
       <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
       <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
       <td class="result-move">${escapeHtml(getResultMoveName(row.attacker, row.move))}</td>

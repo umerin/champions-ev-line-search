@@ -74,6 +74,34 @@
     }
   },
   "attacker": {
+    "hugePower": {
+      "abilityId": "huge-power",
+      "abilityName": "ちからもち",
+      "pokemonIds": [
+        "starmie-mega",
+        "azumarill",
+        "mawile-mega",
+        "diggersby"
+      ],
+      "stage": "attack",
+      "moveCategories": [
+        "physical"
+      ],
+      "modifier": 2
+    },
+    "purePower": {
+      "abilityId": "pure-power",
+      "abilityName": "ヨガパワー",
+      "pokemonIds": [
+        "medicham",
+        "medicham-mega"
+      ],
+      "stage": "attack",
+      "moveCategories": [
+        "physical"
+      ],
+      "modifier": 2
+    },
     "megaSolar": {
       "abilityId": "mega-solar",
       "abilityName": "メガソーラー",
