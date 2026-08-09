@@ -7,6 +7,21 @@ const startedAt = performance.now();
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(scriptDir, "../data");
 const readJson = async (name) => JSON.parse(await readFile(resolve(dataDir, name), "utf8"));
+const finalDamageMGroups = new Set([
+  "wall",
+  "neuroforce",
+  "sniper",
+  "tintedLens",
+  "fluffyFire",
+  "Mhalf",
+  "Mfilter",
+  "friendGuard",
+  "expertBelt",
+  "metronome",
+  "lifeOrb",
+  "resistBerry",
+  "Mtwice",
+]);
 
 const [pokemon, moves, learnsets, battleEffects] = await Promise.all([
   readJson("pokemon.json"),
@@ -77,6 +92,9 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
       assert(["sunny", "rain", "sand", "snow"].includes(effect.weather), `battle-effects.json: ${key} の weather が不正です。`);
     } else {
       assert(Number.isFinite(effect.modifier) && effect.modifier > 0, `battle-effects.json: ${key} の modifier が不正です。`);
+      if (effect.stage === "damage") {
+        assert(finalDamageMGroups.has(effect.mGroup), `battle-effects.json: ${key} の mGroup が不正です。`);
+      }
     }
     for (const pokemonId of effect.pokemonIds ?? []) {
       assert(pokemonIds.has(pokemonId), `battle-effects.json: ${key} に未知のポケモンID ${pokemonId}`);

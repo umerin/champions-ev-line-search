@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-1",
   moves: "./data/moves.json?v=20260809-1",
   learnsets: "./data/learnsets.json?v=20260809-1",
-  battleEffects: "./data/battle-effects.json?v=20260809-4",
+  battleEffects: "./data/battle-effects.json?v=20260809-5",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -12,6 +12,24 @@ const MOVE_SETTING_RULES = ["single", "double"];
 const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
 const UNLIMITED_RESULT_LIMIT = Infinity;
 const DEFAULT_RESULT_LIMIT = 80;
+const FINAL_DAMAGE_M_GROUP_ORDER = [
+  "wall",
+  "neuroforce",
+  "sniper",
+  "tintedLens",
+  "fluffyFire",
+  "Mhalf",
+  "Mfilter",
+  "friendGuard",
+  "expertBelt",
+  "metronome",
+  "lifeOrb",
+  "resistBerry",
+  "Mtwice",
+];
+const FINAL_DAMAGE_M_GROUP_RANK = new Map(
+  FINAL_DAMAGE_M_GROUP_ORDER.map((group, index) => [group, index]),
+);
 
 const state = {
   pokemon: [],
@@ -2442,7 +2460,8 @@ function runSearch() {
         rule: input.battleRule,
         isSpreadMove: representative.move.isSpreadMove,
         weatherModifier: representative.weatherModifier,
-        finalDamageModifier: representative.finalDamageModifier,
+        mModifier: representative.mModifier,
+        mProtectModifier: representative.mProtectModifier,
       };
       const {
         maxDamage: afterDamage,
@@ -2655,15 +2674,15 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, battleWeather);
       const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
-      const defenderDamageModifier = getDefenderDamageModifier(
+      const mModifier = calculateFinalDamageM(getFinalDamageMEffects(
+        attacker,
         defender,
         input,
         effectiveness,
         effectiveMove.type,
-      );
-      const attackerDamageModifier = getAttackerDamageModifier(attacker, effectiveMove);
+      ));
+      const mProtectModifier = 1;
       const weatherModifier = getWeatherDamageModifier(effectiveMove.type, battleWeather);
-      const finalDamageModifier = defenderDamageModifier * attackerDamageModifier;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, effectiveMove.category, attackerPoints, attackerNature);
@@ -2676,7 +2695,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             effectiveness,
             Number(effectiveMove.isSpreadMove),
             weatherModifier,
-            finalDamageModifier,
+            mModifier,
+            mProtectModifier,
             battleWeather,
           ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
@@ -2696,7 +2716,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               rule: input.battleRule,
               isSpreadMove: effectiveMove.isSpreadMove,
               weatherModifier,
-              finalDamageModifier,
+              mModifier,
+              mProtectModifier,
             };
             const {
               maxDamage: currentDamage,
@@ -2716,7 +2737,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             stab,
             calculationPower,
             weatherModifier,
-            finalDamageModifier,
+            mModifier,
+            mProtectModifier,
             battleWeather,
             damageProfileKey,
             scenarioIndex: scenarios.length,
@@ -2964,16 +2986,24 @@ function getAdjustedMovePower(defender, input, move, defenderWeather = "none") {
   return applyPowerModifier(move.power, modifier);
 }
 
-function getAttackerDamageModifier(attacker, move) {
-  return getMatchingBattleEffects("attacker", attacker.id, move.type)
-    .filter((effect) => effect.stage === "damage")
-    .reduce((modifier, effect) => modifier * effect.modifier, 1);
+function getFinalDamageMEffects(attacker, defender, input, effectiveness, moveType) {
+  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, moveType, effectiveness)
+    .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
+  const defenderEffects = getMatchingBattleEffects("defender", defender.id, moveType, effectiveness)
+    .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
+  return [...attackerEffects, ...defenderEffects].sort((a, b) => {
+    return (FINAL_DAMAGE_M_GROUP_RANK.get(a.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length)
+      - (FINAL_DAMAGE_M_GROUP_RANK.get(b.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length);
+  });
 }
 
-function getDefenderDamageModifier(defender, input, effectiveness, moveType) {
-  return getMatchingBattleEffects("defender", defender.id, moveType, effectiveness)
-    .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]))
-    .reduce((modifier, effect) => modifier * effect.modifier, 1);
+function calculateFinalDamageM(effects) {
+  let fixedPointM = 4096;
+  for (const effect of effects) {
+    const fixedPointModifier = Math.trunc(effect.modifier * 4096);
+    fixedPointM = Math.round((fixedPointM * fixedPointModifier) / 4096);
+  }
+  return fixedPointM / 4096;
 }
 
 function calcDamageResult(damageInput, hp) {
@@ -3009,7 +3039,8 @@ function calcDamageAtRandom(baseDamage, damageInput, randomModifier) {
   damage = applyFloorModifier(damage, damageInput.stab ?? 1);
   damage = applyTypeEffectiveness(damage, damageInput.effectiveness ?? 1);
   damage = applyFloorModifier(damage, damageInput.burnModifier ?? 1);
-  damage = applyDamageModifier(damage, damageInput.finalDamageModifier ?? 1);
+  damage = applyDamageModifier(damage, damageInput.mModifier ?? 1);
+  damage = applyDamageModifier(damage, damageInput.mProtectModifier ?? 1);
   return damage;
 }
 
