@@ -3,7 +3,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const availabilityPath = resolve(__dirname, "../data/champions-availability.json");
+const pokemonPath = resolve(__dirname, "../data/pokemon.json");
 const sourceUrl = "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178066986988lmoqpm/ja/pokemon.html";
 const api = "https://pokeapi.co/api/v2";
 const concurrency = 12;
@@ -80,16 +80,11 @@ const pokemonIds = await mapLimit(officialPokemon, concurrency, async ([code]) =
   return (await getJson(`${api}/pokemon/${nationalDex}`)).name;
 });
 
-const availability = JSON.parse(await readFile(availabilityPath, "utf8"));
-availability.description = "Pokémon Champions公式イベントページの参加可能ポケモンと、それらに付随するメガシンカを絞り込むためのデータ。";
-availability.source = {
-  name: "Pokémon Champions - 参加できるポケモン",
-  url: sourceUrl,
-  importedAt: new Date().toISOString().slice(0, 10),
-  note: "公式ページ内のpokemons配列から取得。メガシンカ形態はアプリ側で通常形態に紐づけて追加する。",
-};
-availability.restrictPokemon = true;
-availability.pokemon = [...new Set(pokemonIds)];
+const officialPokemonIds = new Set(pokemonIds);
+const pokemon = JSON.parse(await readFile(pokemonPath, "utf8"));
+for (const entry of pokemon) {
+  if (!entry.id.includes("-mega")) entry.championsTarget = officialPokemonIds.has(entry.id);
+}
 
-await writeFile(availabilityPath, `${JSON.stringify(availability, null, 2)}\n`);
-console.log(`Updated ${availability.pokemon.length} Pokemon from the official page.`);
+await writeFile(pokemonPath, `${JSON.stringify(pokemon, null, 2)}\n`);
+console.log(`Updated ${officialPokemonIds.size} Pokemon from the official page. Mega flags were preserved.`);

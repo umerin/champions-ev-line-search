@@ -15,11 +15,12 @@ app.js
 data/
   pokemon.json
   moves.json
+  learnsets.json
+  battle-effects.json
   type-chart.json
   champions-rules.json
-  champions-availability.json
 scripts/
-  fetch-pokeapi-data.mjs
+  validate-data.mjs
 LICENSE
 NOTICE.md
 ```
@@ -35,57 +36,29 @@ NOTICE.md
 - 残りポイントをH/B/Dへ振る全候補を探索
 - 最大乱数ダメージが変わる相手、技、実数値、補正、技威力、変化量を表示
 
-## 注意
+## データ管理
 
-- `data/*.json` は動作確認用の少量サンプルです。
+- `data/*.json` を正本として、ブラウザから直接読み込みます。Excelへの変換や事前生成は不要です。
+- `pokemon.json` はポケモン情報とポケモンごとの `championsTarget` を管理します。
+- `moves.json` は技情報と技ごとの `championsTarget` を管理します。
+- `learnsets.json` はポケモンIDごとの習得技ID一覧を管理します。
+- `battle-effects.json` は特性・天候などの対象、補正値、検索結果の表示を管理します。
+- 更新後は `node scripts/validate-data.mjs` でID・重複・対象数を高速に検証できます。
 - ステータスポイントは0-32の33段階、合計66として扱います。現在のH/B/Dポイントと残りポイントの合計が66を超える入力は検索できません。
 - 非HPは性格補正前にステータスポイントを加算し、HPは最終値に加算します。公式の詳細式が確認できたら `app.js` の計算関数だけ差し替えます。
-- PokéAPIからの本格データ取得は `scripts/fetch-pokeapi-data.mjs` を拡張して対応します。
-
-## PokéAPIデータの取得
-
-Windowsでは、まず以下を実行します。
-
-```bat
-update-data.bat
-```
-
-全ポケモン・全技を取得したい場合はこちらを実行します。
-
-```bat
-update-all-data.bat
-```
-
-全件取得はPokéAPIへのリクエスト数が多いため、数分かかることがあります。
-
-ネットワークが使える環境で以下を実行します。
-
-```bash
-node scripts/fetch-pokeapi-data.mjs
-```
-
-全件取得:
-
-```bash
-node scripts/fetch-pokeapi-data.mjs --all
-```
-
-通常実行はサンプル対象だけを取得します。全件取得では、各ポケモンの覚える技から技ごとの使用者リストを逆引き生成し、威力のある物理/特殊技だけを `moves.json` に出力します。
 
 ## チャンピオンズ使用可否の絞り込み
 
-`data/champions-availability.json` で管理します。
+`pokemon.json` と `moves.json` の各項目にある `championsTarget` で管理します。
 
 ```json
 {
-  "restrictPokemon": true,
-  "pokemon": ["pikachu", "garchomp", "gholdengo"],
-  "restrictMoves": false,
-  "moves": []
+  "id": "garchomp",
+  "championsTarget": true
 }
 ```
 
-`restrictPokemon` を `true` にすると、画面の「確認済みポケモンのみ」で `pokemon` に入れたPokéAPI IDだけを表示・検索します。公式リストが増えたらこのJSONだけ更新します。`restrictMoves` が `false` の間は、技のチャンピオンズでの使用可否を検証せず、全技を検索します。公式の技リストを反映する場合は、`restrictMoves` を `true` にして `moves` を更新してください。
+`true` の項目が通常の検索対象になり、「全データ」を選ぶと対象外の項目も含めて検索します。
 
 ## ライセンスと注意
 

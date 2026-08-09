@@ -1,0 +1,74 @@
+{
+  "defender": {
+    "multiscale": {
+      "inputKey": "multiscaleEnabled",
+      "pokemonIds": [
+        "dragonite",
+        "dragonite-mega"
+      ],
+      "stage": "damage",
+      "modifier": 0.5
+    },
+    "thickFat": {
+      "inputKey": "thickFatEnabled",
+      "pokemonIds": [
+        "venusaur-mega",
+        "azumarill",
+        "snorlax",
+        "mamoswine",
+        "appletun"
+      ],
+      "moveTypes": [
+        "fire",
+        "ice"
+      ],
+      "stage": "power",
+      "modifier": 0.5
+    },
+    "heatproof": {
+      "inputKey": "heatproofEnabled",
+      "pokemonIds": [
+        "sinistcha"
+      ],
+      "moveTypes": [
+        "fire"
+      ],
+      "stage": "power",
+      "modifier": 0.5
+    },
+    "drySkin": {
+      "inputKey": "drySkinEnabled",
+      "pokemonIds": [
+        "toxicroak",
+        "heliolisk"
+      ],
+      "moveTypes": [
+        "fire"
+      ],
+      "stage": "power",
+      "modifier": 1.25
+    },
+    "filter": {
+      "inputKey": "filterEnabled",
+      "pokemonIds": [
+        "aggron-mega"
+      ],
+      "stage": "damage",
+      "superEffectiveOnly": true,
+      "modifier": 0.75
+    },
+    "hardRock": {
+      "inputKey": "hardRockEnabled",
+      "pokemonIds": [
+        "camerupt",
+        "rhyperior",
+        "tirtouga",
+        "carracosta"
+      ],
+      "stage": "damage",
+      "superEffectiveOnly": true,
+      "modifier": 0.75
+    }
+  },
+  "attacker": {}
+}

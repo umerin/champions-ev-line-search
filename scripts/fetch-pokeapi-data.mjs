@@ -99,9 +99,13 @@ async function fetchPokemon(id) {
   const species = await getJson(pokemon.species.url);
   const finalSpecies = await getFinalSpecies(species.evolution_chain.url);
   const stats = Object.fromEntries(pokemon.stats.map((entry) => [entry.stat.name, entry.base_stat]));
+  const name = localizedName(species, pokemon.name);
   return {
     id: pokemon.name,
-    name: localizedName(species, pokemon.name),
+    dexNumber: species.id,
+    displayName: name.ja,
+    name,
+    championsTarget: false,
     types: pokemon.types
       .sort((a, b) => a.slot - b.slot)
       .map((entry) => entry.type.name),
@@ -118,7 +122,7 @@ async function fetchPokemon(id) {
   };
 }
 
-async function fetchMove(id, usersByMove) {
+async function fetchMove(id) {
   const move = await getJson(`${api}/move/${id}`);
   if (!["physical", "special"].includes(move.damage_class.name)) return null;
   if (!move.power) return null;
@@ -126,12 +130,12 @@ async function fetchMove(id, usersByMove) {
   return {
     id: move.name,
     name: localizedName(move, move.name),
+    championsTarget: false,
     type: move.type.name,
     category: move.damage_class.name,
     power: move.power,
     priority: move.priority,
     isSpreadMove: spreadTargets.has(move.target.name),
-    users: usersByMove.get(move.name) ?? [],
   };
 }
 
@@ -163,17 +167,23 @@ async function main() {
   const usersByMove = allMode ? buildUsersByMove(pokemonWithMoves) : new Map(Object.entries(sampleMoveUsers));
 
   console.log("技データ取得中...");
-  const rawMoves = await mapLimit(moveIds, concurrency, (id) => fetchMove(id, usersByMove));
+  const rawMoves = await mapLimit(moveIds, concurrency, fetchMove);
   const moves = rawMoves
     .filter(Boolean)
-    .filter((move) => move.users.length > 0)
+    .filter((move) => usersByMove.has(move.id))
     .sort((a, b) => a.id.localeCompare(b.id));
+  const includedMoveIds = new Set(moves.map((move) => move.id));
+  const learnsets = Object.fromEntries(pokemonWithMoves.map((entry) => [
+    entry.id,
+    entry.moveIds.filter((moveId) => includedMoveIds.has(moveId)).sort((a, b) => a.localeCompare(b)),
+  ]));
   const pokemon = stripInternalPokemonFields(pokemonWithMoves)
     .sort((a, b) => a.id.localeCompare(b.id));
 
   await writeFile(resolve(outDir, "pokemon.json"), `${JSON.stringify(pokemon, null, 2)}\n`);
   await writeFile(resolve(outDir, "moves.json"), `${JSON.stringify(moves, null, 2)}\n`);
-  console.log(`wrote ${pokemon.length} pokemon and ${moves.length} damaging moves`);
+  await writeFile(resolve(outDir, "learnsets.json"), `${JSON.stringify(learnsets, null, 2)}\n`);
+  console.log(`wrote ${pokemon.length} pokemon, ${moves.length} damaging moves, and their learnsets`);
 }
 
 main().catch((error) => {

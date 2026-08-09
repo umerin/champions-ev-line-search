@@ -1,21 +1,14 @@
 const paths = {
-  pokemon: "./data/pokemon.json?v=20260808-1",
-  moves: "./data/moves.json",
+  pokemon: "./data/pokemon.json?v=20260809-1",
+  moves: "./data/moves.json?v=20260809-1",
+  learnsets: "./data/learnsets.json?v=20260809-1",
+  battleEffects: "./data/battle-effects.json?v=20260809-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  availability: "./data/champions-availability.json?v=20260803-4",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
-const MULTISCALE_POKEMON_IDS = new Set(["dragonite", "dragonite-mega"]);
-const THICK_FAT_POKEMON_IDS = new Set(["venusaur-mega", "azumarill", "snorlax", "mamoswine", "appletun"]);
-const THICK_FAT_MOVE_TYPES = new Set(["fire", "ice"]);
-const HEATPROOF_POKEMON_IDS = new Set(["sinistcha"]);
-const DRY_SKIN_POKEMON_IDS = new Set(["toxicroak", "heliolisk"]);
-const FILTER_POKEMON_IDS = new Set(["aggron-mega"]);
-const HARD_ROCK_POKEMON_IDS = new Set(["camerupt", "rhyperior", "tirtouga", "carracosta"]);
-const SUNNY_FIRE_ATTACKER_IDS = new Set(["charizard-mega-y", "ninetales", "torkoal"]);
 const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
 const UNLIMITED_RESULT_LIMIT = Infinity;
 const DEFAULT_RESULT_LIMIT = 80;
@@ -26,6 +19,7 @@ const state = {
   typeChart: {},
   rules: null,
   availability: null,
+  battleEffects: { defender: {}, attacker: {} },
   moveExclusions: createMoveExclusionState(),
   pokemonExclusions: createPokemonExclusionState(),
   bulkSettings: createBulkSettingsState(),
@@ -270,17 +264,43 @@ async function loadOptionalJson(path, fallback) {
   return response.json();
 }
 
+function buildRuntimeMoves(pokemon, moves, learnsets) {
+  const pokemonIds = new Set(pokemon.map((entry) => entry.id));
+  const usersByMove = new Map(moves.map((move) => [move.id, []]));
+  for (const [pokemonId, moveIds] of Object.entries(learnsets)) {
+    if (!pokemonIds.has(pokemonId)) throw new Error(`learnsets.json: 未知のポケモンID ${pokemonId}`);
+    for (const moveId of moveIds) {
+      const users = usersByMove.get(moveId);
+      if (!users) throw new Error(`learnsets.json: 未知の技ID ${moveId}`);
+      users.push(pokemonId);
+    }
+  }
+  return moves.map((move) => ({ ...move, users: usersByMove.get(move.id) ?? [] }));
+}
+
+function buildAvailability(pokemon, moves) {
+  return {
+    restrictPokemon: true,
+    pokemon: pokemon.filter((entry) => entry.championsTarget).map((entry) => entry.id),
+    restrictMoves: true,
+    moves: moves.filter((entry) => entry.championsTarget).map((entry) => entry.id),
+  };
+}
+
 async function init() {
   try {
-    const [pokemon, moves, typeChart, rules, availability, recommendedPresets] = await Promise.all([
+    const [pokemon, moveSource, learnsets, battleEffects, typeChart, rules, recommendedPresets] = await Promise.all([
       loadJson(paths.pokemon),
       loadJson(paths.moves),
+      loadJson(paths.learnsets),
+      loadJson(paths.battleEffects),
       loadJson(paths.typeChart),
       loadJson(paths.rules),
-      loadOptionalJson(paths.availability, defaultAvailability()),
       loadOptionalJson(paths.recommendedPresets, { presets: [] }),
     ]);
-    Object.assign(state, { pokemon, moves, typeChart, rules, availability });
+    const moves = buildRuntimeMoves(pokemon, moveSource, learnsets);
+    const availability = buildAvailability(pokemon, moveSource);
+    Object.assign(state, { pokemon, moves, battleEffects, typeChart, rules, availability });
     state.builtInRecommendedMoveSettingsPresets = normalizeBuiltInRecommendedMoveSettingsPresets(recommendedPresets);
     buildPokemonFormMetadata();
     state.moveExclusions = loadMoveExclusions();
@@ -2013,8 +2033,25 @@ function updateMegaToggle(pokemon) {
   els.megaToggle.title = family.length < 2 ? "メガシンカ形態はありません" : "メガシンカ形態を切り替え";
 }
 
+function getBattleEffect(scope, key) {
+  return state.battleEffects?.[scope]?.[key] ?? null;
+}
+
+function isBattleEffectPokemon(scope, key, pokemonId) {
+  return getBattleEffect(scope, key)?.pokemonIds?.includes(pokemonId) ?? false;
+}
+
+function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1) {
+  return Object.values(state.battleEffects?.[scope] ?? {}).filter((effect) => {
+    if (!effect.pokemonIds?.includes(pokemonId)) return false;
+    if (effect.moveTypes?.length && !effect.moveTypes.includes(moveType)) return false;
+    if (effect.superEffectiveOnly && effectiveness <= 1) return false;
+    return true;
+  });
+}
+
 function updateMultiscaleOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && MULTISCALE_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "multiscale", pokemon.id));
   const wasVisible = !els.multiscaleOption.hidden;
   els.multiscaleOption.hidden = !isSupported;
   if (!isSupported) els.multiscaleEnabled.checked = false;
@@ -2022,7 +2059,7 @@ function updateMultiscaleOption(pokemon = getPokemonPool().find((item) => item.i
 }
 
 function updateThickFatOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && THICK_FAT_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "thickFat", pokemon.id));
   const wasVisible = !els.thickFatOption.hidden;
   els.thickFatOption.hidden = !isSupported;
   if (!isSupported) els.thickFatEnabled.checked = false;
@@ -2030,7 +2067,7 @@ function updateThickFatOption(pokemon = getPokemonPool().find((item) => item.id 
 }
 
 function updateHeatproofOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && HEATPROOF_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "heatproof", pokemon.id));
   const wasVisible = !els.heatproofOption.hidden;
   els.heatproofOption.hidden = !isSupported;
   if (!isSupported) els.heatproofEnabled.checked = false;
@@ -2038,7 +2075,7 @@ function updateHeatproofOption(pokemon = getPokemonPool().find((item) => item.id
 }
 
 function updateDrySkinOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && DRY_SKIN_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "drySkin", pokemon.id));
   const wasVisible = !els.drySkinOption.hidden;
   els.drySkinOption.hidden = !isSupported;
   if (!isSupported) els.drySkinEnabled.checked = false;
@@ -2046,7 +2083,7 @@ function updateDrySkinOption(pokemon = getPokemonPool().find((item) => item.id =
 }
 
 function updateFilterOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && FILTER_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "filter", pokemon.id));
   const wasVisible = !els.filterOption.hidden;
   els.filterOption.hidden = !isSupported;
   if (!isSupported) els.filterEnabled.checked = false;
@@ -2054,7 +2091,7 @@ function updateFilterOption(pokemon = getPokemonPool().find((item) => item.id ==
 }
 
 function updateHardRockOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
-  const isSupported = Boolean(pokemon && HARD_ROCK_POKEMON_IDS.has(pokemon.id));
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "hardRock", pokemon.id));
   const wasVisible = !els.hardRockOption.hidden;
   els.hardRockOption.hidden = !isSupported;
   if (!isSupported) els.hardRockEnabled.checked = false;
@@ -2471,9 +2508,10 @@ function getMoveSortName(move) {
 
 function getResultMoveName(attacker, move) {
   const name = move.name?.ja ?? move.name?.en ?? move.id;
-  return SUNNY_FIRE_ATTACKER_IDS.has(attacker.id) && move.type === "fire"
-    ? `${name}(晴)`
-    : name;
+  const suffix = getMatchingBattleEffects("attacker", attacker.id, move.type)
+    .map((effect) => effect.resultSuffix ?? "")
+    .join("");
+  return `${name}${suffix}`;
 }
 
 function compareJapaneseSortText(a, b) {
@@ -2653,15 +2691,6 @@ function validatePointAllocation(input) {
   return null;
 }
 
-function defaultAvailability() {
-  return {
-    restrictPokemon: false,
-    pokemon: [],
-    restrictMoves: false,
-    moves: [],
-  };
-}
-
 function useChampionsFilter() {
   return els.availabilityMode.value === "final" || els.availabilityMode.value === "champions";
 }
@@ -2821,19 +2850,9 @@ function calcHpStat(baseStat, statPoints) {
 }
 
 function getDefenderPowerModifier(defender, input, moveType) {
-  let modifier = 1;
-  if (
-    input.thickFatEnabled
-    && THICK_FAT_POKEMON_IDS.has(defender.id)
-    && THICK_FAT_MOVE_TYPES.has(moveType)
-  ) modifier *= 0.5;
-  if (input.heatproofEnabled && HEATPROOF_POKEMON_IDS.has(defender.id) && moveType === "fire") {
-    modifier *= 0.5;
-  }
-  if (input.drySkinEnabled && DRY_SKIN_POKEMON_IDS.has(defender.id) && moveType === "fire") {
-    modifier *= 1.25;
-  }
-  return modifier;
+  return getMatchingBattleEffects("defender", defender.id, moveType)
+    .filter((effect) => effect.stage === "power" && (!effect.inputKey || input[effect.inputKey]))
+    .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
 function getAdjustedMovePower(defender, input, move) {
@@ -2841,16 +2860,15 @@ function getAdjustedMovePower(defender, input, move) {
 }
 
 function getAttackerDamageModifier(attacker, move) {
-  if (SUNNY_FIRE_ATTACKER_IDS.has(attacker.id) && move.type === "fire") return 1.5;
-  return 1;
+  return getMatchingBattleEffects("attacker", attacker.id, move.type)
+    .filter((effect) => effect.stage === "damage")
+    .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
 function getDefenderDamageModifier(defender, input, effectiveness) {
-  let modifier = 1;
-  if (input.multiscaleEnabled && MULTISCALE_POKEMON_IDS.has(defender.id)) modifier *= 0.5;
-  if (input.filterEnabled && FILTER_POKEMON_IDS.has(defender.id) && effectiveness > 1) modifier *= 0.75;
-  if (input.hardRockEnabled && HARD_ROCK_POKEMON_IDS.has(defender.id) && effectiveness > 1) modifier *= 0.75;
-  return modifier;
+  return getMatchingBattleEffects("defender", defender.id, null, effectiveness)
+    .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]))
+    .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
 function calcDamageResult(damageInput, hp) {
