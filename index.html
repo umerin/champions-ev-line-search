@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260809-5" />
+    <link rel="stylesheet" href="./styles.css?v=20260809-7" />
   </head>
   <body>
     <main class="app-shell">
@@ -382,12 +382,15 @@
               <button type="button" class="move-settings-mode-tab" data-move-settings-view="bulk" role="tab" aria-selected="false" aria-controls="moveSettingsBulkPanel">一括設定</button>
             </div>
             <div class="move-settings-preset-bar" aria-label="個別設定プリセット">
-              <label class="move-settings-preset-field">
-                <span>プリセット <small id="moveSettingsPresetCount">0/5</small></span>
-                <select id="moveSettingsPresetSelect">
-                  <option value="">プリセットを選択</option>
-                </select>
-              </label>
+              <div class="move-settings-preset-selection">
+                <label class="move-settings-preset-field">
+                  <span>プリセット <small id="moveSettingsPresetCount">0/5</small></span>
+                  <select id="moveSettingsPresetSelect">
+                    <option value="">プリセットを選択</option>
+                  </select>
+                </label>
+                <button id="moveSettingsPresetLoad" type="button" class="secondary-button move-settings-preset-load" disabled>呼び出す</button>
+              </div>
               <label class="move-settings-preset-field">
                 <span>保存名</span>
                 <input id="moveSettingsPresetName" type="text" maxlength="40" placeholder="例：ダブル用" />
@@ -395,10 +398,9 @@
               <div class="move-settings-preset-actions">
                 <div class="move-settings-preset-actions-primary">
                   <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
-                  <button id="moveSettingsPresetLoad" type="button" class="secondary-button" disabled>呼び出す</button>
-                  <button id="moveSettingsPresetEdit" type="button" class="secondary-button move-settings-preset-action-separated" disabled>編集モード</button>
-                  <button id="moveSettingsPresetEditDone" type="button" class="secondary-button move-settings-preset-action-separated" hidden>編集終了</button>
-                  <button id="moveSettingsPresetDelete" type="button" class="secondary-button move-settings-preset-action-separated" disabled>削除</button>
+                  <button id="moveSettingsPresetEdit" type="button" class="secondary-button" disabled>編集モード</button>
+                  <button id="moveSettingsPresetEditDone" type="button" class="secondary-button" hidden>編集終了</button>
+                  <button id="moveSettingsPresetDelete" type="button" class="secondary-button" disabled>削除</button>
                 </div>
                 <div class="move-settings-preset-actions-recommended">
                   <button id="moveSettingsRecommendedPresetCreate" type="button" class="secondary-button recommended-preset-button">おすすめ作成を開始</button>
