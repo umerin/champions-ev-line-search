@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260809-8" />
+    <link rel="stylesheet" href="./styles.css?v=20260809-10" />
   </head>
   <body>
     <main class="app-shell">
@@ -348,19 +348,19 @@
 
           <div class="table-wrap">
             <table>
-              <thead>
+              <thead class="result-group-table-header">
                 <tr>
-                  <th class="result-line">1発KO率</th>
-                  <th class="result-allocation">配分</th>
-                  <th class="result-attacker">相手</th>
-                  <th class="result-attack">実数値</th>
-                  <th class="result-nature">補正</th>
-                  <th class="result-move">技</th>
-                  <th class="result-power">技威力</th>
-                  <th class="result-current">現在ダメージ</th>
-                  <th class="result-after">配分後</th>
-                  <th class="result-diff">最大変化</th>
-                  <th class="result-category">分類</th>
+                  <th colspan="11" class="result-group-header-cell">
+                    <div class="result-group-header-grid">
+                      <span aria-hidden="true"></span>
+                      <span>相手</span>
+                      <span>技</span>
+                      <span>技威力</span>
+                      <span>1発KO率</span>
+                      <span>最大変化</span>
+                      <span>詳細</span>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody id="resultsBody"></tbody>
@@ -564,6 +564,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260809-8"></script>
+    <script type="module" src="./app.js?v=20260809-9"></script>
   </body>
 </html>

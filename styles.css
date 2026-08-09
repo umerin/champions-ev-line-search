@@ -1510,11 +1510,12 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
 .table-wrap {
   overflow: auto;
   border-top: 1px solid var(--line);
+  container-type: inline-size;
 }
 
 table {
-  width: 1025px;
-  min-width: 1025px;
+  width: 100%;
+  min-width: 0;
   table-layout: fixed;
   border-collapse: collapse;
 }
@@ -1573,14 +1574,28 @@ tbody tr[hidden] {
   background: #edf7f5;
 }
 
+.result-group-header-cell {
+  padding: 0;
+}
+
+.result-group-header-grid,
 .result-group-toggle {
   display: grid;
-  grid-template-columns: 40px 210px 120px 80px 200px 90px 90px;
+  grid-template-columns: 28px minmax(160px, 1.35fr) minmax(110px, 1fr) 62px minmax(130px, 1.1fr) 72px 72px;
   width: 100%;
-  min-height: 48px;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   padding: 10px 12px;
+}
+
+.result-group-header-grid {
+  min-height: 40px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.result-group-toggle {
+  min-height: 48px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -1609,8 +1624,8 @@ tbody tr[hidden] {
 }
 
 .result-group-attacker {
-  overflow-wrap: normal;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .result-group-power,
@@ -1629,13 +1644,126 @@ tbody tr[hidden] {
   font-weight: 800;
 }
 
+.result-group-power,
+.result-group-representative,
+.result-group-diff {
+  white-space: nowrap;
+}
+
 .result-group-count {
   margin-left: 0;
   white-space: nowrap;
 }
 
-.result-detail-row td {
+.result-detail-panel-cell {
+  padding: 14px 16px;
+  background: #f8fbfc;
+}
+
+.result-detail-table {
+  position: sticky;
+  left: 16px;
+  overflow: hidden;
+  width: min(calc(100% - 32px), calc(100cqw - 32px));
+  border: 1px solid var(--line);
+  border-radius: 10px;
   background: #fff;
+}
+
+.result-detail-grid {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1.45fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 12px 18px;
+  white-space: nowrap;
+}
+
+.result-detail-header {
+  padding-block: 10px;
+  background: #f6f9fb;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.result-detail-item {
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+.result-detail-item.is-alternate {
+  background: #f7fbfa;
+}
+
+.result-detail-ko,
+.result-detail-allocation,
+.result-detail-attack strong,
+.result-detail-current,
+.result-detail-after,
+.result-detail-diff {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+}
+
+.result-detail-ko {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.result-detail-allocation {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.result-detail-attack,
+.result-detail-damage {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.result-detail-attack {
+  gap: 12px;
+}
+
+.result-detail-attack strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.result-detail-attack span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.result-detail-damage {
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.result-detail-arrow {
+  color: var(--muted);
+}
+
+.result-detail-after {
+  color: var(--accent-strong);
+}
+
+.result-detail-diff {
+  min-width: 46px;
+  margin-left: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.result-detail-diff.diff-neutral {
+  background: #f1f5f9;
 }
 
 tbody td.result-line {
@@ -2176,6 +2304,91 @@ tbody tr:hover {
 
   .result-group-count {
     margin-left: 0;
+  }
+
+  tbody tr.result-detail-panel-row {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: 0 8px 22px rgba(21, 31, 45, 0.05);
+  }
+
+  tbody tr.result-detail-panel-row[hidden] {
+    display: none;
+  }
+
+  tbody tr.result-detail-panel-row > td.result-detail-panel-cell {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  tbody tr.result-detail-panel-row > td.result-detail-panel-cell::before {
+    display: none;
+  }
+
+  .result-detail-table {
+    position: static;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .result-detail-header {
+    display: none;
+  }
+
+  .result-detail-item {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "detail-ko detail-allocation"
+      "detail-attack detail-damage";
+    gap: 12px;
+    padding: 12px;
+    white-space: normal;
+  }
+
+  .result-detail-item > span {
+    min-width: 0;
+  }
+
+  .result-detail-item > span::before {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .result-detail-ko { grid-area: detail-ko; }
+  .result-detail-ko::before { content: "1発KO率"; }
+  .result-detail-allocation { grid-area: detail-allocation; text-align: right; }
+  .result-detail-allocation::before { content: "配分"; }
+  .result-detail-attack { grid-area: detail-attack; }
+  .result-detail-attack::before { content: "攻撃条件"; }
+  .result-detail-damage { grid-area: detail-damage; text-align: right; }
+  .result-detail-damage::before { content: "ダメージ"; }
+
+  .result-detail-attack,
+  .result-detail-damage {
+    display: block;
+  }
+
+  .result-detail-attack strong,
+  .result-detail-attack span,
+  .result-detail-damage > span {
+    display: inline-block;
+  }
+
+  .result-detail-attack span {
+    margin-left: 8px;
+  }
+
+  .result-detail-diff {
+    margin-left: 6px;
   }
 
   td {

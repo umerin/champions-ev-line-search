@@ -3196,7 +3196,7 @@ function renderResults(rows, candidateCount) {
       button.setAttribute("aria-expanded", String(!isExpanded));
       const icon = button.querySelector(".result-group-chevron");
       if (icon) icon.textContent = isExpanded ? "＋" : "−";
-      els.resultsBody.querySelectorAll(`[data-result-group="${groupIndex}"]`).forEach((detailRow) => {
+      els.resultsBody.querySelectorAll(`.result-detail-panel-row[data-result-group="${groupIndex}"]`).forEach((detailRow) => {
         detailRow.hidden = isExpanded;
       });
     });
@@ -3239,27 +3239,42 @@ function renderResultGroup(group, groupIndex) {
         </button>
       </td>
     </tr>
-    ${group.rows.map((row) => renderResultDetailRow(row, groupIndex)).join("")}
+    ${renderResultDetailPanel(group, groupIndex)}
   `;
 }
 
-function renderResultDetailRow(row, groupIndex) {
+function renderResultDetailPanel(group, groupIndex) {
+  const representative = group.rows[0];
+  const detailLabel = `${getResultAttackerName(representative.attacker, representative.move)} ${getResultMoveName(representative.attacker, representative.move)}の詳細`;
+  return `
+    <tr class="result-detail-panel-row" data-result-group="${groupIndex}" hidden>
+      <td colspan="11" class="result-detail-panel-cell">
+        <div class="result-detail-table" role="table" aria-label="${escapeHtml(detailLabel)}">
+          <div class="result-detail-grid result-detail-header" role="row">
+            <span role="columnheader">1発KO率</span>
+            <span role="columnheader">配分</span>
+            <span role="columnheader">攻撃条件</span>
+            <span role="columnheader">ダメージ</span>
+          </div>
+          ${group.rows.map((row, detailIndex) => renderResultDetailRow(row, detailIndex)).join("")}
+        </div>
+      </td>
+    </tr>
+  `;
+}
+
+function renderResultDetailRow(row, detailIndex) {
   const lineClass = row.afterKoRate < row.currentKoRate ? "line-good" : "";
   const diffClass = getResultDiffClass(row.diff);
+  const attackLabel = row.move.category === "physical" ? "A" : "C";
+  const natureLabel = row.attackerNature === "boost" ? "有" : "無";
   return `
-    <tr class="result-detail-row" data-result-group="${groupIndex}" hidden>
-      <td class="result-line ${lineClass}">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</td>
-      <td class="result-allocation">${formatCandidate(row.candidate)}</td>
-      <td class="result-attacker">${escapeHtml(getResultAttackerName(row.attacker, row.move))}</td>
-      <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
-      <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
-      <td class="result-move">${escapeHtml(getResultMoveName(row.attacker, row.move))}</td>
-      <td class="result-power">${row.move.power}</td>
-      <td class="result-current">${row.currentDamage}</td>
-      <td class="result-after">${row.afterDamage}</td>
-      <td class="result-diff ${diffClass}">${formatResultDiff(row.diff)}</td>
-      <td class="result-category">${jpCategory[row.move.category]}</td>
-    </tr>
+    <div class="result-detail-grid result-detail-item${detailIndex % 2 ? " is-alternate" : ""}" role="row">
+      <span class="result-detail-ko ${lineClass}" role="cell">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</span>
+      <span class="result-detail-allocation" role="cell">${formatCandidate(row.candidate)}</span>
+      <span class="result-detail-attack" role="cell"><strong>${attackLabel}${row.attackStat}（${row.attackerPoints}）</strong><span>補正 ${natureLabel}</span></span>
+      <span class="result-detail-damage" role="cell"><span class="result-detail-current">${row.currentDamage}</span><span class="result-detail-arrow" aria-hidden="true">→</span><strong class="result-detail-after">${row.afterDamage}</strong><span class="result-detail-diff ${diffClass}">${formatResultDiff(row.diff)}</span></span>
+    </div>
   `;
 }
 
