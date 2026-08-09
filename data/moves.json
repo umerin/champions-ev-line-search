@@ -175,7 +175,8 @@
       "ekans",
       "naganadel",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "victreebel-mega"
     ]
   },
   {
@@ -538,7 +539,8 @@
       "archeops",
       "staraptor-mega",
       "eelektross-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "zeraora-mega"
     ]
   },
   {
@@ -983,7 +985,14 @@
       "archeops",
       "staraptor-mega",
       "malamar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -1153,7 +1162,13 @@
       "corvisquire",
       "corviknight",
       "naganadel",
-      "staraptor-mega"
+      "staraptor-mega",
+      "salamence-mega",
+      "latias-mega",
+      "latios-mega",
+      "aerodactyl-mega",
+      "altaria-mega",
+      "pidgeot-mega"
     ]
   },
   {
@@ -1345,7 +1360,11 @@
       "corviknight",
       "naganadel",
       "archeops",
-      "staraptor-mega"
+      "staraptor-mega",
+      "salamence-mega",
+      "latias-mega",
+      "latios-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -1437,7 +1456,8 @@
       "ribombee",
       "primarina",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "latias-mega"
     ]
   },
   {
@@ -1668,7 +1688,11 @@
       "armaldo",
       "archen",
       "archeops",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "heatran-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -1997,7 +2021,8 @@
       "archeops",
       "scolipede-mega",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "garchomp-mega-z"
     ]
   },
   {
@@ -2022,7 +2047,8 @@
       "iron-hands",
       "pignite",
       "pangoro",
-      "emboar"
+      "emboar",
+      "emboar-mega"
     ]
   },
   {
@@ -2281,7 +2307,13 @@
       "scolipede-mega",
       "scrafty-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zeraora-mega",
+      "golisopod-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "absol-mega-z",
+      "mawile-mega"
     ]
   },
   {
@@ -2458,7 +2490,13 @@
       "wyrdeer",
       "brambleghast",
       "bramblin",
-      "flapple"
+      "flapple",
+      "chandelure-mega",
+      "gengar-mega",
+      "golurk-mega",
+      "glalie-mega",
+      "froslass-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -2566,7 +2604,14 @@
       "urshifu-single-strike",
       "palafin-hero",
       "palafin-zero",
-      "arceus"
+      "arceus",
+      "zeraora-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "latias-mega",
+      "latios-mega",
+      "blaziken-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -2629,7 +2674,9 @@
       "omanyte",
       "octillery",
       "aurorus",
-      "amaura"
+      "amaura",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -2775,7 +2822,12 @@
       "arceus",
       "cetoddle",
       "aurorus",
-      "amaura"
+      "amaura",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "baxcalibur-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -3038,7 +3090,11 @@
       "arbok",
       "ekans",
       "eelektross-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "victreebel-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -3332,7 +3388,13 @@
       "durant",
       "arbok",
       "ekans",
-      "archen"
+      "archen",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "swampert-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -3432,7 +3494,11 @@
       "infernape",
       "genesect",
       "incineroar",
-      "cinderace"
+      "cinderace",
+      "zeraora-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "lucario-mega-z"
     ]
   },
   {
@@ -3786,7 +3852,11 @@
       "seaking",
       "primarina",
       "popplio",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "baxcalibur-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -4029,7 +4099,12 @@
       "guzzlord",
       "corviknight",
       "eelektross-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "baxcalibur-mega",
+      "diancie-mega",
+      "heatran-mega",
+      "metagross-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -4764,7 +4839,28 @@
       "scrafty-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "diancie-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "lucario-mega-z",
+      "absol-mega-z",
+      "banette-mega",
+      "mawile-mega"
     ]
   },
   {
@@ -4834,7 +4930,8 @@
       "marowak-totem",
       "marowak-alola",
       "marowak",
-      "cubone"
+      "cubone",
+      "lucario-mega-z"
     ]
   },
   {
@@ -5046,7 +5143,9 @@
       "archeops",
       "eelektross-mega",
       "pyroar-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zeraora-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -5291,7 +5390,15 @@
       "onix",
       "croconaw",
       "arbok",
-      "naganadel"
+      "naganadel",
+      "rayquaza-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "salamence-mega",
+      "latias-mega",
+      "latios-mega",
+      "sceptile-mega"
     ]
   },
   {
@@ -5763,7 +5870,16 @@
       "scrafty-mega",
       "eelektross-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -5891,7 +6007,12 @@
       "anorith",
       "primarina",
       "popplio",
-      "armaldo"
+      "armaldo",
+      "gyarados-mega",
+      "blastoise-mega",
+      "starmie-mega",
+      "slowbro-mega",
+      "sharpedo-mega"
     ]
   },
   {
@@ -6109,7 +6230,12 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "malamar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "metagross-mega",
+      "absol-mega-z",
+      "mawile-mega"
     ]
   },
   {
@@ -6189,7 +6315,9 @@
       "clauncher",
       "masquerain",
       "surskit",
-      "dragalge-mega"
+      "dragalge-mega",
+      "greninja-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -6310,7 +6438,16 @@
       "surskit",
       "seaking",
       "primarina",
-      "popplio"
+      "popplio",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "gyarados-mega",
+      "starmie-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -6440,7 +6577,9 @@
       "accelgor",
       "durant",
       "armaldo",
-      "scolipede-mega"
+      "scolipede-mega",
+      "heatran-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -6535,7 +6674,8 @@
       "ribombee",
       "cutiefly",
       "beautifly",
-      "accelgor"
+      "accelgor",
+      "golisopod-mega"
     ]
   },
   {
@@ -7008,7 +7148,13 @@
       "scolipede-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "diancie-mega",
+      "heatran-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -7044,7 +7190,8 @@
       "hitmontop",
       "machamp",
       "hitmonchan",
-      "meditite"
+      "meditite",
+      "lucario-mega-z"
     ]
   },
   {
@@ -7223,7 +7370,8 @@
       "tsareena",
       "brambleghast",
       "bramblin",
-      "flapple"
+      "flapple",
+      "sceptile-mega"
     ]
   },
   {
@@ -7340,7 +7488,8 @@
       "salazzle",
       "cinderace",
       "chi-yu",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -7661,7 +7810,11 @@
       "azelf",
       "raichu-mega-x",
       "raichu-mega-y",
-      "eelektross-mega"
+      "eelektross-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -7941,7 +8094,15 @@
       "aurorus",
       "primarina",
       "popplio",
-      "dragalge-mega"
+      "dragalge-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -8000,7 +8161,8 @@
       "snorlax",
       "feraligatr",
       "croconaw",
-      "scrafty-mega"
+      "scrafty-mega",
+      "feraligatr-mega"
     ]
   },
   {
@@ -8049,7 +8211,8 @@
       "pangoro",
       "whismur",
       "kangaskhan",
-      "pinsir"
+      "pinsir",
+      "lucario-mega-z"
     ]
   },
   {
@@ -8327,7 +8490,12 @@
       "staraptor-mega",
       "scrafty-mega",
       "eelektross-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zeraora-mega",
+      "golisopod-mega",
+      "blaziken-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -8533,7 +8701,12 @@
       "arceus",
       "wyrdeer",
       "meditite",
-      "azelf"
+      "azelf",
+      "latias-mega",
+      "latios-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -8585,7 +8758,8 @@
       "zygarde-50",
       "zygarde-50-power-construct",
       "zygarde-10",
-      "zygarde-10-power-construct"
+      "zygarde-10-power-construct",
+      "zygarde-mega"
     ]
   },
   {
@@ -8854,7 +9028,11 @@
       "primarina",
       "popplio",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "floette-mega",
+      "delphox-mega",
+      "emboar-mega",
+      "clefable-mega"
     ]
   },
   {
@@ -8921,7 +9099,8 @@
       "electabuzz",
       "electivire",
       "elekid",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -8975,7 +9154,9 @@
       "anorith",
       "armaldo",
       "naganadel",
-      "scolipede-mega"
+      "scolipede-mega",
+      "sceptile-mega",
+      "scizor-mega"
     ]
   },
   {
@@ -9291,7 +9472,13 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega",
+      "sceptile-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -9338,7 +9525,8 @@
       "anorith",
       "torchic",
       "armaldo",
-      "eelektross-mega"
+      "eelektross-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -9648,7 +9836,22 @@
       "scolipede-mega",
       "eelektross-mega",
       "malamar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "delphox-mega",
+      "feraligatr-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "meganium-mega",
+      "excadrill-mega",
+      "hawlucha-mega",
+      "victreebel-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "skarmory-mega"
     ]
   },
   {
@@ -9911,7 +10114,14 @@
       "naganadel",
       "scrafty-mega",
       "pyroar-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "darkrai-mega",
+      "heatran-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -9946,7 +10156,9 @@
       "machamp",
       "grimmsnarl",
       "electivire",
-      "urshifu-single-strike"
+      "urshifu-single-strike",
+      "swampert-mega",
+      "golurk-mega"
     ]
   },
   {
@@ -10180,7 +10392,9 @@
       "primarina",
       "azelf",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -10719,7 +10933,12 @@
       "scolipede-mega",
       "scrafty-mega",
       "pyroar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -10855,7 +11074,16 @@
       "primarina",
       "popplio",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "magearna-mega",
+      "magearna-original-mega",
+      "latias-mega",
+      "floette-mega",
+      "gallade-mega",
+      "clefable-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -10978,7 +11206,8 @@
       "grubbin",
       "raichu-mega-x",
       "raichu-mega-y",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega"
     ]
   },
   {
@@ -11160,7 +11389,8 @@
       "primarina",
       "popplio",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -11189,7 +11419,8 @@
       "crabominable",
       "kangaskhan",
       "kecleon",
-      "hitmonchan"
+      "hitmonchan",
+      "crabominable-mega"
     ]
   },
   {
@@ -11935,7 +12166,36 @@
       "staraptor-mega",
       "scolipede-mega",
       "scrafty-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "gardevoir-mega",
+      "aerodactyl-mega",
+      "pinsir-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "victreebel-mega",
+      "slowbro-mega",
+      "glalie-mega",
+      "lopunny-mega",
+      "pidgeot-mega",
+      "manectric-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "banette-mega",
+      "medicham-mega",
+      "mawile-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -12125,7 +12385,9 @@
       "gouging-fire",
       "wooloo",
       "eevee-starter",
-      "eevee"
+      "eevee",
+      "sceptile-mega",
+      "lopunny-mega"
     ]
   },
   {
@@ -12197,7 +12459,8 @@
       "steenee",
       "tsareena",
       "primarina",
-      "popplio"
+      "popplio",
+      "clefable-mega"
     ]
   },
   {
@@ -12317,7 +12580,13 @@
       "flapple",
       "guzzlord",
       "naganadel",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -12438,7 +12707,18 @@
       "onix",
       "flapple",
       "archen",
-      "archeops"
+      "archeops",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "tyranitar-mega",
+      "gyarados-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "sceptile-mega",
+      "drampa-mega"
     ]
   },
   {
@@ -12569,7 +12849,9 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -12808,7 +13090,15 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega",
+      "lucario-mega-z",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -12877,7 +13167,8 @@
       "yveltal",
       "flapple",
       "guzzlord",
-      "naganadel"
+      "naganadel",
+      "garchomp-mega-z"
     ]
   },
   {
@@ -13038,7 +13329,12 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "sceptile-mega",
+      "drampa-mega"
     ]
   },
   {
@@ -13241,7 +13537,10 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "scrafty-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -13379,7 +13678,12 @@
       "popplio",
       "azelf",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "diancie-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "latias-mega",
+      "mawile-mega"
     ]
   },
   {
@@ -13619,7 +13923,17 @@
       "cutiefly",
       "absol",
       "meditite",
-      "azelf"
+      "azelf",
+      "darkrai-mega",
+      "delphox-mega",
+      "chandelure-mega",
+      "starmie-mega",
+      "clefable-mega",
+      "froslass-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "chimecho-mega"
     ]
   },
   {
@@ -13729,7 +14043,8 @@
       "bombirdier",
       "skarmory",
       "onix",
-      "seaking"
+      "seaking",
+      "golisopod-mega"
     ]
   },
   {
@@ -13834,7 +14149,14 @@
       "ambipom",
       "guzzlord",
       "scrafty-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "golisopod-mega",
+      "chesnaught-mega",
+      "lucario-mega-z",
+      "hawlucha-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -13992,7 +14314,13 @@
       "naganadel",
       "archen",
       "archeops",
-      "staraptor-mega"
+      "staraptor-mega",
+      "dragonite-mega",
+      "salamence-mega",
+      "latias-mega",
+      "latios-mega",
+      "charizard-mega-x",
+      "charizard-mega-y"
     ]
   },
   {
@@ -14173,7 +14501,27 @@
       "croconaw",
       "meditite",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "tyranitar-mega",
+      "metagross-mega",
+      "swampert-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "aggron-mega",
+      "ampharos-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "mawile-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -14454,7 +14802,14 @@
       "armaldo",
       "archen",
       "archeops",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "sceptile",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "heatran-mega",
+      "sceptile-mega"
     ]
   },
   {
@@ -14863,7 +15218,12 @@
       "archen",
       "archeops",
       "scolipede-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -15151,7 +15511,21 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "staraptor-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "zeraora-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "floette-mega",
+      "delphox-mega",
+      "greninja-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "drampa-mega",
+      "clefable-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "chimecho-mega"
     ]
   },
   {
@@ -15360,7 +15734,10 @@
       "beautifly",
       "raichu-mega-x",
       "raichu-mega-y",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -15464,7 +15841,11 @@
       "chi-yu",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega",
+      "delphox-mega",
+      "emboar-mega",
+      "chandelure-mega"
     ]
   },
   {
@@ -15788,7 +16169,9 @@
       "beautifly",
       "azelf",
       "accelgor",
-      "durant"
+      "durant",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -15972,7 +16355,10 @@
       "wyrdeer",
       "meditite",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "metagross-mega"
     ]
   },
   {
@@ -16112,7 +16498,10 @@
       "onix",
       "geodude-alola",
       "geodude",
-      "azelf"
+      "azelf",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -16237,7 +16626,9 @@
       "entei",
       "arcanine-hisui",
       "arcanine",
-      "arceus"
+      "arceus",
+      "zygarde-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -17515,7 +17906,21 @@
       "malamar-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -17567,7 +17972,9 @@
       "whimsicott",
       "ribombee-totem",
       "ribombee",
-      "cutiefly"
+      "cutiefly",
+      "floette-mega",
+      "clefable-mega"
     ]
   },
   {
@@ -17683,7 +18090,8 @@
       "meditite",
       "raichu-mega-x",
       "raichu-mega-y",
-      "scrafty-mega"
+      "scrafty-mega",
+      "zeraora-mega"
     ]
   },
   {
@@ -17868,7 +18276,21 @@
       "anorith",
       "armaldo",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "blastoise-mega",
+      "golisopod-mega",
+      "greninja-mega",
+      "venusaur-mega",
+      "hawlucha-mega",
+      "altaria-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -17998,7 +18420,10 @@
       "torchic",
       "meditite",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "blaziken-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -18122,7 +18547,10 @@
       "absol",
       "durant",
       "scrafty-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "darkrai-mega",
+      "greninja-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -18469,7 +18897,10 @@
       "azelf",
       "guzzlord",
       "naganadel",
-      "pyroar-mega"
+      "pyroar-mega",
+      "garchomp-mega-z",
+      "heatran-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -18623,7 +19054,9 @@
       "crocalor",
       "arbok",
       "ekans",
-      "pyroar-mega"
+      "pyroar-mega",
+      "garchomp-mega-z",
+      "heatran-mega"
     ]
   },
   {
@@ -18690,7 +19123,9 @@
       "emboar",
       "cinderace",
       "torchic",
-      "crocalor"
+      "crocalor",
+      "delphox-mega",
+      "emboar-mega"
     ]
   },
   {
@@ -18921,7 +19356,8 @@
       "meditite",
       "azelf",
       "scrafty-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega"
     ]
   },
   {
@@ -19054,7 +19490,10 @@
       "chi-yu",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -19083,7 +19522,8 @@
       "lokix",
       "ariados",
       "durant",
-      "falinks-mega"
+      "falinks-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -19144,7 +19584,8 @@
       "growlithe",
       "salazzle-totem",
       "salazzle",
-      "torchic"
+      "torchic",
+      "chandelure-mega"
     ]
   },
   {
@@ -19278,7 +19719,8 @@
       "chi-yu",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -19324,7 +19766,8 @@
       "volcarona",
       "arcanine-hisui",
       "arcanine",
-      "chi-yu"
+      "chi-yu",
+      "camerupt-mega"
     ]
   },
   {
@@ -19616,7 +20059,10 @@
       "naganadel",
       "eelektross-mega",
       "pyroar-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "garchomp-mega-z",
+      "heatran-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -19740,7 +20186,8 @@
       "arceus",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -19937,7 +20384,12 @@
       "durant",
       "armaldo",
       "corviknight",
-      "eelektross-mega"
+      "eelektross-mega",
+      "diancie-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -19953,7 +20405,9 @@
     "isSpreadMove": false,
     "users": [
       "magearna-original",
-      "magearna"
+      "magearna",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -20050,7 +20504,9 @@
       "seaking",
       "primarina",
       "popplio",
-      "dragalge-mega"
+      "dragalge-mega",
+      "latios-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -20581,7 +21037,14 @@
       "scrafty-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -20899,7 +21362,11 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "scrafty-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "metagross-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -20928,7 +21395,9 @@
       "mienfoo",
       "breloom",
       "okidogi",
-      "meditite"
+      "meditite",
+      "lucario-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -21144,7 +21613,9 @@
       "masquerain",
       "absol",
       "scrafty-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "darkrai-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -21318,7 +21789,9 @@
       "araquanid",
       "glalie",
       "aurorus",
-      "amaura"
+      "amaura",
+      "golisopod-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -21392,7 +21865,8 @@
       "seaking",
       "corvisquire",
       "corviknight",
-      "naganadel"
+      "naganadel",
+      "skarmory-mega"
     ]
   },
   {
@@ -21577,7 +22051,37 @@
       "seaking",
       "durant",
       "armaldo",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "tyranitar-mega",
+      "salamence-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "golisopod-mega",
+      "blaziken-mega",
+      "aggron-mega",
+      "venusaur-mega",
+      "meganium-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "pinsir-mega",
+      "heracross-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "lopunny-mega",
+      "absol-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "sharpedo-mega",
+      "beedrill-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -21691,7 +22195,9 @@
       "aipom",
       "spinarak",
       "ariados",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zeraora-mega",
+      "excadrill-mega"
     ]
   },
   {
@@ -21874,7 +22380,11 @@
       "wyrdeer",
       "absol",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -22976,7 +23486,21 @@
       "malamar-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -23036,7 +23560,8 @@
     "power": 120,
     "isSpreadMove": false,
     "users": [
-      "baxcalibur"
+      "baxcalibur",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -23099,7 +23624,9 @@
       "servine",
       "grookey",
       "rillaboom",
-      "treecko"
+      "treecko",
+      "chesnaught-mega",
+      "meganium-mega"
     ]
   },
   {
@@ -23237,7 +23764,8 @@
       "tsareena",
       "brambleghast",
       "bramblin",
-      "flapple"
+      "flapple",
+      "sceptile-mega"
     ]
   },
   {
@@ -24196,7 +24724,44 @@
       "scrafty-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "tyranitar-mega",
+      "heatran-mega",
+      "metagross-mega",
+      "swampert-mega",
+      "feraligatr-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "meganium-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "starmie-mega",
+      "gallade-mega",
+      "gardevoir-mega",
+      "ampharos-mega",
+      "steelix-mega",
+      "scizor-mega",
+      "heracross-mega",
+      "houndoom-mega",
+      "abomasnow-mega",
+      "victreebel-mega",
+      "scovillain-mega",
+      "clefable-mega",
+      "lopunny-mega",
+      "froslass-mega",
+      "manectric-mega",
+      "absol-mega",
+      "absol-mega-z",
+      "camerupt-mega",
+      "banette-mega",
+      "medicham-mega",
+      "mawile-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -24442,7 +25007,8 @@
       "archen",
       "archeops",
       "staraptor-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -24620,7 +25186,11 @@
       "bramblin",
       "naganadel",
       "scolipede-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "darkrai-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -25588,7 +26158,39 @@
       "pyroar-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "floette-mega",
+      "delphox-mega",
+      "feraligatr-mega",
+      "golisopod-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "lucario-mega-z",
+      "chandelure-mega",
+      "starmie-mega",
+      "excadrill-mega",
+      "hawlucha-mega",
+      "victreebel-mega",
+      "drampa-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "froslass-mega",
+      "crabominable-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -25739,7 +26341,10 @@
       "cetoddle",
       "wyrdeer",
       "guzzlord",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "baxcalibur-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -25779,7 +26384,8 @@
       "cinderace",
       "tsareena",
       "meditite",
-      "scrafty-mega"
+      "scrafty-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -25959,7 +26565,11 @@
       "masquerain",
       "corvisquire",
       "corviknight",
-      "staraptor-mega"
+      "staraptor-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "salamence-mega"
     ]
   },
   {
@@ -26228,7 +26838,13 @@
       "seaking",
       "primarina",
       "popplio",
-      "dragalge-mega"
+      "dragalge-mega",
+      "rayquaza-mega",
+      "salamence-mega",
+      "swampert-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -26380,7 +26996,6 @@
       "houndoom-mega",
       "heracross-mega",
       "chesnaught-mega",
-      "floette-mega",
       "aerodactyl-mega",
       "venusaur-mega",
       "alakazam-mega",
@@ -27029,7 +27644,21 @@
       "malamar-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -27339,7 +27968,8 @@
       "crocalor",
       "primarina",
       "popplio",
-      "pyroar-mega"
+      "pyroar-mega",
+      "zygarde-mega"
     ]
   },
   {
@@ -27398,7 +28028,8 @@
       "avalugg-hisui",
       "avalugg",
       "bergmite",
-      "glalie"
+      "glalie",
+      "glalie-mega"
     ]
   },
   {
@@ -27768,7 +28399,13 @@
       "seaking",
       "primarina",
       "popplio",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "baxcalibur-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -27925,7 +28562,8 @@
       "okidogi",
       "cetoddle",
       "croconaw",
-      "arbok"
+      "arbok",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -28195,7 +28833,8 @@
       "croconaw",
       "meditite",
       "azelf",
-      "scrafty-mega"
+      "scrafty-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -28249,7 +28888,8 @@
       "swinub",
       "inteleon",
       "piloswine",
-      "cetoddle"
+      "cetoddle",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -28348,7 +28988,9 @@
       "cetoddle",
       "aurorus",
       "primarina",
-      "popplio"
+      "popplio",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -28395,7 +29037,9 @@
       "swinub",
       "arctovish",
       "piloswine",
-      "cetoddle"
+      "cetoddle",
+      "baxcalibur-mega",
+      "abomasnow-mega"
     ]
   },
   {
@@ -28473,7 +29117,8 @@
       "inteleon",
       "piloswine",
       "cetoddle",
-      "aurorus"
+      "aurorus",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -28872,7 +29517,14 @@
       "primarina",
       "popplio",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "baxcalibur-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -29106,7 +29758,16 @@
       "crocalor",
       "azelf",
       "scrafty-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "delphox-mega",
+      "emboar-mega",
+      "chandelure-mega",
+      "clefable-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -29307,7 +29968,8 @@
       "arbok",
       "ekans",
       "scolipede-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "victreebel-mega"
     ]
   },
   {
@@ -29621,7 +30283,14 @@
       "durant",
       "corviknight",
       "scrafty-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -30058,7 +30727,13 @@
       "scrafty-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "lucario-mega-z",
+      "clefable-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -30178,7 +30853,8 @@
       "machoke",
       "machamp",
       "primeape",
-      "elekid"
+      "elekid",
+      "hawlucha-mega"
     ]
   },
   {
@@ -30578,7 +31254,15 @@
       "scrafty-mega",
       "eelektross-mega",
       "malamar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "zeraora-mega",
+      "darkrai-mega",
+      "metagross-mega",
+      "swampert-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -30612,7 +31296,8 @@
       "zygarde-50",
       "zygarde-50-power-construct",
       "zygarde-10",
-      "zygarde-10-power-construct"
+      "zygarde-10-power-construct",
+      "zygarde-mega"
     ]
   },
   {
@@ -30799,7 +31484,10 @@
       "archen",
       "archeops",
       "scrafty-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "darkrai-mega"
     ]
   },
   {
@@ -30990,7 +31678,13 @@
       "cutiefly",
       "torchic",
       "azelf",
-      "guzzlord"
+      "guzzlord",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "hawlucha-mega",
+      "clefable-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -31099,7 +31793,8 @@
       "charcadet",
       "entei",
       "gouging-fire",
-      "chi-yu"
+      "chi-yu",
+      "heatran-mega"
     ]
   },
   {
@@ -31315,7 +32010,8 @@
       "serperior",
       "servine",
       "comfey",
-      "victreebel"
+      "victreebel",
+      "victreebel-mega"
     ]
   },
   {
@@ -31358,7 +32054,10 @@
       "treecko",
       "fomantis",
       "capsakid",
-      "tapu-bulu"
+      "tapu-bulu",
+      "sceptile-mega",
+      "abomasnow-mega",
+      "scovillain-mega"
     ]
   },
   {
@@ -31457,7 +32156,8 @@
       "accelgor",
       "arbok",
       "ekans",
-      "naganadel"
+      "naganadel",
+      "golisopod-mega"
     ]
   },
   {
@@ -31521,7 +32221,8 @@
       "kecleon",
       "incineroar",
       "maschiff",
-      "crocalor"
+      "crocalor",
+      "greninja-mega"
     ]
   },
   {
@@ -31536,7 +32237,6 @@
     "power": 140,
     "isSpreadMove": false,
     "users": [
-      "floette-mega",
       "floette-eternal"
     ]
   },
@@ -31735,7 +32435,12 @@
       "eelektross-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "garchomp-mega-z",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -31925,7 +32630,9 @@
       "steenee",
       "tsareena",
       "meditite",
-      "scrafty-mega"
+      "scrafty-mega",
+      "zeraora-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -32048,7 +32755,11 @@
       "grubbin",
       "eelektross-mega",
       "malamar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "heatran-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -32102,7 +32813,9 @@
       "breloom",
       "hitmontop",
       "machamp",
-      "hitmonchan"
+      "hitmonchan",
+      "lucario-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -32267,7 +32980,18 @@
       "tsareena",
       "ribombee",
       "cutiefly",
-      "flapple"
+      "flapple",
+      "floette-mega",
+      "sceptile-mega",
+      "chesnaught-mega",
+      "venusaur-mega",
+      "meganium-mega",
+      "gallade-mega",
+      "abomasnow-mega",
+      "victreebel-mega",
+      "scovillain-mega",
+      "clefable-mega",
+      "meowstic-female-mega"
     ]
   },
   {
@@ -32282,7 +33006,8 @@
     "power": 100,
     "isSpreadMove": false,
     "users": [
-      "heatran"
+      "heatran",
+      "heatran-mega"
     ]
   },
   {
@@ -32462,7 +33187,8 @@
       "beautifly",
       "accelgor",
       "arbok",
-      "ekans"
+      "ekans",
+      "victreebel-mega"
     ]
   },
   {
@@ -32736,7 +33462,19 @@
       "guzzlord",
       "raichu-mega-x",
       "raichu-mega-y",
-      "scrafty-mega"
+      "scrafty-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "zeraora-mega",
+      "swampert-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "lucario-mega-z",
+      "gardevoir-mega",
+      "gengar-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "mawile-mega"
     ]
   },
   {
@@ -32984,7 +33722,37 @@
       "guzzlord",
       "raichu-mega-x",
       "raichu-mega-y",
-      "scrafty-mega"
+      "scrafty-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "zeraora-mega",
+      "tyranitar-mega",
+      "swampert-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "aggron-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "gallade-mega",
+      "gardevoir-mega",
+      "ampharos-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "hawlucha-mega",
+      "abomasnow-mega",
+      "slowbro-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "lopunny-mega",
+      "audino-mega",
+      "medicham-mega",
+      "mawile-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -33050,7 +33818,8 @@
       "absol",
       "seaking",
       "scolipede-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -33182,7 +33951,18 @@
       "anorith",
       "durant",
       "armaldo",
-      "corviknight"
+      "corviknight",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "heatran-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "chesnaught-mega",
+      "lucario-mega-z",
+      "excadrill-mega",
+      "skarmory-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -33330,7 +34110,10 @@
       "armaldo",
       "archen",
       "archeops",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "rayquaza-mega",
+      "diancie-mega",
+      "metagross-mega"
     ]
   },
   {
@@ -33355,7 +34138,8 @@
       "clefairy",
       "clefable",
       "pikachu-rock-star",
-      "jirachi"
+      "jirachi",
+      "lucario-mega-z"
     ]
   },
   {
@@ -33419,7 +34203,9 @@
       "klefki",
       "klinklang",
       "klang",
-      "klink"
+      "klink",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -33478,7 +34264,10 @@
       "spritzee",
       "scream-tail",
       "gardevoir",
-      "primarina"
+      "primarina",
+      "diancie-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -33965,7 +34754,9 @@
       "arbok",
       "ekans",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "garchomp-mega-z",
+      "golisopod-mega"
     ]
   },
   {
@@ -34504,7 +35295,45 @@
       "staraptor-mega",
       "pyroar-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "blastoise-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "venusaur-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "gallade-mega",
+      "gardevoir-mega",
+      "steelix-mega",
+      "kangaskhan-mega",
+      "altaria-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "lopunny-mega",
+      "froslass-mega",
+      "pidgeot-mega",
+      "manectric-mega",
+      "absol-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "sharpedo-mega",
+      "banette-mega",
+      "medicham-mega",
+      "mawile-mega"
     ]
   },
   {
@@ -34639,7 +35468,11 @@
       "carracosta",
       "seaking",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "golisopod-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -34735,7 +35568,12 @@
       "volcarona",
       "braviary-hisui",
       "indeedee-male",
-      "indeedee-female"
+      "indeedee-female",
+      "diancie-mega",
+      "latias-mega",
+      "latios-mega",
+      "charizard-mega-x",
+      "charizard-mega-y"
     ]
   },
   {
@@ -34771,7 +35609,8 @@
       "chesnaught",
       "quilladin",
       "cacturne",
-      "cacnea"
+      "cacnea",
+      "chesnaught-mega"
     ]
   },
   {
@@ -34929,7 +35768,9 @@
       "absol",
       "torchic",
       "malamar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "blaziken-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -35136,7 +35977,23 @@
       "arceus",
       "masquerain",
       "beautifly",
-      "staraptor-mega"
+      "staraptor-mega",
+      "dragonite-mega",
+      "darkrai-mega",
+      "salamence-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "aerodactyl-mega",
+      "gengar-mega",
+      "scizor-mega",
+      "altaria-mega",
+      "froslass-mega",
+      "pidgeot-mega",
+      "skarmory-mega",
+      "banette-mega",
+      "chimecho-mega",
+      "beedrill-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -35407,7 +36264,14 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "zeraora-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -35570,7 +36434,8 @@
       "arceus",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -35680,7 +36545,10 @@
       "eevee-starter",
       "eevee",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "zeraora-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega"
     ]
   },
   {
@@ -36060,7 +36928,13 @@
       "pyroar-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -36163,7 +37037,8 @@
       "corvisquire",
       "corviknight",
       "naganadel",
-      "malamar-mega"
+      "malamar-mega",
+      "skarmory-mega"
     ]
   },
   {
@@ -36336,7 +37211,8 @@
       "arceus",
       "absol",
       "brambleghast",
-      "bramblin"
+      "bramblin",
+      "absol-mega-z"
     ]
   },
   {
@@ -36422,7 +37298,8 @@
       "spinarak",
       "ariados",
       "naganadel",
-      "scolipede-mega"
+      "scolipede-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -36437,7 +37314,8 @@
     "power": 100,
     "isSpreadMove": false,
     "users": [
-      "zeraora"
+      "zeraora",
+      "zeraora-mega"
     ]
   },
   {
@@ -36664,7 +37542,12 @@
       "azelf",
       "raichu-mega-x",
       "raichu-mega-y",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zeraora-mega",
+      "diancie-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -36765,7 +37648,9 @@
       "archen",
       "archeops",
       "staraptor-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "pidgeot-mega",
+      "skarmory-mega"
     ]
   },
   {
@@ -37061,7 +37946,12 @@
       "scolipede-mega",
       "scrafty-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "swampert-mega",
+      "golisopod-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -37122,7 +38012,8 @@
       "beautifly",
       "arbok",
       "ekans",
-      "scolipede-mega"
+      "scolipede-mega",
+      "beedrill-mega"
     ]
   },
   {
@@ -37466,7 +38357,8 @@
       "brambleghast",
       "bramblin",
       "flapple",
-      "grubbin"
+      "grubbin",
+      "heatran-mega"
     ]
   },
   {
@@ -37582,7 +38474,12 @@
       "maushold-family-of-three",
       "primarina",
       "popplio",
-      "meditite"
+      "meditite",
+      "greninja-mega",
+      "kangaskhan-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "medicham-mega"
     ]
   },
   {
@@ -37642,7 +38539,8 @@
       "piloswine",
       "cetoddle",
       "aurorus",
-      "amaura"
+      "amaura",
+      "froslass-mega"
     ]
   },
   {
@@ -37765,7 +38663,11 @@
       "sudowoodo",
       "arcanine-hisui",
       "stonjourner",
-      "arceus"
+      "arceus",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "garchomp-mega-z",
+      "heatran-mega"
     ]
   },
   {
@@ -38057,7 +38959,22 @@
       "azelf",
       "scrafty-mega",
       "eelektross-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "dragonite-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "delphox-mega",
+      "feraligatr-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "lucario-mega-z",
+      "hawlucha-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "crabominable-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega"
     ]
   },
   {
@@ -38319,7 +39236,21 @@
       "seaking",
       "meditite",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "delphox-mega",
+      "starmie-mega",
+      "gallade-mega",
+      "gardevoir-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "banette-mega",
+      "chimecho-mega",
+      "medicham-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -38677,7 +39608,11 @@
       "meditite",
       "beautifly",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -38784,7 +39719,10 @@
       "croconaw",
       "arbok",
       "ekans",
-      "pyroar-mega"
+      "pyroar-mega",
+      "salamence-mega",
+      "metagross-mega",
+      "mawile-mega"
     ]
   },
   {
@@ -38883,7 +39821,11 @@
       "wyrdeer",
       "ribombee",
       "primarina",
-      "malamar-mega"
+      "malamar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "metagross-mega",
+      "latios-mega"
     ]
   },
   {
@@ -38988,7 +39930,11 @@
       "absol",
       "meditite",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -39191,7 +40137,10 @@
       "wyrdeer",
       "meditite",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -39340,7 +40289,11 @@
       "spinarak",
       "absol",
       "ekans",
-      "scolipede-mega"
+      "scolipede-mega",
+      "darkrai-mega",
+      "crabominable-mega",
+      "absol-mega-z",
+      "skarmory-mega"
     ]
   },
   {
@@ -39580,7 +40533,11 @@
       "archeops",
       "raichu-mega-x",
       "raichu-mega-y",
-      "staraptor-mega"
+      "staraptor-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -39778,7 +40735,24 @@
       "arbok",
       "ekans",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "venusaur-mega",
+      "starmie-mega",
+      "aerodactyl-mega",
+      "pinsir-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "victreebel-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "pidgeot-mega"
     ]
   },
   {
@@ -39912,7 +40886,10 @@
       "tsareena",
       "brambleghast",
       "anorith",
-      "bramblin"
+      "bramblin",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -40000,7 +40977,11 @@
       "weepinbell",
       "steenee",
       "bounsweet",
-      "tsareena"
+      "tsareena",
+      "floette-mega",
+      "meganium-mega",
+      "victreebel-mega",
+      "scovillain-mega"
     ]
   },
   {
@@ -40038,7 +41019,8 @@
       "kabutops",
       "drednaw",
       "carracosta",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -40103,7 +41085,11 @@
       "heliolisk",
       "helioptile",
       "yveltal",
-      "absol"
+      "absol",
+      "dragonite-mega",
+      "aerodactyl-mega",
+      "drampa-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -40382,7 +41368,15 @@
       "scrafty-mega",
       "pyroar-mega",
       "malamar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "darkrai-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "lucario-mega-z",
+      "hawlucha-mega",
+      "clefable-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -40541,7 +41535,14 @@
       "corvisquire",
       "corviknight",
       "scrafty-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zeraora-mega",
+      "tyranitar-mega",
+      "blaziken-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "gallade-mega",
+      "hawlucha-mega"
     ]
   },
   {
@@ -40622,7 +41623,8 @@
       "emolga",
       "grubbin",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "zeraora-mega"
     ]
   },
   {
@@ -40801,7 +41803,8 @@
       "armaldo",
       "archen",
       "archeops",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -40933,7 +41936,29 @@
       "arceus",
       "durant",
       "scolipede-mega",
-      "scrafty-mega"
+      "scrafty-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "tyranitar-mega",
+      "heatran-mega",
+      "swampert-mega",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "aggron-mega",
+      "venusaur-mega",
+      "meganium-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "ampharos-mega",
+      "steelix-mega",
+      "pinsir-mega",
+      "abomasnow-mega",
+      "kangaskhan-mega"
     ]
   },
   {
@@ -41440,7 +42465,14 @@
       "eelektross-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -41969,7 +43001,26 @@
       "eelektross-mega",
       "pyroar-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "feraligatr-mega",
+      "golisopod-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "lucario-mega-z",
+      "excadrill-mega",
+      "hawlucha-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "crabominable-mega",
+      "absol-mega-z",
+      "skarmory-mega"
     ]
   },
   {
@@ -42047,7 +43098,10 @@
       "aurorus",
       "amaura",
       "archen",
-      "archeops"
+      "archeops",
+      "tyranitar-mega",
+      "swampert-mega",
+      "glimmora-mega"
     ]
   },
   {
@@ -42555,7 +43609,13 @@
       "scrafty-mega",
       "eelektross-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -42817,7 +43877,24 @@
       "bramblin",
       "raichu-mega-x",
       "raichu-mega-y",
-      "scolipede-mega"
+      "scolipede-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega",
+      "swampert-mega",
+      "blastoise-mega",
+      "chesnaught-mega",
+      "aggron-mega",
+      "emboar-mega",
+      "starmie-mega",
+      "steelix-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "glalie-mega",
+      "froslass-mega",
+      "camerupt-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -43939,7 +45016,18 @@
       "malamar-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "floette-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -44137,7 +45225,11 @@
       "onix",
       "piloswine",
       "stonjourner",
-      "dwebble"
+      "dwebble",
+      "garchomp-mega-z",
+      "diancie-mega",
+      "swampert-mega",
+      "scizor-mega"
     ]
   },
   {
@@ -44357,7 +45449,11 @@
       "primarina",
       "popplio",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "feraligatr-mega",
+      "golisopod-mega",
+      "greninja-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -44477,7 +45573,14 @@
       "arbok",
       "ekans",
       "naganadel",
-      "dragalge-mega"
+      "dragalge-mega",
+      "rayquaza-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "latias-mega",
+      "latios-mega",
+      "sceptile-mega"
     ]
   },
   {
@@ -44609,7 +45712,12 @@
       "arcanine-hisui",
       "arcanine",
       "onix",
-      "arceus"
+      "arceus",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "diancie-mega",
+      "heatran-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -44745,7 +45853,14 @@
       "anorith",
       "torchic",
       "armaldo",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zeraora-mega",
+      "delphox-mega",
+      "feraligatr-mega",
+      "excadrill-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -45576,7 +46691,33 @@
       "pyroar-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "floette-mega",
+      "delphox-mega",
+      "feraligatr-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "lucario-mega-z",
+      "chandelure-mega",
+      "starmie-mega",
+      "excadrill-mega",
+      "hawlucha-mega",
+      "victreebel-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "froslass-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -45999,7 +47140,11 @@
       "stonjourner",
       "geodude-alola",
       "geodude",
-      "azelf"
+      "azelf",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega"
     ]
   },
   {
@@ -46419,7 +47564,12 @@
       "meditite",
       "beautifly",
       "azelf",
-      "dragalge-mega"
+      "dragalge-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -46706,7 +47856,13 @@
       "naganadel",
       "archen",
       "archeops",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "metagross-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -46827,7 +47983,9 @@
       "ariados",
       "absol",
       "brambleghast",
-      "bramblin"
+      "bramblin",
+      "darkrai-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -47211,7 +48369,23 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "delphox-mega",
+      "chandelure-mega",
+      "drampa-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "froslass-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega-z",
+      "chimecho-mega"
     ]
   },
   {
@@ -47502,7 +48676,18 @@
       "raichu-mega-y",
       "scolipede-mega",
       "eelektross-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "delphox-mega",
+      "starmie-mega",
+      "drampa-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "froslass-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -47568,7 +48753,9 @@
       "ribombee-totem",
       "ribombee",
       "cutiefly",
-      "beautifly"
+      "beautifly",
+      "scizor-mega",
+      "beedrill-mega"
     ]
   },
   {
@@ -47752,7 +48939,9 @@
       "durant",
       "arbok",
       "ekans",
-      "scolipede-mega"
+      "scolipede-mega",
+      "zygarde-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -47885,7 +49074,20 @@
       "ekans",
       "raichu-mega-x",
       "raichu-mega-y",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "gyarados-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "starmie-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "clefable-mega",
+      "beedrill-mega"
     ]
   },
   {
@@ -48017,7 +49219,10 @@
       "skarmory",
       "braviary",
       "yveltal",
-      "naganadel"
+      "naganadel",
+      "dragonite-mega",
+      "hawlucha-mega",
+      "skarmory-mega"
     ]
   },
   {
@@ -48170,7 +49375,10 @@
       "arbok",
       "ekans",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "dragonite-mega",
+      "victreebel-mega",
+      "crabominable-mega"
     ]
   },
   {
@@ -48353,7 +49561,17 @@
       "torchic",
       "armaldo",
       "malamar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "feraligatr-mega",
+      "golisopod-mega",
+      "sceptile-mega",
+      "excadrill-mega",
+      "pinsir-mega",
+      "heracross-mega",
+      "absol-mega-z",
+      "skarmory-mega"
     ]
   },
   {
@@ -48383,7 +49601,8 @@
       "koffing",
       "garbodor",
       "gulpin",
-      "shellos"
+      "shellos",
+      "swampert-mega"
     ]
   },
   {
@@ -48610,7 +49829,9 @@
       "scolipede-mega",
       "scrafty-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "darkrai-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -48744,7 +49965,9 @@
       "ekans",
       "naganadel",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zygarde-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -48952,7 +50175,8 @@
       "archen",
       "archeops",
       "scrafty-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -49114,7 +50338,9 @@
       "gengar",
       "emboar",
       "salazzle-totem",
-      "salazzle"
+      "salazzle",
+      "emboar-mega",
+      "chandelure-mega"
     ]
   },
   {
@@ -49328,7 +50554,11 @@
       "ekans",
       "naganadel",
       "scrafty-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -50469,7 +51699,18 @@
       "malamar-mega",
       "barbaracle-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "darkrai-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "floette-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -50900,7 +52141,10 @@
       "flapple",
       "beautifly",
       "scolipede-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -50976,7 +52220,8 @@
       "emboar",
       "gallade",
       "crustle",
-      "tsareena"
+      "tsareena",
+      "sceptile-mega"
     ]
   },
   {
@@ -51087,7 +52332,8 @@
       "geodude-alola",
       "grubbin",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "zeraora-mega"
     ]
   },
   {
@@ -51372,7 +52618,13 @@
       "skarmory",
       "arceus",
       "durant",
-      "corviknight"
+      "corviknight",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega",
+      "lucario-mega-z",
+      "mawile-mega"
     ]
   },
   {
@@ -51451,7 +52703,11 @@
       "snorlax",
       "glalie",
       "guzzlord",
-      "scolipede-mega"
+      "scolipede-mega",
+      "heatran-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega"
     ]
   },
   {
@@ -51674,7 +52930,8 @@
       "wyrdeer",
       "steenee",
       "tsareena",
-      "guzzlord"
+      "guzzlord",
+      "swampert-mega"
     ]
   },
   {
@@ -52016,7 +53273,13 @@
       "armaldo",
       "arbok",
       "scolipede-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "heatran-mega"
     ]
   },
   {
@@ -52361,7 +53624,14 @@
       "archen",
       "archeops",
       "scrafty-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zygarde-mega",
+      "garchomp-mega-z",
+      "heatran-mega",
+      "metagross-mega",
+      "lucario-mega-z",
+      "crabominable-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -52559,7 +53829,12 @@
       "primarina",
       "meditite",
       "azelf",
-      "malamar-mega"
+      "malamar-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "diancie-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -53023,7 +54298,23 @@
       "scrafty-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "darkrai-mega",
+      "heatran-mega",
+      "feraligatr-mega",
+      "greninja-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "lucario-mega-z",
+      "excadrill-mega",
+      "hawlucha-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -53134,7 +54425,8 @@
       "durant",
       "armaldo",
       "staraptor-mega",
-      "scolipede-mega"
+      "scolipede-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -53211,7 +54503,18 @@
       "hitmonchan",
       "geodude",
       "raichu-mega-x",
-      "raichu-mega-y"
+      "raichu-mega-y",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "blastoise-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "hawlucha-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "clefable-mega"
     ]
   },
   {
@@ -53407,7 +54710,12 @@
       "absol",
       "flapple",
       "arbok",
-      "ekans"
+      "ekans",
+      "darkrai-mega",
+      "latias-mega",
+      "golisopod-mega",
+      "froslass-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -53733,7 +55041,10 @@
       "eelektross-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "zeraora-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -54041,7 +55352,12 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "garchomp-mega-z",
+      "golisopod-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -54678,7 +55994,59 @@
       "staraptor-mega",
       "eelektross-mega",
       "pyroar-mega",
-      "malamar-mega"
+      "malamar-mega",
+      "rayquaza-mega",
+      "zygarde-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "zeraora-mega",
+      "darkrai-mega",
+      "diancie-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "floette-mega",
+      "delphox-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "golisopod-mega",
+      "greninja-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "chesnaught-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "starmie-mega",
+      "gallade-mega",
+      "gardevoir-mega",
+      "aerodactyl-mega",
+      "ampharos-mega",
+      "scizor-mega",
+      "alakazam-mega",
+      "houndoom-mega",
+      "hawlucha-mega",
+      "victreebel-mega",
+      "altaria-mega",
+      "slowbro-mega",
+      "drampa-mega",
+      "clefable-mega",
+      "lopunny-mega",
+      "pidgeot-mega",
+      "crabominable-mega",
+      "manectric-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "absol-mega",
+      "absol-mega-z",
+      "skarmory-mega",
+      "sharpedo-mega",
+      "chimecho-mega",
+      "medicham-mega",
+      "beedrill-mega"
     ]
   },
   {
@@ -54714,7 +56082,10 @@
       "psyduck",
       "kecleon",
       "beheeyem",
-      "eevee"
+      "eevee",
+      "magearna-mega",
+      "magearna-original-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -55243,7 +56614,20 @@
       "pyroar-mega",
       "malamar-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "tyranitar-mega",
+      "metagross-mega",
+      "floette-mega",
+      "gyarados-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "starmie-mega",
+      "hawlucha-mega",
+      "clefable-mega",
+      "chimecho-mega"
     ]
   },
   {
@@ -56156,7 +57540,64 @@
       "eelektross-mega",
       "pyroar-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "diancie-mega",
+      "tyranitar-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "latias-mega",
+      "latios-mega",
+      "gyarados-mega",
+      "delphox-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "greninja-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "meganium-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "starmie-mega",
+      "gallade-mega",
+      "excadrill-mega",
+      "pinsir-mega",
+      "gengar-mega",
+      "scizor-mega",
+      "alakazam-mega",
+      "houndoom-mega",
+      "hawlucha-mega",
+      "abomasnow-mega",
+      "victreebel-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "scovillain-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "glalie-mega",
+      "froslass-mega",
+      "pidgeot-mega",
+      "crabominable-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "skarmory-mega",
+      "sharpedo-mega",
+      "chimecho-mega",
+      "medicham-mega",
+      "beedrill-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -56269,7 +57710,9 @@
       "chi-yu",
       "torchic",
       "crocalor",
-      "pyroar-mega"
+      "pyroar-mega",
+      "salamence-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -57150,7 +58593,73 @@
       "pyroar-mega",
       "malamar-mega",
       "dragalge-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega",
+      "darkrai-mega",
+      "diancie-mega",
+      "tyranitar-mega",
+      "heatran-mega",
+      "salamence-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "metagross-mega",
+      "latias-mega",
+      "latios-mega",
+      "floette-mega",
+      "gyarados-mega",
+      "swampert-mega",
+      "delphox-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "feraligatr-mega",
+      "blastoise-mega",
+      "greninja-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "chesnaught-mega",
+      "emboar-mega",
+      "glimmora-mega",
+      "venusaur-mega",
+      "meganium-mega",
+      "lucario-mega",
+      "lucario-mega-z",
+      "chandelure-mega",
+      "gallade-mega",
+      "gardevoir-mega",
+      "ampharos-mega",
+      "excadrill-mega",
+      "gengar-mega",
+      "scizor-mega",
+      "heracross-mega",
+      "houndoom-mega",
+      "hawlucha-mega",
+      "abomasnow-mega",
+      "victreebel-mega",
+      "altaria-mega",
+      "slowbro-mega",
+      "scovillain-mega",
+      "golurk-mega",
+      "clefable-mega",
+      "glalie-mega",
+      "froslass-mega",
+      "crabominable-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "meowstic-female-mega",
+      "meowstic-male-mega",
+      "skarmory-mega",
+      "camerupt-mega",
+      "banette-mega",
+      "chimecho-mega",
+      "medicham-mega",
+      "sableye-mega"
     ]
   },
   {
@@ -57213,7 +58722,9 @@
       "arboliva",
       "clauncher",
       "indeedee-male",
-      "indeedee-female"
+      "indeedee-female",
+      "diancie-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -57808,7 +59319,11 @@
       "pyroar-mega",
       "malamar-mega",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "darkrai-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -57827,7 +59342,8 @@
       "zygarde-50",
       "zygarde-50-power-construct",
       "zygarde-10",
-      "zygarde-10-power-construct"
+      "zygarde-10-power-construct",
+      "zygarde-mega"
     ]
   },
   {
@@ -57846,7 +59362,8 @@
       "zygarde-50",
       "zygarde-50-power-construct",
       "zygarde-10",
-      "zygarde-10-power-construct"
+      "zygarde-10-power-construct",
+      "zygarde-mega"
     ]
   },
   {
@@ -57999,7 +59516,8 @@
       "guzzlord",
       "archen",
       "archeops",
-      "eelektross-mega"
+      "eelektross-mega",
+      "garchomp-mega-z"
     ]
   },
   {
@@ -58234,7 +59752,11 @@
       "scrafty-mega",
       "eelektross-mega",
       "malamar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -58562,7 +60084,10 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "eelektross-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -58717,7 +60242,9 @@
       "durant",
       "arbok",
       "eelektross-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "garchomp-mega-z",
+      "baxcalibur-mega"
     ]
   },
   {
@@ -59007,7 +60534,9 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "scrafty-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -59482,7 +61011,12 @@
       "raichu-mega-y",
       "eelektross-mega",
       "malamar-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "zeraora-mega",
+      "darkrai-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -59916,7 +61450,13 @@
       "scrafty-mega",
       "pyroar-mega",
       "malamar-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "metagross-mega",
+      "sceptile-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {
@@ -59999,7 +61539,11 @@
       "beheeyem",
       "mesprit",
       "indeedee-male",
-      "azelf"
+      "azelf",
+      "magearna-mega",
+      "magearna-original-mega",
+      "latias-mega",
+      "latios-mega"
     ]
   },
   {
@@ -60276,7 +61820,21 @@
       "flapple",
       "beautifly",
       "staraptor-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "salamence-mega",
+      "latias-mega",
+      "latios-mega",
+      "charizard-mega-x",
+      "charizard-mega-y",
+      "starmie-mega",
+      "aerodactyl-mega",
+      "steelix-mega",
+      "altaria-mega",
+      "drampa-mega",
+      "skarmory-mega"
     ]
   },
   {
@@ -60568,7 +62126,9 @@
       "archen",
       "archeops",
       "staraptor-mega",
-      "eelektross-mega"
+      "eelektross-mega",
+      "rayquaza-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -60656,7 +62216,10 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "scrafty-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "sceptile-mega",
+      "blaziken-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -61078,7 +62641,9 @@
       "staraptor-mega",
       "scrafty-mega",
       "barbaracle-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "heatran-mega",
+      "blaziken-mega"
     ]
   },
   {
@@ -61173,7 +62738,10 @@
       "hitmonchan",
       "braviary-hisui",
       "inteleon",
-      "meditite"
+      "meditite",
+      "sceptile-mega",
+      "blaziken-mega",
+      "lucario-mega-z"
     ]
   },
   {
@@ -61324,7 +62892,8 @@
       "ekans",
       "naganadel",
       "scolipede-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -61403,7 +62972,11 @@
       "ogerpon-cornerstone-mask",
       "ogerpon",
       "victreebel",
-      "weepinbell"
+      "weepinbell",
+      "floette-mega",
+      "chesnaught-mega",
+      "meganium-mega",
+      "victreebel-mega"
     ]
   },
   {
@@ -61559,7 +63132,10 @@
       "grubbin",
       "raichu-mega-x",
       "raichu-mega-y",
-      "eelektross-mega"
+      "eelektross-mega",
+      "zeraora-mega",
+      "magearna-mega",
+      "magearna-original-mega"
     ]
   },
   {
@@ -61630,7 +63206,8 @@
       "croagunk",
       "shroomish",
       "machamp",
-      "skitty"
+      "skitty",
+      "froslass-mega"
     ]
   },
   {
@@ -61838,7 +63415,19 @@
       "popplio",
       "armaldo",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "gyarados-mega",
+      "feraligatr-mega",
+      "greninja-mega",
+      "starmie-mega",
+      "kangaskhan-mega",
+      "clefable-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -61888,7 +63477,9 @@
       "inteleon",
       "croconaw",
       "primarina",
-      "popplio"
+      "popplio",
+      "feraligatr-mega",
+      "greninja-mega"
     ]
   },
   {
@@ -62243,7 +63834,14 @@
       "azelf",
       "armaldo",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "golisopod-mega",
+      "lucario-mega-z",
+      "drampa-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -62478,7 +64076,8 @@
       "seaking",
       "primarina",
       "popplio",
-      "dragalge-mega"
+      "dragalge-mega",
+      "golisopod-mega"
     ]
   },
   {
@@ -62511,7 +64110,9 @@
       "palafin-hero",
       "palafin-zero",
       "basculegion-male",
-      "basculegion-female"
+      "basculegion-female",
+      "swampert",
+      "swampert-mega"
     ]
   },
   {
@@ -62709,7 +64310,12 @@
       "masquerain",
       "aurorus",
       "amaura",
-      "primarina"
+      "primarina",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega"
     ]
   },
   {
@@ -62921,7 +64527,18 @@
       "primarina",
       "popplio",
       "barbaracle-mega",
-      "dragalge-mega"
+      "dragalge-mega",
+      "rayquaza-mega",
+      "dragonite-mega",
+      "garchomp-mega",
+      "garchomp-mega-z",
+      "tyranitar-mega",
+      "latias-mega",
+      "latios-mega",
+      "swampert-mega",
+      "tatsugiri-curly-mega",
+      "tatsugiri-droopy-mega",
+      "tatsugiri-stretchy-mega"
     ]
   },
   {
@@ -63141,7 +64758,9 @@
       "raichu-mega-x",
       "raichu-mega-y",
       "eelektross-mega",
-      "pyroar-mega"
+      "pyroar-mega",
+      "rayquaza-mega",
+      "zeraora-mega"
     ]
   },
   {
@@ -63229,7 +64848,11 @@
       "flapple",
       "archen",
       "archeops",
-      "staraptor-mega"
+      "staraptor-mega",
+      "dragonite-mega",
+      "scizor-mega",
+      "hawlucha-mega",
+      "skarmory-mega"
     ]
   },
   {
@@ -63491,7 +65114,10 @@
       "armaldo",
       "naganadel",
       "scolipede-mega",
-      "barbaracle-mega"
+      "barbaracle-mega",
+      "darkrai-mega",
+      "golisopod-mega",
+      "absol-mega-z"
     ]
   },
   {
@@ -63613,7 +65239,19 @@
       "geodude-alola",
       "raichu-mega-x",
       "raichu-mega-y",
-      "eelektross-mega"
+      "eelektross-mega",
+      "mewtwo-mega-x",
+      "mewtwo-mega-y",
+      "dragonite-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "gyarados-mega",
+      "starmie-mega",
+      "gengar-mega",
+      "alakazam-mega",
+      "kangaskhan-mega",
+      "slowbro-mega",
+      "clefable-mega"
     ]
   },
   {
@@ -64061,7 +65699,13 @@
       "archeops",
       "scrafty-mega",
       "eelektross-mega",
-      "falinks-mega"
+      "falinks-mega",
+      "zygarde-mega",
+      "baxcalibur-mega",
+      "magearna-mega",
+      "magearna-original-mega",
+      "lucario-mega-z",
+      "absol-mega-z"
     ]
   },
   {

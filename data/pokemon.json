@@ -10021,11 +10021,11 @@
   {
     "id": "pyroar-male",
     "dexNumber": 668,
-    "displayName": "カエンジシ（♂）",
+    "displayName": "カエンジシ",
     "name": {
       "en": "Pyroar",
-      "ja": "カエンジシ（♂）",
-      "jaHrkt": "カエンジシ（♂）"
+      "ja": "カエンジシ",
+      "jaHrkt": "カエンジシ"
     },
     "types": [
       "fire",
