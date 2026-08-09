@@ -55,6 +55,14 @@ for (const entry of moves) {
   if (Object.hasOwn(entry, "ignoresScreens")) {
     assert(typeof entry.ignoresScreens === "boolean", `moves.json: ${entry.id} の ignoresScreens が真偽値ではありません。`);
   }
+  if (Object.hasOwn(entry, "typeByPokemonId")) {
+    assert(entry.typeByPokemonId && typeof entry.typeByPokemonId === "object" && !Array.isArray(entry.typeByPokemonId), `moves.json: ${entry.id} の typeByPokemonId が不正です。`);
+    for (const [pokemonId, type] of Object.entries(entry.typeByPokemonId)) {
+      assert(pokemonIds.has(pokemonId), `moves.json: ${entry.id} の typeByPokemonId に未知のポケモンID ${pokemonId}`);
+      assert(typeof type === "string" && type, `moves.json: ${entry.id} の ${pokemonId} 用タイプが不正です。`);
+      assert(learnsets[pokemonId]?.includes(entry.id), `moves.json: ${entry.id} の typeByPokemonId に覚えないポケモン ${pokemonId} が設定されています。`);
+    }
+  }
   assert(!Object.hasOwn(entry, "users"), `moves.json: ${entry.id} に古い users 配列が残っています。`);
 }
 

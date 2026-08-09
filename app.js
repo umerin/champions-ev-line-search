@@ -1,6 +1,6 @@
 const paths = {
-  pokemon: "./data/pokemon.json?v=20260809-1",
-  moves: "./data/moves.json?v=20260809-2",
+  pokemon: "./data/pokemon.json?v=20260809-2",
+  moves: "./data/moves.json?v=20260809-3",
   learnsets: "./data/learnsets.json?v=20260809-1",
   battleEffects: "./data/battle-effects.json?v=20260809-5",
   typeChart: "./data/type-chart.json",
@@ -1325,6 +1325,7 @@ function handleMoveSettingsMoveListChange(event) {
 function getMovesForPokemon(pokemon) {
   return state.moves
     .filter((move) => isMoveAllowed(move.id) && Array.isArray(move.users) && move.users.includes(pokemon.id))
+    .map((move) => getAttackerAdjustedMove(move, pokemon))
     .sort((a, b) => {
       const typeRank = (moveTypeRank.get(a.type) ?? moveTypeOrder.length) - (moveTypeRank.get(b.type) ?? moveTypeOrder.length);
       if (typeRank !== 0) return typeRank;
@@ -1463,6 +1464,7 @@ function saveBulkSettings() {
 
 function getBulkMoveIdsByPokemon(rule = state.moveSettingsRule) {
   const settings = getBulkSettings(rule).topPowerByType;
+  const pokemonById = new Map(state.pokemon.map((pokemon) => [pokemon.id, pokemon]));
 
   const movesByPokemon = new Map();
   state.moves.forEach((move) => {
@@ -1471,10 +1473,11 @@ function getBulkMoveIdsByPokemon(rule = state.moveSettingsRule) {
     if (!move.type || !Number.isFinite(power) || power <= 0) return;
     if (!Array.isArray(move.users)) return;
     move.users.forEach((pokemonId) => {
+      const adjustedMove = getAttackerAdjustedMove(move, pokemonById.get(pokemonId));
       const movesByType = movesByPokemon.get(pokemonId) ?? new Map();
-      const moves = movesByType.get(move.type) ?? [];
-      moves.push({ move, power });
-      movesByType.set(move.type, moves);
+      const moves = movesByType.get(adjustedMove.type) ?? [];
+      moves.push({ move: adjustedMove, power });
+      movesByType.set(adjustedMove.type, moves);
       movesByPokemon.set(pokemonId, movesByType);
     });
   });
@@ -2097,6 +2100,11 @@ function getBattleWeather(attacker, defender, input) {
   return getWeatherFromAbility(attacker) ?? getWeatherFromAbility(defender) ?? "none";
 }
 
+function getAttackerAdjustedMove(move, attacker) {
+  const attackerType = move.typeByPokemonId?.[attacker?.id];
+  return attackerType && attackerType !== move.type ? { ...move, type: attackerType } : move;
+}
+
 function getWeatherAdjustedMove(move, weather) {
   if (move.id !== "weather-ball" || !WEATHER_BALL_TYPES[weather]) return move;
   return {
@@ -2672,7 +2680,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       if (!attacker || !isPokemonIncluded(attackerId, input.battleRule)) continue;
       if (!isMoveAllowedForPokemon(attackerId, move.id, input.battleRule)) continue;
       const battleWeather = getBattleWeather(attacker, defender, input);
-      const effectiveMove = getWeatherAdjustedMove(move, battleWeather);
+      const attackerAdjustedMove = getAttackerAdjustedMove(move, attacker);
+      const effectiveMove = getWeatherAdjustedMove(attackerAdjustedMove, battleWeather);
       if (!matchesMovePower(effectiveMove, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
       const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
       if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;

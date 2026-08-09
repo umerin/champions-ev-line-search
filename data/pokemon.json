@@ -13088,11 +13088,11 @@
   {
     "id": "tauros",
     "dexNumber": 128,
-    "displayName": "ケンタロス",
+    "displayName": "ケンタロス（通常）",
     "name": {
       "en": "Tauros",
-      "ja": "ケンタロス",
-      "jaHrkt": "ケンタロス"
+      "ja": "ケンタロス（通常）",
+      "jaHrkt": "ケンタロス（通常）"
     },
     "championsTarget": true,
     "types": [
@@ -13111,11 +13111,11 @@
   {
     "id": "tauros-paldea-aqua-breed",
     "dexNumber": 128,
-    "displayName": "ケンタロス（パルデア・aqua・breed）",
+    "displayName": "ケンタロス（ウォーター）",
     "name": {
       "en": "Tauros",
-      "ja": "ケンタロス（パルデア・aqua・breed）",
-      "jaHrkt": "ケンタロス（パルデア・aqua・breed）"
+      "ja": "ケンタロス（ウォーター）",
+      "jaHrkt": "ケンタロス（ウォーター）"
     },
     "championsTarget": true,
     "types": [
@@ -13135,11 +13135,11 @@
   {
     "id": "tauros-paldea-blaze-breed",
     "dexNumber": 128,
-    "displayName": "ケンタロス（パルデア・blaze・breed）",
+    "displayName": "ケンタロス（ブレイズ）",
     "name": {
       "en": "Tauros",
-      "ja": "ケンタロス（パルデア・blaze・breed）",
-      "jaHrkt": "ケンタロス（パルデア・blaze・breed）"
+      "ja": "ケンタロス（ブレイズ）",
+      "jaHrkt": "ケンタロス（ブレイズ）"
     },
     "championsTarget": true,
     "types": [
@@ -13159,11 +13159,11 @@
   {
     "id": "tauros-paldea-combat-breed",
     "dexNumber": 128,
-    "displayName": "ケンタロス（パルデア・combat・breed）",
+    "displayName": "ケンタロス（コンバット）",
     "name": {
       "en": "Tauros",
-      "ja": "ケンタロス（パルデア・combat・breed）",
-      "jaHrkt": "ケンタロス（パルデア・combat・breed）"
+      "ja": "ケンタロス（コンバット）",
+      "jaHrkt": "ケンタロス（コンバット）"
     },
     "championsTarget": true,
     "types": [

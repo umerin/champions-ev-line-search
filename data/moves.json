@@ -4703,6 +4703,12 @@
     },
     "championsTarget": true,
     "type": "normal",
+    "typeByPokemonId": {
+      "tauros": "normal",
+      "tauros-paldea-combat-breed": "fighting",
+      "tauros-paldea-blaze-breed": "fire",
+      "tauros-paldea-aqua-breed": "water"
+    },
     "category": "physical",
     "power": 90,
     "ignoresScreens": true,
