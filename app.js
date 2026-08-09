@@ -2827,7 +2827,7 @@ function getDefenderPowerModifier(defender, input, moveType) {
 }
 
 function getAdjustedMovePower(defender, input, move) {
-  return applyDamageModifier(move.power, getDefenderPowerModifier(defender, input, move.type));
+  return applyPowerModifier(move.power, getDefenderPowerModifier(defender, input, move.type));
 }
 
 function getDefenderDamageModifier(defender, input, effectiveness) {
@@ -2886,6 +2886,11 @@ function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiv
 function applyDamageModifier(damage, modifier) {
   const fixedPointModifier = Math.trunc(modifier * 4096);
   return Math.trunc((Math.trunc(damage * fixedPointModifier) + 2048 - 1) / 4096);
+}
+
+function applyPowerModifier(power, modifier) {
+  const fixedPointModifier = Math.trunc(modifier * 4096);
+  return Math.trunc((power * fixedPointModifier) / 4096);
 }
 
 function applyTypeEffectiveness(damage, effectiveness) {
