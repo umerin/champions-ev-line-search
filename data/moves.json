@@ -64163,7 +64163,6 @@
       "slowking",
       "frosmoth",
       "sobble",
-      "charizard-mega-y",
       "charizard-mega-x",
       "froslass-mega",
       "abomasnow-mega",
@@ -64266,7 +64265,6 @@
       "nuzleaf",
       "eiscue-noice",
       "eiscue-ice",
-      "torkoal",
       "greninja",
       "armarouge",
       "glaceon",
@@ -64276,7 +64274,6 @@
       "kyurem-black",
       "kyurem",
       "ninetales-alola",
-      "ninetales",
       "sunflora",
       "gigalith",
       "fomantis",
@@ -65738,6 +65735,23 @@
     "isSpreadMove": false,
     "users": [
       "pikachu-starter"
+    ]
+  },
+  {
+    "id": "weather-ball-fire",
+    "name": {
+      "en": "Weather Ball (Fire)",
+      "ja": "ウェザーボール(炎)",
+      "jaHrkt": "ウェザーボール(炎)"
+    },
+    "type": "fire",
+    "category": "special",
+    "power": 100,
+    "isSpreadMove": false,
+    "users": [
+      "charizard-mega-y",
+      "ninetales",
+      "torkoal"
     ]
   }
 ]

@@ -15,6 +15,7 @@ const HEATPROOF_POKEMON_IDS = new Set(["sinistcha"]);
 const DRY_SKIN_POKEMON_IDS = new Set(["toxicroak", "heliolisk"]);
 const FILTER_POKEMON_IDS = new Set(["aggron-mega"]);
 const HARD_ROCK_POKEMON_IDS = new Set(["camerupt", "rhyperior", "tirtouga", "carracosta"]);
+const SUNNY_FIRE_ATTACKER_IDS = new Set(["charizard-mega-y", "ninetales", "torkoal"]);
 const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
 const UNLIMITED_RESULT_LIMIT = Infinity;
 const DEFAULT_RESULT_LIMIT = 80;
@@ -2321,7 +2322,7 @@ function runSearch() {
         effectiveness: representative.effectiveness,
         rule: input.battleRule,
         isSpreadMove: representative.move.isSpreadMove,
-        defenderDamageModifier: representative.defenderDamageModifier,
+        damageModifier: representative.damageModifier,
       };
       const {
         maxDamage: afterDamage,
@@ -2468,6 +2469,13 @@ function getMoveSortName(move) {
   return move.name?.jaHrkt ?? move.name?.ja ?? move.name?.en ?? move.id;
 }
 
+function getResultMoveName(attacker, move) {
+  const name = move.name?.ja ?? move.name?.en ?? move.id;
+  return SUNNY_FIRE_ATTACKER_IDS.has(attacker.id) && move.type === "fire"
+    ? `${name}(晴)`
+    : name;
+}
+
 function compareJapaneseSortText(a, b) {
   return a.localeCompare(b, "ja", { sensitivity: "base" }) || a.localeCompare(b);
 }
@@ -2525,6 +2533,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
       const stab = attacker.types.includes(move.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
+      const attackerDamageModifier = getAttackerDamageModifier(attacker, move);
+      const damageModifier = defenderDamageModifier * attackerDamageModifier;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
           const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
@@ -2536,7 +2546,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       stab,
       effectiveness,
       Number(move.isSpreadMove),
-      defenderDamageModifier,
+      damageModifier,
     ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
@@ -2549,7 +2559,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               effectiveness,
               rule: input.battleRule,
               isSpreadMove: move.isSpreadMove,
-              defenderDamageModifier,
+              damageModifier,
             };
             const {
               maxDamage: currentDamage,
@@ -2568,7 +2578,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             effectiveness,
             stab,
             calculationPower,
-            defenderDamageModifier,
+            damageModifier,
             damageProfileKey,
             scenarioIndex: scenarios.length,
             ...currentDamageResult,
@@ -2830,6 +2840,11 @@ function getAdjustedMovePower(defender, input, move) {
   return applyPowerModifier(move.power, getDefenderPowerModifier(defender, input, move.type));
 }
 
+function getAttackerDamageModifier(attacker, move) {
+  if (SUNNY_FIRE_ATTACKER_IDS.has(attacker.id) && move.type === "fire") return 1.5;
+  return 1;
+}
+
 function getDefenderDamageModifier(defender, input, effectiveness) {
   let modifier = 1;
   if (input.multiscaleEnabled && MULTISCALE_POKEMON_IDS.has(defender.id)) modifier *= 0.5;
@@ -2845,14 +2860,14 @@ function calcDamageResult(damageInput, hp) {
     state.rules.damageRandomMax,
     damageInput.stab,
     damageInput.effectiveness,
-    damageInput.defenderDamageModifier,
+    damageInput.damageModifier,
   );
   const minDamage = calcDamageFromPreRandom(
     preRandomDamage,
     state.rules.damageRandomMin ?? 0.85,
     damageInput.stab,
     damageInput.effectiveness,
-    damageInput.defenderDamageModifier,
+    damageInput.damageModifier,
   );
   const koRate = calcOneHitKoRate(
     preRandomDamage,
@@ -2861,7 +2876,7 @@ function calcDamageResult(damageInput, hp) {
     hp,
     maxDamage,
     minDamage,
-    damageInput.defenderDamageModifier,
+    damageInput.damageModifier,
   );
   return { maxDamage, minDamage, koRate };
 }
@@ -2874,12 +2889,12 @@ function calcPreRandomDamage({ level, power, attack, defense, rule, isSpreadMove
   return applyDamageModifier(baseDamage, doubleModifier);
 }
 
-function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness, defenderDamageModifier = 1) {
+function calcDamageFromPreRandom(preRandomDamage, randomModifier, stab, effectiveness, damageModifier = 1) {
   let damage = preRandomDamage;
   damage = applyDamageModifier(damage, randomModifier);
   damage = applyDamageModifier(damage, stab);
   damage = applyTypeEffectiveness(damage, effectiveness);
-  damage = applyDamageModifier(damage, defenderDamageModifier);
+  damage = applyDamageModifier(damage, damageModifier);
   return damage;
 }
 
@@ -2918,7 +2933,7 @@ function matchesAttackKind(category, filters) {
   return filters.includes(category);
 }
 
-function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage, defenderDamageModifier = 1) {
+function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, minDamage, damageModifier = 1) {
   if (maxDamage < hp) return 0;
   if (minDamage >= hp) return 100;
   let lowestKoRoll = 86;
@@ -2930,7 +2945,7 @@ function calcOneHitKoRate(preRandomDamage, stab, effectiveness, hp, maxDamage, m
       randomPercent / 100,
       stab,
       effectiveness,
-      defenderDamageModifier,
+      damageModifier,
     );
     if (damage >= hp) highestKoRoll = randomPercent;
     else lowestKoRoll = randomPercent + 1;
@@ -3018,7 +3033,7 @@ function renderResultGroup(group, groupIndex) {
         <button type="button" class="result-group-toggle" data-result-group="${groupIndex}" aria-expanded="false">
           <span class="result-group-chevron" aria-hidden="true">＋</span>
           <span class="result-group-attacker">${escapeHtml(getPokemonDisplayName(representative.attacker))}</span>
-          <span class="result-group-move">${escapeHtml(representative.move.name.ja)}</span>
+          <span class="result-group-move">${escapeHtml(getResultMoveName(representative.attacker, representative.move))}</span>
           <span class="result-group-power">威力 ${escapeHtml(String(representative.move.power))}</span>
           <span class="result-group-representative ${lineClass}">代表 ${formatProbability(representative.currentKoRate)}→${formatProbability(representative.afterKoRate)}</span>
           <span class="result-group-diff ${diffClass}">変化 ${diffLabel}</span>
@@ -3040,7 +3055,7 @@ function renderResultDetailRow(row, groupIndex) {
       <td class="result-attacker">${escapeHtml(getPokemonDisplayName(row.attacker))}</td>
       <td class="result-attack">${row.attackStat}(${row.attackerPoints})</td>
       <td class="result-nature">${row.attackerNature === "boost" ? "有" : "無"}</td>
-      <td class="result-move">${escapeHtml(row.move.name.ja)}</td>
+      <td class="result-move">${escapeHtml(getResultMoveName(row.attacker, row.move))}</td>
       <td class="result-power">${row.move.power}</td>
       <td class="result-current">${row.currentDamage}</td>
       <td class="result-after">${row.afterDamage}</td>
