@@ -1304,6 +1304,30 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
   border: 0;
 }
 
+.effectiveness-weather-column {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  grid-column: 4;
+}
+
+.weather-ability-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.weather-ability-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
 .checkbox-group legend {
   width: 100%;
   margin-bottom: 3px;
@@ -1322,7 +1346,8 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
   white-space: nowrap;
 }
 
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input[type="checkbox"],
+.checkbox-group input[type="radio"] {
   width: 16px;
   height: 16px;
   margin: 0;
@@ -1687,6 +1712,10 @@ tbody tr:hover {
   .opponent-filters {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .effectiveness-weather-column {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1816,6 +1845,34 @@ tbody tr:hover {
   .checkbox-group input[type="checkbox"] {
     width: 17px;
     height: 17px;
+  }
+
+  .checkbox-group input[type="radio"] {
+    width: 17px;
+    height: 17px;
+  }
+
+  .weather-ability-option {
+    min-height: 32px;
+    padding: 5px 7px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+  }
+
+  .weather-ability-option:has(input:checked) {
+    border-color: #9acbc5;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+  }
+
+  .weather-ability-option input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+  }
+
+  .effectiveness-weather-column {
+    grid-column: 1;
   }
 
   .field-grid.compact {

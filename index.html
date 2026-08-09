@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260808-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260809-1" />
   </head>
   <body>
     <main class="app-shell">
@@ -233,15 +233,30 @@
               <label><input type="checkbox" name="attackerNature" value="both" checked /> 両方</label>
             </fieldset>
 
-            <fieldset class="checkbox-group effectiveness-group" data-filter-group="effectiveness">
-              <legend>相性</legend>
-              <label><input type="checkbox" name="effectiveness" value="4" checked /> 4倍</label>
-              <label><input type="checkbox" name="effectiveness" value="2" checked /> 2倍</label>
-              <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
-              <label><input type="checkbox" name="effectiveness" value="0.5" /> 1/2</label>
-              <label><input type="checkbox" name="effectiveness" value="0.25" /> 1/4</label>
-              <label><input type="checkbox" name="effectiveness" value="all" /> すべて</label>
-            </fieldset>
+            <div class="effectiveness-weather-column">
+              <fieldset class="checkbox-group effectiveness-group" data-filter-group="effectiveness">
+                <legend>相性</legend>
+                <label><input type="checkbox" name="effectiveness" value="4" checked /> 4倍</label>
+                <label><input type="checkbox" name="effectiveness" value="2" checked /> 2倍</label>
+                <label><input type="checkbox" name="effectiveness" value="1" /> 等倍</label>
+                <label><input type="checkbox" name="effectiveness" value="0.5" /> 1/2</label>
+                <label><input type="checkbox" name="effectiveness" value="0.25" /> 1/4</label>
+                <label><input type="checkbox" name="effectiveness" value="all" /> すべて</label>
+              </fieldset>
+
+              <fieldset class="checkbox-group weather-group">
+                <legend>天候</legend>
+                <label><input type="radio" name="weather" value="none" checked /> なし</label>
+                <label><input type="radio" name="weather" value="sunny" /> 晴</label>
+                <label><input type="radio" name="weather" value="rain" /> 雨</label>
+                <label><input type="radio" name="weather" value="sand" /> 砂</label>
+                <label><input type="radio" name="weather" value="snow" /> 雪</label>
+              </fieldset>
+              <label class="weather-ability-option">
+                <input id="weatherAbilityAlways" type="checkbox" checked />
+                天候特性を常に適応
+              </label>
+            </div>
 
             <fieldset class="result-sort-settings">
               <legend>並び替え</legend>
