@@ -12,6 +12,10 @@ const MOVE_SETTING_RULES = ["single", "double"];
 const RESULT_LIMIT_OPTIONS = [80, 120, 160, 200];
 const UNLIMITED_RESULT_LIMIT = Infinity;
 const DEFAULT_RESULT_LIMIT = 80;
+const WALL_DAMAGE_MODIFIERS = {
+  single: 0.5,
+  double: 2732 / 4096,
+};
 const FINAL_DAMAGE_M_GROUP_ORDER = [
   "wall",
   "neuroforce",
@@ -2351,6 +2355,8 @@ function handleOpponentFilterChange(checkbox) {
     if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
   } else if (group === "attackerPointsPreset" || group === "attackerPointsDetail") {
     if (!checkboxes.some((item) => item.checked)) checkbox.checked = true;
+  } else if (group === "wall") {
+    // 壁は複数選択と全解除を許可する。適用時の補正は重複させない。
   } else {
     if (checkbox.checked) {
       checkboxes.forEach((item) => {
@@ -2679,7 +2685,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
         defender,
         input,
         effectiveness,
-        effectiveMove.type,
+        effectiveMove,
       ));
       const mProtectModifier = 1;
       const weatherModifier = getWeatherDamageModifier(effectiveMove.type, battleWeather);
@@ -2772,6 +2778,7 @@ function readInput() {
     effectiveness: getCheckedValues("effectiveness"),
     weather: getCheckedValues("weather")[0] ?? "none",
     weatherAbilityAlways: els.weatherAbilityAlways.checked,
+    walls: getCheckedValues("wall"),
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
@@ -2986,12 +2993,21 @@ function getAdjustedMovePower(defender, input, move, defenderWeather = "none") {
   return applyPowerModifier(move.power, modifier);
 }
 
-function getFinalDamageMEffects(attacker, defender, input, effectiveness, moveType) {
-  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, moveType, effectiveness)
+function getWallDamageModifier(input, moveCategory) {
+  const hasRelevantWall = input.walls.includes("auroraVeil")
+    || (moveCategory === "physical" && input.walls.includes("reflect"))
+    || (moveCategory === "special" && input.walls.includes("lightScreen"));
+  return hasRelevantWall ? WALL_DAMAGE_MODIFIERS[input.battleRule] ?? 1 : 1;
+}
+
+function getFinalDamageMEffects(attacker, defender, input, effectiveness, move) {
+  const wallModifier = getWallDamageModifier(input, move.category);
+  const wallEffects = wallModifier === 1 ? [] : [{ mGroup: "wall", modifier: wallModifier }];
+  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
-  const defenderEffects = getMatchingBattleEffects("defender", defender.id, moveType, effectiveness)
+  const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
-  return [...attackerEffects, ...defenderEffects].sort((a, b) => {
+  return [...wallEffects, ...attackerEffects, ...defenderEffects].sort((a, b) => {
     return (FINAL_DAMAGE_M_GROUP_RANK.get(a.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length)
       - (FINAL_DAMAGE_M_GROUP_RANK.get(b.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length);
   });
