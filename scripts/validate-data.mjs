@@ -52,6 +52,9 @@ for (const entry of pokemon) {
 }
 for (const entry of moves) {
   assert(typeof entry.championsTarget === "boolean", `moves.json: ${entry.id} の championsTarget が真偽値ではありません。`);
+  if (Object.hasOwn(entry, "ignoresScreens")) {
+    assert(typeof entry.ignoresScreens === "boolean", `moves.json: ${entry.id} の ignoresScreens が真偽値ではありません。`);
+  }
   assert(!Object.hasOwn(entry, "users"), `moves.json: ${entry.id} に古い users 配列が残っています。`);
 }
 

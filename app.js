@@ -1,6 +1,6 @@
 const paths = {
   pokemon: "./data/pokemon.json?v=20260809-1",
-  moves: "./data/moves.json?v=20260809-1",
+  moves: "./data/moves.json?v=20260809-2",
   learnsets: "./data/learnsets.json?v=20260809-1",
   battleEffects: "./data/battle-effects.json?v=20260809-5",
   typeChart: "./data/type-chart.json",
@@ -2993,15 +2993,16 @@ function getAdjustedMovePower(defender, input, move, defenderWeather = "none") {
   return applyPowerModifier(move.power, modifier);
 }
 
-function getWallDamageModifier(input, moveCategory) {
+function getWallDamageModifier(input, move) {
+  if (move.ignoresScreens) return 1;
   const hasRelevantWall = input.walls.includes("auroraVeil")
-    || (moveCategory === "physical" && input.walls.includes("reflect"))
-    || (moveCategory === "special" && input.walls.includes("lightScreen"));
+    || (move.category === "physical" && input.walls.includes("reflect"))
+    || (move.category === "special" && input.walls.includes("lightScreen"));
   return hasRelevantWall ? WALL_DAMAGE_MODIFIERS[input.battleRule] ?? 1 : 1;
 }
 
 function getFinalDamageMEffects(attacker, defender, input, effectiveness, move) {
-  const wallModifier = getWallDamageModifier(input, move.category);
+  const wallModifier = getWallDamageModifier(input, move);
   const wallEffects = wallModifier === 1 ? [] : [{ mGroup: "wall", modifier: wallModifier }];
   const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));

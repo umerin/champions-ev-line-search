@@ -738,6 +738,7 @@
     "type": "fighting",
     "category": "physical",
     "power": 75,
+    "ignoresScreens": true,
     "isSpreadMove": false
   },
   {
@@ -4547,6 +4548,7 @@
     "type": "psychic",
     "category": "physical",
     "power": 85,
+    "ignoresScreens": true,
     "isSpreadMove": false
   },
   {
@@ -4703,6 +4705,7 @@
     "type": "normal",
     "category": "physical",
     "power": 90,
+    "ignoresScreens": true,
     "isSpreadMove": false
   },
   {
