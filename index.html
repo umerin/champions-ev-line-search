@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260809-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260809-5" />
   </head>
   <body>
     <main class="app-shell">
@@ -393,20 +393,24 @@
                 <input id="moveSettingsPresetName" type="text" maxlength="40" placeholder="例：ダブル用" />
               </label>
               <div class="move-settings-preset-actions">
-                <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
-                <button id="moveSettingsRecommendedPresetCreate" type="button" class="secondary-button recommended-preset-button">おすすめ作成を開始</button>
-                <button id="moveSettingsPresetLoad" type="button" class="secondary-button" disabled>呼び出す</button>
-                <button id="moveSettingsPresetEdit" type="button" class="secondary-button" disabled>編集モード</button>
-                <button id="moveSettingsPresetEditDone" type="button" class="secondary-button" hidden>編集終了</button>
-                <button id="moveSettingsRecommendedPresetExport" type="button" class="secondary-button recommended-preset-export" disabled>おすすめJSONを書き出す</button>
-                <button id="moveSettingsPresetDelete" type="button" class="secondary-button" disabled>削除</button>
+                <div class="move-settings-preset-actions-primary">
+                  <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
+                  <button id="moveSettingsPresetLoad" type="button" class="secondary-button" disabled>呼び出す</button>
+                  <button id="moveSettingsPresetEdit" type="button" class="secondary-button move-settings-preset-action-separated" disabled>編集モード</button>
+                  <button id="moveSettingsPresetEditDone" type="button" class="secondary-button move-settings-preset-action-separated" hidden>編集終了</button>
+                  <button id="moveSettingsPresetDelete" type="button" class="secondary-button move-settings-preset-action-separated" disabled>削除</button>
+                </div>
+                <div class="move-settings-preset-actions-recommended">
+                  <button id="moveSettingsRecommendedPresetCreate" type="button" class="secondary-button recommended-preset-button">おすすめ作成を開始</button>
+                  <button id="moveSettingsRecommendedPresetExport" type="button" class="secondary-button recommended-preset-export" disabled>おすすめ書き出し</button>
+                </div>
               </div>
               <div id="moveSettingsPresetEditingNotice" class="move-settings-preset-editing-notice" hidden>
                 <strong id="moveSettingsPresetEditingLabel">プリセット編集中</strong>
                 <span id="moveSettingsPresetEditingName"></span>
                 <small>変更は自動保存されます</small>
               </div>
-              <p class="move-settings-recommended-help">おすすめ候補はこの端末に自動保存されます。内容が完成したら「おすすめJSONを書き出す」で組み込み用ファイルを作れます。</p>
+              <p class="move-settings-recommended-help">おすすめ候補はこの端末に自動保存されます。内容が完成したら「おすすめ書き出し」で組み込み用ファイルを作れます。</p>
               <p id="moveSettingsPresetStatus" class="move-settings-preset-status" role="status" aria-live="polite"></p>
             </div>
           </div>

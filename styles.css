@@ -591,7 +591,7 @@ legend {
   display: grid;
   grid-template-columns: minmax(170px, 1fr) minmax(150px, 1fr) auto;
   gap: 8px;
-  align-items: end;
+  align-items: start;
   margin-top: 14px;
   padding: 12px;
   border: 1px solid var(--line);
@@ -629,9 +629,22 @@ legend {
 }
 
 .move-settings-preset-actions {
+  display: grid;
+  gap: 8px;
+  align-self: start;
+  margin-top: 22px;
+}
+
+.move-settings-preset-actions-primary,
+.move-settings-preset-actions-recommended {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 6px;
+}
+
+.move-settings-preset-action-separated {
+  margin-left: 12px;
 }
 
 .move-settings-preset-actions .secondary-button {
@@ -1151,6 +1164,14 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.03em;
+}
+
+.move-settings-move-header > span:nth-child(3) {
+  text-align: center;
+}
+
+.move-settings-move-header > span:nth-child(5) {
+  text-align: right;
 }
 
 .move-setting-row {
@@ -1954,8 +1975,18 @@ tbody tr:hover {
   }
 
   .move-settings-preset-actions {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
+  .move-settings-preset-actions-primary,
+  .move-settings-preset-actions-recommended {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .move-settings-preset-action-separated {
+    margin-left: 0;
   }
 
   .move-settings-preset-actions .secondary-button {
