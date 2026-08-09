@@ -2607,7 +2607,9 @@ function compareResultSortRules(a, b) {
     if (sortRule.key === "attack-stat") {
       comparison = a.attackStat - b.attackStat;
     } else if (sortRule.key === "change-amount") {
-      comparison = a.diff - b.diff;
+      // Damage reductions are displayed as negative values, so compare them in
+      // reverse numeric order to make a larger reduction count as "higher".
+      comparison = b.diff - a.diff;
     } else if (sortRule.key === "attacker-name") {
       comparison = compareJapaneseSortText(getPokemonDisplayName(a.attacker), getPokemonDisplayName(b.attacker));
     } else if (sortRule.key === "move-name") {
