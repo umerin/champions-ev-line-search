@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-1",
   moves: "./data/moves.json?v=20260809-1",
   learnsets: "./data/learnsets.json?v=20260809-1",
-  battleEffects: "./data/battle-effects.json?v=20260809-1",
+  battleEffects: "./data/battle-effects.json?v=20260809-2",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -98,6 +98,7 @@ const els = {
   filterEnabled: document.querySelector("#filterEnabled"),
   hardRockOption: document.querySelector("#hardRockOption"),
   hardRockEnabled: document.querySelector("#hardRockEnabled"),
+  weatherAbilityAlways: document.querySelector("#weatherAbilityAlways"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -346,6 +347,10 @@ async function init() {
     els.drySkinEnabled.addEventListener("change", runSearch);
     els.filterEnabled.addEventListener("change", runSearch);
     els.hardRockEnabled.addEventListener("change", runSearch);
+    els.weatherAbilityAlways.addEventListener("change", runSearch);
+    document.querySelectorAll('input[name="weather"]').forEach((radio) => {
+      radio.addEventListener("change", runSearch);
+    });
     document.querySelectorAll(".rule-toggle-button").forEach((button) => {
       button.addEventListener("click", () => selectBattleRule(button));
     });
@@ -2033,6 +2038,63 @@ function updateMegaToggle(pokemon) {
   els.megaToggle.title = family.length < 2 ? "メガシンカ形態はありません" : "メガシンカ形態を切り替え";
 }
 
+const WEATHER_BALL_TYPES = {
+  sunny: "fire",
+  rain: "water",
+  sand: "rock",
+  snow: "ice",
+};
+const SOLAR_MOVE_IDS = new Set(["solar-beam", "solar-blade"]);
+
+function getSelectedWeather(input) {
+  return input.weather ?? "none";
+}
+
+function getEffectiveWeather(pokemon, input) {
+  const selectedWeather = getSelectedWeather(input);
+  if (!input.weatherAbilityAlways || !pokemon) return selectedWeather;
+
+  for (const [weather, pokemonIds] of Object.entries(state.battleEffects?.weatherSetters ?? {})) {
+    if (pokemonIds.includes(pokemon.id)) return weather;
+  }
+  return selectedWeather;
+}
+
+function getWeatherAdjustedMove(move, weather) {
+  if (move.id !== "weather-ball" || !WEATHER_BALL_TYPES[weather]) return move;
+  return {
+    ...move,
+    power: 100,
+    type: WEATHER_BALL_TYPES[weather],
+  };
+}
+
+function getWeatherMovePowerModifier(move, weather) {
+  return SOLAR_MOVE_IDS.has(move.id) && ["rain", "sand", "snow"].includes(weather) ? 0.5 : 1;
+}
+
+function getWeatherDamageModifier(moveType, weather) {
+  if (weather === "sunny") {
+    if (moveType === "fire") return 1.5;
+    if (moveType === "water") return 0.5;
+  }
+  if (weather === "rain") {
+    if (moveType === "water") return 1.5;
+    if (moveType === "fire") return 0.5;
+  }
+  return 1;
+}
+
+function getWeatherAdjustedDefense(defender, moveCategory, defense, weather) {
+  if (weather === "sand" && moveCategory === "special" && defender.types.includes("rock")) {
+    return Math.floor(defense * 1.5);
+  }
+  if (weather === "snow" && moveCategory === "physical" && defender.types.includes("ice")) {
+    return Math.floor(defense * 1.5);
+  }
+  return defense;
+}
+
 function getBattleEffect(scope, key) {
   return state.battleEffects?.[scope]?.[key] ?? null;
 }
@@ -2354,7 +2416,12 @@ function runSearch() {
         level: state.rules.level,
         power: representative.calculationPower,
         attack: representative.attackStat,
-        defense: representative.move.category === "physical" ? after.def : after.spd,
+        defense: getWeatherAdjustedDefense(
+          defender,
+          representative.move.category,
+          representative.move.category === "physical" ? after.def : after.spd,
+          getEffectiveWeather(defender, input),
+        ),
         stab: representative.stab,
         effectiveness: representative.effectiveness,
         rule: input.battleRule,
@@ -2554,49 +2621,64 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
   const attackerNatureModes = input.attackerNatures;
   const scenarios = [];
   const currentDamageCache = new Map();
+  const defenderWeather = getEffectiveWeather(defender, input);
 
   for (const move of state.moves) {
     if (!isMoveAllowed(move.id)) continue;
-    if (!matchesMovePower(move, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
     if (!matchesAttackKind(move.category, input.attackKinds)) continue;
-    const effectiveness = calcEffectiveness(move.type, defender.types);
-    if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
-    const calculationPower = getAdjustedMovePower(defender, input, move);
-    const defenderDamageModifier = getDefenderDamageModifier(defender, input, effectiveness);
 
     for (const attackerId of move.users) {
       const attacker = attackerById.get(attackerId);
       if (!attacker || !isPokemonIncluded(attackerId, input.battleRule)) continue;
       if (!isMoveAllowedForPokemon(attackerId, move.id, input.battleRule)) continue;
+      const attackerWeather = getEffectiveWeather(attacker, input);
+      const effectiveMove = getWeatherAdjustedMove(move, attackerWeather);
+      if (!matchesMovePower(effectiveMove, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
+      const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
+      if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
-      const stab = attacker.types.includes(move.type) ? 1.5 : 1;
+      const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, defenderWeather);
+      const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
-      const attackerDamageModifier = getAttackerDamageModifier(attacker, move);
+      const defenderDamageModifier = getDefenderDamageModifier(
+        defender,
+        input,
+        effectiveness,
+        effectiveMove.type,
+        defenderWeather,
+      );
+      const attackerDamageModifier = getAttackerDamageModifier(attacker, effectiveMove);
       const damageModifier = defenderDamageModifier * attackerDamageModifier;
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
-          const attackStat = calcAttackStat(attacker, move.category, attackerPoints, attackerNature);
+          const attackStat = calcAttackStat(attacker, effectiveMove.category, attackerPoints, attackerNature);
           if (input.attackStatMultipleOf11 && attackStat % 11 !== 0) continue;
-    const damageProfileKey = [
-      move.category,
-      calculationPower,
-      attackStat,
-      stab,
-      effectiveness,
-      Number(move.isSpreadMove),
-      damageModifier,
-    ].join("|");
+          const damageProfileKey = [
+            effectiveMove.category,
+            calculationPower,
+            attackStat,
+            stab,
+            effectiveness,
+            Number(effectiveMove.isSpreadMove),
+            damageModifier,
+            defenderWeather,
+          ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
             const damageInput = {
               level: state.rules.level,
               power: calculationPower,
               attack: attackStat,
-              defense: move.category === "physical" ? current.def : current.spd,
+              defense: getWeatherAdjustedDefense(
+                defender,
+                effectiveMove.category,
+                effectiveMove.category === "physical" ? current.def : current.spd,
+                defenderWeather,
+              ),
               stab,
               effectiveness,
               rule: input.battleRule,
-              isSpreadMove: move.isSpreadMove,
+              isSpreadMove: effectiveMove.isSpreadMove,
               damageModifier,
             };
             const {
@@ -2609,7 +2691,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
           }
           scenarios.push({
             attacker,
-            move,
+            move: effectiveMove,
             attackStat,
             attackerPoints,
             attackerNature,
@@ -2647,6 +2729,8 @@ function readInput() {
     attackerPoints: readAttackerPoints(),
     attackerNatures: getCheckedValues("attackerNature").filter((value) => value !== "both"),
     effectiveness: getCheckedValues("effectiveness"),
+    weather: getCheckedValues("weather")[0] ?? "none",
+    weatherAbilityAlways: els.weatherAbilityAlways.checked,
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
     includePriorityMoves: els.includePriorityMoves.checked,
@@ -2855,8 +2939,10 @@ function getDefenderPowerModifier(defender, input, moveType) {
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getAdjustedMovePower(defender, input, move) {
-  return applyPowerModifier(move.power, getDefenderPowerModifier(defender, input, move.type));
+function getAdjustedMovePower(defender, input, move, defenderWeather = "none") {
+  const modifier = getDefenderPowerModifier(defender, input, move.type)
+    * getWeatherMovePowerModifier(move, defenderWeather);
+  return applyPowerModifier(move.power, modifier);
 }
 
 function getAttackerDamageModifier(attacker, move) {
@@ -2865,10 +2951,11 @@ function getAttackerDamageModifier(attacker, move) {
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getDefenderDamageModifier(defender, input, effectiveness) {
-  return getMatchingBattleEffects("defender", defender.id, null, effectiveness)
+function getDefenderDamageModifier(defender, input, effectiveness, moveType, defenderWeather = "none") {
+  return getMatchingBattleEffects("defender", defender.id, moveType, effectiveness)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]))
-    .reduce((modifier, effect) => modifier * effect.modifier, 1);
+    .reduce((modifier, effect) => modifier * effect.modifier, 1)
+    * getWeatherDamageModifier(moveType, defenderWeather);
 }
 
 function calcDamageResult(damageInput, hp) {

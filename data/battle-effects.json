@@ -70,5 +70,25 @@
       "modifier": 0.75
     }
   },
-  "attacker": {}
+  "attacker": {},
+  "weatherSetters": {
+    "sunny": [
+      "charizard-mega-y",
+      "ninetales",
+      "torkoal"
+    ],
+    "rain": [
+      "pelipper"
+    ],
+    "sand": [
+      "tyranitar",
+      "tyranitar-mega",
+      "hippowdon"
+    ],
+    "snow": [
+      "abomasnow",
+      "abomasnow-mega",
+      "ninetales-alola"
+    ]
+  }
 }

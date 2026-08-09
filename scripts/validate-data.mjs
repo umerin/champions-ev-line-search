@@ -56,6 +56,15 @@ for (const [pokemonId, pokemonMoves] of Object.entries(learnsets)) {
 }
 
 for (const [scope, effects] of Object.entries(battleEffects)) {
+  if (scope === "weatherSetters") {
+    for (const [weather, setterIds] of Object.entries(effects)) {
+      assert(Array.isArray(setterIds), `battle-effects.json: ${weather} の天候特性ポケモン一覧が配列ではありません。`);
+      for (const pokemonId of setterIds) {
+        assert(pokemonIds.has(pokemonId), `battle-effects.json: ${weather} に未知のポケモンID ${pokemonId}`);
+      }
+    }
+    continue;
+  }
   assert(["attacker", "defender"].includes(scope), `battle-effects.json: 未知の区分 ${scope}`);
   for (const [key, effect] of Object.entries(effects)) {
     assert(["power", "damage"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
