@@ -2590,25 +2590,30 @@ function groupAttackScenarios(scenarios) {
 
 function getRankedProfileScenarios(scenarios, prioritizeMega) {
   const resultLimit = state.resultLimit;
-  if (state.resultSort.some(({ key }) => ["attack-stat", "attacker-name", "move-name"].includes(key))) {
+  const hasExplicitSort = state.resultSort.some(({ key }) => key !== "unset");
+  if (hasExplicitSort || prioritizeMega) {
     return [...scenarios]
       .sort((a, b) => {
-        return compareResultSortRules(a, b) || a.scenarioIndex - b.scenarioIndex;
+        return compareMegaPriority(a, b, prioritizeMega)
+          || compareResultSortRules(a, b)
+          || a.scenarioIndex - b.scenarioIndex;
       })
       .slice(0, resultLimit);
   }
-  if (!prioritizeMega) return scenarios.slice(0, resultLimit);
-  const mega = [];
-  const regular = [];
-  for (const scenario of scenarios) {
-    const bucket = scenario.attacker.id.includes("-mega") ? mega : regular;
-    if (bucket.length < resultLimit) bucket.push(scenario);
-  }
-  return [...mega, ...regular];
+  return scenarios.slice(0, resultLimit);
 }
 
 function compareResultRows(a, b, prioritizeMega) {
-  return compareResultSortRules(a, b) || compareRecommendedResultRows(a, b, prioritizeMega);
+  return compareMegaPriority(a, b, prioritizeMega)
+    || compareResultSortRules(a, b)
+    || compareRecommendedResultRows(a, b);
+}
+
+function compareMegaPriority(a, b, prioritizeMega) {
+  if (!prioritizeMega) return 0;
+  const aIsMega = /-mega(?:-|$)/.test(a.attacker.id);
+  const bIsMega = /-mega(?:-|$)/.test(b.attacker.id);
+  return Number(bIsMega) - Number(aIsMega);
 }
 
 function compareResultSortRules(a, b) {
@@ -2657,12 +2662,9 @@ function compareJapaneseSortText(a, b) {
   return a.localeCompare(b, "ja", { sensitivity: "base" }) || a.localeCompare(b);
 }
 
-function compareRecommendedResultRows(a, b, prioritizeMega) {
-  const megaPriority = prioritizeMega
-    ? Number(b.attacker.id.includes("-mega")) - Number(a.attacker.id.includes("-mega"))
-    : 0;
+function compareRecommendedResultRows(a, b) {
   const probabilityImprovement = (b.currentKoRate - b.afterKoRate) - (a.currentKoRate - a.afterKoRate);
-  return megaPriority || probabilityImprovement || a.diff - b.diff || a.sortOrder - b.sortOrder;
+  return probabilityImprovement || a.diff - b.diff || a.sortOrder - b.sortOrder;
 }
 
 function insertRankedRow(rows, row, prioritizeMega) {
