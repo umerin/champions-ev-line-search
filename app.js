@@ -143,7 +143,8 @@ const els = {
   higherOffenseOnly: document.querySelector("#higherOffenseOnly"),
   attackStatMultipleOf11: document.querySelector("#attackStatMultipleOf11"),
   stabOnly: document.querySelector("#stabOnly"),
-  randomToGuaranteedSurvival: document.querySelector("#randomToGuaranteedSurvival"),
+  guaranteedSurvivalSearch: document.querySelector("#guaranteedSurvivalSearch"),
+  guaranteedSurvivalHitOptions: [...document.querySelectorAll("[data-guaranteed-survival-hit]")],
   showNonGuaranteedWhenGuaranteed: document.querySelector("#showNonGuaranteedWhenGuaranteed"),
   excludeUnsurvivableAttacks: document.querySelector("#excludeUnsurvivableAttacks"),
   prioritizeMega: document.querySelector("#prioritizeMega"),
@@ -409,13 +410,23 @@ async function init() {
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => toggleNatureButton(button));
     });
-    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#attackStatMultipleOf11):not(#stabOnly):not(#randomToGuaranteedSurvival):not(#showNonGuaranteedWhenGuaranteed):not(#excludeUnsurvivableAttacks):not(#prioritizeMega)').forEach((checkbox) => {
+    document.querySelectorAll('.checkbox-group input[type="checkbox"]:not(#higherOffenseOnly):not(#attackStatMultipleOf11):not(#stabOnly):not(#guaranteedSurvivalSearch):not(#showNonGuaranteedWhenGuaranteed):not(#excludeUnsurvivableAttacks):not(#prioritizeMega)').forEach((checkbox) => {
       checkbox.addEventListener("change", () => handleOpponentFilterChange(checkbox));
     });
     els.higherOffenseOnly.addEventListener("change", runSearch);
     els.attackStatMultipleOf11.addEventListener("change", runSearch);
     els.stabOnly.addEventListener("change", runSearch);
-    els.randomToGuaranteedSurvival.addEventListener("change", runSearch);
+    els.guaranteedSurvivalSearch.addEventListener("change", () => {
+      updateGuaranteedSurvivalHitOptions();
+      scheduleSearch(1500);
+    });
+    els.guaranteedSurvivalHitOptions.forEach((button) => {
+      button.addEventListener("click", () => {
+        const isSelected = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", String(!isSelected));
+        scheduleSearch(1500);
+      });
+    });
     els.showNonGuaranteedWhenGuaranteed.addEventListener("change", runSearch);
     els.excludeUnsurvivableAttacks.addEventListener("change", runSearch);
     els.prioritizeMega.addEventListener("change", runSearch);
@@ -429,6 +440,7 @@ async function init() {
       runSearch();
     });
     setupResultSortControls();
+    updateGuaranteedSurvivalHitOptions();
     runSearch();
   } catch (error) {
     els.dataStatus.textContent = "読込失敗";
@@ -2461,15 +2473,27 @@ function runSearch() {
     const profileRows = [];
     const representative = profile.scenarios[0];
     const rankedScenarios = getRankedProfileScenarios(profile.scenarios, input.prioritizeMega);
-    let minimumCandidateTotal = null;
     let isSurvivable = false;
     const shownOutcomeKeys = new Set();
     const candidateResults = [];
+    const relevantSurvivalHitCounts = input.guaranteedSurvivalSearch
+      ? input.guaranteedSurvivalHitCounts.filter((hitCount) => {
+          return (representative.currentKoRates[hitCount] ?? 0) > 0;
+        })
+      : [];
+    const minimumCandidateTotalByHit = new Map();
+    let completedMinimumCandidateTotal = null;
+
+    if (input.guaranteedSurvivalSearch && !relevantSurvivalHitCounts.length) continue;
 
     for (let candidateIndex = 0; candidateIndex < candidateStats.length; candidateIndex += 1) {
       const { candidate, after } = candidateStats[candidateIndex];
       if (!matchesRelevantDefensiveInvestment(representative.move.category, candidate)) continue;
       const candidateTotal = candidate.hpAdd + candidate.defAdd + candidate.spdAdd;
+      if (
+        completedMinimumCandidateTotal !== null
+        && candidateTotal > completedMinimumCandidateTotal
+      ) break;
       const damageInput = {
         level: state.rules.level,
         power: representative.calculationPower,
@@ -2486,13 +2510,21 @@ function runSearch() {
         isSpreadMove: representative.move.isSpreadMove,
         weatherModifier: representative.weatherModifier,
         mModifier: representative.mModifier,
+        subsequentHitMModifier: representative.subsequentHitMModifier,
         mProtectModifier: representative.mProtectModifier,
       };
       const {
         maxDamage: afterDamage,
         minDamage: afterMinDamage,
         koRate: afterKoRate,
+        subsequentMaxDamage: afterSubsequentMaxDamage,
       } = calcDamageResult(damageInput, after.hp);
+      const survivalHitCounts = input.guaranteedSurvivalSearch
+        ? relevantSurvivalHitCounts.filter((hitCount) => {
+            const maximumTotalDamage = afterDamage + (hitCount - 1) * afterSubsequentMaxDamage;
+            return maximumTotalDamage < after.hp;
+          })
+        : [];
       candidateResults.push({
         candidate,
         candidateIndex,
@@ -2500,7 +2532,19 @@ function runSearch() {
         afterDamage,
         afterMinDamage,
         afterKoRate,
+        survivalHitCounts,
       });
+      for (const hitCount of survivalHitCounts) {
+        if (!minimumCandidateTotalByHit.has(hitCount)) {
+          minimumCandidateTotalByHit.set(hitCount, candidateTotal);
+        }
+      }
+      if (
+        relevantSurvivalHitCounts.length
+        && relevantSurvivalHitCounts.every((hitCount) => minimumCandidateTotalByHit.has(hitCount))
+      ) {
+        completedMinimumCandidateTotal = Math.max(...minimumCandidateTotalByHit.values());
+      }
     }
 
     const hasGuaranteedSurvivalCandidate = candidateResults.some(({ afterKoRate }) => afterKoRate === 0);
@@ -2513,30 +2557,36 @@ function runSearch() {
         afterDamage,
         afterMinDamage,
         afterKoRate,
+        survivalHitCounts: candidateSurvivalHitCounts,
       } = candidateResult;
-      if (minimumCandidateTotal !== null && candidateTotal > minimumCandidateTotal) break;
       if (afterKoRate < 100) isSurvivable = true;
       if (
-        !input.randomToGuaranteedSurvival
+        !input.guaranteedSurvivalSearch
         && !input.showNonGuaranteedWhenGuaranteed
         && hasGuaranteedSurvivalCandidate
         && afterKoRate !== 0
       ) continue;
-      if (input.randomToGuaranteedSurvival) {
-        const isOneHitKoOrRandom = representative.currentKoRate > 0;
-        if (!isOneHitKoOrRandom || afterKoRate !== 0) continue;
-        if (minimumCandidateTotal === null) {
-          minimumCandidateTotal = candidateTotal;
-          profileRows.length = 0;
-        }
-        if (candidateTotal !== minimumCandidateTotal) continue;
-      }
-      if (afterDamage === representative.currentDamage && afterKoRate === representative.currentKoRate) continue;
-      if (!input.randomToGuaranteedSurvival) {
+      const survivalHitCounts = input.guaranteedSurvivalSearch
+        ? candidateSurvivalHitCounts.filter((hitCount) => {
+            return candidateTotal === minimumCandidateTotalByHit.get(hitCount);
+          })
+        : [];
+      if (input.guaranteedSurvivalSearch && !survivalHitCounts.length) continue;
+      if (
+        !input.guaranteedSurvivalSearch
+        && afterDamage === representative.currentDamage
+        && afterKoRate === representative.currentKoRate
+      ) continue;
+      if (!input.guaranteedSurvivalSearch) {
         const outcomeKey = `${afterDamage}|${afterKoRate}`;
         if (shownOutcomeKeys.has(outcomeKey)) continue;
         shownOutcomeKeys.add(outcomeKey);
       }
+
+      const displayHitCount = survivalHitCounts.length ? Math.max(...survivalHitCounts) : 1;
+      const displayCurrentKoRate = representative.currentKoRates[displayHitCount] ?? representative.currentKoRate;
+      const displayAfterKoRate = survivalHitCounts.length ? 0 : afterKoRate;
+      const afterKoRates = Object.fromEntries(survivalHitCounts.map((hitCount) => [hitCount, 0]));
 
       for (const scenario of rankedScenarios) {
         insertRankedRow(profileRows, {
@@ -2544,7 +2594,12 @@ function runSearch() {
           ...scenario,
           afterDamage,
           afterMinDamage,
-          afterKoRate,
+          currentKoRate: displayCurrentKoRate,
+          afterKoRate: displayAfterKoRate,
+          currentKoRates: scenario.currentKoRates,
+          afterKoRates,
+          survivalHitCounts,
+          displayHitCount,
           diff: afterDamage - scenario.currentDamage,
           sortOrder: candidateIndex * scenarioCount + scenario.scenarioIndex,
         }, input.prioritizeMega);
@@ -2555,7 +2610,7 @@ function runSearch() {
     for (const row of profileRows) insertRankedRow(rows, row, input.prioritizeMega);
   }
 
-  const visibleRows = input.showNonGuaranteedWhenGuaranteed && !input.randomToGuaranteedSurvival
+  const visibleRows = input.showNonGuaranteedWhenGuaranteed && !input.guaranteedSurvivalSearch
     ? rows
     : filterRowsWithGuaranteedSurvival(rows);
   renderResults(visibleRows, getRelevantCandidateCount(candidates, input.attackKinds));
@@ -2685,9 +2740,9 @@ function insertRankedRow(rows, row, prioritizeMega) {
   if (rows.length > resultLimit) rows.pop();
 }
 
-function scheduleSearch() {
+function scheduleSearch(delay = 180) {
   window.clearTimeout(searchTimer);
-  searchTimer = window.setTimeout(runSearch, 180);
+  searchTimer = window.setTimeout(runSearch, delay);
 }
 
 function buildAttackScenarios(defender, pokemonPool, input, current) {
@@ -2714,13 +2769,17 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, battleWeather);
       const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
-      const mModifier = calculateFinalDamageM(getFinalDamageMEffects(
+      const finalDamageMEffects = getFinalDamageMEffects(
         attacker,
         defender,
         input,
         effectiveness,
         effectiveMove,
-      ));
+      );
+      const mModifier = calculateFinalDamageM(finalDamageMEffects);
+      const subsequentHitMModifier = calculateFinalDamageM(
+        finalDamageMEffects.filter((effect) => effect.inputKey !== "multiscaleEnabled"),
+      );
       const mProtectModifier = 1;
       const weatherModifier = getWeatherDamageModifier(effectiveMove.type, battleWeather);
       for (const attackerPoints of input.attackerPoints) {
@@ -2736,6 +2795,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             Number(effectiveMove.isSpreadMove),
             weatherModifier,
             mModifier,
+            subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
           ].join("|");
@@ -2757,14 +2817,16 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               isSpreadMove: effectiveMove.isSpreadMove,
               weatherModifier,
               mModifier,
+              subsequentHitMModifier,
               mProtectModifier,
             };
             const {
               maxDamage: currentDamage,
               minDamage: currentMinDamage,
               koRate: currentKoRate,
-            } = calcDamageResult(damageInput, current.hp);
-            currentDamageResult = { currentDamage, currentMinDamage, currentKoRate };
+              koRates: currentKoRates,
+            } = calcDamageResult(damageInput, current.hp, input.guaranteedSurvivalHitCounts);
+            currentDamageResult = { currentDamage, currentMinDamage, currentKoRate, currentKoRates };
             currentDamageCache.set(damageProfileKey, currentDamageResult);
           }
           scenarios.push({
@@ -2778,6 +2840,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             calculationPower,
             weatherModifier,
             mModifier,
+            subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
             damageProfileKey,
@@ -2819,8 +2882,9 @@ function readInput() {
     higherOffenseOnly: els.higherOffenseOnly.checked,
     attackStatMultipleOf11: els.attackStatMultipleOf11.checked,
     stabOnly: els.stabOnly.checked,
-    randomToGuaranteedSurvival: els.randomToGuaranteedSurvival.checked,
-    showNonGuaranteedWhenGuaranteed: els.showNonGuaranteedWhenGuaranteed.checked,
+    guaranteedSurvivalSearch: els.guaranteedSurvivalSearch.checked,
+    guaranteedSurvivalHitCounts: readGuaranteedSurvivalHitCounts(),
+    showNonGuaranteedWhenGuaranteed: !els.guaranteedSurvivalSearch.checked && els.showNonGuaranteedWhenGuaranteed.checked,
     excludeUnsurvivableAttacks: els.excludeUnsurvivableAttacks.checked,
     prioritizeMega: els.prioritizeMega.checked,
     multiscaleEnabled: els.multiscaleEnabled.checked,
@@ -2896,7 +2960,7 @@ function updateDataStatus() {
 
 function buildDefensiveCandidates(input) {
   const max = state.rules.statPoint.maxPerStat;
-  if (input.randomToGuaranteedSurvival) return buildMinimumSurvivalCandidates(input, max);
+  if (input.guaranteedSurvivalSearch) return buildMinimumSurvivalCandidates(input, max);
 
   const candidates = [];
   for (let total = 0; total <= input.remainingPoints; total++) {
@@ -2969,6 +3033,21 @@ function applyCandidateStats(defender, input, candidate) {
 
 function getCheckedValues(name) {
   return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+}
+
+function readGuaranteedSurvivalHitCounts() {
+  return els.guaranteedSurvivalHitOptions
+    .filter((button) => button.getAttribute("aria-pressed") === "true")
+    .map((button) => toInt(button.dataset.guaranteedSurvivalHit))
+    .filter((hitCount) => hitCount >= 1 && hitCount <= 4);
+}
+
+function updateGuaranteedSurvivalHitOptions() {
+  const enabled = els.guaranteedSurvivalSearch.checked;
+  els.guaranteedSurvivalHitOptions.forEach((button) => {
+    button.disabled = !enabled;
+  });
+  els.showNonGuaranteedWhenGuaranteed.disabled = enabled;
 }
 
 function readAttackerPoints() {
@@ -3058,7 +3137,7 @@ function calculateFinalDamageM(effects) {
   return fixedPointM / 4096;
 }
 
-function calcDamageResult(damageInput, hp) {
+function calcDamageResult(damageInput, hp, repeatedHitCounts = []) {
   const baseDamage = calcBaseDamage(damageInput);
   const maxDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMax);
   const minDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMin ?? 0.85);
@@ -3069,7 +3148,77 @@ function calcDamageResult(damageInput, hp) {
     maxDamage,
     minDamage,
   );
-  return { maxDamage, minDamage, koRate };
+  const subsequentHitInput = {
+    ...damageInput,
+    mModifier: damageInput.subsequentHitMModifier ?? damageInput.mModifier,
+  };
+  const subsequentMaxDamage = calcDamageAtRandom(
+    baseDamage,
+    subsequentHitInput,
+    state.rules.damageRandomMax,
+  );
+  const koRates = calcRepeatedHitKoRates(baseDamage, damageInput, hp, repeatedHitCounts, koRate);
+  return { maxDamage, minDamage, koRate, koRates, subsequentMaxDamage };
+}
+
+function calcRepeatedHitKoRates(baseDamage, damageInput, hp, repeatedHitCounts, oneHitKoRate) {
+  const hitCounts = [...new Set(repeatedHitCounts)]
+    .filter((hitCount) => hitCount >= 1 && hitCount <= 4)
+    .sort((a, b) => a - b);
+  const koRates = { 1: oneHitKoRate };
+  if (!hitCounts.length || Math.max(...hitCounts) === 1) return koRates;
+
+  const requestedHitCounts = new Set(hitCounts);
+  const subsequentHitInput = {
+    ...damageInput,
+    mModifier: damageInput.subsequentHitMModifier ?? damageInput.mModifier,
+  };
+  const firstMaxDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMax);
+  const firstMinDamage = calcDamageAtRandom(baseDamage, damageInput, state.rules.damageRandomMin ?? 0.85);
+  const subsequentMaxDamage = calcDamageAtRandom(baseDamage, subsequentHitInput, state.rules.damageRandomMax);
+  const subsequentMinDamage = calcDamageAtRandom(
+    baseDamage,
+    subsequentHitInput,
+    state.rules.damageRandomMin ?? 0.85,
+  );
+  const ambiguousHitCounts = [];
+  for (const hitCount of hitCounts) {
+    if (hitCount === 1) continue;
+    const maximumTotalDamage = firstMaxDamage + (hitCount - 1) * subsequentMaxDamage;
+    const minimumTotalDamage = firstMinDamage + (hitCount - 1) * subsequentMinDamage;
+    if (maximumTotalDamage < hp) koRates[hitCount] = 0;
+    else if (minimumTotalDamage >= hp) koRates[hitCount] = 100;
+    else ambiguousHitCounts.push(hitCount);
+  }
+  if (!ambiguousHitCounts.length) return koRates;
+
+  const maxHitCount = Math.max(...ambiguousHitCounts);
+  const ambiguousHitCountSet = new Set(ambiguousHitCounts);
+  let damageTotals = new Map([[0, 1]]);
+  let totalOutcomes = 1;
+
+  for (let hitCount = 1; hitCount <= maxHitCount; hitCount += 1) {
+    const hitInput = hitCount === 1 ? damageInput : subsequentHitInput;
+    const damageRolls = Array.from({ length: 16 }, (_, rollIndex) => {
+      return calcDamageAtRandom(baseDamage, hitInput, (85 + rollIndex) / 100);
+    });
+    const nextDamageTotals = new Map();
+    for (const [damageTotal, outcomeCount] of damageTotals) {
+      for (const damage of damageRolls) {
+        const nextDamageTotal = Math.min(hp, damageTotal + damage);
+        nextDamageTotals.set(
+          nextDamageTotal,
+          (nextDamageTotals.get(nextDamageTotal) ?? 0) + outcomeCount,
+        );
+      }
+    }
+    damageTotals = nextDamageTotals;
+    totalOutcomes *= 16;
+    if (hitCount > 1 && requestedHitCounts.has(hitCount) && ambiguousHitCountSet.has(hitCount)) {
+      koRates[hitCount] = ((damageTotals.get(hp) ?? 0) / totalOutcomes) * 100;
+    }
+  }
+  return koRates;
 }
 
 function calcBaseDamage({ level, power, attack, defense }) {
@@ -3235,7 +3384,7 @@ function renderResultGroup(group, groupIndex) {
           <span class="result-group-attacker">${escapeHtml(getResultAttackerName(representative.attacker, representative.move))}</span>
           <span class="result-group-move">${escapeHtml(getResultMoveName(representative.attacker, representative.move))}</span>
           <span class="result-group-power">威力 ${escapeHtml(String(representative.move.power))}</span>
-          <span class="result-group-representative ${lineClass}">代表 ${formatProbability(representative.currentKoRate)}→${formatProbability(representative.afterKoRate)}</span>
+          <span class="result-group-representative ${lineClass}">代表 ${formatResultKoRate(representative)}</span>
           <span class="result-group-diff ${diffClass}">変化 ${diffLabel}</span>
           <span class="result-group-count">${detailsLabel}</span>
         </button>
@@ -3253,7 +3402,7 @@ function renderResultDetailPanel(group, groupIndex) {
       <td colspan="11" class="result-detail-panel-cell">
         <div class="result-detail-table" role="table" aria-label="${escapeHtml(detailLabel)}">
           <div class="result-detail-grid result-detail-header" role="row">
-            <span role="columnheader">1発KO率</span>
+            <span role="columnheader">KO率</span>
             <span role="columnheader">配分</span>
             <span role="columnheader">攻撃条件</span>
             <span role="columnheader">ダメージ</span>
@@ -3272,12 +3421,24 @@ function renderResultDetailRow(row, detailIndex) {
   const natureLabel = row.attackerNature === "boost" ? "有" : "無";
   return `
     <div class="result-detail-grid result-detail-item${detailIndex % 2 ? " is-alternate" : ""}" role="row">
-      <span class="result-detail-ko ${lineClass}" role="cell">${formatProbability(row.currentKoRate)}→${formatProbability(row.afterKoRate)}</span>
+      <span class="result-detail-ko ${lineClass}" role="cell">${formatResultKoRate(row, true)}</span>
       <span class="result-detail-allocation" role="cell">${formatCandidate(row.candidate)}</span>
       <span class="result-detail-attack" role="cell"><strong>${attackLabel}${row.attackStat}（${row.attackerPoints}）</strong><span>補正 ${natureLabel}</span></span>
       <span class="result-detail-damage" role="cell"><span class="result-detail-current">${row.currentDamage}</span><span class="result-detail-arrow" aria-hidden="true">→</span><strong class="result-detail-after">${row.afterDamage}</strong><span class="result-detail-diff ${diffClass}">${formatResultDiff(row.diff)}</span></span>
     </div>
   `;
+}
+
+function formatResultKoRate(row, includeAllHitCounts = false) {
+  const hitCounts = row.survivalHitCounts?.length
+    ? includeAllHitCounts ? [...row.survivalHitCounts].sort((a, b) => a - b) : [row.displayHitCount]
+    : [1];
+  return hitCounts.map((hitCount) => {
+    const currentKoRate = row.currentKoRates?.[hitCount] ?? row.currentKoRate;
+    const afterKoRate = row.afterKoRates?.[hitCount] ?? row.afterKoRate;
+    const hitCountLabel = row.survivalHitCounts?.length ? `${hitCount}発 ` : "";
+    return `<span class="result-detail-ko-line">${hitCountLabel}${formatProbability(currentKoRate)}→${formatProbability(afterKoRate)}</span>`;
+  }).join("");
 }
 
 function getResultDiffClass(diff) {

@@ -1386,6 +1386,52 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
   margin-top: 2px;
 }
 
+.guaranteed-survival-option {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.guaranteed-survival-toggle {
+  flex: 0 0 auto;
+}
+
+.guaranteed-survival-hit-options {
+  display: inline-flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.guaranteed-survival-hit-options button {
+  min-height: 26px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.guaranteed-survival-hit-options button[aria-pressed="true"] {
+  border-color: #76b9b0;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.guaranteed-survival-hit-options button:disabled {
+  color: var(--muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .result-sort-settings {
   display: grid;
   gap: 7px;
@@ -1708,6 +1754,10 @@ tbody tr[hidden] {
 .result-detail-ko {
   color: var(--accent-strong);
   font-weight: 800;
+}
+
+.result-detail-ko-line {
+  display: block;
 }
 
 .result-detail-allocation {
@@ -2364,7 +2414,7 @@ tbody tr:hover {
   }
 
   .result-detail-ko { grid-area: detail-ko; }
-  .result-detail-ko::before { content: "1発KO率"; }
+  .result-detail-ko::before { content: "KO率"; }
   .result-detail-allocation { grid-area: detail-allocation; text-align: right; }
   .result-detail-allocation::before { content: "配分"; }
   .result-detail-attack { grid-area: detail-attack; }
@@ -2408,7 +2458,7 @@ tbody tr:hover {
   }
 
   .result-line { grid-area: line; background: var(--accent-soft); }
-  .result-line::before { content: "1発KO率"; }
+  .result-line::before { content: "KO率"; }
   .result-allocation { grid-area: allocation; text-align: right; background: var(--accent-soft); }
   .result-allocation::before { content: "配分"; }
   .result-attacker { grid-area: attacker; border-top: 1px solid var(--line); }
