@@ -1,0 +1,107 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "audino",
+    "dexNumber": 531,
+    "displayName": "タブンネ",
+    "name": {
+      "en": "Audino",
+      "ja": "タブンネ",
+      "jaHrkt": "タブンネ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 103,
+      "atk": 60,
+      "def": 86,
+      "spa": 60,
+      "spd": 86,
+      "spe": 50
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "blizzard",
+      "body-slam",
+      "charge-beam",
+      "chilling-water",
+      "covet",
+      "dazzling-gleam",
+      "dig",
+      "disarming-voice",
+      "double-edge",
+      "double-slap",
+      "drain-punch",
+      "draining-kiss",
+      "dream-eater",
+      "echoed-voice",
+      "facade",
+      "fire-blast",
+      "fire-punch",
+      "flamethrower",
+      "focus-punch",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "incinerate",
+      "iron-tail",
+      "knock-off",
+      "last-resort",
+      "mega-kick",
+      "mega-punch",
+      "pound",
+      "power-up-punch",
+      "psychic",
+      "psyshock",
+      "retaliate",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "signal-beam",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "surf",
+      "take-down",
+      "throat-chop",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt",
+      "uproar",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,98 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "meowstic-female",
+    "dexNumber": 678,
+    "displayName": "ニャオニクス（♀）",
+    "name": {
+      "en": "Meowstic",
+      "ja": "ニャオニクス（♀）",
+      "jaHrkt": "ニャオニクス（♀）"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 83,
+      "spd": 81,
+      "spe": 104
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "charge-beam",
+      "confusion",
+      "covet",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "disarming-voice",
+      "dream-eater",
+      "echoed-voice",
+      "energy-ball",
+      "expanding-force",
+      "extrasensory",
+      "facade",
+      "fake-out",
+      "future-sight",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "magical-leaf",
+      "pay-day",
+      "payback",
+      "play-rough",
+      "power-up-punch",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "round",
+      "scratch",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "swift",
+      "tail-slap",
+      "tera-blast",
+      "thunderbolt",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

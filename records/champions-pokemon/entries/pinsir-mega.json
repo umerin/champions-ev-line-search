@@ -1,0 +1,111 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "pinsir-mega",
+    "dexNumber": 127,
+    "displayName": "メガカイロス",
+    "name": {
+      "en": "Pinsir",
+      "ja": "メガカイロス",
+      "jaHrkt": "メガカイロス"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 155,
+      "def": 120,
+      "spa": 65,
+      "spd": 90,
+      "spe": 105
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "bind",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bug-bite",
+      "bulldoze",
+      "circle-throw",
+      "close-combat",
+      "cut",
+      "dig",
+      "double-edge",
+      "double-hit",
+      "earthquake",
+      "facade",
+      "false-swipe",
+      "feint",
+      "feint-attack",
+      "focus-blast",
+      "focus-punch",
+      "fury-attack",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "knock-off",
+      "lunge",
+      "outrage",
+      "pounce",
+      "quick-attack",
+      "rage",
+      "revenge",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "slash",
+      "smack-down",
+      "snore",
+      "stone-edge",
+      "storm-throw",
+      "strength",
+      "struggle-bug",
+      "submission",
+      "superpower",
+      "take-down",
+      "thief",
+      "thrash",
+      "throat-chop",
+      "vice-grip",
+      "vital-throw",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

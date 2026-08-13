@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "victreebel",
+    "dexNumber": 71,
+    "displayName": "ウツボット",
+    "name": {
+      "en": "Victreebel",
+      "ja": "ウツボット",
+      "jaHrkt": "ウツボット"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 100,
+      "spd": 70,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid",
+      "acid-spray",
+      "bind",
+      "body-slam",
+      "bug-bite",
+      "bullet-seed",
+      "clear-smog",
+      "cut",
+      "double-edge",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "leaf-tornado",
+      "leech-life",
+      "lunge",
+      "magical-leaf",
+      "mega-drain",
+      "poison-jab",
+      "pounce",
+      "power-whip",
+      "rage",
+      "razor-leaf",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "slam",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "solar-beam",
+      "sucker-punch",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "venoshock",
+      "vine-whip",
+      "weather-ball",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

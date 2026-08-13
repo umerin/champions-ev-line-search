@@ -1,0 +1,87 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "furfrou",
+    "dexNumber": 676,
+    "displayName": "トリミアン",
+    "name": {
+      "en": "Furfrou",
+      "ja": "トリミアン",
+      "jaHrkt": "トリミアン"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 60,
+      "spa": 65,
+      "spd": 90,
+      "spe": 102
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "charge-beam",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "echoed-voice",
+      "facade",
+      "fire-fang",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-voice",
+      "ice-fang",
+      "iron-tail",
+      "last-resort",
+      "psychic-fangs",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "snarl",
+      "snore",
+      "sucker-punch",
+      "surf",
+      "tackle",
+      "take-down",
+      "thunder-fang",
+      "trailblaze",
+      "u-turn",
+      "uproar",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

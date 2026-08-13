@@ -1,0 +1,103 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "grimmsnarl",
+    "dexNumber": 861,
+    "displayName": "オーロンゲ",
+    "name": {
+      "en": "Grimmsnarl",
+      "ja": "オーロンゲ",
+      "jaHrkt": "オーロンゲ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 120,
+      "def": 65,
+      "spa": 95,
+      "spd": 75,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "assurance",
+      "bite",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "burning-jealousy",
+      "chilling-water",
+      "crunch",
+      "dark-pulse",
+      "darkest-lariat",
+      "dazzling-gleam",
+      "drain-punch",
+      "draining-kiss",
+      "facade",
+      "fake-out",
+      "false-surrender",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "foul-play",
+      "giga-impact",
+      "hammer-arm",
+      "hyper-beam",
+      "ice-punch",
+      "lash-out",
+      "leech-life",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "play-rough",
+      "power-up-punch",
+      "power-whip",
+      "retaliate",
+      "revenge",
+      "round",
+      "shadow-claw",
+      "snore",
+      "spirit-break",
+      "stomping-tantrum",
+      "sucker-punch",
+      "superpower",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder-punch",
+      "trailblaze",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

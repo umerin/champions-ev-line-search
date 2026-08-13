@@ -1,0 +1,88 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "scovillain",
+    "dexNumber": 952,
+    "displayName": "スコヴィラン",
+    "name": {
+      "en": "Scovillain",
+      "ja": "スコヴィラン",
+      "jaHrkt": "スコヴィラン"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 108,
+      "def": 65,
+      "spa": 108,
+      "spd": 65,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "bullet-seed",
+      "burning-jealousy",
+      "crunch",
+      "double-hit",
+      "energy-ball",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-spin",
+      "flamethrower",
+      "flare-blitz",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "headbutt",
+      "hyper-beam",
+      "lash-out",
+      "leaf-storm",
+      "leafage",
+      "magical-leaf",
+      "overheat",
+      "razor-leaf",
+      "seed-bomb",
+      "solar-beam",
+      "stomping-tantrum",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "thunder-fang",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

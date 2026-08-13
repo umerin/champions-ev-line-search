@@ -1,0 +1,114 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "torterra",
+    "dexNumber": 389,
+    "displayName": "ドダイトス",
+    "name": {
+      "en": "Torterra",
+      "ja": "ドダイトス",
+      "jaHrkt": "ドダイトス"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 109,
+      "def": 105,
+      "spa": 75,
+      "spd": 85,
+      "spe": 56
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "bite",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "bullet-seed",
+      "crunch",
+      "cut",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "energy-ball",
+      "facade",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "headbutt",
+      "headlong-rush",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-head",
+      "iron-tail",
+      "leaf-blade",
+      "leaf-storm",
+      "leafage",
+      "magical-leaf",
+      "mega-drain",
+      "mud-shot",
+      "mud-slap",
+      "outrage",
+      "razor-leaf",
+      "rock-blast",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "secret-power",
+      "seed-bomb",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "trailblaze",
+      "wood-hammer",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

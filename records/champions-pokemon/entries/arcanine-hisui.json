@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "arcanine-hisui",
+    "dexNumber": 59,
+    "displayName": "ウインディ（ヒスイ）",
+    "name": {
+      "en": "Arcanine",
+      "ja": "ウインディ（ヒスイ）",
+      "jaHrkt": "ウインディ（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 115,
+      "def": 80,
+      "spa": 95,
+      "spd": 80,
+      "spe": 90
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "bite",
+      "body-slam",
+      "bulldoze",
+      "burn-up",
+      "close-combat",
+      "covet",
+      "crunch",
+      "dig",
+      "double-edge",
+      "dragon-pulse",
+      "ember",
+      "extreme-speed",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-spin",
+      "flame-charge",
+      "flame-wheel",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "head-smash",
+      "heat-wave",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-head",
+      "iron-tail",
+      "outrage",
+      "overheat",
+      "play-rough",
+      "power-gem",
+      "psychic-fangs",
+      "raging-fury",
+      "retaliate",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-throw",
+      "rock-tomb",
+      "round",
+      "scorching-sands",
+      "smack-down",
+      "smart-strike",
+      "snarl",
+      "snore",
+      "solar-beam",
+      "stone-edge",
+      "swift",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "thunder-fang",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

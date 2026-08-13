@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "delphox-mega",
+    "dexNumber": 655,
+    "displayName": "メガマフォクシー",
+    "name": {
+      "en": "Delphox",
+      "ja": "メガマフォクシー",
+      "jaHrkt": "メガマフォクシー"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 159,
+      "spd": 125,
+      "spe": 134
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "blast-burn",
+      "burning-jealousy",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "dream-eater",
+      "echoed-voice",
+      "ember",
+      "expanding-force",
+      "facade",
+      "fire-blast",
+      "fire-pledge",
+      "fire-punch",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "focus-blast",
+      "foul-play",
+      "future-sight",
+      "giga-impact",
+      "heat-wave",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "iron-tail",
+      "mud-shot",
+      "mud-slap",
+      "mystical-fire",
+      "overheat",
+      "power-up-punch",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "round",
+      "scorching-sands",
+      "scratch",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "solar-beam",
+      "stored-power",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

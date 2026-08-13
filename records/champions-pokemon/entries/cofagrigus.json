@@ -1,0 +1,83 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "cofagrigus",
+    "dexNumber": 563,
+    "displayName": "デスカーン",
+    "name": {
+      "en": "Cofagrigus",
+      "ja": "デスカーン",
+      "jaHrkt": "デスカーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "atk": 50,
+      "def": 145,
+      "spa": 95,
+      "spd": 105,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "body-press",
+      "dark-pulse",
+      "dream-eater",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "knock-off",
+      "ominous-wind",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "psychic",
+      "revenge",
+      "round",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-punch",
+      "shock-wave",
+      "snore",
+      "thief",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

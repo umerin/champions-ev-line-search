@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "toucannon",
+    "dexNumber": 733,
+    "displayName": "ドデカバシ",
+    "name": {
+      "en": "Toucannon",
+      "ja": "ドデカバシ",
+      "jaHrkt": "ドデカバシ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 75,
+      "spa": 75,
+      "spd": 75,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "beak-blast",
+      "boomburst",
+      "brave-bird",
+      "brick-break",
+      "bullet-seed",
+      "drill-peck",
+      "dual-wingbeat",
+      "echoed-voice",
+      "facade",
+      "flame-charge",
+      "flash-cannon",
+      "fly",
+      "fury-attack",
+      "giga-impact",
+      "gunk-shot",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "hyper-voice",
+      "knock-off",
+      "overheat",
+      "peck",
+      "pluck",
+      "rock-blast",
+      "rock-smash",
+      "round",
+      "seed-bomb",
+      "sky-attack",
+      "smack-down",
+      "snore",
+      "steel-wing",
+      "swift",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "u-turn",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

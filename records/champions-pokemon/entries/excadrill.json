@@ -1,0 +1,102 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "excadrill",
+    "dexNumber": 530,
+    "displayName": "ドリュウズ",
+    "name": {
+      "en": "Excadrill",
+      "ja": "ドリュウズ",
+      "jaHrkt": "ドリュウズ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 110,
+      "atk": 135,
+      "def": 60,
+      "spa": 50,
+      "spd": 65,
+      "spe": 88
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "crush-claw",
+      "cut",
+      "dig",
+      "double-edge",
+      "drill-run",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "focus-blast",
+      "fury-swipes",
+      "giga-impact",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "iron-head",
+      "megahorn",
+      "metal-claw",
+      "mud-shot",
+      "mud-slap",
+      "poison-jab",
+      "rapid-spin",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "scratch",
+      "secret-power",
+      "shadow-claw",
+      "slash",
+      "sludge-bomb",
+      "smart-strike",
+      "snore",
+      "steel-beam",
+      "stomping-tantrum",
+      "strength",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,81 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "orthworm",
+    "dexNumber": 968,
+    "displayName": "ミミズズ",
+    "name": {
+      "en": "Orthworm",
+      "ja": "ミミズズ",
+      "jaHrkt": "ミミズズ"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 145,
+      "spa": 60,
+      "spd": 55,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "flash-cannon",
+      "giga-impact",
+      "high-horsepower",
+      "hyper-beam",
+      "iron-head",
+      "iron-tail",
+      "mud-shot",
+      "mud-slap",
+      "rock-blast",
+      "rock-slide",
+      "rock-tomb",
+      "sand-tomb",
+      "smack-down",
+      "steel-beam",
+      "stomping-tantrum",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

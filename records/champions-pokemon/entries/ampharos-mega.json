@@ -1,0 +1,110 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "ampharos-mega",
+    "dexNumber": 181,
+    "displayName": "メガデンリュウ",
+    "name": {
+      "en": "Ampharos",
+      "ja": "メガデンリュウ",
+      "jaHrkt": "メガデンリュウ"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 95,
+      "def": 105,
+      "spa": 165,
+      "spd": 110,
+      "spe": 45
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "breaking-swipe",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "charge-beam",
+      "dazzling-gleam",
+      "dig",
+      "discharge",
+      "double-edge",
+      "dragon-pulse",
+      "dragon-tail",
+      "dynamic-punch",
+      "echoed-voice",
+      "electroweb",
+      "facade",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-punch",
+      "iron-tail",
+      "mega-kick",
+      "mega-punch",
+      "meteor-beam",
+      "outrage",
+      "parabolic-charge",
+      "power-gem",
+      "power-up-punch",
+      "rising-voltage",
+      "rock-climb",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stomping-tantrum",
+      "strength",
+      "supercell-slam",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "volt-switch",
+      "wild-charge",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

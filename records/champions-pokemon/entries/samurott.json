@@ -1,0 +1,119 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "samurott",
+    "dexNumber": 503,
+    "displayName": "ダイケンキ",
+    "name": {
+      "en": "Samurott",
+      "ja": "ダイケンキ",
+      "jaHrkt": "ダイケンキ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 100,
+      "def": 85,
+      "spa": 108,
+      "spd": 70,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "assurance",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "chilling-water",
+      "covet",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "dive",
+      "dragon-tail",
+      "drill-run",
+      "facade",
+      "false-swipe",
+      "flip-turn",
+      "fury-cutter",
+      "giga-impact",
+      "hidden-power",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "liquidation",
+      "megahorn",
+      "night-slash",
+      "razor-shell",
+      "retaliate",
+      "revenge",
+      "rock-smash",
+      "round",
+      "sacred-sword",
+      "scald",
+      "secret-power",
+      "slash",
+      "smart-strike",
+      "snarl",
+      "snore",
+      "strength",
+      "superpower",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "upper-hand",
+      "vacuum-wave",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

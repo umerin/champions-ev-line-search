@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "manectric",
+    "dexNumber": 310,
+    "displayName": "ライボルト",
+    "name": {
+      "en": "Manectric",
+      "ja": "ライボルト",
+      "jaHrkt": "ライボルト"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 75,
+      "def": 60,
+      "spa": 105,
+      "spd": 60,
+      "spe": 105
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "body-slam",
+      "charge-beam",
+      "crunch",
+      "discharge",
+      "double-edge",
+      "facade",
+      "fire-fang",
+      "flamethrower",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-fang",
+      "iron-tail",
+      "mud-slap",
+      "overheat",
+      "pounce",
+      "psychic-fangs",
+      "quick-attack",
+      "rising-voltage",
+      "round",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "snarl",
+      "snore",
+      "spark",
+      "strength",
+      "supercell-slam",
+      "swift",
+      "tackle",
+      "thief",
+      "thunder",
+      "thunder-fang",
+      "thunderbolt",
+      "trailblaze",
+      "uproar",
+      "volt-switch",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

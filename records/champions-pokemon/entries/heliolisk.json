@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "heliolisk",
+    "dexNumber": 695,
+    "displayName": "エレザード",
+    "name": {
+      "en": "Heliolisk",
+      "ja": "エレザード",
+      "jaHrkt": "エレザード"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 62,
+      "atk": 55,
+      "def": 52,
+      "spa": 109,
+      "spd": 94,
+      "spe": 109
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "breaking-swipe",
+      "brutal-swing",
+      "bulldoze",
+      "charge-beam",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "discharge",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "electroweb",
+      "facade",
+      "fire-punch",
+      "focus-blast",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "parabolic-charge",
+      "pounce",
+      "pound",
+      "quick-attack",
+      "razor-wind",
+      "rising-voltage",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "scale-shot",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "solar-beam",
+      "surf",
+      "swift",
+      "thunder",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "u-turn",
+      "volt-switch",
+      "weather-ball",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "drySkin",
+      "definition": {
+        "inputKey": "drySkinEnabled",
+        "moveTypes": [
+          "fire"
+        ],
+        "stage": "power",
+        "modifier": 1.25
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

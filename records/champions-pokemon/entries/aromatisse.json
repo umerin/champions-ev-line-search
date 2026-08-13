@@ -1,0 +1,79 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "aromatisse",
+    "dexNumber": 683,
+    "displayName": "フレフワン",
+    "name": {
+      "en": "Aromatisse",
+      "ja": "フレフワン",
+      "jaHrkt": "フレフワン"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 101,
+      "atk": 72,
+      "def": 72,
+      "spa": 99,
+      "spd": 89,
+      "spe": 29
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "charge-beam",
+      "covet",
+      "dazzling-gleam",
+      "disarming-voice",
+      "drain-punch",
+      "draining-kiss",
+      "dream-eater",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "fairy-wind",
+      "flash-cannon",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "misty-explosion",
+      "moonblast",
+      "psychic",
+      "psyshock",
+      "round",
+      "secret-power",
+      "snore",
+      "thunder",
+      "thunderbolt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

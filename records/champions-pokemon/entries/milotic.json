@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "milotic",
+    "dexNumber": 350,
+    "displayName": "ミロカロス",
+    "name": {
+      "en": "Milotic",
+      "ja": "ミロカロス",
+      "jaHrkt": "ミロカロス"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 79,
+      "spa": 100,
+      "spd": 125,
+      "spe": 81
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "aqua-tail",
+      "avalanche",
+      "bind",
+      "blizzard",
+      "body-slam",
+      "breaking-swipe",
+      "brine",
+      "brutal-swing",
+      "bulldoze",
+      "chilling-water",
+      "disarming-voice",
+      "dive",
+      "double-edge",
+      "dragon-breath",
+      "dragon-pulse",
+      "dragon-tail",
+      "draining-kiss",
+      "facade",
+      "flip-turn",
+      "giga-impact",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "iron-head",
+      "iron-tail",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "round",
+      "scald",
+      "scale-shot",
+      "secret-power",
+      "skitter-smack",
+      "snore",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "triple-axel",
+      "twister",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "weather-ball",
+      "whirlpool",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

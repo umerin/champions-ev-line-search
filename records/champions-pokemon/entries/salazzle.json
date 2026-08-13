@@ -1,0 +1,111 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "salazzle",
+    "dexNumber": 758,
+    "displayName": "エンニュート",
+    "name": {
+      "en": "Salazzle",
+      "ja": "エンニュート",
+      "jaHrkt": "エンニュート"
+    },
+    "championsTarget": true,
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "atk": 64,
+      "def": 60,
+      "spa": 111,
+      "spd": 60,
+      "spe": 117
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "acrobatics",
+      "belch",
+      "body-slam",
+      "breaking-swipe",
+      "burning-jealousy",
+      "covet",
+      "cross-poison",
+      "double-slap",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "ember",
+      "facade",
+      "fake-out",
+      "fire-blast",
+      "fire-fang",
+      "fire-lash",
+      "flame-burst",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "foul-play",
+      "giga-impact",
+      "gunk-shot",
+      "heat-wave",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "iron-tail",
+      "knock-off",
+      "leech-life",
+      "mud-slap",
+      "overheat",
+      "payback",
+      "poison-fang",
+      "poison-jab",
+      "poison-tail",
+      "pound",
+      "round",
+      "scale-shot",
+      "scratch",
+      "shadow-claw",
+      "skitter-smack",
+      "sludge-bomb",
+      "sludge-wave",
+      "smog",
+      "snore",
+      "swift",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "venoshock"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

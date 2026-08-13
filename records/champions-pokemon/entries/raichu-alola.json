@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "raichu-alola",
+    "dexNumber": 26,
+    "displayName": "ライチュウ（アローラ）",
+    "name": {
+      "en": "Raichu",
+      "ja": "ライチュウ（アローラ）",
+      "jaHrkt": "ライチュウ（アローラ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 50,
+      "spa": 95,
+      "spd": 85,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "body-slam",
+      "brick-break",
+      "charge-beam",
+      "covet",
+      "dazzling-gleam",
+      "dig",
+      "discharge",
+      "draining-kiss",
+      "echoed-voice",
+      "electroweb",
+      "expanding-force",
+      "facade",
+      "fake-out",
+      "feint",
+      "focus-blast",
+      "focus-punch",
+      "future-sight",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "knock-off",
+      "mega-kick",
+      "mega-punch",
+      "nuzzle",
+      "pay-day",
+      "play-rough",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "quick-attack",
+      "rising-voltage",
+      "round",
+      "shock-wave",
+      "signal-beam",
+      "slam",
+      "snore",
+      "spark",
+      "stored-power",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "upper-hand",
+      "uproar",
+      "volt-switch",
+      "volt-tackle",
+      "wild-charge",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

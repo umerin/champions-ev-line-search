@@ -1,0 +1,90 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "emolga",
+    "dexNumber": 587,
+    "displayName": "エモンガ",
+    "name": {
+      "en": "Emolga",
+      "ja": "エモンガ",
+      "jaHrkt": "エモンガ"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 75,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 103
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-slash",
+      "astonish",
+      "charge-beam",
+      "covet",
+      "cut",
+      "discharge",
+      "dual-wingbeat",
+      "electroweb",
+      "energy-ball",
+      "facade",
+      "hidden-power",
+      "iron-tail",
+      "knock-off",
+      "last-resort",
+      "nuzzle",
+      "pounce",
+      "pursuit",
+      "quick-attack",
+      "rising-voltage",
+      "round",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "solar-beam",
+      "spark",
+      "swift",
+      "thunder",
+      "thunder-shock",
+      "thunderbolt",
+      "u-turn",
+      "volt-switch",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

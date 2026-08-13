@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "kingambit",
+    "dexNumber": 983,
+    "displayName": "ドドゲザン",
+    "name": {
+      "en": "Kingambit",
+      "ja": "ドドゲザン",
+      "jaHrkt": "ドドゲザン"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 135,
+      "def": 120,
+      "spa": 60,
+      "spd": 85,
+      "spe": 50
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-slash",
+      "assurance",
+      "brick-break",
+      "dark-pulse",
+      "dig",
+      "facade",
+      "false-swipe",
+      "flash-cannon",
+      "focus-blast",
+      "foul-play",
+      "fury-cutter",
+      "giga-impact",
+      "hyper-beam",
+      "iron-head",
+      "kowtow-cleave",
+      "lash-out",
+      "low-sweep",
+      "metal-claw",
+      "night-slash",
+      "poison-jab",
+      "retaliate",
+      "rock-tomb",
+      "scratch",
+      "shadow-claw",
+      "slash",
+      "snarl",
+      "steel-beam",
+      "stone-edge",
+      "sucker-punch",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "x-scissor",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

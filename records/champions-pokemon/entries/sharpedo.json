@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sharpedo",
+    "dexNumber": 319,
+    "displayName": "サメハダー",
+    "name": {
+      "en": "Sharpedo",
+      "ja": "サメハダー",
+      "jaHrkt": "サメハダー"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 40,
+      "spa": 95,
+      "spd": 40,
+      "spe": 95
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "aqua-jet",
+      "assurance",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "bounce",
+      "brine",
+      "bulldoze",
+      "chilling-water",
+      "close-combat",
+      "crunch",
+      "dark-pulse",
+      "dive",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "feint",
+      "flip-turn",
+      "fury-cutter",
+      "giga-impact",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "icy-wind",
+      "liquidation",
+      "mud-slap",
+      "night-slash",
+      "payback",
+      "poison-fang",
+      "poison-jab",
+      "psychic-fangs",
+      "rage",
+      "retaliate",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "scale-shot",
+      "secret-power",
+      "skull-bash",
+      "slash",
+      "snarl",
+      "snore",
+      "strength",
+      "surf",
+      "swift",
+      "take-down",
+      "thief",
+      "thrash",
+      "uproar",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

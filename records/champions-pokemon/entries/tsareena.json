@@ -1,0 +1,94 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "tsareena",
+    "dexNumber": 763,
+    "displayName": "アマージョ",
+    "name": {
+      "en": "Tsareena",
+      "ja": "アマージョ",
+      "jaHrkt": "アマージョ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "atk": 120,
+      "def": 98,
+      "spa": 50,
+      "spd": 98,
+      "spe": 72
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "bounce",
+      "bullet-seed",
+      "covet",
+      "dazzling-gleam",
+      "double-slap",
+      "draining-kiss",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hidden-power",
+      "high-jump-kick",
+      "hyper-beam",
+      "knock-off",
+      "leaf-storm",
+      "low-sweep",
+      "magical-leaf",
+      "mega-kick",
+      "payback",
+      "petal-blizzard",
+      "play-rough",
+      "power-whip",
+      "rapid-spin",
+      "razor-leaf",
+      "round",
+      "seed-bomb",
+      "snore",
+      "solar-beam",
+      "solar-blade",
+      "stomp",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "triple-axel",
+      "trop-kick",
+      "u-turn",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

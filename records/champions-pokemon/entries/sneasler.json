@@ -1,0 +1,100 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sneasler",
+    "dexNumber": 903,
+    "displayName": "オオニューラ",
+    "name": {
+      "en": "Sneasler",
+      "ja": "オオニューラ",
+      "jaHrkt": "オオニューラ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 130,
+      "def": 60,
+      "spa": 40,
+      "spd": 80,
+      "spe": 120
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "acrobatics",
+      "aerial-ace",
+      "brick-break",
+      "close-combat",
+      "dig",
+      "dire-claw",
+      "double-hit",
+      "facade",
+      "fake-out",
+      "false-swipe",
+      "feint",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "gunk-shot",
+      "hyper-beam",
+      "lash-out",
+      "low-sweep",
+      "metal-claw",
+      "night-slash",
+      "poison-jab",
+      "poison-tail",
+      "quick-attack",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "scratch",
+      "shadow-ball",
+      "shadow-claw",
+      "slash",
+      "sludge-bomb",
+      "sludge-wave",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "trailblaze",
+      "u-turn",
+      "upper-hand",
+      "vacuum-wave",
+      "venoshock",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,94 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "chandelure-mega",
+    "dexNumber": 609,
+    "displayName": "メガシャンデラ",
+    "name": {
+      "en": "Chandelure",
+      "ja": "メガシャンデラ",
+      "jaHrkt": "メガシャンデラ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 110,
+      "spa": 175,
+      "spd": 110,
+      "spe": 90
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "burning-jealousy",
+      "clear-smog",
+      "dark-pulse",
+      "dream-eater",
+      "ember",
+      "energy-ball",
+      "facade",
+      "fire-blast",
+      "fire-spin",
+      "flame-burst",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "heat-wave",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "incinerate",
+      "inferno",
+      "lash-out",
+      "mystical-fire",
+      "overheat",
+      "payback",
+      "poltergeist",
+      "psychic",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "skitter-smack",
+      "smog",
+      "snore",
+      "solar-beam",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "trailblaze"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

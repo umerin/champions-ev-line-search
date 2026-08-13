@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "forretress",
+    "dexNumber": 205,
+    "displayName": "フォレトス",
+    "name": {
+      "en": "Forretress",
+      "ja": "フォレトス",
+      "jaHrkt": "フォレトス"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 140,
+      "spa": 60,
+      "spd": 60,
+      "spe": 40
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-press",
+      "body-slam",
+      "bug-bite",
+      "bug-buzz",
+      "bulldoze",
+      "dig",
+      "double-edge",
+      "drill-run",
+      "earth-power",
+      "earthquake",
+      "explosion",
+      "facade",
+      "flash-cannon",
+      "giga-drain",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-spinner",
+      "iron-head",
+      "lunge",
+      "mirror-shot",
+      "payback",
+      "pin-missile",
+      "poison-jab",
+      "pounce",
+      "rapid-spin",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "sand-tomb",
+      "secret-power",
+      "seed-bomb",
+      "self-destruct",
+      "signal-beam",
+      "smart-strike",
+      "snore",
+      "solar-beam",
+      "steel-beam",
+      "steel-roller",
+      "stone-edge",
+      "strength",
+      "struggle-bug",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "venoshock",
+      "volt-switch",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

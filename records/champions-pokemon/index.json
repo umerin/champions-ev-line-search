@@ -1,0 +1,1897 @@
+{
+  "schemaVersion": 1,
+  "purpose": "AI-editable research records for Champions-target Pokemon. The web app does not load this directory.",
+  "count": 315,
+  "entries": [
+    {
+      "id": "venusaur",
+      "dexNumber": 3,
+      "displayName": "フシギバナ",
+      "path": "entries/venusaur.json"
+    },
+    {
+      "id": "venusaur-mega",
+      "dexNumber": 3,
+      "displayName": "メガフシギバナ",
+      "path": "entries/venusaur-mega.json"
+    },
+    {
+      "id": "charizard",
+      "dexNumber": 6,
+      "displayName": "リザードン",
+      "path": "entries/charizard.json"
+    },
+    {
+      "id": "charizard-mega-x",
+      "dexNumber": 6,
+      "displayName": "メガリザードンX",
+      "path": "entries/charizard-mega-x.json"
+    },
+    {
+      "id": "charizard-mega-y",
+      "dexNumber": 6,
+      "displayName": "メガリザードンY",
+      "path": "entries/charizard-mega-y.json"
+    },
+    {
+      "id": "blastoise",
+      "dexNumber": 9,
+      "displayName": "カメックス",
+      "path": "entries/blastoise.json"
+    },
+    {
+      "id": "blastoise-mega",
+      "dexNumber": 9,
+      "displayName": "メガカメックス",
+      "path": "entries/blastoise-mega.json"
+    },
+    {
+      "id": "beedrill",
+      "dexNumber": 15,
+      "displayName": "スピアー",
+      "path": "entries/beedrill.json"
+    },
+    {
+      "id": "beedrill-mega",
+      "dexNumber": 15,
+      "displayName": "メガスピアー",
+      "path": "entries/beedrill-mega.json"
+    },
+    {
+      "id": "pidgeot",
+      "dexNumber": 18,
+      "displayName": "ピジョット",
+      "path": "entries/pidgeot.json"
+    },
+    {
+      "id": "pidgeot-mega",
+      "dexNumber": 18,
+      "displayName": "メガピジョット",
+      "path": "entries/pidgeot-mega.json"
+    },
+    {
+      "id": "arbok",
+      "dexNumber": 24,
+      "displayName": "アーボック",
+      "path": "entries/arbok.json"
+    },
+    {
+      "id": "pikachu",
+      "dexNumber": 25,
+      "displayName": "ピカチュウ",
+      "path": "entries/pikachu.json"
+    },
+    {
+      "id": "raichu",
+      "dexNumber": 26,
+      "displayName": "ライチュウ",
+      "path": "entries/raichu.json"
+    },
+    {
+      "id": "raichu-alola",
+      "dexNumber": 26,
+      "displayName": "ライチュウ（アローラ）",
+      "path": "entries/raichu-alola.json"
+    },
+    {
+      "id": "raichu-mega-x",
+      "dexNumber": 26,
+      "displayName": "メガライチュウX",
+      "path": "entries/raichu-mega-x.json"
+    },
+    {
+      "id": "raichu-mega-y",
+      "dexNumber": 26,
+      "displayName": "メガライチュウY",
+      "path": "entries/raichu-mega-y.json"
+    },
+    {
+      "id": "clefable",
+      "dexNumber": 36,
+      "displayName": "ピクシー",
+      "path": "entries/clefable.json"
+    },
+    {
+      "id": "clefable-mega",
+      "dexNumber": 36,
+      "displayName": "メガピクシー",
+      "path": "entries/clefable-mega.json"
+    },
+    {
+      "id": "ninetales",
+      "dexNumber": 38,
+      "displayName": "キュウコン",
+      "path": "entries/ninetales.json"
+    },
+    {
+      "id": "ninetales-alola",
+      "dexNumber": 38,
+      "displayName": "キュウコン（アローラ）",
+      "path": "entries/ninetales-alola.json"
+    },
+    {
+      "id": "vileplume",
+      "dexNumber": 45,
+      "displayName": "ラフレシア",
+      "path": "entries/vileplume.json"
+    },
+    {
+      "id": "arcanine",
+      "dexNumber": 59,
+      "displayName": "ウインディ",
+      "path": "entries/arcanine.json"
+    },
+    {
+      "id": "arcanine-hisui",
+      "dexNumber": 59,
+      "displayName": "ウインディ（ヒスイ）",
+      "path": "entries/arcanine-hisui.json"
+    },
+    {
+      "id": "alakazam",
+      "dexNumber": 65,
+      "displayName": "フーディン",
+      "path": "entries/alakazam.json"
+    },
+    {
+      "id": "alakazam-mega",
+      "dexNumber": 65,
+      "displayName": "メガフーディン",
+      "path": "entries/alakazam-mega.json"
+    },
+    {
+      "id": "machamp",
+      "dexNumber": 68,
+      "displayName": "カイリキー",
+      "path": "entries/machamp.json"
+    },
+    {
+      "id": "victreebel",
+      "dexNumber": 71,
+      "displayName": "ウツボット",
+      "path": "entries/victreebel.json"
+    },
+    {
+      "id": "victreebel-mega",
+      "dexNumber": 71,
+      "displayName": "メガウツボット",
+      "path": "entries/victreebel-mega.json"
+    },
+    {
+      "id": "slowbro",
+      "dexNumber": 80,
+      "displayName": "ヤドラン",
+      "path": "entries/slowbro.json"
+    },
+    {
+      "id": "slowbro-galar",
+      "dexNumber": 80,
+      "displayName": "ヤドラン（ガラル）",
+      "path": "entries/slowbro-galar.json"
+    },
+    {
+      "id": "slowbro-mega",
+      "dexNumber": 80,
+      "displayName": "メガヤドラン",
+      "path": "entries/slowbro-mega.json"
+    },
+    {
+      "id": "gengar",
+      "dexNumber": 94,
+      "displayName": "ゲンガー",
+      "path": "entries/gengar.json"
+    },
+    {
+      "id": "gengar-mega",
+      "dexNumber": 94,
+      "displayName": "メガゲンガー",
+      "path": "entries/gengar-mega.json"
+    },
+    {
+      "id": "kangaskhan",
+      "dexNumber": 115,
+      "displayName": "ガルーラ",
+      "path": "entries/kangaskhan.json"
+    },
+    {
+      "id": "kangaskhan-mega",
+      "dexNumber": 115,
+      "displayName": "メガガルーラ",
+      "path": "entries/kangaskhan-mega.json"
+    },
+    {
+      "id": "starmie",
+      "dexNumber": 121,
+      "displayName": "スターミー",
+      "path": "entries/starmie.json"
+    },
+    {
+      "id": "starmie-mega",
+      "dexNumber": 121,
+      "displayName": "メガスターミー",
+      "path": "entries/starmie-mega.json"
+    },
+    {
+      "id": "pinsir",
+      "dexNumber": 127,
+      "displayName": "カイロス",
+      "path": "entries/pinsir.json"
+    },
+    {
+      "id": "pinsir-mega",
+      "dexNumber": 127,
+      "displayName": "メガカイロス",
+      "path": "entries/pinsir-mega.json"
+    },
+    {
+      "id": "tauros",
+      "dexNumber": 128,
+      "displayName": "ケンタロス（通常）",
+      "path": "entries/tauros.json"
+    },
+    {
+      "id": "tauros-paldea-aqua-breed",
+      "dexNumber": 128,
+      "displayName": "ケンタロス（ウォーター）",
+      "path": "entries/tauros-paldea-aqua-breed.json"
+    },
+    {
+      "id": "tauros-paldea-blaze-breed",
+      "dexNumber": 128,
+      "displayName": "ケンタロス（ブレイズ）",
+      "path": "entries/tauros-paldea-blaze-breed.json"
+    },
+    {
+      "id": "tauros-paldea-combat-breed",
+      "dexNumber": 128,
+      "displayName": "ケンタロス（コンバット）",
+      "path": "entries/tauros-paldea-combat-breed.json"
+    },
+    {
+      "id": "gyarados",
+      "dexNumber": 130,
+      "displayName": "ギャラドス",
+      "path": "entries/gyarados.json"
+    },
+    {
+      "id": "gyarados-mega",
+      "dexNumber": 130,
+      "displayName": "メガギャラドス",
+      "path": "entries/gyarados-mega.json"
+    },
+    {
+      "id": "ditto",
+      "dexNumber": 132,
+      "displayName": "メタモン",
+      "path": "entries/ditto.json"
+    },
+    {
+      "id": "vaporeon",
+      "dexNumber": 134,
+      "displayName": "シャワーズ",
+      "path": "entries/vaporeon.json"
+    },
+    {
+      "id": "jolteon",
+      "dexNumber": 135,
+      "displayName": "サンダース",
+      "path": "entries/jolteon.json"
+    },
+    {
+      "id": "flareon",
+      "dexNumber": 136,
+      "displayName": "ブースター",
+      "path": "entries/flareon.json"
+    },
+    {
+      "id": "aerodactyl",
+      "dexNumber": 142,
+      "displayName": "プテラ",
+      "path": "entries/aerodactyl.json"
+    },
+    {
+      "id": "aerodactyl-mega",
+      "dexNumber": 142,
+      "displayName": "メガプテラ",
+      "path": "entries/aerodactyl-mega.json"
+    },
+    {
+      "id": "snorlax",
+      "dexNumber": 143,
+      "displayName": "カビゴン",
+      "path": "entries/snorlax.json"
+    },
+    {
+      "id": "dragonite",
+      "dexNumber": 149,
+      "displayName": "カイリュー",
+      "path": "entries/dragonite.json"
+    },
+    {
+      "id": "dragonite-mega",
+      "dexNumber": 149,
+      "displayName": "メガカイリュー",
+      "path": "entries/dragonite-mega.json"
+    },
+    {
+      "id": "meganium",
+      "dexNumber": 154,
+      "displayName": "メガニウム",
+      "path": "entries/meganium.json"
+    },
+    {
+      "id": "meganium-mega",
+      "dexNumber": 154,
+      "displayName": "メガメガニウム",
+      "path": "entries/meganium-mega.json"
+    },
+    {
+      "id": "typhlosion",
+      "dexNumber": 157,
+      "displayName": "バクフーン",
+      "path": "entries/typhlosion.json"
+    },
+    {
+      "id": "typhlosion-hisui",
+      "dexNumber": 157,
+      "displayName": "バクフーン（ヒスイ）",
+      "path": "entries/typhlosion-hisui.json"
+    },
+    {
+      "id": "feraligatr",
+      "dexNumber": 160,
+      "displayName": "オーダイル",
+      "path": "entries/feraligatr.json"
+    },
+    {
+      "id": "feraligatr-mega",
+      "dexNumber": 160,
+      "displayName": "メガオーダイル",
+      "path": "entries/feraligatr-mega.json"
+    },
+    {
+      "id": "ariados",
+      "dexNumber": 168,
+      "displayName": "アリアドス",
+      "path": "entries/ariados.json"
+    },
+    {
+      "id": "ampharos",
+      "dexNumber": 181,
+      "displayName": "デンリュウ",
+      "path": "entries/ampharos.json"
+    },
+    {
+      "id": "ampharos-mega",
+      "dexNumber": 181,
+      "displayName": "メガデンリュウ",
+      "path": "entries/ampharos-mega.json"
+    },
+    {
+      "id": "azumarill",
+      "dexNumber": 184,
+      "displayName": "マリルリ",
+      "path": "entries/azumarill.json"
+    },
+    {
+      "id": "politoed",
+      "dexNumber": 186,
+      "displayName": "ニョロトノ",
+      "path": "entries/politoed.json"
+    },
+    {
+      "id": "espeon",
+      "dexNumber": 196,
+      "displayName": "エーフィ",
+      "path": "entries/espeon.json"
+    },
+    {
+      "id": "umbreon",
+      "dexNumber": 197,
+      "displayName": "ブラッキー",
+      "path": "entries/umbreon.json"
+    },
+    {
+      "id": "slowking",
+      "dexNumber": 199,
+      "displayName": "ヤドキング",
+      "path": "entries/slowking.json"
+    },
+    {
+      "id": "slowking-galar",
+      "dexNumber": 199,
+      "displayName": "ヤドキング（ガラル）",
+      "path": "entries/slowking-galar.json"
+    },
+    {
+      "id": "forretress",
+      "dexNumber": 205,
+      "displayName": "フォレトス",
+      "path": "entries/forretress.json"
+    },
+    {
+      "id": "steelix",
+      "dexNumber": 208,
+      "displayName": "ハガネール",
+      "path": "entries/steelix.json"
+    },
+    {
+      "id": "steelix-mega",
+      "dexNumber": 208,
+      "displayName": "メガハガネール",
+      "path": "entries/steelix-mega.json"
+    },
+    {
+      "id": "qwilfish",
+      "dexNumber": 211,
+      "displayName": "ハリーセン",
+      "path": "entries/qwilfish.json"
+    },
+    {
+      "id": "scizor",
+      "dexNumber": 212,
+      "displayName": "ハッサム",
+      "path": "entries/scizor.json"
+    },
+    {
+      "id": "scizor-mega",
+      "dexNumber": 212,
+      "displayName": "メガハッサム",
+      "path": "entries/scizor-mega.json"
+    },
+    {
+      "id": "heracross",
+      "dexNumber": 214,
+      "displayName": "ヘラクロス",
+      "path": "entries/heracross.json"
+    },
+    {
+      "id": "heracross-mega",
+      "dexNumber": 214,
+      "displayName": "メガヘラクロス",
+      "path": "entries/heracross-mega.json"
+    },
+    {
+      "id": "skarmory",
+      "dexNumber": 227,
+      "displayName": "エアームド",
+      "path": "entries/skarmory.json"
+    },
+    {
+      "id": "skarmory-mega",
+      "dexNumber": 227,
+      "displayName": "メガエアームド",
+      "path": "entries/skarmory-mega.json"
+    },
+    {
+      "id": "houndoom",
+      "dexNumber": 229,
+      "displayName": "ヘルガー",
+      "path": "entries/houndoom.json"
+    },
+    {
+      "id": "houndoom-mega",
+      "dexNumber": 229,
+      "displayName": "メガヘルガー",
+      "path": "entries/houndoom-mega.json"
+    },
+    {
+      "id": "tyranitar",
+      "dexNumber": 248,
+      "displayName": "バンギラス",
+      "path": "entries/tyranitar.json"
+    },
+    {
+      "id": "tyranitar-mega",
+      "dexNumber": 248,
+      "displayName": "メガバンギラス",
+      "path": "entries/tyranitar-mega.json"
+    },
+    {
+      "id": "sceptile",
+      "dexNumber": 254,
+      "displayName": "ジュカイン",
+      "path": "entries/sceptile.json"
+    },
+    {
+      "id": "sceptile-mega",
+      "dexNumber": 254,
+      "displayName": "メガジュカイン",
+      "path": "entries/sceptile-mega.json"
+    },
+    {
+      "id": "blaziken",
+      "dexNumber": 257,
+      "displayName": "バシャーモ",
+      "path": "entries/blaziken.json"
+    },
+    {
+      "id": "blaziken-mega",
+      "dexNumber": 257,
+      "displayName": "メガバシャーモ",
+      "path": "entries/blaziken-mega.json"
+    },
+    {
+      "id": "swampert",
+      "dexNumber": 260,
+      "displayName": "ラグラージ",
+      "path": "entries/swampert.json"
+    },
+    {
+      "id": "swampert-mega",
+      "dexNumber": 260,
+      "displayName": "メガラグラージ",
+      "path": "entries/swampert-mega.json"
+    },
+    {
+      "id": "pelipper",
+      "dexNumber": 279,
+      "displayName": "ペリッパー",
+      "path": "entries/pelipper.json"
+    },
+    {
+      "id": "gardevoir",
+      "dexNumber": 282,
+      "displayName": "サーナイト",
+      "path": "entries/gardevoir.json"
+    },
+    {
+      "id": "gardevoir-mega",
+      "dexNumber": 282,
+      "displayName": "メガサーナイト",
+      "path": "entries/gardevoir-mega.json"
+    },
+    {
+      "id": "sableye",
+      "dexNumber": 302,
+      "displayName": "ヤミラミ",
+      "path": "entries/sableye.json"
+    },
+    {
+      "id": "sableye-mega",
+      "dexNumber": 302,
+      "displayName": "メガヤミラミ",
+      "path": "entries/sableye-mega.json"
+    },
+    {
+      "id": "mawile",
+      "dexNumber": 303,
+      "displayName": "クチート",
+      "path": "entries/mawile.json"
+    },
+    {
+      "id": "mawile-mega",
+      "dexNumber": 303,
+      "displayName": "メガクチート",
+      "path": "entries/mawile-mega.json"
+    },
+    {
+      "id": "aggron",
+      "dexNumber": 306,
+      "displayName": "ボスゴドラ",
+      "path": "entries/aggron.json"
+    },
+    {
+      "id": "aggron-mega",
+      "dexNumber": 306,
+      "displayName": "メガボスゴドラ",
+      "path": "entries/aggron-mega.json"
+    },
+    {
+      "id": "medicham",
+      "dexNumber": 308,
+      "displayName": "チャーレム",
+      "path": "entries/medicham.json"
+    },
+    {
+      "id": "manectric",
+      "dexNumber": 310,
+      "displayName": "ライボルト",
+      "path": "entries/manectric.json"
+    },
+    {
+      "id": "manectric-mega",
+      "dexNumber": 310,
+      "displayName": "メガライボルト",
+      "path": "entries/manectric-mega.json"
+    },
+    {
+      "id": "sharpedo",
+      "dexNumber": 319,
+      "displayName": "サメハダー",
+      "path": "entries/sharpedo.json"
+    },
+    {
+      "id": "sharpedo-mega",
+      "dexNumber": 319,
+      "displayName": "メガサメハダー",
+      "path": "entries/sharpedo-mega.json"
+    },
+    {
+      "id": "camerupt",
+      "dexNumber": 323,
+      "displayName": "バクーダ",
+      "path": "entries/camerupt.json"
+    },
+    {
+      "id": "camerupt-mega",
+      "dexNumber": 323,
+      "displayName": "メガバクーダ",
+      "path": "entries/camerupt-mega.json"
+    },
+    {
+      "id": "torkoal",
+      "dexNumber": 324,
+      "displayName": "コータス",
+      "path": "entries/torkoal.json"
+    },
+    {
+      "id": "altaria",
+      "dexNumber": 334,
+      "displayName": "チルタリス",
+      "path": "entries/altaria.json"
+    },
+    {
+      "id": "altaria-mega",
+      "dexNumber": 334,
+      "displayName": "メガチルタリス",
+      "path": "entries/altaria-mega.json"
+    },
+    {
+      "id": "milotic",
+      "dexNumber": 350,
+      "displayName": "ミロカロス",
+      "path": "entries/milotic.json"
+    },
+    {
+      "id": "castform",
+      "dexNumber": 351,
+      "displayName": "ポワルン",
+      "path": "entries/castform.json"
+    },
+    {
+      "id": "castform-rainy",
+      "dexNumber": 351,
+      "displayName": "ポワルン（あまみず）",
+      "path": "entries/castform-rainy.json"
+    },
+    {
+      "id": "castform-snowy",
+      "dexNumber": 351,
+      "displayName": "ポワルン（ゆきぐも）",
+      "path": "entries/castform-snowy.json"
+    },
+    {
+      "id": "castform-sunny",
+      "dexNumber": 351,
+      "displayName": "ポワルン（たいよう）",
+      "path": "entries/castform-sunny.json"
+    },
+    {
+      "id": "banette",
+      "dexNumber": 354,
+      "displayName": "ジュペッタ",
+      "path": "entries/banette.json"
+    },
+    {
+      "id": "banette-mega",
+      "dexNumber": 354,
+      "displayName": "メガジュペッタ",
+      "path": "entries/banette-mega.json"
+    },
+    {
+      "id": "chimecho",
+      "dexNumber": 358,
+      "displayName": "チリーン",
+      "path": "entries/chimecho.json"
+    },
+    {
+      "id": "chimecho-mega",
+      "dexNumber": 358,
+      "displayName": "メガチリーン",
+      "path": "entries/chimecho-mega.json"
+    },
+    {
+      "id": "absol",
+      "dexNumber": 359,
+      "displayName": "アブソル",
+      "path": "entries/absol.json"
+    },
+    {
+      "id": "absol-mega",
+      "dexNumber": 359,
+      "displayName": "メガアブソル",
+      "path": "entries/absol-mega.json"
+    },
+    {
+      "id": "glalie",
+      "dexNumber": 362,
+      "displayName": "オニゴーリ",
+      "path": "entries/glalie.json"
+    },
+    {
+      "id": "glalie-mega",
+      "dexNumber": 362,
+      "displayName": "メガオニゴーリ",
+      "path": "entries/glalie-mega.json"
+    },
+    {
+      "id": "metagross",
+      "dexNumber": 376,
+      "displayName": "メタグロス",
+      "path": "entries/metagross.json"
+    },
+    {
+      "id": "metagross-mega",
+      "dexNumber": 376,
+      "displayName": "メガメタグロス",
+      "path": "entries/metagross-mega.json"
+    },
+    {
+      "id": "torterra",
+      "dexNumber": 389,
+      "displayName": "ドダイトス",
+      "path": "entries/torterra.json"
+    },
+    {
+      "id": "infernape",
+      "dexNumber": 392,
+      "displayName": "ゴウカザル",
+      "path": "entries/infernape.json"
+    },
+    {
+      "id": "empoleon",
+      "dexNumber": 395,
+      "displayName": "エンペルト",
+      "path": "entries/empoleon.json"
+    },
+    {
+      "id": "staraptor",
+      "dexNumber": 398,
+      "displayName": "ムクホーク",
+      "path": "entries/staraptor.json"
+    },
+    {
+      "id": "staraptor-mega",
+      "dexNumber": 398,
+      "displayName": "メガムクホーク",
+      "path": "entries/staraptor-mega.json"
+    },
+    {
+      "id": "luxray",
+      "dexNumber": 405,
+      "displayName": "レントラー",
+      "path": "entries/luxray.json"
+    },
+    {
+      "id": "roserade",
+      "dexNumber": 407,
+      "displayName": "ロズレイド",
+      "path": "entries/roserade.json"
+    },
+    {
+      "id": "rampardos",
+      "dexNumber": 409,
+      "displayName": "ラムパルド",
+      "path": "entries/rampardos.json"
+    },
+    {
+      "id": "bastiodon",
+      "dexNumber": 411,
+      "displayName": "トリデプス",
+      "path": "entries/bastiodon.json"
+    },
+    {
+      "id": "lopunny",
+      "dexNumber": 428,
+      "displayName": "ミミロップ",
+      "path": "entries/lopunny.json"
+    },
+    {
+      "id": "lopunny-mega",
+      "dexNumber": 428,
+      "displayName": "メガミミロップ",
+      "path": "entries/lopunny-mega.json"
+    },
+    {
+      "id": "spiritomb",
+      "dexNumber": 442,
+      "displayName": "ミカルゲ",
+      "path": "entries/spiritomb.json"
+    },
+    {
+      "id": "garchomp",
+      "dexNumber": 445,
+      "displayName": "ガブリアス",
+      "path": "entries/garchomp.json"
+    },
+    {
+      "id": "garchomp-mega",
+      "dexNumber": 445,
+      "displayName": "メガガブリアス",
+      "path": "entries/garchomp-mega.json"
+    },
+    {
+      "id": "lucario",
+      "dexNumber": 448,
+      "displayName": "ルカリオ",
+      "path": "entries/lucario.json"
+    },
+    {
+      "id": "lucario-mega",
+      "dexNumber": 448,
+      "displayName": "メガルカリオ",
+      "path": "entries/lucario-mega.json"
+    },
+    {
+      "id": "hippowdon",
+      "dexNumber": 450,
+      "displayName": "カバルドン",
+      "path": "entries/hippowdon.json"
+    },
+    {
+      "id": "toxicroak",
+      "dexNumber": 454,
+      "displayName": "ドクロッグ",
+      "path": "entries/toxicroak.json"
+    },
+    {
+      "id": "abomasnow",
+      "dexNumber": 460,
+      "displayName": "ユキノオー",
+      "path": "entries/abomasnow.json"
+    },
+    {
+      "id": "abomasnow-mega",
+      "dexNumber": 460,
+      "displayName": "メガユキノオー",
+      "path": "entries/abomasnow-mega.json"
+    },
+    {
+      "id": "weavile",
+      "dexNumber": 461,
+      "displayName": "マニューラ",
+      "path": "entries/weavile.json"
+    },
+    {
+      "id": "rhyperior",
+      "dexNumber": 464,
+      "displayName": "ドサイドン",
+      "path": "entries/rhyperior.json"
+    },
+    {
+      "id": "leafeon",
+      "dexNumber": 470,
+      "displayName": "リーフィア",
+      "path": "entries/leafeon.json"
+    },
+    {
+      "id": "glaceon",
+      "dexNumber": 471,
+      "displayName": "グレイシア",
+      "path": "entries/glaceon.json"
+    },
+    {
+      "id": "gliscor",
+      "dexNumber": 472,
+      "displayName": "グライオン",
+      "path": "entries/gliscor.json"
+    },
+    {
+      "id": "mamoswine",
+      "dexNumber": 473,
+      "displayName": "マンムー",
+      "path": "entries/mamoswine.json"
+    },
+    {
+      "id": "gallade",
+      "dexNumber": 475,
+      "displayName": "エルレイド",
+      "path": "entries/gallade.json"
+    },
+    {
+      "id": "gallade-mega",
+      "dexNumber": 475,
+      "displayName": "メガエルレイド",
+      "path": "entries/gallade-mega.json"
+    },
+    {
+      "id": "froslass",
+      "dexNumber": 478,
+      "displayName": "ユキメノコ",
+      "path": "entries/froslass.json"
+    },
+    {
+      "id": "froslass-mega",
+      "dexNumber": 478,
+      "displayName": "メガユキメノコ",
+      "path": "entries/froslass-mega.json"
+    },
+    {
+      "id": "rotom",
+      "dexNumber": 479,
+      "displayName": "ロトム",
+      "path": "entries/rotom.json"
+    },
+    {
+      "id": "rotom-fan",
+      "dexNumber": 479,
+      "displayName": "ロトム（スピン）",
+      "path": "entries/rotom-fan.json"
+    },
+    {
+      "id": "rotom-frost",
+      "dexNumber": 479,
+      "displayName": "ロトム（フロスト）",
+      "path": "entries/rotom-frost.json"
+    },
+    {
+      "id": "rotom-heat",
+      "dexNumber": 479,
+      "displayName": "ロトム（ヒート）",
+      "path": "entries/rotom-heat.json"
+    },
+    {
+      "id": "rotom-mow",
+      "dexNumber": 479,
+      "displayName": "ロトム（カット）",
+      "path": "entries/rotom-mow.json"
+    },
+    {
+      "id": "rotom-wash",
+      "dexNumber": 479,
+      "displayName": "ロトム（ウォッシュ）",
+      "path": "entries/rotom-wash.json"
+    },
+    {
+      "id": "serperior",
+      "dexNumber": 497,
+      "displayName": "ジャローダ",
+      "path": "entries/serperior.json"
+    },
+    {
+      "id": "emboar",
+      "dexNumber": 500,
+      "displayName": "エンブオー",
+      "path": "entries/emboar.json"
+    },
+    {
+      "id": "emboar-mega",
+      "dexNumber": 500,
+      "displayName": "メガエンブオー",
+      "path": "entries/emboar-mega.json"
+    },
+    {
+      "id": "samurott",
+      "dexNumber": 503,
+      "displayName": "ダイケンキ",
+      "path": "entries/samurott.json"
+    },
+    {
+      "id": "samurott-hisui",
+      "dexNumber": 503,
+      "displayName": "ダイケンキ（ヒスイ）",
+      "path": "entries/samurott-hisui.json"
+    },
+    {
+      "id": "watchog",
+      "dexNumber": 505,
+      "displayName": "ミルホッグ",
+      "path": "entries/watchog.json"
+    },
+    {
+      "id": "liepard",
+      "dexNumber": 510,
+      "displayName": "レパルダス",
+      "path": "entries/liepard.json"
+    },
+    {
+      "id": "simisage",
+      "dexNumber": 512,
+      "displayName": "ヤナッキー",
+      "path": "entries/simisage.json"
+    },
+    {
+      "id": "simisear",
+      "dexNumber": 514,
+      "displayName": "バオッキー",
+      "path": "entries/simisear.json"
+    },
+    {
+      "id": "simipour",
+      "dexNumber": 516,
+      "displayName": "ヒヤッキー",
+      "path": "entries/simipour.json"
+    },
+    {
+      "id": "musharna",
+      "dexNumber": 518,
+      "displayName": "ムシャーナ",
+      "path": "entries/musharna.json"
+    },
+    {
+      "id": "excadrill",
+      "dexNumber": 530,
+      "displayName": "ドリュウズ",
+      "path": "entries/excadrill.json"
+    },
+    {
+      "id": "excadrill-mega",
+      "dexNumber": 530,
+      "displayName": "メガドリュウズ",
+      "path": "entries/excadrill-mega.json"
+    },
+    {
+      "id": "audino",
+      "dexNumber": 531,
+      "displayName": "タブンネ",
+      "path": "entries/audino.json"
+    },
+    {
+      "id": "audino-mega",
+      "dexNumber": 531,
+      "displayName": "メガタブンネ",
+      "path": "entries/audino-mega.json"
+    },
+    {
+      "id": "conkeldurr",
+      "dexNumber": 534,
+      "displayName": "ローブシン",
+      "path": "entries/conkeldurr.json"
+    },
+    {
+      "id": "scolipede",
+      "dexNumber": 545,
+      "displayName": "ペンドラー",
+      "path": "entries/scolipede.json"
+    },
+    {
+      "id": "scolipede-mega",
+      "dexNumber": 545,
+      "displayName": "メガペンドラー",
+      "path": "entries/scolipede-mega.json"
+    },
+    {
+      "id": "whimsicott",
+      "dexNumber": 547,
+      "displayName": "エルフーン",
+      "path": "entries/whimsicott.json"
+    },
+    {
+      "id": "krookodile",
+      "dexNumber": 553,
+      "displayName": "ワルビアル",
+      "path": "entries/krookodile.json"
+    },
+    {
+      "id": "scrafty",
+      "dexNumber": 560,
+      "displayName": "ズルズキン",
+      "path": "entries/scrafty.json"
+    },
+    {
+      "id": "scrafty-mega",
+      "dexNumber": 560,
+      "displayName": "メガズルズキン",
+      "path": "entries/scrafty-mega.json"
+    },
+    {
+      "id": "cofagrigus",
+      "dexNumber": 563,
+      "displayName": "デスカーン",
+      "path": "entries/cofagrigus.json"
+    },
+    {
+      "id": "garbodor",
+      "dexNumber": 569,
+      "displayName": "ダストダス",
+      "path": "entries/garbodor.json"
+    },
+    {
+      "id": "zoroark",
+      "dexNumber": 571,
+      "displayName": "ゾロアーク",
+      "path": "entries/zoroark.json"
+    },
+    {
+      "id": "zoroark-hisui",
+      "dexNumber": 571,
+      "displayName": "ゾロアーク（ヒスイ）",
+      "path": "entries/zoroark-hisui.json"
+    },
+    {
+      "id": "reuniclus",
+      "dexNumber": 579,
+      "displayName": "ランクルス",
+      "path": "entries/reuniclus.json"
+    },
+    {
+      "id": "vanilluxe",
+      "dexNumber": 584,
+      "displayName": "バイバニラ",
+      "path": "entries/vanilluxe.json"
+    },
+    {
+      "id": "emolga",
+      "dexNumber": 587,
+      "displayName": "エモンガ",
+      "path": "entries/emolga.json"
+    },
+    {
+      "id": "eelektross",
+      "dexNumber": 604,
+      "displayName": "シビルドン",
+      "path": "entries/eelektross.json"
+    },
+    {
+      "id": "eelektross-mega",
+      "dexNumber": 604,
+      "displayName": "メガシビルドン",
+      "path": "entries/eelektross-mega.json"
+    },
+    {
+      "id": "chandelure",
+      "dexNumber": 609,
+      "displayName": "シャンデラ",
+      "path": "entries/chandelure.json"
+    },
+    {
+      "id": "chandelure-mega",
+      "dexNumber": 609,
+      "displayName": "メガシャンデラ",
+      "path": "entries/chandelure-mega.json"
+    },
+    {
+      "id": "beartic",
+      "dexNumber": 614,
+      "displayName": "ツンベアー",
+      "path": "entries/beartic.json"
+    },
+    {
+      "id": "stunfisk",
+      "dexNumber": 618,
+      "displayName": "マッギョ",
+      "path": "entries/stunfisk.json"
+    },
+    {
+      "id": "stunfisk-galar",
+      "dexNumber": 618,
+      "displayName": "マッギョ（ガラル）",
+      "path": "entries/stunfisk-galar.json"
+    },
+    {
+      "id": "golurk",
+      "dexNumber": 623,
+      "displayName": "ゴルーグ",
+      "path": "entries/golurk.json"
+    },
+    {
+      "id": "golurk-mega",
+      "dexNumber": 623,
+      "displayName": "メガゴルーグ",
+      "path": "entries/golurk-mega.json"
+    },
+    {
+      "id": "hydreigon",
+      "dexNumber": 635,
+      "displayName": "サザンドラ",
+      "path": "entries/hydreigon.json"
+    },
+    {
+      "id": "volcarona",
+      "dexNumber": 637,
+      "displayName": "ウルガモス",
+      "path": "entries/volcarona.json"
+    },
+    {
+      "id": "chesnaught",
+      "dexNumber": 652,
+      "displayName": "ブリガロン",
+      "path": "entries/chesnaught.json"
+    },
+    {
+      "id": "chesnaught-mega",
+      "dexNumber": 652,
+      "displayName": "メガブリガロン",
+      "path": "entries/chesnaught-mega.json"
+    },
+    {
+      "id": "delphox",
+      "dexNumber": 655,
+      "displayName": "マフォクシー",
+      "path": "entries/delphox.json"
+    },
+    {
+      "id": "delphox-mega",
+      "dexNumber": 655,
+      "displayName": "メガマフォクシー",
+      "path": "entries/delphox-mega.json"
+    },
+    {
+      "id": "greninja",
+      "dexNumber": 658,
+      "displayName": "ゲッコウガ",
+      "path": "entries/greninja.json"
+    },
+    {
+      "id": "greninja-mega",
+      "dexNumber": 658,
+      "displayName": "メガゲッコウガ",
+      "path": "entries/greninja-mega.json"
+    },
+    {
+      "id": "diggersby",
+      "dexNumber": 660,
+      "displayName": "ホルード",
+      "path": "entries/diggersby.json"
+    },
+    {
+      "id": "talonflame",
+      "dexNumber": 663,
+      "displayName": "ファイアロー",
+      "path": "entries/talonflame.json"
+    },
+    {
+      "id": "vivillon",
+      "dexNumber": 666,
+      "displayName": "ビビヨン",
+      "path": "entries/vivillon.json"
+    },
+    {
+      "id": "pyroar-male",
+      "dexNumber": 668,
+      "displayName": "カエンジシ",
+      "path": "entries/pyroar-male.json"
+    },
+    {
+      "id": "pyroar-mega",
+      "dexNumber": 668,
+      "displayName": "メガカエンジシ",
+      "path": "entries/pyroar-mega.json"
+    },
+    {
+      "id": "floette-eternal",
+      "dexNumber": 670,
+      "displayName": "フラエッテ（えいえんのはな）",
+      "path": "entries/floette-eternal.json"
+    },
+    {
+      "id": "floette-mega",
+      "dexNumber": 670,
+      "displayName": "メガフラエッテ",
+      "path": "entries/floette-mega.json"
+    },
+    {
+      "id": "florges",
+      "dexNumber": 671,
+      "displayName": "フラージェス",
+      "path": "entries/florges.json"
+    },
+    {
+      "id": "pangoro",
+      "dexNumber": 675,
+      "displayName": "ゴロンダ",
+      "path": "entries/pangoro.json"
+    },
+    {
+      "id": "furfrou",
+      "dexNumber": 676,
+      "displayName": "トリミアン",
+      "path": "entries/furfrou.json"
+    },
+    {
+      "id": "meowstic-female",
+      "dexNumber": 678,
+      "displayName": "ニャオニクス（♀）",
+      "path": "entries/meowstic-female.json"
+    },
+    {
+      "id": "meowstic-female-mega",
+      "dexNumber": 678,
+      "displayName": "メガニャオニクス（♀）",
+      "path": "entries/meowstic-female-mega.json"
+    },
+    {
+      "id": "meowstic-male",
+      "dexNumber": 678,
+      "displayName": "ニャオニクス（♂）",
+      "path": "entries/meowstic-male.json"
+    },
+    {
+      "id": "meowstic-male-mega",
+      "dexNumber": 678,
+      "displayName": "メガニャオニクス（♂）",
+      "path": "entries/meowstic-male-mega.json"
+    },
+    {
+      "id": "aegislash-blade",
+      "dexNumber": 681,
+      "displayName": "ギルガルド（ブレード）",
+      "path": "entries/aegislash-blade.json"
+    },
+    {
+      "id": "aegislash-shield",
+      "dexNumber": 681,
+      "displayName": "ギルガルド（シールド）",
+      "path": "entries/aegislash-shield.json"
+    },
+    {
+      "id": "aromatisse",
+      "dexNumber": 683,
+      "displayName": "フレフワン",
+      "path": "entries/aromatisse.json"
+    },
+    {
+      "id": "slurpuff",
+      "dexNumber": 685,
+      "displayName": "ペロリーム",
+      "path": "entries/slurpuff.json"
+    },
+    {
+      "id": "malamar",
+      "dexNumber": 687,
+      "displayName": "カラマネロ",
+      "path": "entries/malamar.json"
+    },
+    {
+      "id": "malamar-mega",
+      "dexNumber": 687,
+      "displayName": "メガカラマネロ",
+      "path": "entries/malamar-mega.json"
+    },
+    {
+      "id": "barbaracle",
+      "dexNumber": 689,
+      "displayName": "ガメノデス",
+      "path": "entries/barbaracle.json"
+    },
+    {
+      "id": "barbaracle-mega",
+      "dexNumber": 689,
+      "displayName": "メガガメノデス",
+      "path": "entries/barbaracle-mega.json"
+    },
+    {
+      "id": "dragalge",
+      "dexNumber": 691,
+      "displayName": "ドラミドロ",
+      "path": "entries/dragalge.json"
+    },
+    {
+      "id": "dragalge-mega",
+      "dexNumber": 691,
+      "displayName": "メガドラミドロ",
+      "path": "entries/dragalge-mega.json"
+    },
+    {
+      "id": "clawitzer",
+      "dexNumber": 693,
+      "displayName": "ブロスター",
+      "path": "entries/clawitzer.json"
+    },
+    {
+      "id": "heliolisk",
+      "dexNumber": 695,
+      "displayName": "エレザード",
+      "path": "entries/heliolisk.json"
+    },
+    {
+      "id": "tyrantrum",
+      "dexNumber": 697,
+      "displayName": "ガチゴラス",
+      "path": "entries/tyrantrum.json"
+    },
+    {
+      "id": "aurorus",
+      "dexNumber": 699,
+      "displayName": "アマルルガ",
+      "path": "entries/aurorus.json"
+    },
+    {
+      "id": "sylveon",
+      "dexNumber": 700,
+      "displayName": "ニンフィア",
+      "path": "entries/sylveon.json"
+    },
+    {
+      "id": "hawlucha",
+      "dexNumber": 701,
+      "displayName": "ルチャブル",
+      "path": "entries/hawlucha.json"
+    },
+    {
+      "id": "hawlucha-mega",
+      "dexNumber": 701,
+      "displayName": "メガルチャブル",
+      "path": "entries/hawlucha-mega.json"
+    },
+    {
+      "id": "dedenne",
+      "dexNumber": 702,
+      "displayName": "デデンネ",
+      "path": "entries/dedenne.json"
+    },
+    {
+      "id": "goodra",
+      "dexNumber": 706,
+      "displayName": "ヌメルゴン",
+      "path": "entries/goodra.json"
+    },
+    {
+      "id": "goodra-hisui",
+      "dexNumber": 706,
+      "displayName": "ヌメルゴン（ヒスイ）",
+      "path": "entries/goodra-hisui.json"
+    },
+    {
+      "id": "klefki",
+      "dexNumber": 707,
+      "displayName": "クレッフィ",
+      "path": "entries/klefki.json"
+    },
+    {
+      "id": "trevenant",
+      "dexNumber": 709,
+      "displayName": "オーロット",
+      "path": "entries/trevenant.json"
+    },
+    {
+      "id": "gourgeist-average",
+      "dexNumber": 711,
+      "displayName": "パンプジン（ふつうのサイズ）",
+      "path": "entries/gourgeist-average.json"
+    },
+    {
+      "id": "gourgeist-large",
+      "dexNumber": 711,
+      "displayName": "パンプジン（おおきいサイズ）",
+      "path": "entries/gourgeist-large.json"
+    },
+    {
+      "id": "gourgeist-small",
+      "dexNumber": 711,
+      "displayName": "パンプジン（ちいさいサイズ）",
+      "path": "entries/gourgeist-small.json"
+    },
+    {
+      "id": "gourgeist-super",
+      "dexNumber": 711,
+      "displayName": "パンプジン（とくだいサイズ）",
+      "path": "entries/gourgeist-super.json"
+    },
+    {
+      "id": "avalugg",
+      "dexNumber": 713,
+      "displayName": "クレベース",
+      "path": "entries/avalugg.json"
+    },
+    {
+      "id": "avalugg-hisui",
+      "dexNumber": 713,
+      "displayName": "クレベース（ヒスイ）",
+      "path": "entries/avalugg-hisui.json"
+    },
+    {
+      "id": "noivern",
+      "dexNumber": 715,
+      "displayName": "オンバーン",
+      "path": "entries/noivern.json"
+    },
+    {
+      "id": "decidueye",
+      "dexNumber": 724,
+      "displayName": "ジュナイパー",
+      "path": "entries/decidueye.json"
+    },
+    {
+      "id": "decidueye-hisui",
+      "dexNumber": 724,
+      "displayName": "ジュナイパー（ヒスイ）",
+      "path": "entries/decidueye-hisui.json"
+    },
+    {
+      "id": "incineroar",
+      "dexNumber": 727,
+      "displayName": "ガオガエン",
+      "path": "entries/incineroar.json"
+    },
+    {
+      "id": "primarina",
+      "dexNumber": 730,
+      "displayName": "アシレーヌ",
+      "path": "entries/primarina.json"
+    },
+    {
+      "id": "toucannon",
+      "dexNumber": 733,
+      "displayName": "ドデカバシ",
+      "path": "entries/toucannon.json"
+    },
+    {
+      "id": "crabominable",
+      "dexNumber": 740,
+      "displayName": "ケケンカニ",
+      "path": "entries/crabominable.json"
+    },
+    {
+      "id": "crabominable-mega",
+      "dexNumber": 740,
+      "displayName": "メガケケンカニ",
+      "path": "entries/crabominable-mega.json"
+    },
+    {
+      "id": "lycanroc-dusk",
+      "dexNumber": 745,
+      "displayName": "ルガルガン（たそがれ）",
+      "path": "entries/lycanroc-dusk.json"
+    },
+    {
+      "id": "lycanroc-midday",
+      "dexNumber": 745,
+      "displayName": "ルガルガン（まひる）",
+      "path": "entries/lycanroc-midday.json"
+    },
+    {
+      "id": "lycanroc-midnight",
+      "dexNumber": 745,
+      "displayName": "ルガルガン（まよなか）",
+      "path": "entries/lycanroc-midnight.json"
+    },
+    {
+      "id": "toxapex",
+      "dexNumber": 748,
+      "displayName": "ドヒドイデ",
+      "path": "entries/toxapex.json"
+    },
+    {
+      "id": "mudsdale",
+      "dexNumber": 750,
+      "displayName": "バンバドロ",
+      "path": "entries/mudsdale.json"
+    },
+    {
+      "id": "araquanid",
+      "dexNumber": 752,
+      "displayName": "オニシズクモ",
+      "path": "entries/araquanid.json"
+    },
+    {
+      "id": "salazzle",
+      "dexNumber": 758,
+      "displayName": "エンニュート",
+      "path": "entries/salazzle.json"
+    },
+    {
+      "id": "tsareena",
+      "dexNumber": 763,
+      "displayName": "アマージョ",
+      "path": "entries/tsareena.json"
+    },
+    {
+      "id": "oranguru",
+      "dexNumber": 765,
+      "displayName": "ヤレユータン",
+      "path": "entries/oranguru.json"
+    },
+    {
+      "id": "passimian",
+      "dexNumber": 766,
+      "displayName": "ナゲツケサル",
+      "path": "entries/passimian.json"
+    },
+    {
+      "id": "mimikyu-disguised",
+      "dexNumber": 778,
+      "displayName": "ミミッキュ（ばけたすがた）",
+      "path": "entries/mimikyu-disguised.json"
+    },
+    {
+      "id": "drampa",
+      "dexNumber": 780,
+      "displayName": "ジジーロン",
+      "path": "entries/drampa.json"
+    },
+    {
+      "id": "drampa-mega",
+      "dexNumber": 780,
+      "displayName": "メガジジーロン",
+      "path": "entries/drampa-mega.json"
+    },
+    {
+      "id": "kommo-o",
+      "dexNumber": 784,
+      "displayName": "ジャラランガ",
+      "path": "entries/kommo-o.json"
+    },
+    {
+      "id": "corviknight",
+      "dexNumber": 823,
+      "displayName": "アーマーガア",
+      "path": "entries/corviknight.json"
+    },
+    {
+      "id": "flapple",
+      "dexNumber": 841,
+      "displayName": "アップリュー",
+      "path": "entries/flapple.json"
+    },
+    {
+      "id": "appletun",
+      "dexNumber": 842,
+      "displayName": "タルップル",
+      "path": "entries/appletun.json"
+    },
+    {
+      "id": "sandaconda",
+      "dexNumber": 844,
+      "displayName": "サダイジャ",
+      "path": "entries/sandaconda.json"
+    },
+    {
+      "id": "polteageist",
+      "dexNumber": 855,
+      "displayName": "ポットデス",
+      "path": "entries/polteageist.json"
+    },
+    {
+      "id": "hatterene",
+      "dexNumber": 858,
+      "displayName": "ブリムオン",
+      "path": "entries/hatterene.json"
+    },
+    {
+      "id": "grimmsnarl",
+      "dexNumber": 861,
+      "displayName": "オーロンゲ",
+      "path": "entries/grimmsnarl.json"
+    },
+    {
+      "id": "mr-rime",
+      "dexNumber": 866,
+      "displayName": "バリコオル",
+      "path": "entries/mr-rime.json"
+    },
+    {
+      "id": "runerigus",
+      "dexNumber": 867,
+      "displayName": "デスバーン",
+      "path": "entries/runerigus.json"
+    },
+    {
+      "id": "alcremie",
+      "dexNumber": 869,
+      "displayName": "マホイップ",
+      "path": "entries/alcremie.json"
+    },
+    {
+      "id": "falinks",
+      "dexNumber": 870,
+      "displayName": "タイレーツ",
+      "path": "entries/falinks.json"
+    },
+    {
+      "id": "falinks-mega",
+      "dexNumber": 870,
+      "displayName": "メガタイレーツ",
+      "path": "entries/falinks-mega.json"
+    },
+    {
+      "id": "morpeko-full-belly",
+      "dexNumber": 877,
+      "displayName": "モルペコ（まんぷくもよう）",
+      "path": "entries/morpeko-full-belly.json"
+    },
+    {
+      "id": "dragapult",
+      "dexNumber": 887,
+      "displayName": "ドラパルト",
+      "path": "entries/dragapult.json"
+    },
+    {
+      "id": "wyrdeer",
+      "dexNumber": 899,
+      "displayName": "アヤシシ",
+      "path": "entries/wyrdeer.json"
+    },
+    {
+      "id": "kleavor",
+      "dexNumber": 900,
+      "displayName": "バサギリ",
+      "path": "entries/kleavor.json"
+    },
+    {
+      "id": "basculegion-female",
+      "dexNumber": 902,
+      "displayName": "イダイトウ（♀）",
+      "path": "entries/basculegion-female.json"
+    },
+    {
+      "id": "basculegion-male",
+      "dexNumber": 902,
+      "displayName": "イダイトウ（♂）",
+      "path": "entries/basculegion-male.json"
+    },
+    {
+      "id": "sneasler",
+      "dexNumber": 903,
+      "displayName": "オオニューラ",
+      "path": "entries/sneasler.json"
+    },
+    {
+      "id": "overqwil",
+      "dexNumber": 904,
+      "displayName": "ハリーマン",
+      "path": "entries/overqwil.json"
+    },
+    {
+      "id": "meowscarada",
+      "dexNumber": 908,
+      "displayName": "マスカーニャ",
+      "path": "entries/meowscarada.json"
+    },
+    {
+      "id": "skeledirge",
+      "dexNumber": 911,
+      "displayName": "ラウドボーン",
+      "path": "entries/skeledirge.json"
+    },
+    {
+      "id": "quaquaval",
+      "dexNumber": 914,
+      "displayName": "ウェーニバル",
+      "path": "entries/quaquaval.json"
+    },
+    {
+      "id": "maushold-family-of-four",
+      "dexNumber": 925,
+      "displayName": "イッカネズミ（4ひきかぞく）",
+      "path": "entries/maushold-family-of-four.json"
+    },
+    {
+      "id": "garganacl",
+      "dexNumber": 934,
+      "displayName": "キョジオーン",
+      "path": "entries/garganacl.json"
+    },
+    {
+      "id": "armarouge",
+      "dexNumber": 936,
+      "displayName": "グレンアルマ",
+      "path": "entries/armarouge.json"
+    },
+    {
+      "id": "ceruledge",
+      "dexNumber": 937,
+      "displayName": "ソウブレイズ",
+      "path": "entries/ceruledge.json"
+    },
+    {
+      "id": "bellibolt",
+      "dexNumber": 939,
+      "displayName": "ハラバリー",
+      "path": "entries/bellibolt.json"
+    },
+    {
+      "id": "scovillain",
+      "dexNumber": 952,
+      "displayName": "スコヴィラン",
+      "path": "entries/scovillain.json"
+    },
+    {
+      "id": "scovillain-mega",
+      "dexNumber": 952,
+      "displayName": "メガスコヴィラン",
+      "path": "entries/scovillain-mega.json"
+    },
+    {
+      "id": "espathra",
+      "dexNumber": 956,
+      "displayName": "クエスパトラ",
+      "path": "entries/espathra.json"
+    },
+    {
+      "id": "tinkaton",
+      "dexNumber": 959,
+      "displayName": "デカヌチャン",
+      "path": "entries/tinkaton.json"
+    },
+    {
+      "id": "palafin-hero",
+      "dexNumber": 964,
+      "displayName": "イルカマン（マイティ）",
+      "path": "entries/palafin-hero.json"
+    },
+    {
+      "id": "palafin-zero",
+      "dexNumber": 964,
+      "displayName": "イルカマン（ナイーブ）",
+      "path": "entries/palafin-zero.json"
+    },
+    {
+      "id": "orthworm",
+      "dexNumber": 968,
+      "displayName": "ミミズズ",
+      "path": "entries/orthworm.json"
+    },
+    {
+      "id": "glimmora",
+      "dexNumber": 970,
+      "displayName": "キラフロル",
+      "path": "entries/glimmora.json"
+    },
+    {
+      "id": "glimmora-mega",
+      "dexNumber": 970,
+      "displayName": "メガキラフロル",
+      "path": "entries/glimmora-mega.json"
+    },
+    {
+      "id": "houndstone",
+      "dexNumber": 972,
+      "displayName": "ハカドッグ",
+      "path": "entries/houndstone.json"
+    },
+    {
+      "id": "annihilape",
+      "dexNumber": 979,
+      "displayName": "コノヨザル",
+      "path": "entries/annihilape.json"
+    },
+    {
+      "id": "farigiraf",
+      "dexNumber": 981,
+      "displayName": "リキキリン",
+      "path": "entries/farigiraf.json"
+    },
+    {
+      "id": "kingambit",
+      "dexNumber": 983,
+      "displayName": "ドドゲザン",
+      "path": "entries/kingambit.json"
+    },
+    {
+      "id": "gholdengo",
+      "dexNumber": 1000,
+      "displayName": "サーフゴー",
+      "path": "entries/gholdengo.json"
+    },
+    {
+      "id": "sinistcha",
+      "dexNumber": 1013,
+      "displayName": "ヤバソチャ",
+      "path": "entries/sinistcha.json"
+    },
+    {
+      "id": "archaludon",
+      "dexNumber": 1018,
+      "displayName": "ブリジュラス",
+      "path": "entries/archaludon.json"
+    },
+    {
+      "id": "hydrapple",
+      "dexNumber": 1019,
+      "displayName": "カミツオロチ",
+      "path": "entries/hydrapple.json"
+    }
+  ]
+}

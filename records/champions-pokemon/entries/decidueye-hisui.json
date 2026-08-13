@@ -1,0 +1,105 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "decidueye-hisui",
+    "dexNumber": 724,
+    "displayName": "ジュナイパー（ヒスイ）",
+    "name": {
+      "en": "Decidueye",
+      "ja": "ジュナイパー（ヒスイ）",
+      "jaHrkt": "ジュナイパー（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 88,
+      "atk": 112,
+      "def": 80,
+      "spa": 95,
+      "spd": 95,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "aura-sphere",
+      "brave-bird",
+      "brick-break",
+      "bullet-seed",
+      "close-combat",
+      "dual-wingbeat",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "focus-blast",
+      "focus-punch",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "gust",
+      "hyper-beam",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "leafage",
+      "low-sweep",
+      "magical-leaf",
+      "peck",
+      "pluck",
+      "psycho-cut",
+      "razor-leaf",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "seed-bomb",
+      "shadow-claw",
+      "shadow-sneak",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "sucker-punch",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "triple-arrows",
+      "u-turn",
+      "upper-hand"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

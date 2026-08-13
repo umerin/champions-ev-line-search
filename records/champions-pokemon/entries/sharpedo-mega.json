@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sharpedo-mega",
+    "dexNumber": 319,
+    "displayName": "メガサメハダー",
+    "name": {
+      "en": "Sharpedo",
+      "ja": "メガサメハダー",
+      "jaHrkt": "メガサメハダー"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 140,
+      "def": 70,
+      "spa": 110,
+      "spd": 65,
+      "spe": 105
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "aqua-jet",
+      "assurance",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "bounce",
+      "brine",
+      "bulldoze",
+      "chilling-water",
+      "close-combat",
+      "crunch",
+      "dark-pulse",
+      "dive",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "feint",
+      "flip-turn",
+      "fury-cutter",
+      "giga-impact",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "icy-wind",
+      "liquidation",
+      "mud-slap",
+      "night-slash",
+      "payback",
+      "poison-fang",
+      "poison-jab",
+      "psychic-fangs",
+      "rage",
+      "retaliate",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "scale-shot",
+      "secret-power",
+      "skull-bash",
+      "slash",
+      "snarl",
+      "snore",
+      "strength",
+      "surf",
+      "swift",
+      "take-down",
+      "thief",
+      "thrash",
+      "uproar",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

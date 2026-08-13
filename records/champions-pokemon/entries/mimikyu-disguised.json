@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "mimikyu-disguised",
+    "dexNumber": 778,
+    "displayName": "ミミッキュ（ばけたすがた）",
+    "name": {
+      "en": "Mimikyu",
+      "ja": "ミミッキュ（ばけたすがた）",
+      "jaHrkt": "ミミッキュ（ばけたすがた）"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 90,
+      "def": 80,
+      "spa": 50,
+      "spd": 105,
+      "spe": 96
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "burning-jealousy",
+      "charge-beam",
+      "covet",
+      "dark-pulse",
+      "dazzling-gleam",
+      "drain-punch",
+      "draining-kiss",
+      "dream-eater",
+      "facade",
+      "feint-attack",
+      "giga-drain",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "last-resort",
+      "leech-life",
+      "night-slash",
+      "payback",
+      "phantom-force",
+      "play-rough",
+      "pounce",
+      "psychic",
+      "round",
+      "scratch",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "slash",
+      "snore",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "trailblaze",
+      "wood-hammer",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

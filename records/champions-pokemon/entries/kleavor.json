@@ -1,0 +1,96 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "kleavor",
+    "dexNumber": 900,
+    "displayName": "バサギリ",
+    "name": {
+      "en": "Kleavor",
+      "ja": "バサギリ",
+      "jaHrkt": "バサギリ"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 135,
+      "def": 95,
+      "spa": 45,
+      "spd": 70,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "ancient-power",
+      "brick-break",
+      "brutal-swing",
+      "bug-bite",
+      "bug-buzz",
+      "close-combat",
+      "double-edge",
+      "double-hit",
+      "dual-wingbeat",
+      "facade",
+      "false-swipe",
+      "feint",
+      "fury-cutter",
+      "giga-impact",
+      "hyper-beam",
+      "lunge",
+      "night-slash",
+      "pounce",
+      "quick-attack",
+      "rock-blast",
+      "rock-slide",
+      "rock-tomb",
+      "silver-wind",
+      "skitter-smack",
+      "slash",
+      "smack-down",
+      "stone-axe",
+      "stone-edge",
+      "struggle-bug",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "u-turn",
+      "vacuum-wave",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

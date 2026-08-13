@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "politoed",
+    "dexNumber": 186,
+    "displayName": "ニョロトノ",
+    "name": {
+      "en": "Politoed",
+      "ja": "ニョロトノ",
+      "jaHrkt": "ニョロトノ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 75,
+      "def": 75,
+      "spa": 90,
+      "spd": 100,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "blizzard",
+      "body-slam",
+      "bounce",
+      "brick-break",
+      "bubble-beam",
+      "bulldoze",
+      "chilling-water",
+      "dig",
+      "dive",
+      "double-edge",
+      "double-slap",
+      "dynamic-punch",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "facade",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "liquidation",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "payback",
+      "pound",
+      "power-up-punch",
+      "psychic",
+      "rock-smash",
+      "round",
+      "scald",
+      "secret-power",
+      "snore",
+      "strength",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "weather-ball",
+      "whirlpool"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "rain",
+      "definition": {
+        "abilityId": "drizzle",
+        "abilityName": "あめふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

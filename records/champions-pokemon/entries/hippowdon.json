@@ -1,0 +1,106 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "hippowdon",
+    "dexNumber": 450,
+    "displayName": "カバルドン",
+    "name": {
+      "en": "Hippowdon",
+      "ja": "カバルドン",
+      "jaHrkt": "カバルドン"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 108,
+      "atk": 112,
+      "def": 118,
+      "spa": 68,
+      "spd": 72,
+      "spe": 47
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "crunch",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-fang",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-fang",
+      "iron-head",
+      "iron-tail",
+      "mud-bomb",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "revenge",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "secret-power",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder-fang",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "sand",
+      "definition": {
+        "abilityId": "sand-stream",
+        "abilityName": "すなおこし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

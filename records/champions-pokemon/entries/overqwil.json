@@ -1,0 +1,93 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "overqwil",
+    "dexNumber": 904,
+    "displayName": "ハリーマン",
+    "name": {
+      "en": "Overqwil",
+      "ja": "ハリーマン",
+      "jaHrkt": "ハリーマン"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 115,
+      "def": 95,
+      "spa": 65,
+      "spd": 65,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "barb-barrage",
+      "bite",
+      "blizzard",
+      "brine",
+      "chilling-water",
+      "crunch",
+      "dark-pulse",
+      "double-edge",
+      "facade",
+      "fell-stinger",
+      "giga-impact",
+      "gunk-shot",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "lash-out",
+      "liquidation",
+      "mud-shot",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "poison-tail",
+      "scale-shot",
+      "self-destruct",
+      "shadow-ball",
+      "sludge-bomb",
+      "sludge-wave",
+      "smart-strike",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "venoshock",
+      "water-pulse",
+      "waterfall"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

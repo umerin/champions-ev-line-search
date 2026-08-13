@@ -1,0 +1,113 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "aerodactyl-mega",
+    "dexNumber": 142,
+    "displayName": "メガプテラ",
+    "name": {
+      "en": "Aerodactyl",
+      "ja": "メガプテラ",
+      "jaHrkt": "メガプテラ"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 135,
+      "def": 85,
+      "spa": 70,
+      "spd": 95,
+      "spe": 150
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-cutter",
+      "ancient-power",
+      "aqua-tail",
+      "assurance",
+      "bite",
+      "brutal-swing",
+      "bulldoze",
+      "crunch",
+      "double-edge",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dual-wingbeat",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "flamethrower",
+      "fly",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "ice-fang",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "meteor-beam",
+      "ominous-wind",
+      "payback",
+      "psychic-fangs",
+      "pursuit",
+      "rage",
+      "razor-wind",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-throw",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "sky-attack",
+      "sky-drop",
+      "smack-down",
+      "snore",
+      "steel-wing",
+      "stone-edge",
+      "strength",
+      "swift",
+      "take-down",
+      "thief",
+      "thunder-fang",
+      "twister",
+      "wing-attack"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

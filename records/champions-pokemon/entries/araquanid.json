@@ -1,0 +1,93 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "araquanid",
+    "dexNumber": 752,
+    "displayName": "オニシズクモ",
+    "name": {
+      "en": "Araquanid",
+      "ja": "オニシズクモ",
+      "jaHrkt": "オニシズクモ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "atk": 70,
+      "def": 92,
+      "spa": 50,
+      "spd": 132,
+      "spe": 42
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "blizzard",
+      "body-slam",
+      "bubble",
+      "bubble-beam",
+      "bug-bite",
+      "bug-buzz",
+      "chilling-water",
+      "crunch",
+      "dive",
+      "facade",
+      "frost-breath",
+      "giga-drain",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "infestation",
+      "leech-life",
+      "liquidation",
+      "lunge",
+      "poison-jab",
+      "pounce",
+      "round",
+      "scald",
+      "signal-beam",
+      "skitter-smack",
+      "snore",
+      "surf",
+      "tera-blast",
+      "trailblaze",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

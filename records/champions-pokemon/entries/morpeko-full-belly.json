@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "morpeko-full-belly",
+    "dexNumber": 877,
+    "displayName": "モルペコ（まんぷくもよう）",
+    "name": {
+      "en": "Morpeko",
+      "ja": "モルペコ（まんぷくもよう）",
+      "jaHrkt": "モルペコ（まんぷくもよう）"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 58,
+      "spa": 70,
+      "spd": 58,
+      "spe": 97
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "assurance",
+      "aura-wheel",
+      "bite",
+      "brick-break",
+      "bullet-seed",
+      "charge-beam",
+      "crunch",
+      "dark-pulse",
+      "double-edge",
+      "electroweb",
+      "facade",
+      "fake-out",
+      "fire-fang",
+      "foul-play",
+      "ice-fang",
+      "knock-off",
+      "lash-out",
+      "outrage",
+      "payback",
+      "power-trip",
+      "psychic-fangs",
+      "quick-attack",
+      "rapid-spin",
+      "revenge",
+      "rising-voltage",
+      "round",
+      "seed-bomb",
+      "snarl",
+      "snore",
+      "spark",
+      "stomping-tantrum",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "thunder",
+      "thunder-fang",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "uproar",
+      "volt-switch",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

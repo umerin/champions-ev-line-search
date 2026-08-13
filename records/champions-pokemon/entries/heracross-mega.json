@@ -1,0 +1,119 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "heracross-mega",
+    "dexNumber": 214,
+    "displayName": "メガヘラクロス",
+    "name": {
+      "en": "Heracross",
+      "ja": "メガヘラクロス",
+      "jaHrkt": "メガヘラクロス"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 185,
+      "def": 115,
+      "spa": 40,
+      "spd": 105,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "arm-thrust",
+      "assurance",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bug-bite",
+      "bug-buzz",
+      "bulldoze",
+      "bullet-seed",
+      "chip-away",
+      "circle-throw",
+      "close-combat",
+      "cut",
+      "dig",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "false-swipe",
+      "feint",
+      "focus-blast",
+      "focus-punch",
+      "fury-attack",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "horn-attack",
+      "hyper-beam",
+      "knock-off",
+      "lunge",
+      "megahorn",
+      "night-slash",
+      "pin-missile",
+      "pounce",
+      "pursuit",
+      "retaliate",
+      "revenge",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-claw",
+      "skitter-smack",
+      "slash",
+      "smack-down",
+      "smart-strike",
+      "snore",
+      "stone-edge",
+      "strength",
+      "struggle-bug",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "throat-chop",
+      "trailblaze",
+      "upper-hand",
+      "vacuum-wave",
+      "venoshock"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

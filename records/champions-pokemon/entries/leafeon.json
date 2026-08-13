@@ -1,0 +1,103 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "leafeon",
+    "dexNumber": 470,
+    "displayName": "リーフィア",
+    "name": {
+      "en": "Leafeon",
+      "ja": "リーフィア",
+      "jaHrkt": "リーフィア"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 110,
+      "def": 130,
+      "spa": 60,
+      "spd": 65,
+      "spe": 95
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "alluring-voice",
+      "bite",
+      "body-slam",
+      "bullet-seed",
+      "covet",
+      "dig",
+      "double-edge",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "knock-off",
+      "last-resort",
+      "leaf-blade",
+      "leaf-storm",
+      "leafage",
+      "magical-leaf",
+      "mud-shot",
+      "mud-slap",
+      "pay-day",
+      "quick-attack",
+      "razor-leaf",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "snore",
+      "solar-beam",
+      "solar-blade",
+      "stored-power",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "weather-ball",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

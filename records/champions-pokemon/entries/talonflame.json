@@ -1,0 +1,96 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "talonflame",
+    "dexNumber": 663,
+    "displayName": "ファイアロー",
+    "name": {
+      "en": "Talonflame",
+      "ja": "ファイアロー",
+      "jaHrkt": "ファイアロー"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "atk": 81,
+      "def": 71,
+      "spa": 74,
+      "spd": 69,
+      "spe": 126
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "blaze-kick",
+      "brave-bird",
+      "double-edge",
+      "dual-wingbeat",
+      "ember",
+      "facade",
+      "feint",
+      "fire-blast",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "fly",
+      "giga-impact",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "incinerate",
+      "overheat",
+      "peck",
+      "quick-attack",
+      "razor-wind",
+      "round",
+      "secret-power",
+      "sky-attack",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "swift",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "u-turn",
+      "upper-hand"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

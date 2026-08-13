@@ -1,0 +1,85 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "hatterene",
+    "dexNumber": 858,
+    "displayName": "ブリムオン",
+    "name": {
+      "en": "Hatterene",
+      "ja": "ブリムオン",
+      "jaHrkt": "ブリムオン"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 57,
+      "atk": 90,
+      "def": 95,
+      "spa": 136,
+      "spd": 103,
+      "spe": 29
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "brutal-swing",
+      "confusion",
+      "dark-pulse",
+      "dazzling-gleam",
+      "disarming-voice",
+      "draining-kiss",
+      "expanding-force",
+      "facade",
+      "future-sight",
+      "giga-drain",
+      "giga-impact",
+      "hyper-beam",
+      "magical-leaf",
+      "misty-explosion",
+      "mystical-fire",
+      "nuzzle",
+      "play-rough",
+      "power-whip",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psycho-cut",
+      "psyshock",
+      "round",
+      "shadow-ball",
+      "shadow-claw",
+      "snore",
+      "stored-power",
+      "swift",
+      "tera-blast"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

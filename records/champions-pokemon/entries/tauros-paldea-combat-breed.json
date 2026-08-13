@@ -1,0 +1,93 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "tauros-paldea-combat-breed",
+    "dexNumber": 128,
+    "displayName": "ケンタロス（コンバット）",
+    "name": {
+      "en": "Tauros",
+      "ja": "ケンタロス（コンバット）",
+      "jaHrkt": "ケンタロス（コンバット）"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "assurance",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "close-combat",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "drill-run",
+      "earthquake",
+      "facade",
+      "giga-impact",
+      "headbutt",
+      "high-horsepower",
+      "hyper-beam",
+      "iron-head",
+      "iron-tail",
+      "lash-out",
+      "megahorn",
+      "outrage",
+      "raging-bull",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "smart-strike",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "throat-chop",
+      "trailblaze",
+      "uproar",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "armarouge",
+    "dexNumber": 936,
+    "displayName": "グレンアルマ",
+    "name": {
+      "en": "Armarouge",
+      "ja": "グレンアルマ",
+      "jaHrkt": "グレンアルマ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 100,
+      "spa": 125,
+      "spd": 80,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "armor-cannon",
+      "astonish",
+      "aura-sphere",
+      "burn-up",
+      "clear-smog",
+      "dark-pulse",
+      "dragon-pulse",
+      "ember",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "fire-blast",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "flash-cannon",
+      "focus-blast",
+      "heat-wave",
+      "hyper-beam",
+      "incinerate",
+      "lava-plume",
+      "meteor-beam",
+      "mystical-fire",
+      "overheat",
+      "psybeam",
+      "psychic",
+      "psyshock",
+      "scorching-sands",
+      "shadow-ball",
+      "solar-beam",
+      "stored-power",
+      "take-down",
+      "tera-blast",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

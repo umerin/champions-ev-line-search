@@ -1,0 +1,96 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "basculegion-female",
+    "dexNumber": 902,
+    "displayName": "イダイトウ（♀）",
+    "name": {
+      "en": "Basculegion",
+      "ja": "イダイトウ（♀）",
+      "jaHrkt": "イダイトウ（♀）"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 120,
+      "atk": 92,
+      "def": 65,
+      "spa": 100,
+      "spd": 75,
+      "spe": 78
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-jet",
+      "bite",
+      "blizzard",
+      "chilling-water",
+      "crunch",
+      "double-edge",
+      "facade",
+      "flip-turn",
+      "giga-impact",
+      "head-smash",
+      "headbutt",
+      "hex",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "icy-wind",
+      "last-respects-100",
+      "last-respects-150",
+      "last-respects-200",
+      "last-respects-50",
+      "liquidation",
+      "mud-shot",
+      "muddy-water",
+      "outrage",
+      "phantom-force",
+      "psychic-fangs",
+      "scale-shot",
+      "shadow-ball",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "wave-crash",
+      "whirlpool",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

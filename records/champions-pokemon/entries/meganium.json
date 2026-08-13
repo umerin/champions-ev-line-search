@@ -1,0 +1,105 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "meganium",
+    "dexNumber": 154,
+    "displayName": "メガニウム",
+    "name": {
+      "en": "Meganium",
+      "ja": "メガニウム",
+      "jaHrkt": "メガニウム"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 100,
+      "spa": 83,
+      "spd": 100,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "bullet-seed",
+      "cut",
+      "dazzling-gleam",
+      "double-edge",
+      "dragon-tail",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "frenzy-plant",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "magical-leaf",
+      "mud-slap",
+      "outrage",
+      "petal-blizzard",
+      "petal-dance",
+      "pollen-puff",
+      "razor-leaf",
+      "rock-climb",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "snore",
+      "solar-beam",
+      "solar-blade",
+      "stomping-tantrum",
+      "strength",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "vine-whip",
+      "weather-ball",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,86 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "rotom",
+    "dexNumber": 479,
+    "displayName": "ロトム",
+    "name": {
+      "en": "Rotom",
+      "ja": "ロトム",
+      "jaHrkt": "ロトム"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 50,
+      "def": 77,
+      "spa": 95,
+      "spd": 77,
+      "spe": 91
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "charge-beam",
+      "dark-pulse",
+      "discharge",
+      "dream-eater",
+      "electroweb",
+      "facade",
+      "foul-play",
+      "hex",
+      "hidden-power",
+      "hyper-voice",
+      "mud-slap",
+      "ominous-wind",
+      "poltergeist",
+      "rising-voltage",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "swift",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunder-shock",
+      "thunderbolt",
+      "uproar",
+      "volt-switch"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

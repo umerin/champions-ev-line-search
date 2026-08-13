@@ -1,0 +1,83 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "glimmora-mega",
+    "dexNumber": 970,
+    "displayName": "メガキラフロル",
+    "name": {
+      "en": "Glimmora",
+      "ja": "メガキラフロル",
+      "jaHrkt": "メガキラフロル"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "atk": 90,
+      "def": 105,
+      "spa": 150,
+      "spd": 96,
+      "spe": 101
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "ancient-power",
+      "dazzling-gleam",
+      "earth-power",
+      "energy-ball",
+      "explosion",
+      "facade",
+      "flash-cannon",
+      "giga-impact",
+      "gunk-shot",
+      "hyper-beam",
+      "meteor-beam",
+      "mortal-spin",
+      "mud-shot",
+      "power-gem",
+      "rock-blast",
+      "rock-slide",
+      "rock-throw",
+      "rock-tomb",
+      "sand-tomb",
+      "self-destruct",
+      "sludge-bomb",
+      "sludge-wave",
+      "smack-down",
+      "solar-beam",
+      "stone-edge",
+      "tera-blast",
+      "venoshock"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

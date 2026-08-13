@@ -1,0 +1,90 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "mudsdale",
+    "dexNumber": 750,
+    "displayName": "バンバドロ",
+    "name": {
+      "en": "Mudsdale",
+      "ja": "バンバドロ",
+      "jaHrkt": "バンバドロ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 125,
+      "def": 100,
+      "spa": 55,
+      "spd": 85,
+      "spe": 35
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "close-combat",
+      "double-edge",
+      "double-kick",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "focus-blast",
+      "giga-impact",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "iron-head",
+      "lash-out",
+      "low-sweep",
+      "mega-kick",
+      "mud-shot",
+      "mud-slap",
+      "payback",
+      "revenge",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "smack-down",
+      "snore",
+      "stomp",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "take-down",
+      "tera-blast"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

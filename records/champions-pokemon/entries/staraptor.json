@@ -1,0 +1,92 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "staraptor",
+    "dexNumber": 398,
+    "displayName": "ムクホーク",
+    "name": {
+      "en": "Staraptor",
+      "ja": "ムクホーク",
+      "jaHrkt": "ムクホーク"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 120,
+      "def": 70,
+      "spa": 50,
+      "spd": 60,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "brave-bird",
+      "close-combat",
+      "double-edge",
+      "dual-wingbeat",
+      "echoed-voice",
+      "facade",
+      "fly",
+      "giga-impact",
+      "gust",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "mud-slap",
+      "ominous-wind",
+      "pluck",
+      "quick-attack",
+      "retaliate",
+      "round",
+      "secret-power",
+      "sky-attack",
+      "snore",
+      "steel-wing",
+      "struggle-bug",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "twister",
+      "u-turn",
+      "uproar",
+      "wing-attack"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

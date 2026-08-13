@@ -1,0 +1,115 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "steelix",
+    "dexNumber": 208,
+    "displayName": "ハガネール",
+    "name": {
+      "en": "Steelix",
+      "ja": "ハガネール",
+      "jaHrkt": "ハガネール"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 85,
+      "def": 200,
+      "spa": 55,
+      "spd": 65,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "aqua-tail",
+      "bind",
+      "body-press",
+      "body-slam",
+      "breaking-swipe",
+      "brutal-swing",
+      "bulldoze",
+      "crunch",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "dragon-breath",
+      "dragon-pulse",
+      "dragon-tail",
+      "drill-run",
+      "earth-power",
+      "earthquake",
+      "explosion",
+      "facade",
+      "fire-fang",
+      "flash-cannon",
+      "giga-impact",
+      "head-smash",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-fang",
+      "iron-head",
+      "iron-tail",
+      "meteor-beam",
+      "mud-slap",
+      "payback",
+      "psychic-fangs",
+      "rage",
+      "rock-blast",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-throw",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "secret-power",
+      "self-destruct",
+      "slam",
+      "smack-down",
+      "snore",
+      "steel-beam",
+      "steel-roller",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "tackle",
+      "thunder-fang",
+      "twister"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

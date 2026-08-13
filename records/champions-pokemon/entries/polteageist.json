@@ -1,0 +1,77 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "polteageist",
+    "dexNumber": 855,
+    "displayName": "ポットデス",
+    "name": {
+      "en": "Polteageist",
+      "ja": "ポットデス",
+      "jaHrkt": "ポットデス"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 65,
+      "spa": 134,
+      "spd": 114,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "dark-pulse",
+      "facade",
+      "foul-play",
+      "giga-drain",
+      "giga-impact",
+      "hex",
+      "hyper-beam",
+      "magical-leaf",
+      "mega-drain",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "psybeam",
+      "psychic",
+      "psyshock",
+      "round",
+      "self-destruct",
+      "shadow-ball",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "tera-blast"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

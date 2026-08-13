@@ -1,0 +1,80 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "musharna",
+    "dexNumber": 518,
+    "displayName": "ムシャーナ",
+    "name": {
+      "en": "Musharna",
+      "ja": "ムシャーナ",
+      "jaHrkt": "ムシャーナ"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 116,
+      "atk": 55,
+      "def": 85,
+      "spa": 107,
+      "spd": 95,
+      "spe": 29
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "charge-beam",
+      "dazzling-gleam",
+      "dream-eater",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "future-sight",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "misty-explosion",
+      "moonblast",
+      "psybeam",
+      "psychic",
+      "psyshock",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "swift",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "avalugg-hisui",
+    "dexNumber": 713,
+    "displayName": "クレベース（ヒスイ）",
+    "name": {
+      "en": "Avalugg",
+      "ja": "クレベース（ヒスイ）",
+      "jaHrkt": "クレベース（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice",
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 127,
+      "def": 184,
+      "spa": 34,
+      "spd": 36,
+      "spe": 38
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "chilling-water",
+      "crunch",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "flash-cannon",
+      "giga-impact",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-ball",
+      "ice-beam",
+      "ice-fang",
+      "ice-shard",
+      "ice-spinner",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "meteor-beam",
+      "mountain-gale",
+      "powder-snow",
+      "rapid-spin",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "stomping-tantrum",
+      "stone-edge",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

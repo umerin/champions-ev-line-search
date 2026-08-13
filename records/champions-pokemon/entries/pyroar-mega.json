@@ -1,0 +1,102 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "pyroar-mega",
+    "dexNumber": 668,
+    "displayName": "メガカエンジシ",
+    "name": {
+      "en": "Pyroar",
+      "ja": "メガカエンジシ",
+      "jaHrkt": "メガカエンジシ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 86,
+      "atk": 88,
+      "def": 92,
+      "spa": 129,
+      "spd": 86,
+      "spe": 126
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "body-slam",
+      "bounce",
+      "bulldoze",
+      "burning-jealousy",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "echoed-voice",
+      "ember",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "iron-tail",
+      "mud-slap",
+      "overheat",
+      "payback",
+      "psychic-fangs",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "snarl",
+      "snore",
+      "solar-beam",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "thunder-fang",
+      "trailblaze",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

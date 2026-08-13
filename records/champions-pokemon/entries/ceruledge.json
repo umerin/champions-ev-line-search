@@ -1,0 +1,92 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "ceruledge",
+    "dexNumber": 937,
+    "displayName": "ソウブレイズ",
+    "name": {
+      "en": "Ceruledge",
+      "ja": "ソウブレイズ",
+      "jaHrkt": "ソウブレイズ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 80,
+      "spa": 60,
+      "spd": 100,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "bitter-blade",
+      "brick-break",
+      "burn-up",
+      "clear-smog",
+      "close-combat",
+      "dragon-claw",
+      "ember",
+      "facade",
+      "false-swipe",
+      "fire-blast",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "heat-wave",
+      "hex",
+      "incinerate",
+      "iron-head",
+      "lava-plume",
+      "night-slash",
+      "overheat",
+      "phantom-force",
+      "poison-jab",
+      "poltergeist",
+      "psycho-cut",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "solar-blade",
+      "stored-power",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "vacuum-wave",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

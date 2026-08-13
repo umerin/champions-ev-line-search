@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "espathra",
+    "dexNumber": 956,
+    "displayName": "クエスパトラ",
+    "name": {
+      "en": "Espathra",
+      "ja": "クエスパトラ",
+      "jaHrkt": "クエスパトラ"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 60,
+      "spa": 101,
+      "spd": 60,
+      "spe": 105
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "body-slam",
+      "brave-bird",
+      "confusion",
+      "dazzling-gleam",
+      "disarming-voice",
+      "double-edge",
+      "drill-peck",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "flash-cannon",
+      "foul-play",
+      "giga-impact",
+      "hex",
+      "hyper-beam",
+      "hyper-voice",
+      "last-resort",
+      "lumina-crash",
+      "mud-slap",
+      "peck",
+      "pluck",
+      "pounce",
+      "psybeam",
+      "psychic",
+      "psyshock",
+      "quick-attack",
+      "seed-bomb",
+      "shadow-ball",
+      "stored-power",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "u-turn",
+      "uproar",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

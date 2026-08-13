@@ -1,0 +1,90 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "falinks-mega",
+    "dexNumber": 870,
+    "displayName": "メガタイレーツ",
+    "name": {
+      "en": "Falinks",
+      "ja": "メガタイレーツ",
+      "jaHrkt": "メガタイレーツ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 135,
+      "def": 135,
+      "spa": 70,
+      "spd": 65,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "assurance",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "close-combat",
+      "facade",
+      "false-swipe",
+      "first-impression",
+      "focus-blast",
+      "giga-impact",
+      "headbutt",
+      "high-horsepower",
+      "hyper-beam",
+      "iron-head",
+      "knock-off",
+      "lunge",
+      "megahorn",
+      "payback",
+      "poison-jab",
+      "retaliate",
+      "revenge",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "smart-strike",
+      "snore",
+      "superpower",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "trailblaze",
+      "upper-hand",
+      "uproar",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

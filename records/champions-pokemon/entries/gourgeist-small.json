@@ -1,0 +1,96 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "gourgeist-small",
+    "dexNumber": 711,
+    "displayName": "パンプジン（ちいさいサイズ）",
+    "name": {
+      "en": "Gourgeist",
+      "ja": "パンプジン（ちいさいサイズ）",
+      "jaHrkt": "パンプジン（ちいさいサイズ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 85,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 99
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "brutal-swing",
+      "bullet-seed",
+      "charge-beam",
+      "dark-pulse",
+      "dream-eater",
+      "energy-ball",
+      "explosion",
+      "facade",
+      "fire-blast",
+      "flame-charge",
+      "flamethrower",
+      "focus-blast",
+      "foul-play",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "incinerate",
+      "moonblast",
+      "mystical-fire",
+      "phantom-force",
+      "poltergeist",
+      "power-whip",
+      "psychic",
+      "razor-leaf",
+      "rock-slide",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "self-destruct",
+      "shadow-ball",
+      "shadow-sneak",
+      "skitter-smack",
+      "sludge-bomb",
+      "snore",
+      "solar-beam",
+      "thief"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

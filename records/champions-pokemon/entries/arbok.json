@@ -1,0 +1,119 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "arbok",
+    "dexNumber": 24,
+    "displayName": "アーボック",
+    "name": {
+      "en": "Arbok",
+      "ja": "アーボック",
+      "jaHrkt": "アーボック"
+    },
+    "championsTarget": true,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 95,
+      "def": 69,
+      "spa": 65,
+      "spd": 79,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid",
+      "acid-spray",
+      "aqua-tail",
+      "belch",
+      "bind",
+      "bite",
+      "body-slam",
+      "breaking-swipe",
+      "brutal-swing",
+      "bulldoze",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "dragon-tail",
+      "earthquake",
+      "facade",
+      "fire-fang",
+      "giga-drain",
+      "giga-impact",
+      "gunk-shot",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-fang",
+      "infestation",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "leech-life",
+      "mega-drain",
+      "mud-bomb",
+      "mud-shot",
+      "mud-slap",
+      "payback",
+      "poison-fang",
+      "poison-jab",
+      "poison-sting",
+      "poison-tail",
+      "psychic-fangs",
+      "rage",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "scale-shot",
+      "secret-power",
+      "seed-bomb",
+      "skitter-smack",
+      "skull-bash",
+      "slam",
+      "sludge-bomb",
+      "sludge-wave",
+      "snarl",
+      "snore",
+      "stomping-tantrum",
+      "strength",
+      "sucker-punch",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder-fang",
+      "trailblaze",
+      "venoshock",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

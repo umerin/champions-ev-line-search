@@ -1,0 +1,89 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "vivillon",
+    "dexNumber": 666,
+    "displayName": "ビビヨン",
+    "name": {
+      "en": "Vivillon",
+      "ja": "ビビヨン",
+      "jaHrkt": "ビビヨン"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 52,
+      "def": 50,
+      "spa": 90,
+      "spd": 50,
+      "spe": 89
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "bug-bite",
+      "bug-buzz",
+      "draining-kiss",
+      "dream-eater",
+      "electroweb",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "gust",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "infestation",
+      "pollen-puff",
+      "pounce",
+      "psybeam",
+      "psychic",
+      "round",
+      "secret-power",
+      "signal-beam",
+      "skitter-smack",
+      "snore",
+      "solar-beam",
+      "struggle-bug",
+      "swift",
+      "tera-blast",
+      "thief",
+      "u-turn",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

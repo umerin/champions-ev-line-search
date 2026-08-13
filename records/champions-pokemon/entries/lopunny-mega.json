@@ -1,0 +1,120 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "lopunny-mega",
+    "dexNumber": 428,
+    "displayName": "メガミミロップ",
+    "name": {
+      "en": "Lopunny",
+      "ja": "メガミミロップ",
+      "jaHrkt": "メガミミロップ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 136,
+      "def": 94,
+      "spa": 54,
+      "spd": 96,
+      "spe": 135
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "assurance",
+      "aura-sphere",
+      "blizzard",
+      "bounce",
+      "brutal-swing",
+      "charge-beam",
+      "circle-throw",
+      "close-combat",
+      "covet",
+      "cut",
+      "dig",
+      "dizzy-punch",
+      "double-edge",
+      "double-hit",
+      "double-kick",
+      "drain-punch",
+      "draining-kiss",
+      "dynamic-punch",
+      "facade",
+      "fake-out",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-jump-kick",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-punch",
+      "iron-tail",
+      "jump-kick",
+      "last-resort",
+      "low-sweep",
+      "mach-punch",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "payback",
+      "play-rough",
+      "pounce",
+      "pound",
+      "power-up-punch",
+      "quick-attack",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "snore",
+      "solar-beam",
+      "strength",
+      "swift",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt",
+      "trailblaze",
+      "triple-axel",
+      "u-turn",
+      "uproar",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,122 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "camerupt",
+    "dexNumber": 323,
+    "displayName": "バクーダ",
+    "name": {
+      "en": "Camerupt",
+      "ja": "バクーダ",
+      "jaHrkt": "バクーダ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 100,
+      "def": 70,
+      "spa": 105,
+      "spd": 75,
+      "spe": 40
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "burning-jealousy",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "ember",
+      "eruption",
+      "explosion",
+      "facade",
+      "fire-blast",
+      "fire-spin",
+      "flame-burst",
+      "flame-charge",
+      "flame-wheel",
+      "flamethrower",
+      "flare-blitz",
+      "flash-cannon",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "incinerate",
+      "iron-head",
+      "lash-out",
+      "lava-plume",
+      "mud-shot",
+      "mud-slap",
+      "overheat",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "self-destruct",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "hardRock",
+      "definition": {
+        "inputKey": "hardRockEnabled",
+        "stage": "damage",
+        "mGroup": "Mfilter",
+        "superEffectiveOnly": true,
+        "modifier": 0.75
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

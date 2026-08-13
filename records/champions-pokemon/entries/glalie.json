@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "glalie",
+    "dexNumber": 362,
+    "displayName": "オニゴーリ",
+    "name": {
+      "en": "Glalie",
+      "ja": "オニゴーリ",
+      "jaHrkt": "オニゴーリ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 80,
+      "def": 80,
+      "spa": 80,
+      "spd": 80,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-slam",
+      "bulldoze",
+      "chilling-water",
+      "crunch",
+      "dark-pulse",
+      "double-edge",
+      "earthquake",
+      "explosion",
+      "facade",
+      "foul-play",
+      "freeze-dry",
+      "frost-breath",
+      "giga-impact",
+      "headbutt",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "ice-ball",
+      "ice-beam",
+      "ice-fang",
+      "ice-shard",
+      "ice-spinner",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "payback",
+      "powder-snow",
+      "rollout",
+      "round",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "signal-beam",
+      "snore",
+      "steel-roller",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,105 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "clawitzer",
+    "dexNumber": 693,
+    "displayName": "ブロスター",
+    "name": {
+      "en": "Clawitzer",
+      "ja": "ブロスター",
+      "jaHrkt": "ブロスター"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 71,
+      "atk": 73,
+      "def": 88,
+      "spa": 120,
+      "spd": 89,
+      "spe": 59
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-jet",
+      "aqua-tail",
+      "aura-sphere",
+      "blizzard",
+      "body-slam",
+      "bounce",
+      "bubble",
+      "bubble-beam",
+      "chilling-water",
+      "crabhammer",
+      "cut",
+      "dark-pulse",
+      "dive",
+      "dragon-pulse",
+      "facade",
+      "flash-cannon",
+      "flip-turn",
+      "focus-blast",
+      "giga-impact",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "iron-tail",
+      "liquidation",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "pounce",
+      "rock-slide",
+      "round",
+      "scald",
+      "secret-power",
+      "shadow-ball",
+      "sludge-bomb",
+      "sludge-wave",
+      "smack-down",
+      "snore",
+      "surf",
+      "take-down",
+      "tera-blast",
+      "terrain-pulse",
+      "thief",
+      "u-turn",
+      "venoshock",
+      "vice-grip",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

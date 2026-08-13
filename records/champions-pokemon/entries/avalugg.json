@@ -1,0 +1,98 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "avalugg",
+    "dexNumber": 713,
+    "displayName": "クレベース",
+    "name": {
+      "en": "Avalugg",
+      "ja": "クレベース",
+      "jaHrkt": "クレベース"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 117,
+      "def": 184,
+      "spa": 44,
+      "spd": 46,
+      "spe": 28
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "chilling-water",
+      "crunch",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "flash-cannon",
+      "frost-breath",
+      "giga-impact",
+      "hidden-power",
+      "high-horsepower",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-ball",
+      "ice-beam",
+      "ice-fang",
+      "ice-spinner",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "powder-snow",
+      "rapid-spin",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "skull-bash",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

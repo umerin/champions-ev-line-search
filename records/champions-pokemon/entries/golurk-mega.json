@@ -1,0 +1,121 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "golurk-mega",
+    "dexNumber": 623,
+    "displayName": "メガゴルーグ",
+    "name": {
+      "en": "Golurk",
+      "ja": "メガゴルーグ",
+      "jaHrkt": "メガゴルーグ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 89,
+      "atk": 159,
+      "def": 105,
+      "spa": 70,
+      "spd": 105,
+      "spe": 55
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "charge-beam",
+      "close-combat",
+      "darkest-lariat",
+      "dig",
+      "double-edge",
+      "drain-punch",
+      "dynamic-punch",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-punch",
+      "flash-cannon",
+      "fly",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "hammer-arm",
+      "headlong-rush",
+      "hex",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "iron-head",
+      "knock-off",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "phantom-force",
+      "poltergeist",
+      "pound",
+      "power-up-punch",
+      "psychic",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "shadow-punch",
+      "shock-wave",
+      "signal-beam",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "thunderbolt",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "metagross-mega",
+    "dexNumber": 376,
+    "displayName": "メガメタグロス",
+    "name": {
+      "en": "Metagross",
+      "ja": "メガメタグロス",
+      "jaHrkt": "メガメタグロス"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 145,
+      "def": 150,
+      "spa": 105,
+      "spd": 110,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "bullet-punch",
+      "confusion",
+      "cut",
+      "double-edge",
+      "dynamic-punch",
+      "earthquake",
+      "expanding-force",
+      "explosion",
+      "facade",
+      "flash-cannon",
+      "focus-punch",
+      "fury-cutter",
+      "future-sight",
+      "giga-impact",
+      "hammer-arm",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-punch",
+      "icy-wind",
+      "iron-head",
+      "knock-off",
+      "metal-claw",
+      "meteor-beam",
+      "meteor-mash",
+      "mud-slap",
+      "power-up-punch",
+      "psychic",
+      "psychic-fangs",
+      "psychic-noise",
+      "psycho-cut",
+      "psyshock",
+      "pursuit",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "shadow-claw",
+      "signal-beam",
+      "sludge-bomb",
+      "snore",
+      "steel-beam",
+      "steel-roller",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder-punch",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

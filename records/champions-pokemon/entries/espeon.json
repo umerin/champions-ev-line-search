@@ -1,0 +1,101 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "espeon",
+    "dexNumber": 196,
+    "displayName": "エーフィ",
+    "name": {
+      "en": "Espeon",
+      "ja": "エーフィ",
+      "jaHrkt": "エーフィ"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 130,
+      "spd": 95,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "bite",
+      "body-slam",
+      "confusion",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "dig",
+      "double-edge",
+      "draining-kiss",
+      "dream-eater",
+      "echoed-voice",
+      "expanding-force",
+      "facade",
+      "future-sight",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "last-resort",
+      "magical-leaf",
+      "mud-slap",
+      "pay-day",
+      "power-gem",
+      "psybeam",
+      "psychic",
+      "psychic-fangs",
+      "psychic-noise",
+      "psyshock",
+      "quick-attack",
+      "retaliate",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "weather-ball",
+      "zap-cannon",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

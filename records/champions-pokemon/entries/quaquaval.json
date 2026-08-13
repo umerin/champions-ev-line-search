@@ -1,0 +1,97 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "quaquaval",
+    "dexNumber": 914,
+    "displayName": "ウェーニバル",
+    "name": {
+      "en": "Quaquaval",
+      "ja": "ウェーニバル",
+      "jaHrkt": "ウェーニバル"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 120,
+      "def": 80,
+      "spa": 85,
+      "spd": 75,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-step",
+      "brave-bird",
+      "brick-break",
+      "chilling-water",
+      "close-combat",
+      "disarming-voice",
+      "double-hit",
+      "facade",
+      "flip-turn",
+      "giga-impact",
+      "hurricane",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-spinner",
+      "icy-wind",
+      "knock-off",
+      "last-resort",
+      "liquidation",
+      "low-sweep",
+      "mega-kick",
+      "pound",
+      "rapid-spin",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "triple-axel",
+      "u-turn",
+      "upper-hand",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "wave-crash",
+      "whirlpool",
+      "wing-attack"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

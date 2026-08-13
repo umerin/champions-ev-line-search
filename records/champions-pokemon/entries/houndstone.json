@@ -1,0 +1,87 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "houndstone",
+    "dexNumber": 972,
+    "displayName": "ハカドッグ",
+    "name": {
+      "en": "Houndstone",
+      "ja": "ハカドッグ",
+      "jaHrkt": "ハカドッグ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "atk": 101,
+      "def": 100,
+      "spa": 50,
+      "spd": 97,
+      "spe": 68
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "body-press",
+      "bulldoze",
+      "crunch",
+      "dig",
+      "double-edge",
+      "facade",
+      "fire-fang",
+      "giga-impact",
+      "headbutt",
+      "hex",
+      "hyper-beam",
+      "ice-fang",
+      "last-respects-100",
+      "last-respects-150",
+      "last-respects-200",
+      "last-respects-50",
+      "lick",
+      "mud-shot",
+      "mud-slap",
+      "phantom-force",
+      "play-rough",
+      "poltergeist",
+      "psychic-fangs",
+      "shadow-ball",
+      "snarl",
+      "stomping-tantrum",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-fang",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

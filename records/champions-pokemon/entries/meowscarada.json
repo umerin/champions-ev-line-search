@@ -1,0 +1,103 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "meowscarada",
+    "dexNumber": 908,
+    "displayName": "マスカーニャ",
+    "name": {
+      "en": "Meowscarada",
+      "ja": "マスカーニャ",
+      "jaHrkt": "マスカーニャ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "atk": 110,
+      "def": 70,
+      "spa": 81,
+      "spd": 70,
+      "spe": 123
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "aura-sphere",
+      "bite",
+      "brick-break",
+      "bullet-seed",
+      "chilling-water",
+      "dark-pulse",
+      "disarming-voice",
+      "energy-ball",
+      "facade",
+      "flower-trick",
+      "foul-play",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "hyper-beam",
+      "knock-off",
+      "lash-out",
+      "leaf-storm",
+      "leafage",
+      "low-sweep",
+      "magical-leaf",
+      "mud-slap",
+      "night-slash",
+      "petal-blizzard",
+      "play-rough",
+      "pollen-puff",
+      "power-gem",
+      "quick-attack",
+      "scratch",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "slash",
+      "solar-beam",
+      "sucker-punch",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder-punch",
+      "trailblaze",
+      "triple-axel",
+      "u-turn"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

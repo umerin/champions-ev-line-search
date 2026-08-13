@@ -1,0 +1,106 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "skarmory-mega",
+    "dexNumber": 227,
+    "displayName": "メガエアームド",
+    "name": {
+      "en": "Skarmory",
+      "ja": "メガエアームド",
+      "jaHrkt": "メガエアームド"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 140,
+      "def": 110,
+      "spa": 40,
+      "spd": 100,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "assurance",
+      "body-press",
+      "brave-bird",
+      "cut",
+      "dark-pulse",
+      "double-edge",
+      "drill-peck",
+      "drill-run",
+      "dual-wingbeat",
+      "facade",
+      "feint",
+      "flash-cannon",
+      "fly",
+      "fury-attack",
+      "fury-cutter",
+      "giga-impact",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "icy-wind",
+      "iron-head",
+      "metal-claw",
+      "mud-slap",
+      "night-slash",
+      "ominous-wind",
+      "payback",
+      "peck",
+      "pluck",
+      "pursuit",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "secret-power",
+      "sky-attack",
+      "sky-drop",
+      "slash",
+      "snore",
+      "steel-beam",
+      "steel-wing",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "twister",
+      "wing-attack",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

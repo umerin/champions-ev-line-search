@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "corviknight",
+    "dexNumber": 823,
+    "displayName": "アーマーガア",
+    "name": {
+      "en": "Corviknight",
+      "ja": "アーマーガア",
+      "jaHrkt": "アーマーガア"
+    },
+    "championsTarget": true,
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 98,
+      "atk": 87,
+      "def": 105,
+      "spa": 53,
+      "spd": 85,
+      "spe": 67
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "assurance",
+      "body-press",
+      "body-slam",
+      "brave-bird",
+      "double-edge",
+      "drill-peck",
+      "dual-wingbeat",
+      "facade",
+      "flash-cannon",
+      "fly",
+      "fury-attack",
+      "giga-impact",
+      "hurricane",
+      "hyper-beam",
+      "iron-head",
+      "metal-claw",
+      "payback",
+      "peck",
+      "pluck",
+      "power-trip",
+      "retaliate",
+      "revenge",
+      "rock-smash",
+      "round",
+      "sky-attack",
+      "snore",
+      "steel-beam",
+      "steel-wing",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "u-turn"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

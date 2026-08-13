@@ -1,0 +1,94 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "spiritomb",
+    "dexNumber": 442,
+    "displayName": "ミカルゲ",
+    "name": {
+      "en": "Spiritomb",
+      "ja": "ミカルゲ",
+      "jaHrkt": "ミカルゲ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 92,
+      "def": 108,
+      "spa": 92,
+      "spd": 108,
+      "spe": 35
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "burning-jealousy",
+      "dark-pulse",
+      "dream-eater",
+      "extrasensory",
+      "facade",
+      "feint-attack",
+      "foul-play",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "icy-wind",
+      "infestation",
+      "lash-out",
+      "ominous-wind",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "psybeam",
+      "psychic",
+      "psyshock",
+      "pursuit",
+      "retaliate",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shadow-sneak",
+      "shock-wave",
+      "silver-wind",
+      "snarl",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "tera-blast",
+      "thief",
+      "uproar",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

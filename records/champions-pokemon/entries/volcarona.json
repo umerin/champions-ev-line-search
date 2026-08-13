@@ -1,0 +1,105 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "volcarona",
+    "dexNumber": 637,
+    "displayName": "ウルガモス",
+    "name": {
+      "en": "Volcarona",
+      "ja": "ウルガモス",
+      "jaHrkt": "ウルガモス"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 65,
+      "spa": 135,
+      "spd": 105,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "body-slam",
+      "bug-bite",
+      "bug-buzz",
+      "double-edge",
+      "dual-wingbeat",
+      "ember",
+      "facade",
+      "fiery-dance",
+      "fire-blast",
+      "fire-spin",
+      "flame-charge",
+      "flame-wheel",
+      "flamethrower",
+      "flare-blitz",
+      "fly",
+      "giga-drain",
+      "giga-impact",
+      "gust",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "incinerate",
+      "leech-life",
+      "lunge",
+      "mystical-fire",
+      "overheat",
+      "poison-jab",
+      "pounce",
+      "psychic",
+      "round",
+      "secret-power",
+      "signal-beam",
+      "silver-wind",
+      "skitter-smack",
+      "snore",
+      "solar-beam",
+      "struggle-bug",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "trailblaze",
+      "u-turn",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

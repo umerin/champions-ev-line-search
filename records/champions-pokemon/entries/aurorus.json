@@ -1,0 +1,114 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "aurorus",
+    "dexNumber": 699,
+    "displayName": "アマルルガ",
+    "name": {
+      "en": "Aurorus",
+      "ja": "アマルルガ",
+      "jaHrkt": "アマルルガ"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 123,
+      "atk": 77,
+      "def": 72,
+      "spa": 99,
+      "spd": 92,
+      "spe": 58
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "aqua-tail",
+      "aurora-beam",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "bulldoze",
+      "charge-beam",
+      "chilling-water",
+      "dark-pulse",
+      "discharge",
+      "dragon-tail",
+      "dream-eater",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "facade",
+      "flash-cannon",
+      "freeze-dry",
+      "frost-breath",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-spinner",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "iron-tail",
+      "meteor-beam",
+      "mud-shot",
+      "outrage",
+      "powder-snow",
+      "psychic",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-throw",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "snore",
+      "stone-edge",
+      "take-down",
+      "thunder",
+      "thunderbolt",
+      "water-pulse",
+      "weather-ball",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "snow",
+      "definition": {
+        "abilityId": "snow-warning",
+        "abilityName": "ゆきふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

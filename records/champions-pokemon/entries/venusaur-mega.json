@@ -1,0 +1,122 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "venusaur-mega",
+    "dexNumber": 3,
+    "displayName": "メガフシギバナ",
+    "name": {
+      "en": "Venusaur",
+      "ja": "メガフシギバナ",
+      "jaHrkt": "メガフシギバナ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 123,
+      "spa": 122,
+      "spd": 120,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "bind",
+      "body-slam",
+      "bulldoze",
+      "bullet-seed",
+      "cut",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "frenzy-plant",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "knock-off",
+      "leaf-storm",
+      "magical-leaf",
+      "mega-drain",
+      "mud-slap",
+      "outrage",
+      "petal-blizzard",
+      "petal-dance",
+      "poison-jab",
+      "power-whip",
+      "rage",
+      "razor-leaf",
+      "rock-climb",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "strength",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "terrain-pulse",
+      "trailblaze",
+      "venoshock",
+      "vine-whip",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "thickFat",
+      "definition": {
+        "inputKey": "thickFatEnabled",
+        "moveTypes": [
+          "fire",
+          "ice"
+        ],
+        "stage": "power",
+        "modifier": 0.5
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

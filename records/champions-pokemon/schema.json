@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "champions-pokemon-record.schema.json",
+  "title": "Champions Pokemon research record",
+  "description": "AI編集用の調査記録。耐久ラインサーチ本体からは読み込まない。",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "pokemon",
+    "learnset",
+    "battleEffects",
+    "research",
+    "extensions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "pokemon": {
+      "type": "object",
+      "description": "data/pokemon.jsonから引き継いだ現在値。",
+      "required": [
+        "id",
+        "dexNumber",
+        "displayName",
+        "name",
+        "championsTarget",
+        "types",
+        "baseStats",
+        "isFinalEvolution"
+      ],
+      "additionalProperties": true
+    },
+    "learnset": {
+      "type": "object",
+      "required": [
+        "moveIds",
+        "verification"
+      ],
+      "properties": {
+        "moveIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "status",
+            "sources",
+            "verifiedMoveIds",
+            "rejectedMoveIds",
+            "notes"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "inherited-unverified",
+                "checking",
+                "partially-verified",
+                "verified"
+              ]
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "verifiedMoveIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "rejectedMoveIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "weight": {
+      "type": "object",
+      "description": "体重。kg単位。未確認の場合はkgをnullにする。",
+      "required": [
+        "kg",
+        "verification"
+      ],
+      "properties": {
+        "kg": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "status",
+            "sources",
+            "notes"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "not-recorded",
+                "checking",
+                "partially-verified",
+                "verified"
+              ]
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "battleEffects": {
+      "type": "array",
+      "description": "data/battle-effects.jsonから抽出した、このポケモンに紐づく現在の効果。",
+      "items": {
+        "type": "object",
+        "required": [
+          "scope",
+          "effectKey",
+          "definition"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "research": {
+      "type": "object",
+      "description": "基本情報・特性など、習得技以外の検証状況と根拠。",
+      "required": [
+        "profileStatus",
+        "battleEffectsStatus",
+        "sources",
+        "notes"
+      ],
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object",
+      "description": "将来必要になった情報を、耐久ラインサーチ本体へ影響させず記録する領域。",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

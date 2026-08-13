@@ -1,0 +1,97 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "wyrdeer",
+    "dexNumber": 899,
+    "displayName": "アヤシシ",
+    "name": {
+      "en": "Wyrdeer",
+      "ja": "アヤシシ",
+      "jaHrkt": "アヤシシ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 103,
+      "atk": 105,
+      "def": 72,
+      "spa": 105,
+      "spd": 75,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "bite",
+      "body-slam",
+      "bulldoze",
+      "charge-beam",
+      "confusion",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "energy-ball",
+      "expanding-force",
+      "extrasensory",
+      "facade",
+      "future-sight",
+      "giga-impact",
+      "high-horsepower",
+      "hyper-beam",
+      "lunge",
+      "megahorn",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshield-bash",
+      "psyshock",
+      "shadow-ball",
+      "solar-beam",
+      "stomp",
+      "stored-power",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "throat-chop",
+      "thunder",
+      "thunderbolt",
+      "trailblaze",
+      "uproar",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,113 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "crabominable-mega",
+    "dexNumber": 740,
+    "displayName": "メガケケンカニ",
+    "name": {
+      "en": "Crabominable",
+      "ja": "メガケケンカニ",
+      "jaHrkt": "メガケケンカニ"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 97,
+      "atk": 157,
+      "def": 122,
+      "spa": 62,
+      "spd": 107,
+      "spe": 33
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "avalanche",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bubble",
+      "bubble-beam",
+      "bulldoze",
+      "chilling-water",
+      "close-combat",
+      "crabhammer",
+      "dig",
+      "dizzy-punch",
+      "drain-punch",
+      "dual-chop",
+      "dynamic-punch",
+      "earthquake",
+      "facade",
+      "focus-blast",
+      "focus-punch",
+      "frost-breath",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "ice-hammer",
+      "ice-punch",
+      "ice-spinner",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "knock-off",
+      "liquidation",
+      "mach-punch",
+      "mud-shot",
+      "mud-slap",
+      "payback",
+      "power-up-punch",
+      "pursuit",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "slam",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "superpower",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "upper-hand",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "garbodor",
+    "dexNumber": 569,
+    "displayName": "ダストダス",
+    "name": {
+      "en": "Garbodor",
+      "ja": "ダストダス",
+      "jaHrkt": "ダストダス"
+    },
+    "championsTarget": true,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 95,
+      "def": 82,
+      "spa": 60,
+      "spd": 82,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "ancient-power",
+      "belch",
+      "body-press",
+      "body-slam",
+      "clear-smog",
+      "cross-poison",
+      "dark-pulse",
+      "double-slap",
+      "drain-punch",
+      "explosion",
+      "facade",
+      "focus-blast",
+      "giga-drain",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "metal-claw",
+      "mud-shot",
+      "payback",
+      "poison-jab",
+      "pound",
+      "psychic",
+      "rock-blast",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "self-destruct",
+      "sludge",
+      "sludge-bomb",
+      "sludge-wave",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "take-down",
+      "thief",
+      "thunderbolt",
+      "venoshock"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

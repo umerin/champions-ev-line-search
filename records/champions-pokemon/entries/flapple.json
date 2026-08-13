@@ -1,0 +1,89 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "flapple",
+    "dexNumber": 841,
+    "displayName": "アップリュー",
+    "name": {
+      "en": "Flapple",
+      "ja": "アップリュー",
+      "jaHrkt": "アップリュー"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 80,
+      "spa": 95,
+      "spd": 60,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "acrobatics",
+      "aerial-ace",
+      "air-slash",
+      "astonish",
+      "bullet-seed",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-pulse",
+      "dragon-rush",
+      "dual-wingbeat",
+      "energy-ball",
+      "facade",
+      "fly",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "grav-apple",
+      "hyper-beam",
+      "leaf-storm",
+      "magical-leaf",
+      "outrage",
+      "pounce",
+      "round",
+      "seed-bomb",
+      "snore",
+      "solar-beam",
+      "sucker-punch",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "twister",
+      "u-turn",
+      "wing-attack"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

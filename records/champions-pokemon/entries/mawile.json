@@ -1,0 +1,116 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "mawile",
+    "dexNumber": 303,
+    "displayName": "クチート",
+    "name": {
+      "en": "Mawile",
+      "ja": "クチート",
+      "jaHrkt": "クチート"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 85,
+      "spa": 55,
+      "spd": 55,
+      "spe": 50
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "assurance",
+      "astonish",
+      "bite",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "charge-beam",
+      "crunch",
+      "dark-pulse",
+      "double-edge",
+      "draining-kiss",
+      "dynamic-punch",
+      "facade",
+      "fairy-wind",
+      "false-swipe",
+      "feint-attack",
+      "fire-blast",
+      "fire-fang",
+      "flamethrower",
+      "flash-cannon",
+      "focus-blast",
+      "focus-punch",
+      "foul-play",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "ice-punch",
+      "icy-wind",
+      "incinerate",
+      "iron-head",
+      "knock-off",
+      "last-resort",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "payback",
+      "play-rough",
+      "poison-fang",
+      "power-up-punch",
+      "psychic-fangs",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "slam",
+      "sludge-bomb",
+      "snore",
+      "solar-beam",
+      "steel-beam",
+      "stone-edge",
+      "strength",
+      "sucker-punch",
+      "thunder-fang",
+      "thunder-punch",
+      "vice-grip"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

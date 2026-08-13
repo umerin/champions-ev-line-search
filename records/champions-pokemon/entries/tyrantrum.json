@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "tyrantrum",
+    "dexNumber": 697,
+    "displayName": "ガチゴラス",
+    "name": {
+      "en": "Tyrantrum",
+      "ja": "ガチゴラス",
+      "jaHrkt": "ガチゴラス"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 82,
+      "atk": 121,
+      "def": 119,
+      "spa": 69,
+      "spd": 59,
+      "spe": 71
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "ancient-power",
+      "assurance",
+      "bite",
+      "body-slam",
+      "breaking-swipe",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "close-combat",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "draco-meteor",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-fang",
+      "giga-impact",
+      "head-smash",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-fang",
+      "iron-head",
+      "iron-tail",
+      "lash-out",
+      "meteor-beam",
+      "outrage",
+      "play-rough",
+      "poison-fang",
+      "psychic-fangs",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scale-shot",
+      "secret-power",
+      "snore",
+      "stomp",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "tackle",
+      "thrash",
+      "thunder-fang",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

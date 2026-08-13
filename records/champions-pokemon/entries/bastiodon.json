@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "bastiodon",
+    "dexNumber": 411,
+    "displayName": "トリデプス",
+    "name": {
+      "en": "Bastiodon",
+      "ja": "トリデプス",
+      "jaHrkt": "トリデプス"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 52,
+      "def": 168,
+      "spa": 47,
+      "spd": 138,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "avalanche",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "dig",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-blast",
+      "flamethrower",
+      "flash-cannon",
+      "foul-play",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "meteor-beam",
+      "mud-slap",
+      "outrage",
+      "power-gem",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "secret-power",
+      "shock-wave",
+      "smack-down",
+      "snore",
+      "steel-beam",
+      "steel-roller",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunderbolt",
+      "trailblaze"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

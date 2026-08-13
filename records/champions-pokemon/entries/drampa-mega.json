@@ -1,0 +1,109 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "drampa-mega",
+    "dexNumber": 780,
+    "displayName": "メガジジーロン",
+    "name": {
+      "en": "Drampa",
+      "ja": "メガジジーロン",
+      "jaHrkt": "メガジジーロン"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "atk": 85,
+      "def": 110,
+      "spa": 160,
+      "spd": 116,
+      "spe": 36
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "blizzard",
+      "body-slam",
+      "breaking-swipe",
+      "bulldoze",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "energy-ball",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "flamethrower",
+      "fly",
+      "focus-blast",
+      "giga-impact",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hydro-pump",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "icy-wind",
+      "lash-out",
+      "outrage",
+      "play-rough",
+      "razor-wind",
+      "rock-slide",
+      "round",
+      "scale-shot",
+      "shadow-ball",
+      "shadow-claw",
+      "shock-wave",
+      "signal-beam",
+      "snarl",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "stomping-tantrum",
+      "superpower",
+      "surf",
+      "swift",
+      "thunder",
+      "thunderbolt",
+      "tri-attack",
+      "twister",
+      "uproar",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

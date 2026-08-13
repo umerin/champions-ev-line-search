@@ -1,0 +1,147 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "azumarill",
+    "dexNumber": 184,
+    "displayName": "マリルリ",
+    "name": {
+      "en": "Azumarill",
+      "ja": "マリルリ",
+      "jaHrkt": "マリルリ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 50,
+      "def": 80,
+      "spa": 60,
+      "spd": 80,
+      "spe": 50
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "aqua-jet",
+      "aqua-tail",
+      "blizzard",
+      "body-slam",
+      "bounce",
+      "brick-break",
+      "brutal-swing",
+      "bubble",
+      "bubble-beam",
+      "bulldoze",
+      "chilling-water",
+      "covet",
+      "dig",
+      "disarming-voice",
+      "dive",
+      "double-edge",
+      "draining-kiss",
+      "dynamic-punch",
+      "facade",
+      "focus-blast",
+      "focus-punch",
+      "future-sight",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-punch",
+      "ice-spinner",
+      "icy-wind",
+      "iron-tail",
+      "knock-off",
+      "liquidation",
+      "mega-kick",
+      "mega-punch",
+      "misty-explosion",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "play-rough",
+      "power-up-punch",
+      "rock-smash",
+      "rollout",
+      "round",
+      "scald",
+      "secret-power",
+      "slam",
+      "snore",
+      "steel-roller",
+      "strength",
+      "superpower",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "whirlpool"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "thickFat",
+      "definition": {
+        "inputKey": "thickFatEnabled",
+        "moveTypes": [
+          "fire",
+          "ice"
+        ],
+        "stage": "power",
+        "modifier": 0.5
+      }
+    },
+    {
+      "scope": "attacker",
+      "effectKey": "hugePower",
+      "definition": {
+        "abilityId": "huge-power",
+        "abilityName": "ちからもち",
+        "stage": "attack",
+        "moveCategories": [
+          "physical"
+        ],
+        "modifier": 2
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

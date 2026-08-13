@@ -1,0 +1,101 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "alakazam-mega",
+    "dexNumber": 65,
+    "displayName": "メガフーディン",
+    "name": {
+      "en": "Alakazam",
+      "ja": "メガフーディン",
+      "jaHrkt": "メガフーディン"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 65,
+      "spa": 175,
+      "spd": 105,
+      "spe": 150
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "charge-beam",
+      "confusion",
+      "dazzling-gleam",
+      "dig",
+      "double-edge",
+      "drain-punch",
+      "dream-eater",
+      "dynamic-punch",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "foul-play",
+      "future-sight",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-punch",
+      "iron-tail",
+      "knock-off",
+      "mega-kick",
+      "mega-punch",
+      "psybeam",
+      "psychic",
+      "psycho-cut",
+      "psyshock",
+      "rage",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "skull-bash",
+      "snore",
+      "stored-power",
+      "submission",
+      "swift",
+      "take-down",
+      "thief",
+      "thunder-punch",
+      "tri-attack",
+      "zap-cannon",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,83 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "klefki",
+    "dexNumber": 707,
+    "displayName": "クレッフィ",
+    "name": {
+      "en": "Klefki",
+      "ja": "クレッフィ",
+      "jaHrkt": "クレッフィ"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 57,
+      "atk": 80,
+      "def": 91,
+      "spa": 80,
+      "spd": 87,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "draining-kiss",
+      "facade",
+      "fairy-wind",
+      "flash-cannon",
+      "foul-play",
+      "future-sight",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "last-resort",
+      "mirror-shot",
+      "play-rough",
+      "psychic",
+      "psyshock",
+      "round",
+      "secret-power",
+      "skitter-smack",
+      "snore",
+      "steel-beam",
+      "stored-power",
+      "swift",
+      "tackle",
+      "tera-blast",
+      "thief"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

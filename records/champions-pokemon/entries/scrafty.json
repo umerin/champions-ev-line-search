@@ -1,0 +1,119 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "scrafty",
+    "dexNumber": 560,
+    "displayName": "ズルズキン",
+    "name": {
+      "en": "Scrafty",
+      "ja": "ズルズキン",
+      "jaHrkt": "ズルズキン"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 115,
+      "spa": 45,
+      "spd": 115,
+      "spe": 58
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "assurance",
+      "body-slam",
+      "brick-break",
+      "chip-away",
+      "close-combat",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "drain-punch",
+      "dual-chop",
+      "facade",
+      "fake-out",
+      "feint-attack",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "foul-play",
+      "giga-impact",
+      "head-smash",
+      "headbutt",
+      "hidden-power",
+      "high-jump-kick",
+      "hyper-beam",
+      "ice-punch",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "outrage",
+      "payback",
+      "poison-jab",
+      "power-up-punch",
+      "retaliate",
+      "revenge",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "sludge-bomb",
+      "smack-down",
+      "snarl",
+      "snore",
+      "stone-edge",
+      "strength",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder-punch",
+      "trailblaze",
+      "upper-hand",
+      "uproar",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

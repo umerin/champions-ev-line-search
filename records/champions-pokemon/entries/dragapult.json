@@ -1,0 +1,103 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "dragapult",
+    "dexNumber": 887,
+    "displayName": "ドラパルト",
+    "name": {
+      "en": "Dragapult",
+      "ja": "ドラパルト",
+      "jaHrkt": "ドラパルト"
+    },
+    "championsTarget": true,
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 88,
+      "atk": 120,
+      "def": 75,
+      "spa": 100,
+      "spd": 75,
+      "spe": 142
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "assurance",
+      "astonish",
+      "bite",
+      "body-slam",
+      "breaking-swipe",
+      "brine",
+      "dive",
+      "double-edge",
+      "double-hit",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-darts",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "facade",
+      "fire-blast",
+      "flamethrower",
+      "fly",
+      "giga-impact",
+      "hex",
+      "hydro-pump",
+      "hyper-beam",
+      "infestation",
+      "last-resort",
+      "outrage",
+      "phantom-force",
+      "pounce",
+      "psychic-fangs",
+      "quick-attack",
+      "round",
+      "scald",
+      "shadow-ball",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "sucker-punch",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "tri-attack",
+      "u-turn"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

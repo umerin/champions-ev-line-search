@@ -1,0 +1,102 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "glaceon",
+    "dexNumber": 471,
+    "displayName": "グレイシア",
+    "name": {
+      "en": "Glaceon",
+      "ja": "グレイシア",
+      "jaHrkt": "グレイシア"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 110,
+      "spa": 130,
+      "spd": 95,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "aqua-tail",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-slam",
+      "chilling-water",
+      "covet",
+      "dig",
+      "double-edge",
+      "echoed-voice",
+      "facade",
+      "freeze-dry",
+      "frost-breath",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-fang",
+      "ice-shard",
+      "icicle-spear",
+      "icy-wind",
+      "iron-tail",
+      "last-resort",
+      "mud-shot",
+      "mud-slap",
+      "pay-day",
+      "powder-snow",
+      "quick-attack",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "triple-axel",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

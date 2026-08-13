@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "victreebel-mega",
+    "dexNumber": 71,
+    "displayName": "メガウツボット",
+    "name": {
+      "en": "Victreebel",
+      "ja": "メガウツボット",
+      "jaHrkt": "メガウツボット"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 125,
+      "def": 85,
+      "spa": 135,
+      "spd": 95,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid",
+      "acid-spray",
+      "bind",
+      "body-slam",
+      "bug-bite",
+      "bullet-seed",
+      "clear-smog",
+      "cut",
+      "double-edge",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "leaf-tornado",
+      "leech-life",
+      "lunge",
+      "magical-leaf",
+      "mega-drain",
+      "poison-jab",
+      "pounce",
+      "power-whip",
+      "rage",
+      "razor-leaf",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "slam",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "solar-beam",
+      "sucker-punch",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "venoshock",
+      "vine-whip",
+      "weather-ball",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

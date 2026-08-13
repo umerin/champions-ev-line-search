@@ -1,0 +1,96 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "stunfisk",
+    "dexNumber": 618,
+    "displayName": "マッギョ",
+    "name": {
+      "en": "Stunfisk",
+      "ja": "マッギョ",
+      "jaHrkt": "マッギョ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 109,
+      "atk": 66,
+      "def": 84,
+      "spa": 81,
+      "spd": 99,
+      "spe": 32
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "astonish",
+      "bounce",
+      "bulldoze",
+      "dig",
+      "discharge",
+      "earth-power",
+      "earthquake",
+      "electroweb",
+      "facade",
+      "foul-play",
+      "hidden-power",
+      "infestation",
+      "lash-out",
+      "mud-bomb",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "payback",
+      "revenge",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "scald",
+      "secret-power",
+      "shock-wave",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "spark",
+      "stomping-tantrum",
+      "stone-edge",
+      "sucker-punch",
+      "surf",
+      "tackle",
+      "thunder",
+      "thunder-shock",
+      "thunderbolt",
+      "uproar",
+      "water-gun",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

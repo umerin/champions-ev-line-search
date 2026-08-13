@@ -1,0 +1,89 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "pidgeot-mega",
+    "dexNumber": 18,
+    "displayName": "メガピジョット",
+    "name": {
+      "en": "Pidgeot",
+      "ja": "メガピジョット",
+      "jaHrkt": "メガピジョット"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 80,
+      "spa": 135,
+      "spd": 80,
+      "spe": 121
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "brave-bird",
+      "double-edge",
+      "dual-wingbeat",
+      "facade",
+      "fly",
+      "giga-impact",
+      "gust",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "mud-slap",
+      "ominous-wind",
+      "pluck",
+      "quick-attack",
+      "rage",
+      "razor-wind",
+      "round",
+      "secret-power",
+      "sky-attack",
+      "snore",
+      "steel-wing",
+      "swift",
+      "tackle",
+      "take-down",
+      "thief",
+      "twister",
+      "u-turn",
+      "uproar",
+      "wing-attack"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

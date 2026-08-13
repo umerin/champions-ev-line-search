@@ -1,0 +1,92 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "roserade",
+    "dexNumber": 407,
+    "displayName": "ロズレイド",
+    "name": {
+      "en": "Roserade",
+      "ja": "ロズレイド",
+      "jaHrkt": "ロズレイド"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 70,
+      "def": 65,
+      "spa": 125,
+      "spd": 105,
+      "spe": 90
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "body-slam",
+      "bullet-seed",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "energy-ball",
+      "extrasensory",
+      "facade",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hidden-power",
+      "hyper-beam",
+      "leaf-storm",
+      "magical-leaf",
+      "mega-drain",
+      "mud-slap",
+      "petal-blizzard",
+      "petal-dance",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "power-whip",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "sludge-bomb",
+      "snore",
+      "solar-beam",
+      "swift",
+      "trailblaze",
+      "uproar",
+      "venoshock",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

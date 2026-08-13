@@ -1,0 +1,111 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "houndoom-mega",
+    "dexNumber": 229,
+    "displayName": "メガヘルガー",
+    "name": {
+      "en": "Houndoom",
+      "ja": "メガヘルガー",
+      "jaHrkt": "メガヘルガー"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 90,
+      "spa": 140,
+      "spd": 90,
+      "spe": 115
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "body-slam",
+      "burning-jealousy",
+      "comeuppance",
+      "crunch",
+      "dark-pulse",
+      "double-edge",
+      "dream-eater",
+      "ember",
+      "facade",
+      "feint",
+      "feint-attack",
+      "fire-blast",
+      "fire-fang",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "foul-play",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "inferno",
+      "iron-tail",
+      "lash-out",
+      "mud-shot",
+      "mud-slap",
+      "overheat",
+      "payback",
+      "psychic-fangs",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "shadow-ball",
+      "sludge-bomb",
+      "smog",
+      "snarl",
+      "snore",
+      "solar-beam",
+      "strength",
+      "sucker-punch",
+      "swift",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder-fang",
+      "trailblaze",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

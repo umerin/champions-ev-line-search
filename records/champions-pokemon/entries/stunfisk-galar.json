@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "stunfisk-galar",
+    "dexNumber": 618,
+    "displayName": "マッギョ（ガラル）",
+    "name": {
+      "en": "Stunfisk",
+      "ja": "マッギョ（ガラル）",
+      "jaHrkt": "マッギョ（ガラル）"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 109,
+      "atk": 81,
+      "def": 99,
+      "spa": 66,
+      "spd": 84,
+      "spe": 32
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "bind",
+      "bounce",
+      "bulldoze",
+      "crunch",
+      "dig",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "flash-cannon",
+      "foul-play",
+      "ice-fang",
+      "lash-out",
+      "metal-claw",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "payback",
+      "revenge",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "scald",
+      "sludge-bomb",
+      "sludge-wave",
+      "snap-trap",
+      "snore",
+      "steel-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "sucker-punch",
+      "surf",
+      "tackle",
+      "terrain-pulse",
+      "uproar",
+      "water-gun"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

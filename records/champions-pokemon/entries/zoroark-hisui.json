@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "zoroark-hisui",
+    "dexNumber": 571,
+    "displayName": "ゾロアーク（ヒスイ）",
+    "name": {
+      "en": "Zoroark",
+      "ja": "ゾロアーク（ヒスイ）",
+      "jaHrkt": "ゾロアーク（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 100,
+      "def": 60,
+      "spa": 125,
+      "spd": 60,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "assurance",
+      "bitter-malice",
+      "body-slam",
+      "bounce",
+      "brick-break",
+      "burning-jealousy",
+      "comeuppance",
+      "crunch",
+      "dark-pulse",
+      "dig",
+      "extrasensory",
+      "facade",
+      "flamethrower",
+      "focus-blast",
+      "focus-punch",
+      "foul-play",
+      "giga-impact",
+      "hex",
+      "hyper-beam",
+      "hyper-voice",
+      "icy-wind",
+      "knock-off",
+      "lash-out",
+      "low-sweep",
+      "mega-kick",
+      "ominous-wind",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "psychic",
+      "rock-smash",
+      "round",
+      "scratch",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "skitter-smack",
+      "slash",
+      "sludge-bomb",
+      "snarl",
+      "snore",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "u-turn",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

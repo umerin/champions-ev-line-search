@@ -1,0 +1,106 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "conkeldurr",
+    "dexNumber": 534,
+    "displayName": "ローブシン",
+    "name": {
+      "en": "Conkeldurr",
+      "ja": "ローブシン",
+      "jaHrkt": "ローブシン"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "atk": 140,
+      "def": 95,
+      "spa": 55,
+      "spd": 65,
+      "spe": 45
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "chip-away",
+      "close-combat",
+      "dig",
+      "double-edge",
+      "drain-punch",
+      "dynamic-punch",
+      "earthquake",
+      "facade",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "hammer-arm",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-punch",
+      "knock-off",
+      "low-sweep",
+      "mach-punch",
+      "mega-kick",
+      "mega-punch",
+      "payback",
+      "poison-jab",
+      "pound",
+      "power-up-punch",
+      "retaliate",
+      "revenge",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-throw",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "slam",
+      "smack-down",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "upper-hand",
+      "wake-up-slap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

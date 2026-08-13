@@ -1,0 +1,107 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "flareon",
+    "dexNumber": 136,
+    "displayName": "ブースター",
+    "name": {
+      "en": "Flareon",
+      "ja": "ブースター",
+      "jaHrkt": "ブースター"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 95,
+      "spd": 110,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "bite",
+      "body-slam",
+      "burning-jealousy",
+      "covet",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "echoed-voice",
+      "ember",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "iron-tail",
+      "last-resort",
+      "lava-plume",
+      "mud-slap",
+      "mystical-fire",
+      "overheat",
+      "pay-day",
+      "quick-attack",
+      "rage",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "shadow-ball",
+      "skull-bash",
+      "smog",
+      "snore",
+      "stored-power",
+      "strength",
+      "superpower",
+      "swift",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "trailblaze",
+      "weather-ball",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

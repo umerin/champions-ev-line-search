@@ -1,0 +1,84 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "tinkaton",
+    "dexNumber": 959,
+    "displayName": "デカヌチャン",
+    "name": {
+      "en": "Tinkaton",
+      "ja": "デカヌチャン",
+      "jaHrkt": "デカヌチャン"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 75,
+      "def": 77,
+      "spa": 70,
+      "spd": 105,
+      "spe": 94
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "covet",
+      "draining-kiss",
+      "facade",
+      "fairy-wind",
+      "fake-out",
+      "feint",
+      "flash-cannon",
+      "foul-play",
+      "gigaton-hammer",
+      "ice-hammer",
+      "knock-off",
+      "metal-claw",
+      "play-rough",
+      "pounce",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "skitter-smack",
+      "slam",
+      "smack-down",
+      "steel-beam",
+      "stone-edge",
+      "tera-blast",
+      "thief",
+      "wood-hammer"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

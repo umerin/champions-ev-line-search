@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "venusaur",
+    "dexNumber": 3,
+    "displayName": "フシギバナ",
+    "name": {
+      "en": "Venusaur",
+      "ja": "フシギバナ",
+      "jaHrkt": "フシギバナ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 83,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "bind",
+      "body-slam",
+      "bulldoze",
+      "bullet-seed",
+      "cut",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "frenzy-plant",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "knock-off",
+      "leaf-storm",
+      "magical-leaf",
+      "mega-drain",
+      "mud-slap",
+      "outrage",
+      "petal-blizzard",
+      "petal-dance",
+      "poison-jab",
+      "power-whip",
+      "rage",
+      "razor-leaf",
+      "rock-climb",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "strength",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "terrain-pulse",
+      "trailblaze",
+      "venoshock",
+      "vine-whip",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

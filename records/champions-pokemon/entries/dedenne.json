@@ -1,0 +1,94 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "dedenne",
+    "dexNumber": 702,
+    "displayName": "デデンネ",
+    "name": {
+      "en": "Dedenne",
+      "ja": "デデンネ",
+      "jaHrkt": "デデンネ"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 67,
+      "atk": 58,
+      "def": 57,
+      "spa": 81,
+      "spd": 67,
+      "spe": 101
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "charge-beam",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "dig",
+      "discharge",
+      "draining-kiss",
+      "electroweb",
+      "facade",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "last-resort",
+      "nuzzle",
+      "parabolic-charge",
+      "play-rough",
+      "retaliate",
+      "rising-voltage",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "u-turn",
+      "volt-switch",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

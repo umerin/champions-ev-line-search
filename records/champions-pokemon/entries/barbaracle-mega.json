@@ -1,0 +1,117 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "barbaracle-mega",
+    "dexNumber": 689,
+    "displayName": "メガガメノデス",
+    "name": {
+      "en": "Barbaracle",
+      "ja": "メガガメノデス",
+      "jaHrkt": "メガガメノデス"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "atk": 140,
+      "def": 130,
+      "spa": 64,
+      "spd": 106,
+      "spe": 88
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "ancient-power",
+      "assurance",
+      "blizzard",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "clamp",
+      "cross-chop",
+      "cut",
+      "dig",
+      "dive",
+      "dragon-claw",
+      "dual-chop",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "false-swipe",
+      "focus-blast",
+      "fury-cutter",
+      "fury-swipes",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "infestation",
+      "liquidation",
+      "meteor-beam",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "night-slash",
+      "payback",
+      "poison-jab",
+      "power-up-punch",
+      "razor-shell",
+      "rock-blast",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "scratch",
+      "secret-power",
+      "shadow-claw",
+      "skull-bash",
+      "slash",
+      "sludge-bomb",
+      "sludge-wave",
+      "smack-down",
+      "snore",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "surf",
+      "thief",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "whirlpool",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

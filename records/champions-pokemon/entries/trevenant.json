@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "trevenant",
+    "dexNumber": 709,
+    "displayName": "オーロット",
+    "name": {
+      "en": "Trevenant",
+      "ja": "オーロット",
+      "jaHrkt": "オーロット"
+    },
+    "championsTarget": true,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 110,
+      "def": 76,
+      "spa": 65,
+      "spd": 82,
+      "spe": 56
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "branch-poke",
+      "brutal-swing",
+      "bulldoze",
+      "burning-jealousy",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "drain-punch",
+      "dream-eater",
+      "earthquake",
+      "energy-ball",
+      "facade",
+      "feint-attack",
+      "focus-blast",
+      "foul-play",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hex",
+      "hidden-power",
+      "horn-leech",
+      "hyper-beam",
+      "knock-off",
+      "lash-out",
+      "leaf-storm",
+      "magical-leaf",
+      "phantom-force",
+      "poison-jab",
+      "poltergeist",
+      "power-up-punch",
+      "psychic",
+      "psychic-noise",
+      "rock-slide",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-punch",
+      "skitter-smack",
+      "snore",
+      "solar-beam",
+      "strength",
+      "sucker-punch",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "wood-hammer",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

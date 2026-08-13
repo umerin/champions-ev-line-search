@@ -1,0 +1,154 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "snorlax",
+    "dexNumber": 143,
+    "displayName": "カビゴン",
+    "name": {
+      "en": "Snorlax",
+      "ja": "カビゴン",
+      "jaHrkt": "カビゴン"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 160,
+      "atk": 110,
+      "def": 65,
+      "spa": 65,
+      "spd": 110,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "belch",
+      "bite",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "bubble-beam",
+      "bulldoze",
+      "chilling-water",
+      "chip-away",
+      "covet",
+      "crunch",
+      "darkest-lariat",
+      "dig",
+      "double-edge",
+      "dynamic-punch",
+      "earthquake",
+      "facade",
+      "fire-blast",
+      "fire-punch",
+      "flamethrower",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "gunk-shot",
+      "hammer-arm",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "hydro-pump",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "incinerate",
+      "iron-head",
+      "last-resort",
+      "lick",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "outrage",
+      "pay-day",
+      "power-up-punch",
+      "psychic",
+      "pursuit",
+      "rage",
+      "retaliate",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "self-destruct",
+      "shadow-ball",
+      "shock-wave",
+      "skull-bash",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "steel-roller",
+      "stomping-tantrum",
+      "strength",
+      "submission",
+      "supercell-slam",
+      "superpower",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "terrain-pulse",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt",
+      "trailblaze",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "whirlpool",
+      "wild-charge",
+      "zap-cannon",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "thickFat",
+      "definition": {
+        "inputKey": "thickFatEnabled",
+        "moveTypes": [
+          "fire",
+          "ice"
+        ],
+        "stage": "power",
+        "modifier": 0.5
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

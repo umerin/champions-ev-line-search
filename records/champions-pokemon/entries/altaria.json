@@ -1,0 +1,114 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "altaria",
+    "dexNumber": 334,
+    "displayName": "チルタリス",
+    "name": {
+      "en": "Altaria",
+      "ja": "チルタリス",
+      "jaHrkt": "チルタリス"
+    },
+    "championsTarget": true,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 70,
+      "def": 90,
+      "spa": 70,
+      "spd": 105,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "alluring-voice",
+      "astonish",
+      "body-slam",
+      "brave-bird",
+      "breaking-swipe",
+      "bulldoze",
+      "dazzling-gleam",
+      "disarming-voice",
+      "double-edge",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-rush",
+      "dream-eater",
+      "dual-wingbeat",
+      "earthquake",
+      "echoed-voice",
+      "facade",
+      "false-swipe",
+      "fire-blast",
+      "fire-spin",
+      "flamethrower",
+      "fly",
+      "fury-attack",
+      "giga-impact",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "incinerate",
+      "iron-tail",
+      "moonblast",
+      "mud-slap",
+      "ominous-wind",
+      "outrage",
+      "peck",
+      "play-rough",
+      "pluck",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "sky-attack",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "twister",
+      "uproar",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

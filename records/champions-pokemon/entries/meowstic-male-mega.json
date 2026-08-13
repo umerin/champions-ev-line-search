@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "meowstic-male-mega",
+    "dexNumber": 678,
+    "displayName": "メガニャオニクス（♂）",
+    "name": {
+      "en": "Meowstic",
+      "ja": "メガニャオニクス（♂）",
+      "jaHrkt": "メガニャオニクス（♂）"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 143,
+      "spd": 101,
+      "spe": 124
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "charge-beam",
+      "confusion",
+      "covet",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "disarming-voice",
+      "dream-eater",
+      "echoed-voice",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "fake-out",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "pay-day",
+      "payback",
+      "play-rough",
+      "power-up-punch",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "round",
+      "scratch",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "swift",
+      "tail-slap",
+      "tera-blast",
+      "thunderbolt",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

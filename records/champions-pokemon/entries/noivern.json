@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "noivern",
+    "dexNumber": 715,
+    "displayName": "オンバーン",
+    "name": {
+      "en": "Noivern",
+      "ja": "オンバーン",
+      "jaHrkt": "オンバーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 70,
+      "def": 80,
+      "spa": 97,
+      "spd": 80,
+      "spe": 123
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "bite",
+      "body-slam",
+      "boomburst",
+      "breaking-swipe",
+      "brick-break",
+      "cut",
+      "dark-pulse",
+      "double-edge",
+      "draco-meteor",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "dream-eater",
+      "dual-wingbeat",
+      "echoed-voice",
+      "facade",
+      "flamethrower",
+      "fly",
+      "focus-blast",
+      "giga-impact",
+      "gust",
+      "heat-wave",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "leech-life",
+      "outrage",
+      "psychic",
+      "psychic-noise",
+      "razor-wind",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shadow-claw",
+      "sky-attack",
+      "snore",
+      "solar-beam",
+      "steel-wing",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "u-turn",
+      "uproar",
+      "water-pulse",
+      "wild-charge",
+      "wing-attack",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

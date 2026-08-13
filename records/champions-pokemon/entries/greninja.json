@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "greninja",
+    "dexNumber": 658,
+    "displayName": "ゲッコウガ",
+    "name": {
+      "en": "Greninja",
+      "ja": "ゲッコウガ",
+      "jaHrkt": "ゲッコウガ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "atk": 95,
+      "def": 67,
+      "spa": 103,
+      "spd": 71,
+      "spe": 122
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "blizzard",
+      "bounce",
+      "brick-break",
+      "brutal-swing",
+      "bubble",
+      "chilling-water",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "dive",
+      "echoed-voice",
+      "extrasensory",
+      "facade",
+      "false-swipe",
+      "feint-attack",
+      "flip-turn",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "lick",
+      "liquidation",
+      "low-sweep",
+      "mud-shot",
+      "mud-slap",
+      "night-slash",
+      "pound",
+      "power-up-punch",
+      "quick-attack",
+      "retaliate",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "secret-power",
+      "shadow-sneak",
+      "skitter-smack",
+      "sludge-wave",
+      "smack-down",
+      "snore",
+      "strength",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "u-turn",
+      "upper-hand",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "water-shuriken",
+      "waterfall",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

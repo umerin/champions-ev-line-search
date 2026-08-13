@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "vanilluxe",
+    "dexNumber": 584,
+    "displayName": "バイバニラ",
+    "name": {
+      "en": "Vanilluxe",
+      "ja": "バイバニラ",
+      "jaHrkt": "バイバニラ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 71,
+      "atk": 95,
+      "def": 85,
+      "spa": 110,
+      "spd": 95,
+      "spe": 79
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "avalanche",
+      "blizzard",
+      "chilling-water",
+      "explosion",
+      "facade",
+      "flash-cannon",
+      "freeze-dry",
+      "frost-breath",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "ice-shard",
+      "ice-spinner",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "mirror-shot",
+      "round",
+      "secret-power",
+      "self-destruct",
+      "signal-beam",
+      "snore",
+      "uproar",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "snow",
+      "definition": {
+        "abilityId": "snow-warning",
+        "abilityName": "ゆきふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

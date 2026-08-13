@@ -1,0 +1,121 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "gyarados-mega",
+    "dexNumber": 130,
+    "displayName": "メガギャラドス",
+    "name": {
+      "en": "Gyarados",
+      "ja": "メガギャラドス",
+      "jaHrkt": "メガギャラドス"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 155,
+      "def": 109,
+      "spa": 70,
+      "spd": 130,
+      "spe": 81
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "avalanche",
+      "bind",
+      "bite",
+      "blizzard",
+      "body-slam",
+      "bounce",
+      "brine",
+      "brutal-swing",
+      "bubble-beam",
+      "bulldoze",
+      "chilling-water",
+      "crunch",
+      "dark-pulse",
+      "dive",
+      "double-edge",
+      "dragon-breath",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "earthquake",
+      "facade",
+      "fire-blast",
+      "flamethrower",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hurricane",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "icy-wind",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "lash-out",
+      "muddy-water",
+      "outrage",
+      "payback",
+      "power-whip",
+      "rage",
+      "rock-smash",
+      "round",
+      "scald",
+      "scale-shot",
+      "secret-power",
+      "skull-bash",
+      "snore",
+      "stone-edge",
+      "strength",
+      "surf",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thrash",
+      "thunder",
+      "thunderbolt",
+      "twister",
+      "uproar",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

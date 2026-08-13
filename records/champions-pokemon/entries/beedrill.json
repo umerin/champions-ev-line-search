@@ -1,0 +1,113 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "beedrill",
+    "dexNumber": 15,
+    "displayName": "スピアー",
+    "name": {
+      "en": "Beedrill",
+      "ja": "スピアー",
+      "jaHrkt": "スピアー"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 40,
+      "spa": 45,
+      "spd": 80,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "assurance",
+      "brick-break",
+      "brutal-swing",
+      "bug-bite",
+      "bug-buzz",
+      "cross-poison",
+      "cut",
+      "double-edge",
+      "double-hit",
+      "drill-run",
+      "dual-wingbeat",
+      "electroweb",
+      "facade",
+      "false-swipe",
+      "fell-stinger",
+      "fury-attack",
+      "fury-cutter",
+      "giga-drain",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "knock-off",
+      "lunge",
+      "mega-drain",
+      "ominous-wind",
+      "outrage",
+      "payback",
+      "peck",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "pollen-puff",
+      "pounce",
+      "pursuit",
+      "rage",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "silver-wind",
+      "skitter-smack",
+      "skull-bash",
+      "sludge-bomb",
+      "snore",
+      "solar-beam",
+      "struggle-bug",
+      "swift",
+      "take-down",
+      "thief",
+      "throat-chop",
+      "twineedle",
+      "u-turn",
+      "venoshock",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

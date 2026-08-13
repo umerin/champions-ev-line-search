@@ -1,0 +1,114 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "scizor",
+    "dexNumber": 212,
+    "displayName": "ハッサム",
+    "name": {
+      "en": "Scizor",
+      "ja": "ハッサム",
+      "jaHrkt": "ハッサム"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 130,
+      "def": 100,
+      "spa": 55,
+      "spd": 80,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "assurance",
+      "brick-break",
+      "brutal-swing",
+      "bug-bite",
+      "bug-buzz",
+      "bullet-punch",
+      "close-combat",
+      "cross-poison",
+      "cut",
+      "double-edge",
+      "double-hit",
+      "dual-wingbeat",
+      "facade",
+      "false-swipe",
+      "feint",
+      "flash-cannon",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "iron-head",
+      "knock-off",
+      "lunge",
+      "metal-claw",
+      "night-slash",
+      "ominous-wind",
+      "pounce",
+      "psycho-cut",
+      "pursuit",
+      "quick-attack",
+      "razor-wind",
+      "rock-smash",
+      "round",
+      "sand-tomb",
+      "secret-power",
+      "silver-wind",
+      "skitter-smack",
+      "slash",
+      "snore",
+      "steel-beam",
+      "steel-wing",
+      "strength",
+      "struggle-bug",
+      "superpower",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "u-turn",
+      "vacuum-wave",
+      "venoshock",
+      "wing-attack",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

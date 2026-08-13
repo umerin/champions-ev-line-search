@@ -1,0 +1,100 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "umbreon",
+    "dexNumber": 197,
+    "displayName": "ブラッキー",
+    "name": {
+      "en": "Umbreon",
+      "ja": "ブラッキー",
+      "jaHrkt": "ブラッキー"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 110,
+      "spa": 60,
+      "spd": 130,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "assurance",
+      "bite",
+      "body-slam",
+      "covet",
+      "crunch",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "dream-eater",
+      "echoed-voice",
+      "facade",
+      "feint-attack",
+      "foul-play",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "lash-out",
+      "last-resort",
+      "mud-slap",
+      "pay-day",
+      "payback",
+      "psychic",
+      "pursuit",
+      "quick-attack",
+      "retaliate",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "snarl",
+      "snore",
+      "stored-power",
+      "sucker-punch",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "trailblaze",
+      "weather-ball",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

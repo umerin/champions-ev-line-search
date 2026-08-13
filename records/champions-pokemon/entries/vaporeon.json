@@ -1,0 +1,110 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "vaporeon",
+    "dexNumber": 134,
+    "displayName": "シャワーズ",
+    "name": {
+      "en": "Vaporeon",
+      "ja": "シャワーズ",
+      "jaHrkt": "シャワーズ"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 130,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "aqua-tail",
+      "aurora-beam",
+      "bite",
+      "blizzard",
+      "body-slam",
+      "brine",
+      "bubble",
+      "bubble-beam",
+      "chilling-water",
+      "covet",
+      "dig",
+      "dive",
+      "double-edge",
+      "double-kick",
+      "echoed-voice",
+      "facade",
+      "flip-turn",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-beam",
+      "icy-wind",
+      "iron-tail",
+      "last-resort",
+      "liquidation",
+      "mud-slap",
+      "muddy-water",
+      "pay-day",
+      "quick-attack",
+      "rage",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "scald",
+      "secret-power",
+      "shadow-ball",
+      "signal-beam",
+      "skull-bash",
+      "snore",
+      "stored-power",
+      "strength",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "weather-ball",
+      "whirlpool"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

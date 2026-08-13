@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "malamar-mega",
+    "dexNumber": 687,
+    "displayName": "メガカラマネロ",
+    "name": {
+      "en": "Malamar",
+      "ja": "メガカラマネロ",
+      "jaHrkt": "メガカラマネロ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 86,
+      "atk": 102,
+      "def": 88,
+      "spa": 98,
+      "spd": 120,
+      "spe": 88
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "bind",
+      "brutal-swing",
+      "constrict",
+      "cut",
+      "dark-pulse",
+      "expanding-force",
+      "facade",
+      "flamethrower",
+      "foul-play",
+      "future-sight",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "knock-off",
+      "lash-out",
+      "liquidation",
+      "lunge",
+      "night-slash",
+      "payback",
+      "peck",
+      "pluck",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psycho-cut",
+      "psyshock",
+      "retaliate",
+      "rock-slide",
+      "round",
+      "secret-power",
+      "signal-beam",
+      "slash",
+      "snore",
+      "stored-power",
+      "superpower",
+      "swift",
+      "tackle",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunderbolt",
+      "trailblaze",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

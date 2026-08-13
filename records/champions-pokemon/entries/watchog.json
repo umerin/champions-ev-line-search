@@ -1,0 +1,98 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "watchog",
+    "dexNumber": 505,
+    "displayName": "ミルホッグ",
+    "name": {
+      "en": "Watchog",
+      "ja": "ミルホッグ",
+      "jaHrkt": "ミルホッグ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 69,
+      "spa": 60,
+      "spd": 69,
+      "spe": 77
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "assurance",
+      "bite",
+      "bullet-seed",
+      "covet",
+      "crunch",
+      "cut",
+      "dig",
+      "double-edge",
+      "dream-eater",
+      "facade",
+      "fire-punch",
+      "flamethrower",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-fang",
+      "ice-punch",
+      "iron-tail",
+      "knock-off",
+      "last-resort",
+      "mud-shot",
+      "power-up-punch",
+      "retaliate",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "slam",
+      "snore",
+      "stomping-tantrum",
+      "strength",
+      "tackle",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

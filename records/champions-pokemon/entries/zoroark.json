@@ -1,0 +1,108 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "zoroark",
+    "dexNumber": 571,
+    "displayName": "ゾロアーク",
+    "name": {
+      "en": "Zoroark",
+      "ja": "ゾロアーク",
+      "jaHrkt": "ゾロアーク"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 105,
+      "def": 60,
+      "spa": 120,
+      "spd": 60,
+      "spe": 105
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "assurance",
+      "body-slam",
+      "bounce",
+      "brick-break",
+      "burning-jealousy",
+      "covet",
+      "crunch",
+      "cut",
+      "dark-pulse",
+      "dig",
+      "extrasensory",
+      "facade",
+      "feint-attack",
+      "flamethrower",
+      "focus-blast",
+      "foul-play",
+      "fury-swipes",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "knock-off",
+      "lash-out",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "night-daze",
+      "night-slash",
+      "payback",
+      "psychic",
+      "pursuit",
+      "retaliate",
+      "revenge",
+      "rock-smash",
+      "round",
+      "scratch",
+      "secret-power",
+      "shadow-ball",
+      "shadow-claw",
+      "skitter-smack",
+      "sludge-bomb",
+      "snarl",
+      "snore",
+      "sucker-punch",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "u-turn",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

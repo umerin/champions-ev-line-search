@@ -1,0 +1,89 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "runerigus",
+    "dexNumber": 867,
+    "displayName": "デスバーン",
+    "name": {
+      "en": "Runerigus",
+      "ja": "デスバーン",
+      "jaHrkt": "デスバーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 145,
+      "spa": 50,
+      "spd": 105,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "body-press",
+      "brutal-swing",
+      "bulldoze",
+      "dark-pulse",
+      "dragon-pulse",
+      "earth-power",
+      "earthquake",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "hex",
+      "hyper-beam",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "psychic",
+      "psyshock",
+      "revenge",
+      "rock-blast",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "self-destruct",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-punch",
+      "slam",
+      "snore",
+      "stone-edge",
+      "thief",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

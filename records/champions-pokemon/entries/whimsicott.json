@@ -1,0 +1,85 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "whimsicott",
+    "dexNumber": 547,
+    "displayName": "エルフーン",
+    "name": {
+      "en": "Whimsicott",
+      "ja": "エルフーン",
+      "jaHrkt": "エルフーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 67,
+      "def": 85,
+      "spa": 77,
+      "spd": 75,
+      "spe": 116
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "covet",
+      "dazzling-gleam",
+      "dream-eater",
+      "energy-ball",
+      "facade",
+      "fairy-wind",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "gust",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "knock-off",
+      "mega-drain",
+      "moonblast",
+      "play-rough",
+      "psychic",
+      "razor-leaf",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "snore",
+      "solar-beam",
+      "swift",
+      "tera-blast",
+      "thief",
+      "u-turn"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,107 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "gardevoir-mega",
+    "dexNumber": 282,
+    "displayName": "メガサーナイト",
+    "name": {
+      "en": "Gardevoir",
+      "ja": "メガサーナイト",
+      "jaHrkt": "メガサーナイト"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "atk": 85,
+      "def": 65,
+      "spa": 165,
+      "spd": 135,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "aura-sphere",
+      "body-slam",
+      "charge-beam",
+      "confusion",
+      "dazzling-gleam",
+      "disarming-voice",
+      "double-edge",
+      "draining-kiss",
+      "dream-eater",
+      "echoed-voice",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "fire-punch",
+      "focus-blast",
+      "future-sight",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-punch",
+      "icy-wind",
+      "knock-off",
+      "magical-leaf",
+      "mega-kick",
+      "mega-punch",
+      "misty-explosion",
+      "moonblast",
+      "mud-slap",
+      "mystical-fire",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shadow-sneak",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "swift",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "thunderbolt",
+      "triple-axel",
+      "vacuum-wave",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

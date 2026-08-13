@@ -1,0 +1,98 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "simisage",
+    "dexNumber": 512,
+    "displayName": "ヤナッキー",
+    "name": {
+      "en": "Simisage",
+      "ja": "ヤナッキー",
+      "jaHrkt": "ヤナッキー"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "belch",
+      "bite",
+      "brick-break",
+      "bullet-seed",
+      "covet",
+      "crunch",
+      "cut",
+      "dig",
+      "energy-ball",
+      "facade",
+      "fake-out",
+      "focus-blast",
+      "focus-punch",
+      "fury-swipes",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "gunk-shot",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "knock-off",
+      "leaf-storm",
+      "lick",
+      "low-sweep",
+      "payback",
+      "power-up-punch",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-claw",
+      "snore",
+      "solar-beam",
+      "solar-blade",
+      "superpower",
+      "thief",
+      "throat-chop",
+      "trailblaze",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

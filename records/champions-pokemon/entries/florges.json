@@ -1,0 +1,85 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "florges",
+    "dexNumber": 671,
+    "displayName": "フラージェス",
+    "name": {
+      "en": "Florges",
+      "ja": "フラージェス",
+      "jaHrkt": "フラージェス"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "atk": 65,
+      "def": 68,
+      "spa": 112,
+      "spd": 154,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "chilling-water",
+      "covet",
+      "dazzling-gleam",
+      "disarming-voice",
+      "draining-kiss",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hidden-power",
+      "hyper-beam",
+      "magical-leaf",
+      "misty-explosion",
+      "moonblast",
+      "petal-blizzard",
+      "petal-dance",
+      "pollen-puff",
+      "psychic",
+      "psychic-noise",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "snore",
+      "solar-beam",
+      "stored-power",
+      "swift",
+      "tera-blast",
+      "trailblaze"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

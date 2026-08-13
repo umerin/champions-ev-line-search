@@ -1,0 +1,117 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "tauros",
+    "dexNumber": 128,
+    "displayName": "ケンタロス（通常）",
+    "name": {
+      "en": "Tauros",
+      "ja": "ケンタロス（通常）",
+      "jaHrkt": "ケンタロス（通常）"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 100,
+      "def": 95,
+      "spa": 40,
+      "spd": 70,
+      "spe": 110
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "assurance",
+      "blizzard",
+      "body-slam",
+      "bulldoze",
+      "close-combat",
+      "dig",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "fire-blast",
+      "flamethrower",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "horn-attack",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "lash-out",
+      "megahorn",
+      "outrage",
+      "payback",
+      "pursuit",
+      "rage",
+      "raging-bull",
+      "retaliate",
+      "revenge",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "skull-bash",
+      "smart-strike",
+      "snore",
+      "solar-beam",
+      "stomp",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "throat-chop",
+      "thunder",
+      "thunderbolt",
+      "trailblaze",
+      "uproar",
+      "water-pulse",
+      "whirlpool",
+      "wild-charge",
+      "zap-cannon",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

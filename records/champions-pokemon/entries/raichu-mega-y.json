@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "raichu-mega-y",
+    "dexNumber": 26,
+    "displayName": "メガライチュウY",
+    "name": {
+      "en": "Raichu",
+      "ja": "メガライチュウY",
+      "jaHrkt": "メガライチュウY"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 55,
+      "spa": 160,
+      "spd": 80,
+      "spe": 130
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "body-slam",
+      "brick-break",
+      "brutal-swing",
+      "charge-beam",
+      "covet",
+      "dazzling-gleam",
+      "dig",
+      "disarming-voice",
+      "discharge",
+      "double-edge",
+      "drain-punch",
+      "draining-kiss",
+      "dynamic-punch",
+      "echoed-voice",
+      "electroweb",
+      "facade",
+      "fake-out",
+      "feint",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "knock-off",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "nuzzle",
+      "pay-day",
+      "play-rough",
+      "quick-attack",
+      "rage",
+      "rising-voltage",
+      "rock-smash",
+      "rollout",
+      "round",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "skull-bash",
+      "slam",
+      "snore",
+      "spark",
+      "strength",
+      "submission",
+      "surf",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunder-punch",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "upper-hand",
+      "uproar",
+      "volt-switch",
+      "volt-tackle",
+      "wild-charge",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

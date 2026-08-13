@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "simisear",
+    "dexNumber": 514,
+    "displayName": "バオッキー",
+    "name": {
+      "en": "Simisear",
+      "ja": "バオッキー",
+      "jaHrkt": "バオッキー"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "belch",
+      "bite",
+      "blaze-kick",
+      "brick-break",
+      "burning-jealousy",
+      "covet",
+      "crunch",
+      "cut",
+      "dig",
+      "facade",
+      "fake-out",
+      "fire-blast",
+      "fire-pledge",
+      "fire-punch",
+      "fire-spin",
+      "flame-burst",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "focus-blast",
+      "focus-punch",
+      "fury-swipes",
+      "giga-impact",
+      "gunk-shot",
+      "heat-wave",
+      "hidden-power",
+      "hyper-beam",
+      "incinerate",
+      "iron-tail",
+      "knock-off",
+      "lick",
+      "low-sweep",
+      "overheat",
+      "payback",
+      "power-up-punch",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "shadow-claw",
+      "snore",
+      "solar-beam",
+      "superpower",
+      "temper-flare",
+      "thief",
+      "throat-chop",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

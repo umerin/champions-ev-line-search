@@ -1,0 +1,92 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "hydrapple",
+    "dexNumber": 1019,
+    "displayName": "カミツオロチ",
+    "name": {
+      "en": "Hydrapple",
+      "ja": "カミツオロチ",
+      "jaHrkt": "カミツオロチ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 106,
+      "atk": 80,
+      "def": 110,
+      "spa": 120,
+      "spd": 80,
+      "spe": 44
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "body-press",
+      "body-slam",
+      "breaking-swipe",
+      "bug-bite",
+      "bullet-seed",
+      "double-edge",
+      "double-hit",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-pulse",
+      "dragon-tail",
+      "earth-power",
+      "earthquake",
+      "energy-ball",
+      "facade",
+      "fickle-beam",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "hydro-pump",
+      "hyper-beam",
+      "infestation",
+      "leaf-storm",
+      "magical-leaf",
+      "outrage",
+      "pollen-puff",
+      "pounce",
+      "power-whip",
+      "rollout",
+      "seed-bomb",
+      "solar-beam",
+      "sucker-punch",
+      "syrup-bomb",
+      "take-down",
+      "tera-blast",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

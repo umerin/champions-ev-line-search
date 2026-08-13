@@ -1,0 +1,125 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "diggersby",
+    "dexNumber": 660,
+    "displayName": "ホルード",
+    "name": {
+      "en": "Diggersby",
+      "ja": "ホルード",
+      "jaHrkt": "ホルード"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 56,
+      "def": 77,
+      "spa": 50,
+      "spd": 77,
+      "spe": 78
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "bounce",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "cut",
+      "dig",
+      "double-kick",
+      "double-slap",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "fire-punch",
+      "focus-punch",
+      "foul-play",
+      "giga-impact",
+      "gunk-shot",
+      "hammer-arm",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-punch",
+      "iron-head",
+      "iron-tail",
+      "knock-off",
+      "last-resort",
+      "mega-kick",
+      "mega-punch",
+      "mud-shot",
+      "mud-slap",
+      "payback",
+      "power-up-punch",
+      "quick-attack",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scorching-sands",
+      "secret-power",
+      "sludge-bomb",
+      "smack-down",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "surf",
+      "tackle",
+      "take-down",
+      "thief",
+      "thunder-punch",
+      "trailblaze",
+      "u-turn",
+      "uproar",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "attacker",
+      "effectKey": "hugePower",
+      "definition": {
+        "abilityId": "huge-power",
+        "abilityName": "ちからもち",
+        "stage": "attack",
+        "moveCategories": [
+          "physical"
+        ],
+        "modifier": 2
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

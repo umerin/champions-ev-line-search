@@ -1,0 +1,110 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "starmie",
+    "dexNumber": 121,
+    "displayName": "スターミー",
+    "name": {
+      "en": "Starmie",
+      "ja": "スターミー",
+      "jaHrkt": "スターミー"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 85,
+      "spa": 100,
+      "spd": 85,
+      "spe": 115
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "aqua-jet",
+      "avalanche",
+      "blizzard",
+      "brine",
+      "bubble-beam",
+      "charge-beam",
+      "chilling-water",
+      "dazzling-gleam",
+      "dive",
+      "double-edge",
+      "dream-eater",
+      "expanding-force",
+      "facade",
+      "flash-cannon",
+      "flip-turn",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-spinner",
+      "icy-wind",
+      "liquidation",
+      "meteor-beam",
+      "power-gem",
+      "psybeam",
+      "psychic",
+      "psycho-cut",
+      "psyshock",
+      "rage",
+      "rapid-spin",
+      "rollout",
+      "round",
+      "scald",
+      "secret-power",
+      "self-destruct",
+      "signal-beam",
+      "skull-bash",
+      "snore",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "thunder",
+      "thunderbolt",
+      "tri-attack",
+      "twister",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "zap-cannon",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

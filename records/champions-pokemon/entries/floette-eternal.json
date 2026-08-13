@@ -1,0 +1,93 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "floette-eternal",
+    "dexNumber": 670,
+    "displayName": "フラエッテ（えいえんのはな）",
+    "name": {
+      "en": "Floette",
+      "ja": "フラエッテ（えいえんのはな）",
+      "jaHrkt": "フラエッテ（えいえんのはな）"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 74,
+      "atk": 65,
+      "def": 67,
+      "spa": 125,
+      "spd": 128,
+      "spe": 92
+    },
+    "isFinalEvolution": false
+  },
+  "learnset": {
+    "moveIds": [
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "tearful-look",
+      "copycat",
+      "helping-hand",
+      "baton-pass",
+      "safeguard",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "petal-blizzard",
+      "seed-bomb",
+      "trailblaze",
+      "petal-dance",
+      "solar-beam",
+      "energy-ball",
+      "giga-drain",
+      "grass-knot",
+      "grassy-terrain",
+      "synthesis",
+      "sunny-day",
+      "chilling-water",
+      "rain-dance",
+      "pollen-puff",
+      "psychic",
+      "stored-power",
+      "calm-mind",
+      "skill-swap",
+      "trick",
+      "rest",
+      "light-of-ruin",
+      "moonblast",
+      "alluring-voice",
+      "dazzling-gleam",
+      "draining-kiss",
+      "misty-terrain",
+      "baby-doll-eyes"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,100 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "lycanroc-midday",
+    "dexNumber": 745,
+    "displayName": "ルガルガン（まひる）",
+    "name": {
+      "en": "Lycanroc",
+      "ja": "ルガルガン（まひる）",
+      "jaHrkt": "ルガルガン（まひる）"
+    },
+    "championsTarget": true,
+    "types": [
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 115,
+      "def": 65,
+      "spa": 55,
+      "spd": 65,
+      "spe": 112
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "accelerock",
+      "assurance",
+      "bite",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "close-combat",
+      "covet",
+      "crunch",
+      "dig",
+      "double-edge",
+      "drill-run",
+      "earth-power",
+      "echoed-voice",
+      "facade",
+      "fire-fang",
+      "giga-impact",
+      "hidden-power",
+      "hyper-voice",
+      "iron-head",
+      "iron-tail",
+      "last-resort",
+      "mud-slap",
+      "play-rough",
+      "psychic-fangs",
+      "quick-attack",
+      "rock-blast",
+      "rock-climb",
+      "rock-slide",
+      "rock-throw",
+      "rock-tomb",
+      "round",
+      "snarl",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "sucker-punch",
+      "swift",
+      "tackle",
+      "tail-slap",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "thunder-fang",
+      "trailblaze",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

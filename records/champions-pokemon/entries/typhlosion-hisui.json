@@ -1,0 +1,115 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "typhlosion-hisui",
+    "dexNumber": 157,
+    "displayName": "バクフーン（ヒスイ）",
+    "name": {
+      "en": "Typhlosion",
+      "ja": "バクフーン（ヒスイ）",
+      "jaHrkt": "バクフーン（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 84,
+      "def": 78,
+      "spa": 119,
+      "spd": 85,
+      "spe": 95
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "blast-burn",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "burn-up",
+      "burning-jealousy",
+      "covet",
+      "dig",
+      "double-edge",
+      "drain-punch",
+      "earthquake",
+      "ember",
+      "eruption",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-punch",
+      "fire-spin",
+      "flame-charge",
+      "flame-wheel",
+      "flamethrower",
+      "flare-blitz",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "heat-wave",
+      "hex",
+      "hyper-beam",
+      "infernal-parade",
+      "inferno",
+      "iron-head",
+      "iron-tail",
+      "lava-plume",
+      "mega-kick",
+      "mystical-fire",
+      "ominous-wind",
+      "overheat",
+      "play-rough",
+      "poltergeist",
+      "quick-attack",
+      "rock-slide",
+      "rock-smash",
+      "rollout",
+      "round",
+      "shadow-ball",
+      "shadow-claw",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "swift",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thunder-punch",
+      "wild-charge",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

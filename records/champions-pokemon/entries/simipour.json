@@ -1,0 +1,103 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "simipour",
+    "dexNumber": 516,
+    "displayName": "ヒヤッキー",
+    "name": {
+      "en": "Simipour",
+      "ja": "ヒヤッキー",
+      "jaHrkt": "ヒヤッキー"
+    },
+    "championsTarget": true,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aqua-tail",
+      "belch",
+      "bite",
+      "blizzard",
+      "brick-break",
+      "chilling-water",
+      "covet",
+      "crunch",
+      "cut",
+      "dig",
+      "dive",
+      "facade",
+      "fake-out",
+      "flip-turn",
+      "focus-blast",
+      "focus-punch",
+      "fury-swipes",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-punch",
+      "icy-wind",
+      "iron-tail",
+      "knock-off",
+      "lick",
+      "liquidation",
+      "low-sweep",
+      "payback",
+      "power-up-punch",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "scald",
+      "secret-power",
+      "shadow-claw",
+      "snore",
+      "superpower",
+      "surf",
+      "thief",
+      "throat-chop",
+      "uproar",
+      "water-pledge",
+      "water-pulse",
+      "waterfall"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

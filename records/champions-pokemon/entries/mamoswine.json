@@ -1,0 +1,123 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "mamoswine",
+    "dexNumber": 473,
+    "displayName": "マンムー",
+    "name": {
+      "en": "Mamoswine",
+      "ja": "マンムー",
+      "jaHrkt": "マンムー"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 110,
+      "atk": 130,
+      "def": 80,
+      "spa": 70,
+      "spd": 60,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "ancient-power",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "bulldoze",
+      "dig",
+      "double-edge",
+      "double-hit",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "freeze-dry",
+      "fury-attack",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-horsepower",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "ice-shard",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "iron-head",
+      "knock-off",
+      "mud-bomb",
+      "mud-shot",
+      "mud-slap",
+      "peck",
+      "powder-snow",
+      "rock-blast",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "secret-power",
+      "smack-down",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "superpower",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "throat-chop",
+      "trailblaze"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "thickFat",
+      "definition": {
+        "inputKey": "thickFatEnabled",
+        "moveTypes": [
+          "fire",
+          "ice"
+        ],
+        "stage": "power",
+        "modifier": 0.5
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

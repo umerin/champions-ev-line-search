@@ -1,0 +1,114 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "qwilfish",
+    "dexNumber": 211,
+    "displayName": "ハリーセン",
+    "name": {
+      "en": "Qwilfish",
+      "ja": "ハリーセン",
+      "jaHrkt": "ハリーセン"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 95,
+      "def": 85,
+      "spa": 55,
+      "spd": 55,
+      "spe": 85
+    },
+    "isFinalEvolution": false
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "aqua-jet",
+      "aqua-tail",
+      "assurance",
+      "astonish",
+      "barb-barrage",
+      "blizzard",
+      "bounce",
+      "brine",
+      "bubble",
+      "bubble-beam",
+      "chilling-water",
+      "crunch",
+      "dive",
+      "double-edge",
+      "explosion",
+      "facade",
+      "fell-stinger",
+      "flip-turn",
+      "giga-impact",
+      "gunk-shot",
+      "headbutt",
+      "hex",
+      "hidden-power",
+      "hydro-pump",
+      "ice-beam",
+      "icy-wind",
+      "liquidation",
+      "mud-shot",
+      "payback",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "poison-tail",
+      "revenge",
+      "rollout",
+      "round",
+      "scald",
+      "scale-shot",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "sludge-bomb",
+      "sludge-wave",
+      "snore",
+      "steel-roller",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "venoshock",
+      "water-gun",
+      "water-pulse",
+      "waterfall",
+      "whirlpool"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

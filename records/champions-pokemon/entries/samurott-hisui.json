@@ -1,0 +1,113 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "samurott-hisui",
+    "dexNumber": 503,
+    "displayName": "ダイケンキ（ヒスイ）",
+    "name": {
+      "en": "Samurott",
+      "ja": "ダイケンキ（ヒスイ）",
+      "jaHrkt": "ダイケンキ（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 108,
+      "def": 80,
+      "spa": 100,
+      "spd": 65,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "assurance",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "ceaseless-edge",
+      "chilling-water",
+      "dark-pulse",
+      "dig",
+      "dive",
+      "drill-run",
+      "facade",
+      "false-swipe",
+      "flip-turn",
+      "fury-cutter",
+      "giga-impact",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "liquidation",
+      "megahorn",
+      "night-slash",
+      "razor-shell",
+      "retaliate",
+      "round",
+      "sacred-sword",
+      "slash",
+      "smart-strike",
+      "snarl",
+      "snore",
+      "sucker-punch",
+      "superpower",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "upper-hand",
+      "vacuum-wave",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "waterfall",
+      "whirlpool",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

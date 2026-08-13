@@ -1,0 +1,81 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "bellibolt",
+    "dexNumber": 939,
+    "displayName": "ハラバリー",
+    "name": {
+      "en": "Bellibolt",
+      "ja": "ハラバリー",
+      "jaHrkt": "ハラバリー"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 109,
+      "atk": 64,
+      "def": 91,
+      "spa": 103,
+      "spd": 83,
+      "spe": 45
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acid-spray",
+      "charge-beam",
+      "chilling-water",
+      "discharge",
+      "electroweb",
+      "giga-impact",
+      "hyper-beam",
+      "hyper-voice",
+      "mud-shot",
+      "mud-slap",
+      "muddy-water",
+      "parabolic-charge",
+      "spark",
+      "sucker-punch",
+      "supercell-slam",
+      "swift",
+      "tackle",
+      "tera-blast",
+      "thunder",
+      "thunder-shock",
+      "thunderbolt",
+      "volt-switch",
+      "water-gun",
+      "water-pulse",
+      "weather-ball",
+      "wild-charge",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

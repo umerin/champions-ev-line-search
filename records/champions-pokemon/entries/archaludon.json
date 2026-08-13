@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "archaludon",
+    "dexNumber": 1018,
+    "displayName": "ブリジュラス",
+    "name": {
+      "en": "Archaludon",
+      "ja": "ブリジュラス",
+      "jaHrkt": "ブリジュラス"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 105,
+      "def": 130,
+      "spa": 125,
+      "spd": 65,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aura-sphere",
+      "body-press",
+      "body-slam",
+      "breaking-swipe",
+      "brick-break",
+      "dark-pulse",
+      "double-edge",
+      "draco-meteor",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "earthquake",
+      "electro-shot",
+      "facade",
+      "flash-cannon",
+      "foul-play",
+      "giga-impact",
+      "hyper-beam",
+      "iron-head",
+      "metal-claw",
+      "meteor-beam",
+      "night-slash",
+      "outrage",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "slash",
+      "smack-down",
+      "snarl",
+      "solar-beam",
+      "steel-beam",
+      "stone-edge",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunderbolt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

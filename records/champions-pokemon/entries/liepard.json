@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "liepard",
+    "dexNumber": 510,
+    "displayName": "レパルダス",
+    "name": {
+      "en": "Liepard",
+      "ja": "レパルダス",
+      "jaHrkt": "レパルダス"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "atk": 88,
+      "def": 50,
+      "spa": 88,
+      "spd": 50,
+      "spe": 106
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "assurance",
+      "bite",
+      "burning-jealousy",
+      "covet",
+      "crunch",
+      "cut",
+      "dark-pulse",
+      "dream-eater",
+      "echoed-voice",
+      "facade",
+      "fake-out",
+      "fire-fang",
+      "foul-play",
+      "fury-swipes",
+      "giga-impact",
+      "gunk-shot",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-fang",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "night-slash",
+      "pay-day",
+      "payback",
+      "play-rough",
+      "psychic-fangs",
+      "psycho-cut",
+      "pursuit",
+      "quick-attack",
+      "rock-smash",
+      "round",
+      "scratch",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "skitter-smack",
+      "slash",
+      "snarl",
+      "snore",
+      "sucker-punch",
+      "swift",
+      "thief",
+      "throat-chop",
+      "thunder-fang",
+      "trailblaze",
+      "u-turn"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

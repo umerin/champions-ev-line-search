@@ -1,0 +1,104 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "jolteon",
+    "dexNumber": 135,
+    "displayName": "サンダース",
+    "name": {
+      "en": "Jolteon",
+      "ja": "サンダース",
+      "jaHrkt": "サンダース"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 130
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "bite",
+      "body-slam",
+      "charge-beam",
+      "covet",
+      "dig",
+      "discharge",
+      "double-edge",
+      "double-kick",
+      "echoed-voice",
+      "electroweb",
+      "facade",
+      "false-swipe",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "last-resort",
+      "mud-slap",
+      "pay-day",
+      "pin-missile",
+      "quick-attack",
+      "rage",
+      "retaliate",
+      "rising-voltage",
+      "rock-smash",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "skull-bash",
+      "snore",
+      "stored-power",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunder-fang",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "volt-switch",
+      "weather-ball",
+      "wild-charge",
+      "zap-cannon"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

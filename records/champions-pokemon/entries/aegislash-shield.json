@@ -1,0 +1,91 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "aegislash-shield",
+    "dexNumber": 681,
+    "displayName": "ギルガルド（シールド）",
+    "name": {
+      "en": "Aegislash",
+      "ja": "ギルガルド（シールド）",
+      "jaHrkt": "ギルガルド（シールド）"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 140,
+      "spa": 50,
+      "spd": 140,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "air-slash",
+      "brick-break",
+      "brutal-swing",
+      "close-combat",
+      "cut",
+      "double-hit",
+      "facade",
+      "false-swipe",
+      "flash-cannon",
+      "fury-cutter",
+      "giga-impact",
+      "head-smash",
+      "hidden-power",
+      "hyper-beam",
+      "iron-head",
+      "night-slash",
+      "poltergeist",
+      "psycho-cut",
+      "pursuit",
+      "retaliate",
+      "rock-slide",
+      "rock-smash",
+      "round",
+      "sacred-sword",
+      "secret-power",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "shock-wave",
+      "slash",
+      "snore",
+      "solar-blade",
+      "steel-beam",
+      "tackle",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

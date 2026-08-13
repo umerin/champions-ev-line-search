@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "froslass-mega",
+    "dexNumber": 478,
+    "displayName": "メガユキメノコ",
+    "name": {
+      "en": "Froslass",
+      "ja": "メガユキメノコ",
+      "jaHrkt": "メガユキメノコ"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 140,
+      "spd": 100,
+      "spe": 120
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "avalanche",
+      "bite",
+      "blizzard",
+      "body-slam",
+      "chilling-water",
+      "crunch",
+      "draining-kiss",
+      "dream-eater",
+      "facade",
+      "frost-breath",
+      "giga-impact",
+      "headbutt",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "ice-punch",
+      "ice-shard",
+      "ice-spinner",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "mud-slap",
+      "ominous-wind",
+      "payback",
+      "phantom-force",
+      "poltergeist",
+      "powder-snow",
+      "psychic",
+      "rollout",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snore",
+      "sucker-punch",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunderbolt",
+      "trailblaze",
+      "triple-axel",
+      "wake-up-slap",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "snow",
+      "definition": {
+        "abilityId": "snow-warning",
+        "abilityName": "ゆきふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,100 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "serperior",
+    "dexNumber": 497,
+    "displayName": "ジャローダ",
+    "name": {
+      "en": "Serperior",
+      "ja": "ジャローダ",
+      "jaHrkt": "ジャローダ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 75,
+      "def": 95,
+      "spa": 75,
+      "spd": 95,
+      "spe": 113
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "aqua-tail",
+      "bind",
+      "body-slam",
+      "breaking-swipe",
+      "brutal-swing",
+      "bullet-seed",
+      "cut",
+      "double-edge",
+      "dragon-pulse",
+      "dragon-tail",
+      "energy-ball",
+      "facade",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "hidden-power",
+      "hyper-beam",
+      "iron-tail",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "leaf-tornado",
+      "magical-leaf",
+      "mega-drain",
+      "outrage",
+      "petal-blizzard",
+      "rock-smash",
+      "round",
+      "scale-shot",
+      "secret-power",
+      "seed-bomb",
+      "slam",
+      "snore",
+      "solar-beam",
+      "strength",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "twister",
+      "vine-whip",
+      "wrap"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

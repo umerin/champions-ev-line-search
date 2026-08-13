@@ -1,0 +1,77 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "slurpuff",
+    "dexNumber": 685,
+    "displayName": "ペロリーム",
+    "name": {
+      "en": "Slurpuff",
+      "ja": "ペロリーム",
+      "jaHrkt": "ペロリーム"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 82,
+      "atk": 80,
+      "def": 86,
+      "spa": 85,
+      "spd": 75,
+      "spe": 72
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "covet",
+      "dazzling-gleam",
+      "drain-punch",
+      "draining-kiss",
+      "dream-eater",
+      "energy-ball",
+      "facade",
+      "fairy-wind",
+      "flamethrower",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "misty-explosion",
+      "play-rough",
+      "psychic",
+      "round",
+      "secret-power",
+      "snore",
+      "surf",
+      "tackle",
+      "thief",
+      "thunder",
+      "thunderbolt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

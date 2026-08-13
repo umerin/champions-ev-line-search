@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "chimecho",
+    "dexNumber": 358,
+    "displayName": "チリーン",
+    "name": {
+      "en": "Chimecho",
+      "ja": "チリーン",
+      "jaHrkt": "チリーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 50,
+      "def": 80,
+      "spa": 95,
+      "spd": 90,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "bind",
+      "boomburst",
+      "charge-beam",
+      "confusion",
+      "dazzling-gleam",
+      "disarming-voice",
+      "double-edge",
+      "draining-kiss",
+      "dream-eater",
+      "echoed-voice",
+      "energy-ball",
+      "expanding-force",
+      "extrasensory",
+      "facade",
+      "flash-cannon",
+      "future-sight",
+      "hidden-power",
+      "hyper-voice",
+      "icy-wind",
+      "knock-off",
+      "last-resort",
+      "ominous-wind",
+      "psybeam",
+      "psychic",
+      "psychic-noise",
+      "psyshock",
+      "rollout",
+      "round",
+      "secret-power",
+      "self-destruct",
+      "shadow-ball",
+      "shock-wave",
+      "signal-beam",
+      "snarl",
+      "snore",
+      "stored-power",
+      "swift",
+      "synchronoise",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "uproar",
+      "wrap",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

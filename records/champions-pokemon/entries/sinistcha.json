@@ -1,0 +1,86 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sinistcha",
+    "dexNumber": 1013,
+    "displayName": "ヤバソチャ",
+    "name": {
+      "en": "Sinistcha",
+      "ja": "ヤバソチャ",
+      "jaHrkt": "ヤバソチャ"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 71,
+      "atk": 60,
+      "def": 106,
+      "spa": 121,
+      "spd": 80,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "astonish",
+      "energy-ball",
+      "foul-play",
+      "giga-drain",
+      "hex",
+      "hyper-beam",
+      "leaf-storm",
+      "magical-leaf",
+      "matcha-gotcha",
+      "mega-drain",
+      "phantom-force",
+      "poltergeist",
+      "scald",
+      "shadow-ball",
+      "solar-beam",
+      "tera-blast",
+      "uproar"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "heatproof",
+      "definition": {
+        "inputKey": "heatproofEnabled",
+        "moveTypes": [
+          "fire"
+        ],
+        "stage": "power",
+        "modifier": 0.5
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

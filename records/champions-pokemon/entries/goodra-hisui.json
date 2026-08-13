@@ -1,0 +1,107 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "goodra-hisui",
+    "dexNumber": 706,
+    "displayName": "ヌメルゴン（ヒスイ）",
+    "name": {
+      "en": "Goodra",
+      "ja": "ヌメルゴン（ヒスイ）",
+      "jaHrkt": "ヌメルゴン（ヒスイ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 100,
+      "spa": 110,
+      "spd": 150,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "acid-spray",
+      "ancient-power",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "breaking-swipe",
+      "bubble",
+      "bulldoze",
+      "chilling-water",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "earthquake",
+      "facade",
+      "feint",
+      "fire-blast",
+      "fire-punch",
+      "flamethrower",
+      "flash-cannon",
+      "giga-impact",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "ice-spinner",
+      "iron-head",
+      "iron-tail",
+      "knock-off",
+      "lash-out",
+      "mud-shot",
+      "muddy-water",
+      "outrage",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "skitter-smack",
+      "sludge-bomb",
+      "sludge-wave",
+      "steel-beam",
+      "stomping-tantrum",
+      "surf",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt",
+      "water-gun",
+      "water-pulse",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,101 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "skeledirge",
+    "dexNumber": 911,
+    "displayName": "ラウドボーン",
+    "name": {
+      "en": "Skeledirge",
+      "ja": "ラウドボーン",
+      "jaHrkt": "ラウドボーン"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 104,
+      "atk": 75,
+      "def": 100,
+      "spa": 110,
+      "spd": 75,
+      "spe": 66
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "belch",
+      "bite",
+      "blast-burn",
+      "body-slam",
+      "burn-up",
+      "crunch",
+      "dig",
+      "disarming-voice",
+      "earth-power",
+      "earthquake",
+      "ember",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flare-blitz",
+      "giga-impact",
+      "heat-wave",
+      "hex",
+      "hyper-beam",
+      "hyper-voice",
+      "incinerate",
+      "lick",
+      "mud-slap",
+      "outrage",
+      "overheat",
+      "poltergeist",
+      "round",
+      "scorching-sands",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "snarl",
+      "solar-beam",
+      "stomping-tantrum",
+      "tackle",
+      "take-down",
+      "temper-flare",
+      "tera-blast",
+      "thunder-fang",
+      "torch-song",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

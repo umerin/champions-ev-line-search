@@ -1,0 +1,112 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "ninetales-alola",
+    "dexNumber": 38,
+    "displayName": "キュウコン（アローラ）",
+    "name": {
+      "en": "Ninetales",
+      "ja": "キュウコン（アローラ）",
+      "jaHrkt": "キュウコン（アローラ）"
+    },
+    "championsTarget": true,
+    "types": [
+      "ice",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 67,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 109
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "aurora-beam",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "chilling-water",
+      "covet",
+      "dark-pulse",
+      "dazzling-gleam",
+      "dig",
+      "disarming-voice",
+      "double-edge",
+      "draining-kiss",
+      "dream-eater",
+      "energy-ball",
+      "extrasensory",
+      "facade",
+      "foul-play",
+      "freeze-dry",
+      "frost-breath",
+      "giga-impact",
+      "headbutt",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "ice-fang",
+      "ice-shard",
+      "icicle-spear",
+      "icy-wind",
+      "iron-tail",
+      "moonblast",
+      "payback",
+      "play-rough",
+      "powder-snow",
+      "psyshock",
+      "round",
+      "snore",
+      "solar-beam",
+      "stored-power",
+      "swift",
+      "tackle",
+      "tail-slap",
+      "take-down",
+      "tera-blast",
+      "triple-axel",
+      "weather-ball",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "snow",
+      "definition": {
+        "abilityId": "snow-warning",
+        "abilityName": "ゆきふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,122 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "abomasnow-mega",
+    "dexNumber": 460,
+    "displayName": "メガユキノオー",
+    "name": {
+      "en": "Abomasnow",
+      "ja": "メガユキノオー",
+      "jaHrkt": "メガユキノオー"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 132,
+      "def": 105,
+      "spa": 132,
+      "spd": 105,
+      "spe": 30
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "avalanche",
+      "blizzard",
+      "body-press",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "bullet-seed",
+      "chilling-water",
+      "double-edge",
+      "earth-power",
+      "earthquake",
+      "energy-ball",
+      "facade",
+      "focus-blast",
+      "focus-punch",
+      "frost-breath",
+      "giga-drain",
+      "giga-impact",
+      "grassy-glide",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-beam",
+      "ice-hammer",
+      "ice-punch",
+      "ice-shard",
+      "ice-spinner",
+      "icicle-crash",
+      "icicle-spear",
+      "icy-wind",
+      "iron-tail",
+      "leaf-storm",
+      "leafage",
+      "magical-leaf",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "outrage",
+      "powder-snow",
+      "razor-leaf",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "seed-bomb",
+      "shadow-ball",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "strength",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "water-pulse",
+      "weather-ball",
+      "wood-hammer"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "snow",
+      "definition": {
+        "abilityId": "snow-warning",
+        "abilityName": "ゆきふらし"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

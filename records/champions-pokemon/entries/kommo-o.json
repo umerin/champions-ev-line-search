@@ -1,0 +1,119 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "kommo-o",
+    "dexNumber": 784,
+    "displayName": "ジャラランガ",
+    "name": {
+      "en": "Kommo-o",
+      "ja": "ジャラランガ",
+      "jaHrkt": "ジャラランガ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 125,
+      "spa": 100,
+      "spd": 105,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "aqua-tail",
+      "aura-sphere",
+      "body-press",
+      "body-slam",
+      "boomburst",
+      "breaking-swipe",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "clanging-scales",
+      "close-combat",
+      "double-edge",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-tail",
+      "drain-punch",
+      "dual-chop",
+      "earthquake",
+      "echoed-voice",
+      "facade",
+      "false-swipe",
+      "fire-punch",
+      "flamethrower",
+      "flash-cannon",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "ice-punch",
+      "iron-head",
+      "iron-tail",
+      "mega-kick",
+      "mega-punch",
+      "metal-claw",
+      "outrage",
+      "payback",
+      "poison-jab",
+      "revenge",
+      "rock-slide",
+      "rock-tomb",
+      "round",
+      "scale-shot",
+      "shadow-claw",
+      "shock-wave",
+      "sky-uppercut",
+      "snore",
+      "stomping-tantrum",
+      "superpower",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "throat-chop",
+      "thunder-punch",
+      "upper-hand",
+      "uproar",
+      "vacuum-wave",
+      "water-pulse",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

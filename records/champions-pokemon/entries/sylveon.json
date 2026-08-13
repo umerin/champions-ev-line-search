@@ -1,0 +1,95 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sylveon",
+    "dexNumber": 700,
+    "displayName": "ニンフィア",
+    "name": {
+      "en": "Sylveon",
+      "ja": "ニンフィア",
+      "jaHrkt": "ニンフィア"
+    },
+    "championsTarget": true,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 65,
+      "spa": 110,
+      "spd": 130,
+      "spe": 60
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "alluring-voice",
+      "bite",
+      "body-slam",
+      "covet",
+      "cut",
+      "dazzling-gleam",
+      "dig",
+      "disarming-voice",
+      "double-edge",
+      "draining-kiss",
+      "echoed-voice",
+      "facade",
+      "fairy-wind",
+      "giga-impact",
+      "hidden-power",
+      "hyper-beam",
+      "hyper-voice",
+      "iron-tail",
+      "last-resort",
+      "magical-leaf",
+      "misty-explosion",
+      "moonblast",
+      "mud-slap",
+      "mystical-fire",
+      "pay-day",
+      "play-rough",
+      "psychic",
+      "psyshock",
+      "quick-attack",
+      "retaliate",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "snore",
+      "stored-power",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "weather-ball"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

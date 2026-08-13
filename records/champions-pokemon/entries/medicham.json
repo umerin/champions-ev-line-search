@@ -1,0 +1,128 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "medicham",
+    "dexNumber": 308,
+    "displayName": "チャーレム",
+    "name": {
+      "en": "Medicham",
+      "ja": "チャーレム",
+      "jaHrkt": "チャーレム"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 60,
+      "def": 75,
+      "spa": 60,
+      "spd": 75,
+      "spe": 80
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "aura-sphere",
+      "axe-kick",
+      "blaze-kick",
+      "body-slam",
+      "brick-break",
+      "bullet-punch",
+      "close-combat",
+      "confusion",
+      "double-edge",
+      "drain-punch",
+      "dream-eater",
+      "dynamic-punch",
+      "energy-ball",
+      "expanding-force",
+      "facade",
+      "fake-out",
+      "feint",
+      "fire-punch",
+      "focus-blast",
+      "focus-punch",
+      "force-palm",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "high-jump-kick",
+      "hyper-beam",
+      "ice-punch",
+      "low-sweep",
+      "mega-kick",
+      "mega-punch",
+      "mud-slap",
+      "poison-jab",
+      "pound",
+      "power-up-punch",
+      "psybeam",
+      "psychic",
+      "psycho-cut",
+      "psyshock",
+      "retaliate",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "secret-power",
+      "shadow-ball",
+      "signal-beam",
+      "snore",
+      "stored-power",
+      "strength",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder-punch",
+      "trailblaze",
+      "upper-hand",
+      "vacuum-wave",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "attacker",
+      "effectKey": "purePower",
+      "definition": {
+        "abilityId": "pure-power",
+        "abilityName": "ヨガパワー",
+        "stage": "attack",
+        "moveCategories": [
+          "physical"
+        ],
+        "modifier": 2
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

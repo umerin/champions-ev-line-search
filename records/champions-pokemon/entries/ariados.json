@@ -1,0 +1,107 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "ariados",
+    "dexNumber": 168,
+    "displayName": "アリアドス",
+    "name": {
+      "en": "Ariados",
+      "ja": "アリアドス",
+      "jaHrkt": "アリアドス"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 90,
+      "def": 70,
+      "spa": 60,
+      "spd": 70,
+      "spe": 40
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "absorb",
+      "acid-spray",
+      "assurance",
+      "body-slam",
+      "bounce",
+      "bug-bite",
+      "bug-buzz",
+      "constrict",
+      "cross-poison",
+      "dig",
+      "double-edge",
+      "electroweb",
+      "facade",
+      "fell-stinger",
+      "first-impression",
+      "foul-play",
+      "fury-swipes",
+      "giga-drain",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "knock-off",
+      "leech-life",
+      "lunge",
+      "megahorn",
+      "night-slash",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "pounce",
+      "psychic",
+      "round",
+      "secret-power",
+      "shadow-sneak",
+      "signal-beam",
+      "skitter-smack",
+      "sludge-bomb",
+      "sludge-wave",
+      "smart-strike",
+      "snore",
+      "solar-beam",
+      "stomping-tantrum",
+      "struggle-bug",
+      "sucker-punch",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "trailblaze",
+      "venoshock",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

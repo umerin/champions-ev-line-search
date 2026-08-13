@@ -1,0 +1,99 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "luxray",
+    "dexNumber": 405,
+    "displayName": "レントラー",
+    "name": {
+      "en": "Luxray",
+      "ja": "レントラー",
+      "jaHrkt": "レントラー"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 79,
+      "spa": 95,
+      "spd": 79,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "bite",
+      "body-slam",
+      "charge-beam",
+      "crunch",
+      "discharge",
+      "double-edge",
+      "electroweb",
+      "facade",
+      "fire-fang",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "ice-fang",
+      "iron-tail",
+      "mud-slap",
+      "night-slash",
+      "play-rough",
+      "psychic-fangs",
+      "quick-attack",
+      "rising-voltage",
+      "round",
+      "secret-power",
+      "shock-wave",
+      "signal-beam",
+      "snarl",
+      "snore",
+      "spark",
+      "strength",
+      "supercell-slam",
+      "superpower",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "throat-chop",
+      "thunder",
+      "thunder-fang",
+      "thunder-shock",
+      "thunderbolt",
+      "trailblaze",
+      "volt-switch",
+      "wild-charge"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

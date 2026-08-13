@@ -1,0 +1,113 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "ninetales",
+    "dexNumber": 38,
+    "displayName": "キュウコン",
+    "name": {
+      "en": "Ninetales",
+      "ja": "キュウコン",
+      "jaHrkt": "キュウコン"
+    },
+    "championsTarget": true,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 76,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 100
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "burning-jealousy",
+      "covet",
+      "dark-pulse",
+      "dig",
+      "double-edge",
+      "dream-eater",
+      "ember",
+      "energy-ball",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-spin",
+      "flame-charge",
+      "flame-wheel",
+      "flamethrower",
+      "flare-blitz",
+      "foul-play",
+      "giga-impact",
+      "headbutt",
+      "heat-wave",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "incinerate",
+      "inferno",
+      "iron-tail",
+      "mystical-fire",
+      "ominous-wind",
+      "overheat",
+      "payback",
+      "psyshock",
+      "quick-attack",
+      "rage",
+      "round",
+      "scorching-sands",
+      "secret-power",
+      "shadow-ball",
+      "skull-bash",
+      "snarl",
+      "snore",
+      "solar-beam",
+      "stored-power",
+      "swift",
+      "tackle",
+      "tail-slap",
+      "take-down",
+      "tera-blast",
+      "weather-ball",
+      "zen-headbutt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [
+    {
+      "scope": "weatherSetter",
+      "effectKey": "sunny",
+      "definition": {
+        "abilityId": "drought",
+        "abilityName": "ひでり"
+      }
+    }
+  ],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

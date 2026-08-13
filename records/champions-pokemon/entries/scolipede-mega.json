@@ -1,0 +1,101 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "scolipede-mega",
+    "dexNumber": 545,
+    "displayName": "メガペンドラー",
+    "name": {
+      "en": "Scolipede",
+      "ja": "メガペンドラー",
+      "jaHrkt": "メガペンドラー"
+    },
+    "championsTarget": true,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 140,
+      "def": 149,
+      "spa": 75,
+      "spd": 99,
+      "spe": 62
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aqua-tail",
+      "assurance",
+      "bug-bite",
+      "bulldoze",
+      "cross-poison",
+      "cut",
+      "dig",
+      "double-edge",
+      "earthquake",
+      "facade",
+      "giga-impact",
+      "hex",
+      "hidden-power",
+      "hyper-beam",
+      "infestation",
+      "iron-tail",
+      "megahorn",
+      "payback",
+      "pin-missile",
+      "poison-jab",
+      "poison-sting",
+      "poison-tail",
+      "pursuit",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "rollout",
+      "round",
+      "secret-power",
+      "signal-beam",
+      "skitter-smack",
+      "sludge-bomb",
+      "smart-strike",
+      "snore",
+      "solar-beam",
+      "steamroller",
+      "steel-roller",
+      "stomping-tantrum",
+      "strength",
+      "struggle-bug",
+      "superpower",
+      "take-down",
+      "throat-chop",
+      "venoshock",
+      "x-scissor"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

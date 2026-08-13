@@ -1,0 +1,80 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "gholdengo",
+    "dexNumber": 1000,
+    "displayName": "サーフゴー",
+    "name": {
+      "en": "Gholdengo",
+      "ja": "サーフゴー",
+      "jaHrkt": "サーフゴー"
+    },
+    "championsTarget": true,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 87,
+      "atk": 60,
+      "def": 95,
+      "spa": 133,
+      "spd": 91,
+      "spe": 84
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "astonish",
+      "charge-beam",
+      "dazzling-gleam",
+      "flash-cannon",
+      "focus-blast",
+      "focus-punch",
+      "giga-impact",
+      "hex",
+      "hyper-beam",
+      "iron-head",
+      "low-sweep",
+      "make-it-rain",
+      "poltergeist",
+      "power-gem",
+      "psychic",
+      "psyshock",
+      "shadow-ball",
+      "steel-beam",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunder-punch",
+      "thunderbolt"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

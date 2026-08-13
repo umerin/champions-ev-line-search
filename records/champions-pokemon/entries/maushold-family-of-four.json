@@ -1,0 +1,83 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "maushold-family-of-four",
+    "dexNumber": 925,
+    "displayName": "イッカネズミ（4ひきかぞく）",
+    "name": {
+      "en": "Maushold",
+      "ja": "イッカネズミ（4ひきかぞく）",
+      "jaHrkt": "イッカネズミ（4ひきかぞく）"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 74,
+      "atk": 75,
+      "def": 70,
+      "spa": 65,
+      "spd": 75,
+      "spe": 111
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "bite",
+      "bullet-seed",
+      "chilling-water",
+      "crunch",
+      "dig",
+      "double-edge",
+      "double-hit",
+      "echoed-voice",
+      "facade",
+      "feint",
+      "giga-impact",
+      "hyper-beam",
+      "hyper-voice",
+      "low-sweep",
+      "mud-shot",
+      "mud-slap",
+      "play-rough",
+      "population-bomb",
+      "pound",
+      "seed-bomb",
+      "shadow-claw",
+      "swift",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "trailblaze",
+      "u-turn",
+      "water-pulse"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

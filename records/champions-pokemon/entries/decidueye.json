@@ -1,0 +1,118 @@
+{
+  "": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "decidueye",
+    "dexNumber": 724,
+    "displayName": "ジュナイパー",
+    "name": {
+      "en": "Decidueye",
+      "ja": "ジュナイパー",
+      "jaHrkt": "ジュナイパー"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "atk": 107,
+      "def": 75,
+      "spa": 100,
+      "spd": 100,
+      "spe": 70
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "astonish",
+      "aura-sphere",
+      "brave-bird",
+      "brick-break",
+      "bullet-seed",
+      "close-combat",
+      "covet",
+      "dual-wingbeat",
+      "echoed-voice",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "focus-blast",
+      "focus-punch",
+      "frenzy-plant",
+      "fury-attack",
+      "giga-drain",
+      "giga-impact",
+      "grass-pledge",
+      "grassy-glide",
+      "hex",
+      "hidden-power",
+      "hurricane",
+      "hyper-beam",
+      "knock-off",
+      "leaf-blade",
+      "leaf-storm",
+      "leafage",
+      "low-sweep",
+      "magical-leaf",
+      "ominous-wind",
+      "peck",
+      "phantom-force",
+      "pluck",
+      "poltergeist",
+      "psycho-cut",
+      "razor-leaf",
+      "rock-tomb",
+      "round",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "skitter-smack",
+      "sky-attack",
+      "smack-down",
+      "snore",
+      "solar-beam",
+      "solar-blade",
+      "spirit-shackle",
+      "steel-wing",
+      "sucker-punch",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "u-turn",
+      "upper-hand"
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}
