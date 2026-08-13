@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121517" />
+    <title>Codexひよこ</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="pet-window" aria-labelledby="pet-title">
+      <header class="pet-header">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">🐤</span>
+          <h1 id="pet-title">Codexひよこ</h1>
+        </div>
+        <div class="header-actions">
+          <button class="icon-button" id="settings-button" type="button" aria-label="設定">⚙</button>
+          <button class="icon-button" id="close-button" type="button" aria-label="ひよこを最小化">×</button>
+        </div>
+      </header>
+
+      <section class="pet-content" aria-label="Codexの状態">
+        <div class="pet-visual-column">
+          <div class="pet-visual" id="pet-visual" data-status="working" aria-label="作業中のひよこ" role="img">
+            <div class="duck-sprite" aria-hidden="true"></div>
+            <span class="status-orbit" aria-hidden="true"></span>
+          </div>
+          <p class="pet-caption" id="pet-description">いま作業を進めています。</p>
+        </div>
+
+        <div class="status-column">
+          <p class="section-label">現在の状態</p>
+          <div class="status-list" role="group" aria-label="表示する状態">
+            <button class="status-option is-selected" type="button" data-status="working" aria-pressed="true">
+              <span class="status-dot status-dot-working" aria-hidden="true"></span>
+              <span>作業中</span>
+            </button>
+            <button class="status-option" type="button" data-status="idle" aria-pressed="false">
+              <span class="status-dot status-dot-idle" aria-hidden="true"></span>
+              <span>待機中</span>
+            </button>
+            <button class="status-option" type="button" data-status="waiting" aria-pressed="false">
+              <span class="status-dot status-dot-waiting" aria-hidden="true"></span>
+              <span>確認待ち</span>
+            </button>
+            <button class="status-option" type="button" data-status="done" aria-pressed="false">
+              <span class="status-dot status-dot-done" aria-hidden="true">✓</span>
+              <span>完了</span>
+            </button>
+            <button class="status-option" type="button" data-status="error" aria-pressed="false">
+              <span class="status-dot status-dot-error" aria-hidden="true">×</span>
+              <span>エラー</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="pet-footer">
+        <p>このひよこはCodexの状態を表示します</p>
+        <div class="footer-actions">
+          <span class="source-label" id="source-label">手動</span>
+          <button class="text-button" id="demo-button" type="button">デモ再生</button>
+        </div>
+      </footer>
+
+      <dialog class="settings-dialog" id="settings-dialog">
+        <form method="dialog">
+          <div class="dialog-heading">
+            <h2>ひよこの設定</h2>
+            <button class="icon-button" value="cancel" aria-label="設定を閉じる">×</button>
+          </div>
+          <label class="setting-row">
+            <span>動きを減らす</span>
+            <input id="reduced-motion-toggle" type="checkbox" />
+          </label>
+          <p class="dialog-help">URLに <code>?status=working</code> のように指定するか、外部から status メッセージを送ると状態を切り替えられます。</p>
+          <button class="primary-button" value="cancel">閉じる</button>
+        </form>
+      </dialog>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
