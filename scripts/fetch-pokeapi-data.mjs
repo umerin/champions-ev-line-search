@@ -147,7 +147,8 @@ async function fetchMove(id) {
     power: move.power,
     priority: move.priority,
     isSpreadMove: spreadTargets.has(move.target.name),
-    isContactMove: contactMoveIds.has(move.name),
+    isContactMove: contactMoveIds.has(move.name.replaceAll("-", "")),
+    moveCategories: [],
   };
 }
 

@@ -55,7 +55,8 @@
             "required": [
               "id",
               "name",
-              "isContactMove"
+              "isContactMove",
+              "moveCategories"
             ],
             "properties": {
               "id": {
@@ -79,6 +80,13 @@
               },
               "isContactMove": {
                 "type": "boolean"
+              },
+              "moveCategories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
               }
             },
             "additionalProperties": true

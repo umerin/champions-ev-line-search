@@ -36,6 +36,7 @@
         "isSpreadMove": false,
         "searchable": false,
         "isContactMove": false,
+        "moveCategories": [],
         "verification": {
           "status": "inherited-unverified",
           "sources": [],

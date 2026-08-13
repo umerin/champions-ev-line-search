@@ -22,6 +22,22 @@ const finalDamageMGroups = new Set([
   "resistBerry",
   "Mtwice",
 ]);
+const moveCategories = new Set([
+  "bite",
+  "bullet",
+  "charge",
+  "dance",
+  "defrost",
+  "distance",
+  "heal",
+  "powder",
+  "pulse",
+  "punch",
+  "recharge",
+  "slicing",
+  "sound",
+  "wind",
+]);
 
 const [pokemon, moves, learnsets, battleEffects] = await Promise.all([
   readJson("pokemon.json"),
@@ -53,6 +69,10 @@ for (const entry of pokemon) {
 for (const entry of moves) {
   assert(typeof entry.championsTarget === "boolean", `moves.json: ${entry.id} の championsTarget が真偽値ではありません。`);
   assert(typeof entry.isContactMove === "boolean", `moves.json: ${entry.id} の isContactMove が真偽値ではありません。`);
+  assert(Array.isArray(entry.moveCategories), `moves.json: ${entry.id} の moveCategories が配列ではありません。`);
+  for (const category of entry.moveCategories) {
+    assert(moveCategories.has(category), `moves.json: ${entry.id} の技カテゴリ ${category} が不正です。`);
+  }
   if (Object.hasOwn(entry, "ignoresScreens")) {
     assert(typeof entry.ignoresScreens === "boolean", `moves.json: ${entry.id} の ignoresScreens が真偽値ではありません。`);
   }

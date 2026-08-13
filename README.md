@@ -42,6 +42,7 @@ NOTICE.md
 - `pokemon.json` はポケモン情報とポケモンごとの `championsTarget` を管理します。
 - `moves.json` は技情報と技ごとの `championsTarget` を管理します。
 - `moves.json` の `isContactMove` は、技が接触技かどうかを管理します。判定は Pokémon Showdown の技フラグ `contact` を基準にしています。
+- `moves.json` の `moveCategories` は、切り技 `slicing`・パンチ技 `punch`・噛み技 `bite`・弾 `bullet`・音 `sound`・波動 `pulse`・踊り `dance`・風 `wind`・粉 `powder` など、技のカテゴリを配列で管理します。
 - `learnsets.json` はポケモンIDごとの習得技ID一覧を管理します。
 - `battle-effects.json` は特性・天候などの対象、補正値、検索結果の表示を管理します。
 - 更新後は `node scripts/validate-data.mjs` でID・重複・対象数を高速に検証できます。
