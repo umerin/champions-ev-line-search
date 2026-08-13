@@ -92,8 +92,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/tauros-paldea-combat-breed"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/tauros-paldea-combat-breed",
+      "dexNumber": 128,
+      "types": [
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 110,
+        "def": 105,
+        "spa": 30,
+        "spd": 70,
+        "spe": 100
+      },
+      "weightKg": 115,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "anger-point",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "cud-chew",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

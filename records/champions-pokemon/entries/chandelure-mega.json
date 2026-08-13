@@ -93,8 +93,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/chandelure-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/chandelure-mega",
+      "dexNumber": 609,
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 75,
+        "def": 110,
+        "spa": 175,
+        "spd": 110,
+        "spe": 90
+      },
+      "weightKg": 69.6,
+      "abilities": [
+        {
+          "id": "infiltrator",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

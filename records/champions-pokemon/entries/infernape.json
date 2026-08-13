@@ -133,8 +133,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/infernape"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/infernape",
+      "dexNumber": 392,
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 76,
+        "atk": 104,
+        "def": 71,
+        "spa": 104,
+        "spd": 71,
+        "spe": 108
+      },
+      "weightKg": 55,
+      "abilities": [
+        {
+          "id": "blaze",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "iron-fist",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

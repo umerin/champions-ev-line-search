@@ -27,48 +27,135 @@
   },
   "learnset": {
     "moveIds": [
-      "aerial-ace",
-      "air-cutter",
-      "air-slash",
-      "brave-bird",
-      "double-edge",
-      "dual-wingbeat",
-      "facade",
-      "fly",
       "giga-impact",
-      "gust",
-      "headbutt",
-      "heat-wave",
-      "hidden-power",
-      "hurricane",
-      "hyper-beam",
-      "mud-slap",
-      "ominous-wind",
-      "pluck",
       "quick-attack",
-      "rage",
-      "razor-wind",
+      "facade",
+      "hyper-beam",
       "round",
-      "secret-power",
-      "sky-attack",
-      "snore",
-      "steel-wing",
-      "swift",
-      "tackle",
-      "take-down",
-      "thief",
-      "twister",
+      "endure",
+      "protect",
+      "substitute",
+      "heat-wave",
+      "sunny-day",
+      "rain-dance",
       "u-turn",
-      "uproar",
-      "wing-attack"
+      "sky-attack",
+      "brave-bird",
+      "fly",
+      "aerial-ace",
+      "dual-wingbeat",
+      "hurricane",
+      "air-slash",
+      "rest",
+      "throat-chop",
+      "steel-wing"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "whirlwind",
+        "name": "ふきとばし",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "tailwind",
+        "name": "おいかぜ",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roost",
+        "name": "はねやすめ",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "feather-dance",
+        "name": "フェザーダンス",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/HJOM8092.MP4"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "quick-attack",
+        "facade",
+        "hyper-beam",
+        "round",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "whirlwind",
+        "heat-wave",
+        "sunny-day",
+        "rain-dance",
+        "u-turn",
+        "sky-attack",
+        "brave-bird",
+        "fly",
+        "aerial-ace",
+        "dual-wingbeat",
+        "hurricane",
+        "air-slash",
+        "tailwind",
+        "roost",
+        "feather-dance",
+        "rest",
+        "agility",
+        "throat-chop",
+        "steel-wing"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全28技）。",
+        "耐久ラインサーチには固定威力の攻撃技16件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -88,8 +175,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pidgeot"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pidgeot",
+      "dexNumber": 18,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 83,
+        "atk": 80,
+        "def": 75,
+        "spa": 70,
+        "spd": 70,
+        "spe": 101
+      },
+      "weightKg": 39.5,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "tangled-feet",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "big-pecks",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

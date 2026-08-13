@@ -93,8 +93,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/dedenne"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/dedenne",
+      "dexNumber": 702,
+      "types": [
+        "electric",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 67,
+        "atk": 58,
+        "def": 57,
+        "spa": 81,
+        "spd": 67,
+        "spe": 101
+      },
+      "weightKg": 2.2,
+      "abilities": [
+        {
+          "id": "cheek-pouch",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "pickup",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "plus",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

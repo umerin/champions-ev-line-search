@@ -106,8 +106,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/floette-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/floette-mega",
+      "dexNumber": 670,
+      "types": [
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 74,
+        "atk": 85,
+        "def": 87,
+        "spa": 155,
+        "spd": 148,
+        "spe": 102
+      },
+      "weightKg": 100.8,
+      "abilities": [
+        {
+          "id": "fairy-aura",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

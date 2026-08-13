@@ -27,72 +27,226 @@
   },
   "learnset": {
     "moveIds": [
+      "giga-impact",
+      "facade",
+      "hyper-beam",
+      "round",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "fire-fang",
+      "fire-blast",
+      "heat-wave",
+      "flamethrower",
+      "sunny-day",
+      "rain-dance",
+      "thunder-fang",
+      "sky-attack",
+      "fly",
       "aerial-ace",
-      "air-cutter",
+      "dual-wingbeat",
+      "hurricane",
+      "stone-edge",
+      "rock-slide",
+      "rock-tomb",
+      "meteor-beam",
       "ancient-power",
-      "aqua-tail",
-      "assurance",
-      "bite",
-      "brutal-swing",
+      "earthquake",
       "bulldoze",
-      "crunch",
-      "double-edge",
-      "dragon-breath",
+      "rest",
+      "psychic-fangs",
+      "ice-fang",
+      "earth-power",
       "dragon-claw",
       "dragon-pulse",
-      "dual-wingbeat",
-      "earth-power",
-      "earthquake",
-      "facade",
-      "fire-blast",
-      "fire-fang",
-      "flamethrower",
-      "fly",
-      "giga-impact",
-      "headbutt",
-      "heat-wave",
-      "hidden-power",
-      "hurricane",
-      "hyper-beam",
-      "ice-fang",
-      "incinerate",
-      "iron-head",
-      "iron-tail",
-      "meteor-beam",
-      "ominous-wind",
+      "brutal-swing",
+      "crunch",
+      "bite",
       "payback",
-      "psychic-fangs",
-      "pursuit",
-      "rage",
-      "razor-wind",
-      "rock-blast",
-      "rock-slide",
-      "rock-smash",
-      "rock-throw",
-      "rock-tomb",
-      "round",
-      "secret-power",
-      "sky-attack",
-      "sky-drop",
-      "smack-down",
-      "snore",
-      "steel-wing",
-      "stone-edge",
-      "strength",
-      "swift",
-      "take-down",
-      "thief",
-      "thunder-fang",
-      "twister",
-      "wing-attack"
+      "iron-tail",
+      "iron-head",
+      "steel-wing"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "whirlwind",
+        "name": "ふきとばし",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "wide-guard",
+        "name": "ワイドガード",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "stealth-rock",
+        "name": "ステルスロック",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sandstorm",
+        "name": "すなあらし",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "dragon-dance",
+        "name": "りゅうのまい",
+        "type": "dragon",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-50-10.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "facade",
+        "hyper-beam",
+        "round",
+        "snore",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "roar",
+        "whirlwind",
+        "fire-fang",
+        "fire-blast",
+        "heat-wave",
+        "flamethrower",
+        "sunny-day",
+        "rain-dance",
+        "thunder-fang",
+        "sky-attack",
+        "fly",
+        "aerial-ace",
+        "dual-wingbeat",
+        "hurricane",
+        "stone-edge",
+        "rock-slide",
+        "rock-tomb",
+        "meteor-beam",
+        "ancient-power",
+        "wide-guard",
+        "stealth-rock",
+        "sandstorm",
+        "earthquake",
+        "bulldoze",
+        "agility",
+        "rest",
+        "psychic-fangs",
+        "ice-fang",
+        "earth-power",
+        "curse",
+        "dragon-claw",
+        "dragon-pulse",
+        "dragon-dance",
+        "brutal-swing",
+        "crunch",
+        "bite",
+        "payback",
+        "taunt",
+        "iron-tail",
+        "iron-head",
+        "steel-wing"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全52技）。",
+        "耐久ラインサーチには固定威力の攻撃技34件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -112,8 +266,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/aerodactyl"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/aerodactyl",
+      "dexNumber": 142,
+      "types": [
+        "rock",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 105,
+        "def": 65,
+        "spa": 60,
+        "spd": 75,
+        "spe": 130
+      },
+      "weightKg": 59,
+      "abilities": [
+        {
+          "id": "rock-head",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "pressure",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "unnerve",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

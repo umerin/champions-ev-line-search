@@ -76,8 +76,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/polteageist"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/polteageist",
+      "dexNumber": 855,
+      "types": [
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 65,
+        "def": 65,
+        "spa": 134,
+        "spd": 114,
+        "spe": 70
+      },
+      "weightKg": 0.4,
+      "abilities": [
+        {
+          "id": "weak-armor",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "cursed-body",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -124,8 +124,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/absol"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/absol",
+      "dexNumber": 359,
+      "types": [
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 130,
+        "def": 60,
+        "spa": 75,
+        "spd": 60,
+        "spe": 75
+      },
+      "weightKg": 47,
+      "abilities": [
+        {
+          "id": "pressure",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "super-luck",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "justified",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -118,8 +118,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/heracross"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/heracross",
+      "dexNumber": 214,
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 125,
+        "def": 75,
+        "spa": 40,
+        "spd": 95,
+        "spe": 85
+      },
+      "weightKg": 54,
+      "abilities": [
+        {
+          "id": "swarm",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "guts",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "moxie",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

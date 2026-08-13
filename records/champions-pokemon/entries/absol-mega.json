@@ -124,8 +124,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/absol-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/absol-mega",
+      "dexNumber": 359,
+      "types": [
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 150,
+        "def": 60,
+        "spa": 115,
+        "spd": 60,
+        "spe": 115
+      },
+      "weightKg": 49,
+      "abilities": [
+        {
+          "id": "magic-bounce",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

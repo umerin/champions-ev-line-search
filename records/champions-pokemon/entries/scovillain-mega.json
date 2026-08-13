@@ -87,8 +87,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/scovillain-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/scovillain-mega",
+      "dexNumber": 952,
+      "types": [
+        "grass",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 138,
+        "def": 85,
+        "spa": 138,
+        "spd": 85,
+        "spe": 75
+      },
+      "weightKg": 22,
+      "abilities": [
+        {
+          "id": "spicy-spray",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

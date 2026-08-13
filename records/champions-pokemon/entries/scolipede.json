@@ -100,8 +100,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/scolipede"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/scolipede",
+      "dexNumber": 545,
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 100,
+        "def": 89,
+        "spa": 55,
+        "spd": 69,
+        "spe": 112
+      },
+      "weightKg": 200.5,
+      "abilities": [
+        {
+          "id": "poison-point",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "swarm",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "speed-boost",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

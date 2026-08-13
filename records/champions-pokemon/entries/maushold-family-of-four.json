@@ -82,8 +82,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/maushold-family-of-four"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/maushold-family-of-four",
+      "dexNumber": 925,
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 74,
+        "atk": 75,
+        "def": 70,
+        "spa": 65,
+        "spd": 75,
+        "spe": 111
+      },
+      "weightKg": 2.8,
+      "abilities": [
+        {
+          "id": "friend-guard",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "cheek-pouch",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "technician",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

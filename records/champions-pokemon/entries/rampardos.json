@@ -125,8 +125,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/rampardos"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/rampardos",
+      "dexNumber": 409,
+      "types": [
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 97,
+        "atk": 165,
+        "def": 60,
+        "spa": 65,
+        "spd": 50,
+        "spe": 58
+      },
+      "weightKg": 102.5,
+      "abilities": [
+        {
+          "id": "mold-breaker",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

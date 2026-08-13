@@ -106,8 +106,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/passimian"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/passimian",
+      "dexNumber": 766,
+      "types": [
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 120,
+        "def": 90,
+        "spa": 40,
+        "spd": 60,
+        "spe": 80
+      },
+      "weightKg": 82.8,
+      "abilities": [
+        {
+          "id": "receiver",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "defiant",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

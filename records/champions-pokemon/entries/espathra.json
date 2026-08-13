@@ -90,8 +90,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/espathra"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/espathra",
+      "dexNumber": 956,
+      "types": [
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 60,
+        "def": 60,
+        "spa": 101,
+        "spd": 60,
+        "spe": 105
+      },
+      "weightKg": 90,
+      "abilities": [
+        {
+          "id": "opportunist",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "frisk",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "speed-boost",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

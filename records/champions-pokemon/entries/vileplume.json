@@ -27,54 +27,322 @@
   },
   "learnset": {
     "moveIds": [
-      "absorb",
-      "acid",
-      "acid-spray",
-      "body-slam",
-      "bullet-seed",
-      "cut",
-      "dazzling-gleam",
-      "double-edge",
-      "drain-punch",
-      "energy-ball",
-      "facade",
-      "giga-drain",
       "giga-impact",
-      "grassy-glide",
-      "headbutt",
-      "hidden-power",
+      "body-slam",
+      "facade",
+      "double-edge",
       "hyper-beam",
-      "infestation",
-      "leaf-storm",
-      "magical-leaf",
-      "mega-drain",
-      "moonblast",
-      "petal-blizzard",
-      "petal-dance",
-      "pollen-puff",
-      "rage",
-      "razor-leaf",
       "round",
-      "secret-power",
-      "seed-bomb",
-      "sludge-bomb",
-      "sludge-wave",
+      "weather-ball",
       "snore",
-      "solar-beam",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
       "solar-blade",
-      "take-down",
-      "tera-blast",
+      "petal-blizzard",
+      "seed-bomb",
+      "grassy-glide",
       "trailblaze",
+      "bullet-seed",
+      "leaf-storm",
+      "petal-dance",
+      "solar-beam",
+      "energy-ball",
+      "giga-drain",
+      "grass-knot",
+      "grassy-terrain",
+      "synthesis",
+      "sunny-day",
+      "pollen-puff",
+      "sludge-wave",
+      "sludge-bomb",
       "venoshock",
-      "weather-ball"
+      "acid-spray",
+      "rest",
+      "moonblast",
+      "dazzling-gleam"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "after-you",
+        "name": "おさきにどうぞ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "tickle",
+        "name": "くすぐる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "teeter-dance",
+        "name": "フラフラダンス",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "sweet-scent",
+        "name": "あまいかおり",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "strength-sap",
+        "name": "ちからをすいとる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "ingrain",
+        "name": "ねをはる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "sleep-powder",
+        "name": "ねむりごな",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "stun-spore",
+        "name": "しびれごな",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "growth",
+        "name": "せいちょう",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "leech-seed",
+        "name": "やどりぎのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "corrosive-gas",
+        "name": "ふしょくガス",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic",
+        "name": "どくどく",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "poison-powder",
+        "name": "どくのこな",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "fling",
+        "name": "なげつける",
+        "type": "dark",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "moonlight",
+        "name": "つきのひかり",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
-      "rejectedMoveIds": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-35-53.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "body-slam",
+        "facade",
+        "double-edge",
+        "hyper-beam",
+        "round",
+        "weather-ball",
+        "snore",
+        "after-you",
+        "tickle",
+        "teeter-dance",
+        "helping-hand",
+        "sweet-scent",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "swords-dance",
+        "solar-blade",
+        "petal-blizzard",
+        "seed-bomb",
+        "grassy-glide",
+        "trailblaze",
+        "bullet-seed",
+        "leaf-storm",
+        "petal-dance",
+        "solar-beam",
+        "energy-ball",
+        "giga-drain",
+        "grass-knot",
+        "strength-sap",
+        "grassy-terrain",
+        "ingrain",
+        "synthesis",
+        "sleep-powder",
+        "stun-spore",
+        "growth",
+        "leech-seed",
+        "sunny-day",
+        "pollen-puff",
+        "sludge-wave",
+        "sludge-bomb",
+        "venoshock",
+        "acid-spray",
+        "corrosive-gas",
+        "toxic",
+        "poison-powder",
+        "rest",
+        "fling",
+        "moonblast",
+        "dazzling-gleam",
+        "moonlight",
+        "charm"
+      ],
+      "rejectedMoveIds": [
+        "absorb",
+        "acid",
+        "cut",
+        "drain-punch",
+        "headbutt",
+        "hidden-power",
+        "infestation",
+        "magical-leaf",
+        "mega-drain",
+        "rage",
+        "razor-leaf",
+        "secret-power",
+        "take-down",
+        "tera-blast"
+      ],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全54技）。",
+        "耐久ラインサーチには固定威力の攻撃技26件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -94,8 +362,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/vileplume"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/vileplume",
+      "dexNumber": 45,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 80,
+        "def": 85,
+        "spa": 110,
+        "spd": 90,
+        "spe": 50
+      },
+      "weightKg": 18.6,
+      "abilities": [
+        {
+          "id": "chlorophyll",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "effect-spore",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

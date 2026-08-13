@@ -117,8 +117,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/decidueye"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/decidueye",
+      "dexNumber": 724,
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 78,
+        "atk": 107,
+        "def": 75,
+        "spa": 100,
+        "spd": 100,
+        "spe": 70
+      },
+      "weightKg": 36.6,
+      "abilities": [
+        {
+          "id": "overgrow",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "long-reach",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

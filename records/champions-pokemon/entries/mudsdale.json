@@ -89,8 +89,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/mudsdale"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/mudsdale",
+      "dexNumber": 750,
+      "types": [
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 125,
+        "def": 100,
+        "spa": 55,
+        "spd": 85,
+        "spe": 35
+      },
+      "weightKg": 920,
+      "abilities": [
+        {
+          "id": "own-tempo",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "stamina",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "inner-focus",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

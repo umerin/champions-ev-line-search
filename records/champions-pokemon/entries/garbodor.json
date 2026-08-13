@@ -94,8 +94,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/garbodor"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/garbodor",
+      "dexNumber": 569,
+      "types": [
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 95,
+        "def": 82,
+        "spa": 60,
+        "spd": 82,
+        "spe": 75
+      },
+      "weightKg": 107.3,
+      "abilities": [
+        {
+          "id": "stench",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "weak-armor",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "aftermath",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

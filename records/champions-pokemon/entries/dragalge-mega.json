@@ -104,8 +104,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/dragalge-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/dragalge-mega",
+      "dexNumber": 691,
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 85,
+        "def": 105,
+        "spa": 132,
+        "spd": 163,
+        "spe": 44
+      },
+      "weightKg": 100.3,
+      "abilities": [
+        {
+          "id": "regenerator",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

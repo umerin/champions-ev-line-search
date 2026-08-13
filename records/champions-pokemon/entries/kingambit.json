@@ -90,8 +90,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/kingambit"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/kingambit",
+      "dexNumber": 983,
+      "types": [
+        "dark",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 135,
+        "def": 120,
+        "spa": 60,
+        "spd": 85,
+        "spe": 50
+      },
+      "weightKg": 120,
+      "abilities": [
+        {
+          "id": "defiant",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "supreme-overlord",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "pressure",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

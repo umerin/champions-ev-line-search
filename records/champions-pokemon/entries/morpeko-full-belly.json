@@ -98,8 +98,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/morpeko-full-belly"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/morpeko-full-belly",
+      "dexNumber": 877,
+      "types": [
+        "electric",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 58,
+        "atk": 95,
+        "def": 58,
+        "spa": 70,
+        "spd": 58,
+        "spe": 97
+      },
+      "weightKg": 3,
+      "abilities": [
+        {
+          "id": "hunger-switch",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

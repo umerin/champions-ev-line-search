@@ -125,8 +125,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/weavile"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/weavile",
+      "dexNumber": 461,
+      "types": [
+        "dark",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 120,
+        "def": 65,
+        "spa": 45,
+        "spd": 85,
+        "spe": 125
+      },
+      "weightKg": 34,
+      "abilities": [
+        {
+          "id": "pressure",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "pickpocket",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

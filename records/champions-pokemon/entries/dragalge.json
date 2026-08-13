@@ -104,8 +104,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/dragalge"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/dragalge",
+      "dexNumber": 691,
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 75,
+        "def": 90,
+        "spa": 97,
+        "spd": 123,
+        "spe": 44
+      },
+      "weightKg": 81.5,
+      "abilities": [
+        {
+          "id": "poison-point",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "poison-touch",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "adaptability",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

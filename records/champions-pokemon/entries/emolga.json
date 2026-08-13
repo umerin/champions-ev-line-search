@@ -89,8 +89,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/emolga"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/emolga",
+      "dexNumber": 587,
+      "types": [
+        "electric",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "atk": 75,
+        "def": 60,
+        "spa": 75,
+        "spd": 60,
+        "spe": 103
+      },
+      "weightKg": 5,
+      "abilities": [
+        {
+          "id": "static",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "motor-drive",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

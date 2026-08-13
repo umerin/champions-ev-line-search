@@ -26,70 +26,170 @@
   },
   "learnset": {
     "moveIds": [
-      "aerial-ace",
-      "bind",
-      "body-slam",
-      "brick-break",
-      "brutal-swing",
-      "bug-bite",
-      "bulldoze",
-      "circle-throw",
-      "close-combat",
-      "cut",
-      "dig",
-      "double-edge",
-      "double-hit",
-      "earthquake",
-      "facade",
-      "false-swipe",
-      "feint",
-      "feint-attack",
-      "focus-blast",
-      "focus-punch",
-      "fury-attack",
-      "fury-cutter",
       "giga-impact",
-      "headbutt",
-      "hidden-power",
-      "high-horsepower",
-      "hyper-beam",
-      "knock-off",
-      "lunge",
-      "outrage",
-      "pounce",
-      "quick-attack",
-      "rage",
-      "revenge",
-      "rock-climb",
-      "rock-slide",
-      "rock-smash",
-      "rock-tomb",
-      "round",
-      "secret-power",
-      "slash",
-      "smack-down",
-      "snore",
-      "stone-edge",
-      "storm-throw",
-      "strength",
-      "struggle-bug",
-      "submission",
-      "superpower",
-      "take-down",
-      "thief",
       "thrash",
+      "body-slam",
+      "facade",
+      "quick-attack",
+      "double-hit",
+      "feint",
+      "bind",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "sunny-day",
+      "rain-dance",
+      "lunge",
+      "x-scissor",
+      "bug-bite",
+      "aerial-ace",
+      "stone-edge",
+      "rock-slide",
+      "rock-tomb",
+      "earthquake",
+      "superpower",
+      "close-combat",
+      "bulldoze",
+      "dig",
+      "high-horsepower",
+      "focus-blast",
+      "storm-throw",
+      "rage-fist",
+      "brick-break",
       "throat-chop",
-      "vice-grip",
-      "vital-throw",
-      "x-scissor"
+      "brutal-swing",
+      "mud-slap"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "focus-energy",
+        "name": "きあいだめ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "stealth-rock",
+        "name": "ステルスロック",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "seismic-toss",
+        "name": "ちきゅうなげ",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "bulk-up",
+        "name": "ビルドアップ",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "thrash",
+        "body-slam",
+        "facade",
+        "quick-attack",
+        "double-hit",
+        "feint",
+        "bind",
+        "helping-hand",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "focus-energy",
+        "swords-dance",
+        "sunny-day",
+        "rain-dance",
+        "lunge",
+        "x-scissor",
+        "bug-bite",
+        "aerial-ace",
+        "stone-edge",
+        "rock-slide",
+        "rock-tomb",
+        "stealth-rock",
+        "earthquake",
+        "superpower",
+        "close-combat",
+        "bulldoze",
+        "dig",
+        "high-horsepower",
+        "focus-blast",
+        "seismic-toss",
+        "reversal",
+        "storm-throw",
+        "rage-fist",
+        "brick-break",
+        "bulk-up",
+        "throat-chop",
+        "brutal-swing",
+        "mud-slap"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全42技）。",
+        "耐久ラインサーチには固定威力の攻撃技28件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -109,8 +209,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pinsir"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pinsir",
+      "dexNumber": 127,
+      "types": [
+        "bug"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 125,
+        "def": 100,
+        "spa": 55,
+        "spd": 70,
+        "spe": 85
+      },
+      "weightKg": 55,
+      "abilities": [
+        {
+          "id": "hyper-cutter",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "mold-breaker",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "moxie",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

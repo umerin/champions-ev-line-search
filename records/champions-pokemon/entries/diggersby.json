@@ -124,8 +124,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/diggersby"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/diggersby",
+      "dexNumber": 660,
+      "types": [
+        "normal",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 56,
+        "def": 77,
+        "spa": 50,
+        "spd": 77,
+        "spe": 78
+      },
+      "weightKg": 42.4,
+      "abilities": [
+        {
+          "id": "pickup",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "cheek-pouch",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "huge-power",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

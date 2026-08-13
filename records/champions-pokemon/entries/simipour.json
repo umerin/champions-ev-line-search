@@ -102,8 +102,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/simipour"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/simipour",
+      "dexNumber": 516,
+      "types": [
+        "water"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 98,
+        "def": 63,
+        "spa": 98,
+        "spd": 63,
+        "spe": 101
+      },
+      "weightKg": 29,
+      "abilities": [
+        {
+          "id": "gluttony",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "torrent",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

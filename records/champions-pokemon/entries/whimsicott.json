@@ -84,8 +84,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/whimsicott"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/whimsicott",
+      "dexNumber": 547,
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 67,
+        "def": 85,
+        "spa": 77,
+        "spd": 75,
+        "spe": 116
+      },
+      "weightKg": 6.6,
+      "abilities": [
+        {
+          "id": "prankster",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "infiltrator",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "chlorophyll",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

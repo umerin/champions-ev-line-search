@@ -119,8 +119,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/garchomp"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/garchomp",
+      "dexNumber": 445,
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 108,
+        "atk": 130,
+        "def": 95,
+        "spa": 80,
+        "spd": 85,
+        "spe": 102
+      },
+      "weightKg": 95,
+      "abilities": [
+        {
+          "id": "sand-veil",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "rough-skin",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

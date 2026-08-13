@@ -115,8 +115,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/mawile"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/mawile",
+      "dexNumber": 303,
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 85,
+        "def": 85,
+        "spa": 55,
+        "spd": 55,
+        "spe": 50
+      },
+      "weightKg": 11.5,
+      "abilities": [
+        {
+          "id": "hyper-cutter",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "intimidate",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

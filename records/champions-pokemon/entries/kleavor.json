@@ -95,8 +95,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/kleavor"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/kleavor",
+      "dexNumber": 900,
+      "types": [
+        "bug",
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 135,
+        "def": 95,
+        "spa": 45,
+        "spd": 70,
+        "spe": 85
+      },
+      "weightKg": 89,
+      "abilities": [
+        {
+          "id": "swarm",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sharpness",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

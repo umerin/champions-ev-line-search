@@ -113,8 +113,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/altaria-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/altaria-mega",
+      "dexNumber": 334,
+      "types": [
+        "dragon",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 110,
+        "def": 110,
+        "spa": 110,
+        "spd": 105,
+        "spe": 80
+      },
+      "weightKg": 20.6,
+      "abilities": [
+        {
+          "id": "pixilate",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

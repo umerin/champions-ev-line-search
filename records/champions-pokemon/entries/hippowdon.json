@@ -105,8 +105,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/hippowdon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/hippowdon",
+      "dexNumber": 450,
+      "types": [
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 108,
+        "atk": 112,
+        "def": 118,
+        "spa": 68,
+        "spd": 72,
+        "spe": 47
+      },
+      "weightKg": 300,
+      "abilities": [
+        {
+          "id": "sand-stream",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sand-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

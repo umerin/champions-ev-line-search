@@ -114,8 +114,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/steelix-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/steelix-mega",
+      "dexNumber": 208,
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 125,
+        "def": 230,
+        "spa": 55,
+        "spd": 95,
+        "spe": 30
+      },
+      "weightKg": 740,
+      "abilities": [
+        {
+          "id": "sand-force",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

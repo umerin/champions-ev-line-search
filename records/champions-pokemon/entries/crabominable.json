@@ -112,8 +112,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/crabominable"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/crabominable",
+      "dexNumber": 740,
+      "types": [
+        "fighting",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 97,
+        "atk": 132,
+        "def": 77,
+        "spa": 62,
+        "spd": 67,
+        "spe": 43
+      },
+      "weightKg": 180,
+      "abilities": [
+        {
+          "id": "hyper-cutter",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "iron-fist",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "anger-point",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

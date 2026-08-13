@@ -80,8 +80,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/bellibolt"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/bellibolt",
+      "dexNumber": 939,
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 109,
+        "atk": 64,
+        "def": 91,
+        "spa": 103,
+        "spd": 83,
+        "spe": 45
+      },
+      "weightKg": 113,
+      "abilities": [
+        {
+          "id": "electromorphosis",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "static",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "damp",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

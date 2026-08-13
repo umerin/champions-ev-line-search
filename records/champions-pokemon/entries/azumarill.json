@@ -146,8 +146,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/azumarill"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/azumarill",
+      "dexNumber": 184,
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 50,
+        "def": 80,
+        "spa": 60,
+        "spd": 80,
+        "spe": 50
+      },
+      "weightKg": 28.5,
+      "abilities": [
+        {
+          "id": "thick-fat",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "huge-power",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sap-sipper",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

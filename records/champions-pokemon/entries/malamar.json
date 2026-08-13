@@ -98,8 +98,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/malamar"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/malamar",
+      "dexNumber": 687,
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 86,
+        "atk": 92,
+        "def": 88,
+        "spa": 68,
+        "spd": 75,
+        "spe": 73
+      },
+      "weightKg": 47,
+      "abilities": [
+        {
+          "id": "contrary",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "suction-cups",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "infiltrator",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

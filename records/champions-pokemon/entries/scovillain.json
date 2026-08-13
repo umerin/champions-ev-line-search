@@ -87,8 +87,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/scovillain"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/scovillain",
+      "dexNumber": 952,
+      "types": [
+        "grass",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 108,
+        "def": 65,
+        "spa": 108,
+        "spd": 65,
+        "spe": 75
+      },
+      "weightKg": 15,
+      "abilities": [
+        {
+          "id": "chlorophyll",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "insomnia",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "moody",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

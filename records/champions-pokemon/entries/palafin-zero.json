@@ -95,8 +95,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/palafin-zero"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/palafin-zero",
+      "dexNumber": 964,
+      "types": [
+        "water"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 70,
+        "def": 72,
+        "spa": 53,
+        "spd": 62,
+        "spe": 100
+      },
+      "weightKg": 60.2,
+      "abilities": [
+        {
+          "id": "zero-to-hero",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

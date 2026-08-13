@@ -82,8 +82,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/klefki"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/klefki",
+      "dexNumber": 707,
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 57,
+        "atk": 80,
+        "def": 91,
+        "spa": 80,
+        "spd": 87,
+        "spe": 75
+      },
+      "weightKg": 3,
+      "abilities": [
+        {
+          "id": "prankster",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "magician",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

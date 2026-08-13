@@ -98,8 +98,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/glalie"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/glalie",
+      "dexNumber": 362,
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 80,
+        "def": 80,
+        "spa": 80,
+        "spd": 80,
+        "spe": 80
+      },
+      "weightKg": 256.5,
+      "abilities": [
+        {
+          "id": "inner-focus",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "ice-body",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "moody",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

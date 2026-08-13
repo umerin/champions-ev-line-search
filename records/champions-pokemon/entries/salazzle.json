@@ -110,8 +110,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/salazzle"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/salazzle",
+      "dexNumber": 758,
+      "types": [
+        "poison",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 68,
+        "atk": 64,
+        "def": 60,
+        "spa": 111,
+        "spd": 60,
+        "spe": 117
+      },
+      "weightKg": 22.2,
+      "abilities": [
+        {
+          "id": "corrosion",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "oblivious",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

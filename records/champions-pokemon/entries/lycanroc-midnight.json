@@ -110,8 +110,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/lycanroc-midnight"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/lycanroc-midnight",
+      "dexNumber": 745,
+      "types": [
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 115,
+        "def": 75,
+        "spa": 55,
+        "spd": 75,
+        "spe": 82
+      },
+      "weightKg": 25,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "vital-spirit",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "no-guard",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -127,8 +127,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/medicham"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/medicham",
+      "dexNumber": 308,
+      "types": [
+        "fighting",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 60,
+        "def": 75,
+        "spa": 60,
+        "spd": 75,
+        "spe": 80
+      },
+      "weightKg": 31.5,
+      "abilities": [
+        {
+          "id": "pure-power",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "telepathy",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

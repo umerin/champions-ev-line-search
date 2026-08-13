@@ -27,69 +27,198 @@
   },
   "learnset": {
     "moveIds": [
-      "ancient-power",
-      "aqua-jet",
-      "avalanche",
-      "blizzard",
-      "brine",
-      "bubble-beam",
-      "charge-beam",
-      "chilling-water",
-      "dazzling-gleam",
-      "dive",
-      "double-edge",
-      "dream-eater",
-      "expanding-force",
-      "facade",
-      "flash-cannon",
-      "flip-turn",
       "giga-impact",
-      "headbutt",
-      "hidden-power",
-      "hydro-pump",
-      "hyper-beam",
-      "ice-beam",
-      "ice-spinner",
-      "icy-wind",
-      "liquidation",
-      "meteor-beam",
-      "power-gem",
-      "psybeam",
-      "psychic",
-      "psycho-cut",
-      "psyshock",
-      "rage",
+      "double-edge",
+      "facade",
       "rapid-spin",
-      "rollout",
+      "hyper-beam",
+      "tri-attack",
       "round",
-      "scald",
-      "secret-power",
-      "self-destruct",
-      "signal-beam",
-      "skull-bash",
       "snore",
-      "surf",
-      "swift",
-      "tackle",
-      "take-down",
+      "safeguard",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "grass-knot",
+      "liquidation",
+      "dive",
+      "waterfall",
+      "chilling-water",
+      "whirlpool",
+      "rain-dance",
       "thunder",
       "thunderbolt",
-      "tri-attack",
-      "twister",
-      "water-gun",
-      "water-pulse",
-      "waterfall",
-      "whirlpool",
-      "zap-cannon",
-      "zen-headbutt"
+      "meteor-beam",
+      "power-gem",
+      "ancient-power",
+      "ice-spinner",
+      "avalanche",
+      "blizzard",
+      "ice-beam",
+      "icy-wind",
+      "zen-headbutt",
+      "psycho-cut",
+      "rest",
+      "trick",
+      "skill-swap",
+      "dazzling-gleam",
+      "flash-cannon",
+      "shadow-ball"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "minimize",
+        "name": "ちいさくなる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "recover",
+        "name": "じこさいせい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "thunder-wave",
+        "name": "でんじは",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "bulk-up",
+        "name": "ビルドアップ",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "cosmic-power",
+        "name": "コスモパワー",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "gravity",
+        "name": "じゅうりょく",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "light-screen",
+        "name": "ひかりのかべ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "confuse-ray",
+        "name": "あやしいひかり",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "facade",
+        "rapid-spin",
+        "hyper-beam",
+        "tri-attack",
+        "round",
+        "snore",
+        "safeguard",
+        "sleep-talk",
+        "endure",
+        "protect",
+        "substitute",
+        "minimize",
+        "recover",
+        "grass-knot",
+        "liquidation",
+        "dive",
+        "waterfall",
+        "chilling-water",
+        "whirlpool",
+        "rain-dance",
+        "thunder",
+        "thunderbolt",
+        "thunder-wave",
+        "meteor-beam",
+        "power-gem",
+        "ancient-power",
+        "ice-spinner",
+        "avalanche",
+        "blizzard",
+        "ice-beam",
+        "icy-wind",
+        "bulk-up",
+        "zen-headbutt",
+        "psycho-cut",
+        "rest",
+        "trick",
+        "skill-swap",
+        "cosmic-power",
+        "gravity",
+        "light-screen",
+        "agility",
+        "dazzling-gleam",
+        "flash-cannon",
+        "shadow-ball",
+        "confuse-ray"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全47技）。",
+        "耐久ラインサーチには固定威力の攻撃技28件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -109,8 +238,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/starmie"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/starmie",
+      "dexNumber": 121,
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 75,
+        "def": 85,
+        "spa": 100,
+        "spd": 85,
+        "spe": 115
+      },
+      "weightKg": 80,
+      "abilities": [
+        {
+          "id": "illuminate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "natural-cure",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "analytic",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

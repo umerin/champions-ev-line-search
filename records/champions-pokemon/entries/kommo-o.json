@@ -118,8 +118,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/kommo-o"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/kommo-o",
+      "dexNumber": 784,
+      "types": [
+        "dragon",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 110,
+        "def": 125,
+        "spa": 100,
+        "spd": 105,
+        "spe": 85
+      },
+      "weightKg": 78.2,
+      "abilities": [
+        {
+          "id": "bulletproof",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "soundproof",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "overcoat",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

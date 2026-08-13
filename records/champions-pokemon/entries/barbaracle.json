@@ -116,8 +116,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/barbaracle"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/barbaracle",
+      "dexNumber": 689,
+      "types": [
+        "rock",
+        "water"
+      ],
+      "baseStats": {
+        "hp": 72,
+        "atk": 105,
+        "def": 115,
+        "spa": 54,
+        "spd": 86,
+        "spe": 68
+      },
+      "weightKg": 96,
+      "abilities": [
+        {
+          "id": "tough-claws",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sniper",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "pickpocket",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -107,8 +107,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/tyrantrum"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/tyrantrum",
+      "dexNumber": 697,
+      "types": [
+        "rock",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 82,
+        "atk": 121,
+        "def": 119,
+        "spa": 69,
+        "spd": 59,
+        "spe": 71
+      },
+      "weightKg": 270,
+      "abilities": [
+        {
+          "id": "strong-jaw",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "rock-head",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

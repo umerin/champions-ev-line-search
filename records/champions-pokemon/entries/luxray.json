@@ -98,8 +98,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/luxray"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/luxray",
+      "dexNumber": 405,
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 120,
+        "def": 79,
+        "spa": 95,
+        "spd": 79,
+        "spe": 70
+      },
+      "weightKg": 42,
+      "abilities": [
+        {
+          "id": "rivalry",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "intimidate",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "guts",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

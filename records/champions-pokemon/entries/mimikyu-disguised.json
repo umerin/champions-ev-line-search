@@ -94,8 +94,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/mimikyu-disguised"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/mimikyu-disguised",
+      "dexNumber": 778,
+      "types": [
+        "ghost",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "atk": 90,
+        "def": 80,
+        "spa": 50,
+        "spd": 105,
+        "spe": 96
+      },
+      "weightKg": 0.7,
+      "abilities": [
+        {
+          "id": "disguise",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

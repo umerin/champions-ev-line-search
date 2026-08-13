@@ -91,8 +91,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/roserade"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/roserade",
+      "dexNumber": 407,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 70,
+        "def": 65,
+        "spa": 125,
+        "spd": 105,
+        "spe": 90
+      },
+      "weightKg": 14.5,
+      "abilities": [
+        {
+          "id": "natural-cure",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "poison-point",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "technician",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

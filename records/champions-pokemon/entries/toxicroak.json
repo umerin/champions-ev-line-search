@@ -141,8 +141,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/toxicroak"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/toxicroak",
+      "dexNumber": 454,
+      "types": [
+        "poison",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 83,
+        "atk": 106,
+        "def": 65,
+        "spa": 86,
+        "spd": 65,
+        "spe": 85
+      },
+      "weightKg": 44.4,
+      "abilities": [
+        {
+          "id": "anticipation",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "dry-skin",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "poison-touch",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

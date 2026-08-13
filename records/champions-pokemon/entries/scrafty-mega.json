@@ -118,8 +118,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/scrafty-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/scrafty-mega",
+      "dexNumber": 560,
+      "types": [
+        "dark",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 130,
+        "def": 135,
+        "spa": 55,
+        "spd": 135,
+        "spe": 68
+      },
+      "weightKg": 31,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

@@ -118,8 +118,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/arbok"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/arbok",
+      "dexNumber": 24,
+      "types": [
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 95,
+        "def": 69,
+        "spa": 65,
+        "spd": 79,
+        "spe": 80
+      },
+      "weightKg": 65,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "shed-skin",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "unnerve",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

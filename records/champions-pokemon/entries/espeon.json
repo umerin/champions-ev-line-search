@@ -100,8 +100,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/espeon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/espeon",
+      "dexNumber": 196,
+      "types": [
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 65,
+        "def": 60,
+        "spa": 130,
+        "spd": 95,
+        "spe": 110
+      },
+      "weightKg": 26.5,
+      "abilities": [
+        {
+          "id": "synchronize",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "magic-bounce",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

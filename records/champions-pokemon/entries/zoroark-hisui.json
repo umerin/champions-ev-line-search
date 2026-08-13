@@ -103,8 +103,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/zoroark-hisui"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/zoroark-hisui",
+      "dexNumber": 571,
+      "types": [
+        "normal",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "atk": 100,
+        "def": 60,
+        "spa": 125,
+        "spd": 60,
+        "spe": 110
+      },
+      "weightKg": 73,
+      "abilities": [
+        {
+          "id": "illusion",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

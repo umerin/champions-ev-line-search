@@ -100,8 +100,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/skeledirge"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/skeledirge",
+      "dexNumber": 911,
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 104,
+        "atk": 75,
+        "def": 100,
+        "spa": 110,
+        "spd": 75,
+        "spe": 66
+      },
+      "weightKg": 326.5,
+      "abilities": [
+        {
+          "id": "blaze",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "unaware",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

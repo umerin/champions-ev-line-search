@@ -98,8 +98,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/oranguru"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/oranguru",
+      "dexNumber": 765,
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 60,
+        "def": 80,
+        "spa": 90,
+        "spd": 110,
+        "spe": 60
+      },
+      "weightKg": 76,
+      "abilities": [
+        {
+          "id": "inner-focus",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "telepathy",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "symbiosis",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

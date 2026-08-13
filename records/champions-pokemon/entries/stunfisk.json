@@ -95,8 +95,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/stunfisk"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/stunfisk",
+      "dexNumber": 618,
+      "types": [
+        "ground",
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 109,
+        "atk": 66,
+        "def": 84,
+        "spa": 81,
+        "spd": 99,
+        "spe": 32
+      },
+      "weightKg": 11,
+      "abilities": [
+        {
+          "id": "static",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "limber",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sand-veil",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

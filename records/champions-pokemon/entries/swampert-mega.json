@@ -130,8 +130,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/swampert-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/swampert-mega",
+      "dexNumber": 260,
+      "types": [
+        "water",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 110,
+        "spa": 95,
+        "spd": 110,
+        "spe": 70
+      },
+      "weightKg": 102,
+      "abilities": [
+        {
+          "id": "swift-swim",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

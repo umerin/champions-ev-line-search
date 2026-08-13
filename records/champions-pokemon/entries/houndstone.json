@@ -86,8 +86,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/houndstone"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/houndstone",
+      "dexNumber": 972,
+      "types": [
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 72,
+        "atk": 101,
+        "def": 100,
+        "spa": 50,
+        "spd": 97,
+        "spe": 68
+      },
+      "weightKg": 15,
+      "abilities": [
+        {
+          "id": "sand-rush",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "fluffy",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

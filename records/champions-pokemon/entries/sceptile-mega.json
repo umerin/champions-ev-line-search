@@ -133,8 +133,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/sceptile-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/sceptile-mega",
+      "dexNumber": 254,
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 75,
+        "spa": 145,
+        "spd": 85,
+        "spe": 145
+      },
+      "weightKg": 55.2,
+      "abilities": [
+        {
+          "id": "lightning-rod",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

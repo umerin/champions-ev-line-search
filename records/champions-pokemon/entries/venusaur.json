@@ -27,67 +27,274 @@
   },
   "learnset": {
     "moveIds": [
-      "acid-spray",
-      "bind",
-      "body-slam",
-      "bulldoze",
-      "bullet-seed",
-      "cut",
-      "double-edge",
-      "earth-power",
-      "earthquake",
-      "echoed-voice",
-      "energy-ball",
-      "facade",
-      "false-swipe",
-      "frenzy-plant",
-      "fury-cutter",
-      "giga-drain",
       "giga-impact",
-      "grass-pledge",
-      "grassy-glide",
-      "headbutt",
-      "hidden-power",
+      "double-edge",
+      "body-slam",
+      "facade",
       "hyper-beam",
-      "knock-off",
-      "leaf-storm",
-      "magical-leaf",
-      "mega-drain",
-      "mud-slap",
-      "outrage",
-      "petal-blizzard",
-      "petal-dance",
-      "poison-jab",
-      "power-whip",
-      "rage",
-      "razor-leaf",
-      "rock-climb",
-      "rock-smash",
       "round",
-      "secret-power",
-      "seed-bomb",
-      "sludge-bomb",
-      "sludge-wave",
-      "snore",
-      "solar-beam",
-      "stomping-tantrum",
-      "strength",
-      "tackle",
-      "take-down",
-      "tera-blast",
       "terrain-pulse",
+      "weather-ball",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "power-whip",
+      "petal-blizzard",
+      "seed-bomb",
+      "grassy-glide",
       "trailblaze",
+      "bullet-seed",
+      "frenzy-plant",
+      "leaf-storm",
+      "petal-dance",
+      "solar-beam",
+      "energy-ball",
+      "giga-drain",
+      "grass-knot",
+      "grassy-terrain",
+      "synthesis",
+      "sunny-day",
+      "poison-jab",
+      "sludge-wave",
+      "sludge-bomb",
       "venoshock",
-      "vine-whip",
-      "weather-ball"
+      "acid-spray",
+      "earthquake",
+      "bulldoze",
+      "earth-power",
+      "knock-off",
+      "outrage"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "sweet-scent",
+        "name": "あまいかおり",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "worry-seed",
+        "name": "なやみのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "ingrain",
+        "name": "ねをはる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "leech-seed",
+        "name": "やどりぎのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "growth",
+        "name": "せいちょう",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sleep-powder",
+        "name": "ねむりごな",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "toxic",
+        "name": "どくどく",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "poison-powder",
+        "name": "どくのこな",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "light-screen",
+        "name": "ひかりのかべ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "amnesia",
+        "name": "ドわすれ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/HJOM8092.MP4"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "hyper-beam",
+        "round",
+        "terrain-pulse",
+        "weather-ball",
+        "snore",
+        "helping-hand",
+        "sweet-scent",
+        "sleep-talk",
+        "scary-face",
+        "endure",
+        "protect",
+        "substitute",
+        "roar",
+        "swords-dance",
+        "power-whip",
+        "petal-blizzard",
+        "seed-bomb",
+        "grassy-glide",
+        "trailblaze",
+        "bullet-seed",
+        "frenzy-plant",
+        "leaf-storm",
+        "petal-dance",
+        "solar-beam",
+        "energy-ball",
+        "giga-drain",
+        "grass-knot",
+        "grassy-terrain",
+        "synthesis",
+        "sunny-day",
+        "poison-jab",
+        "sludge-wave",
+        "sludge-bomb",
+        "venoshock",
+        "acid-spray",
+        "earthquake",
+        "bulldoze",
+        "earth-power",
+        "knock-off",
+        "outrage",
+        "worry-seed",
+        "ingrain",
+        "leech-seed",
+        "growth",
+        "sleep-powder",
+        "toxic",
+        "poison-powder",
+        "curse",
+        "light-screen",
+        "amnesia",
+        "charm"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全55技）。",
+        "耐久ラインサーチには固定威力の攻撃技31件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -107,8 +314,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/venusaur"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/venusaur",
+      "dexNumber": 3,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 82,
+        "def": 83,
+        "spa": 100,
+        "spd": 100,
+        "spe": 80
+      },
+      "weightKg": 100,
+      "abilities": [
+        {
+          "id": "overgrow",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "chlorophyll",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

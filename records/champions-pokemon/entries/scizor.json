@@ -113,8 +113,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/scizor"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/scizor",
+      "dexNumber": 212,
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 130,
+        "def": 100,
+        "spa": 55,
+        "spd": 80,
+        "spe": 65
+      },
+      "weightKg": 118,
+      "abilities": [
+        {
+          "id": "swarm",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "technician",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "light-metal",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

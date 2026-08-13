@@ -117,8 +117,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/eelektross-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/eelektross-mega",
+      "dexNumber": 604,
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 145,
+        "def": 80,
+        "spa": 135,
+        "spd": 90,
+        "spe": 80
+      },
+      "weightKg": 180,
+      "abilities": [
+        {
+          "id": "eelevate",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

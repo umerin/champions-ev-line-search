@@ -121,8 +121,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/abomasnow-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/abomasnow-mega",
+      "dexNumber": 460,
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 132,
+        "def": 105,
+        "spa": 132,
+        "spd": 105,
+        "spe": 30
+      },
+      "weightKg": 185,
+      "abilities": [
+        {
+          "id": "snow-warning",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

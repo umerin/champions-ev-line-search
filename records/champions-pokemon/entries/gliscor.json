@@ -129,8 +129,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/gliscor"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/gliscor",
+      "dexNumber": 472,
+      "types": [
+        "ground",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 95,
+        "def": 125,
+        "spa": 45,
+        "spd": 75,
+        "spe": 95
+      },
+      "weightKg": 42.5,
+      "abilities": [
+        {
+          "id": "hyper-cutter",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sand-veil",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "poison-heal",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

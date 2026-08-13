@@ -112,8 +112,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/samurott-hisui"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/samurott-hisui",
+      "dexNumber": 503,
+      "types": [
+        "water",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 108,
+        "def": 80,
+        "spa": 100,
+        "spd": 65,
+        "spe": 85
+      },
+      "weightKg": 58.2,
+      "abilities": [
+        {
+          "id": "torrent",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sharpness",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -99,8 +99,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/serperior"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/serperior",
+      "dexNumber": 497,
+      "types": [
+        "grass"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 75,
+        "def": 95,
+        "spa": 75,
+        "spd": 95,
+        "spe": 113
+      },
+      "weightKg": 63,
+      "abilities": [
+        {
+          "id": "overgrow",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "contrary",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

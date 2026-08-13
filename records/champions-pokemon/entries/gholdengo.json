@@ -79,8 +79,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/gholdengo"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/gholdengo",
+      "dexNumber": 1000,
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 87,
+        "atk": 60,
+        "def": 95,
+        "spa": 133,
+        "spd": 91,
+        "spe": 84
+      },
+      "weightKg": 30,
+      "abilities": [
+        {
+          "id": "good-as-gold",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

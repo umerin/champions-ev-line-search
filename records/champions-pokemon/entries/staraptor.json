@@ -91,8 +91,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/staraptor"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/staraptor",
+      "dexNumber": 398,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 120,
+        "def": 70,
+        "spa": 50,
+        "spd": 60,
+        "spe": 100
+      },
+      "weightKg": 24.9,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "reckless",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

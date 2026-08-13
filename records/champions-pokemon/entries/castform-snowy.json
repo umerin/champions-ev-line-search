@@ -92,8 +92,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/castform-snowy"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/castform-snowy",
+      "dexNumber": 351,
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 70,
+        "def": 70,
+        "spa": 70,
+        "spd": 70,
+        "spe": 70
+      },
+      "weightKg": 0.8,
+      "abilities": [
+        {
+          "id": "forecast",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

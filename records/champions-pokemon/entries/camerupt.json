@@ -121,8 +121,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/camerupt"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/camerupt",
+      "dexNumber": 323,
+      "types": [
+        "fire",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 100,
+        "def": 70,
+        "spa": 105,
+        "spd": 75,
+        "spe": 40
+      },
+      "weightKg": 220,
+      "abilities": [
+        {
+          "id": "magma-armor",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "solid-rock",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "anger-point",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

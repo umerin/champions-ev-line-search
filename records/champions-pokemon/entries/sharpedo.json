@@ -111,8 +111,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/sharpedo"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/sharpedo",
+      "dexNumber": 319,
+      "types": [
+        "water",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 120,
+        "def": 40,
+        "spa": 95,
+        "spd": 40,
+        "spe": 95
+      },
+      "weightKg": 88.8,
+      "abilities": [
+        {
+          "id": "rough-skin",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "speed-boost",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

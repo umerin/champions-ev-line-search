@@ -134,8 +134,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/blaziken-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/blaziken-mega",
+      "dexNumber": 257,
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 160,
+        "def": 80,
+        "spa": 130,
+        "spd": 80,
+        "spe": 100
+      },
+      "weightKg": 52,
+      "abilities": [
+        {
+          "id": "speed-boost",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

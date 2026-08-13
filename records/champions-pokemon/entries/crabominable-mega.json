@@ -112,8 +112,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/crabominable-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/crabominable-mega",
+      "dexNumber": 740,
+      "types": [
+        "fighting",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 97,
+        "atk": 157,
+        "def": 122,
+        "spa": 62,
+        "spd": 107,
+        "spe": 33
+      },
+      "weightKg": 252.8,
+      "abilities": [
+        {
+          "id": "iron-fist",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

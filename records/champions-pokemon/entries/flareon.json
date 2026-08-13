@@ -106,8 +106,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/flareon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/flareon",
+      "dexNumber": 136,
+      "types": [
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 130,
+        "def": 60,
+        "spa": 95,
+        "spd": 110,
+        "spe": 65
+      },
+      "weightKg": 25,
+      "abilities": [
+        {
+          "id": "flash-fire",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "guts",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

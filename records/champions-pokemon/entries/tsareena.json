@@ -93,8 +93,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/tsareena"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/tsareena",
+      "dexNumber": 763,
+      "types": [
+        "grass"
+      ],
+      "baseStats": {
+        "hp": 72,
+        "atk": 120,
+        "def": 98,
+        "spa": 50,
+        "spd": 98,
+        "spe": 72
+      },
+      "weightKg": 21.4,
+      "abilities": [
+        {
+          "id": "leaf-guard",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "queenly-majesty",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sweet-veil",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

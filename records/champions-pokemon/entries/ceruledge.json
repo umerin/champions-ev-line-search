@@ -91,8 +91,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/ceruledge"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/ceruledge",
+      "dexNumber": 937,
+      "types": [
+        "fire",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 125,
+        "def": 80,
+        "spa": 60,
+        "spd": 100,
+        "spe": 85
+      },
+      "weightKg": 62,
+      "abilities": [
+        {
+          "id": "flash-fire",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "weak-armor",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

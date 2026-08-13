@@ -78,8 +78,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/aromatisse"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/aromatisse",
+      "dexNumber": 683,
+      "types": [
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 101,
+        "atk": 72,
+        "def": 72,
+        "spa": 99,
+        "spd": 89,
+        "spe": 29
+      },
+      "weightKg": 15.5,
+      "abilities": [
+        {
+          "id": "healer",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "aroma-veil",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

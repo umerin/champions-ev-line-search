@@ -95,8 +95,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/basculegion-male"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/basculegion-male",
+      "dexNumber": 902,
+      "types": [
+        "water",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 120,
+        "atk": 112,
+        "def": 65,
+        "spa": 80,
+        "spd": 75,
+        "spe": 78
+      },
+      "weightKg": 110,
+      "abilities": [
+        {
+          "id": "swift-swim",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "adaptability",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "mold-breaker",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

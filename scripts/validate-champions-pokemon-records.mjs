@@ -57,6 +57,16 @@ for (const item of index.entries) {
     assert(!specialMoveIds.has(move.id), `${item.id}: 特殊技ID重複 ${move.id}`);
     specialMoveIds.add(move.id);
   }
+  if (record.sourceData?.pokeApi) {
+    const source = record.sourceData.pokeApi;
+    assert(typeof source.source === "string" && source.source, `${item.id}: PokeAPIの根拠URLがありません。`);
+    assert(Array.isArray(source.types), `${item.id}: PokeAPIのタイプが配列ではありません。`);
+    assert(source.baseStats && typeof source.baseStats === "object", `${item.id}: PokeAPIの種族値がありません。`);
+    assert(Number.isFinite(source.weightKg) && source.weightKg >= 0, `${item.id}: PokeAPIの体重が不正です。`);
+    assert(Array.isArray(source.abilities), `${item.id}: PokeAPIの特性が配列ではありません。`);
+    assert(!("moveIds" in source), `${item.id}: PokeAPI由来の習得技を保存しないでください。`);
+    assert(!("learnsetComparison" in source), `${item.id}: PokeAPI由来の習得技差分を保存しないでください。`);
+  }
   assert(Array.isArray(record.battleEffects), `${item.id}: battleEffectsが配列ではありません。`);
 
   const learned = new Set();

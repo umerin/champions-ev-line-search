@@ -271,6 +271,63 @@
       "type": "object",
       "description": "将来必要になった情報を、耐久ラインサーチ本体へ影響させず記録する領域。",
       "additionalProperties": true
+    },
+    "sourceData": {
+      "type": "object",
+      "description": "外部データの確認用スナップショット。Webアプリの検索データには使わない。",
+      "properties": {
+        "pokeApi": {
+          "type": "object",
+          "required": [
+            "retrievedAt",
+            "source",
+            "dexNumber",
+            "types",
+            "baseStats",
+            "weightKg",
+            "abilities"
+          ],
+          "properties": {
+            "retrievedAt": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string",
+              "format": "uri"
+            },
+            "dexNumber": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "types": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "baseStats": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "weightKg": {
+              "type": "number",
+              "minimum": 0
+            },
+            "abilities": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true

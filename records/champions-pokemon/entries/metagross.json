@@ -117,8 +117,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/metagross"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/metagross",
+      "dexNumber": 376,
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 135,
+        "def": 130,
+        "spa": 95,
+        "spd": 90,
+        "spe": 70
+      },
+      "weightKg": 550,
+      "abilities": [
+        {
+          "id": "clear-body",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "light-metal",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

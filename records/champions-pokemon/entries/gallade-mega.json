@@ -138,8 +138,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/gallade-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/gallade-mega",
+      "dexNumber": 475,
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 68,
+        "atk": 165,
+        "def": 95,
+        "spa": 65,
+        "spd": 115,
+        "spe": 110
+      },
+      "weightKg": 56.4,
+      "abilities": [
+        {
+          "id": "inner-focus",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

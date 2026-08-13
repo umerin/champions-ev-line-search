@@ -113,8 +113,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/aurorus"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/aurorus",
+      "dexNumber": 699,
+      "types": [
+        "rock",
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 123,
+        "atk": 77,
+        "def": 72,
+        "spa": 99,
+        "spd": 92,
+        "spe": 58
+      },
+      "weightKg": 225,
+      "abilities": [
+        {
+          "id": "refrigerate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "snow-warning",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

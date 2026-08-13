@@ -85,8 +85,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/ditto"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/ditto",
+      "dexNumber": 132,
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 48,
+        "atk": 48,
+        "def": 48,
+        "spa": 48,
+        "spd": 48,
+        "spe": 48
+      },
+      "weightKg": 4,
+      "abilities": [
+        {
+          "id": "limber",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "imposter",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

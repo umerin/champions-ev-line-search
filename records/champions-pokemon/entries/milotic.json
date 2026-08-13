@@ -103,8 +103,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/milotic"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/milotic",
+      "dexNumber": 350,
+      "types": [
+        "water"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 60,
+        "def": 79,
+        "spa": 100,
+        "spd": 125,
+        "spe": 81
+      },
+      "weightKg": 162,
+      "abilities": [
+        {
+          "id": "marvel-scale",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "competitive",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "cute-charm",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

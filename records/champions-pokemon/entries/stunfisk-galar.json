@@ -90,8 +90,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/stunfisk-galar"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/stunfisk-galar",
+      "dexNumber": 618,
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 109,
+        "atk": 81,
+        "def": 99,
+        "spa": 66,
+        "spd": 84,
+        "spe": 32
+      },
+      "weightKg": 20.5,
+      "abilities": [
+        {
+          "id": "mimicry",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

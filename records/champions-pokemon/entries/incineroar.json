@@ -125,8 +125,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/incineroar"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/incineroar",
+      "dexNumber": 727,
+      "types": [
+        "fire",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 115,
+        "def": 90,
+        "spa": 80,
+        "spd": 90,
+        "spe": 60
+      },
+      "weightKg": 83,
+      "abilities": [
+        {
+          "id": "blaze",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "intimidate",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

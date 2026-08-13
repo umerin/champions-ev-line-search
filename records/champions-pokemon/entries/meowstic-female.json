@@ -97,8 +97,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/meowstic-female"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/meowstic-female",
+      "dexNumber": 678,
+      "types": [
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 74,
+        "atk": 48,
+        "def": 76,
+        "spa": 83,
+        "spd": 81,
+        "spe": 104
+      },
+      "weightKg": 8.5,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "infiltrator",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "competitive",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

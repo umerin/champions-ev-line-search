@@ -118,8 +118,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/lopunny"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/lopunny",
+      "dexNumber": 428,
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 76,
+        "def": 84,
+        "spa": 54,
+        "spd": 96,
+        "spe": 105
+      },
+      "weightKg": 33.3,
+      "abilities": [
+        {
+          "id": "cute-charm",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "klutz",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "limber",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

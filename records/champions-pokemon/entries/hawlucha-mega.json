@@ -121,8 +121,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/hawlucha-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/hawlucha-mega",
+      "dexNumber": 701,
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 78,
+        "atk": 137,
+        "def": 100,
+        "spa": 74,
+        "spd": 93,
+        "spe": 118
+      },
+      "weightKg": 25,
+      "abilities": [
+        {
+          "id": "no-guard",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

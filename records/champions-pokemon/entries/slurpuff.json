@@ -76,8 +76,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/slurpuff"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/slurpuff",
+      "dexNumber": 685,
+      "types": [
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 82,
+        "atk": 80,
+        "def": 86,
+        "spa": 85,
+        "spd": 75,
+        "spe": 72
+      },
+      "weightKg": 5,
+      "abilities": [
+        {
+          "id": "sweet-veil",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "unburden",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

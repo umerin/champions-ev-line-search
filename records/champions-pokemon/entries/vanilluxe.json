@@ -90,8 +90,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/vanilluxe"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/vanilluxe",
+      "dexNumber": 584,
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "atk": 95,
+        "def": 85,
+        "spa": 110,
+        "spd": 95,
+        "spe": 79
+      },
+      "weightKg": 57.5,
+      "abilities": [
+        {
+          "id": "ice-body",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "snow-warning",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "weak-armor",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

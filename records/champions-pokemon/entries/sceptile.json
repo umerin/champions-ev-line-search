@@ -132,8 +132,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/sceptile"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/sceptile",
+      "dexNumber": 254,
+      "types": [
+        "grass"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 85,
+        "def": 65,
+        "spa": 105,
+        "spd": 85,
+        "spe": 120
+      },
+      "weightKg": 52.2,
+      "abilities": [
+        {
+          "id": "overgrow",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "unburden",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

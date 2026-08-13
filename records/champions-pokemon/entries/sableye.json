@@ -127,8 +127,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/sableye"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/sableye",
+      "dexNumber": 302,
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 75,
+        "def": 75,
+        "spa": 65,
+        "spd": 65,
+        "spe": 50
+      },
+      "weightKg": 11,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "stall",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "prankster",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

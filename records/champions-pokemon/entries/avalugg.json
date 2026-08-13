@@ -97,8 +97,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/avalugg"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/avalugg",
+      "dexNumber": 713,
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 117,
+        "def": 184,
+        "spa": 44,
+        "spd": 46,
+        "spe": 28
+      },
+      "weightKg": 505,
+      "abilities": [
+        {
+          "id": "own-tempo",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "ice-body",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sturdy",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

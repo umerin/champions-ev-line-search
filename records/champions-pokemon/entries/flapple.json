@@ -88,8 +88,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/flapple"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/flapple",
+      "dexNumber": 841,
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 80,
+        "spa": 95,
+        "spd": 60,
+        "spe": 70
+      },
+      "weightKg": 1,
+      "abilities": [
+        {
+          "id": "ripen",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "gluttony",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "hustle",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

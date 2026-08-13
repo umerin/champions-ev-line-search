@@ -157,8 +157,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/rhyperior"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/rhyperior",
+      "dexNumber": 464,
+      "types": [
+        "ground",
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 115,
+        "atk": 140,
+        "def": 130,
+        "spa": 55,
+        "spd": 55,
+        "spe": 40
+      },
+      "weightKg": 282.8,
+      "abilities": [
+        {
+          "id": "lightning-rod",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "solid-rock",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "reckless",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

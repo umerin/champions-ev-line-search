@@ -101,8 +101,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pyroar-male"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pyroar-male",
+      "dexNumber": 668,
+      "types": [
+        "fire",
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 86,
+        "atk": 68,
+        "def": 72,
+        "spa": 109,
+        "spd": 66,
+        "spe": 106
+      },
+      "weightKg": 81.5,
+      "abilities": [
+        {
+          "id": "rivalry",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "unnerve",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "moxie",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

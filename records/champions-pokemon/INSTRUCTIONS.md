@@ -13,7 +13,7 @@
 
 1. 対象ポケモンを `index.json` または `rg` で探し、対応する個別ファイルだけを読む。
 2. 調査中の情報は先に個別ファイルへ記録する。Webアプリ用の `data/*.json` へは、反映を明示された場合だけ同期する。
-3. 習得技は通常 `learnset.moveIds` に技IDで記録する。`へんしん`のように耐久ラインサーチ本体で扱わない技は `learnset.specialMoves` に記録し、`data/moves.json` へ追加しない。技の接触判定は `isContactMove`、カテゴリは `moveCategories` で記録する。
+3. 習得技はチャンピオンズのゲーム画面で確認できたものだけを記録する。通常は `learnset.moveIds` に技IDで記録し、変化技や変動威力技など耐久ラインサーチ本体で扱わない技は `learnset.specialMoves` に記録する。技の接触判定は `isContactMove`、カテゴリは `moveCategories` で記録する。
 4. 根拠URL・資料名は `learnset.verification.sources` または `research.sources` に記録する。
 5. 習得を確認できた技は `verifiedMoveIds`、誤登録と確認できた技は `rejectedMoveIds` に記録する。
 6. 全習得技を確認できた場合だけ `learnset.verification.status` を `verified` にする。
@@ -31,6 +31,12 @@ node scripts\validate-champions-pokemon-records.mjs
 
 ```powershell
 node scripts\update-champions-pokemon-weights.mjs
+```
+
+基礎値・タイプ・体重・特性をPokéAPIからまとめて確認する場合は次を実行する。PokéAPIの習得技はチャンピオンズの習得可否と一致しないため、取得・保存しない。
+
+```powershell
+node scripts\enrich-champions-pokemon-from-pokeapi.mjs
 ```
 
 `initialize-champions-pokemon-records.mjs` は未作成の個別ファイルだけを初期生成し、既存の調査記録を上書きしません。

@@ -27,63 +27,252 @@
   },
   "learnset": {
     "moveIds": [
-      "acid",
-      "acid-spray",
-      "bind",
-      "body-slam",
-      "bug-bite",
-      "bullet-seed",
-      "clear-smog",
-      "cut",
-      "double-edge",
-      "energy-ball",
-      "facade",
-      "giga-drain",
       "giga-impact",
-      "grassy-glide",
-      "headbutt",
-      "hidden-power",
+      "body-slam",
+      "facade",
+      "wrap",
       "hyper-beam",
-      "infestation",
-      "knock-off",
+      "round",
+      "weather-ball",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "bullet-seed",
+      "trailblaze",
+      "grassy-glide",
+      "seed-bomb",
       "leaf-blade",
+      "power-whip",
+      "grass-knot",
+      "giga-drain",
+      "energy-ball",
+      "solar-beam",
       "leaf-storm",
-      "leaf-tornado",
+      "grassy-terrain",
+      "synthesis",
+      "sunny-day",
+      "bug-bite",
       "leech-life",
       "lunge",
-      "magical-leaf",
-      "mega-drain",
-      "poison-jab",
-      "pounce",
-      "power-whip",
-      "rage",
-      "razor-leaf",
-      "round",
-      "secret-power",
-      "seed-bomb",
-      "slam",
-      "sludge-bomb",
-      "sludge-wave",
-      "snore",
-      "solar-beam",
+      "rest",
       "sucker-punch",
-      "swift",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "trailblaze",
-      "venoshock",
-      "vine-whip",
-      "weather-ball",
-      "wrap"
+      "knock-off",
+      "mud-slap"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "tickle",
+        "name": "くすぐる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "spit-up",
+        "name": "はきだす",
+        "type": "normal",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "strength-sap",
+        "name": "ちからをすいとる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "worry-seed",
+        "name": "なやみのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "ingrain",
+        "name": "ねをはる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "sleep-powder",
+        "name": "ねむりごな",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "stun-spore",
+        "name": "しびれごな",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "growth",
+        "name": "せいちょう",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "poison-powder",
+        "name": "どくのこな",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "toxic",
+        "name": "どくどく",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "gastro-acid",
+        "name": "いえき",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic-spikes",
+        "name": "どくびし",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reflect",
+        "name": "リフレクター",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "body-slam",
+        "facade",
+        "wrap",
+        "hyper-beam",
+        "round",
+        "weather-ball",
+        "snore",
+        "tickle",
+        "spit-up",
+        "sleep-talk",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "bullet-seed",
+        "trailblaze",
+        "grassy-glide",
+        "seed-bomb",
+        "leaf-blade",
+        "power-whip",
+        "strength-sap",
+        "grass-knot",
+        "giga-drain",
+        "energy-ball",
+        "solar-beam",
+        "leaf-storm",
+        "grassy-terrain",
+        "worry-seed",
+        "ingrain",
+        "synthesis",
+        "sleep-powder",
+        "stun-spore",
+        "growth",
+        "sunny-day",
+        "bug-bite",
+        "leech-life",
+        "lunge",
+        "poison-powder",
+        "toxic",
+        "gastro-acid",
+        "toxic-spikes",
+        "reflect",
+        "rest",
+        "sucker-punch",
+        "knock-off",
+        "mud-slap"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全47技）。",
+        "耐久ラインサーチには固定威力の攻撃技24件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。",
+        "通常形態のゲーム内一覧をメガ形態へ同期。"
+      ]
     }
   },
   "weight": {
@@ -103,8 +292,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/victreebel-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/victreebel-mega",
+      "dexNumber": 71,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 125,
+        "def": 85,
+        "spa": 135,
+        "spd": 95,
+        "spe": 70
+      },
+      "weightKg": 125.5,
+      "abilities": [
+        {
+          "id": "innards-out",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

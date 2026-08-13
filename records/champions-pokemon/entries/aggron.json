@@ -135,8 +135,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/aggron"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/aggron",
+      "dexNumber": 306,
+      "types": [
+        "steel",
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 180,
+        "spa": 60,
+        "spd": 60,
+        "spe": 50
+      },
+      "weightKg": 360,
+      "abilities": [
+        {
+          "id": "sturdy",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "rock-head",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "heavy-metal",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

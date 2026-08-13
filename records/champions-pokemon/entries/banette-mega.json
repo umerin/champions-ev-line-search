@@ -98,8 +98,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/banette-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/banette-mega",
+      "dexNumber": 354,
+      "types": [
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 64,
+        "atk": 165,
+        "def": 75,
+        "spa": 93,
+        "spd": 83,
+        "spe": 75
+      },
+      "weightKg": 13,
+      "abilities": [
+        {
+          "id": "prankster",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

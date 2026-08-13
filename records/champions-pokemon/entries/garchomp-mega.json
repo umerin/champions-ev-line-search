@@ -119,8 +119,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/garchomp-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/garchomp-mega",
+      "dexNumber": 445,
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 108,
+        "atk": 170,
+        "def": 115,
+        "spa": 120,
+        "spd": 95,
+        "spe": 92
+      },
+      "weightKg": 95,
+      "abilities": [
+        {
+          "id": "sand-force",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

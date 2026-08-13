@@ -117,8 +117,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/politoed"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/politoed",
+      "dexNumber": 186,
+      "types": [
+        "water"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 75,
+        "def": 75,
+        "spa": 90,
+        "spd": 100,
+        "spe": 70
+      },
+      "weightKg": 33.9,
+      "abilities": [
+        {
+          "id": "water-absorb",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "damp",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "drizzle",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

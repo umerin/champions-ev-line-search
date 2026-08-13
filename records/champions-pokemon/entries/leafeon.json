@@ -102,8 +102,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/leafeon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/leafeon",
+      "dexNumber": 470,
+      "types": [
+        "grass"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 110,
+        "def": 130,
+        "spa": 60,
+        "spd": 65,
+        "spe": 95
+      },
+      "weightKg": 25.5,
+      "abilities": [
+        {
+          "id": "leaf-guard",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "chlorophyll",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -86,8 +86,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/rotom-wash"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/rotom-wash",
+      "dexNumber": 479,
+      "types": [
+        "electric",
+        "water"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 65,
+        "def": 107,
+        "spa": 105,
+        "spd": 107,
+        "spe": 86
+      },
+      "weightKg": 0.3,
+      "abilities": [
+        {
+          "id": "levitate",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

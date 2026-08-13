@@ -1,7 +1,7 @@
 const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
-  moves: "./data/moves.json?v=20260813-1",
-  learnsets: "./data/learnsets.json?v=20260813-2",
+  moves: "./data/moves.json?v=20260814-1",
+  learnsets: "./data/learnsets.json?v=20260814-1",
   battleEffects: "./data/battle-effects.json?v=20260813-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",

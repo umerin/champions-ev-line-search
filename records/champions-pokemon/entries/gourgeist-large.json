@@ -95,8 +95,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/gourgeist-large"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/gourgeist-large",
+      "dexNumber": 711,
+      "types": [
+        "ghost",
+        "grass"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 95,
+        "def": 122,
+        "spa": 58,
+        "spd": 75,
+        "spe": 69
+      },
+      "weightKg": 14,
+      "abilities": [
+        {
+          "id": "pickup",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "frisk",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "insomnia",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -45,6 +45,7 @@ NOTICE.md
 - `moves.json` の `moveCategories` は、切り技 `slicing`・パンチ技 `punch`・噛み技 `bite`・弾 `bullet`・音 `sound`・波動 `pulse`・踊り `dance`・風 `wind`・粉 `powder` など、技のカテゴリを配列で管理します。
 - `learnsets.json` はポケモンIDごとの習得技ID一覧を管理します。
 - `battle-effects.json` は特性・天候などの対象、補正値、検索結果の表示を管理します。
+- `records/champions-pokemon/` はチャンピオンズ対象ポケモンだけのAI編集用記録です。PokeAPIの確認用データや差分を保存しますが、Webアプリは読み込みません。
 - 更新後は `node scripts/validate-data.mjs` でID・重複・対象数を高速に検証できます。
 - ステータスポイントは0-32の33段階、合計66として扱います。現在のH/B/Dポイントと残りポイントの合計が66を超える入力は検索できません。
 - 非HPは性格補正前にステータスポイントを加算し、HPは最終値に加算します。公式の詳細式が確認できたら `app.js` の計算関数だけ差し替えます。

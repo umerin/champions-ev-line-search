@@ -85,8 +85,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/sinistcha"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/sinistcha",
+      "dexNumber": 1013,
+      "types": [
+        "grass",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "atk": 60,
+        "def": 106,
+        "spa": 121,
+        "spd": 80,
+        "spe": 70
+      },
+      "weightKg": 2.2,
+      "abilities": [
+        {
+          "id": "hospitality",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "heatproof",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

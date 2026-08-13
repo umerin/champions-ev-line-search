@@ -103,8 +103,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/bastiodon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/bastiodon",
+      "dexNumber": 411,
+      "types": [
+        "rock",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 52,
+        "def": 168,
+        "spa": 47,
+        "spd": 138,
+        "spe": 30
+      },
+      "weightKg": 149.5,
+      "abilities": [
+        {
+          "id": "sturdy",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "soundproof",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

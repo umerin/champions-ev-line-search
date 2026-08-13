@@ -82,8 +82,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/glimmora-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/glimmora-mega",
+      "dexNumber": 970,
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 83,
+        "atk": 90,
+        "def": 105,
+        "spa": 150,
+        "spd": 96,
+        "spe": 101
+      },
+      "weightKg": 77,
+      "abilities": [
+        {
+          "id": "adaptability",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

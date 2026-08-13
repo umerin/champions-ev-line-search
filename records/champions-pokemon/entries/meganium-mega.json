@@ -27,65 +27,253 @@
   },
   "learnset": {
     "moveIds": [
-      "ancient-power",
-      "body-press",
-      "body-slam",
-      "bulldoze",
-      "bullet-seed",
-      "cut",
-      "dazzling-gleam",
-      "double-edge",
-      "dragon-tail",
-      "earth-power",
-      "earthquake",
-      "echoed-voice",
-      "energy-ball",
-      "facade",
-      "frenzy-plant",
-      "fury-cutter",
-      "giga-drain",
       "giga-impact",
-      "grass-pledge",
-      "grassy-glide",
-      "headbutt",
-      "hidden-power",
+      "double-edge",
+      "body-slam",
+      "facade",
+      "endeavor",
       "hyper-beam",
-      "iron-tail",
-      "knock-off",
-      "leaf-blade",
-      "leaf-storm",
-      "magical-leaf",
-      "mud-slap",
-      "outrage",
-      "petal-blizzard",
-      "petal-dance",
-      "pollen-puff",
-      "razor-leaf",
-      "rock-climb",
-      "rock-smash",
       "round",
-      "secret-power",
-      "seed-bomb",
-      "snore",
-      "solar-beam",
-      "solar-blade",
-      "stomping-tantrum",
-      "strength",
-      "tackle",
-      "take-down",
-      "tera-blast",
-      "trailblaze",
-      "vine-whip",
       "weather-ball",
-      "zen-headbutt"
+      "snore",
+      "helping-hand",
+      "safeguard",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "solar-blade",
+      "frenzy-plant",
+      "leaf-storm",
+      "petal-dance",
+      "solar-beam",
+      "energy-ball",
+      "grassy-terrain",
+      "grass-knot",
+      "synthesis",
+      "sunny-day",
+      "pollen-puff",
+      "ancient-power",
+      "earthquake",
+      "stomping-tantrum",
+      "bulldoze",
+      "body-press",
+      "mud-slap",
+      "earth-power",
+      "zen-headbutt",
+      "rest",
+      "dragon-tail",
+      "outrage",
+      "knock-off",
+      "iron-tail",
+      "dazzling-gleam"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "flail",
+        "name": "じたばた",
+        "type": "normal",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sweet-scent",
+        "name": "あまいかおり",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "encore",
+        "name": "アンコール",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "ingrain",
+        "name": "ねをはる",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "leech-seed",
+        "name": "やどりぎのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "poison-powder",
+        "name": "どくのこな",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "powder"
+        ]
+      },
+      {
+        "id": "heal-pulse",
+        "name": "いやしのはどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "reflect",
+        "name": "リフレクター",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "light-screen",
+        "name": "ひかりのかべ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fake-tears",
+        "name": "うそなき",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-50-10.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "endeavor",
+        "flail",
+        "hyper-beam",
+        "round",
+        "weather-ball",
+        "snore",
+        "helping-hand",
+        "sweet-scent",
+        "encore",
+        "safeguard",
+        "sleep-talk",
+        "endure",
+        "protect",
+        "substitute",
+        "swords-dance",
+        "solar-blade",
+        "frenzy-plant",
+        "leaf-storm",
+        "petal-dance",
+        "solar-beam",
+        "energy-ball",
+        "grassy-terrain",
+        "grass-knot",
+        "ingrain",
+        "synthesis",
+        "leech-seed",
+        "sunny-day",
+        "pollen-puff",
+        "ancient-power",
+        "poison-powder",
+        "earthquake",
+        "stomping-tantrum",
+        "bulldoze",
+        "body-press",
+        "mud-slap",
+        "earth-power",
+        "zen-headbutt",
+        "heal-pulse",
+        "rest",
+        "reflect",
+        "light-screen",
+        "dragon-tail",
+        "outrage",
+        "curse",
+        "knock-off",
+        "fake-tears",
+        "iron-tail",
+        "dazzling-gleam",
+        "charm"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全53技）。",
+        "耐久ラインサーチには固定威力の攻撃技28件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。",
+        "通常形態のゲーム内一覧をメガ形態へ同期。"
+      ]
     }
   },
   "weight": {
@@ -116,8 +304,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/meganium-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/meganium-mega",
+      "dexNumber": 154,
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 92,
+        "def": 115,
+        "spa": 143,
+        "spd": 115,
+        "spe": 80
+      },
+      "weightKg": 201,
+      "abilities": [
+        {
+          "id": "mega-sol",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

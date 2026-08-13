@@ -98,8 +98,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/malamar-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/malamar-mega",
+      "dexNumber": 687,
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 86,
+        "atk": 102,
+        "def": 88,
+        "spa": 98,
+        "spd": 120,
+        "spe": 88
+      },
+      "weightKg": 69.8,
+      "abilities": [
+        {
+          "id": "contrary",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

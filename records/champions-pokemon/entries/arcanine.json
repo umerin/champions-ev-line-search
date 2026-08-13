@@ -26,72 +26,250 @@
   },
   "learnset": {
     "moveIds": [
-      "aerial-ace",
-      "bite",
-      "body-slam",
-      "bulldoze",
-      "burn-up",
-      "close-combat",
-      "covet",
-      "crunch",
-      "dig",
+      "giga-impact",
       "double-edge",
-      "dragon-breath",
-      "dragon-pulse",
-      "ember",
+      "thrash",
+      "body-slam",
       "extreme-speed",
       "facade",
-      "fire-blast",
-      "fire-fang",
-      "fire-spin",
-      "flame-charge",
-      "flame-wheel",
-      "flamethrower",
-      "flare-blitz",
-      "giga-impact",
-      "headbutt",
-      "heat-wave",
-      "hidden-power",
+      "covet",
       "hyper-beam",
       "hyper-voice",
-      "incinerate",
-      "iron-head",
-      "iron-tail",
-      "mud-slap",
-      "outrage",
-      "overheat",
-      "play-rough",
-      "psychic-fangs",
-      "rage",
-      "raging-fury",
-      "retaliate",
-      "rock-climb",
-      "rock-smash",
       "round",
-      "scorching-sands",
-      "secret-power",
-      "skull-bash",
-      "snarl",
       "snore",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
       "solar-beam",
-      "strength",
-      "superpower",
-      "swift",
-      "take-down",
+      "raging-fury",
+      "flare-blitz",
       "temper-flare",
-      "tera-blast",
-      "thief",
-      "thrash",
+      "fire-fang",
+      "flame-charge",
+      "burn-up",
+      "overheat",
+      "fire-blast",
+      "heat-wave",
+      "flamethrower",
+      "fire-spin",
+      "sunny-day",
+      "wild-charge",
       "thunder-fang",
-      "wild-charge"
+      "aerial-ace",
+      "dig",
+      "bulldoze",
+      "scorching-sands",
+      "close-combat",
+      "psychic-fangs",
+      "rest",
+      "outrage",
+      "dragon-pulse",
+      "crunch",
+      "thief",
+      "bite",
+      "snarl",
+      "iron-tail",
+      "iron-head",
+      "play-rough"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "howl",
+        "name": "とおぼえ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "sound"
+        ]
+      },
+      {
+        "id": "morning-sun",
+        "name": "あさのひざし",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "sound"
+        ]
+      },
+      {
+        "id": "heat-crash",
+        "name": "ヒートスタンプ",
+        "type": "fire",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": true,
+        "moveCategories": []
+      },
+      {
+        "id": "will-o-wisp",
+        "name": "おにび",
+        "type": "fire",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": true,
+        "moveCategories": []
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
-      "rejectedMoveIds": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-35-53.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "thrash",
+        "body-slam",
+        "extreme-speed",
+        "facade",
+        "covet",
+        "hyper-beam",
+        "hyper-voice",
+        "round",
+        "snore",
+        "howl",
+        "helping-hand",
+        "morning-sun",
+        "sleep-talk",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "roar",
+        "solar-beam",
+        "raging-fury",
+        "flare-blitz",
+        "temper-flare",
+        "fire-fang",
+        "flame-charge",
+        "heat-crash",
+        "burn-up",
+        "overheat",
+        "fire-blast",
+        "heat-wave",
+        "flamethrower",
+        "fire-spin",
+        "will-o-wisp",
+        "sunny-day",
+        "wild-charge",
+        "thunder-fang",
+        "aerial-ace",
+        "dig",
+        "bulldoze",
+        "scorching-sands",
+        "close-combat",
+        "reversal",
+        "psychic-fangs",
+        "rest",
+        "agility",
+        "curse",
+        "outrage",
+        "dragon-pulse",
+        "crunch",
+        "thief",
+        "bite",
+        "snarl",
+        "iron-tail",
+        "iron-head",
+        "play-rough",
+        "charm"
+      ],
+      "rejectedMoveIds": [
+        "dragon-breath",
+        "ember",
+        "flame-wheel",
+        "headbutt",
+        "hidden-power",
+        "incinerate",
+        "mud-slap",
+        "rage",
+        "retaliate",
+        "rock-climb",
+        "rock-smash",
+        "secret-power",
+        "skull-bash",
+        "strength",
+        "superpower",
+        "swift",
+        "take-down",
+        "tera-blast"
+      ],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全57技）。",
+        "耐久ラインサーチには固定威力の攻撃技40件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -111,8 +289,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/arcanine"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/arcanine",
+      "dexNumber": 59,
+      "types": [
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 110,
+        "def": 80,
+        "spa": 100,
+        "spd": 80,
+        "spe": 95
+      },
+      "weightKg": 155,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "flash-fire",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "justified",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

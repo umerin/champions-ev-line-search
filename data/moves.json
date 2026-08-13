@@ -533,7 +533,7 @@
       "ja": "しめつける",
       "jaHrkt": "しめつける"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "physical",
     "power": 15,
@@ -548,7 +548,7 @@
       "ja": "かみつく",
       "jaHrkt": "かみつく"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "dark",
     "category": "physical",
     "power": 60,
@@ -816,7 +816,7 @@
       "ja": "とびはねる",
       "jaHrkt": "とびはねる"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "flying",
     "category": "physical",
     "power": 85,
@@ -3049,7 +3049,7 @@
       "ja": "みらいよち",
       "jaHrkt": "みらいよち"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "psychic",
     "category": "special",
     "power": 120,
@@ -5072,7 +5072,7 @@
       "ja": "はなふぶき",
       "jaHrkt": "はなふぶき"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "grass",
     "category": "physical",
     "power": 90,
@@ -5760,7 +5760,7 @@
       "ja": "シェルブレード",
       "jaHrkt": "シェルブレード"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "water",
     "category": "physical",
     "power": 75,
@@ -7398,7 +7398,7 @@
       "ja": "スイープビンタ",
       "jaHrkt": "スイープビンタ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "physical",
     "power": 25,
@@ -7458,7 +7458,7 @@
       "ja": "テラバースト",
       "jaHrkt": "テラバースト"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "special",
     "power": 80,
@@ -8276,7 +8276,7 @@
       "ja": "まきつく",
       "jaHrkt": "まきつく"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "physical",
     "power": 15,
@@ -8370,7 +8370,7 @@
       "ja": "がむしゃら",
       "jaHrkt": "がむしゃら"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "physical",
     "power": 0,
@@ -8402,7 +8402,7 @@
       "ja": "まねっこ",
       "jaHrkt": "まねっこ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8418,7 +8418,7 @@
       "ja": "てだすけ",
       "jaHrkt": "てだすけ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8434,7 +8434,7 @@
       "ja": "バトンタッチ",
       "jaHrkt": "バトンタッチ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8450,7 +8450,7 @@
       "ja": "しんぴのまもり",
       "jaHrkt": "しんぴのまもり"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8466,7 +8466,7 @@
       "ja": "ねごと",
       "jaHrkt": "ねごと"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8482,7 +8482,7 @@
       "ja": "こらえる",
       "jaHrkt": "こらえる"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8498,7 +8498,7 @@
       "ja": "まもる",
       "jaHrkt": "まもる"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8514,7 +8514,7 @@
       "ja": "みがわり",
       "jaHrkt": "みがわり"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,
@@ -8530,7 +8530,7 @@
       "ja": "くさむすび",
       "jaHrkt": "くさむすび"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "grass",
     "category": "special",
     "power": 0,
@@ -8546,7 +8546,7 @@
       "ja": "グラスフィールド",
       "jaHrkt": "グラスフィールド"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "grass",
     "category": "status",
     "power": 0,
@@ -8562,7 +8562,7 @@
       "ja": "こうごうせい",
       "jaHrkt": "こうごうせい"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "grass",
     "category": "status",
     "power": 0,
@@ -8580,7 +8580,7 @@
       "ja": "にほんばれ",
       "jaHrkt": "にほんばれ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fire",
     "category": "status",
     "power": 0,
@@ -8596,7 +8596,7 @@
       "ja": "あまごい",
       "jaHrkt": "あまごい"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "water",
     "category": "status",
     "power": 0,
@@ -8612,7 +8612,7 @@
       "ja": "めいそう",
       "jaHrkt": "めいそう"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "psychic",
     "category": "status",
     "power": 0,
@@ -8628,7 +8628,7 @@
       "ja": "スキルスワップ",
       "jaHrkt": "スキルスワップ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "psychic",
     "category": "status",
     "power": 0,
@@ -8644,7 +8644,7 @@
       "ja": "トリック",
       "jaHrkt": "トリック"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "psychic",
     "category": "status",
     "power": 0,
@@ -8660,7 +8660,7 @@
       "ja": "ねむる",
       "jaHrkt": "ねむる"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "psychic",
     "category": "status",
     "power": 0,
@@ -8678,7 +8678,7 @@
       "ja": "ミストフィールド",
       "jaHrkt": "ミストフィールド"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fairy",
     "category": "status",
     "power": 0,

@@ -111,8 +111,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/raichu-alola"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/raichu-alola",
+      "dexNumber": 26,
+      "types": [
+        "electric",
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 85,
+        "def": 50,
+        "spa": 95,
+        "spd": 85,
+        "spe": 110
+      },
+      "weightKg": 21,
+      "abilities": [
+        {
+          "id": "surge-surfer",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

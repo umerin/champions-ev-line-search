@@ -96,8 +96,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/quaquaval"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/quaquaval",
+      "dexNumber": 914,
+      "types": [
+        "water",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 85,
+        "atk": 120,
+        "def": 80,
+        "spa": 85,
+        "spd": 75,
+        "spe": 85
+      },
+      "weightKg": 61.9,
+      "abilities": [
+        {
+          "id": "torrent",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "moxie",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

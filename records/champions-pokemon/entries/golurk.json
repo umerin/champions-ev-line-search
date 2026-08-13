@@ -120,8 +120,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/golurk"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/golurk",
+      "dexNumber": 623,
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 89,
+        "atk": 124,
+        "def": 80,
+        "spa": 55,
+        "spd": 80,
+        "spe": 55
+      },
+      "weightKg": 330,
+      "abilities": [
+        {
+          "id": "iron-fist",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "klutz",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "no-guard",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

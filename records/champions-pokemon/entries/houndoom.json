@@ -110,8 +110,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/houndoom"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/houndoom",
+      "dexNumber": 229,
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 90,
+        "def": 50,
+        "spa": 110,
+        "spd": 80,
+        "spe": 95
+      },
+      "weightKg": 35,
+      "abilities": [
+        {
+          "id": "early-bird",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "flash-fire",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "unnerve",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

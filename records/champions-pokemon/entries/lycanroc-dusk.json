@@ -100,8 +100,37 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/lycanroc-dusk"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/lycanroc-dusk",
+      "dexNumber": 745,
+      "types": [
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 117,
+        "def": 65,
+        "spa": 55,
+        "spd": 65,
+        "spe": 110
+      },
+      "weightKg": 25,
+      "abilities": [
+        {
+          "id": "tough-claws",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

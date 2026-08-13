@@ -116,8 +116,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/barbaracle-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/barbaracle-mega",
+      "dexNumber": 689,
+      "types": [
+        "rock",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 72,
+        "atk": 140,
+        "def": 130,
+        "spa": 64,
+        "spd": 106,
+        "spe": 88
+      },
+      "weightKg": 100,
+      "abilities": [
+        {
+          "id": "tough-claws",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

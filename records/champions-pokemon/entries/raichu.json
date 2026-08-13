@@ -117,8 +117,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/raichu"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/raichu",
+      "dexNumber": 26,
+      "types": [
+        "electric"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 90,
+        "def": 55,
+        "spa": 90,
+        "spd": 80,
+        "spe": 110
+      },
+      "weightKg": 30,
+      "abilities": [
+        {
+          "id": "static",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "lightning-rod",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

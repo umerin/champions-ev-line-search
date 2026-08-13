@@ -113,8 +113,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/qwilfish"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/qwilfish",
+      "dexNumber": 211,
+      "types": [
+        "water",
+        "poison"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 95,
+        "def": 85,
+        "spa": 55,
+        "spd": 55,
+        "spe": 85
+      },
+      "weightKg": 3.9,
+      "abilities": [
+        {
+          "id": "poison-point",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "swift-swim",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "intimidate",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -26,61 +26,258 @@
   },
   "learnset": {
     "moveIds": [
-      "body-slam",
-      "charge-beam",
-      "confusion",
-      "dazzling-gleam",
-      "dig",
-      "double-edge",
-      "drain-punch",
-      "dream-eater",
-      "dynamic-punch",
-      "energy-ball",
-      "expanding-force",
-      "facade",
-      "fire-punch",
-      "focus-blast",
-      "focus-punch",
-      "foul-play",
-      "future-sight",
       "giga-impact",
-      "headbutt",
-      "hidden-power",
-      "hyper-beam",
-      "ice-punch",
-      "iron-tail",
-      "knock-off",
       "mega-kick",
-      "mega-punch",
-      "psybeam",
-      "psychic",
-      "psycho-cut",
-      "psyshock",
-      "rage",
-      "round",
-      "secret-power",
-      "shadow-ball",
-      "shock-wave",
-      "signal-beam",
-      "skull-bash",
-      "snore",
-      "stored-power",
-      "submission",
-      "swift",
-      "take-down",
-      "thief",
-      "thunder-punch",
+      "body-slam",
+      "facade",
+      "hyper-beam",
       "tri-attack",
-      "zap-cannon",
-      "zen-headbutt"
+      "snore",
+      "round",
+      "endure",
+      "protect",
+      "substitute",
+      "energy-ball",
+      "ice-punch",
+      "thunder-punch",
+      "rain-dance",
+      "sunny-day",
+      "fire-punch",
+      "drain-punch",
+      "trick",
+      "rest",
+      "shadow-ball",
+      "throat-chop",
+      "iron-tail",
+      "dazzling-gleam"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "recover",
+        "name": "じこさいせい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "double-team",
+        "name": "かげぶんしん",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "disable",
+        "name": "かなしばり",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "thunder-wave",
+        "name": "でんじは",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "magic-room",
+        "name": "マジックルーム",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "wonder-room",
+        "name": "ワンダールーム",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "guard-split",
+        "name": "ガードシェア",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "trick-room",
+        "name": "トリックルーム",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "guard-swap",
+        "name": "ガードスワップ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "power-swap",
+        "name": "パワースワップ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "role-play",
+        "name": "なりきり",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reflect",
+        "name": "リフレクター",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "light-screen",
+        "name": "ひかりのかべ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fling",
+        "name": "なげつける",
+        "type": "dark",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "nasty-plot",
+        "name": "わるだくみ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "mega-kick",
+        "body-slam",
+        "facade",
+        "hyper-beam",
+        "tri-attack",
+        "snore",
+        "round",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "recover",
+        "double-team",
+        "energy-ball",
+        "disable",
+        "ice-punch",
+        "thunder-wave",
+        "thunder-punch",
+        "rain-dance",
+        "sunny-day",
+        "fire-punch",
+        "drain-punch",
+        "magic-room",
+        "wonder-room",
+        "guard-split",
+        "trick-room",
+        "guard-swap",
+        "power-swap",
+        "role-play",
+        "trick",
+        "rest",
+        "reflect",
+        "light-screen",
+        "shadow-ball",
+        "throat-chop",
+        "fling",
+        "nasty-plot",
+        "taunt",
+        "iron-tail",
+        "dazzling-gleam"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全41技）。",
+        "耐久ラインサーチには固定威力の攻撃技17件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -100,8 +297,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/alakazam"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/alakazam",
+      "dexNumber": 65,
+      "types": [
+        "psychic"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "atk": 50,
+        "def": 45,
+        "spa": 135,
+        "spd": 95,
+        "spe": 120
+      },
+      "weightKg": 48,
+      "abilities": [
+        {
+          "id": "synchronize",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "inner-focus",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "magic-guard",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -98,8 +98,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/toucannon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/toucannon",
+      "dexNumber": 733,
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "atk": 120,
+        "def": 75,
+        "spa": 75,
+        "spd": 75,
+        "spe": 60
+      },
+      "weightKg": 26,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "skill-link",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

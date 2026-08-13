@@ -116,8 +116,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pelipper"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pelipper",
+      "dexNumber": 279,
+      "types": [
+        "water",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 100,
+        "spa": 95,
+        "spd": 70,
+        "spe": 65
+      },
+      "weightKg": 28,
+      "abilities": [
+        {
+          "id": "keen-eye",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "drizzle",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "rain-dish",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -116,8 +116,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/torkoal"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/torkoal",
+      "dexNumber": 324,
+      "types": [
+        "fire"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 85,
+        "def": 140,
+        "spa": 85,
+        "spd": 70,
+        "spe": 20
+      },
+      "weightKg": 80.4,
+      "abilities": [
+        {
+          "id": "white-smoke",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "drought",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "shell-armor",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

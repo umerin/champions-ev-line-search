@@ -26,77 +26,150 @@
   },
   "learnset": {
     "moveIds": [
-      "assurance",
-      "blizzard",
+      "giga-impact",
+      "double-edge",
+      "thrash",
+      "raging-bull",
       "body-slam",
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "uproar",
+      "round",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "wild-charge",
+      "megahorn",
+      "stone-edge",
+      "rock-slide",
+      "rock-tomb",
+      "earthquake",
+      "high-horsepower",
+      "drill-run",
+      "dig",
+      "stomping-tantrum",
       "bulldoze",
       "close-combat",
-      "dig",
-      "double-edge",
-      "earthquake",
-      "facade",
-      "fire-blast",
-      "flamethrower",
-      "giga-impact",
-      "headbutt",
-      "hidden-power",
-      "high-horsepower",
-      "horn-attack",
-      "hyper-beam",
-      "ice-beam",
-      "icy-wind",
-      "incinerate",
-      "iron-head",
-      "iron-tail",
+      "body-press",
+      "mud-slap",
       "lash-out",
-      "megahorn",
       "outrage",
-      "payback",
-      "pursuit",
-      "rage",
-      "raging-bull",
-      "retaliate",
-      "revenge",
-      "rock-climb",
-      "rock-slide",
-      "rock-smash",
-      "rock-tomb",
-      "round",
-      "secret-power",
-      "shadow-ball",
-      "shock-wave",
-      "skull-bash",
-      "smart-strike",
-      "snore",
-      "solar-beam",
-      "stomp",
-      "stomping-tantrum",
-      "stone-edge",
-      "strength",
-      "surf",
-      "tackle",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "thrash",
-      "throat-chop",
-      "thunder",
-      "thunderbolt",
-      "trailblaze",
-      "uproar",
-      "water-pulse",
-      "whirlpool",
-      "wild-charge",
-      "zap-cannon",
-      "zen-headbutt"
+      "rest",
+      "zen-headbutt",
+      "iron-tail",
+      "iron-head",
+      "smart-strike"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sandstorm",
+        "name": "すなあらし",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "bulk-up",
+        "name": "ビルドアップ",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "thrash",
+        "raging-bull",
+        "body-slam",
+        "facade",
+        "endeavor",
+        "hyper-beam",
+        "uproar",
+        "round",
+        "snore",
+        "sleep-talk",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "trailblaze",
+        "wild-charge",
+        "megahorn",
+        "stone-edge",
+        "rock-slide",
+        "rock-tomb",
+        "sandstorm",
+        "earthquake",
+        "high-horsepower",
+        "drill-run",
+        "dig",
+        "stomping-tantrum",
+        "bulldoze",
+        "close-combat",
+        "body-press",
+        "reversal",
+        "bulk-up",
+        "mud-slap",
+        "lash-out",
+        "outrage",
+        "curse",
+        "rest",
+        "zen-headbutt",
+        "iron-tail",
+        "iron-head",
+        "smart-strike"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全42技）。",
+        "耐久ラインサーチには固定威力の攻撃技31件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -116,8 +189,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/tauros"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/tauros",
+      "dexNumber": 128,
+      "types": [
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 100,
+        "def": 95,
+        "spa": 40,
+        "spd": 70,
+        "spe": 110
+      },
+      "weightKg": 88.4,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "anger-point",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

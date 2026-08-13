@@ -101,8 +101,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/excadrill-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/excadrill-mega",
+      "dexNumber": 530,
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "atk": 165,
+        "def": 100,
+        "spa": 65,
+        "spd": 65,
+        "spe": 103
+      },
+      "weightKg": 60,
+      "abilities": [
+        {
+          "id": "piercing-drill",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

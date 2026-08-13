@@ -77,8 +77,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/alcremie"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/alcremie",
+      "dexNumber": 869,
+      "types": [
+        "fairy"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 60,
+        "def": 75,
+        "spa": 110,
+        "spd": 121,
+        "spe": 64
+      },
+      "weightKg": 0.5,
+      "abilities": [
+        {
+          "id": "sweet-veil",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "aroma-veil",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -118,8 +118,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/goodra"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/goodra",
+      "dexNumber": 706,
+      "types": [
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "atk": 100,
+        "def": 70,
+        "spa": 110,
+        "spd": 150,
+        "spe": 80
+      },
+      "weightKg": 150.5,
+      "abilities": [
+        {
+          "id": "sap-sipper",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "hydration",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "gooey",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

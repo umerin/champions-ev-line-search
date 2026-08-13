@@ -102,8 +102,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/annihilape"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/annihilape",
+      "dexNumber": 979,
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "atk": 115,
+        "def": 80,
+        "spa": 50,
+        "spd": 90,
+        "spe": 90
+      },
+      "weightKg": 56,
+      "abilities": [
+        {
+          "id": "vital-spirit",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "inner-focus",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "defiant",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

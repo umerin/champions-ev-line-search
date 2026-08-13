@@ -114,8 +114,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/steelix"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/steelix",
+      "dexNumber": 208,
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 85,
+        "def": 200,
+        "spa": 55,
+        "spd": 65,
+        "spe": 30
+      },
+      "weightKg": 400,
+      "abilities": [
+        {
+          "id": "rock-head",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sturdy",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sheer-force",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

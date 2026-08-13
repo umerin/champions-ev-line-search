@@ -101,8 +101,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pyroar-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pyroar-mega",
+      "dexNumber": 668,
+      "types": [
+        "fire",
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 86,
+        "atk": 88,
+        "def": 92,
+        "spa": 129,
+        "spd": 86,
+        "spe": 126
+      },
+      "weightKg": 93.3,
+      "abilities": [
+        {
+          "id": "fire-mane",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

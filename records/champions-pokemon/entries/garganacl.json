@@ -91,8 +91,47 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/garganacl"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/garganacl",
+      "dexNumber": 934,
+      "types": [
+        "rock"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "atk": 100,
+        "def": 130,
+        "spa": 45,
+        "spd": 90,
+        "spe": 35
+      },
+      "weightKg": 240,
+      "abilities": [
+        {
+          "id": "purifying-salt",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sturdy",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "clear-body",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

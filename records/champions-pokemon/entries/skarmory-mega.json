@@ -105,8 +105,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/skarmory-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/skarmory-mega",
+      "dexNumber": 227,
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 140,
+        "def": 110,
+        "spa": 40,
+        "spd": 100,
+        "spe": 110
+      },
+      "weightKg": 40.4,
+      "abilities": [
+        {
+          "id": "stalwart",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

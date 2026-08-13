@@ -27,58 +27,151 @@
   },
   "learnset": {
     "moveIds": [
-      "aqua-jet",
-      "body-press",
-      "body-slam",
-      "bulldoze",
-      "chilling-water",
-      "close-combat",
-      "dig",
-      "double-edge",
-      "double-kick",
-      "drill-run",
-      "earthquake",
-      "facade",
       "giga-impact",
-      "headbutt",
-      "high-horsepower",
-      "hydro-pump",
-      "hyper-beam",
-      "iron-head",
-      "iron-tail",
-      "lash-out",
-      "liquidation",
-      "megahorn",
-      "outrage",
+      "double-edge",
+      "thrash",
       "raging-bull",
+      "body-slam",
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "uproar",
+      "round",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "wave-crash",
+      "liquidation",
+      "aqua-jet",
+      "whirlpool",
+      "chilling-water",
+      "water-pulse",
+      "surf",
+      "hydro-pump",
+      "rain-dance",
+      "wild-charge",
+      "megahorn",
+      "stone-edge",
       "rock-slide",
       "rock-tomb",
-      "round",
-      "smart-strike",
-      "snore",
+      "earthquake",
+      "high-horsepower",
+      "drill-run",
+      "dig",
       "stomping-tantrum",
-      "stone-edge",
-      "surf",
-      "tackle",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "thrash",
-      "trailblaze",
-      "uproar",
-      "water-pulse",
-      "wave-crash",
-      "whirlpool",
-      "wild-charge",
-      "zen-headbutt"
+      "outrage",
+      "rest",
+      "zen-headbutt",
+      "lash-out",
+      "mud-slap",
+      "iron-tail",
+      "iron-head",
+      "smart-strike"
     ],
-    "specialMoves": [],
+    "specialMoves": [
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sandstorm",
+        "name": "すなあらし",
+        "type": "rock",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
     "verification": {
-      "status": "inherited-unverified",
-      "sources": [],
-      "verifiedMoveIds": [],
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-08-13 23-43-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "thrash",
+        "raging-bull",
+        "body-slam",
+        "facade",
+        "endeavor",
+        "hyper-beam",
+        "uproar",
+        "round",
+        "snore",
+        "sleep-talk",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "trailblaze",
+        "wave-crash",
+        "liquidation",
+        "aqua-jet",
+        "whirlpool",
+        "chilling-water",
+        "water-pulse",
+        "surf",
+        "hydro-pump",
+        "rain-dance",
+        "wild-charge",
+        "megahorn",
+        "stone-edge",
+        "rock-slide",
+        "rock-tomb",
+        "sandstorm",
+        "earthquake",
+        "high-horsepower",
+        "drill-run",
+        "dig",
+        "stomping-tantrum",
+        "reversal",
+        "outrage",
+        "curse",
+        "rest",
+        "zen-headbutt",
+        "lash-out",
+        "mud-slap",
+        "iron-tail",
+        "iron-head",
+        "smart-strike"
+      ],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全47技）。",
+        "耐久ラインサーチには固定威力の攻撃技36件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
     }
   },
   "weight": {
@@ -98,8 +191,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/tauros-paldea-aqua-breed"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/tauros-paldea-aqua-breed",
+      "dexNumber": 128,
+      "types": [
+        "fighting",
+        "water"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 110,
+        "def": 105,
+        "spa": 30,
+        "spd": 70,
+        "spe": 100
+      },
+      "weightKg": 110,
+      "abilities": [
+        {
+          "id": "intimidate",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "anger-point",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "cud-chew",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

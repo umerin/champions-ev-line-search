@@ -117,8 +117,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/heliolisk"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/heliolisk",
+      "dexNumber": 695,
+      "types": [
+        "electric",
+        "normal"
+      ],
+      "baseStats": {
+        "hp": 62,
+        "atk": 55,
+        "def": 52,
+        "spa": 109,
+        "spd": 94,
+        "spe": 109
+      },
+      "weightKg": 21,
+      "abilities": [
+        {
+          "id": "dry-skin",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "sand-veil",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "solar-power",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

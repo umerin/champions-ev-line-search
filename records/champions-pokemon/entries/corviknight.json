@@ -90,8 +90,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/corviknight"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/corviknight",
+      "dexNumber": 823,
+      "types": [
+        "flying",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 98,
+        "atk": 87,
+        "def": 105,
+        "spa": 53,
+        "spd": 85,
+        "spe": 67
+      },
+      "weightKg": 75,
+      "abilities": [
+        {
+          "id": "pressure",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "unnerve",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "mirror-armor",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

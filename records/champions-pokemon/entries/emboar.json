@@ -124,8 +124,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/emboar"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/emboar",
+      "dexNumber": 500,
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "atk": 123,
+        "def": 65,
+        "spa": 100,
+        "spd": 65,
+        "spe": 65
+      },
+      "weightKg": 150,
+      "abilities": [
+        {
+          "id": "blaze",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "reckless",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

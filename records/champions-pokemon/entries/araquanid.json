@@ -92,8 +92,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/araquanid"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/araquanid",
+      "dexNumber": 752,
+      "types": [
+        "water",
+        "bug"
+      ],
+      "baseStats": {
+        "hp": 68,
+        "atk": 70,
+        "def": 92,
+        "spa": 50,
+        "spd": 132,
+        "spe": 42
+      },
+      "weightKg": 82,
+      "abilities": [
+        {
+          "id": "water-bubble",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "water-absorb",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

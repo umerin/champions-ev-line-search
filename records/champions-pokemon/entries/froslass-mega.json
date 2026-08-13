@@ -111,8 +111,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/froslass-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/froslass-mega",
+      "dexNumber": 478,
+      "types": [
+        "ice",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "atk": 80,
+        "def": 70,
+        "spa": 140,
+        "spd": 100,
+        "spe": 120
+      },
+      "weightKg": 29.6,
+      "abilities": [
+        {
+          "id": "snow-warning",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

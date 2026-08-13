@@ -131,8 +131,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/pangoro"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/pangoro",
+      "dexNumber": 675,
+      "types": [
+        "fighting",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "atk": 124,
+        "def": 78,
+        "spa": 69,
+        "spd": 71,
+        "spe": 58
+      },
+      "weightKg": 136,
+      "abilities": [
+        {
+          "id": "iron-fist",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "mold-breaker",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "scrappy",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

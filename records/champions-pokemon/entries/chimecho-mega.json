@@ -99,8 +99,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/chimecho-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/chimecho-mega",
+      "dexNumber": 358,
+      "types": [
+        "psychic",
+        "steel"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "atk": 50,
+        "def": 110,
+        "spa": 135,
+        "spd": 120,
+        "spe": 65
+      },
+      "weightKg": 8,
+      "abilities": [
+        {
+          "id": "levitate",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

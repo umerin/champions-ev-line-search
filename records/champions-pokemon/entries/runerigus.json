@@ -88,8 +88,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/runerigus"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/runerigus",
+      "dexNumber": 867,
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "baseStats": {
+        "hp": 58,
+        "atk": 95,
+        "def": 145,
+        "spa": 50,
+        "spd": 105,
+        "spe": 30
+      },
+      "weightKg": 66.6,
+      "abilities": [
+        {
+          "id": "wandering-spirit",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

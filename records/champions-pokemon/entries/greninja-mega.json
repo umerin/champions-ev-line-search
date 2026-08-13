@@ -117,8 +117,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/greninja-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/greninja-mega",
+      "dexNumber": 658,
+      "types": [
+        "water",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 72,
+        "atk": 125,
+        "def": 77,
+        "spa": 133,
+        "spd": 81,
+        "spe": 142
+      },
+      "weightKg": 40,
+      "abilities": [
+        {
+          "id": "protean",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

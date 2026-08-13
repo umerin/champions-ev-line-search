@@ -101,8 +101,42 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/glaceon"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/glaceon",
+      "dexNumber": 471,
+      "types": [
+        "ice"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 60,
+        "def": 110,
+        "spa": 130,
+        "spd": 95,
+        "spe": 65
+      },
+      "weightKg": 25.9,
+      "abilities": [
+        {
+          "id": "snow-cloak",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "ice-body",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

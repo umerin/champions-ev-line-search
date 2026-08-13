@@ -119,8 +119,38 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/lopunny-mega"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/lopunny-mega",
+      "dexNumber": 428,
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "atk": 136,
+        "def": 94,
+        "spa": 54,
+        "spd": 96,
+        "spe": 135
+      },
+      "weightKg": 28.3,
+      "abilities": [
+        {
+          "id": "scrappy",
+          "slot": 1,
+          "isHidden": false
+        }
+      ]
+    }
+  }
 }

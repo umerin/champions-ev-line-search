@@ -91,8 +91,48 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/hydrapple"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/hydrapple",
+      "dexNumber": 1019,
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "baseStats": {
+        "hp": 106,
+        "atk": 80,
+        "def": 110,
+        "spa": 120,
+        "spd": 80,
+        "spe": 44
+      },
+      "weightKg": 93,
+      "abilities": [
+        {
+          "id": "supersweet-syrup",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "regenerator",
+          "slot": 2,
+          "isHidden": false
+        },
+        {
+          "id": "sticky-hold",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }

@@ -93,8 +93,43 @@
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",
-    "sources": [],
-    "notes": []
+    "sources": [
+      "https://pokeapi.co/api/v2/pokemon/spiritomb"
+    ],
+    "notes": [],
+    "pokeApiStatus": "verified"
   },
-  "extensions": {}
+  "extensions": {},
+  "sourceData": {
+    "pokeApi": {
+      "retrievedAt": "2026-08-13T10:39:35.087Z",
+      "source": "https://pokeapi.co/api/v2/pokemon/spiritomb",
+      "dexNumber": 442,
+      "types": [
+        "ghost",
+        "dark"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "atk": 92,
+        "def": 108,
+        "spa": 92,
+        "spd": 108,
+        "spe": 35
+      },
+      "weightKg": 108,
+      "abilities": [
+        {
+          "id": "pressure",
+          "slot": 1,
+          "isHidden": false
+        },
+        {
+          "id": "infiltrator",
+          "slot": 3,
+          "isHidden": true
+        }
+      ]
+    }
+  }
 }
