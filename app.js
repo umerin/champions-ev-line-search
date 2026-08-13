@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260809-4",
   learnsets: "./data/learnsets.json?v=20260809-1",
-  battleEffects: "./data/battle-effects.json?v=20260809-6",
+  battleEffects: "./data/battle-effects.json?v=20260813-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -2705,7 +2705,10 @@ function getResultMoveName(attacker, move) {
 
 function getResultAttackerName(attacker, move) {
   const abilityNames = [...new Set(
-    getAttackerStatEffects(attacker.id, move.category)
+    [
+      ...getAttackerStatEffects(attacker.id, move.category),
+      ...getAttackerPowerEffects(attacker, move),
+    ]
       .map((effect) => effect.abilityName)
       .filter(Boolean),
   )];
@@ -2766,7 +2769,13 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
       if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
-      const calculationPower = getAdjustedMovePower(defender, input, effectiveMove, battleWeather);
+      const calculationPower = getAdjustedMovePower(
+        defender,
+        input,
+        effectiveMove,
+        battleWeather,
+        attacker,
+      );
       const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
       const finalDamageMEffects = getFinalDamageMEffects(
@@ -3101,8 +3110,25 @@ function getDefenderPowerModifier(defender, input, moveType) {
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getAdjustedMovePower(defender, input, move, defenderWeather = "none") {
+function getAttackerPowerModifier(attacker, move) {
+  return getAttackerPowerEffects(attacker, move)
+    .reduce((modifier, effect) => modifier * effect.modifier, 1);
+}
+
+function getAttackerPowerEffects(attacker, move) {
+  return getMatchingBattleEffects(
+    "attacker",
+    attacker.id,
+    move.type,
+    1,
+    move.category,
+  )
+    .filter((effect) => effect.stage === "power");
+}
+
+function getAdjustedMovePower(defender, input, move, defenderWeather = "none", attacker = null) {
   const modifier = getDefenderPowerModifier(defender, input, move.type)
+    * (attacker ? getAttackerPowerModifier(attacker, move) : 1)
     * getWeatherMovePowerModifier(move, defenderWeather);
   return applyPowerModifier(move.power, modifier);
 }

@@ -102,6 +102,18 @@
       ],
       "modifier": 2
     },
+    "fairyAura": {
+      "abilityId": "fairy-aura",
+      "abilityName": "フェアリーオーラ",
+      "pokemonIds": [
+        "floette-mega"
+      ],
+      "stage": "power",
+      "moveTypes": [
+        "fairy"
+      ],
+      "modifier": 1.330078125
+    },
     "megaSolar": {
       "abilityId": "mega-solar",
       "abilityName": "メガソーラー",
