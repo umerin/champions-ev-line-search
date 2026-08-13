@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "meowscarada",
@@ -76,6 +76,7 @@
       "triple-axel",
       "u-turn"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -92,6 +93,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "glaceon",
@@ -75,6 +75,7 @@
       "water-pulse",
       "weather-ball"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -91,6 +92,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

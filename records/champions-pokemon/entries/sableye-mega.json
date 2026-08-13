@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "sableye-mega",
@@ -101,6 +101,7 @@
       "x-scissor",
       "zen-headbutt"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -117,6 +118,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "ditto",
@@ -26,12 +26,32 @@
   },
   "learnset": {
     "moveIds": [],
+    "specialMoves": [
+      {
+        "id": "transform",
+        "name": "へんしん",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "isSpreadMove": false,
+        "searchable": false,
+        "verification": {
+          "status": "inherited-unverified",
+          "sources": [],
+          "notes": [
+            "ユーザー指示により追加。"
+          ]
+        }
+      }
+    ],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
       "verifiedMoveIds": [],
       "rejectedMoveIds": [],
-      "notes": []
+      "notes": [
+        "ユーザー指示によりへんしんを追加。"
+      ]
     }
   },
   "weight": {
@@ -42,6 +62,19 @@
       "notes": []
     }
   },
+  "abilities": [
+    {
+      "id": "imposter",
+      "name": "かわりもの",
+      "verification": {
+        "status": "inherited-unverified",
+        "sources": [],
+        "notes": [
+          "ユーザー指示により追加。"
+        ]
+      }
+    }
+  ],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "mamoswine",
@@ -82,6 +82,7 @@
       "throat-chop",
       "trailblaze"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -98,6 +99,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [
     {
       "scope": "defender",

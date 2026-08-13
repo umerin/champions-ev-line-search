@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "jolteon",
@@ -77,6 +77,7 @@
       "wild-charge",
       "zap-cannon"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -93,6 +94,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

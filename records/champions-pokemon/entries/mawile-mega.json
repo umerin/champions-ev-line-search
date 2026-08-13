@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "mawile-mega",
@@ -89,6 +89,7 @@
       "thunder-punch",
       "vice-grip"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -105,6 +106,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [
     {
       "scope": "attacker",

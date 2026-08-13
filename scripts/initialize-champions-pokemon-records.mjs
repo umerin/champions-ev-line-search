@@ -69,6 +69,7 @@ function createRecord(entry) {
     pokemon: entry,
     learnset: {
       moveIds: learnedMoveIds,
+      specialMoves: [],
       verification: {
         status: "inherited-unverified",
         sources: [],
@@ -85,6 +86,7 @@ function createRecord(entry) {
         notes: [],
       },
     },
+    abilities: [],
     battleEffects: effectsForPokemon(entry.id),
     research: {
       profileStatus: "inherited-unverified",

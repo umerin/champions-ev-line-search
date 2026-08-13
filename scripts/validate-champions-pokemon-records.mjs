@@ -45,7 +45,16 @@ for (const item of index.entries) {
   assert(["not-recorded", "checking", "partially-verified", "verified"].includes(record.weight.verification?.status), `${item.id}: weightの検証状況が不正です。`);
   assert(Array.isArray(record.weight.verification.sources), `${item.id}: weightの根拠が配列ではありません。`);
   assert(Array.isArray(record.weight.verification.notes), `${item.id}: weightのメモが配列ではありません。`);
+  assert(Array.isArray(record.abilities), `${item.id}: abilitiesが配列ではありません。`);
   assert(Array.isArray(record.learnset?.moveIds), `${item.id}: learnset.moveIdsがありません。`);
+  assert(Array.isArray(record.learnset?.specialMoves), `${item.id}: learnset.specialMovesがありません。`);
+  const specialMoveIds = new Set();
+  for (const move of record.learnset.specialMoves) {
+    assert(move && typeof move === "object" && typeof move.id === "string" && move.id, `${item.id}: 特殊技データが不正です。`);
+    assert(!moveIds.has(move.id), `${item.id}: 特殊技 ${move.id} はmoves.jsonに登録しないでください。`);
+    assert(!specialMoveIds.has(move.id), `${item.id}: 特殊技ID重複 ${move.id}`);
+    specialMoveIds.add(move.id);
+  }
   assert(Array.isArray(record.battleEffects), `${item.id}: battleEffectsが配列ではありません。`);
 
   const learned = new Set();

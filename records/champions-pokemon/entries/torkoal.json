@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "torkoal",
@@ -81,6 +81,7 @@
       "weather-ball",
       "zen-headbutt"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -97,6 +98,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [
     {
       "scope": "weatherSetter",

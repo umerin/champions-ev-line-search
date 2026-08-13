@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "empoleon",
@@ -104,6 +104,7 @@
       "weather-ball",
       "whirlpool"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -120,6 +121,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "aggron-mega",
@@ -108,6 +108,7 @@
       "water-pulse",
       "whirlpool"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -124,6 +125,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [
     {
       "scope": "defender",

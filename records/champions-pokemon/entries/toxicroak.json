@@ -1,5 +1,5 @@
 {
-  "": "../schema.json",
+  "$schema": "../schema.json",
   "schemaVersion": 1,
   "pokemon": {
     "id": "toxicroak",
@@ -102,6 +102,7 @@
       "venoshock",
       "x-scissor"
     ],
+    "specialMoves": [],
     "verification": {
       "status": "inherited-unverified",
       "sources": [],
@@ -118,6 +119,7 @@
       "notes": []
     }
   },
+  "abilities": [],
   "battleEffects": [
     {
       "scope": "defender",
