@@ -52,6 +52,7 @@ for (const entry of pokemon) {
 }
 for (const entry of moves) {
   assert(typeof entry.championsTarget === "boolean", `moves.json: ${entry.id} の championsTarget が真偽値ではありません。`);
+  assert(typeof entry.isContactMove === "boolean", `moves.json: ${entry.id} の isContactMove が真偽値ではありません。`);
   if (Object.hasOwn(entry, "ignoresScreens")) {
     assert(typeof entry.ignoresScreens === "boolean", `moves.json: ${entry.id} の ignoresScreens が真偽値ではありません。`);
   }

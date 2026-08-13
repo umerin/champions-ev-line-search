@@ -10,7 +10,8 @@
     "type": "grass",
     "category": "special",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "accelerock",
@@ -23,7 +24,8 @@
     "type": "rock",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "acid",
@@ -36,7 +38,8 @@
     "type": "poison",
     "category": "special",
     "power": 40,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "acid-spray",
@@ -49,7 +52,8 @@
     "type": "poison",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "acrobatics",
@@ -62,7 +66,8 @@
     "type": "flying",
     "category": "physical",
     "power": 55,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "aerial-ace",
@@ -75,7 +80,8 @@
     "type": "flying",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aeroblast",
@@ -88,7 +94,8 @@
     "type": "flying",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "air-cutter",
@@ -101,7 +108,8 @@
     "type": "flying",
     "category": "special",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "air-slash",
@@ -114,7 +122,8 @@
     "type": "flying",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "alluring-voice",
@@ -127,7 +136,8 @@
     "type": "fairy",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "anchor-shot",
@@ -140,7 +150,8 @@
     "type": "steel",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ancient-power",
@@ -153,7 +164,8 @@
     "type": "rock",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "apple-acid",
@@ -166,7 +178,8 @@
     "type": "grass",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aqua-cutter",
@@ -179,7 +192,8 @@
     "type": "water",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aqua-jet",
@@ -192,7 +206,8 @@
     "type": "water",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aqua-step",
@@ -205,7 +220,8 @@
     "type": "water",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aqua-tail",
@@ -218,7 +234,8 @@
     "type": "water",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "arm-thrust",
@@ -231,7 +248,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "armor-cannon",
@@ -244,7 +262,8 @@
     "type": "fire",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "assurance",
@@ -257,7 +276,8 @@
     "type": "dark",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "astonish",
@@ -270,7 +290,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "astral-barrage",
@@ -283,7 +304,8 @@
     "type": "ghost",
     "category": "special",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "attack-order",
@@ -296,7 +318,8 @@
     "type": "bug",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aura-sphere",
@@ -309,7 +332,8 @@
     "type": "fighting",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aura-wheel",
@@ -322,7 +346,8 @@
     "type": "electric",
     "category": "physical",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "aurora-beam",
@@ -335,7 +360,8 @@
     "type": "ice",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "avalanche",
@@ -348,7 +374,8 @@
     "type": "ice",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "axe-kick",
@@ -361,7 +388,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "baddy-bad",
@@ -374,7 +402,8 @@
     "type": "dark",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "barb-barrage",
@@ -387,7 +416,8 @@
     "type": "poison",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "barrage",
@@ -400,7 +430,8 @@
     "type": "normal",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "beak-blast",
@@ -413,7 +444,8 @@
     "type": "flying",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "belch",
@@ -426,7 +458,8 @@
     "type": "poison",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bind",
@@ -439,7 +472,8 @@
     "type": "normal",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "bite",
@@ -452,7 +486,8 @@
     "type": "dark",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "bitter-blade",
@@ -465,7 +500,8 @@
     "type": "fire",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bitter-malice",
@@ -478,7 +514,8 @@
     "type": "ghost",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "blast-burn",
@@ -491,7 +528,8 @@
     "type": "fire",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "blaze-kick",
@@ -504,7 +542,8 @@
     "type": "fire",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bleakwind-storm",
@@ -517,7 +556,8 @@
     "type": "flying",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "blizzard",
@@ -530,7 +570,8 @@
     "type": "ice",
     "category": "special",
     "power": 110,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "blood-moon",
@@ -543,7 +584,8 @@
     "type": "normal",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "blue-flare",
@@ -556,7 +598,8 @@
     "type": "fire",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "body-press",
@@ -569,7 +612,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "body-slam",
@@ -582,7 +626,8 @@
     "type": "normal",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bolt-beak",
@@ -595,7 +640,8 @@
     "type": "electric",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bolt-strike",
@@ -608,7 +654,8 @@
     "type": "electric",
     "category": "physical",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bone-club",
@@ -621,7 +668,8 @@
     "type": "ground",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bone-rush",
@@ -634,7 +682,8 @@
     "type": "ground",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bonemerang",
@@ -647,7 +696,8 @@
     "type": "ground",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "boomburst",
@@ -660,7 +710,8 @@
     "type": "normal",
     "category": "special",
     "power": 140,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "bounce",
@@ -673,7 +724,8 @@
     "type": "flying",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "bouncy-bubble",
@@ -686,7 +738,8 @@
     "type": "water",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "branch-poke",
@@ -699,7 +752,8 @@
     "type": "grass",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "brave-bird",
@@ -712,7 +766,8 @@
     "type": "flying",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "breaking-swipe",
@@ -725,7 +780,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "brick-break",
@@ -739,7 +795,8 @@
     "category": "physical",
     "power": 75,
     "ignoresScreens": true,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "brine",
@@ -752,7 +809,8 @@
     "type": "water",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "brutal-swing",
@@ -765,7 +823,8 @@
     "type": "dark",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "bubble",
@@ -778,7 +837,8 @@
     "type": "water",
     "category": "special",
     "power": 40,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "bubble-beam",
@@ -791,7 +851,8 @@
     "type": "water",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bug-bite",
@@ -804,7 +865,8 @@
     "type": "bug",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bug-buzz",
@@ -817,7 +879,8 @@
     "type": "bug",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bulldoze",
@@ -830,7 +893,8 @@
     "type": "ground",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "bullet-punch",
@@ -843,7 +907,8 @@
     "type": "steel",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "bullet-seed",
@@ -856,7 +921,8 @@
     "type": "grass",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "burn-up",
@@ -869,7 +935,8 @@
     "type": "fire",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "burning-jealousy",
@@ -882,7 +949,8 @@
     "type": "fire",
     "category": "special",
     "power": 70,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "buzzy-buzz",
@@ -895,7 +963,8 @@
     "type": "electric",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ceaseless-edge",
@@ -908,7 +977,8 @@
     "type": "dark",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "charge-beam",
@@ -921,7 +991,8 @@
     "type": "electric",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "chatter",
@@ -934,7 +1005,8 @@
     "type": "flying",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "chilling-water",
@@ -947,7 +1019,8 @@
     "type": "water",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "chip-away",
@@ -960,7 +1033,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "chloroblast",
@@ -973,7 +1047,8 @@
     "type": "grass",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "circle-throw",
@@ -986,7 +1061,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "clamp",
@@ -999,7 +1075,8 @@
     "type": "water",
     "category": "physical",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "clanging-scales",
@@ -1012,7 +1089,8 @@
     "type": "dragon",
     "category": "special",
     "power": 110,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "clear-smog",
@@ -1025,7 +1103,8 @@
     "type": "poison",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "close-combat",
@@ -1038,7 +1117,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "collision-course",
@@ -1051,7 +1131,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "comet-punch",
@@ -1064,7 +1145,8 @@
     "type": "normal",
     "category": "physical",
     "power": 18,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "comeuppance",
@@ -1077,7 +1159,8 @@
     "type": "dark",
     "category": "physical",
     "power": 1,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "confusion",
@@ -1090,7 +1173,8 @@
     "type": "psychic",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "constrict",
@@ -1103,7 +1187,8 @@
     "type": "normal",
     "category": "physical",
     "power": 10,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "core-enforcer",
@@ -1116,7 +1201,8 @@
     "type": "dragon",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "covet",
@@ -1129,7 +1215,8 @@
     "type": "normal",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "crabhammer",
@@ -1142,7 +1229,8 @@
     "type": "water",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "cross-chop",
@@ -1155,7 +1243,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "cross-poison",
@@ -1168,7 +1257,8 @@
     "type": "poison",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "crunch",
@@ -1181,7 +1271,8 @@
     "type": "dark",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "crush-claw",
@@ -1194,7 +1285,8 @@
     "type": "normal",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "cut",
@@ -1207,7 +1299,8 @@
     "type": "normal",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "dark-pulse",
@@ -1220,7 +1313,8 @@
     "type": "dark",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "darkest-lariat",
@@ -1233,7 +1327,8 @@
     "type": "dark",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dazzling-gleam",
@@ -1246,7 +1341,8 @@
     "type": "fairy",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "diamond-storm",
@@ -1259,7 +1355,8 @@
     "type": "rock",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "dig",
@@ -1272,7 +1369,8 @@
     "type": "ground",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "dire-claw",
@@ -1285,7 +1383,8 @@
     "type": "poison",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "disarming-voice",
@@ -1298,7 +1397,8 @@
     "type": "fairy",
     "category": "special",
     "power": 40,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "discharge",
@@ -1311,7 +1411,8 @@
     "type": "electric",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "dive",
@@ -1324,7 +1425,8 @@
     "type": "water",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "dizzy-punch",
@@ -1337,7 +1439,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "doom-desire",
@@ -1350,7 +1453,8 @@
     "type": "steel",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-edge",
@@ -1363,7 +1467,8 @@
     "type": "normal",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-hit",
@@ -1376,7 +1481,8 @@
     "type": "normal",
     "category": "physical",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-iron-bash",
@@ -1389,7 +1495,8 @@
     "type": "steel",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-kick",
@@ -1402,7 +1509,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-shock",
@@ -1415,7 +1523,8 @@
     "type": "electric",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "double-slap",
@@ -1428,7 +1537,8 @@
     "type": "normal",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "draco-meteor",
@@ -1441,7 +1551,8 @@
     "type": "dragon",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-ascent",
@@ -1454,7 +1565,8 @@
     "type": "flying",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-breath",
@@ -1467,7 +1579,8 @@
     "type": "dragon",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-claw",
@@ -1480,7 +1593,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-darts",
@@ -1493,7 +1607,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-energy",
@@ -1506,7 +1621,8 @@
     "type": "dragon",
     "category": "special",
     "power": 150,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "dragon-hammer",
@@ -1519,7 +1635,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-pulse",
@@ -1532,7 +1649,8 @@
     "type": "dragon",
     "category": "special",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-rush",
@@ -1545,7 +1663,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dragon-tail",
@@ -1558,7 +1677,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "drain-punch",
@@ -1571,7 +1691,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "draining-kiss",
@@ -1584,7 +1705,8 @@
     "type": "fairy",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dream-eater",
@@ -1597,7 +1719,8 @@
     "type": "psychic",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "drill-peck",
@@ -1610,7 +1733,8 @@
     "type": "flying",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "drill-run",
@@ -1623,7 +1747,8 @@
     "type": "ground",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "drum-beating",
@@ -1636,7 +1761,8 @@
     "type": "grass",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dual-chop",
@@ -1649,7 +1775,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dual-wingbeat",
@@ -1662,7 +1789,8 @@
     "type": "flying",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dynamax-cannon",
@@ -1675,7 +1803,8 @@
     "type": "dragon",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "dynamic-punch",
@@ -1688,7 +1817,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "earth-power",
@@ -1701,7 +1831,8 @@
     "type": "ground",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "earthquake",
@@ -1714,7 +1845,8 @@
     "type": "ground",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "echoed-voice",
@@ -1727,7 +1859,8 @@
     "type": "normal",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "eerie-spell",
@@ -1740,7 +1873,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "egg-bomb",
@@ -1753,7 +1887,8 @@
     "type": "normal",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "electro-drift",
@@ -1766,7 +1901,8 @@
     "type": "electric",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "electro-shot",
@@ -1779,7 +1915,8 @@
     "type": "electric",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "electroweb",
@@ -1792,7 +1929,8 @@
     "type": "electric",
     "category": "special",
     "power": 55,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "ember",
@@ -1805,7 +1943,8 @@
     "type": "fire",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "energy-ball",
@@ -1818,7 +1957,8 @@
     "type": "grass",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "eruption",
@@ -1831,7 +1971,8 @@
     "type": "fire",
     "category": "special",
     "power": 150,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "esper-wing",
@@ -1844,7 +1985,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "eternabeam",
@@ -1857,7 +1999,8 @@
     "type": "dragon",
     "category": "special",
     "power": 160,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "expanding-force",
@@ -1870,7 +2013,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "explosion",
@@ -1883,7 +2027,8 @@
     "type": "normal",
     "category": "physical",
     "power": 250,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "extrasensory",
@@ -1896,7 +2041,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "extreme-speed",
@@ -1909,7 +2055,8 @@
     "type": "normal",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "facade",
@@ -1922,7 +2069,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "fairy-wind",
@@ -1935,7 +2083,8 @@
     "type": "fairy",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fake-out",
@@ -1948,7 +2097,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "false-surrender",
@@ -1961,7 +2111,8 @@
     "type": "dark",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "false-swipe",
@@ -1974,7 +2125,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "feint",
@@ -1987,7 +2139,8 @@
     "type": "normal",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "feint-attack",
@@ -2000,7 +2153,8 @@
     "type": "dark",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fell-stinger",
@@ -2013,7 +2167,8 @@
     "type": "bug",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fickle-beam",
@@ -2026,7 +2181,8 @@
     "type": "dragon",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fiery-dance",
@@ -2039,7 +2195,8 @@
     "type": "fire",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fiery-wrath",
@@ -2052,7 +2209,8 @@
     "type": "dark",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "fire-blast",
@@ -2065,7 +2223,8 @@
     "type": "fire",
     "category": "special",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fire-fang",
@@ -2078,7 +2237,8 @@
     "type": "fire",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fire-lash",
@@ -2091,7 +2251,8 @@
     "type": "fire",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fire-pledge",
@@ -2104,7 +2265,8 @@
     "type": "fire",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fire-punch",
@@ -2117,7 +2279,8 @@
     "type": "fire",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fire-spin",
@@ -2130,7 +2293,8 @@
     "type": "fire",
     "category": "special",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "first-impression",
@@ -2143,7 +2307,8 @@
     "type": "bug",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fishious-rend",
@@ -2156,7 +2321,8 @@
     "type": "water",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flame-burst",
@@ -2169,7 +2335,8 @@
     "type": "fire",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flame-charge",
@@ -2182,7 +2349,8 @@
     "type": "fire",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flame-wheel",
@@ -2195,7 +2363,8 @@
     "type": "fire",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flamethrower",
@@ -2208,7 +2377,8 @@
     "type": "fire",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flare-blitz",
@@ -2221,7 +2391,8 @@
     "type": "fire",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flash-cannon",
@@ -2234,7 +2405,8 @@
     "type": "steel",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fleur-cannon",
@@ -2247,7 +2419,8 @@
     "type": "fairy",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flip-turn",
@@ -2260,7 +2433,8 @@
     "type": "water",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "floaty-fall",
@@ -2273,7 +2447,8 @@
     "type": "flying",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "flower-trick",
@@ -2286,7 +2461,8 @@
     "type": "grass",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fly",
@@ -2299,7 +2475,8 @@
     "type": "flying",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "flying-press",
@@ -2312,7 +2489,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "focus-blast",
@@ -2325,7 +2503,8 @@
     "type": "fighting",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "focus-punch",
@@ -2338,7 +2517,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "force-palm",
@@ -2351,7 +2531,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "foul-play",
@@ -2364,7 +2545,8 @@
     "type": "dark",
     "category": "physical",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "freeze-dry",
@@ -2377,7 +2559,8 @@
     "type": "ice",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "freeze-shock",
@@ -2390,7 +2573,8 @@
     "type": "ice",
     "category": "physical",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "freezing-glare",
@@ -2403,7 +2587,8 @@
     "type": "psychic",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "freezy-frost",
@@ -2416,7 +2601,8 @@
     "type": "ice",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "frenzy-plant",
@@ -2429,7 +2615,8 @@
     "type": "grass",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "frost-breath",
@@ -2442,7 +2629,8 @@
     "type": "ice",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fury-attack",
@@ -2455,7 +2643,8 @@
     "type": "normal",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fury-cutter",
@@ -2468,7 +2657,8 @@
     "type": "bug",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fury-swipes",
@@ -2481,7 +2671,8 @@
     "type": "normal",
     "category": "physical",
     "power": 18,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fusion-bolt",
@@ -2494,7 +2685,8 @@
     "type": "electric",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "fusion-flare",
@@ -2507,7 +2699,8 @@
     "type": "fire",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "future-sight",
@@ -2520,7 +2713,8 @@
     "type": "psychic",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "gear-grind",
@@ -2533,7 +2727,8 @@
     "type": "steel",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "giga-drain",
@@ -2546,7 +2741,8 @@
     "type": "grass",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "giga-impact",
@@ -2559,7 +2755,8 @@
     "type": "normal",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "gigaton-hammer",
@@ -2572,7 +2769,8 @@
     "type": "steel",
     "category": "physical",
     "power": 160,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "glacial-lance",
@@ -2585,7 +2783,8 @@
     "type": "ice",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "glaciate",
@@ -2598,7 +2797,8 @@
     "type": "ice",
     "category": "special",
     "power": 65,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "glaive-rush",
@@ -2611,7 +2811,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "glitzy-glow",
@@ -2624,7 +2825,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "grass-pledge",
@@ -2637,7 +2839,8 @@
     "type": "grass",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "grassy-glide",
@@ -2650,7 +2853,8 @@
     "type": "grass",
     "category": "physical",
     "power": 55,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "grav-apple",
@@ -2663,7 +2867,8 @@
     "type": "grass",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "gunk-shot",
@@ -2676,7 +2881,8 @@
     "type": "poison",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "gust",
@@ -2689,7 +2895,8 @@
     "type": "flying",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hammer-arm",
@@ -2702,7 +2909,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "head-charge",
@@ -2715,7 +2923,8 @@
     "type": "normal",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "head-smash",
@@ -2728,7 +2937,8 @@
     "type": "rock",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "headbutt",
@@ -2741,7 +2951,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "headlong-rush",
@@ -2754,7 +2965,8 @@
     "type": "ground",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "heart-stamp",
@@ -2767,7 +2979,8 @@
     "type": "psychic",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "heat-wave",
@@ -2780,7 +2993,8 @@
     "type": "fire",
     "category": "special",
     "power": 95,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "hex",
@@ -2793,7 +3007,8 @@
     "type": "ghost",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hidden-power",
@@ -2806,7 +3021,8 @@
     "type": "normal",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "high-horsepower",
@@ -2819,7 +3035,8 @@
     "type": "ground",
     "category": "physical",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "high-jump-kick",
@@ -2832,7 +3049,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "horn-attack",
@@ -2845,7 +3063,8 @@
     "type": "normal",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "horn-leech",
@@ -2858,7 +3077,8 @@
     "type": "grass",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hurricane",
@@ -2871,7 +3091,8 @@
     "type": "flying",
     "category": "special",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hydro-cannon",
@@ -2884,7 +3105,8 @@
     "type": "water",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hydro-pump",
@@ -2897,7 +3119,8 @@
     "type": "water",
     "category": "special",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hydro-steam",
@@ -2910,7 +3133,8 @@
     "type": "water",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hyper-beam",
@@ -2923,7 +3147,8 @@
     "type": "normal",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hyper-drill",
@@ -2936,7 +3161,8 @@
     "type": "normal",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hyper-fang",
@@ -2949,7 +3175,8 @@
     "type": "normal",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hyper-voice",
@@ -2962,7 +3189,8 @@
     "type": "normal",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "hyperspace-fury",
@@ -2975,7 +3203,8 @@
     "type": "dark",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "hyperspace-hole",
@@ -2988,7 +3217,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-ball",
@@ -3001,7 +3231,8 @@
     "type": "ice",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-beam",
@@ -3014,7 +3245,8 @@
     "type": "ice",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-burn",
@@ -3027,7 +3259,8 @@
     "type": "ice",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-fang",
@@ -3040,7 +3273,8 @@
     "type": "ice",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-hammer",
@@ -3053,7 +3287,8 @@
     "type": "ice",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-punch",
@@ -3066,7 +3301,8 @@
     "type": "ice",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-shard",
@@ -3079,7 +3315,8 @@
     "type": "ice",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ice-spinner",
@@ -3092,7 +3329,8 @@
     "type": "ice",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "icicle-crash",
@@ -3105,7 +3343,8 @@
     "type": "ice",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "icicle-spear",
@@ -3118,7 +3357,8 @@
     "type": "ice",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "icy-wind",
@@ -3131,7 +3371,8 @@
     "type": "ice",
     "category": "special",
     "power": 55,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "incinerate",
@@ -3144,7 +3385,8 @@
     "type": "fire",
     "category": "special",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "infernal-parade",
@@ -3157,7 +3399,8 @@
     "type": "ghost",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "inferno",
@@ -3170,7 +3413,8 @@
     "type": "fire",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "infestation",
@@ -3183,7 +3427,8 @@
     "type": "bug",
     "category": "special",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "iron-head",
@@ -3196,7 +3441,8 @@
     "type": "steel",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "iron-tail",
@@ -3209,7 +3455,8 @@
     "type": "steel",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ivy-cudgel",
@@ -3222,7 +3469,8 @@
     "type": "grass",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "jaw-lock",
@@ -3235,7 +3483,8 @@
     "type": "dark",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "jet-punch",
@@ -3248,7 +3497,8 @@
     "type": "water",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "judgment",
@@ -3261,7 +3511,8 @@
     "type": "normal",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "jump-kick",
@@ -3274,7 +3525,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "karate-chop",
@@ -3287,7 +3539,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "knock-off",
@@ -3300,7 +3553,8 @@
     "type": "dark",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "kowtow-cleave",
@@ -3313,7 +3567,8 @@
     "type": "dark",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "lands-wrath",
@@ -3326,7 +3581,8 @@
     "type": "ground",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "lash-out",
@@ -3339,7 +3595,8 @@
     "type": "dark",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "last-resort",
@@ -3352,7 +3609,8 @@
     "type": "normal",
     "category": "physical",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "last-respects-50",
@@ -3365,7 +3623,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "last-respects-100",
@@ -3378,7 +3637,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "last-respects-150",
@@ -3391,7 +3651,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "last-respects-200",
@@ -3404,7 +3665,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 200,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "lava-plume",
@@ -3417,7 +3679,8 @@
     "type": "fire",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "leaf-blade",
@@ -3430,7 +3693,8 @@
     "type": "grass",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "leaf-storm",
@@ -3443,7 +3707,8 @@
     "type": "grass",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "leaf-tornado",
@@ -3456,7 +3721,8 @@
     "type": "grass",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "leafage",
@@ -3469,7 +3735,8 @@
     "type": "grass",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "leech-life",
@@ -3482,7 +3749,8 @@
     "type": "bug",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "lick",
@@ -3495,7 +3763,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "light-of-ruin",
@@ -3508,7 +3777,8 @@
     "type": "fairy",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "liquidation",
@@ -3521,7 +3791,8 @@
     "type": "water",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "low-sweep",
@@ -3534,7 +3805,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "lumina-crash",
@@ -3547,7 +3819,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "lunge",
@@ -3560,7 +3833,8 @@
     "type": "bug",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "luster-purge",
@@ -3573,7 +3847,8 @@
     "type": "psychic",
     "category": "special",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mach-punch",
@@ -3586,7 +3861,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "magical-leaf",
@@ -3599,7 +3875,8 @@
     "type": "grass",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "magma-storm",
@@ -3612,7 +3889,8 @@
     "type": "fire",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "magnet-bomb",
@@ -3625,7 +3903,8 @@
     "type": "steel",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "make-it-rain",
@@ -3638,7 +3917,8 @@
     "type": "steel",
     "category": "special",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "malignant-chain",
@@ -3651,7 +3931,8 @@
     "type": "poison",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "matcha-gotcha",
@@ -3664,7 +3945,8 @@
     "type": "grass",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "mega-drain",
@@ -3677,7 +3959,8 @@
     "type": "grass",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mega-kick",
@@ -3690,7 +3973,8 @@
     "type": "normal",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mega-punch",
@@ -3703,7 +3987,8 @@
     "type": "normal",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "megahorn",
@@ -3716,7 +4001,8 @@
     "type": "bug",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "metal-claw",
@@ -3729,7 +4015,8 @@
     "type": "steel",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "meteor-assault",
@@ -3742,7 +4029,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "meteor-beam",
@@ -3755,7 +4043,8 @@
     "type": "rock",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "meteor-mash",
@@ -3768,7 +4057,8 @@
     "type": "steel",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mighty-cleave",
@@ -3781,7 +4071,8 @@
     "type": "rock",
     "category": "physical",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mind-blown",
@@ -3794,7 +4085,8 @@
     "type": "fire",
     "category": "special",
     "power": 150,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "mirror-shot",
@@ -3807,7 +4099,8 @@
     "type": "steel",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mist-ball",
@@ -3820,7 +4113,8 @@
     "type": "psychic",
     "category": "special",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "misty-explosion",
@@ -3833,7 +4127,8 @@
     "type": "fairy",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "moonblast",
@@ -3846,7 +4141,8 @@
     "type": "fairy",
     "category": "special",
     "power": 95,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "moongeist-beam",
@@ -3859,7 +4155,8 @@
     "type": "ghost",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mortal-spin",
@@ -3872,7 +4169,8 @@
     "type": "poison",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "mountain-gale",
@@ -3885,7 +4183,8 @@
     "type": "ice",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mud-bomb",
@@ -3898,7 +4197,8 @@
     "type": "ground",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mud-shot",
@@ -3911,7 +4211,8 @@
     "type": "ground",
     "category": "special",
     "power": 55,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mud-slap",
@@ -3924,7 +4225,8 @@
     "type": "ground",
     "category": "special",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "muddy-water",
@@ -3937,7 +4239,8 @@
     "type": "water",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "multi-attack",
@@ -3950,7 +4253,8 @@
     "type": "normal",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mystical-fire",
@@ -3963,7 +4267,8 @@
     "type": "fire",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "mystical-power",
@@ -3976,7 +4281,8 @@
     "type": "psychic",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "needle-arm",
@@ -3989,7 +4295,8 @@
     "type": "grass",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "night-daze",
@@ -4002,7 +4309,8 @@
     "type": "dark",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "night-slash",
@@ -4015,7 +4323,8 @@
     "type": "dark",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "nuzzle",
@@ -4028,7 +4337,8 @@
     "type": "electric",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "oblivion-wing",
@@ -4041,7 +4351,8 @@
     "type": "flying",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "octazooka",
@@ -4054,7 +4365,8 @@
     "type": "water",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ominous-wind",
@@ -4067,7 +4379,8 @@
     "type": "ghost",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "order-up",
@@ -4080,7 +4393,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "origin-pulse",
@@ -4093,7 +4407,8 @@
     "type": "water",
     "category": "special",
     "power": 110,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "outrage",
@@ -4106,7 +4421,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "overdrive",
@@ -4119,7 +4435,8 @@
     "type": "electric",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "overheat",
@@ -4132,7 +4449,8 @@
     "type": "fire",
     "category": "special",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "parabolic-charge",
@@ -4145,7 +4463,8 @@
     "type": "electric",
     "category": "special",
     "power": 65,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "pay-day",
@@ -4158,7 +4477,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "payback",
@@ -4171,7 +4491,8 @@
     "type": "dark",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "peck",
@@ -4184,7 +4505,8 @@
     "type": "flying",
     "category": "physical",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "petal-blizzard",
@@ -4197,7 +4519,8 @@
     "type": "grass",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "petal-dance",
@@ -4210,7 +4533,8 @@
     "type": "grass",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "phantom-force",
@@ -4223,7 +4547,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "photon-geyser",
@@ -4236,7 +4561,8 @@
     "type": "psychic",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "pin-missile",
@@ -4249,7 +4575,8 @@
     "type": "bug",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "plasma-fists",
@@ -4262,7 +4589,8 @@
     "type": "electric",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "play-rough",
@@ -4275,7 +4603,8 @@
     "type": "fairy",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "pluck",
@@ -4288,7 +4617,8 @@
     "type": "flying",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "poison-fang",
@@ -4301,7 +4631,8 @@
     "type": "poison",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "poison-jab",
@@ -4314,7 +4645,8 @@
     "type": "poison",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "poison-sting",
@@ -4327,7 +4659,8 @@
     "type": "poison",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "poison-tail",
@@ -4340,7 +4673,8 @@
     "type": "poison",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "pollen-puff",
@@ -4353,7 +4687,8 @@
     "type": "bug",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "poltergeist",
@@ -4366,7 +4701,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "population-bomb",
@@ -4379,7 +4715,8 @@
     "type": "normal",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "pounce",
@@ -4392,7 +4729,8 @@
     "type": "bug",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "pound",
@@ -4405,7 +4743,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "powder-snow",
@@ -4418,7 +4757,8 @@
     "type": "ice",
     "category": "special",
     "power": 40,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "power-gem",
@@ -4431,7 +4771,8 @@
     "type": "rock",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "power-trip",
@@ -4444,7 +4785,8 @@
     "type": "dark",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "power-up-punch",
@@ -4457,7 +4799,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "power-whip",
@@ -4470,7 +4813,8 @@
     "type": "grass",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "precipice-blades",
@@ -4483,7 +4827,8 @@
     "type": "ground",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "prismatic-laser",
@@ -4496,7 +4841,8 @@
     "type": "psychic",
     "category": "special",
     "power": 160,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psybeam",
@@ -4509,7 +4855,8 @@
     "type": "psychic",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psyblade",
@@ -4522,7 +4869,8 @@
     "type": "psychic",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "psychic",
@@ -4535,7 +4883,8 @@
     "type": "psychic",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psychic-fangs",
@@ -4549,7 +4898,8 @@
     "category": "physical",
     "power": 85,
     "ignoresScreens": true,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psychic-noise",
@@ -4562,7 +4912,8 @@
     "type": "psychic",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psycho-boost",
@@ -4575,7 +4926,8 @@
     "type": "psychic",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psycho-cut",
@@ -4588,7 +4940,8 @@
     "type": "psychic",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psyshield-bash",
@@ -4601,7 +4954,8 @@
     "type": "psychic",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psyshock",
@@ -4614,7 +4968,8 @@
     "type": "psychic",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "psystrike",
@@ -4627,7 +4982,8 @@
     "type": "psychic",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "pursuit",
@@ -4640,7 +4996,8 @@
     "type": "dark",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "pyro-ball",
@@ -4653,7 +5010,8 @@
     "type": "fire",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "quick-attack",
@@ -4666,7 +5024,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rage",
@@ -4679,7 +5038,8 @@
     "type": "normal",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "rage-fist",
@@ -4692,7 +5052,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "raging-bull",
@@ -4712,7 +5073,8 @@
     "category": "physical",
     "power": 90,
     "ignoresScreens": true,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "raging-fury",
@@ -4725,7 +5087,8 @@
     "type": "fire",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rapid-spin",
@@ -4738,7 +5101,8 @@
     "type": "normal",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "razor-leaf",
@@ -4751,7 +5115,8 @@
     "type": "grass",
     "category": "physical",
     "power": 55,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "razor-shell",
@@ -4764,7 +5129,8 @@
     "type": "water",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "razor-wind",
@@ -4777,7 +5143,8 @@
     "type": "normal",
     "category": "special",
     "power": 80,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "relic-song",
@@ -4790,7 +5157,8 @@
     "type": "normal",
     "category": "special",
     "power": 75,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "retaliate",
@@ -4803,7 +5171,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "revelation-dance",
@@ -4816,7 +5185,8 @@
     "type": "normal",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "revenge",
@@ -4829,7 +5199,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "rising-voltage",
@@ -4842,7 +5213,8 @@
     "type": "electric",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "roar-of-time",
@@ -4855,7 +5227,8 @@
     "type": "dragon",
     "category": "special",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-blast",
@@ -4868,7 +5241,8 @@
     "type": "rock",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-climb",
@@ -4881,7 +5255,8 @@
     "type": "normal",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-slide",
@@ -4894,7 +5269,8 @@
     "type": "rock",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "rock-smash",
@@ -4907,7 +5283,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-throw",
@@ -4920,7 +5297,8 @@
     "type": "rock",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-tomb",
@@ -4933,7 +5311,8 @@
     "type": "rock",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rock-wrecker",
@@ -4946,7 +5325,8 @@
     "type": "rock",
     "category": "physical",
     "power": 150,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rolling-kick",
@@ -4959,7 +5339,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "rollout",
@@ -4972,7 +5353,8 @@
     "type": "rock",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "round",
@@ -4985,7 +5367,8 @@
     "type": "normal",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "ruination",
@@ -4998,7 +5381,8 @@
     "type": "dark",
     "category": "special",
     "power": 1,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sacred-fire",
@@ -5011,7 +5395,8 @@
     "type": "fire",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sacred-sword",
@@ -5024,7 +5409,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "salt-cure",
@@ -5037,7 +5423,8 @@
     "type": "rock",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sand-tomb",
@@ -5050,7 +5437,8 @@
     "type": "ground",
     "category": "physical",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sandsear-storm",
@@ -5063,7 +5451,8 @@
     "type": "ground",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "sappy-seed",
@@ -5076,7 +5465,8 @@
     "type": "grass",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "scald",
@@ -5089,7 +5479,8 @@
     "type": "water",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "scale-shot",
@@ -5102,7 +5493,8 @@
     "type": "dragon",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "scorching-sands",
@@ -5115,7 +5507,8 @@
     "type": "ground",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "scratch",
@@ -5128,7 +5521,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "searing-shot",
@@ -5141,7 +5535,8 @@
     "type": "fire",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "secret-power",
@@ -5154,7 +5549,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "secret-sword",
@@ -5167,7 +5563,8 @@
     "type": "fighting",
     "category": "special",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "seed-bomb",
@@ -5180,7 +5577,8 @@
     "type": "grass",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "seed-flare",
@@ -5193,7 +5591,8 @@
     "type": "grass",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "self-destruct",
@@ -5206,7 +5605,8 @@
     "type": "normal",
     "category": "physical",
     "power": 200,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "shadow-ball",
@@ -5219,7 +5619,8 @@
     "type": "ghost",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shadow-bone",
@@ -5232,7 +5633,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shadow-claw",
@@ -5245,7 +5647,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shadow-force",
@@ -5258,7 +5661,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shadow-punch",
@@ -5271,7 +5675,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shadow-sneak",
@@ -5284,7 +5689,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shell-side-arm",
@@ -5297,7 +5703,8 @@
     "type": "poison",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "shell-trap",
@@ -5310,7 +5717,8 @@
     "type": "fire",
     "category": "special",
     "power": 150,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "shock-wave",
@@ -5323,7 +5731,8 @@
     "type": "electric",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "signal-beam",
@@ -5336,7 +5745,8 @@
     "type": "bug",
     "category": "special",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "silver-wind",
@@ -5349,7 +5759,8 @@
     "type": "bug",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sizzly-slide",
@@ -5362,7 +5773,8 @@
     "type": "fire",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "skitter-smack",
@@ -5375,7 +5787,8 @@
     "type": "bug",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "skull-bash",
@@ -5388,7 +5801,8 @@
     "type": "normal",
     "category": "physical",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sky-attack",
@@ -5401,7 +5815,8 @@
     "type": "flying",
     "category": "physical",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sky-drop",
@@ -5414,7 +5829,8 @@
     "type": "flying",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sky-uppercut",
@@ -5427,7 +5843,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "slam",
@@ -5440,7 +5857,8 @@
     "type": "normal",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "slash",
@@ -5453,7 +5871,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "sludge",
@@ -5466,7 +5885,8 @@
     "type": "poison",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sludge-bomb",
@@ -5479,7 +5899,8 @@
     "type": "poison",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sludge-wave",
@@ -5492,7 +5913,8 @@
     "type": "poison",
     "category": "special",
     "power": 95,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "smack-down",
@@ -5505,7 +5927,8 @@
     "type": "rock",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "smart-strike",
@@ -5518,7 +5941,8 @@
     "type": "steel",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "smelling-salts",
@@ -5531,7 +5955,8 @@
     "type": "normal",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "smog",
@@ -5544,7 +5969,8 @@
     "type": "poison",
     "category": "special",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "snap-trap",
@@ -5557,7 +5983,8 @@
     "type": "grass",
     "category": "physical",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "snarl",
@@ -5570,7 +5997,8 @@
     "type": "dark",
     "category": "special",
     "power": 55,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "snipe-shot",
@@ -5583,7 +6011,8 @@
     "type": "water",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "snore",
@@ -5596,7 +6025,8 @@
     "type": "normal",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "solar-beam",
@@ -5609,7 +6039,8 @@
     "type": "grass",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "solar-blade",
@@ -5622,7 +6053,8 @@
     "type": "grass",
     "category": "physical",
     "power": 125,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spacial-rend",
@@ -5635,7 +6067,8 @@
     "type": "dragon",
     "category": "special",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spark",
@@ -5648,7 +6081,8 @@
     "type": "electric",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "sparkling-aria",
@@ -5661,7 +6095,8 @@
     "type": "water",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "sparkly-swirl",
@@ -5674,7 +6109,8 @@
     "type": "fairy",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spectral-thief",
@@ -5687,7 +6123,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spike-cannon",
@@ -5700,7 +6137,8 @@
     "type": "normal",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spin-out",
@@ -5713,7 +6151,8 @@
     "type": "steel",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spirit-break",
@@ -5726,7 +6165,8 @@
     "type": "fairy",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "spirit-shackle",
@@ -5739,7 +6179,8 @@
     "type": "ghost",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "splishy-splash",
@@ -5752,7 +6193,8 @@
     "type": "water",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "springtide-storm",
@@ -5765,7 +6207,8 @@
     "type": "fairy",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "steam-eruption",
@@ -5778,7 +6221,8 @@
     "type": "water",
     "category": "special",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "steamroller",
@@ -5791,7 +6235,8 @@
     "type": "bug",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "steel-beam",
@@ -5804,7 +6249,8 @@
     "type": "steel",
     "category": "special",
     "power": 140,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "steel-roller",
@@ -5817,7 +6263,8 @@
     "type": "steel",
     "category": "physical",
     "power": 130,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "steel-wing",
@@ -5830,7 +6277,8 @@
     "type": "steel",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "stomp",
@@ -5843,7 +6291,8 @@
     "type": "normal",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "stomping-tantrum",
@@ -5856,7 +6305,8 @@
     "type": "ground",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "stone-axe",
@@ -5869,7 +6319,8 @@
     "type": "rock",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "stone-edge",
@@ -5882,7 +6333,8 @@
     "type": "rock",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "stored-power",
@@ -5895,7 +6347,8 @@
     "type": "psychic",
     "category": "special",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "storm-throw",
@@ -5908,7 +6361,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "strange-steam",
@@ -5921,7 +6375,8 @@
     "type": "fairy",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "strength",
@@ -5934,7 +6389,8 @@
     "type": "normal",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "struggle-bug",
@@ -5947,7 +6403,8 @@
     "type": "bug",
     "category": "special",
     "power": 50,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "submission",
@@ -5960,7 +6417,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "sucker-punch",
@@ -5973,7 +6431,8 @@
     "type": "dark",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "sunsteel-strike",
@@ -5986,7 +6445,8 @@
     "type": "steel",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "supercell-slam",
@@ -5999,7 +6459,8 @@
     "type": "electric",
     "category": "physical",
     "power": 100,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "superpower",
@@ -6012,7 +6473,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "surf",
@@ -6025,7 +6487,8 @@
     "type": "water",
     "category": "special",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "surging-strikes",
@@ -6038,7 +6501,8 @@
     "type": "water",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "swift",
@@ -6051,7 +6515,8 @@
     "type": "normal",
     "category": "special",
     "power": 60,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "synchronoise",
@@ -6064,7 +6529,8 @@
     "type": "psychic",
     "category": "special",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "syrup-bomb",
@@ -6077,7 +6543,8 @@
     "type": "grass",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "tachyon-cutter",
@@ -6090,7 +6557,8 @@
     "type": "steel",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "tackle",
@@ -6103,7 +6571,8 @@
     "type": "normal",
     "category": "physical",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "tail-slap",
@@ -6116,7 +6585,8 @@
     "type": "normal",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "take-down",
@@ -6129,7 +6599,8 @@
     "type": "normal",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "techno-blast",
@@ -6142,7 +6613,8 @@
     "type": "normal",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "temper-flare",
@@ -6155,7 +6627,8 @@
     "type": "fire",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "tera-blast",
@@ -6168,7 +6641,8 @@
     "type": "normal",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "tera-starstorm",
@@ -6181,7 +6655,8 @@
     "type": "normal",
     "category": "special",
     "power": 120,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "terrain-pulse",
@@ -6194,7 +6669,8 @@
     "type": "normal",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thief",
@@ -6207,7 +6683,8 @@
     "type": "dark",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "thousand-arrows",
@@ -6220,7 +6697,8 @@
     "type": "ground",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "thousand-waves",
@@ -6233,7 +6711,8 @@
     "type": "ground",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "thrash",
@@ -6246,7 +6725,8 @@
     "type": "normal",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "throat-chop",
@@ -6259,7 +6739,8 @@
     "type": "dark",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunder",
@@ -6272,7 +6753,8 @@
     "type": "electric",
     "category": "special",
     "power": 110,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunder-cage",
@@ -6285,7 +6767,8 @@
     "type": "electric",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunder-fang",
@@ -6298,7 +6781,8 @@
     "type": "electric",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunder-punch",
@@ -6311,7 +6795,8 @@
     "type": "electric",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunder-shock",
@@ -6324,7 +6809,8 @@
     "type": "electric",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunderbolt",
@@ -6337,7 +6823,8 @@
     "type": "electric",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunderclap",
@@ -6350,7 +6837,8 @@
     "type": "electric",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "thunderous-kick",
@@ -6363,7 +6851,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "torch-song",
@@ -6376,7 +6865,8 @@
     "type": "fire",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "trailblaze",
@@ -6389,7 +6879,8 @@
     "type": "grass",
     "category": "physical",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "tri-attack",
@@ -6402,7 +6893,8 @@
     "type": "normal",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "triple-arrows",
@@ -6415,7 +6907,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "triple-axel",
@@ -6428,7 +6921,8 @@
     "type": "ice",
     "category": "physical",
     "power": 20,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "triple-dive",
@@ -6441,7 +6935,8 @@
     "type": "water",
     "category": "physical",
     "power": 30,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "triple-kick",
@@ -6454,7 +6949,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 10,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "trop-kick",
@@ -6467,7 +6963,8 @@
     "type": "grass",
     "category": "physical",
     "power": 85,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "twin-beam",
@@ -6480,7 +6977,8 @@
     "type": "psychic",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "twineedle",
@@ -6493,7 +6991,8 @@
     "type": "bug",
     "category": "physical",
     "power": 25,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "twister",
@@ -6506,7 +7005,8 @@
     "type": "dragon",
     "category": "special",
     "power": 40,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "u-turn",
@@ -6519,7 +7019,8 @@
     "type": "bug",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "upper-hand",
@@ -6532,7 +7033,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "uproar",
@@ -6545,7 +7047,8 @@
     "type": "normal",
     "category": "special",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "v-create",
@@ -6558,7 +7061,8 @@
     "type": "fire",
     "category": "physical",
     "power": 180,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "vacuum-wave",
@@ -6571,7 +7075,8 @@
     "type": "fighting",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "venoshock",
@@ -6584,7 +7089,8 @@
     "type": "poison",
     "category": "special",
     "power": 65,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "vice-grip",
@@ -6597,7 +7103,8 @@
     "type": "normal",
     "category": "physical",
     "power": 55,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "vine-whip",
@@ -6610,7 +7117,8 @@
     "type": "grass",
     "category": "physical",
     "power": 45,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "vital-throw",
@@ -6623,7 +7131,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "volt-switch",
@@ -6636,7 +7145,8 @@
     "type": "electric",
     "category": "special",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "volt-tackle",
@@ -6649,7 +7159,8 @@
     "type": "electric",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wake-up-slap",
@@ -6662,7 +7173,8 @@
     "type": "fighting",
     "category": "physical",
     "power": 70,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "water-gun",
@@ -6675,7 +7187,8 @@
     "type": "water",
     "category": "special",
     "power": 40,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "water-pledge",
@@ -6688,7 +7201,8 @@
     "type": "water",
     "category": "special",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "water-pulse",
@@ -6701,7 +7215,8 @@
     "type": "water",
     "category": "special",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "water-shuriken",
@@ -6714,7 +7229,8 @@
     "type": "water",
     "category": "special",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "water-spout",
@@ -6727,7 +7243,8 @@
     "type": "water",
     "category": "special",
     "power": 150,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "waterfall",
@@ -6740,7 +7257,8 @@
     "type": "water",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "wave-crash",
@@ -6753,7 +7271,8 @@
     "type": "water",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "weather-ball",
@@ -6766,7 +7285,8 @@
     "type": "normal",
     "category": "special",
     "power": 50,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "whirlpool",
@@ -6779,7 +7299,8 @@
     "type": "water",
     "category": "special",
     "power": 35,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wicked-blow",
@@ -6792,7 +7313,8 @@
     "type": "dark",
     "category": "physical",
     "power": 75,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wild-charge",
@@ -6805,7 +7327,8 @@
     "type": "electric",
     "category": "physical",
     "power": 90,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wildbolt-storm",
@@ -6818,7 +7341,8 @@
     "type": "electric",
     "category": "special",
     "power": 100,
-    "isSpreadMove": true
+    "isSpreadMove": true,
+    "isContactMove": false
   },
   {
     "id": "wing-attack",
@@ -6831,7 +7355,8 @@
     "type": "flying",
     "category": "physical",
     "power": 60,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wood-hammer",
@@ -6844,7 +7369,8 @@
     "type": "grass",
     "category": "physical",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "wrap",
@@ -6857,7 +7383,8 @@
     "type": "normal",
     "category": "physical",
     "power": 15,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": true
   },
   {
     "id": "x-scissor",
@@ -6870,7 +7397,8 @@
     "type": "bug",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "zap-cannon",
@@ -6883,7 +7411,8 @@
     "type": "electric",
     "category": "special",
     "power": 120,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "zen-headbutt",
@@ -6896,7 +7425,8 @@
     "type": "psychic",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "zing-zap",
@@ -6909,7 +7439,8 @@
     "type": "electric",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "zippy-zap",
@@ -6922,7 +7453,8 @@
     "type": "electric",
     "category": "physical",
     "power": 80,
-    "isSpreadMove": false
+    "isSpreadMove": false,
+    "isContactMove": false
   },
   {
     "id": "endeavor",
@@ -6936,6 +7468,7 @@
     "category": "physical",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": true,
     "searchable": false
   },
   {
@@ -6950,6 +7483,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -6964,6 +7498,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -6978,6 +7513,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -6992,6 +7528,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7006,6 +7543,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7020,6 +7558,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7034,6 +7573,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7048,6 +7588,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7062,6 +7603,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7076,6 +7618,7 @@
     "category": "special",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7090,6 +7633,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7104,6 +7648,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7118,6 +7663,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7132,6 +7678,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7146,6 +7693,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7160,6 +7708,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7174,6 +7723,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7188,6 +7738,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7202,6 +7753,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   },
   {
@@ -7216,6 +7768,7 @@
     "category": "status",
     "power": 0,
     "isSpreadMove": false,
+    "isContactMove": false,
     "searchable": false
   }
 ]

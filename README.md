@@ -41,6 +41,7 @@ NOTICE.md
 - `data/*.json` を正本として、ブラウザから直接読み込みます。Excelへの変換や事前生成は不要です。
 - `pokemon.json` はポケモン情報とポケモンごとの `championsTarget` を管理します。
 - `moves.json` は技情報と技ごとの `championsTarget` を管理します。
+- `moves.json` の `isContactMove` は、技が接触技かどうかを管理します。判定は Pokémon Showdown の技フラグ `contact` を基準にしています。
 - `learnsets.json` はポケモンIDごとの習得技ID一覧を管理します。
 - `battle-effects.json` は特性・天候などの対象、補正値、検索結果の表示を管理します。
 - 更新後は `node scripts/validate-data.mjs` でID・重複・対象数を高速に検証できます。
