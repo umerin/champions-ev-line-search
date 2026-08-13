@@ -44,6 +44,17 @@ const spreadTargets = new Set([
   "entire-field",
 ]);
 
+// Pokémon Showdownのdata/moves.tsにあるflags.contactを、取得データへ引き継ぐ。
+const contactMoveIds = new Set([
+  "accelerock", "acrobatics", "assurance", "astonish", "avalanche", "bind", "bite", "bounce",
+  "clamp", "comeuppance", "constrict", "covet", "crabhammer", "crunch", "cut", "dig",
+  "dive", "facade", "fly", "headbutt", "infestation", "liquidation", "lunge", "megahorn",
+  "nuzzle", "outrage", "payback", "peck", "pluck", "pounce", "pound", "psyblade", "pursuit",
+  "rage", "retaliate", "revenge", "rollout", "scratch", "slam", "slash", "spark", "steamroller",
+  "stomp", "strength", "submission", "superpower", "tackle", "thief", "thrash", "trailblaze",
+  "waterfall", "wrap", "endeavor",
+]);
+
 async function getJson(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`${response.status} ${url}`);
@@ -136,6 +147,7 @@ async function fetchMove(id) {
     power: move.power,
     priority: move.priority,
     isSpreadMove: spreadTargets.has(move.target.name),
+    isContactMove: contactMoveIds.has(move.name),
   };
 }
 

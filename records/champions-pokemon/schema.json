@@ -54,7 +54,8 @@
             "type": "object",
             "required": [
               "id",
-              "name"
+              "name",
+              "isContactMove"
             ],
             "properties": {
               "id": {
@@ -75,6 +76,9 @@
               },
               "searchable": {
                 "const": false
+              },
+              "isContactMove": {
+                "type": "boolean"
               }
             },
             "additionalProperties": true

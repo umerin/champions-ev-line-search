@@ -52,6 +52,7 @@ for (const item of index.entries) {
   for (const move of record.learnset.specialMoves) {
     assert(move && typeof move === "object" && typeof move.id === "string" && move.id, `${item.id}: 特殊技データが不正です。`);
     assert(!moveIds.has(move.id), `${item.id}: 特殊技 ${move.id} はmoves.jsonに登録しないでください。`);
+    assert(typeof move.isContactMove === "boolean", `${item.id}: 特殊技 ${move.id} のisContactMoveが不正です。`);
     assert(!specialMoveIds.has(move.id), `${item.id}: 特殊技ID重複 ${move.id}`);
     specialMoveIds.add(move.id);
   }
