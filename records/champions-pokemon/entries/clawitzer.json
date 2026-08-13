@@ -88,11 +88,15 @@
     }
   },
   "weight": {
-    "kg": null,
+    "kg": 35.3,
     "verification": {
-      "status": "not-recorded",
-      "sources": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "https://pokeapi.co/api/v2/pokemon/clawitzer"
+      ],
+      "notes": [
+        "PokéAPIのweight（ヘクトグラム）をkgへ換算。"
+      ]
     }
   },
   "abilities": [],

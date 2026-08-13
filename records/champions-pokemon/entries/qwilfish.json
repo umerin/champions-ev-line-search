@@ -97,11 +97,15 @@
     }
   },
   "weight": {
-    "kg": null,
+    "kg": 3.9,
     "verification": {
-      "status": "not-recorded",
-      "sources": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "https://pokeapi.co/api/v2/pokemon/qwilfish"
+      ],
+      "notes": [
+        "PokéAPIのweight（ヘクトグラム）をkgへ換算。"
+      ]
     }
   },
   "abilities": [],

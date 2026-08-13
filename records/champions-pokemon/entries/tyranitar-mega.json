@@ -129,11 +129,15 @@
     }
   },
   "weight": {
-    "kg": null,
+    "kg": 255,
     "verification": {
-      "status": "not-recorded",
-      "sources": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "https://pokeapi.co/api/v2/pokemon/tyranitar-mega"
+      ],
+      "notes": [
+        "PokéAPIのweight（ヘクトグラム）をkgへ換算。"
+      ]
     }
   },
   "abilities": [],

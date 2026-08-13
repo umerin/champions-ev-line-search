@@ -95,11 +95,15 @@
     }
   },
   "weight": {
-    "kg": null,
+    "kg": 130.3,
     "verification": {
-      "status": "not-recorded",
-      "sources": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "https://pokeapi.co/api/v2/pokemon/sharpedo-mega"
+      ],
+      "notes": [
+        "PokéAPIのweight（ヘクトグラム）をkgへ換算。"
+      ]
     }
   },
   "abilities": [],

@@ -72,11 +72,15 @@
     }
   },
   "weight": {
-    "kg": null,
+    "kg": 39.5,
     "verification": {
-      "status": "not-recorded",
-      "sources": [],
-      "notes": []
+      "status": "verified",
+      "sources": [
+        "https://pokeapi.co/api/v2/pokemon/pidgeot"
+      ],
+      "notes": [
+        "PokéAPIのweight（ヘクトグラム）をkgへ換算。"
+      ]
     }
   },
   "abilities": [],

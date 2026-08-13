@@ -27,4 +27,10 @@
 node scripts\validate-champions-pokemon-records.mjs
 ```
 
+体重をPokéAPIから更新する場合は次を実行する。
+
+```powershell
+node scripts\update-champions-pokemon-weights.mjs
+```
+
 `initialize-champions-pokemon-records.mjs` は未作成の個別ファイルだけを初期生成し、既存の調査記録を上書きしません。
