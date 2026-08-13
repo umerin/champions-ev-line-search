@@ -1,7 +1,7 @@
 const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
-  moves: "./data/moves.json?v=20260809-4",
-  learnsets: "./data/learnsets.json?v=20260809-1",
+  moves: "./data/moves.json?v=20260813-1",
+  learnsets: "./data/learnsets.json?v=20260813-2",
   battleEffects: "./data/battle-effects.json?v=20260813-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
@@ -2756,6 +2756,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
 
   for (const move of state.moves) {
     if (!isMoveAllowed(move.id)) continue;
+    if (move.searchable === false) continue;
     if (!matchesAttackKind(move.category, input.attackKinds)) continue;
 
     for (const attackerId of move.users) {

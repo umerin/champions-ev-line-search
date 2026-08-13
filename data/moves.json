@@ -6923,5 +6923,299 @@
     "category": "physical",
     "power": 80,
     "isSpreadMove": false
+  },
+  {
+    "id": "endeavor",
+    "name": {
+      "en": "Endeavor",
+      "ja": "がむしゃら",
+      "jaHrkt": "がむしゃら"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "physical",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "tearful-look",
+    "name": {
+      "en": "Tearful Look",
+      "ja": "なみだめ",
+      "jaHrkt": "なみだめ"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "copycat",
+    "name": {
+      "en": "Copycat",
+      "ja": "まねっこ",
+      "jaHrkt": "まねっこ"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "helping-hand",
+    "name": {
+      "en": "Helping Hand",
+      "ja": "てだすけ",
+      "jaHrkt": "てだすけ"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "baton-pass",
+    "name": {
+      "en": "Baton Pass",
+      "ja": "バトンタッチ",
+      "jaHrkt": "バトンタッチ"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "safeguard",
+    "name": {
+      "en": "Safeguard",
+      "ja": "しんぴのまもり",
+      "jaHrkt": "しんぴのまもり"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "sleep-talk",
+    "name": {
+      "en": "Sleep Talk",
+      "ja": "ねごと",
+      "jaHrkt": "ねごと"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "endure",
+    "name": {
+      "en": "Endure",
+      "ja": "こらえる",
+      "jaHrkt": "こらえる"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "protect",
+    "name": {
+      "en": "Protect",
+      "ja": "まもる",
+      "jaHrkt": "まもる"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "substitute",
+    "name": {
+      "en": "Substitute",
+      "ja": "みがわり",
+      "jaHrkt": "みがわり"
+    },
+    "championsTarget": false,
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "grass-knot",
+    "name": {
+      "en": "Grass Knot",
+      "ja": "くさむすび",
+      "jaHrkt": "くさむすび"
+    },
+    "championsTarget": false,
+    "type": "grass",
+    "category": "special",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "grassy-terrain",
+    "name": {
+      "en": "Grassy Terrain",
+      "ja": "グラスフィールド",
+      "jaHrkt": "グラスフィールド"
+    },
+    "championsTarget": false,
+    "type": "grass",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "synthesis",
+    "name": {
+      "en": "Synthesis",
+      "ja": "こうごうせい",
+      "jaHrkt": "こうごうせい"
+    },
+    "championsTarget": false,
+    "type": "grass",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "sunny-day",
+    "name": {
+      "en": "Sunny Day",
+      "ja": "にほんばれ",
+      "jaHrkt": "にほんばれ"
+    },
+    "championsTarget": false,
+    "type": "fire",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "rain-dance",
+    "name": {
+      "en": "Rain Dance",
+      "ja": "あまごい",
+      "jaHrkt": "あまごい"
+    },
+    "championsTarget": false,
+    "type": "water",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "calm-mind",
+    "name": {
+      "en": "Calm Mind",
+      "ja": "めいそう",
+      "jaHrkt": "めいそう"
+    },
+    "championsTarget": false,
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "skill-swap",
+    "name": {
+      "en": "Skill Swap",
+      "ja": "スキルスワップ",
+      "jaHrkt": "スキルスワップ"
+    },
+    "championsTarget": false,
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "trick",
+    "name": {
+      "en": "Trick",
+      "ja": "トリック",
+      "jaHrkt": "トリック"
+    },
+    "championsTarget": false,
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "rest",
+    "name": {
+      "en": "Rest",
+      "ja": "ねむる",
+      "jaHrkt": "ねむる"
+    },
+    "championsTarget": false,
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "misty-terrain",
+    "name": {
+      "en": "Misty Terrain",
+      "ja": "ミストフィールド",
+      "jaHrkt": "ミストフィールド"
+    },
+    "championsTarget": false,
+    "type": "fairy",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
+  },
+  {
+    "id": "baby-doll-eyes",
+    "name": {
+      "en": "Baby-Doll Eyes",
+      "ja": "あまえる",
+      "jaHrkt": "あまえる"
+    },
+    "championsTarget": false,
+    "type": "fairy",
+    "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "searchable": false
   }
 ]
