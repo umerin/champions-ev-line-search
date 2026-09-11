@@ -1,0 +1,262 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "squawkabilly-green-plumage",
+    "dexNumber": 931,
+    "displayName": "イキリンコ（グリーンフェザー）",
+    "name": {
+      "en": "Squawkabilly",
+      "ja": "イキリンコ（グリーンフェザー）",
+      "jaHrkt": "イキリンコ（グリーンフェザー）"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 82,
+      "atk": 96,
+      "def": 51,
+      "spa": 45,
+      "spd": 51,
+      "spe": 92
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "double-edge",
+      "facade",
+      "quick-attack",
+      "endeavor",
+      "hyper-beam",
+      "hyper-voice",
+      "uproar",
+      "copycat",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "seed-bomb",
+      "heat-wave",
+      "sunny-day",
+      "lunge",
+      "u-turn",
+      "pounce",
+      "brave-bird",
+      "fly",
+      "aerial-ace",
+      "dual-wingbeat",
+      "hurricane",
+      "air-slash",
+      "air-cutter",
+      "rest",
+      "foul-play",
+      "lash-out",
+      "thief"
+    ],
+    "specialMoves": [
+      {
+        "id": "swagger",
+        "name": "いばる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "tailwind",
+        "name": "おいかぜ",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roost",
+        "name": "はねやすめ",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "feather-dance",
+        "name": "フェザーダンス",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": true,
+        "moveCategories": []
+      },
+      {
+        "id": "final-gambit",
+        "name": "いのちがけ",
+        "type": "fighting",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "parting-shot",
+        "name": "すてゼリフ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fake-tears",
+        "name": "うそなき",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "flatter",
+        "name": "おだてる",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "torment",
+        "name": "いちゃもん",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-24-42.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "facade",
+        "quick-attack",
+        "endeavor",
+        "hyper-beam",
+        "hyper-voice",
+        "uproar",
+        "copycat",
+        "helping-hand",
+        "sleep-talk",
+        "swagger",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "seed-bomb",
+        "heat-wave",
+        "sunny-day",
+        "lunge",
+        "u-turn",
+        "pounce",
+        "brave-bird",
+        "fly",
+        "aerial-ace",
+        "dual-wingbeat",
+        "hurricane",
+        "air-slash",
+        "air-cutter",
+        "tailwind",
+        "roost",
+        "feather-dance",
+        "reversal",
+        "final-gambit",
+        "rest",
+        "foul-play",
+        "lash-out",
+        "thief",
+        "parting-shot",
+        "fake-tears",
+        "taunt",
+        "flatter",
+        "torment"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全43技）。",
+        "耐久ラインサーチには固定威力の攻撃技22件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

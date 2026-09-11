@@ -1,0 +1,225 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "baxcalibur-mega",
+    "dexNumber": 998,
+    "displayName": "メガセグレイブ",
+    "name": {
+      "en": "Baxcalibur",
+      "ja": "メガセグレイブ",
+      "jaHrkt": "メガセグレイブ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 115,
+      "atk": 175,
+      "def": 117,
+      "spa": 105,
+      "spd": 101,
+      "spe": 87
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "double-edge",
+      "body-slam",
+      "facade",
+      "hyper-beam",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "aqua-tail",
+      "rain-dance",
+      "thunder-fang",
+      "aerial-ace",
+      "earthquake",
+      "high-horsepower",
+      "dig",
+      "stomping-tantrum",
+      "bulldoze",
+      "icicle-crash",
+      "ice-fang",
+      "avalanche",
+      "ice-shard",
+      "icicle-spear",
+      "blizzard",
+      "ice-beam",
+      "freeze-dry",
+      "frost-breath",
+      "icy-wind",
+      "body-press",
+      "brick-break",
+      "zen-headbutt",
+      "rest",
+      "glaive-rush",
+      "outrage",
+      "dragon-rush",
+      "dragon-claw",
+      "breaking-swipe",
+      "dragon-tail",
+      "scale-shot",
+      "draco-meteor",
+      "dragon-pulse",
+      "crunch",
+      "bite",
+      "iron-head"
+    ],
+    "specialMoves": [
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "focus-energy",
+        "name": "きあいだめ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "snowscape",
+        "name": "ゆきげしき",
+        "type": "ice",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "dragon-cheer",
+        "name": "ドラゴンエール",
+        "type": "dragon",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "dragon-dance",
+        "name": "りゅうのまい",
+        "type": "dragon",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-24-42.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "hyper-beam",
+        "helping-hand",
+        "sleep-talk",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "focus-energy",
+        "swords-dance",
+        "aqua-tail",
+        "rain-dance",
+        "thunder-fang",
+        "aerial-ace",
+        "earthquake",
+        "high-horsepower",
+        "dig",
+        "stomping-tantrum",
+        "bulldoze",
+        "icicle-crash",
+        "ice-fang",
+        "avalanche",
+        "ice-shard",
+        "icicle-spear",
+        "blizzard",
+        "ice-beam",
+        "freeze-dry",
+        "frost-breath",
+        "icy-wind",
+        "snowscape",
+        "body-press",
+        "brick-break",
+        "zen-headbutt",
+        "rest",
+        "glaive-rush",
+        "outrage",
+        "dragon-rush",
+        "dragon-claw",
+        "breaking-swipe",
+        "dragon-tail",
+        "scale-shot",
+        "draco-meteor",
+        "dragon-pulse",
+        "dragon-cheer",
+        "dragon-dance",
+        "crunch",
+        "bite",
+        "iron-head"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全51技）。",
+        "耐久ラインサーチには固定威力の攻撃技38件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。",
+        "通常形態のゲーム内一覧をメガ形態へ同期。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

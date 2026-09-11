@@ -1,0 +1,286 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "indeedee-female",
+    "dexNumber": 876,
+    "displayName": "イエッサン（♀）",
+    "name": {
+      "en": "Indeedee",
+      "ja": "イエッサン（♀）",
+      "jaHrkt": "イエッサン（♀）"
+    },
+    "championsTarget": true,
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 55,
+      "def": 65,
+      "spa": 95,
+      "spd": 105,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "facade",
+      "fake-out",
+      "hyper-voice",
+      "round",
+      "terrain-pulse",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "safeguard",
+      "baton-pass",
+      "endure",
+      "protect",
+      "substitute",
+      "energy-ball",
+      "mystical-fire",
+      "drain-punch",
+      "zen-headbutt",
+      "future-sight",
+      "psychic",
+      "psyshock",
+      "stored-power",
+      "calm-mind",
+      "skill-swap",
+      "rest",
+      "trick",
+      "shadow-ball",
+      "play-rough",
+      "alluring-voice",
+      "dazzling-gleam",
+      "draining-kiss"
+    ],
+    "specialMoves": [
+      {
+        "id": "wish",
+        "name": "ねがいごと",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "follow-me",
+        "name": "このゆびとまれ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "psych-up",
+        "name": "じこあんじ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "sing",
+        "name": "うたう",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "psychic-terrain",
+        "name": "サイコフィールド",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "heal-pulse",
+        "name": "いやしのはどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "guard-split",
+        "name": "ガードシェア",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "trick-room",
+        "name": "トリックルーム",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "guard-swap",
+        "name": "ガードスワップ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "healing-wish",
+        "name": "いやしのねがい",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "imprison",
+        "name": "ふういん",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reflect",
+        "name": "リフレクター",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "light-screen",
+        "name": "ひかりのかべ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-24-42.mkv"
+      ],
+      "verifiedMoveIds": [
+        "body-slam",
+        "facade",
+        "fake-out",
+        "hyper-voice",
+        "round",
+        "terrain-pulse",
+        "snore",
+        "wish",
+        "helping-hand",
+        "follow-me",
+        "psych-up",
+        "sleep-talk",
+        "safeguard",
+        "baton-pass",
+        "endure",
+        "protect",
+        "substitute",
+        "sing",
+        "energy-ball",
+        "mystical-fire",
+        "drain-punch",
+        "zen-headbutt",
+        "future-sight",
+        "psychic",
+        "psyshock",
+        "stored-power",
+        "psychic-terrain",
+        "heal-pulse",
+        "guard-split",
+        "trick-room",
+        "guard-swap",
+        "healing-wish",
+        "calm-mind",
+        "imprison",
+        "skill-swap",
+        "reflect",
+        "rest",
+        "trick",
+        "light-screen",
+        "shadow-ball",
+        "play-rough",
+        "alluring-voice",
+        "dazzling-gleam",
+        "draining-kiss",
+        "charm"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全45技）。",
+        "耐久ラインサーチには固定威力の攻撃技20件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

@@ -1,0 +1,273 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "thievul",
+    "dexNumber": 828,
+    "displayName": "フォクスライ",
+    "name": {
+      "en": "Thievul",
+      "ja": "フォクスライ",
+      "jaHrkt": "フォクスライ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 58,
+      "def": 58,
+      "spa": 87,
+      "spd": 92,
+      "spe": 90
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "facade",
+      "quick-attack",
+      "tail-slap",
+      "hyper-beam",
+      "round",
+      "snore",
+      "baton-pass",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "grass-knot",
+      "fire-fang",
+      "burning-jealousy",
+      "thunder-fang",
+      "first-impression",
+      "u-turn",
+      "acrobatics",
+      "dig",
+      "mud-shot",
+      "ice-fang",
+      "expanding-force",
+      "psychic",
+      "rest",
+      "shadow-claw",
+      "shadow-ball",
+      "foul-play",
+      "crunch",
+      "lash-out",
+      "night-slash",
+      "sucker-punch",
+      "knock-off",
+      "assurance",
+      "thief",
+      "dark-pulse",
+      "snarl",
+      "play-rough"
+    ],
+    "specialMoves": [
+      {
+        "id": "howl",
+        "name": "とおぼえ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "double-team",
+        "name": "かげぶんしん",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "screech",
+        "name": "いやなおと",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "beat-up",
+        "name": "ふくろだたき",
+        "type": "dark",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "parting-shot",
+        "name": "すてゼリフ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "nasty-plot",
+        "name": "わるだくみ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fake-tears",
+        "name": "うそなき",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "torment",
+        "name": "いちゃもん",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-24-42.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "facade",
+        "quick-attack",
+        "tail-slap",
+        "hyper-beam",
+        "round",
+        "snore",
+        "howl",
+        "baton-pass",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "double-team",
+        "screech",
+        "roar",
+        "trailblaze",
+        "grass-knot",
+        "fire-fang",
+        "burning-jealousy",
+        "thunder-fang",
+        "first-impression",
+        "u-turn",
+        "acrobatics",
+        "dig",
+        "mud-shot",
+        "ice-fang",
+        "expanding-force",
+        "psychic",
+        "rest",
+        "agility",
+        "shadow-claw",
+        "shadow-ball",
+        "foul-play",
+        "crunch",
+        "lash-out",
+        "night-slash",
+        "sucker-punch",
+        "knock-off",
+        "assurance",
+        "thief",
+        "beat-up",
+        "dark-pulse",
+        "snarl",
+        "parting-shot",
+        "nasty-plot",
+        "fake-tears",
+        "taunt",
+        "torment",
+        "play-rough"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全51技）。",
+        "耐久ラインサーチには固定威力の攻撃技32件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

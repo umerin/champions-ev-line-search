@@ -1984,7 +1984,7 @@
       "ja": "ドラムアタック",
       "jaHrkt": "ドラムアタック"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "grass",
     "category": "physical",
     "power": 80,
@@ -3158,7 +3158,7 @@
       "ja": "きょけんとつげき",
       "jaHrkt": "きょけんとつげき"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "dragon",
     "category": "physical",
     "power": 120,
@@ -6606,7 +6606,7 @@
       "ja": "きりさく",
       "jaHrkt": "きりさく"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "physical",
     "power": 70,

@@ -435,7 +435,7 @@
       "ja": "メガセグレイブ",
       "jaHrkt": "メガセグレイブ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dragon",
       "ice"
@@ -577,7 +577,7 @@
       "ja": "メガボーマンダ",
       "jaHrkt": "メガボーマンダ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dragon",
       "flying"
@@ -1886,7 +1886,7 @@
       "ja": "メガグソクムシャ",
       "jaHrkt": "メガグソクムシャ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "bug",
       "steel"
@@ -2746,7 +2746,7 @@
       "ja": "セグレイブ",
       "jaHrkt": "セグレイブ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dragon",
       "ice"
@@ -3193,7 +3193,7 @@
       "ja": "ボーマンダ",
       "jaHrkt": "ボーマンダ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dragon",
       "flying"
@@ -7912,7 +7912,7 @@
       "ja": "グソクムシャ",
       "jaHrkt": "グソクムシャ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "bug",
       "water"
@@ -7984,7 +7984,7 @@
       "ja": "ゴリランダー",
       "jaHrkt": "ゴリランダー"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "grass"
     ],
@@ -15809,7 +15809,7 @@
       "ja": "イエッサン（♀）",
       "jaHrkt": "イエッサン（♀）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "psychic",
       "normal"
@@ -15833,7 +15833,7 @@
       "ja": "イエッサン（♂）",
       "jaHrkt": "イエッサン（♂）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "psychic",
       "normal"
@@ -17879,7 +17879,7 @@
       "ja": "フォクスライ",
       "jaHrkt": "フォクスライ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dark"
     ],
@@ -18653,7 +18653,7 @@
       "ja": "ペルシアン",
       "jaHrkt": "ペルシアン"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "normal"
     ],
@@ -18676,7 +18676,7 @@
       "ja": "ペルシアン（アローラ）",
       "jaHrkt": "ペルシアン（アローラ）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dark"
     ],
@@ -20368,13 +20368,13 @@
   {
     "id": "squawkabilly-green-plumage",
     "dexNumber": 931,
-    "displayName": "イキリンコ（みどりいろ・plumage）",
+    "displayName": "イキリンコ（グリーンフェザー）",
     "name": {
       "en": "Squawkabilly",
-      "ja": "イキリンコ（みどりいろ・plumage）",
-      "jaHrkt": "イキリンコ（みどりいろ・plumage）"
+      "ja": "イキリンコ（グリーンフェザー）",
+      "jaHrkt": "イキリンコ（グリーンフェザー）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "normal",
       "flying"

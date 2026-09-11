@@ -11,3 +11,5 @@ outputs/**/pokemon-data-editor.xlsx
 
 # Local source videos used for manual Champions learnset verification.
 local-input/videos/
+local-input/.python-libs/
+local-input/.video-deps/
