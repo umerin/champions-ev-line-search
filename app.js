@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260814-1",
   learnsets: "./data/learnsets.json?v=20260814-1",
-  battleEffects: "./data/battle-effects.json?v=20260912-2",
+  battleEffects: "./data/battle-effects.json?v=20260912-3",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -3158,6 +3158,7 @@ function getAttackerPowerEffects(attacker, move) {
     move.type,
     1,
     move.category,
+    move,
   )
     .filter((effect) => effect.stage === "power");
 }

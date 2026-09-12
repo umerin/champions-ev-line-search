@@ -390,8 +390,32 @@
       "notes": []
     }
   },
-  "abilities": [],
-  "battleEffects": [],
+  "abilities": [
+    {
+      "id": "tough-claws",
+      "name": "かたいツメ",
+      "verification": {
+        "status": "inherited-unverified",
+        "sources": [],
+        "notes": [
+          "ユーザー指示により追加。接触技の威力を5325/4096倍で計算する。"
+        ]
+      }
+    }
+  ],
+  "battleEffects": [
+    {
+      "scope": "attacker",
+      "effectKey": "toughClaws",
+      "definition": {
+        "abilityId": "tough-claws",
+        "abilityName": "かたいツメ",
+        "stage": "power",
+        "contactOnly": true,
+        "modifier": 1.300048828125
+      }
+    }
+  ],
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",

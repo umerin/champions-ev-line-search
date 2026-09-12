@@ -134,6 +134,25 @@
       ],
       "stage": "weather",
       "weather": "sunny"
+    },
+    "toughClaws": {
+      "abilityId": "tough-claws",
+      "abilityName": "かたいツメ",
+      "pokemonIds": [
+        "charizard-mega-x",
+        "meowth-galar",
+        "aerodactyl-mega",
+        "metagross-mega",
+        "binacle",
+        "barbaracle",
+        "barbaracle-mega",
+        "lycanroc-dusk",
+        "golisopod-mega",
+        "perrserker"
+      ],
+      "stage": "power",
+      "contactOnly": true,
+      "modifier": 1.300048828125
     }
   },
   "weatherSetters": {
