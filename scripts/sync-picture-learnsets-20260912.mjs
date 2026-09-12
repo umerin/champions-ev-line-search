@@ -69,7 +69,7 @@ const specialMoves = new Map([
 ].map((move) => [move.id, move]));
 
 const verifiedIds = [
-  "bind", "hyper-beam", "round", "weather-ball", "snore", "tearful-look",
+  "giga-impact", "facade", "bind", "hyper-beam", "round", "weather-ball", "snore", "tearful-look",
   "psych-up", "baton-pass", "sleep-talk", "endure", "protect", "substitute",
   "focus-energy", "double-team", "swords-dance", "liquidation", "dive", "waterfall",
   "flip-turn", "aqua-jet", "hydro-cannon", "hydro-pump", "muddy-water", "surf",
@@ -131,11 +131,11 @@ record.learnset.moveIds = masterIds;
 record.learnset.specialMoves = recordOnlyMoves;
 record.learnset.verification = {
   status: "verified",
-  sources: [pictureSource],
+  sources: [pictureSource, "ユーザー追加指示（ギガインパクト・からげんき）"],
   verifiedMoveIds: verifiedIds,
   rejectedMoveIds: previous.filter((id) => !verifiedIds.includes(id)).sort(),
   notes: [
-    "ゲーム内の「教える技」一覧をスクリーンショット10枚で全件確認（全60技）。",
+    `ゲーム内の「教える技」一覧をスクリーンショット10枚で確認し、追加指定を反映（全${verifiedIds.length}技）。`,
     `耐久ラインサーチには固定威力の攻撃技${searchableIds.length}件だけを同期。変化技は個別記録のみに保存。`,
   ],
 };

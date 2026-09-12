@@ -26,6 +26,8 @@
   },
   "learnset": {
     "moveIds": [
+      "giga-impact",
+      "facade",
       "bind",
       "hyper-beam",
       "round",
@@ -202,9 +204,12 @@
     "verification": {
       "status": "verified",
       "sources": [
-        "local-input/picture/インテレオン（スクリーンショット10枚）"
+        "local-input/picture/インテレオン（スクリーンショット10枚）",
+        "ユーザー追加指示（ギガインパクト・からげんき）"
       ],
       "verifiedMoveIds": [
+        "giga-impact",
+        "facade",
         "bind",
         "hyper-beam",
         "round",
@@ -268,8 +273,8 @@
       ],
       "rejectedMoveIds": [],
       "notes": [
-        "ゲーム内の「教える技」一覧をスクリーンショット10枚で全件確認（全60技）。",
-        "耐久ラインサーチには固定威力の攻撃技39件だけを同期。変化技は個別記録のみに保存。"
+        "ゲーム内の「教える技」一覧をスクリーンショット10枚で確認し、追加指定を反映（全62技）。",
+        "耐久ラインサーチには固定威力の攻撃技41件だけを同期。変化技は個別記録のみに保存。"
       ]
     }
   },
