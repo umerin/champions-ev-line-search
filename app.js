@@ -44,6 +44,7 @@ const state = {
   battleEffects: { defender: {}, attacker: {} },
   moveExclusions: createMoveExclusionState(),
   pokemonExclusions: createPokemonExclusionState(),
+  attackerAbilityExclusions: createAttackerAbilityExclusionState(),
   bulkSettings: createBulkSettingsState(),
   moveSettingsPokemonId: null,
   moveSettingsRule: "single",
@@ -94,6 +95,7 @@ let searchTimer = null;
 const RECENT_POKEMON_STORAGE_KEY = "champions-ev-line-search:recent-pokemon";
 const MOVE_SETTINGS_STORAGE_KEY = "champions-ev-line-search:move-settings";
 const POKEMON_SETTINGS_STORAGE_KEY = "champions-ev-line-search:pokemon-settings";
+const ATTACKER_ABILITY_SETTINGS_STORAGE_KEY = "champions-ev-line-search:attacker-ability-settings";
 const BULK_SETTINGS_STORAGE_KEY = "champions-ev-line-search:bulk-settings";
 const MOVE_SETTINGS_PRESETS_STORAGE_KEY = "champions-ev-line-search:move-settings-presets";
 const RECOMMENDED_MOVE_SETTINGS_PRESETS_STORAGE_KEY = "champions-ev-line-search:recommended-move-settings-preset-drafts";
@@ -180,6 +182,7 @@ const els = {
   moveSettingsPresetConfirmApply: document.querySelector("#moveSettingsPresetConfirmApply"),
   moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
   moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
+  moveSettingsAbilityList: document.querySelector("#moveSettingsAbilityList"),
   moveSettingsIndividualPanel: document.querySelector("#moveSettingsIndividualPanel"),
   moveSettingsBulkPanel: document.querySelector("#moveSettingsBulkPanel"),
   moveSettingsBulkRuleName: document.querySelector("#moveSettingsBulkRuleName"),
@@ -331,6 +334,7 @@ async function init() {
     buildPokemonFormMetadata();
     state.moveExclusions = loadMoveExclusions();
     state.pokemonExclusions = loadPokemonExclusions();
+    state.attackerAbilityExclusions = loadAttackerAbilityExclusions();
     state.bulkSettings = loadBulkSettings();
     state.moveSettingsPresets = loadMoveSettingsPresets();
     state.recommendedMoveSettingsPresets = loadRecommendedMoveSettingsPresetDrafts();
@@ -505,6 +509,7 @@ function setupMoveSettingsPage() {
   });
   els.moveSettingsPokemonList.addEventListener("click", handleMoveSettingsPokemonListClick);
   els.moveSettingsPokemonList.addEventListener("change", handleMoveSettingsPokemonListChange);
+  els.moveSettingsAbilityList.addEventListener("change", handleMoveSettingsAbilityListChange);
   els.moveSettingsPresetSelect.addEventListener("change", handleMoveSettingsPresetSelectionChange);
   els.moveSettingsPresetName.addEventListener("input", updateMoveSettingsPresetActions);
   els.moveSettingsPresetSave.addEventListener("click", saveCurrentMoveSettingsPreset);
@@ -673,6 +678,7 @@ function saveCurrentMoveSettingsPreset() {
     savedAt: new Date().toISOString(),
     moveExclusions: serializeMoveExclusions(state.moveExclusions, rule),
     pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, rule),
+    attackerAbilityExclusions: serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule),
   };
   if (existingIndex >= 0) state.moveSettingsPresets[existingIndex] = preset;
   else state.moveSettingsPresets.unshift(preset);
@@ -706,6 +712,7 @@ function createRecommendedMoveSettingsPresetDraft() {
     savedAt: new Date().toISOString(),
     moveExclusions: serializeMoveExclusions(state.moveExclusions, rule),
     pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, rule),
+    attackerAbilityExclusions: serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule),
   };
   state.recommendedMoveSettingsPresets.unshift(preset);
   saveRecommendedMoveSettingsPresetDrafts();
@@ -765,6 +772,7 @@ function saveEditingMoveSettingsPreset() {
   preset.savedAt = new Date().toISOString();
   preset.moveExclusions = serializeMoveExclusions(state.moveExclusions, rule);
   preset.pokemonExclusions = serializePokemonExclusions(state.pokemonExclusions, rule);
+  preset.attackerAbilityExclusions = serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule);
   if (selection.source === "recommended") saveRecommendedMoveSettingsPresetDrafts();
   else saveMoveSettingsPresets();
   setMoveSettingsPresetStatus(`「${preset.name}」に自動保存しました。`);
@@ -863,10 +871,13 @@ function confirmMoveSettingsPresetAction() {
   const copiedAcrossRules = presetRule !== targetRule;
   const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(presetRule) ?? new Map();
   const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(presetRule) ?? new Set();
+  const restoredAttackerAbilityExclusions = deserializeAttackerAbilityExclusions(preset.attackerAbilityExclusions).get(presetRule) ?? new Map();
   state.moveExclusions.set(targetRule, restoredMoveExclusions);
   state.pokemonExclusions.set(targetRule, restoredPokemonExclusions);
+  state.attackerAbilityExclusions.set(targetRule, restoredAttackerAbilityExclusions);
   saveMoveExclusions();
   savePokemonExclusions();
+  saveAttackerAbilityExclusions();
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
   setMoveSettingsPresetStatus(`${selection.source === "user" ? "プリセット" : "おすすめプリセット"}「${preset.name}」を${copiedAcrossRules ? `${getMoveRuleName(presetRule)}から現在の${getMoveRuleName(targetRule)}へ反映しました。` : "呼び出しました。"}`);
@@ -889,6 +900,7 @@ function loadMoveSettingsPresets() {
           savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
           moveExclusions: preset.moveExclusions,
           pokemonExclusions: preset.pokemonExclusions,
+          attackerAbilityExclusions: preset.attackerAbilityExclusions,
         };
       })
       .filter(Boolean)
@@ -918,6 +930,7 @@ function normalizeBuiltInRecommendedMoveSettingsPresets(payload) {
         savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
         moveExclusions: preset.moveExclusions,
         pokemonExclusions: preset.pokemonExclusions,
+        attackerAbilityExclusions: preset.attackerAbilityExclusions,
       };
     })
     .filter(Boolean);
@@ -952,6 +965,7 @@ function loadRecommendedMoveSettingsPresetDrafts() {
           savedAt: typeof preset.savedAt === "string" ? preset.savedAt : "",
           moveExclusions: preset.moveExclusions,
           pokemonExclusions: preset.pokemonExclusions,
+          attackerAbilityExclusions: preset.attackerAbilityExclusions,
         };
       })
       .filter(Boolean);
@@ -991,6 +1005,7 @@ function exportRecommendedMoveSettingsPresetDrafts() {
       savedAt: preset.savedAt,
       moveExclusions: preset.moveExclusions,
       pokemonExclusions: preset.pokemonExclusions,
+      attackerAbilityExclusions: preset.attackerAbilityExclusions,
     })),
   };
   const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json" });
@@ -1278,6 +1293,7 @@ function handleMoveSettingsPokemonListClick(event) {
   button.classList.add("is-selected");
   button.setAttribute("aria-selected", "true");
   state.moveSettingsPokemonId = pokemonId;
+  renderMoveSettingsAbilityList();
   renderMoveSettingsMoveList();
 }
 
@@ -1287,14 +1303,83 @@ function handleMoveSettingsPokemonListChange(event) {
   setPokemonIncluded(checkbox.dataset.pokemonId, checkbox.checked);
 }
 
+function getAttackerAbilityDefinitions(pokemonId) {
+  return Object.entries(state.battleEffects?.attacker ?? {})
+    .filter(([, effect]) => (
+      effect.pokemonIds?.includes(pokemonId)
+      && typeof effect.abilityName === "string"
+      && ["attack", "power", "weather"].includes(effect.stage)
+    ))
+    .map(([effectKey, effect]) => ({ effectKey, ...effect }));
+}
+
+function getAttackerAbilityDescription(effect) {
+  if (effect.stage === "weather") return "攻撃時の天候効果";
+  if (effect.stage === "attack") return "攻撃実数値補正";
+  if (effect.contactOnly) return "接触技の威力補正";
+  if (effect.moveTypes?.length) {
+    return `${effect.moveTypes.map((type) => jpType[type] ?? type).join("・")}技の威力補正`;
+  }
+  return "攻撃時の威力補正";
+}
+
+function renderMoveSettingsAbilityList() {
+  const pokemon = getPokemonPool().find((item) => item.id === state.moveSettingsPokemonId);
+  if (!pokemon) {
+    els.moveSettingsAbilityList.innerHTML = `<p class="move-settings-empty">ポケモンを選択してください。</p>`;
+    return;
+  }
+  const abilities = getAttackerAbilityDefinitions(pokemon.id);
+  if (!abilities.length) {
+    els.moveSettingsAbilityList.innerHTML = `<p class="move-settings-ability-empty">設定できる攻撃側特性はありません。</p>`;
+    return;
+  }
+  els.moveSettingsAbilityList.innerHTML = abilities.map((effect) => {
+    const enabled = isAttackerAbilityEnabled(pokemon.id, effect.effectKey);
+    return `
+      <label class="move-settings-ability-row">
+        <input class="move-settings-ability-checkbox" type="checkbox" data-pokemon-id="${escapeHtml(pokemon.id)}" data-effect-key="${escapeHtml(effect.effectKey)}"${enabled ? " checked" : ""} />
+        <span class="move-settings-ability-name">${escapeHtml(effect.abilityName)}</span>
+        <span class="move-settings-ability-description">${escapeHtml(getAttackerAbilityDescription(effect))}</span>
+      </label>
+    `;
+  }).join("");
+}
+
+function handleMoveSettingsAbilityListChange(event) {
+  const checkbox = event.target.closest(".move-settings-ability-checkbox");
+  if (!checkbox || !els.moveSettingsAbilityList.contains(checkbox)) return;
+  setAttackerAbilityEnabled(
+    checkbox.dataset.pokemonId,
+    checkbox.dataset.effectKey,
+    checkbox.checked,
+  );
+}
+
+function setAttackerAbilityEnabled(pokemonId, effectKey, enabled) {
+  if (!pokemonId || !effectKey) return;
+  const rule = normalizeMoveRule(state.moveSettingsRule);
+  const exclusions = getAttackerAbilityExclusions(pokemonId, true, rule);
+  if (enabled) exclusions.delete(effectKey);
+  else exclusions.add(effectKey);
+  const ruleExclusions = state.attackerAbilityExclusions.get(rule);
+  if (!exclusions.size) ruleExclusions?.delete(pokemonId);
+  saveAttackerAbilityExclusions();
+  saveEditingMoveSettingsPreset();
+  renderMoveSettingsAbilityList();
+  refreshSearchAfterMoveSettingsChange();
+}
+
 function renderMoveSettingsMoveList() {
   const pokemon = getPokemonPool().find((item) => item.id === state.moveSettingsPokemonId);
   if (!pokemon) {
     els.moveSettingsPokemonName.textContent = "ポケモンを選択してください";
     els.moveSettingsSummary.textContent = "技の設定状況";
+    renderMoveSettingsAbilityList();
     els.moveSettingsMoveList.innerHTML = `<p class="move-settings-empty">ポケモンを選択してください。</p>`;
     return;
   }
+  renderMoveSettingsAbilityList();
   const moves = getMovesForPokemon(pokemon);
   const excluded = getMoveExclusions(pokemon.id);
   const query = normalizePokemonSearch(els.moveSettingsMoveSearch.value);
@@ -1370,6 +1455,10 @@ function createMoveExclusionState() {
 
 function createPokemonExclusionState() {
   return new Map(MOVE_SETTING_RULES.map((rule) => [rule, new Set()]));
+}
+
+function createAttackerAbilityExclusionState() {
+  return new Map(MOVE_SETTING_RULES.map((rule) => [rule, new Map()]));
 }
 
 function createBulkSettingsState() {
@@ -1674,6 +1763,77 @@ function loadPokemonExclusions() {
 function savePokemonExclusions() {
   try {
     localStorage.setItem(POKEMON_SETTINGS_STORAGE_KEY, JSON.stringify(serializePokemonExclusions()));
+  } catch {
+    // Ignore unavailable storage; the current session still uses the in-memory settings.
+  }
+}
+
+function getAttackerAbilityExclusions(pokemonId, create = false, rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  let ruleExclusions = state.attackerAbilityExclusions.get(normalizedRule);
+  if (!ruleExclusions && create) {
+    ruleExclusions = new Map();
+    state.attackerAbilityExclusions.set(normalizedRule, ruleExclusions);
+  }
+  let exclusions = ruleExclusions?.get(pokemonId);
+  if (!exclusions && create) {
+    exclusions = new Set();
+    ruleExclusions.set(pokemonId, exclusions);
+  }
+  return exclusions ?? new Set();
+}
+
+function isAttackerAbilityEnabled(pokemonId, effectKey, rule = state.moveSettingsRule) {
+  return !getAttackerAbilityExclusions(pokemonId, false, rule).has(effectKey);
+}
+
+function serializeAttackerAbilityExclusions(exclusions = state.attackerAbilityExclusions, targetRule = null) {
+  const stored = {};
+  const rules = targetRule ? [normalizeMoveRule(targetRule)] : MOVE_SETTING_RULES;
+  rules.forEach((rule) => {
+    const ruleExclusions = exclusions?.get(rule);
+    const ruleStored = Object.fromEntries(
+      [...(ruleExclusions?.entries() ?? [])]
+        .filter(([, effectKeys]) => effectKeys instanceof Set && effectKeys.size)
+        .map(([pokemonId, effectKeys]) => [pokemonId, [...effectKeys]]),
+    );
+    if (Object.keys(ruleStored).length) stored[rule] = ruleStored;
+  });
+  return stored;
+}
+
+function deserializeAttackerAbilityExclusions(stored) {
+  const exclusions = createAttackerAbilityExclusionState();
+  if (!stored || typeof stored !== "object" || Array.isArray(stored)) return exclusions;
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const ruleData = stored[rule];
+    if (!ruleData || typeof ruleData !== "object" || Array.isArray(ruleData)) return;
+    const ruleExclusions = exclusions.get(rule);
+    Object.entries(ruleData).forEach(([pokemonId, effectKeys]) => {
+      if (Array.isArray(effectKeys) && effectKeys.length) {
+        ruleExclusions.set(pokemonId, new Set(effectKeys.filter((effectKey) => typeof effectKey === "string")));
+      }
+    });
+  });
+  return exclusions;
+}
+
+function loadAttackerAbilityExclusions() {
+  try {
+    return deserializeAttackerAbilityExclusions(
+      JSON.parse(localStorage.getItem(ATTACKER_ABILITY_SETTINGS_STORAGE_KEY) ?? "{}"),
+    );
+  } catch {
+    return createAttackerAbilityExclusionState();
+  }
+}
+
+function saveAttackerAbilityExclusions() {
+  try {
+    localStorage.setItem(
+      ATTACKER_ABILITY_SETTINGS_STORAGE_KEY,
+      JSON.stringify(serializeAttackerAbilityExclusions()),
+    );
   } catch {
     // Ignore unavailable storage; the current session still uses the in-memory settings.
   }
@@ -2104,16 +2264,18 @@ function getWeatherFromAbility(pokemon) {
   return null;
 }
 
-function getAttackerWeatherOverride(pokemon) {
+function getAttackerWeatherOverride(pokemon, rule = state.moveSettingsRule) {
   if (!pokemon) return null;
-  const effect = Object.values(state.battleEffects?.attacker ?? {}).find((entry) => {
-    return entry.stage === "weather" && entry.pokemonIds?.includes(pokemon.id);
+  const effect = Object.entries(state.battleEffects?.attacker ?? {}).find(([effectKey, entry]) => {
+    return entry.stage === "weather"
+      && entry.pokemonIds?.includes(pokemon.id)
+      && isAttackerAbilityEnabled(pokemon.id, effectKey, rule);
   });
-  return effect?.weather ?? null;
+  return effect?.[1]?.weather ?? null;
 }
 
 function getBattleWeather(attacker, defender, input) {
-  const attackerWeatherOverride = getAttackerWeatherOverride(attacker);
+  const attackerWeatherOverride = getAttackerWeatherOverride(attacker, input.battleRule);
   if (attackerWeatherOverride) return attackerWeatherOverride;
   const selectedWeather = getSelectedWeather(input);
   if (selectedWeather !== "none" || !input.weatherAbilityAlways) return selectedWeather;
@@ -2179,23 +2341,25 @@ function isBattleEffectPokemon(scope, key, pokemonId) {
 }
 
 function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1, moveCategory = null, move = null) {
-  return Object.values(state.battleEffects?.[scope] ?? {}).filter((effect) => {
+  return Object.entries(state.battleEffects?.[scope] ?? {})
+    .filter(([, effect]) => {
     if (!effect.pokemonIds?.includes(pokemonId)) return false;
     if (effect.moveTypes?.length && !effect.moveTypes.includes(moveType)) return false;
     if (effect.moveCategories?.length && !effect.moveCategories.includes(moveCategory)) return false;
     if (effect.contactOnly && move?.isContactMove !== true) return false;
     if (effect.superEffectiveOnly && effectiveness <= 1) return false;
     return true;
-  });
+    })
+    .map(([effectKey, effect]) => ({ effectKey, ...effect }));
 }
 
-function getAttackerStatEffects(pokemonId, category) {
+function getAttackerStatEffects(pokemonId, category, rule = state.moveSettingsRule) {
   return getMatchingBattleEffects("attacker", pokemonId, null, 1, category)
-    .filter((effect) => effect.stage === "attack");
+    .filter((effect) => effect.stage === "attack" && isAttackerAbilityEnabled(pokemonId, effect.effectKey, rule));
 }
 
-function getAttackerStatModifier(pokemonId, category) {
-  return getAttackerStatEffects(pokemonId, category)
+function getAttackerStatModifier(pokemonId, category, rule = state.moveSettingsRule) {
+  return getAttackerStatEffects(pokemonId, category, rule)
     .reduce((combined, effect) => combined * effect.modifier, 1);
 }
 
@@ -2722,19 +2886,20 @@ function getMoveSortName(move) {
   return move.name?.jaHrkt ?? move.name?.ja ?? move.name?.en ?? move.id;
 }
 
-function getResultMoveName(attacker, move) {
+function getResultMoveName(attacker, move, rule = state.moveSettingsRule) {
   const name = move.name?.ja ?? move.name?.en ?? move.id;
   const suffix = getMatchingBattleEffects("attacker", attacker.id, move.type, 1, null, move)
+    .filter((effect) => isAttackerAbilityEnabled(attacker.id, effect.effectKey, rule))
     .map((effect) => effect.resultSuffix ?? "")
     .join("");
   return `${name}${suffix}`;
 }
 
-function getResultAttackerName(attacker, move) {
+function getResultAttackerName(attacker, move, rule = state.moveSettingsRule) {
   const abilityNames = [...new Set(
     [
-      ...getAttackerStatEffects(attacker.id, move.category),
-      ...getAttackerPowerEffects(attacker, move),
+      ...getAttackerStatEffects(attacker.id, move.category, rule),
+      ...getAttackerPowerEffects(attacker, move, rule),
     ]
       .map((effect) => effect.abilityName)
       .filter(Boolean),
@@ -2798,7 +2963,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       if (!matchesMovePower(effectiveMove, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
       const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
       if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
-      if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category)) continue;
+      if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category, input.battleRule)) continue;
       const calculationPower = getAdjustedMovePower(
         defender,
         input,
@@ -2823,7 +2988,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const weatherModifier = getWeatherDamageModifier(effectiveMove.type, battleWeather);
       for (const attackerPoints of input.attackerPoints) {
         for (const attackerNature of attackerNatureModes) {
-          const attackStat = calcAttackStat(attacker, effectiveMove.category, attackerPoints, attackerNature);
+          const attackStat = calcAttackStat(attacker, effectiveMove.category, attackerPoints, attackerNature, input.battleRule);
           if (input.attackStatMultipleOf11 && attackStat % 11 !== 0) continue;
           const damageProfileKey = [
             effectiveMove.category,
@@ -2886,6 +3051,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             battleWeather,
             attackerGrounded,
             defenderGrounded,
+            battleRule: input.battleRule,
             damageProfileKey,
             scenarioIndex: scenarios.length,
             ...currentDamageResult,
@@ -3124,10 +3290,10 @@ function statPointToBonus(points) {
   return points;
 }
 
-function calcAttackStat(pokemon, category, statPoints, natureMode) {
+function calcAttackStat(pokemon, category, statPoints, natureMode, rule = state.moveSettingsRule) {
   const statKey = category === "physical" ? "atk" : "spa";
   const baseAttackStat = calcNonHpStat(pokemon.baseStats[statKey], statPoints, natureMode);
-  return Math.floor(baseAttackStat * getAttackerStatModifier(pokemon.id, category));
+  return Math.floor(baseAttackStat * getAttackerStatModifier(pokemon.id, category, rule));
 }
 
 function calcNonHpStat(baseStat, statPoints, natureMode) {
@@ -3146,12 +3312,12 @@ function getDefenderPowerModifier(defender, input, moveType) {
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getAttackerPowerModifier(attacker, move) {
-  return getAttackerPowerEffects(attacker, move)
+function getAttackerPowerModifier(attacker, move, rule = state.moveSettingsRule) {
+  return getAttackerPowerEffects(attacker, move, rule)
     .reduce((modifier, effect) => modifier * effect.modifier, 1);
 }
 
-function getAttackerPowerEffects(attacker, move) {
+function getAttackerPowerEffects(attacker, move, rule = state.moveSettingsRule) {
   return getMatchingBattleEffects(
     "attacker",
     attacker.id,
@@ -3160,12 +3326,12 @@ function getAttackerPowerEffects(attacker, move) {
     move.category,
     move,
   )
-    .filter((effect) => effect.stage === "power");
+    .filter((effect) => effect.stage === "power" && isAttackerAbilityEnabled(attacker.id, effect.effectKey, rule));
 }
 
 function getAdjustedMovePower(defender, input, move, defenderWeather = "none", attacker = null) {
   const modifier = getDefenderPowerModifier(defender, input, move.type)
-    * (attacker ? getAttackerPowerModifier(attacker, move) : 1)
+    * (attacker ? getAttackerPowerModifier(attacker, move, input.battleRule) : 1)
     * getWeatherMovePowerModifier(move, defenderWeather);
   return applyPowerModifier(move.power, modifier);
 }
@@ -3182,7 +3348,9 @@ function getFinalDamageMEffects(attacker, defender, input, effectiveness, move) 
   const wallModifier = getWallDamageModifier(input, move);
   const wallEffects = wallModifier === 1 ? [] : [{ mGroup: "wall", modifier: wallModifier }];
   const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness, move.category, move)
-    .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
+    .filter((effect) => effect.stage === "damage"
+      && isAttackerAbilityEnabled(attacker.id, effect.effectKey, input.battleRule)
+      && (!effect.inputKey || input[effect.inputKey]));
   const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness, move.category, move)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
   return [...wallEffects, ...attackerEffects, ...defenderEffects].sort((a, b) => {
@@ -3370,9 +3538,9 @@ function matchesEffectiveness(value, filter) {
   return filter.includes("all") || filter.some((item) => Number(item) === value);
 }
 
-function matchesHigherOffense(pokemon, category) {
-  const physicalModifier = getAttackerStatModifier(pokemon.id, "physical");
-  const specialModifier = getAttackerStatModifier(pokemon.id, "special");
+function matchesHigherOffense(pokemon, category, rule = state.moveSettingsRule) {
+  const physicalModifier = getAttackerStatModifier(pokemon.id, "physical", rule);
+  const specialModifier = getAttackerStatModifier(pokemon.id, "special", rule);
   const physicalOffense = pokemon.baseStats.atk * physicalModifier;
   const specialOffense = pokemon.baseStats.spa * specialModifier;
   if (category === "physical") return physicalOffense >= specialOffense;
@@ -3444,8 +3612,8 @@ function renderResultGroup(group, groupIndex) {
       <td colspan="11" class="result-group-cell">
         <button type="button" class="result-group-toggle" data-result-group="${groupIndex}" aria-expanded="false">
           <span class="result-group-chevron" aria-hidden="true">＋</span>
-          <span class="result-group-attacker">${escapeHtml(getResultAttackerName(representative.attacker, representative.move))}</span>
-          <span class="result-group-move">${escapeHtml(getResultMoveName(representative.attacker, representative.move))}</span>
+          <span class="result-group-attacker">${escapeHtml(getResultAttackerName(representative.attacker, representative.move, representative.battleRule))}</span>
+          <span class="result-group-move">${escapeHtml(getResultMoveName(representative.attacker, representative.move, representative.battleRule))}</span>
           <span class="result-group-power">威力 ${escapeHtml(String(representative.move.power))}</span>
           <span class="result-group-representative ${lineClass}">代表 ${formatResultKoRate(representative)}</span>
           <span class="result-group-diff ${diffClass}">変化 ${diffLabel}</span>
@@ -3459,7 +3627,7 @@ function renderResultGroup(group, groupIndex) {
 
 function renderResultDetailPanel(group, groupIndex) {
   const representative = group.rows[0];
-  const detailLabel = `${getResultAttackerName(representative.attacker, representative.move)} ${getResultMoveName(representative.attacker, representative.move)}の詳細`;
+  const detailLabel = `${getResultAttackerName(representative.attacker, representative.move, representative.battleRule)} ${getResultMoveName(representative.attacker, representative.move, representative.battleRule)}の詳細`;
   return `
     <tr class="result-detail-panel-row" data-result-group="${groupIndex}" hidden>
       <td colspan="11" class="result-detail-panel-cell">

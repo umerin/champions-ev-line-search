@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260811-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260912-1" />
   </head>
   <body>
     <main class="app-shell">
@@ -470,6 +470,10 @@
                 <button id="moveSettingsAllOff" type="button" class="secondary-button">すべて不要</button>
               </div>
             </div>
+            <section class="move-settings-ability-section" aria-labelledby="moveSettingsAbilityHeading">
+              <h4 id="moveSettingsAbilityHeading">特性</h4>
+              <div id="moveSettingsAbilityList" class="move-settings-ability-list"></div>
+            </section>
             <label for="moveSettingsMoveSearch">技を検索</label>
             <input id="moveSettingsMoveSearch" type="search" autocomplete="off" placeholder="技名で絞り込み" />
             <div id="moveSettingsMoveList" class="move-settings-move-list" role="list" aria-label="技の要不要設定"></div>
@@ -585,6 +589,6 @@
       </footer>
     </main>
 
-    <script type="module" src="./app.js?v=20260912-1"></script>
+    <script type="module" src="./app.js?v=20260912-2"></script>
   </body>
 </html>
