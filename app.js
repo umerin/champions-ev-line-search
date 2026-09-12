@@ -2115,6 +2115,14 @@ function getBattleWeather(attacker, defender, input) {
   return getWeatherFromAbility(attacker) ?? getWeatherFromAbility(defender) ?? "none";
 }
 
+// フィールド効果は攻撃側・防御側のポケモンごとに接地状態を参照する。
+// 現在のデータで判定できる基本条件をここへ集約し、特性・持ち物・状態の
+// 例外は、対応データが追加された時にこの関数へ差し込めるようにする。
+function isPokemonGrounded(pokemon) {
+  if (!pokemon) return false;
+  return !pokemon.types?.includes("flying");
+}
+
 function getAttackerAdjustedMove(move, attacker) {
   const attackerType = move.typeByPokemonId?.[attacker?.id];
   return attackerType && attackerType !== move.type ? { ...move, type: attackerType } : move;
@@ -2766,6 +2774,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const attacker = attackerById.get(attackerId);
       if (!attacker || !isPokemonIncluded(attackerId, input.battleRule)) continue;
       if (!isMoveAllowedForPokemon(attackerId, move.id, input.battleRule)) continue;
+      const attackerGrounded = isPokemonGrounded(attacker);
+      const defenderGrounded = isPokemonGrounded(defender);
       const battleWeather = getBattleWeather(attacker, defender, input);
       const attackerAdjustedMove = getAttackerAdjustedMove(move, attacker);
       const effectiveMove = getWeatherAdjustedMove(attackerAdjustedMove, battleWeather);
@@ -2811,6 +2821,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
+            attackerGrounded,
+            defenderGrounded,
           ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
@@ -2856,6 +2868,8 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
+            attackerGrounded,
+            defenderGrounded,
             damageProfileKey,
             scenarioIndex: scenarios.length,
             ...currentDamageResult,
