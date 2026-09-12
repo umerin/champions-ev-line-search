@@ -7584,7 +7584,7 @@
       "ja": "ゴーゴート",
       "jaHrkt": "ゴーゴート"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "grass"
     ],
@@ -7749,7 +7749,7 @@
       "ja": "エースバーン",
       "jaHrkt": "エースバーン"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "fire"
     ],
@@ -10492,7 +10492,7 @@
       "ja": "ネギガナイト",
       "jaHrkt": "ネギガナイト"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "fighting"
     ],
@@ -10895,7 +10895,7 @@
       "ja": "マフィティフ",
       "jaHrkt": "マフィティフ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dark"
     ],
@@ -10989,7 +10989,7 @@
       "ja": "ストリンダー（ハイなすがた）",
       "jaHrkt": "ストリンダー（ハイなすがた）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "electric",
       "poison"
@@ -13330,7 +13330,7 @@
       "ja": "パーモット",
       "jaHrkt": "パーモット"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "electric",
       "fighting"
@@ -15030,7 +15030,7 @@
       "ja": "オトスパス",
       "jaHrkt": "オトスパス"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "fighting"
     ],
@@ -16824,7 +16824,7 @@
       "ja": "マルノーム",
       "jaHrkt": "マルノーム"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "poison"
     ],
@@ -17387,7 +17387,7 @@
       "ja": "バリヤード",
       "jaHrkt": "バリヤード"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "psychic",
       "fairy"
@@ -18558,7 +18558,7 @@
       "ja": "ニャイキング",
       "jaHrkt": "ニャイキング"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "steel"
     ],
@@ -19033,7 +19033,7 @@
       "ja": "バチンウニ",
       "jaHrkt": "バチンウニ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "electric"
     ],
@@ -19056,7 +19056,7 @@
       "ja": "プクリン",
       "jaHrkt": "プクリン"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "normal",
       "fairy"
@@ -22511,7 +22511,7 @@
       "ja": "カモネギ",
       "jaHrkt": "カモネギ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "normal",
       "flying"

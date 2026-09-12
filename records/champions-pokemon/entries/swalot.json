@@ -1,0 +1,351 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "swalot",
+    "dexNumber": 317,
+    "displayName": "マルノーム",
+    "name": {
+      "en": "Swalot",
+      "ja": "マルノーム",
+      "jaHrkt": "マルノーム"
+    },
+    "championsTarget": true,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 73,
+      "def": 83,
+      "spa": 73,
+      "spd": 83,
+      "spe": 55
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "self-destruct",
+      "giga-impact",
+      "double-edge",
+      "body-slam",
+      "facade",
+      "hyper-beam",
+      "round",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "substitute",
+      "protect",
+      "endure",
+      "seed-bomb",
+      "bullet-seed",
+      "solar-beam",
+      "giga-drain",
+      "fire-punch",
+      "sunny-day",
+      "water-pulse",
+      "rain-dance",
+      "thunder-punch",
+      "skitter-smack",
+      "gunk-shot",
+      "poison-jab",
+      "acid-spray",
+      "sludge-wave",
+      "sludge-bomb",
+      "venoshock",
+      "clear-smog",
+      "earthquake",
+      "bulldoze",
+      "mud-shot",
+      "mud-slap",
+      "ice-punch",
+      "ice-beam",
+      "body-press",
+      "brick-break",
+      "zen-headbutt",
+      "rest",
+      "shadow-ball",
+      "thief",
+      "knock-off"
+    ],
+    "specialMoves": [
+      {
+        "id": "spit-up",
+        "name": "はきだす",
+        "type": "normal",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "stuff-cheeks",
+        "name": "ほおばる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "yawn",
+        "name": "あくび",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swallow",
+        "name": "のみこむ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "stockpile",
+        "name": "たくわえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "encore",
+        "name": "アンコール",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "pain-split",
+        "name": "いたみわけ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "thunder-wave",
+        "name": "でんじは",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "corrosive-gas",
+        "name": "ふしょくガス",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic-spikes",
+        "name": "どくびし",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "gastro-acid",
+        "name": "いえき",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "acid-armor",
+        "name": "とける",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic",
+        "name": "どくどく",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "amnesia",
+        "name": "ドわすれ",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "destiny-bond",
+        "name": "みちづれ",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fling",
+        "name": "なげつける",
+        "type": "dark",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "self-destruct",
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "hyper-beam",
+        "round",
+        "snore",
+        "spit-up",
+        "stuff-cheeks",
+        "yawn",
+        "helping-hand",
+        "swallow",
+        "stockpile",
+        "encore",
+        "pain-split",
+        "sleep-talk",
+        "substitute",
+        "protect",
+        "endure",
+        "swords-dance",
+        "seed-bomb",
+        "bullet-seed",
+        "solar-beam",
+        "giga-drain",
+        "fire-punch",
+        "sunny-day",
+        "water-pulse",
+        "rain-dance",
+        "thunder-punch",
+        "thunder-wave",
+        "skitter-smack",
+        "gunk-shot",
+        "poison-jab",
+        "acid-spray",
+        "sludge-wave",
+        "sludge-bomb",
+        "venoshock",
+        "clear-smog",
+        "corrosive-gas",
+        "toxic-spikes",
+        "gastro-acid",
+        "acid-armor",
+        "toxic",
+        "earthquake",
+        "bulldoze",
+        "mud-shot",
+        "mud-slap",
+        "ice-punch",
+        "ice-beam",
+        "body-press",
+        "brick-break",
+        "zen-headbutt",
+        "rest",
+        "amnesia",
+        "shadow-ball",
+        "curse",
+        "destiny-bond",
+        "fling",
+        "thief",
+        "knock-off"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全61技）。",
+        "耐久ラインサーチには固定威力の攻撃技35件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

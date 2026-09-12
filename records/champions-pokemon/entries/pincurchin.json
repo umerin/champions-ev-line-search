@@ -1,0 +1,269 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "pincurchin",
+    "dexNumber": 871,
+    "displayName": "バチンウニ",
+    "name": {
+      "en": "Pincurchin",
+      "ja": "バチンウニ",
+      "jaHrkt": "バチンウニ"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 48,
+      "atk": 101,
+      "def": 95,
+      "spa": 91,
+      "spd": 85,
+      "spe": 15
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "self-destruct",
+      "giga-impact",
+      "body-slam",
+      "facade",
+      "hyper-beam",
+      "round",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "liquidation",
+      "hydro-pump",
+      "muddy-water",
+      "surf",
+      "scald",
+      "chilling-water",
+      "rain-dance",
+      "supercell-slam",
+      "wild-charge",
+      "zing-zap",
+      "thunder",
+      "thunderbolt",
+      "discharge",
+      "rising-voltage",
+      "electroweb",
+      "charge-beam",
+      "pin-missile",
+      "poison-jab",
+      "venoshock",
+      "rest",
+      "hex",
+      "throat-chop",
+      "sucker-punch",
+      "assurance",
+      "payback"
+    ],
+    "specialMoves": [
+      {
+        "id": "acupressure",
+        "name": "つぼをつく",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "pain-split",
+        "name": "いたみわけ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "recover",
+        "name": "じこさいせい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "electro-ball",
+        "name": "エレキボール",
+        "type": "electric",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "electric-terrain",
+        "name": "エレキフィールド",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charge",
+        "name": "じゅうでん",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "thunder-wave",
+        "name": "でんじは",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic-spikes",
+        "name": "どくびし",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "spikes",
+        "name": "まきびし",
+        "type": "ground",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "memento",
+        "name": "おきみやげ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "self-destruct",
+        "giga-impact",
+        "body-slam",
+        "facade",
+        "hyper-beam",
+        "round",
+        "snore",
+        "acupressure",
+        "pain-split",
+        "sleep-talk",
+        "endure",
+        "protect",
+        "substitute",
+        "recover",
+        "liquidation",
+        "hydro-pump",
+        "muddy-water",
+        "surf",
+        "scald",
+        "chilling-water",
+        "rain-dance",
+        "supercell-slam",
+        "wild-charge",
+        "zing-zap",
+        "thunder",
+        "thunderbolt",
+        "discharge",
+        "rising-voltage",
+        "electroweb",
+        "charge-beam",
+        "electro-ball",
+        "electric-terrain",
+        "charge",
+        "thunder-wave",
+        "pin-missile",
+        "poison-jab",
+        "venoshock",
+        "toxic-spikes",
+        "spikes",
+        "reversal",
+        "rest",
+        "curse",
+        "hex",
+        "throat-chop",
+        "sucker-punch",
+        "assurance",
+        "payback",
+        "memento"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全48技）。",
+        "耐久ラインサーチには固定威力の攻撃技30件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

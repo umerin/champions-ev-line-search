@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "AI-editable research records for Champions-target Pokemon. The web app does not load this directory.",
-  "count": 328,
+  "count": 341,
   "entries": [
     {
       "id": "venusaur",
@@ -130,6 +130,12 @@
       "path": "entries/ninetales-alola.json"
     },
     {
+      "id": "wigglytuff",
+      "dexNumber": 40,
+      "displayName": "プクリン",
+      "path": "entries/wigglytuff.json"
+    },
+    {
       "id": "vileplume",
       "dexNumber": 45,
       "displayName": "ラフレシア",
@@ -208,6 +214,12 @@
       "path": "entries/slowbro-mega.json"
     },
     {
+      "id": "farfetchd",
+      "dexNumber": 83,
+      "displayName": "カモネギ",
+      "path": "entries/farfetchd.json"
+    },
+    {
       "id": "gengar",
       "dexNumber": 94,
       "displayName": "ゲンガー",
@@ -242,6 +254,12 @@
       "dexNumber": 121,
       "displayName": "メガスターミー",
       "path": "entries/starmie-mega.json"
+    },
+    {
+      "id": "mr-mime",
+      "dexNumber": 122,
+      "displayName": "バリヤード",
+      "path": "entries/mr-mime.json"
     },
     {
       "id": "pinsir",
@@ -626,6 +644,12 @@
       "dexNumber": 310,
       "displayName": "メガライボルト",
       "path": "entries/manectric-mega.json"
+    },
+    {
+      "id": "swalot",
+      "dexNumber": 317,
+      "displayName": "マルノーム",
+      "path": "entries/swalot.json"
     },
     {
       "id": "sharpedo",
@@ -1312,6 +1336,12 @@
       "path": "entries/florges.json"
     },
     {
+      "id": "gogoat",
+      "dexNumber": 673,
+      "displayName": "ゴーゴート",
+      "path": "entries/gogoat.json"
+    },
+    {
       "id": "pangoro",
       "dexNumber": 675,
       "displayName": "ゴロンダ",
@@ -1666,6 +1696,12 @@
       "path": "entries/rillaboom.json"
     },
     {
+      "id": "cinderace",
+      "dexNumber": 815,
+      "displayName": "エースバーン",
+      "path": "entries/cinderace.json"
+    },
+    {
       "id": "corviknight",
       "dexNumber": 823,
       "displayName": "アーマーガア",
@@ -1696,6 +1732,18 @@
       "path": "entries/sandaconda.json"
     },
     {
+      "id": "toxtricity-amped",
+      "dexNumber": 849,
+      "displayName": "ストリンダー（ハイなすがた）",
+      "path": "entries/toxtricity-amped.json"
+    },
+    {
+      "id": "grapploct",
+      "dexNumber": 853,
+      "displayName": "オトスパス",
+      "path": "entries/grapploct.json"
+    },
+    {
       "id": "polteageist",
       "dexNumber": 855,
       "displayName": "ポットデス",
@@ -1712,6 +1760,18 @@
       "dexNumber": 861,
       "displayName": "オーロンゲ",
       "path": "entries/grimmsnarl.json"
+    },
+    {
+      "id": "perrserker",
+      "dexNumber": 863,
+      "displayName": "ニャイキング",
+      "path": "entries/perrserker.json"
+    },
+    {
+      "id": "sirfetchd",
+      "dexNumber": 865,
+      "displayName": "ネギガナイト",
+      "path": "entries/sirfetchd.json"
     },
     {
       "id": "mr-rime",
@@ -1742,6 +1802,12 @@
       "dexNumber": 870,
       "displayName": "メガタイレーツ",
       "path": "entries/falinks-mega.json"
+    },
+    {
+      "id": "pincurchin",
+      "dexNumber": 871,
+      "displayName": "バチンウニ",
+      "path": "entries/pincurchin.json"
     },
     {
       "id": "indeedee-female",
@@ -1822,6 +1888,12 @@
       "path": "entries/quaquaval.json"
     },
     {
+      "id": "pawmot",
+      "dexNumber": 923,
+      "displayName": "パーモット",
+      "path": "entries/pawmot.json"
+    },
+    {
       "id": "maushold-family-of-four",
       "dexNumber": 925,
       "displayName": "イッカネズミ（4ひきかぞく）",
@@ -1856,6 +1928,12 @@
       "dexNumber": 939,
       "displayName": "ハラバリー",
       "path": "entries/bellibolt.json"
+    },
+    {
+      "id": "mabosstiff",
+      "dexNumber": 943,
+      "displayName": "マフィティフ",
+      "path": "entries/mabosstiff.json"
     },
     {
       "id": "scovillain",

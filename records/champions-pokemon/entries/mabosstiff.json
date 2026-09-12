@@ -1,0 +1,250 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "mabosstiff",
+    "dexNumber": 943,
+    "displayName": "マフィティフ",
+    "name": {
+      "en": "Mabosstiff",
+      "ja": "マフィティフ",
+      "jaHrkt": "マフィティフ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dark"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 90,
+      "spa": 60,
+      "spd": 70,
+      "spe": 85
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "double-edge",
+      "body-slam",
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "hyper-voice",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "fire-fang",
+      "sunny-day",
+      "rain-dance",
+      "wild-charge",
+      "thunder-fang",
+      "dig",
+      "ice-fang",
+      "psychic-fangs",
+      "rest",
+      "outrage",
+      "jaw-lock",
+      "crunch",
+      "lash-out",
+      "thief",
+      "bite",
+      "payback",
+      "comeuppance",
+      "dark-pulse",
+      "snarl",
+      "play-rough"
+    ],
+    "specialMoves": [
+      {
+        "id": "pain-split",
+        "name": "いたみわけ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swagger",
+        "name": "いばる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "focus-energy",
+        "name": "きあいだめ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "destiny-bond",
+        "name": "みちづれ",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "spite",
+        "name": "うらみ",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fake-tears",
+        "name": "うそなき",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "endeavor",
+        "hyper-beam",
+        "hyper-voice",
+        "helping-hand",
+        "pain-split",
+        "sleep-talk",
+        "swagger",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "focus-energy",
+        "roar",
+        "trailblaze",
+        "fire-fang",
+        "sunny-day",
+        "rain-dance",
+        "wild-charge",
+        "thunder-fang",
+        "dig",
+        "ice-fang",
+        "reversal",
+        "psychic-fangs",
+        "rest",
+        "destiny-bond",
+        "spite",
+        "curse",
+        "outrage",
+        "jaw-lock",
+        "crunch",
+        "lash-out",
+        "thief",
+        "bite",
+        "payback",
+        "comeuppance",
+        "dark-pulse",
+        "snarl",
+        "fake-tears",
+        "taunt",
+        "play-rough"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全44技）。",
+        "耐久ラインサーチには固定威力の攻撃技23件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

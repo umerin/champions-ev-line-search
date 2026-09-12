@@ -1,0 +1,227 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "gogoat",
+    "dexNumber": 673,
+    "displayName": "ゴーゴート",
+    "name": {
+      "en": "Gogoat",
+      "ja": "ゴーゴート",
+      "jaHrkt": "ゴーゴート"
+    },
+    "championsTarget": true,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 123,
+      "atk": 100,
+      "def": 62,
+      "spa": 97,
+      "spd": 81,
+      "spe": 68
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "double-edge",
+      "body-slam",
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "round",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "leaf-blade",
+      "seed-bomb",
+      "horn-leech",
+      "grassy-glide",
+      "trailblaze",
+      "bullet-seed",
+      "leaf-storm",
+      "solar-beam",
+      "energy-ball",
+      "giga-drain",
+      "grass-knot",
+      "grassy-terrain",
+      "synthesis",
+      "sunny-day",
+      "surf",
+      "rain-dance",
+      "wild-charge",
+      "megahorn",
+      "aerial-ace",
+      "rock-slide",
+      "earthquake",
+      "high-horsepower",
+      "dig",
+      "stomping-tantrum",
+      "bulldoze",
+      "mud-shot",
+      "mud-slap",
+      "superpower",
+      "brick-break",
+      "zen-headbutt",
+      "rest",
+      "throat-chop",
+      "payback",
+      "iron-tail",
+      "play-rough"
+    ],
+    "specialMoves": [
+      {
+        "id": "milk-drink",
+        "name": "ミルクのみ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "roar",
+        "name": "ほえる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "worry-seed",
+        "name": "なやみのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "growth",
+        "name": "せいちょう",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "leech-seed",
+        "name": "やどりぎのタネ",
+        "type": "grass",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "bulk-up",
+        "name": "ビルドアップ",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "double-edge",
+        "body-slam",
+        "facade",
+        "endeavor",
+        "hyper-beam",
+        "round",
+        "snore",
+        "helping-hand",
+        "sleep-talk",
+        "milk-drink",
+        "endure",
+        "protect",
+        "substitute",
+        "roar",
+        "leaf-blade",
+        "seed-bomb",
+        "horn-leech",
+        "grassy-glide",
+        "trailblaze",
+        "bullet-seed",
+        "leaf-storm",
+        "solar-beam",
+        "energy-ball",
+        "giga-drain",
+        "grass-knot",
+        "grassy-terrain",
+        "worry-seed",
+        "synthesis",
+        "growth",
+        "leech-seed",
+        "sunny-day",
+        "surf",
+        "rain-dance",
+        "wild-charge",
+        "megahorn",
+        "aerial-ace",
+        "rock-slide",
+        "earthquake",
+        "high-horsepower",
+        "dig",
+        "stomping-tantrum",
+        "bulldoze",
+        "mud-shot",
+        "mud-slap",
+        "superpower",
+        "brick-break",
+        "bulk-up",
+        "zen-headbutt",
+        "rest",
+        "throat-chop",
+        "payback",
+        "iron-tail",
+        "play-rough"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全54技）。",
+        "耐久ラインサーチには固定威力の攻撃技36件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

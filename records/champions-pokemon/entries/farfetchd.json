@@ -1,0 +1,258 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "farfetchd",
+    "dexNumber": 83,
+    "displayName": "カモネギ",
+    "name": {
+      "en": "Farfetch’d",
+      "ja": "カモネギ",
+      "jaHrkt": "カモネギ"
+    },
+    "championsTarget": true,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 52,
+      "atk": 90,
+      "def": 55,
+      "spa": 58,
+      "spd": 62,
+      "spe": 60
+    },
+    "isFinalEvolution": false
+  },
+  "learnset": {
+    "moveIds": [
+      "body-slam",
+      "slash",
+      "facade",
+      "covet",
+      "quick-attack",
+      "feint",
+      "uproar",
+      "round",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "baton-pass",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "leaf-blade",
+      "solar-blade",
+      "first-impression",
+      "sunny-day",
+      "heat-wave",
+      "u-turn",
+      "brave-bird",
+      "fly",
+      "aerial-ace",
+      "acrobatics",
+      "dual-wingbeat",
+      "air-slash",
+      "air-cutter",
+      "poison-jab",
+      "close-combat",
+      "rest",
+      "throat-chop",
+      "night-slash",
+      "knock-off",
+      "brutal-swing",
+      "thief",
+      "iron-tail",
+      "steel-wing"
+    ],
+    "specialMoves": [
+      {
+        "id": "flail",
+        "name": "じたばた",
+        "type": "normal",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "simple-beam",
+        "name": "シンプルビーム",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "focus-energy",
+        "name": "きあいだめ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "roost",
+        "name": "はねやすめ",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "heal"
+        ]
+      },
+      {
+        "id": "feather-dance",
+        "name": "フェザーダンス",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "final-gambit",
+        "name": "いのちがけ",
+        "type": "fighting",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "agility",
+        "name": "こうそくいどう",
+        "type": "psychic",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "body-slam",
+        "slash",
+        "facade",
+        "covet",
+        "quick-attack",
+        "feint",
+        "flail",
+        "uproar",
+        "round",
+        "snore",
+        "simple-beam",
+        "helping-hand",
+        "sleep-talk",
+        "baton-pass",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "focus-energy",
+        "swords-dance",
+        "trailblaze",
+        "leaf-blade",
+        "solar-blade",
+        "first-impression",
+        "sunny-day",
+        "heat-wave",
+        "u-turn",
+        "brave-bird",
+        "fly",
+        "aerial-ace",
+        "acrobatics",
+        "dual-wingbeat",
+        "air-slash",
+        "air-cutter",
+        "roost",
+        "feather-dance",
+        "poison-jab",
+        "close-combat",
+        "final-gambit",
+        "agility",
+        "rest",
+        "curse",
+        "throat-chop",
+        "night-slash",
+        "knock-off",
+        "brutal-swing",
+        "thief",
+        "iron-tail",
+        "steel-wing"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全49技）。",
+        "耐久ラインサーチには固定威力の攻撃技31件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

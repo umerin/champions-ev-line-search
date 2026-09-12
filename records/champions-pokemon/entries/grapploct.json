@@ -1,0 +1,267 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "grapploct",
+    "dexNumber": 853,
+    "displayName": "オトスパス",
+    "name": {
+      "en": "Grapploct",
+      "ja": "オトスパス",
+      "jaHrkt": "オトスパス"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 118,
+      "def": 90,
+      "spa": 70,
+      "spd": 80,
+      "spe": 42
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "body-slam",
+      "facade",
+      "feint",
+      "bind",
+      "hyper-beam",
+      "round",
+      "snore",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "liquidation",
+      "dive",
+      "waterfall",
+      "hydro-pump",
+      "muddy-water",
+      "surf",
+      "chilling-water",
+      "lunge",
+      "dig",
+      "stomping-tantrum",
+      "mud-shot",
+      "ice-punch",
+      "close-combat",
+      "superpower",
+      "drain-punch",
+      "brick-break",
+      "circle-throw",
+      "storm-throw",
+      "mach-punch",
+      "focus-blast",
+      "rest",
+      "sucker-punch",
+      "brutal-swing",
+      "payback"
+    ],
+    "specialMoves": [
+      {
+        "id": "pain-split",
+        "name": "いたみわけ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "soak",
+        "name": "みずびたし",
+        "type": "water",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "reversal",
+        "name": "きしかいせい",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "seismic-toss",
+        "name": "ちきゅうなげ",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "coaching",
+        "name": "コーチング",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "octolock",
+        "name": "たこがため",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "bulk-up",
+        "name": "ビルドアップ",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "detect",
+        "name": "みきり",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "topsy-turvy",
+        "name": "ひっくりかえす",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "giga-impact",
+        "body-slam",
+        "facade",
+        "feint",
+        "bind",
+        "hyper-beam",
+        "round",
+        "snore",
+        "pain-split",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "scary-face",
+        "protect",
+        "substitute",
+        "liquidation",
+        "dive",
+        "waterfall",
+        "hydro-pump",
+        "muddy-water",
+        "surf",
+        "chilling-water",
+        "soak",
+        "lunge",
+        "dig",
+        "stomping-tantrum",
+        "mud-shot",
+        "ice-punch",
+        "close-combat",
+        "superpower",
+        "drain-punch",
+        "brick-break",
+        "circle-throw",
+        "storm-throw",
+        "mach-punch",
+        "reversal",
+        "seismic-toss",
+        "focus-blast",
+        "coaching",
+        "octolock",
+        "bulk-up",
+        "detect",
+        "rest",
+        "sucker-punch",
+        "brutal-swing",
+        "payback",
+        "topsy-turvy",
+        "taunt"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全48技）。",
+        "耐久ラインサーチには固定威力の攻撃技31件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

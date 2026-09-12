@@ -1197,7 +1197,7 @@
       "ja": "ともえなげ",
       "jaHrkt": "ともえなげ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fighting",
     "category": "physical",
     "power": 60,
@@ -1306,13 +1306,14 @@
       "ja": "ほうふく",
       "jaHrkt": "ほうふく"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "dark",
     "category": "physical",
     "power": 1,
     "isSpreadMove": false,
     "isContactMove": true,
-    "moveCategories": []
+    "moveCategories": [],
+    "searchable": false
   },
   {
     "id": "confusion",
@@ -1715,7 +1716,7 @@
       "ja": "でんこうそうげき",
       "jaHrkt": "でんこうそうげき"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "electric",
     "category": "physical",
     "power": 120,
@@ -4520,7 +4521,7 @@
       "ja": "スターアサルト",
       "jaHrkt": "スターアサルト"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fighting",
     "category": "physical",
     "power": 150,
@@ -4976,7 +4977,7 @@
       "ja": "オーバードライブ",
       "jaHrkt": "オーバードライブ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "electric",
     "category": "special",
     "power": 80,
@@ -5626,7 +5627,7 @@
       "ja": "かえんボール",
       "jaHrkt": "かえんボール"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fire",
     "category": "physical",
     "power": 120,
@@ -8340,7 +8341,7 @@
       "ja": "びりびりちくちく",
       "jaHrkt": "びりびりちくちく"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "electric",
     "category": "physical",
     "power": 80,
@@ -8386,7 +8387,7 @@
       "ja": "なみだめ",
       "jaHrkt": "なみだめ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "normal",
     "category": "status",
     "power": 0,

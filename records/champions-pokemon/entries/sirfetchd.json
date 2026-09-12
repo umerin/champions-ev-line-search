@@ -1,0 +1,287 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "sirfetchd",
+    "dexNumber": 865,
+    "displayName": "ネギガナイト",
+    "name": {
+      "en": "Sirfetch’d",
+      "ja": "ネギガナイト",
+      "jaHrkt": "ネギガナイト"
+    },
+    "championsTarget": true,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 62,
+      "atk": 135,
+      "def": 95,
+      "spa": 68,
+      "spd": 82,
+      "spe": 65
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "slash",
+      "facade",
+      "covet",
+      "quick-attack",
+      "feint",
+      "round",
+      "snore",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "solar-blade",
+      "leaf-blade",
+      "grassy-glide",
+      "sunny-day",
+      "first-impression",
+      "sky-attack",
+      "brave-bird",
+      "aerial-ace",
+      "dual-wingbeat",
+      "poison-jab",
+      "meteor-assault",
+      "close-combat",
+      "superpower",
+      "brick-break",
+      "rest",
+      "throat-chop",
+      "night-slash",
+      "knock-off",
+      "brutal-swing",
+      "assurance",
+      "steel-wing"
+    ],
+    "specialMoves": [
+      {
+        "id": "flail",
+        "name": "じたばた",
+        "type": "normal",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "simple-beam",
+        "name": "シンプルビーム",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "attract",
+        "name": "メロメロ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "focus-energy",
+        "name": "きあいだめ",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swords-dance",
+        "name": "つるぎのまい",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "defog",
+        "name": "きりばらい",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "feather-dance",
+        "name": "フェザーダンス",
+        "type": "flying",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": [
+          "dance"
+        ]
+      },
+      {
+        "id": "counter",
+        "name": "カウンター",
+        "type": "fighting",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "final-gambit",
+        "name": "いのちがけ",
+        "type": "fighting",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "coaching",
+        "name": "コーチング",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "quick-guard",
+        "name": "ファストガード",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "detect",
+        "name": "みきり",
+        "type": "fighting",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "curse",
+        "name": "のろい",
+        "type": "ghost",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "iron-defense",
+        "name": "てっぺき",
+        "type": "steel",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "sources": [
+        "local-input/videos/2026-09-11 22-55-08.mkv"
+      ],
+      "verifiedMoveIds": [
+        "slash",
+        "facade",
+        "covet",
+        "quick-attack",
+        "feint",
+        "flail",
+        "round",
+        "snore",
+        "simple-beam",
+        "helping-hand",
+        "sleep-talk",
+        "attract",
+        "endure",
+        "protect",
+        "substitute",
+        "focus-energy",
+        "swords-dance",
+        "solar-blade",
+        "leaf-blade",
+        "grassy-glide",
+        "sunny-day",
+        "first-impression",
+        "sky-attack",
+        "brave-bird",
+        "aerial-ace",
+        "dual-wingbeat",
+        "defog",
+        "feather-dance",
+        "poison-jab",
+        "meteor-assault",
+        "close-combat",
+        "superpower",
+        "brick-break",
+        "counter",
+        "final-gambit",
+        "coaching",
+        "quick-guard",
+        "detect",
+        "rest",
+        "curse",
+        "throat-chop",
+        "night-slash",
+        "knock-off",
+        "brutal-swing",
+        "assurance",
+        "steel-wing",
+        "iron-defense"
+      ],
+      "rejectedMoveIds": [],
+      "notes": [
+        "ゲーム内の「教える技」一覧を動画で全件確認（全47技）。",
+        "耐久ラインサーチには固定威力の攻撃技26件だけを同期。変化技・未対応の変動威力技は個別記録のみに保存。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}
