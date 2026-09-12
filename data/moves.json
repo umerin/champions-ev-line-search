@@ -8695,7 +8695,7 @@
       "ja": "あまえる",
       "jaHrkt": "あまえる"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "fairy",
     "category": "status",
     "power": 0,
