@@ -10,6 +10,18 @@
       "mGroup": "Mhalf",
       "modifier": 0.5
     },
+    "metalDefense": {
+      "inputKey": "metalDefenseEnabled",
+      "abilityId": "wave-guard",
+      "abilityName": "はどうのぼうご",
+      "pokemonIds": [
+        "lucario-mega-z"
+      ],
+      "stage": "damage",
+      "mGroup": "Mhalf",
+      "contactOnly": true,
+      "modifier": 0.5
+    },
     "thickFat": {
       "inputKey": "thickFatEnabled",
       "pokemonIds": [

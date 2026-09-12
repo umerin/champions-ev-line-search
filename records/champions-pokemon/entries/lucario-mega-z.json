@@ -115,8 +115,34 @@
       "notes": []
     }
   },
-  "abilities": [],
-  "battleEffects": [],
+  "abilities": [
+    {
+      "id": "wave-guard",
+      "name": "はどうのぼうご",
+      "verification": {
+        "status": "inherited-unverified",
+        "sources": [],
+        "notes": [
+          "ユーザー指示により追加。接触技のダメージをMhalf 0.5倍で計算する。"
+        ]
+      }
+    }
+  ],
+  "battleEffects": [
+    {
+      "scope": "defender",
+      "effectKey": "metalDefense",
+      "definition": {
+        "inputKey": "metalDefenseEnabled",
+        "abilityId": "wave-guard",
+        "abilityName": "はどうのぼうご",
+        "stage": "damage",
+        "mGroup": "Mhalf",
+        "contactOnly": true,
+        "modifier": 0.5
+      }
+    }
+  ],
   "research": {
     "profileStatus": "inherited-unverified",
     "battleEffectsStatus": "inherited-unverified",

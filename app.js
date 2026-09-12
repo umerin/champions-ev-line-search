@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260814-1",
   learnsets: "./data/learnsets.json?v=20260814-1",
-  battleEffects: "./data/battle-effects.json?v=20260912-1",
+  battleEffects: "./data/battle-effects.json?v=20260912-2",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -110,6 +110,8 @@ const els = {
   megaToggle: document.querySelector("#megaToggle"),
   multiscaleOption: document.querySelector("#multiscaleOption"),
   multiscaleEnabled: document.querySelector("#multiscaleEnabled"),
+  metalDefenseOption: document.querySelector("#metalDefenseOption"),
+  metalDefenseEnabled: document.querySelector("#metalDefenseEnabled"),
   thickFatOption: document.querySelector("#thickFatOption"),
   thickFatEnabled: document.querySelector("#thickFatEnabled"),
   heatproofOption: document.querySelector("#heatproofOption"),
@@ -345,6 +347,7 @@ async function init() {
     });
     els.defenderSelect.addEventListener("change", () => {
       updateMultiscaleOption();
+      updateMetalDefenseOption();
       updateThickFatOption();
       updateHeatproofOption();
       updateDrySkinOption();
@@ -365,6 +368,7 @@ async function init() {
     els.defenderSearch.addEventListener("keydown", handlePokemonSearchKeydown);
     els.megaToggle.addEventListener("click", cycleMegaForm);
     els.multiscaleEnabled.addEventListener("change", runSearch);
+    els.metalDefenseEnabled.addEventListener("change", runSearch);
     els.thickFatEnabled.addEventListener("change", runSearch);
     els.heatproofEnabled.addEventListener("change", runSearch);
     els.drySkinEnabled.addEventListener("change", runSearch);
@@ -460,6 +464,7 @@ function populatePokemonSelect() {
   els.defenderSearch.value = getPokemonDisplayName(pokemon);
   updateMegaToggle(pokemon);
   updateMultiscaleOption(pokemon);
+  updateMetalDefenseOption(pokemon);
   updateThickFatOption(pokemon);
   updateHeatproofOption(pokemon);
   updateDrySkinOption(pokemon);
@@ -2173,11 +2178,12 @@ function isBattleEffectPokemon(scope, key, pokemonId) {
   return getBattleEffect(scope, key)?.pokemonIds?.includes(pokemonId) ?? false;
 }
 
-function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1, moveCategory = null) {
+function getMatchingBattleEffects(scope, pokemonId, moveType, effectiveness = 1, moveCategory = null, move = null) {
   return Object.values(state.battleEffects?.[scope] ?? {}).filter((effect) => {
     if (!effect.pokemonIds?.includes(pokemonId)) return false;
     if (effect.moveTypes?.length && !effect.moveTypes.includes(moveType)) return false;
     if (effect.moveCategories?.length && !effect.moveCategories.includes(moveCategory)) return false;
+    if (effect.contactOnly && move?.isContactMove !== true) return false;
     if (effect.superEffectiveOnly && effectiveness <= 1) return false;
     return true;
   });
@@ -2199,6 +2205,14 @@ function updateMultiscaleOption(pokemon = getPokemonPool().find((item) => item.i
   els.multiscaleOption.hidden = !isSupported;
   if (!isSupported) els.multiscaleEnabled.checked = false;
   else if (!wasVisible) els.multiscaleEnabled.checked = true;
+}
+
+function updateMetalDefenseOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "metalDefense", pokemon.id));
+  const wasVisible = !els.metalDefenseOption.hidden;
+  els.metalDefenseOption.hidden = !isSupported;
+  if (!isSupported) els.metalDefenseEnabled.checked = false;
+  else if (!wasVisible) els.metalDefenseEnabled.checked = true;
 }
 
 function updateThickFatOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
@@ -2710,7 +2724,7 @@ function getMoveSortName(move) {
 
 function getResultMoveName(attacker, move) {
   const name = move.name?.ja ?? move.name?.en ?? move.id;
-  const suffix = getMatchingBattleEffects("attacker", attacker.id, move.type)
+  const suffix = getMatchingBattleEffects("attacker", attacker.id, move.type, 1, null, move)
     .map((effect) => effect.resultSuffix ?? "")
     .join("");
   return `${name}${suffix}`;
@@ -2918,6 +2932,7 @@ function readInput() {
     excludeUnsurvivableAttacks: els.excludeUnsurvivableAttacks.checked,
     prioritizeMega: els.prioritizeMega.checked,
     multiscaleEnabled: els.multiscaleEnabled.checked,
+    metalDefenseEnabled: els.metalDefenseEnabled.checked,
     thickFatEnabled: els.thickFatEnabled.checked,
     heatproofEnabled: els.heatproofEnabled.checked,
     drySkinEnabled: els.drySkinEnabled.checked,
@@ -3165,9 +3180,9 @@ function getWallDamageModifier(input, move) {
 function getFinalDamageMEffects(attacker, defender, input, effectiveness, move) {
   const wallModifier = getWallDamageModifier(input, move);
   const wallEffects = wallModifier === 1 ? [] : [{ mGroup: "wall", modifier: wallModifier }];
-  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness, move.category)
+  const attackerEffects = getMatchingBattleEffects("attacker", attacker.id, move.type, effectiveness, move.category, move)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
-  const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness, move.category)
+  const defenderEffects = getMatchingBattleEffects("defender", defender.id, move.type, effectiveness, move.category, move)
     .filter((effect) => effect.stage === "damage" && (!effect.inputKey || input[effect.inputKey]));
   return [...wallEffects, ...attackerEffects, ...defenderEffects].sort((a, b) => {
     return (FINAL_DAMAGE_M_GROUP_RANK.get(a.mGroup) ?? FINAL_DAMAGE_M_GROUP_ORDER.length)
