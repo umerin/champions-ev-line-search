@@ -374,6 +374,9 @@ async function init() {
     document.querySelectorAll('input[name="weather"]').forEach((radio) => {
       radio.addEventListener("change", runSearch);
     });
+    document.querySelectorAll('input[name="field"]').forEach((radio) => {
+      radio.addEventListener("change", runSearch);
+    });
     document.querySelectorAll(".rule-toggle-button").forEach((button) => {
       button.addEventListener("click", () => selectBattleRule(button));
     });
@@ -2884,6 +2887,7 @@ function readInput() {
     attackerNatures: getCheckedValues("attackerNature").filter((value) => value !== "both"),
     effectiveness: getCheckedValues("effectiveness"),
     weather: getCheckedValues("weather")[0] ?? "none",
+    field: getCheckedValues("field")[0] ?? "none",
     weatherAbilityAlways: els.weatherAbilityAlways.checked,
     walls: getCheckedValues("wall"),
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
