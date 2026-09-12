@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260814-1",
   learnsets: "./data/learnsets.json?v=20260814-1",
-  battleEffects: "./data/battle-effects.json?v=20260813-1",
+  battleEffects: "./data/battle-effects.json?v=20260912-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -2120,6 +2120,8 @@ function getBattleWeather(attacker, defender, input) {
 // 例外は、対応データが追加された時にこの関数へ差し込めるようにする。
 function isPokemonGrounded(pokemon) {
   if (!pokemon) return false;
+  const levitatePokemonIds = state.battleEffects?.grounding?.levitate?.pokemonIds ?? [];
+  if (levitatePokemonIds.includes(pokemon.id)) return false;
   return !pokemon.types?.includes("flying");
 }
 

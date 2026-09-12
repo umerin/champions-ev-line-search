@@ -112,7 +112,20 @@
       ]
     }
   },
-  "abilities": [],
+  "abilities": [
+    {
+      "id": "eelevate",
+      "name": "うなぎのぼり",
+      "effectMemo": "ふゆう＋自分の技で相手を倒すと、自分の最も高い能力の能力ランクが1段階上がる",
+      "verification": {
+        "status": "inherited-unverified",
+        "sources": [],
+        "notes": [
+          "ユーザー指示により追加。ダメージ計算には使用しない。"
+        ]
+      }
+    }
+  ],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",

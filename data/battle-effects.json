@@ -163,5 +163,26 @@
         "froslass-mega"
       ]
     }
+  },
+  "grounding": {
+    "levitate": {
+      "abilityId": "levitate",
+      "abilityName": "ふゆう",
+      "pokemonIds": [
+        "chimecho",
+        "chimecho-mega",
+        "garchomp-mega-z",
+        "rotom",
+        "rotom-heat",
+        "rotom-wash",
+        "rotom-frost",
+        "rotom-fan",
+        "rotom-mow",
+        "eelektross",
+        "hydreigon",
+        "delphox-mega",
+        "eelektross-mega"
+      ]
+    }
   }
 }

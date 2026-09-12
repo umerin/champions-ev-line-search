@@ -112,7 +112,19 @@
       ]
     }
   },
-  "abilities": [],
+  "abilities": [
+    {
+      "id": "levitate",
+      "name": "ふゆう",
+      "verification": {
+        "status": "inherited-unverified",
+        "sources": [],
+        "notes": [
+          "ユーザー指示により追加。接地判定では非接地として扱う。"
+        ]
+      }
+    }
+  ],
   "battleEffects": [],
   "research": {
     "profileStatus": "inherited-unverified",
