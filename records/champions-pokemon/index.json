@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "AI-editable research records for Champions-target Pokemon. The web app does not load this directory.",
-  "count": 341,
+  "count": 342,
   "entries": [
     {
       "id": "venusaur",
@@ -1736,6 +1736,12 @@
       "dexNumber": 849,
       "displayName": "ストリンダー（ハイなすがた）",
       "path": "entries/toxtricity-amped.json"
+    },
+    {
+      "id": "toxtricity-low-key",
+      "dexNumber": 849,
+      "displayName": "ストリンダー（ローなすがた）",
+      "path": "entries/toxtricity-low-key.json"
     },
     {
       "id": "grapploct",

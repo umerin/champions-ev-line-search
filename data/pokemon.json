@@ -11013,7 +11013,7 @@
       "ja": "ストリンダー（ローなすがた）",
       "jaHrkt": "ストリンダー（ローなすがた）"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "electric",
       "poison"

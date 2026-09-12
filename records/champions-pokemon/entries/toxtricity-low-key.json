@@ -1,0 +1,300 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "toxtricity-low-key",
+    "dexNumber": 849,
+    "displayName": "ストリンダー（ローなすがた）",
+    "name": {
+      "en": "Toxtricity",
+      "ja": "ストリンダー（ローなすがた）",
+      "jaHrkt": "ストリンダー（ローなすがた）"
+    },
+    "championsTarget": true,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 70,
+      "spa": 114,
+      "spd": 70,
+      "spe": 75
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "giga-impact",
+      "mega-kick",
+      "facade",
+      "endeavor",
+      "hyper-beam",
+      "boomburst",
+      "hyper-voice",
+      "uproar",
+      "tearful-look",
+      "snore",
+      "round",
+      "helping-hand",
+      "sleep-talk",
+      "endure",
+      "protect",
+      "substitute",
+      "trailblaze",
+      "fire-punch",
+      "sunny-day",
+      "rain-dance",
+      "wild-charge",
+      "thunder-punch",
+      "thunder-fang",
+      "nuzzle",
+      "zap-cannon",
+      "thunder",
+      "thunderbolt",
+      "overdrive",
+      "discharge",
+      "rising-voltage",
+      "volt-switch",
+      "electroweb",
+      "charge-beam",
+      "gunk-shot",
+      "poison-jab",
+      "acid-spray",
+      "sludge-wave",
+      "sludge-bomb",
+      "drain-punch",
+      "brick-break",
+      "psychic-noise",
+      "stored-power",
+      "rest",
+      "hex",
+      "throat-chop",
+      "thief",
+      "payback",
+      "snarl"
+    ],
+    "specialMoves": [
+      {
+        "id": "flail",
+        "name": "じたばた",
+        "type": "normal",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "noble-roar",
+        "name": "おたけび",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "encore",
+        "name": "アンコール",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "swagger",
+        "name": "いばる",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "scary-face",
+        "name": "こわいかお",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "screech",
+        "name": "いやなおと",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "electro-ball",
+        "name": "エレキボール",
+        "type": "electric",
+        "category": "special",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "electric-terrain",
+        "name": "エレキフィールド",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "eerie-impulse",
+        "name": "かいでんぱ",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charge",
+        "name": "じゅうでん",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "thunder-wave",
+        "name": "でんじは",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic-spikes",
+        "name": "どくびし",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "toxic",
+        "name": "どくどく",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "fling",
+        "name": "なげつける",
+        "type": "dark",
+        "category": "physical",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "taunt",
+        "name": "ちょうはつ",
+        "type": "dark",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "metal-sound",
+        "name": "きんぞくおん",
+        "type": "steel",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "charm",
+        "name": "あまえる",
+        "type": "fairy",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "magnetic-flux",
+        "name": "じばそうさ",
+        "type": "electric",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      },
+      {
+        "id": "venom-trap",
+        "name": "ベノムトラップ",
+        "type": "poison",
+        "category": "status",
+        "power": 0,
+        "searchable": false,
+        "isContactMove": false,
+        "moveCategories": []
+      }
+    ],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": [
+        "動画確認前の暫定登録。ストリンダー（ハイなすがた）の確認済み技一覧をベースにした。",
+        "ハイなすがた限定と想定したギアチェンジ・ベノムショックを外し、ローなすがた限定と想定したじばそうさ・ベノムトラップを追加。",
+        "チャンピオンズのゲーム画面でローなすがたの全技一覧を確認後、正式データへ更新する。"
+      ]
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}
