@@ -1,0 +1,121 @@
+{
+  "$schema": "../schema.json",
+  "schemaVersion": 1,
+  "pokemon": {
+    "id": "garchomp-mega-z",
+    "dexNumber": 445,
+    "displayName": "メガガブリアスZ",
+    "name": {
+      "en": "Garchomp",
+      "ja": "メガガブリアスZ",
+      "jaHrkt": "メガガブリアスZ"
+    },
+    "championsTarget": true,
+    "types": [
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 108,
+      "atk": 130,
+      "def": 85,
+      "spa": 141,
+      "spd": 85,
+      "spe": 151
+    },
+    "isFinalEvolution": true
+  },
+  "learnset": {
+    "moveIds": [
+      "aerial-ace",
+      "aqua-tail",
+      "bite",
+      "body-slam",
+      "breaking-swipe",
+      "brick-break",
+      "brutal-swing",
+      "bulldoze",
+      "crunch",
+      "cut",
+      "dig",
+      "double-edge",
+      "draco-meteor",
+      "dragon-breath",
+      "dragon-claw",
+      "dragon-pulse",
+      "dragon-rush",
+      "dragon-tail",
+      "dual-chop",
+      "earth-power",
+      "earthquake",
+      "facade",
+      "false-swipe",
+      "fire-blast",
+      "fire-fang",
+      "flamethrower",
+      "fury-cutter",
+      "giga-impact",
+      "headbutt",
+      "hidden-power",
+      "hyper-beam",
+      "incinerate",
+      "iron-head",
+      "iron-tail",
+      "liquidation",
+      "metal-claw",
+      "mud-shot",
+      "mud-slap",
+      "outrage",
+      "poison-jab",
+      "power-gem",
+      "rock-climb",
+      "rock-slide",
+      "rock-smash",
+      "rock-tomb",
+      "round",
+      "sand-tomb",
+      "scale-shot",
+      "scorching-sands",
+      "secret-power",
+      "shadow-claw",
+      "slash",
+      "snore",
+      "stomping-tantrum",
+      "stone-edge",
+      "strength",
+      "surf",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thrash",
+      "thunder-fang",
+      "twister",
+      "whirlpool"
+    ],
+    "specialMoves": [],
+    "verification": {
+      "status": "inherited-unverified",
+      "sources": [],
+      "verifiedMoveIds": [],
+      "rejectedMoveIds": [],
+      "notes": []
+    }
+  },
+  "weight": {
+    "kg": null,
+    "verification": {
+      "status": "not-recorded",
+      "sources": [],
+      "notes": []
+    }
+  },
+  "abilities": [],
+  "battleEffects": [],
+  "research": {
+    "profileStatus": "inherited-unverified",
+    "battleEffectsStatus": "inherited-unverified",
+    "sources": [],
+    "notes": []
+  },
+  "extensions": {}
+}

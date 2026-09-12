@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "AI-editable research records for Champions-target Pokemon. The web app does not load this directory.",
-  "count": 342,
+  "count": 345,
   "entries": [
     {
       "id": "venusaur",
@@ -760,6 +760,12 @@
       "path": "entries/absol-mega.json"
     },
     {
+      "id": "absol-mega-z",
+      "dexNumber": 359,
+      "displayName": "メガアブソルZ",
+      "path": "entries/absol-mega-z.json"
+    },
+    {
       "id": "glalie",
       "dexNumber": 362,
       "displayName": "オニゴーリ",
@@ -880,6 +886,12 @@
       "path": "entries/garchomp-mega.json"
     },
     {
+      "id": "garchomp-mega-z",
+      "dexNumber": 445,
+      "displayName": "メガガブリアスZ",
+      "path": "entries/garchomp-mega-z.json"
+    },
+    {
       "id": "lucario",
       "dexNumber": 448,
       "displayName": "ルカリオ",
@@ -890,6 +902,12 @@
       "dexNumber": 448,
       "displayName": "メガルカリオ",
       "path": "entries/lucario-mega.json"
+    },
+    {
+      "id": "lucario-mega-z",
+      "dexNumber": 448,
+      "displayName": "メガルカリオZ",
+      "path": "entries/lucario-mega-z.json"
     },
     {
       "id": "hippowdon",

@@ -116,6 +116,18 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
     }
     continue;
   }
+  if (scope === "grounding") {
+    for (const [key, grounding] of Object.entries(effects)) {
+      assert(grounding && typeof grounding === "object" && !Array.isArray(grounding), `battle-effects.json: ${key} の接地定義が不正です。`);
+      assert(typeof grounding.abilityId === "string" && grounding.abilityId, `battle-effects.json: ${key} の特性IDがありません。`);
+      assert(typeof grounding.abilityName === "string" && grounding.abilityName, `battle-effects.json: ${key} の特性名がありません。`);
+      assert(Array.isArray(grounding.pokemonIds), `battle-effects.json: ${key} の接地判定ポケモン一覧が配列ではありません。`);
+      for (const pokemonId of grounding.pokemonIds) {
+        assert(pokemonIds.has(pokemonId), `battle-effects.json: ${key} に未知のポケモンID ${pokemonId}`);
+      }
+    }
+    continue;
+  }
   assert(["attacker", "defender"].includes(scope), `battle-effects.json: 未知の区分 ${scope}`);
   for (const [key, effect] of Object.entries(effects)) {
     assert(["attack", "power", "damage", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);

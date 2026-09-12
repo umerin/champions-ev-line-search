@@ -412,7 +412,7 @@
       "ja": "メガガブリアスZ",
       "jaHrkt": "メガガブリアスZ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dragon"
     ],
@@ -2149,7 +2149,7 @@
       "ja": "メガルカリオZ",
       "jaHrkt": "メガルカリオZ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "fighting",
       "steel"
@@ -6137,7 +6137,7 @@
       "ja": "メガアブソルZ",
       "jaHrkt": "メガアブソルZ"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "types": [
       "dark",
       "ghost"
