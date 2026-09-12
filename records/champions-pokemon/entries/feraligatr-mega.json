@@ -83,7 +83,8 @@
       "brutal-swing",
       "bite",
       "snarl",
-      "iron-tail"
+      "iron-tail",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -159,16 +160,6 @@
         "moveCategories": [
           "dance"
         ]
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
       },
       {
         "id": "flatter",

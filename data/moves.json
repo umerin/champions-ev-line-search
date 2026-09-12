@@ -6763,7 +6763,7 @@
       "ja": "ねらいうち",
       "jaHrkt": "ねらいうち"
     },
-    "championsTarget": false,
+    "championsTarget": true,
     "type": "water",
     "category": "special",
     "power": 80,
@@ -8698,6 +8698,22 @@
     "championsTarget": false,
     "type": "fairy",
     "category": "status",
+    "power": 0,
+    "isSpreadMove": false,
+    "isContactMove": false,
+    "moveCategories": [],
+    "searchable": false
+  },
+  {
+    "id": "fling",
+    "name": {
+      "en": "Fling",
+      "ja": "なげつける",
+      "jaHrkt": "なげつける"
+    },
+    "championsTarget": true,
+    "type": "dark",
+    "category": "physical",
     "power": 0,
     "isSpreadMove": false,
     "isContactMove": false,

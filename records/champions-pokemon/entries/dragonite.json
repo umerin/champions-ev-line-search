@@ -85,7 +85,8 @@
       "brutal-swing",
       "iron-tail",
       "iron-head",
-      "steel-wing"
+      "steel-wing",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -189,16 +190,6 @@
         "moveCategories": [
           "dance"
         ]
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
       }
     ],
     "verification": {

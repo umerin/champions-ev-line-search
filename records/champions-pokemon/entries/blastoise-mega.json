@@ -84,7 +84,8 @@
       "dark-pulse",
       "iron-tail",
       "iron-head",
-      "flash-cannon"
+      "flash-cannon",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -164,16 +165,6 @@
         "name": "ミラーコート",
         "type": "psychic",
         "category": "special",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,

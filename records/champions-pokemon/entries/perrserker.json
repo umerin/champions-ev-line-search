@@ -78,7 +78,8 @@
       "iron-head",
       "steel-beam",
       "flash-cannon",
-      "play-rough"
+      "play-rough",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -188,16 +189,6 @@
         "name": "のろい",
         "type": "ghost",
         "category": "status",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,

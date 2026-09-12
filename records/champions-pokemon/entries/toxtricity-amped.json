@@ -75,7 +75,8 @@
       "throat-chop",
       "thief",
       "payback",
-      "snarl"
+      "snarl",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -203,16 +204,6 @@
         "name": "どくどく",
         "type": "poison",
         "category": "status",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,

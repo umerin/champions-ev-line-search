@@ -91,7 +91,8 @@
       "alluring-voice",
       "dazzling-gleam",
       "draining-kiss",
-      "misty-terrain"
+      "misty-terrain",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -295,16 +296,6 @@
         "name": "ナイトヘッド",
         "type": "ghost",
         "category": "special",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,

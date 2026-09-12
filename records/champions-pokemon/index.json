@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "AI-editable research records for Champions-target Pokemon. The web app does not load this directory.",
-  "count": 345,
+  "count": 346,
   "entries": [
     {
       "id": "venusaur",
@@ -1718,6 +1718,12 @@
       "dexNumber": 815,
       "displayName": "エースバーン",
       "path": "entries/cinderace.json"
+    },
+    {
+      "id": "inteleon",
+      "dexNumber": 818,
+      "displayName": "インテレオン",
+      "path": "entries/inteleon.json"
     },
     {
       "id": "corviknight",

@@ -71,7 +71,8 @@
       "assurance",
       "mud-slap",
       "bite",
-      "iron-tail"
+      "iron-tail",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -138,16 +139,6 @@
         "id": "reversal",
         "name": "きしかいせい",
         "type": "fighting",
-        "category": "physical",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
         "category": "physical",
         "power": 0,
         "searchable": false,

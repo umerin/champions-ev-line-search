@@ -68,7 +68,8 @@
       "rest",
       "shadow-ball",
       "thief",
-      "knock-off"
+      "knock-off",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -240,16 +241,6 @@
         "name": "みちづれ",
         "type": "ghost",
         "category": "status",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,

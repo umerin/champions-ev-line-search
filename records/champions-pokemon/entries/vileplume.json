@@ -62,7 +62,8 @@
       "acid-spray",
       "rest",
       "moonblast",
-      "dazzling-gleam"
+      "dazzling-gleam",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -228,16 +229,6 @@
         "moveCategories": [
           "powder"
         ]
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
       },
       {
         "id": "moonlight",

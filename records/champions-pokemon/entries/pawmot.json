@@ -72,7 +72,8 @@
       "knock-off",
       "thief",
       "bite",
-      "play-rough"
+      "play-rough",
+      "fling"
     ],
     "specialMoves": [
       {
@@ -212,16 +213,6 @@
         "name": "こうそくいどう",
         "type": "psychic",
         "category": "status",
-        "power": 0,
-        "searchable": false,
-        "isContactMove": false,
-        "moveCategories": []
-      },
-      {
-        "id": "fling",
-        "name": "なげつける",
-        "type": "dark",
-        "category": "physical",
         "power": 0,
         "searchable": false,
         "isContactMove": false,
