@@ -125,6 +125,7 @@ const els = {
   hardRockOption: document.querySelector("#hardRockOption"),
   hardRockEnabled: document.querySelector("#hardRockEnabled"),
   weatherAbilityAlways: document.querySelector("#weatherAbilityAlways"),
+  fieldAbilityAlways: document.querySelector("#fieldAbilityAlways"),
   battleRule: document.querySelector("#battleRule"),
   availabilityMode: document.querySelector("#availabilityMode"),
   currentHp: document.querySelector("#currentHp"),
@@ -379,6 +380,7 @@ async function init() {
     els.filterEnabled.addEventListener("change", runSearch);
     els.hardRockEnabled.addEventListener("change", runSearch);
     els.weatherAbilityAlways.addEventListener("change", runSearch);
+    els.fieldAbilityAlways.addEventListener("change", runSearch);
     document.querySelectorAll('input[name="weather"]').forEach((radio) => {
       radio.addEventListener("change", runSearch);
     });
@@ -3085,6 +3087,7 @@ function readInput() {
     weather: getCheckedValues("weather")[0] ?? "none",
     field: getCheckedValues("field")[0] ?? "none",
     weatherAbilityAlways: els.weatherAbilityAlways.checked,
+    fieldAbilityAlways: els.fieldAbilityAlways.checked,
     walls: getCheckedValues("wall"),
     movePower: els.movePower.value === "" ? null : clamp(toInt(els.movePower.value), 1, 250),
     powerComparison: getCheckedValues("powerComparison")[0] ?? "gte",
