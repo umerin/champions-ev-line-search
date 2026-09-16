@@ -195,7 +195,17 @@
       ]
     }
   },
-  "fieldSetters": {},
+  "fieldSetters": {
+    "electric": {
+      "abilityId": "electric-surge",
+      "abilityName": "エレキメイカー",
+      "pokemonIds": [
+        "raichu-mega-x",
+        "tapu-koko",
+        "pincurchin"
+      ]
+    }
+  },
   "fieldAbilities": {
     "mimicry": {
       "abilityId": "mimicry",
