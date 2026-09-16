@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260814-1",
   learnsets: "./data/learnsets.json?v=20260814-1",
-  battleEffects: "./data/battle-effects.json?v=20260912-3",
+  battleEffects: "./data/battle-effects.json?v=20260916-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -2284,6 +2284,21 @@ function getBattleWeather(attacker, defender, input) {
   return getWeatherFromAbility(attacker) ?? getWeatherFromAbility(defender) ?? "none";
 }
 
+function getFieldFromAbility(pokemon) {
+  if (!pokemon) return null;
+  for (const [field, setter] of Object.entries(state.battleEffects?.fieldSetters ?? {})) {
+    const pokemonIds = Array.isArray(setter) ? setter : setter.pokemonIds ?? [];
+    if (pokemonIds.includes(pokemon.id)) return field;
+  }
+  return null;
+}
+
+function getBattleField(attacker, defender, input) {
+  const selectedField = input.field ?? "none";
+  if (selectedField !== "none" || !input.fieldAbilityAlways) return selectedField;
+  return getFieldFromAbility(attacker) ?? getFieldFromAbility(defender) ?? "none";
+}
+
 // フィールド効果は攻撃側・防御側のポケモンごとに接地状態を参照する。
 // 現在のデータで判定できる基本条件をここへ集約し、特性・持ち物・状態の
 // 例外は、対応データが追加された時にこの関数へ差し込めるようにする。
@@ -2292,6 +2307,20 @@ function isPokemonGrounded(pokemon) {
   const levitatePokemonIds = state.battleEffects?.grounding?.levitate?.pokemonIds ?? [];
   if (levitatePokemonIds.includes(pokemon.id)) return false;
   return !pokemon.types?.includes("flying");
+}
+
+function isPokemonAffectedByField(field, grounded) {
+  return field === "electric" && grounded;
+}
+
+function getFieldAdjustedTypes(pokemon, field, grounded, input) {
+  const types = pokemon?.types ?? [];
+  if (!input.fieldAbilityAlways || !isPokemonAffectedByField(field, grounded)) return types;
+  const typeChange = Object.values(state.battleEffects?.fieldAbilities ?? {}).find((effect) => (
+    effect.pokemonIds?.includes(pokemon.id)
+      && effect.typeByField?.[field]
+  ));
+  return typeChange ? [typeChange.typeByField[field]] : types;
 }
 
 function getAttackerAdjustedMove(move, attacker) {
@@ -2310,6 +2339,32 @@ function getWeatherAdjustedMove(move, weather) {
 
 function getWeatherMovePowerModifier(move, weather) {
   return SOLAR_MOVE_IDS.has(move.id) && ["rain", "sand", "snow"].includes(weather) ? 0.5 : 1;
+}
+
+function getFieldAdjustedMove(move, field, attackerGrounded) {
+  if (!isPokemonAffectedByField(field, attackerGrounded)) return move;
+  if (move.id === "terrain-pulse") {
+    return { ...move, power: 100, type: "electric" };
+  }
+  if (move.id === "nature-power") {
+    const thunderbolt = state.moves.find((candidate) => candidate.id === "thunderbolt");
+    return {
+      ...move,
+      name: thunderbolt?.name ?? move.name,
+      power: thunderbolt?.power ?? 90,
+      type: "electric",
+    };
+  }
+  return move;
+}
+
+function getFieldMovePowerModifier(move, field, attackerGrounded, defenderGrounded) {
+  if (field !== "electric") return 1;
+  let modifier = 1;
+  if (attackerGrounded && move.type === "electric") modifier *= 5325 / 4096;
+  if (defenderGrounded && move.id === "rising-voltage") modifier *= 2;
+  if (move.id === "psyblade") modifier *= 1.5;
+  return modifier;
 }
 
 function getWeatherDamageModifier(moveType, weather) {
@@ -2960,10 +3015,14 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
       const attackerGrounded = isPokemonGrounded(attacker);
       const defenderGrounded = isPokemonGrounded(defender);
       const battleWeather = getBattleWeather(attacker, defender, input);
+      const battleField = getBattleField(attacker, defender, input);
+      const attackerTypes = getFieldAdjustedTypes(attacker, battleField, attackerGrounded, input);
+      const defenderTypes = getFieldAdjustedTypes(defender, battleField, defenderGrounded, input);
       const attackerAdjustedMove = getAttackerAdjustedMove(move, attacker);
-      const effectiveMove = getWeatherAdjustedMove(attackerAdjustedMove, battleWeather);
+      const weatherAdjustedMove = getWeatherAdjustedMove(attackerAdjustedMove, battleWeather);
+      const effectiveMove = getFieldAdjustedMove(weatherAdjustedMove, battleField, attackerGrounded);
       if (!matchesMovePower(effectiveMove, input.movePower, input.powerComparison, input.includePriorityMoves)) continue;
-      const effectiveness = calcEffectiveness(effectiveMove.type, defender.types);
+      const effectiveness = calcEffectiveness(effectiveMove.type, defenderTypes);
       if (effectiveness === 0 || !matchesEffectiveness(effectiveness, input.effectiveness)) continue;
       if (input.higherOffenseOnly && !matchesHigherOffense(attacker, move.category, input.battleRule)) continue;
       const calculationPower = getAdjustedMovePower(
@@ -2972,8 +3031,11 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
         effectiveMove,
         battleWeather,
         attacker,
+        battleField,
+        attackerGrounded,
+        defenderGrounded,
       );
-      const stab = attacker.types.includes(effectiveMove.type) ? 1.5 : 1;
+      const stab = attackerTypes.includes(effectiveMove.type) ? 1.5 : 1;
       if (input.stabOnly && stab === 1) continue;
       const finalDamageMEffects = getFinalDamageMEffects(
         attacker,
@@ -3004,8 +3066,11 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
+            battleField,
             attackerGrounded,
             defenderGrounded,
+            attackerTypes.join(","),
+            defenderTypes.join(","),
           ].join("|");
           let currentDamageResult = currentDamageCache.get(damageProfileKey);
           if (!currentDamageResult) {
@@ -3051,6 +3116,7 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
             subsequentHitMModifier,
             mProtectModifier,
             battleWeather,
+            battleField,
             attackerGrounded,
             defenderGrounded,
             battleRule: input.battleRule,
@@ -3332,10 +3398,20 @@ function getAttackerPowerEffects(attacker, move, rule = state.moveSettingsRule) 
     .filter((effect) => effect.stage === "power" && isAttackerAbilityEnabled(attacker.id, effect.effectKey, rule));
 }
 
-function getAdjustedMovePower(defender, input, move, defenderWeather = "none", attacker = null) {
+function getAdjustedMovePower(
+  defender,
+  input,
+  move,
+  defenderWeather = "none",
+  attacker = null,
+  field = "none",
+  attackerGrounded = false,
+  defenderGrounded = false,
+) {
   const modifier = getDefenderPowerModifier(defender, input, move.type)
     * (attacker ? getAttackerPowerModifier(attacker, move, input.battleRule) : 1)
-    * getWeatherMovePowerModifier(move, defenderWeather);
+    * getWeatherMovePowerModifier(move, defenderWeather)
+    * getFieldMovePowerModifier(move, field, attackerGrounded, defenderGrounded);
   return applyPowerModifier(move.power, modifier);
 }
 

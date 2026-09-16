@@ -195,6 +195,19 @@
       ]
     }
   },
+  "fieldSetters": {},
+  "fieldAbilities": {
+    "mimicry": {
+      "abilityId": "mimicry",
+      "abilityName": "ぎたい",
+      "pokemonIds": [
+        "stunfisk-galar"
+      ],
+      "typeByField": {
+        "electric": "electric"
+      }
+    }
+  },
   "grounding": {
     "levitate": {
       "abilityId": "levitate",
