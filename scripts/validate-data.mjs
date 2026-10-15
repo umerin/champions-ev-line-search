@@ -116,6 +116,31 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
     }
     continue;
   }
+  if (scope === "fieldSetters") {
+    for (const [field, setter] of Object.entries(effects)) {
+      assert(setter && typeof setter === "object" && !Array.isArray(setter), `battle-effects.json: ${field} のフィールド特性定義が不正です。`);
+      assert(typeof setter.abilityId === "string" && setter.abilityId, `battle-effects.json: ${field} の特性IDがありません。`);
+      assert(typeof setter.abilityName === "string" && setter.abilityName, `battle-effects.json: ${field} の特性名がありません。`);
+      assert(Array.isArray(setter.pokemonIds), `battle-effects.json: ${field} のフィールド特性ポケモン一覧が配列ではありません。`);
+      for (const pokemonId of setter.pokemonIds) {
+        assert(pokemonIds.has(pokemonId), `battle-effects.json: ${field} に未知のポケモンID ${pokemonId}`);
+      }
+    }
+    continue;
+  }
+  if (scope === "fieldAbilities") {
+    for (const [key, ability] of Object.entries(effects)) {
+      assert(ability && typeof ability === "object" && !Array.isArray(ability), `battle-effects.json: ${key} のフィールド特性定義が不正です。`);
+      assert(typeof ability.abilityId === "string" && ability.abilityId, `battle-effects.json: ${key} の特性IDがありません。`);
+      assert(typeof ability.abilityName === "string" && ability.abilityName, `battle-effects.json: ${key} の特性名がありません。`);
+      assert(Array.isArray(ability.pokemonIds), `battle-effects.json: ${key} のフィールド特性ポケモン一覧が配列ではありません。`);
+      for (const pokemonId of ability.pokemonIds) {
+        assert(pokemonIds.has(pokemonId), `battle-effects.json: ${key} に未知のポケモンID ${pokemonId}`);
+      }
+    }
+    continue;
+  }
+  if (scope === "fieldEffects") continue;
   if (scope === "grounding") {
     for (const [key, grounding] of Object.entries(effects)) {
       assert(grounding && typeof grounding === "object" && !Array.isArray(grounding), `battle-effects.json: ${key} の接地定義が不正です。`);
@@ -130,7 +155,7 @@ for (const [scope, effects] of Object.entries(battleEffects)) {
   }
   assert(["attacker", "defender"].includes(scope), `battle-effects.json: 未知の区分 ${scope}`);
   for (const [key, effect] of Object.entries(effects)) {
-    assert(["attack", "power", "damage", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
+    assert(["attack", "power", "damage", "defense", "weather"].includes(effect.stage), `battle-effects.json: ${key} の stage が不正です。`);
     if (effect.stage === "weather") {
       assert(scope === "attacker", `battle-effects.json: ${key} の天候上書きは攻撃側に設定してください。`);
       assert(["sunny", "rain", "sand", "snow"].includes(effect.weather), `battle-effects.json: ${key} の weather が不正です。`);

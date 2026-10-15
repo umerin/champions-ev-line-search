@@ -71,6 +71,15 @@
       "superEffectiveOnly": true,
       "modifier": 0.75
     },
+    "grassPelt": {
+      "inputKey": "grassPeltEnabled",
+      "pokemonIds": [
+        "skiddo",
+        "gogoat"
+      ],
+      "stage": "defense",
+      "modifier": 1.5
+    },
     "hardRock": {
       "inputKey": "hardRockEnabled",
       "pokemonIds": [
@@ -214,7 +223,17 @@
         "stunfisk-galar"
       ],
       "typeByField": {
-        "electric": "electric"
+        "electric": "electric",
+        "grassy": "grass"
+      }
+    }
+  },
+  "fieldEffects": {
+    "grassy": {
+      "endTurnHpRecovery": {
+        "numerator": 1,
+        "denominator": 16,
+        "rounding": "floor"
       }
     }
   },

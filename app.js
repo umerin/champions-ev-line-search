@@ -2,7 +2,7 @@ const paths = {
   pokemon: "./data/pokemon.json?v=20260809-2",
   moves: "./data/moves.json?v=20260814-1",
   learnsets: "./data/learnsets.json?v=20260814-1",
-  battleEffects: "./data/battle-effects.json?v=20260916-2",
+  battleEffects: "./data/battle-effects.json?v=20261015-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
   recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
@@ -124,6 +124,8 @@ const els = {
   filterEnabled: document.querySelector("#filterEnabled"),
   hardRockOption: document.querySelector("#hardRockOption"),
   hardRockEnabled: document.querySelector("#hardRockEnabled"),
+  grassPeltOption: document.querySelector("#grassPeltOption"),
+  grassPeltEnabled: document.querySelector("#grassPeltEnabled"),
   weatherAbilityAlways: document.querySelector("#weatherAbilityAlways"),
   fieldAbilityAlways: document.querySelector("#fieldAbilityAlways"),
   battleRule: document.querySelector("#battleRule"),
@@ -358,6 +360,7 @@ async function init() {
       updateDrySkinOption();
       updateFilterOption();
       updateHardRockOption();
+      updateGrassPeltOption();
       updateCurrentStatsDefault();
       runSearch();
     });
@@ -379,6 +382,7 @@ async function init() {
     els.drySkinEnabled.addEventListener("change", runSearch);
     els.filterEnabled.addEventListener("change", runSearch);
     els.hardRockEnabled.addEventListener("change", runSearch);
+    els.grassPeltEnabled.addEventListener("change", runSearch);
     els.weatherAbilityAlways.addEventListener("change", runSearch);
     els.fieldAbilityAlways.addEventListener("change", runSearch);
     document.querySelectorAll('input[name="weather"]').forEach((radio) => {
@@ -2309,8 +2313,18 @@ function isPokemonGrounded(pokemon) {
   return !pokemon.types?.includes("flying");
 }
 
+const FIELD_TYPE_BY_ID = {
+  electric: "electric",
+  grassy: "grass",
+};
+const FIELD_NATURE_POWER_MOVE_IDS = {
+  electric: "thunderbolt",
+  grassy: "energy-ball",
+};
+const GRASSY_FIELD_GROUND_MOVE_IDS = new Set(["earthquake", "bulldoze", "magnitude"]);
+
 function isPokemonAffectedByField(field, grounded) {
-  return field === "electric" && grounded;
+  return field !== "none" && grounded;
 }
 
 function getFieldAdjustedTypes(pokemon, field, grounded, input) {
@@ -2344,26 +2358,35 @@ function getWeatherMovePowerModifier(move, weather) {
 function getFieldAdjustedMove(move, field, attackerGrounded) {
   if (!isPokemonAffectedByField(field, attackerGrounded)) return move;
   if (move.id === "terrain-pulse") {
-    return { ...move, power: 100, type: "electric" };
+    const fieldType = FIELD_TYPE_BY_ID[field];
+    return fieldType ? { ...move, power: 100, type: fieldType } : move;
   }
   if (move.id === "nature-power") {
-    const thunderbolt = state.moves.find((candidate) => candidate.id === "thunderbolt");
+    const fieldMoveId = FIELD_NATURE_POWER_MOVE_IDS[field];
+    const fieldMove = state.moves.find((candidate) => candidate.id === fieldMoveId);
+    if (!fieldMove) return move;
     return {
       ...move,
-      name: thunderbolt?.name ?? move.name,
-      power: thunderbolt?.power ?? 90,
-      type: "electric",
+      name: fieldMove.name,
+      power: fieldMove.power,
+      type: fieldMove.type,
     };
   }
   return move;
 }
 
 function getFieldMovePowerModifier(move, field, attackerGrounded, defenderGrounded) {
-  if (field !== "electric") return 1;
   let modifier = 1;
-  if (attackerGrounded && move.type === "electric") modifier *= 5325 / 4096;
-  if (defenderGrounded && move.id === "rising-voltage") modifier *= 2;
-  if (move.id === "psyblade") modifier *= 1.5;
+  if (field === "electric") {
+    if (attackerGrounded && move.type === "electric") modifier *= 5325 / 4096;
+    if (defenderGrounded && move.id === "rising-voltage") modifier *= 2;
+    if (move.id === "psyblade") modifier *= 1.5;
+  }
+  if (field === "grassy") {
+    if (attackerGrounded && move.type === "grass") modifier *= 5325 / 4096;
+    if (defenderGrounded && GRASSY_FIELD_GROUND_MOVE_IDS.has(move.id)) modifier *= 0.5;
+    if (attackerGrounded && move.id === "grassy-glide") modifier *= 1.5;
+  }
   return modifier;
 }
 
@@ -2387,6 +2410,28 @@ function getWeatherAdjustedDefense(defender, moveCategory, defense, weather) {
     return Math.floor(defense * 1.5);
   }
   return defense;
+}
+
+function getBattleAdjustedDefense(
+  defender,
+  moveCategory,
+  defense,
+  weather,
+  field,
+  defenderGrounded,
+  input,
+) {
+  const weatherAdjustedDefense = getWeatherAdjustedDefense(defender, moveCategory, defense, weather);
+  if (
+    field !== "grassy"
+    || moveCategory !== "physical"
+    || !defenderGrounded
+    || !input.fieldAbilityAlways
+    || !input.grassPeltEnabled
+  ) return weatherAdjustedDefense;
+  const grassPelt = getBattleEffect("defender", "grassPelt");
+  if (!grassPelt?.pokemonIds?.includes(defender.id)) return weatherAdjustedDefense;
+  return Math.floor(weatherAdjustedDefense * grassPelt.modifier);
 }
 
 function getBattleEffect(scope, key) {
@@ -2474,6 +2519,14 @@ function updateHardRockOption(pokemon = getPokemonPool().find((item) => item.id 
   els.hardRockOption.hidden = !isSupported;
   if (!isSupported) els.hardRockEnabled.checked = false;
   else if (!wasVisible) els.hardRockEnabled.checked = true;
+}
+
+function updateGrassPeltOption(pokemon = getPokemonPool().find((item) => item.id === els.defenderSelect.value)) {
+  const isSupported = Boolean(pokemon && isBattleEffectPokemon("defender", "grassPelt", pokemon.id));
+  const wasVisible = !els.grassPeltOption.hidden;
+  els.grassPeltOption.hidden = !isSupported;
+  if (!isSupported) els.grassPeltEnabled.checked = false;
+  else if (!wasVisible) els.grassPeltEnabled.checked = true;
 }
 
 function cycleMegaForm() {
@@ -2746,11 +2799,14 @@ function runSearch() {
         level: state.rules.level,
         power: representative.calculationPower,
         attack: representative.attackStat,
-        defense: getWeatherAdjustedDefense(
+        defense: getBattleAdjustedDefense(
           defender,
           representative.move.category,
           representative.move.category === "physical" ? after.def : after.spd,
           representative.battleWeather,
+          representative.battleField,
+          representative.defenderGrounded,
+          input,
         ),
         stab: representative.stab,
         effectiveness: representative.effectiveness,
@@ -3078,11 +3134,14 @@ function buildAttackScenarios(defender, pokemonPool, input, current) {
               level: state.rules.level,
               power: calculationPower,
               attack: attackStat,
-              defense: getWeatherAdjustedDefense(
+              defense: getBattleAdjustedDefense(
                 defender,
                 effectiveMove.category,
                 effectiveMove.category === "physical" ? current.def : current.spd,
                 battleWeather,
+                battleField,
+                defenderGrounded,
+                input,
               ),
               stab,
               effectiveness,
@@ -3173,6 +3232,7 @@ function readInput() {
     drySkinEnabled: els.drySkinEnabled.checked,
     filterEnabled: els.filterEnabled.checked,
     hardRockEnabled: els.hardRockEnabled.checked,
+    grassPeltEnabled: els.grassPeltEnabled.checked,
   };
 }
 
