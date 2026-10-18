@@ -5,7 +5,7 @@ const paths = {
   battleEffects: "./data/battle-effects.json?v=20261015-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  recommendedPresets: "./data/recommended-presets.json?v=20261018-3",
+  recommendedPresets: "./data/recommended-presets.json?v=20261018-4",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
@@ -580,10 +580,11 @@ function updateMoveSettingsPresetActions() {
   els.moveSettingsPresetName.disabled = editing;
   els.moveSettingsPresetSave.disabled = editing || !name || (!hasSameName && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT);
   els.moveSettingsRecommendedPresetCreate.disabled = editing || !name;
-  els.moveSettingsRecommendedPresetExport.disabled = !state.recommendedMoveSettingsPresets.length;
   els.moveSettingsPresetLoad.disabled = editing || !selected;
   els.moveSettingsPresetDelete.disabled = editing || !selected || builtIn;
   els.moveSettingsPresetEdit.disabled = editing || !selected || builtIn;
+  const canExportSelectedBuiltIn = selected && builtIn;
+  els.moveSettingsRecommendedPresetExport.disabled = !state.recommendedMoveSettingsPresets.length && !canExportSelectedBuiltIn;
   els.moveSettingsPresetEditDone.hidden = !editing;
   els.moveSettingsPresetEdit.hidden = editing;
   updateMoveSettingsPresetEditingUI();
@@ -1000,24 +1001,33 @@ function saveRecommendedMoveSettingsPresetDrafts() {
 }
 
 function exportRecommendedMoveSettingsPresetDrafts() {
-  if (!state.recommendedMoveSettingsPresets.length) {
+  const selection = getSelectedMoveSettingsPresetSelection();
+  let presetsToExport = state.recommendedMoveSettingsPresets;
+  if (selection?.source === "built-in") {
+    const preset = { ...selection.preset };
+    if (!saveCurrentSettingsToPresetSnapshot(preset)) {
+      setMoveSettingsPresetStatus("現在のルールとおすすめプリセットのルールが一致しないため、書き出せません。", true);
+      return;
+    }
+    presetsToExport = [preset];
+  } else if (!state.recommendedMoveSettingsPresets.length) {
     setMoveSettingsPresetStatus("書き出せるおすすめ候補がありません。", true);
     return;
-  }
-  if (state.moveSettingsPresetEditing && state.moveSettingsPresetEditingSource === "recommended") {
+  } else if (state.moveSettingsPresetEditing && state.moveSettingsPresetEditingSource === "recommended") {
     saveEditingMoveSettingsPreset();
-  } else {
-    const selection = getSelectedMoveSettingsPresetSelection();
-    if (selection?.source === "recommended" && saveCurrentSettingsToPresetSnapshot(selection.preset)) {
-      saveRecommendedMoveSettingsPresetDrafts();
-    }
+  } else if (selection?.source === "recommended" && saveCurrentSettingsToPresetSnapshot(selection.preset)) {
+    saveRecommendedMoveSettingsPresetDrafts();
+  }
+  if (!presetsToExport.length) {
+    setMoveSettingsPresetStatus("書き出せるおすすめ候補がありません。", true);
+    return;
   }
   const exportedAt = new Date();
   const payload = {
     format: "champions-ev-line-search-recommended-presets",
     schemaVersion: 1,
     exportedAt: exportedAt.toISOString(),
-    presets: state.recommendedMoveSettingsPresets.map((preset) => ({
+    presets: presetsToExport.map((preset) => ({
       id: preset.id,
       name: preset.name,
       rule: normalizeMoveRule(preset.rule),
@@ -1036,7 +1046,7 @@ function exportRecommendedMoveSettingsPresetDrafts() {
   anchor.click();
   anchor.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 0);
-  setMoveSettingsPresetStatus(`おすすめ候補${state.recommendedMoveSettingsPresets.length}件をJSONに書き出しました。`);
+  setMoveSettingsPresetStatus(`おすすめ候補${presetsToExport.length}件をJSONに書き出しました。`);
 }
 
 function selectMoveSettingsView(selectedButton) {
