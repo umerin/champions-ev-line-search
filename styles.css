@@ -653,6 +653,11 @@ legend {
   gap: 6px;
 }
 
+.move-settings-preset-actions-recommended[hidden],
+.move-settings-recommended-help[hidden] {
+  display: none;
+}
+
 .move-settings-preset-actions .secondary-button {
   white-space: nowrap;
 }
@@ -727,6 +732,24 @@ body.is-recommended-preset-editing .move-settings-preset-editing-notice small {
 
 .move-settings-preset-status.is-error {
   color: #b45353;
+}
+
+.move-settings-preset-limit-field {
+  display: grid;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.move-settings-preset-limit-field select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+  color: var(--ink);
+  padding: 8px 10px;
 }
 
 .move-settings-rule-tabs {

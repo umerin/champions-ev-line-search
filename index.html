@@ -413,7 +413,7 @@
             <div class="move-settings-preset-bar" aria-label="個別設定プリセット">
               <div class="move-settings-preset-selection">
                 <label class="move-settings-preset-field">
-                  <span>プリセット <small id="moveSettingsPresetCount">0/5</small></span>
+                  <span>プリセット <small id="moveSettingsPresetCount">マイセット 0/100</small></span>
                   <select id="moveSettingsPresetSelect">
                     <option value="">プリセットを選択</option>
                   </select>
@@ -426,22 +426,21 @@
               </label>
               <div class="move-settings-preset-actions">
                 <div class="move-settings-preset-actions-primary">
-                  <button id="moveSettingsPresetSave" type="button" class="secondary-button">現在の設定を保存</button>
-                  <button id="moveSettingsPresetEdit" type="button" class="secondary-button" disabled>編集モード</button>
-                  <button id="moveSettingsPresetEditDone" type="button" class="secondary-button" hidden>編集終了</button>
+                  <button id="moveSettingsPresetSave" type="button" class="secondary-button">変更をプリセットに反映</button>
                   <button id="moveSettingsPresetDelete" type="button" class="secondary-button" disabled>削除</button>
                 </div>
-                <div class="move-settings-preset-actions-recommended">
+                <div id="moveSettingsAdminActions" class="move-settings-preset-actions-recommended" hidden>
                   <button id="moveSettingsRecommendedPresetCreate" type="button" class="secondary-button recommended-preset-button">おすすめ作成を開始</button>
                   <button id="moveSettingsRecommendedPresetExport" type="button" class="secondary-button recommended-preset-export" disabled>おすすめ書き出し</button>
                 </div>
               </div>
-              <div id="moveSettingsPresetEditingNotice" class="move-settings-preset-editing-notice" hidden>
-                <strong id="moveSettingsPresetEditingLabel">プリセット編集中</strong>
+              <button id="moveSettingsPresetEdit" type="button" hidden disabled>編集モード</button>
+              <button id="moveSettingsPresetEditDone" type="button" hidden>編集終了</button>
+              <div id="moveSettingsPresetEditingNotice" hidden>
+                <strong id="moveSettingsPresetEditingLabel"></strong>
                 <span id="moveSettingsPresetEditingName"></span>
-                <small>変更は自動保存されます</small>
               </div>
-              <p class="move-settings-recommended-help">おすすめ候補はこの端末に自動保存されます。内容が完成したら「おすすめ書き出し」で組み込み用ファイルを作れます。</p>
+              <p id="moveSettingsRecommendedHelp" class="move-settings-recommended-help" hidden>管理用：おすすめ候補はこの端末に保存され、「おすすめ書き出し」で組み込み用ファイルを作れます。</p>
               <p id="moveSettingsPresetStatus" class="move-settings-preset-status" role="status" aria-live="polite"></p>
             </div>
           </div>
@@ -580,6 +579,24 @@
           <div class="bulk-confirm-actions">
             <button id="moveSettingsPresetConfirmCancel" type="button" class="secondary-button">キャンセル</button>
             <button id="moveSettingsPresetConfirmApply" type="button" class="secondary-button bulk-confirm-apply">呼び出す</button>
+          </div>
+        </section>
+      </div>
+
+      <div id="moveSettingsPresetLimitModal" class="bulk-confirm-modal" hidden>
+        <section class="bulk-confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="moveSettingsPresetLimitTitle">
+          <div class="bulk-confirm-heading">
+            <p class="eyebrow">個別設定プリセット</p>
+            <h2 id="moveSettingsPresetLimitTitle">マイセットが100件あります</h2>
+          </div>
+          <p class="bulk-confirm-message">削除するマイセットを選んでください。削除後、現在の設定を新しいマイセットとして保存します。</p>
+          <label class="move-settings-preset-limit-field">
+            <span>削除するマイセット</span>
+            <select id="moveSettingsPresetLimitDeleteSelect"></select>
+          </label>
+          <div class="bulk-confirm-actions">
+            <button id="moveSettingsPresetLimitCancel" type="button" class="secondary-button">キャンセル</button>
+            <button id="moveSettingsPresetLimitApply" type="button" class="secondary-button bulk-confirm-apply is-danger">削除して保存</button>
           </div>
         </section>
       </div>

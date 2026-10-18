@@ -54,6 +54,9 @@ const state = {
   builtInRecommendedMoveSettingsPresets: [],
   recommendedMoveSettingsPresets: [],
   moveSettingsPresetPending: null,
+  moveSettingsPresetPendingSave: null,
+  moveSettingsPresetActiveByRule: new Map(),
+  moveSettingsPresetBaselineByRule: new Map(),
   moveSettingsPresetEditing: false,
   moveSettingsPresetEditingId: null,
   moveSettingsPresetEditingSource: null,
@@ -99,7 +102,7 @@ const ATTACKER_ABILITY_SETTINGS_STORAGE_KEY = "champions-ev-line-search:attacker
 const BULK_SETTINGS_STORAGE_KEY = "champions-ev-line-search:bulk-settings";
 const MOVE_SETTINGS_PRESETS_STORAGE_KEY = "champions-ev-line-search:move-settings-presets";
 const RECOMMENDED_MOVE_SETTINGS_PRESETS_STORAGE_KEY = "champions-ev-line-search:recommended-move-settings-preset-drafts";
-const MOVE_SETTINGS_PRESET_LIMIT = 5;
+const MOVE_SETTINGS_PRESET_LIMIT = 100;
 const RECENT_POKEMON_LIMIT = 10;
 const pokemonFormMeta = new Map();
 
@@ -178,11 +181,17 @@ const els = {
   moveSettingsPresetEditingLabel: document.querySelector("#moveSettingsPresetEditingLabel"),
   moveSettingsPresetEditingName: document.querySelector("#moveSettingsPresetEditingName"),
   moveSettingsPresetStatus: document.querySelector("#moveSettingsPresetStatus"),
+  moveSettingsAdminActions: document.querySelector("#moveSettingsAdminActions"),
+  moveSettingsRecommendedHelp: document.querySelector("#moveSettingsRecommendedHelp"),
   moveSettingsPresetConfirmModal: document.querySelector("#moveSettingsPresetConfirmModal"),
   moveSettingsPresetConfirmTitle: document.querySelector("#moveSettingsPresetConfirmTitle"),
   moveSettingsPresetConfirmMessage: document.querySelector("#moveSettingsPresetConfirmMessage"),
   moveSettingsPresetConfirmCancel: document.querySelector("#moveSettingsPresetConfirmCancel"),
   moveSettingsPresetConfirmApply: document.querySelector("#moveSettingsPresetConfirmApply"),
+  moveSettingsPresetLimitModal: document.querySelector("#moveSettingsPresetLimitModal"),
+  moveSettingsPresetLimitDeleteSelect: document.querySelector("#moveSettingsPresetLimitDeleteSelect"),
+  moveSettingsPresetLimitCancel: document.querySelector("#moveSettingsPresetLimitCancel"),
+  moveSettingsPresetLimitApply: document.querySelector("#moveSettingsPresetLimitApply"),
   moveSettingsPokemonName: document.querySelector("#moveSettingsPokemonName"),
   moveSettingsSummary: document.querySelector("#moveSettingsSummary"),
   moveSettingsAbilityList: document.querySelector("#moveSettingsAbilityList"),
@@ -341,6 +350,7 @@ async function init() {
     state.bulkSettings = loadBulkSettings();
     state.moveSettingsPresets = loadMoveSettingsPresets();
     state.recommendedMoveSettingsPresets = loadRecommendedMoveSettingsPresetDrafts();
+    initializeMoveSettingsPresets();
     populatePokemonSelect();
     populateMovePowerOptions();
     populateAttackerPointDetails();
@@ -499,6 +509,9 @@ function populateAttackerPointDetails() {
 }
 
 function setupMoveSettingsPage() {
+  const localAdmin = isLocalAdminHost();
+  els.moveSettingsAdminActions.hidden = !localAdmin;
+  els.moveSettingsRecommendedHelp.hidden = !localAdmin;
   document.querySelectorAll(".page-nav-button").forEach((button) => {
     button.addEventListener("click", () => switchPage(button.dataset.page));
   });
@@ -527,6 +540,8 @@ function setupMoveSettingsPage() {
   els.moveSettingsPresetDelete.addEventListener("click", () => requestMoveSettingsPresetConfirmation("delete"));
   els.moveSettingsPresetConfirmCancel.addEventListener("click", closeMoveSettingsPresetConfirmation);
   els.moveSettingsPresetConfirmApply.addEventListener("click", confirmMoveSettingsPresetAction);
+  els.moveSettingsPresetLimitCancel.addEventListener("click", closeMoveSettingsPresetLimitDialog);
+  els.moveSettingsPresetLimitApply.addEventListener("click", deleteMoveSettingsPresetAndSave);
   els.moveSettingsMoveSearch.addEventListener("input", renderMoveSettingsMoveList);
   els.moveSettingsMoveList.addEventListener("change", handleMoveSettingsMoveListChange);
   els.moveSettingsTopPowerCount.addEventListener("input", saveBulkSettingsDraft);
@@ -544,50 +559,54 @@ function setupMoveSettingsPage() {
 }
 
 function renderMoveSettingsPresets() {
-  const selectedValue = els.moveSettingsPresetSelect.value;
-  const builtInRecommendedOptions = state.builtInRecommendedMoveSettingsPresets.map((preset) => (
+  const activeReference = state.moveSettingsPresetActiveByRule.get(state.moveSettingsRule);
+  const selectedValue = activeReference
+    ? getMoveSettingsPresetOptionValue(activeReference.source, activeReference.id)
+    : els.moveSettingsPresetSelect.value;
+  const builtInRecommendedOptions = [...state.builtInRecommendedMoveSettingsPresets]
+    .sort((a, b) => a.name.localeCompare(b.name, "ja"))
+    .map((preset) => (
     `<option value="${escapeHtml(getMoveSettingsPresetOptionValue("built-in", preset.id))}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
   ));
-  const recommendedDraftOptions = state.recommendedMoveSettingsPresets.map((preset) => (
+  const recommendedDraftOptions = isLocalAdminHost() ? state.recommendedMoveSettingsPresets.map((preset) => (
     `<option value="${escapeHtml(getMoveSettingsPresetOptionValue("recommended", preset.id))}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
-  ));
-  const userOptions = state.moveSettingsPresets.map((preset) => (
+  )) : [];
+  const userOptions = [...state.moveSettingsPresets]
+    .sort(compareMoveSettingsPresetsNewestFirst)
+    .map((preset) => (
     `<option value="${escapeHtml(getMoveSettingsPresetOptionValue("user", preset.id))}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}）</option>`
   ));
   els.moveSettingsPresetSelect.innerHTML = [
     `<option value="">プリセットを選択</option>`,
+    `<optgroup label="マイセット">${userOptions.length ? userOptions.join("") : `<option value="no-my-sets" disabled>マイセットがありません</option>`}</optgroup>`,
     builtInRecommendedOptions.length ? `<optgroup label="おすすめプリセット">${builtInRecommendedOptions.join("")}</optgroup>` : "",
-    recommendedDraftOptions.length ? `<optgroup label="おすすめ作成用">${recommendedDraftOptions.join("")}</optgroup>` : "",
-    userOptions.length ? `<optgroup label="自分のプリセット">${userOptions.join("")}</optgroup>` : "",
+    recommendedDraftOptions.length ? `<optgroup label="管理用おすすめ候補">${recommendedDraftOptions.join("")}</optgroup>` : "",
   ].join("");
   if (getMoveSettingsPresetSelection(selectedValue)) {
     els.moveSettingsPresetSelect.value = selectedValue;
   }
-  els.moveSettingsPresetCount.textContent = `おすすめ ${state.builtInRecommendedMoveSettingsPresets.length}件・自分 ${state.moveSettingsPresets.length}/${MOVE_SETTINGS_PRESET_LIMIT}・作成中 ${state.recommendedMoveSettingsPresets.length}件`;
+  els.moveSettingsPresetCount.textContent = `マイセット ${state.moveSettingsPresets.length}/${MOVE_SETTINGS_PRESET_LIMIT}`;
   updateMoveSettingsPresetActions();
 }
 
 function updateMoveSettingsPresetActions() {
   const selection = getSelectedMoveSettingsPresetSelection();
   const selected = Boolean(selection);
-  const builtIn = selection?.source === "built-in";
   const name = els.moveSettingsPresetName.value.trim();
-  const editing = state.moveSettingsPresetEditing;
-  const hasSameName = state.moveSettingsPresets.some((preset) => (
-    preset.name === name && normalizeMoveRule(preset.rule) === state.moveSettingsRule
-  ));
-  els.moveSettingsPresetSelect.disabled = editing;
-  els.moveSettingsPresetName.disabled = editing;
-  els.moveSettingsPresetSave.disabled = editing || !name || (!hasSameName && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT);
-  els.moveSettingsRecommendedPresetCreate.disabled = editing || !name;
-  els.moveSettingsPresetLoad.disabled = editing || !selected;
-  els.moveSettingsPresetDelete.disabled = editing || !selected || builtIn;
-  els.moveSettingsPresetEdit.disabled = editing || !selected || builtIn;
-  const canExportSelectedBuiltIn = selected && builtIn;
+  els.moveSettingsPresetSelect.disabled = false;
+  els.moveSettingsPresetName.disabled = false;
+  els.moveSettingsPresetSave.disabled = !hasCurrentMoveSettingsChanged();
+  els.moveSettingsPresetSave.title = els.moveSettingsPresetSave.disabled
+    ? "ポケモン・技・特性の設定を変更すると保存できます"
+    : "現在の変更を新しいマイセットとして保存します";
+  els.moveSettingsRecommendedPresetCreate.disabled = !name;
+  els.moveSettingsPresetLoad.disabled = !selected;
+  els.moveSettingsPresetDelete.disabled = !selected || selection.source !== "user";
+  els.moveSettingsPresetEdit.hidden = true;
+  els.moveSettingsPresetEditDone.hidden = true;
+  const canExportSelectedBuiltIn = selected && selection.source === "built-in";
   els.moveSettingsRecommendedPresetExport.disabled = !state.recommendedMoveSettingsPresets.length && !canExportSelectedBuiltIn;
-  els.moveSettingsPresetEditDone.hidden = !editing;
-  els.moveSettingsPresetEdit.hidden = editing;
-  updateMoveSettingsPresetEditingUI();
+  els.moveSettingsPresetEditingNotice.hidden = true;
 }
 
 function updateMoveSettingsPresetEditingUI() {
@@ -609,14 +628,6 @@ function updateMoveSettingsPresetEditingUI() {
 }
 
 function handleMoveSettingsPresetSelectionChange() {
-  if (state.moveSettingsPresetEditing) {
-    els.moveSettingsPresetSelect.value = getMoveSettingsPresetOptionValue(
-      state.moveSettingsPresetEditingSource,
-      state.moveSettingsPresetEditingId,
-    );
-    setMoveSettingsPresetStatus("編集中は別のプリセットを選択できません。編集を終了してから選択してください。", true);
-    return;
-  }
   updateMoveSettingsPresetActions();
 }
 
@@ -662,39 +673,204 @@ function getSelectedMoveSettingsPreset() {
   return getSelectedMoveSettingsPresetSelection()?.preset ?? null;
 }
 
-function saveCurrentMoveSettingsPreset() {
-  const name = els.moveSettingsPresetName.value.trim();
-  if (!name) {
-    setMoveSettingsPresetStatus("保存名を入力してください。", true);
-    els.moveSettingsPresetName.focus();
-    return;
-  }
-  const rule = normalizeMoveRule(state.moveSettingsRule);
-  const existingIndex = state.moveSettingsPresets.findIndex((preset) => (
-    preset.name === name && normalizeMoveRule(preset.rule) === rule
-  ));
-  if (existingIndex < 0 && state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT) {
-    setMoveSettingsPresetStatus(`プリセットは最大${MOVE_SETTINGS_PRESET_LIMIT}件です。既存のプリセットを削除してください。`, true);
-    return;
-  }
-  const existing = existingIndex >= 0 ? state.moveSettingsPresets[existingIndex] : null;
-  const preset = {
-    id: existing?.id ?? createMoveSettingsPresetId(),
+function isLocalAdminHost() {
+  return ["127.0.0.1", "localhost", "::1"].includes(window.location.hostname);
+}
+
+function compareMoveSettingsPresetsNewestFirst(a, b) {
+  const timeA = Date.parse(a?.savedAt ?? "") || 0;
+  const timeB = Date.parse(b?.savedAt ?? "") || 0;
+  return timeB - timeA || String(a?.name ?? "").localeCompare(String(b?.name ?? ""), "ja");
+}
+
+function cloneJsonValue(value) {
+  if (value === undefined) return undefined;
+  return JSON.parse(JSON.stringify(value));
+}
+
+function cloneMoveSettingsPresetForRule(preset, targetRule, name, id) {
+  const sourceRule = normalizeMoveRule(preset.rule);
+  const rule = normalizeMoveRule(targetRule);
+  const cloneRuleData = (stored) => {
+    const source = stored?.[sourceRule];
+    return source === undefined ? {} : { [rule]: cloneJsonValue(source) };
+  };
+  return {
+    id,
     name,
     rule,
-    savedAt: new Date().toISOString(),
-    moveExclusions: serializeMoveExclusions(state.moveExclusions, rule),
-    pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, rule),
-    attackerAbilityExclusions: serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule),
+    savedAt: preset.savedAt,
+    moveExclusions: cloneRuleData(preset.moveExclusions),
+    pokemonExclusions: cloneRuleData(preset.pokemonExclusions),
+    attackerAbilityExclusions: cloneRuleData(preset.attackerAbilityExclusions),
   };
-  if (existingIndex >= 0) state.moveSettingsPresets[existingIndex] = preset;
-  else state.moveSettingsPresets.unshift(preset);
+}
+
+function createCurrentMoveSettingsPreset(name, rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  return {
+    id: createMoveSettingsPresetId(),
+    name,
+    rule: normalizedRule,
+    savedAt: new Date().toISOString(),
+    moveExclusions: serializeMoveExclusions(state.moveExclusions, normalizedRule),
+    pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, normalizedRule),
+    attackerAbilityExclusions: serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, normalizedRule),
+  };
+}
+
+function getCurrentMoveSettingsSnapshot(rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  return JSON.stringify({
+    moveExclusions: serializeMoveExclusions(state.moveExclusions, normalizedRule),
+    pokemonExclusions: serializePokemonExclusions(state.pokemonExclusions, normalizedRule),
+    attackerAbilityExclusions: serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, normalizedRule),
+  });
+}
+
+function captureCurrentMoveSettingsBaseline(rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  state.moveSettingsPresetBaselineByRule.set(
+    normalizedRule,
+    getCurrentMoveSettingsSnapshot(normalizedRule),
+  );
+}
+
+function hasCurrentMoveSettingsChanged(rule = state.moveSettingsRule) {
+  const normalizedRule = normalizeMoveRule(rule);
+  const baseline = state.moveSettingsPresetBaselineByRule.get(normalizedRule);
+  return baseline !== undefined && baseline !== getCurrentMoveSettingsSnapshot(normalizedRule);
+}
+
+function applyMoveSettingsPresetToRule(preset, targetRule, { persist = true } = {}) {
+  const sourceRule = normalizeMoveRule(preset.rule);
+  const normalizedTargetRule = normalizeMoveRule(targetRule);
+  const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(sourceRule) ?? new Map();
+  const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(sourceRule) ?? new Set();
+  const restoredAttackerAbilityExclusions = deserializeAttackerAbilityExclusions(preset.attackerAbilityExclusions).get(sourceRule) ?? new Map();
+  state.moveExclusions.set(normalizedTargetRule, restoredMoveExclusions);
+  state.pokemonExclusions.set(normalizedTargetRule, restoredPokemonExclusions);
+  state.attackerAbilityExclusions.set(normalizedTargetRule, restoredAttackerAbilityExclusions);
+  if (persist) {
+    saveMoveExclusions();
+    savePokemonExclusions();
+    saveAttackerAbilityExclusions();
+  }
+}
+
+function initializeMoveSettingsPresets() {
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const newestMySet = [...state.moveSettingsPresets]
+      .filter((preset) => normalizeMoveRule(preset.rule) === rule)
+      .sort(compareMoveSettingsPresetsNewestFirst)[0];
+    const recommended = state.builtInRecommendedMoveSettingsPresets
+      .find((preset) => normalizeMoveRule(preset.rule) === rule);
+    const preset = newestMySet ?? recommended;
+    if (preset) {
+      applyMoveSettingsPresetToRule(preset, rule, { persist: false });
+      state.moveSettingsPresetActiveByRule.set(rule, {
+        source: newestMySet ? "user" : "built-in",
+        id: preset.id,
+      });
+    }
+    captureCurrentMoveSettingsBaseline(rule);
+  });
+  saveMoveExclusions();
+  savePokemonExclusions();
+  saveAttackerAbilityExclusions();
+}
+
+function getDefaultMoveSettingsPresetName() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `マイセット${year}/${month}/${day}`;
+}
+
+function getUniqueMoveSettingsPresetName(requestedName) {
+  const baseName = String(requestedName ?? "").trim() || getDefaultMoveSettingsPresetName();
+  const usedNames = new Set(state.moveSettingsPresets.map((preset) => preset.name));
+  if (!usedNames.has(baseName)) return baseName;
+  let suffix = 2;
+  while (usedNames.has(`${baseName}(${suffix})`)) suffix += 1;
+  return `${baseName}(${suffix})`;
+}
+
+function formatMoveSettingsPresetSavedAt(savedAt) {
+  const date = new Date(savedAt);
+  if (Number.isNaN(date.getTime())) return "保存日時不明";
+  return new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function openMoveSettingsPresetLimitDialog() {
+  const presets = [...state.moveSettingsPresets].sort((a, b) => -compareMoveSettingsPresetsNewestFirst(a, b));
+  els.moveSettingsPresetLimitDeleteSelect.innerHTML = presets.map((preset) => (
+    `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.name)}（${getMoveRuleName(preset.rule)}・${escapeHtml(formatMoveSettingsPresetSavedAt(preset.savedAt))}）</option>`
+  )).join("");
+  els.moveSettingsPresetLimitModal.hidden = false;
+  els.moveSettingsPresetLimitDeleteSelect.focus();
+}
+
+function closeMoveSettingsPresetLimitDialog() {
+  els.moveSettingsPresetLimitModal.hidden = true;
+  state.moveSettingsPresetPendingSave = null;
+}
+
+function deleteMoveSettingsPresetAndSave() {
+  const pending = state.moveSettingsPresetPendingSave;
+  const presetId = els.moveSettingsPresetLimitDeleteSelect.value;
+  const deleted = state.moveSettingsPresets.find((preset) => preset.id === presetId);
+  if (!pending || !deleted) return;
+  state.moveSettingsPresets = state.moveSettingsPresets.filter((preset) => preset.id !== presetId);
+  MOVE_SETTING_RULES.forEach((rule) => {
+    const active = state.moveSettingsPresetActiveByRule.get(rule);
+    if (active?.source === "user" && active.id === presetId) {
+      state.moveSettingsPresetActiveByRule.delete(rule);
+    }
+  });
+  els.moveSettingsPresetLimitModal.hidden = true;
+  state.moveSettingsPresetPendingSave = null;
+  persistCurrentMoveSettingsPreset(pending.name);
+}
+
+function saveCurrentMoveSettingsPreset() {
+  if (!hasCurrentMoveSettingsChanged()) {
+    setMoveSettingsPresetStatus("ポケモン・技・特性の設定を変更してから保存してください。", true);
+    return;
+  }
+  const requestedName = els.moveSettingsPresetName.value.trim() || getDefaultMoveSettingsPresetName();
+  if (state.moveSettingsPresets.length >= MOVE_SETTINGS_PRESET_LIMIT) {
+    state.moveSettingsPresetPendingSave = {
+      name: requestedName,
+      rule: normalizeMoveRule(state.moveSettingsRule),
+    };
+    openMoveSettingsPresetLimitDialog();
+    return;
+  }
+  persistCurrentMoveSettingsPreset(requestedName);
+}
+
+function persistCurrentMoveSettingsPreset(requestedName) {
+  const rule = normalizeMoveRule(state.moveSettingsRule);
+  const name = getUniqueMoveSettingsPresetName(requestedName);
+  const preset = createCurrentMoveSettingsPreset(name, rule);
+  state.moveSettingsPresets.unshift(preset);
+  state.moveSettingsPresets.sort(compareMoveSettingsPresetsNewestFirst);
   saveMoveSettingsPresets();
+  state.moveSettingsPresetActiveByRule.set(rule, { source: "user", id: preset.id });
+  captureCurrentMoveSettingsBaseline(rule);
   renderMoveSettingsPresets();
   els.moveSettingsPresetSelect.value = getMoveSettingsPresetOptionValue("user", preset.id);
   els.moveSettingsPresetName.value = "";
   updateMoveSettingsPresetActions();
-  setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${name}」を${existing ? "上書き" : "保存"}しました。`);
+  setMoveSettingsPresetStatus(`${getMoveRuleName(rule)}の「${name}」をマイセットに保存しました。`);
 }
 
 function createRecommendedMoveSettingsPresetDraft() {
@@ -726,7 +902,8 @@ function createRecommendedMoveSettingsPresetDraft() {
   renderMoveSettingsPresets();
   els.moveSettingsPresetSelect.value = getMoveSettingsPresetOptionValue("recommended", preset.id);
   els.moveSettingsPresetName.value = "";
-  enterMoveSettingsPresetEdit();
+  updateMoveSettingsPresetActions();
+  setMoveSettingsPresetStatus(`管理用おすすめ候補「${preset.name}」を作成しました。現在の設定を変更してから書き出せます。`);
 }
 
 function enterMoveSettingsPresetEdit() {
@@ -819,8 +996,8 @@ function requestMoveSettingsPresetConfirmation(action) {
   const preset = selection?.preset;
   if (!selection || !preset) return;
   const isDelete = action === "delete";
-  if (isDelete && selection.source === "built-in") {
-    setMoveSettingsPresetStatus("最初から用意されているおすすめプリセットは削除できません。", true);
+  if (isDelete && selection.source !== "user") {
+    setMoveSettingsPresetStatus("削除できるのはマイセットだけです。", true);
     return;
   }
   const presetRule = normalizeMoveRule(preset.rule);
@@ -866,16 +1043,19 @@ function confirmMoveSettingsPresetAction() {
     return;
   }
   if (pending.action === "delete") {
-    if (selection.source === "recommended") {
-      state.recommendedMoveSettingsPresets = state.recommendedMoveSettingsPresets.filter((item) => item.id !== preset.id);
-      saveRecommendedMoveSettingsPresetDrafts();
-    } else if (selection.source === "user") {
+    if (selection.source === "user") {
       state.moveSettingsPresets = state.moveSettingsPresets.filter((item) => item.id !== preset.id);
       saveMoveSettingsPresets();
     } else {
       closeMoveSettingsPresetConfirmation();
       return;
     }
+    MOVE_SETTING_RULES.forEach((rule) => {
+      const active = state.moveSettingsPresetActiveByRule.get(rule);
+      if (active?.source === "user" && active.id === preset.id) {
+        state.moveSettingsPresetActiveByRule.delete(rule);
+      }
+    });
     closeMoveSettingsPresetConfirmation();
     renderMoveSettingsPresets();
     setMoveSettingsPresetStatus(`${getMoveRuleName(preset.rule)}の「${preset.name}」を削除しました。`);
@@ -884,15 +1064,9 @@ function confirmMoveSettingsPresetAction() {
   const presetRule = normalizeMoveRule(preset.rule);
   const targetRule = state.moveSettingsRule;
   const copiedAcrossRules = presetRule !== targetRule;
-  const restoredMoveExclusions = deserializeMoveExclusions(preset.moveExclusions).get(presetRule) ?? new Map();
-  const restoredPokemonExclusions = deserializePokemonExclusions(preset.pokemonExclusions).get(presetRule) ?? new Set();
-  const restoredAttackerAbilityExclusions = deserializeAttackerAbilityExclusions(preset.attackerAbilityExclusions).get(presetRule) ?? new Map();
-  state.moveExclusions.set(targetRule, restoredMoveExclusions);
-  state.pokemonExclusions.set(targetRule, restoredPokemonExclusions);
-  state.attackerAbilityExclusions.set(targetRule, restoredAttackerAbilityExclusions);
-  saveMoveExclusions();
-  savePokemonExclusions();
-  saveAttackerAbilityExclusions();
+  applyMoveSettingsPresetToRule(preset, targetRule);
+  state.moveSettingsPresetActiveByRule.set(targetRule, { source: selection.source, id: preset.id });
+  captureCurrentMoveSettingsBaseline(targetRule);
   closeMoveSettingsPresetConfirmation();
   refreshMoveSettingsPage();
   setMoveSettingsPresetStatus(`${selection.source === "user" ? "プリセット" : "おすすめプリセット"}「${preset.name}」を${copiedAcrossRules ? `${getMoveRuleName(presetRule)}から現在の${getMoveRuleName(targetRule)}へ反映しました。` : "呼び出しました。"}`);
@@ -919,6 +1093,7 @@ function loadMoveSettingsPresets() {
         };
       })
       .filter(Boolean)
+      .sort(compareMoveSettingsPresetsNewestFirst)
       .slice(0, MOVE_SETTINGS_PRESET_LIMIT);
   } catch {
     return [];
@@ -929,7 +1104,7 @@ function normalizeBuiltInRecommendedMoveSettingsPresets(payload) {
   const stored = Array.isArray(payload) ? payload : payload?.presets;
   if (!Array.isArray(stored)) return [];
   const usedIds = new Set();
-  return stored
+  const normalized = stored
     .map((preset, index) => {
       if (!preset || typeof preset !== "object" || Array.isArray(preset)) return null;
       const name = typeof preset.name === "string" ? preset.name.trim() : "";
@@ -949,13 +1124,27 @@ function normalizeBuiltInRecommendedMoveSettingsPresets(payload) {
       };
     })
     .filter(Boolean);
+  const doublePreset = normalized.find((preset) => normalizeMoveRule(preset.rule) === "double");
+  if (doublePreset && !normalized.some((preset) => normalizeMoveRule(preset.rule) === "single")) {
+    normalized.push(cloneMoveSettingsPresetForRule(
+      doublePreset,
+      "single",
+      "おすすめシングルM-C",
+      "built-in-recommended-single-m-c",
+    ));
+  }
+  return normalized;
 }
 
 function saveMoveSettingsPresets() {
   try {
     localStorage.setItem(
       MOVE_SETTINGS_PRESETS_STORAGE_KEY,
-      JSON.stringify(state.moveSettingsPresets.slice(0, MOVE_SETTINGS_PRESET_LIMIT)),
+      JSON.stringify(
+        [...state.moveSettingsPresets]
+          .sort(compareMoveSettingsPresetsNewestFirst)
+          .slice(0, MOVE_SETTINGS_PRESET_LIMIT),
+      ),
     );
   } catch {
     // Ignore unavailable storage; the current session still uses the in-memory presets.
@@ -1106,6 +1295,7 @@ function switchPage(page) {
 }
 
 function refreshSearchAfterMoveSettingsChange() {
+  updateMoveSettingsPresetActions();
   if (els.searchPage.hidden) {
     state.searchNeedsRefresh = true;
     return;
