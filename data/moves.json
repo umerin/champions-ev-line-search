@@ -4264,6 +4264,22 @@
     "moveCategories": []
   },
   {
+    "id": "low-kick",
+    "name": {
+      "en": "Low Kick",
+      "ja": "けたぐり",
+      "jaHrkt": "けたぐり"
+    },
+    "championsTarget": true,
+    "type": "fighting",
+    "category": "physical",
+    "power": 0,
+    "isSpreadMove": false,
+    "isContactMove": true,
+    "moveCategories": [],
+    "searchable": false
+  },
+  {
     "id": "low-sweep",
     "name": {
       "en": "Low Sweep",
