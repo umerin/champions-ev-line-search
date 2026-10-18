@@ -762,6 +762,17 @@ function exitMoveSettingsPresetEdit() {
   setMoveSettingsPresetStatus(preset ? `「${preset.name}」の編集を終了しました。` : "編集モードを終了しました。");
 }
 
+function saveCurrentSettingsToPresetSnapshot(preset) {
+  if (!preset) return false;
+  const rule = normalizeMoveRule(preset.rule);
+  if (rule !== state.moveSettingsRule) return false;
+  preset.savedAt = new Date().toISOString();
+  preset.moveExclusions = serializeMoveExclusions(state.moveExclusions, rule);
+  preset.pokemonExclusions = serializePokemonExclusions(state.pokemonExclusions, rule);
+  preset.attackerAbilityExclusions = serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule);
+  return true;
+}
+
 function saveEditingMoveSettingsPreset() {
   if (!state.moveSettingsPresetEditing) return;
   const selection = getMoveSettingsPresetSelectionByReference(
@@ -775,10 +786,7 @@ function saveEditingMoveSettingsPreset() {
   }
   const rule = normalizeMoveRule(preset.rule);
   if (rule !== state.moveSettingsRule) return;
-  preset.savedAt = new Date().toISOString();
-  preset.moveExclusions = serializeMoveExclusions(state.moveExclusions, rule);
-  preset.pokemonExclusions = serializePokemonExclusions(state.pokemonExclusions, rule);
-  preset.attackerAbilityExclusions = serializeAttackerAbilityExclusions(state.attackerAbilityExclusions, rule);
+  saveCurrentSettingsToPresetSnapshot(preset);
   if (selection.source === "recommended") saveRecommendedMoveSettingsPresetDrafts();
   else saveMoveSettingsPresets();
   setMoveSettingsPresetStatus(`「${preset.name}」に自動保存しました。`);
@@ -998,6 +1006,11 @@ function exportRecommendedMoveSettingsPresetDrafts() {
   }
   if (state.moveSettingsPresetEditing && state.moveSettingsPresetEditingSource === "recommended") {
     saveEditingMoveSettingsPreset();
+  } else {
+    const selection = getSelectedMoveSettingsPresetSelection();
+    if (selection?.source === "recommended" && saveCurrentSettingsToPresetSnapshot(selection.preset)) {
+      saveRecommendedMoveSettingsPresetDrafts();
+    }
   }
   const exportedAt = new Date();
   const payload = {
