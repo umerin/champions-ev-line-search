@@ -1,11 +1,11 @@
 {
   "format": "champions-ev-line-search-recommended-presets",
   "schemaVersion": 1,
-  "exportedAt": "2026-08-08T13:48:32.356Z",
+  "exportedAt": "2026-10-18T07:08:44.736Z",
   "presets": [
     {
-      "id": "recommended-default",
-      "name": "おすすめプリセット",
+      "id": "recommended-1786178623153-xie5f8",
+      "name": "おすすめダブルM-C",
       "rule": "double",
       "savedAt": "2026-08-08T13:38:32.796Z",
       "moveExclusions": {

@@ -5,7 +5,7 @@ const paths = {
   battleEffects: "./data/battle-effects.json?v=20261015-1",
   typeChart: "./data/type-chart.json",
   rules: "./data/champions-rules.json?v=20260712-2",
-  recommendedPresets: "./data/recommended-presets.json?v=20260808-1",
+  recommendedPresets: "./data/recommended-presets.json?v=20261018-3",
 };
 
 const MOVE_SETTING_RULES = ["single", "double"];
